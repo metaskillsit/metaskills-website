@@ -1,15 +1,22 @@
 import { motion } from "framer-motion";
+import ImageSlideshow from "@/components/ImageSlideshow";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroBg2 from "@/assets/hero-bg-2.jpg";
+import heroBg3 from "@/assets/hero-bg-3.jpg";
+
+const heroImages = [heroBg, heroBg2, heroBg3];
 
 const HeroSection = () => {
   return (
     <section className="relative h-[70vh] min-h-[500px] flex items-center overflow-hidden">
-      <img
-        src={heroBg}
-        alt="Professional AI training classroom"
-        className="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={900}
+      <ImageSlideshow
+        images={heroImages}
+        alt="Professional AI training"
+        className="absolute inset-0 w-full h-full"
+        imgClassName="absolute inset-0 w-full h-full object-cover"
+        interval={5000}
+        loading="eager"
+        showDots={true}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.7)] via-[hsl(var(--hero-overlay)/0.4)] to-[hsl(var(--hero-overlay)/0.2)]" />
 
