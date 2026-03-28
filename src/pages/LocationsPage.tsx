@@ -8,8 +8,8 @@ import location2Img from "@/assets/location2.jpg";
 
 const locations = [
   {
-    name: "Singapore HQ",
-    description: "Our main campus in Singapore, equipped with state-of-the-art facilities for hands-on AI training and workshops.",
+    name: "Singapore HQ — CT Hub 2",
+    description: "Located at 114 Lavender Street, CT Hub 2, #07-74, Singapore 338729. Our main campus equipped with state-of-the-art facilities for hands-on AI training and workshops.",
     image: location1Img,
   },
   {
