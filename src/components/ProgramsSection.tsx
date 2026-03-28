@@ -25,7 +25,7 @@ const programCategories = [
     title: "AI Automation and Agents",
     description:
       "From no-code workflows to AI coding agents — practical, hands-on workshops on building and deploying intelligent automation systems.",
-    image: agenticImg,
+    image: aiAutomationImg,
     courses: [
       { name: "The Rise of AI Agents in 2026", slug: "rise-of-ai-agents-2026" },
       { name: "Build AI Workflows with No Code", slug: "build-ai-workflows-no-code" },
