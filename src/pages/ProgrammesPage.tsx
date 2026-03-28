@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import agenticImg from "@/assets/programmes-agentic.jpg";
+import aiAutomationImg from "@/assets/programmes-aiautomation.jpg";
 import datasciImg from "@/assets/programmes-datascience.jpg";
 import fintechImg from "@/assets/programmes-fintech.jpg";
 import cyberDefenceImg from "@/assets/programmes-cyberdefence.jpg";
@@ -24,7 +25,7 @@ const programCategories = [
   {
     title: "AI Automation and Agents",
     description: "From no-code workflows to AI coding agents — practical, hands-on workshops on building and deploying intelligent automation systems.",
-    image: agenticImg,
+    image: aiAutomationImg,
     courses: [
       { name: "The Rise of AI Agents in 2026", slug: "rise-of-ai-agents-2026" },
       { name: "Build AI Workflows with No Code", slug: "build-ai-workflows-no-code" },
