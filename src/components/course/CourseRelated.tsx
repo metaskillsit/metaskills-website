@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { Course, getCategoryImages } from "@/data/courses";
+import { Course } from "@/data/courses";
+import { getCourseImages } from "@/data/courseImages";
 import ImageSlideshow from "@/components/ImageSlideshow";
 
 interface CourseRelatedProps {
@@ -19,7 +20,7 @@ const CourseRelated = ({ relatedCourses }: CourseRelatedProps) => {
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {relatedCourses.map((c, i) => {
-            const images = getCategoryImages(c.category);
+            const images = getCourseImages(c.slug);
             return (
               <motion.div
                 key={c.slug}
