@@ -1,20 +1,35 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import ImageSlideshow from "@/components/ImageSlideshow";
 import agenticImg from "@/assets/programmes-agentic.jpg";
+import agenticImg2 from "@/assets/programmes-agentic-2.jpg";
+import agenticImg3 from "@/assets/programmes-agentic-3.jpg";
 import aiAutomationImg from "@/assets/programmes-aiautomation.jpg";
+import aiAutomationImg2 from "@/assets/programmes-aiautomation-2.jpg";
+import aiAutomationImg3 from "@/assets/programmes-aiautomation-3.jpg";
 import datasciImg from "@/assets/programmes-datascience.jpg";
+import datasciImg2 from "@/assets/programmes-datascience-2.jpg";
+import datasciImg3 from "@/assets/programmes-datascience-3.jpg";
 import fintechImg from "@/assets/programmes-fintech.jpg";
+import fintechImg2 from "@/assets/programmes-fintech-2.jpg";
+import fintechImg3 from "@/assets/programmes-fintech-3.jpg";
 import cyberDefenceImg from "@/assets/programmes-cyberdefence.jpg";
+import cyberDefenceImg2 from "@/assets/programmes-cyberdefence-2.jpg";
+import cyberDefenceImg3 from "@/assets/programmes-cyberdefence-3.jpg";
 import aiLeadershipImg from "@/assets/programmes-aileadership.jpg";
+import aiLeadershipImg2 from "@/assets/programmes-aileadership-2.jpg";
+import aiLeadershipImg3 from "@/assets/programmes-aileadership-3.jpg";
 import cyberCertImg from "@/assets/programmes-cybercert.jpg";
+import cyberCertImg2 from "@/assets/programmes-cybercert-2.jpg";
+import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
 
 const programCategories = [
   {
     title: "Agentic AI Workshop Series",
     description:
       "Designing, deploying, and governing autonomous AI agents for real-world enterprise applications.",
-    image: agenticImg,
+    images: [agenticImg, agenticImg2, agenticImg3],
     courses: [
       { name: "Foundations of Agentic AI Workflows", slug: "agentic-ai-foundations" },
       { name: "Empowering Agentic AI with LLMs and Use-Case Development", slug: "agentic-ai-use-case" },
@@ -25,7 +40,7 @@ const programCategories = [
     title: "AI Automation and Agents",
     description:
       "From no-code workflows to AI coding agents — practical, hands-on workshops on building and deploying intelligent automation systems.",
-    image: aiAutomationImg,
+    images: [aiAutomationImg, aiAutomationImg2, aiAutomationImg3],
     courses: [
       { name: "The Rise of AI Agents in 2026", slug: "rise-of-ai-agents-2026" },
       { name: "Build AI Workflows with No Code", slug: "build-ai-workflows-no-code" },
@@ -42,7 +57,7 @@ const programCategories = [
     title: "Data Science & Analytics",
     description:
       "From Python programming to advanced machine learning — practical, project-based data science education.",
-    image: datasciImg,
+    images: [datasciImg, datasciImg2, datasciImg3],
     courses: [
       { name: "Python Programming For Data Analytics", slug: "python-programming-for-data-analytics" },
       { name: "Certified Data Analyst — JCube Institute", slug: "certified-data-analyst" },
@@ -53,7 +68,7 @@ const programCategories = [
     title: "Fintech & Algorithmic Trading",
     description:
       "Data-driven trading strategies powered by automation and analytics for financial markets.",
-    image: fintechImg,
+    images: [fintechImg, fintechImg2, fintechImg3],
     courses: [
       { name: "Algorithmic Trading Mastery Series — Level 1", slug: "algorithmic-trading-level-1" },
       { name: "Algorithmic Trading Mastery Series — Level 2", slug: "algorithmic-trading-level-2" },
@@ -63,7 +78,7 @@ const programCategories = [
     title: "Cyber Defence",
     description:
       "Comprehensive cybersecurity overview — fundamentals, threat landscape, key roles, and certification roadmap planning.",
-    image: cyberDefenceImg,
+    images: [cyberDefenceImg, cyberDefenceImg2, cyberDefenceImg3],
     courses: [
       { name: "Cybersecurity: Roles, Threats, and Certification Pathways", slug: "cybersecurity-roles-threats-pathways" },
     ],
@@ -72,7 +87,7 @@ const programCategories = [
     title: "AI Leadership and Governance",
     description:
       "Strategy workshops for senior leaders — AI adoption roadmaps, accountability frameworks, agent governance, and AI wargaming.",
-    image: aiLeadershipImg,
+    images: [aiLeadershipImg, aiLeadershipImg2, aiLeadershipImg3],
     courses: [
       { name: "AI Strategy and Roadmap for Leaders", slug: "ai-strategy-roadmap-leaders" },
       { name: "Who Is Accountable When AI Decides?", slug: "ai-accountability-when-ai-decides" },
@@ -84,7 +99,7 @@ const programCategories = [
     title: "MCC+ Cyber Defence Certification",
     description:
       "Consolidated cybersecurity certification programme — 4-day core foundation plus 1-day electives aligned to Security+, CySA+, CEH, CHFI, and SecAI.",
-    image: cyberCertImg,
+    images: [cyberCertImg, cyberCertImg2, cyberCertImg3],
     courses: [
       { name: "MCC+ Cyber Defence Foundation (4 Days)", slug: "mcc-plus-cyber-defence-foundation" },
       { name: "MCC+ Security Operations (Security+)", slug: "mcc-plus-security-operations" },
@@ -126,16 +141,15 @@ const ProgramsSection = () => {
               transition={{ delay: i * 0.1 }}
               className="group"
             >
-              <div className="aspect-[4/3] overflow-hidden rounded-sm mb-5">
-                <img
-                  src={cat.image}
-                  alt={cat.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width={800}
-                  height={600}
-                />
-              </div>
+              <ImageSlideshow
+                images={cat.images}
+                alt={cat.title}
+                className="aspect-[4/3] overflow-hidden rounded-sm mb-5"
+                imgClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                interval={3500 + i * 500}
+                width={800}
+                height={600}
+              />
               <h4 className="font-heading text-xl font-bold text-foreground mb-2">
                 {cat.title}
               </h4>
