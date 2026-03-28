@@ -11,7 +11,16 @@ interface ImageSlideshowProps {
   height?: number;
   loading?: "lazy" | "eager";
   showDots?: boolean;
+  kenBurns?: boolean;
 }
+
+const kenBurnsVariants = [
+  { scale: 1, x: "0%", y: "0%" },
+  { scale: 1.12, x: "-2%", y: "-1%" },
+  { scale: 1.08, x: "2%", y: "1%" },
+  { scale: 1.15, x: "-1%", y: "2%" },
+  { scale: 1.1, x: "1%", y: "-2%" },
+];
 
 const ImageSlideshow = ({
   images,
@@ -23,6 +32,7 @@ const ImageSlideshow = ({
   height,
   loading = "lazy",
   showDots = true,
+  kenBurns = false,
 }: ImageSlideshowProps) => {
   const [current, setCurrent] = useState(0);
 
@@ -52,6 +62,8 @@ const ImageSlideshow = ({
     );
   }
 
+  const kbTarget = kenBurnsVariants[current % kenBurnsVariants.length];
+
   return (
     <div className={`relative ${className}`}>
       <AnimatePresence mode="wait">
@@ -63,10 +75,20 @@ const ImageSlideshow = ({
           width={width}
           height={height}
           loading={loading}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: kenBurns ? 1 : 1 }}
+          animate={{
+            opacity: 1,
+            scale: kenBurns ? kbTarget.scale : 1,
+            x: kenBurns ? kbTarget.x : "0%",
+            y: kenBurns ? kbTarget.y : "0%",
+          }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{
+            opacity: { duration: 1 },
+            scale: { duration: kenBurns ? interval / 1000 + 1 : 0, ease: "linear" },
+            x: { duration: kenBurns ? interval / 1000 + 1 : 0, ease: "linear" },
+            y: { duration: kenBurns ? interval / 1000 + 1 : 0, ease: "linear" },
+          }}
         />
       </AnimatePresence>
       {showDots && (
@@ -83,6 +105,18 @@ const ImageSlideshow = ({
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
+        </div>
+      )}
+      {/* Progress bar for video-style feel */}
+      {kenBurns && (
+        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/10 z-10">
+          <motion.div
+            key={`progress-${current}`}
+            className="h-full bg-white/50"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: interval / 1000, ease: "linear" }}
+          />
         </div>
       )}
     </div>
