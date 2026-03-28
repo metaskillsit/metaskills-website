@@ -7,7 +7,7 @@ const benefits = [
   "Access to Singapore's growing AI and digital innovation ecosystem",
   "Alumni events and industry partnership opportunities",
   "Programmes endorsed by faculty teaching at universities and government agencies",
-  "Available in English, Khmer, Thai, and Vietnamese",
+  "Available in English, Chinese, and Vietnamese",
 ];
 
 const AdmissionsSection = () => {

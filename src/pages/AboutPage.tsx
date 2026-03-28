@@ -107,7 +107,7 @@ const AboutPage = () => {
             Languages & Reach
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-2xl">
-            Our programmes are available in English, Khmer, Thai, and Vietnamese — reaching professionals and organisations across Singapore and the wider ASEAN region.
+            Our programmes are available in English, Chinese, and Vietnamese — reaching professionals and organisations across Singapore and the wider ASEAN region.
           </p>
         </section>
       </main>
