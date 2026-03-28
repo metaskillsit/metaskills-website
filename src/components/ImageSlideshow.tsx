@@ -88,7 +88,7 @@ const ImageSlideshow = ({
             scale: { duration: kenBurns ? interval / 1000 + 2 : 0, ease: "linear" },
             x: { duration: kenBurns ? interval / 1000 + 2 : 0, ease: "linear" },
             y: { duration: kenBurns ? interval / 1000 + 2 : 0, ease: "linear" },
-          }
+          }}
         />
       </AnimatePresence>
       {showDots && (
