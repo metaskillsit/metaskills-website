@@ -31,7 +31,7 @@ const footerLinks = [
 
 const FooterSection = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="section-dark">
       <div className="max-w-[1140px] mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-10">
           <div>
