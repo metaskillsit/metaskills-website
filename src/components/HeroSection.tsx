@@ -13,7 +13,9 @@ const HeroSection = () => {
         images={heroImages}
         alt="Professional AI training"
         className="absolute inset-0 w-full h-full"
-        imgClassName="absolute inset-0 w-full h-full object-cover"
+        imgClassName="absolute inset-0 w-full h-full object-cover object-center"
+        width={1920}
+        height={900}
         interval={5000}
         loading="eager"
         showDots={true}
