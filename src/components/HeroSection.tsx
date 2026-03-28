@@ -8,12 +8,12 @@ const heroImages = [heroBg, heroBg2, heroBg3];
 
 const HeroSection = () => {
   return (
-    <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+    <section className="relative aspect-[1920/900] w-full flex items-center overflow-hidden">
       <ImageSlideshow
         images={heroImages}
         alt="Professional AI training"
         className="absolute inset-0 w-full h-full"
-        imgClassName="absolute inset-0 w-full h-full object-cover object-center"
+        imgClassName="absolute inset-0 w-full h-full object-contain bg-[hsl(var(--hero-overlay))]"
         width={1920}
         height={900}
         interval={5000}
