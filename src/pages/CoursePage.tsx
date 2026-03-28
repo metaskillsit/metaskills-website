@@ -12,9 +12,10 @@ import {
   ArrowRight,
   Mail,
 } from "lucide-react";
-import { getCourseBySlug, courses } from "@/data/courses";
+import { getCourseBySlug, courses, getCategoryImages } from "@/data/courses";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import ImageSlideshow from "@/components/ImageSlideshow";
 
 const CoursePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -45,9 +46,25 @@ const CoursePage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16 md:pt-[70px]">
-        {/* === HERO BANNER - INSEAD style === */}
-        <section className="relative bg-primary py-16 md:py-20">
-          <div className="max-w-[1140px] mx-auto px-6">
+        {/* === HERO BANNER with Slideshow === */}
+        <section className="relative bg-primary overflow-hidden">
+          {/* Slideshow background */}
+          <div className="absolute inset-0 z-0">
+            <ImageSlideshow
+              images={getCategoryImages(course.category)}
+              alt={course.title}
+              className="absolute inset-0 h-full w-full"
+              imgClassName="absolute inset-0 h-full w-full object-cover object-center"
+              width={1280}
+              height={720}
+              interval={4500}
+              loading="eager"
+              showDots={false}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/40" />
+          </div>
+
+          <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-16 md:py-20">
             <Link
               to="/#courses"
               className="inline-flex items-center gap-2 text-primary-foreground/50 hover:text-accent transition-colors mb-8 text-sm group"
