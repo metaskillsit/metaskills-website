@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import agenticImg from "@/assets/programmes-agentic.jpg";
+import aiAutomationImg from "@/assets/programmes-aiautomation.jpg";
 import datasciImg from "@/assets/programmes-datascience.jpg";
 import fintechImg from "@/assets/programmes-fintech.jpg";
 import cyberDefenceImg from "@/assets/programmes-cyberdefence.jpg";

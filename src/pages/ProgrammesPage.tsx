@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import agenticImg from "@/assets/programmes-agentic.jpg";
+import aiAutomationImg from "@/assets/programmes-aiautomation.jpg";
 import datasciImg from "@/assets/programmes-datascience.jpg";
 import fintechImg from "@/assets/programmes-fintech.jpg";
 import cyberDefenceImg from "@/assets/programmes-cyberdefence.jpg";
