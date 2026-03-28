@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 200 20% 98%;
-    --foreground: 200 40% 10%;
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 200 40% 10%;
+    --card-foreground: 220 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 40% 10%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 185 80% 20%;
-    --primary-foreground: 45 100% 96%;
+    --primary: 43 96% 56%;
+    --primary-foreground: 220 20% 10%;
 
-    --secondary: 45 90% 55%;
-    --secondary-foreground: 200 40% 10%;
+    --secondary: 43 30% 95%;
+    --secondary-foreground: 220 20% 10%;
 
-    --muted: 200 15% 93%;
-    --muted-foreground: 200 10% 45%;
+    --muted: 43 15% 95%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 45 90% 55%;
-    --accent-foreground: 200 40% 10%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 220 20% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 200 15% 88%;
-    --input: 200 15% 88%;
-    --ring: 185 80% 20%;
+    --border: 43 20% 88%;
+    --input: 43 20% 88%;
+    --ring: 43 96% 56%;
 
     --radius: 0.5rem;
 
@@ -46,36 +46,39 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --hero-overlay: 185 60% 12%;
-    --gold: 45 90% 55%;
-    --gold-light: 45 80% 70%;
-    --teal-dark: 185 80% 15%;
-    --teal-light: 185 40% 90%;
+    --hero-overlay: 220 25% 12%;
+    --gold: 43 96% 56%;
+    --gold-light: 43 80% 70%;
+    --gold-dark: 40 90% 45%;
+    --navy: 215 50% 18%;
+    --warm: 35 30% 97%;
+    --teal-dark: 220 25% 12%;
+    --teal-light: 43 30% 95%;
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
   }
 
   .dark {
-    --background: 200 40% 6%;
-    --foreground: 200 15% 95%;
-    --card: 200 35% 10%;
-    --card-foreground: 200 15% 95%;
-    --popover: 200 35% 10%;
-    --popover-foreground: 200 15% 95%;
-    --primary: 185 70% 40%;
-    --primary-foreground: 200 40% 6%;
-    --secondary: 45 80% 50%;
-    --secondary-foreground: 200 40% 6%;
-    --muted: 200 25% 15%;
-    --muted-foreground: 200 15% 65%;
-    --accent: 45 80% 50%;
-    --accent-foreground: 200 40% 6%;
+    --background: 220 25% 6%;
+    --foreground: 220 15% 95%;
+    --card: 220 25% 10%;
+    --card-foreground: 220 15% 95%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 15% 95%;
+    --primary: 43 90% 50%;
+    --primary-foreground: 220 25% 6%;
+    --secondary: 43 70% 45%;
+    --secondary-foreground: 220 25% 6%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 15% 65%;
+    --accent: 43 90% 50%;
+    --accent-foreground: 220 25% 6%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 200 25% 18%;
-    --input: 200 25% 18%;
-    --ring: 185 70% 40%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 43 90% 50%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -93,7 +96,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body antialiased;
   }
 
   h1, h2, h3, h4 {
@@ -104,6 +107,32 @@
 @layer components {
   .section-padding {
     @apply px-6 py-16 md:px-12 lg:px-20 lg:py-24;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsla(var(--hero-overlay), 0.85) 0%,
+      hsla(var(--hero-overlay), 0.6) 50%,
+      hsla(var(--gold), 0.15) 100%
+    );
+  }
+
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold)) 0%,
+      hsl(var(--gold-dark)) 100%
+    );
+  }
+
+  .section-dark {
+    background-color: hsl(var(--hero-overlay));
+    color: hsl(0 0% 95%);
+  }
+
+  .section-warm {
+    background-color: hsl(var(--warm));
   }
 
   .gold-underline {

@@ -2,32 +2,32 @@ import { motion } from "framer-motion";
 
 const faculty = [
   {
-    name: "Dr Jack Hong",
-    role: "Consultant, Metaskills Institute",
-    expertise: "Data Science | AI | Machine Learning | Deep Learning | Business Intelligence",
-    image: "https://metaskills.sg/wp-content/uploads/2022/01/founder-300-sq-300x300.jpg",
-    bio: "Co-founder of Research Room, an A.I. consulting and development outfit. Adjunct faculty at Singapore Management University (SMU) since 2015. AI Technology Consultant at Certis Group, Data Science Advisor at Vertex Holdings, and CEO of Integrum Global.",
-  },
-  {
     name: "Dr Ke Jinghao",
     role: "CEO, Metaskills Institute",
-    expertise: "Data Analytics | Data Science | AI | Machine Learning | Business Intelligence",
-    image: "https://metaskills.sg/wp-content/uploads/2022/01/Jinghao-300x300.jpg",
-    bio: "Co-founder of Research Room and JCube Institute. Full-stack programmer and adjunct faculty at SMU. Has provided management consulting for thousands of individuals, SMEs, MNCs and government agencies.",
+    expertise: "Data Analytics | Data Science | Agentic AI | AI | Machine Learning | Business Intelligence",
+    image: "https://metaskills.sg/wp-content/uploads/2025/09/JinghaoKe-ProfilePic-gemini-light-square.png",
+    bio: "Recognised leader in applied AI, finance, and analytics. Adjunct faculty at SMU, teaching business analytics and finance.",
+  },
+  {
+    name: "Dr Jack Hong",
+    role: "Lead Consultant",
+    expertise: "Data Science | AI | Machine Learning | Deep Learning | Business Intelligence | Leadership",
+    image: "https://metaskills.sg/wp-content/uploads/2022/01/founder-300-sq-300x300.jpg",
+    bio: "Founder & CEO of Integrum Global. Adjunct Faculty at SMU for over 10 years. Chair of Advocacy & Research at ASME.",
+  },
+  {
+    name: "Christopher Tan",
+    role: "CBDO, Metaskills Institute",
+    expertise: "Data Science | Algorithmic Trading | Business Development | Higher Education Leadership",
+    image: "https://metaskills.sg/wp-content/uploads/2026/03/Chris-Tan-e1772416392943.jpg",
+    bio: "20+ years across Government, Higher Education and Industry. Founding team of SMU Academy.",
   },
   {
     name: "Dr Jonathan Khoo",
-    role: "Consultant, Metaskills Institute",
+    role: "Consultant",
     expertise: "Data Science | AI | Machine Learning | Deep Learning",
     image: "https://metaskills.sg/wp-content/uploads/2022/10/Jon-300x300-1.jpg",
-    bio: "Full-stack app developer with a Ph.D. from SMU. Masters from University of Michigan (Ann Arbor). Published research in Genetic Programming and Energy Prediction. Alumnus of Raffles Institution.",
-  },
-  {
-    name: "Evelyn",
-    role: "Consultant, Metaskills Institute",
-    expertise: "Six Sigma | Scrum | Data Science | Machine Learning | Digital Skills",
-    image: "https://metaskills.sg/wp-content/uploads/2022/01/Evelyn-300-300x300.jpg",
-    bio: "",
+    bio: "Full-stack app developer with a Ph.D. from SMU. Masters from University of Michigan (Ann Arbor).",
   },
 ];
 
