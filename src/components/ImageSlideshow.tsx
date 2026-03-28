@@ -26,7 +26,7 @@ const ImageSlideshow = ({
   images,
   alt,
   className = "",
-  interval = 4000,
+  interval = 6000,
   imgClassName = "",
   width,
   height,
@@ -84,10 +84,10 @@ const ImageSlideshow = ({
           }}
           exit={{ opacity: 0 }}
           transition={{
-            opacity: { duration: 1 },
-            scale: { duration: kenBurns ? interval / 1000 + 1 : 0, ease: "linear" },
-            x: { duration: kenBurns ? interval / 1000 + 1 : 0, ease: "linear" },
-            y: { duration: kenBurns ? interval / 1000 + 1 : 0, ease: "linear" },
+            opacity: { duration: 1.5, ease: "easeInOut" },
+            scale: { duration: kenBurns ? interval / 1000 + 2 : 0, ease: "linear" },
+            x: { duration: kenBurns ? interval / 1000 + 2 : 0, ease: "linear" },
+            y: { duration: kenBurns ? interval / 1000 + 2 : 0, ease: "linear" },
           }}
         />
       </AnimatePresence>

@@ -11,7 +11,7 @@ interface CourseHeroProps {
 
 const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
   return (
-    <section className="relative bg-primary overflow-hidden min-h-[340px] md:min-h-[420px]">
+    <section className="relative bg-[hsl(var(--hero-overlay))] overflow-hidden min-h-[340px] md:min-h-[420px]">
       {/* Cinematic slideshow background with Ken Burns */}
       <div className="absolute inset-0 z-0">
         <ImageSlideshow
@@ -21,14 +21,14 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
           imgClassName="absolute inset-0 h-full w-full object-cover object-center"
           width={1280}
           height={720}
-          interval={5000}
+          interval={7000}
           loading="eager"
           showDots={false}
           kenBurns={true}
         />
         {/* Cinematic gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.7)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.8)] via-transparent to-[hsl(var(--hero-overlay)/0.3)]" />
       </div>
 
       <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-16 md:py-24 flex flex-col justify-end min-h-[340px] md:min-h-[420px]">

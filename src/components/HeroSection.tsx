@@ -16,7 +16,7 @@ const HeroSection = () => {
         imgClassName="absolute inset-0 h-full w-full object-contain object-center"
         width={1920}
         height={900}
-        interval={5000}
+        interval={7000}
         loading="eager"
         showDots={true}
       />
