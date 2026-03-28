@@ -8,7 +8,7 @@ const heroImages = [heroBg, heroBg2, heroBg3];
 
 const HeroSection = () => {
   return (
-    <section className="relative h-[70vh] min-h-[500px] flex items-center overflow-hidden">
+    <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
       <ImageSlideshow
         images={heroImages}
         alt="Professional AI training"
