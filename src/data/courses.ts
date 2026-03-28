@@ -1,3 +1,35 @@
+import courseAgenticAi1 from "@/assets/course-agentic-ai-1.jpg";
+import courseAgenticAi2 from "@/assets/course-agentic-ai-2.jpg";
+import courseAgenticAi3 from "@/assets/course-agentic-ai-3.jpg";
+import courseDatascience1 from "@/assets/course-datascience-1.jpg";
+import courseDatascience2 from "@/assets/course-datascience-2.jpg";
+import courseDatascience3 from "@/assets/course-datascience-3.jpg";
+import courseFintech1 from "@/assets/course-fintech-1.jpg";
+import courseFintech2 from "@/assets/course-fintech-2.jpg";
+import courseFintech3 from "@/assets/course-fintech-3.jpg";
+import courseAutomation1 from "@/assets/course-automation-1.jpg";
+import courseAutomation2 from "@/assets/course-automation-2.jpg";
+import courseAutomation3 from "@/assets/course-automation-3.jpg";
+import courseCyber1 from "@/assets/course-cyber-1.jpg";
+import courseCyber2 from "@/assets/course-cyber-2.jpg";
+import courseCyber3 from "@/assets/course-cyber-3.jpg";
+import courseLeadership1 from "@/assets/course-leadership-1.jpg";
+import courseLeadership2 from "@/assets/course-leadership-2.jpg";
+import courseLeadership3 from "@/assets/course-leadership-3.jpg";
+
+const categoryImages: Record<string, string[]> = {
+  "Agentic AI Workshop Series": [courseAgenticAi1, courseAgenticAi2, courseAgenticAi3],
+  "Data Science": [courseDatascience1, courseDatascience2, courseDatascience3],
+  "Fintech / Algorithmic Trading": [courseFintech1, courseFintech2, courseFintech3],
+  "AI Automation and Agents": [courseAutomation1, courseAutomation2, courseAutomation3],
+  "Cyber Defence": [courseCyber1, courseCyber2, courseCyber3],
+  "AI Leadership and Governance": [courseLeadership1, courseLeadership2, courseLeadership3],
+  "MCC+ Cyber Defence Certification": [courseCyber1, courseCyber2, courseCyber3],
+};
+
+export const getCategoryImages = (category: string): string[] =>
+  categoryImages[category] || [courseAgenticAi1, courseAgenticAi2, courseAgenticAi3];
+
 export interface Course {
   slug: string;
   title: string;
