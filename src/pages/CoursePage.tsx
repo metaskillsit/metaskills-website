@@ -15,6 +15,7 @@ import {
   Play,
 } from "lucide-react";
 import { getCourseBySlug, courses, getCategoryImages } from "@/data/courses";
+import { getCourseImages } from "@/data/courseImages";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import ImageSlideshow from "@/components/ImageSlideshow";
@@ -56,7 +57,7 @@ const CoursePage = () => {
     );
   }
 
-  const categoryImages = getCategoryImages(course.category);
+  const categoryImages = getCourseImages(course.slug);
 
   return (
     <div className="min-h-screen bg-background">
