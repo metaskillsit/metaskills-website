@@ -28,6 +28,7 @@ const navGroups: NavGroup[] = [
       { label: "About Us", href: "/about" },
       { label: "Our Faculty", href: "/faculty" },
       { label: "Partners", href: "/partners" },
+      { label: "Our Clients", href: "/clients" },
       { label: "Learning Spaces", href: "/locations" },
     ],
   },
