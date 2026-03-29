@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import location1Img from "@/assets/location1.jpg";
-import trainingCentreImg from "@/assets/training-centre.jpg";
+import facilityImg from "@/assets/facility.jpg";
 import location2Img from "@/assets/location2.jpg";
 
 const locations = [
@@ -13,7 +13,7 @@ const locations = [
   {
     name: "Training Centre",
     description: "Modern collaborative learning spaces designed for immersive, project-based programmes.",
-    image: trainingCentreImg,
+    image: facilityImg,
   },
   {
     name: "Innovation Lab",

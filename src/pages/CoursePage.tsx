@@ -20,7 +20,6 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import ImageSlideshow from "@/components/ImageSlideshow";
 import CourseHero from "@/components/course/CourseHero";
-import CourseTrackRecord from "@/components/course/CourseTrackRecord";
 import CourseContent from "@/components/course/CourseContent";
 import CourseSidebar from "@/components/course/CourseSidebar";
 import CoursePolicies from "@/components/course/CoursePolicies";
@@ -83,9 +82,6 @@ const CoursePage = () => {
             </div>
           </div>
         </section>
-
-        {/* === TRACK RECORD SHOWCASE === */}
-        <CourseTrackRecord course={course} />
 
         {/* === MAIN CONTENT === */}
         <div className="max-w-[1140px] mx-auto px-6 py-14">
