@@ -44,13 +44,13 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              className="border-t border-primary-foreground/20 pt-6"
+              className="border-t border-white/20 pt-6"
             >
-              <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
+              <p className="text-white/85 text-sm leading-relaxed mb-6">
                 "{t.quote}"
               </p>
               <p className="text-sm font-semibold text-accent">{t.author}</p>
-              <p className="text-xs text-primary-foreground/50">{t.role}</p>
+              <p className="text-xs text-white/60">{t.role}</p>
             </motion.div>
           ))}
         </div>

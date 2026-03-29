@@ -40,14 +40,14 @@ const FooterSection = () => {
               alt="Metaskills Institute"
               className="h-12 w-auto object-contain mb-4"
             />
-            <p className="text-sm text-primary-foreground/60 leading-relaxed">
+            <p className="text-sm text-white/70 leading-relaxed">
               ASEAN's go-to partner for Agentic AI, Algorithmic Trading, and
               Cybersecurity capability building.
             </p>
           </div>
           {footerLinks.map((group) => (
             <div key={group.title}>
-              <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-primary-foreground/80 mb-4">
+              <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-white/90 mb-4">
                 {group.title}
               </h4>
               <ul className="space-y-2">
@@ -55,7 +55,7 @@ const FooterSection = () => {
                   <li key={link.label}>
                     <Link
                       to={link.href}
-                      className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
+                      className="text-sm text-white/60 hover:text-accent transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -66,15 +66,15 @@ const FooterSection = () => {
           ))}
         </div>
 
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-primary-foreground/40">
+        <div className="border-t border-white/15 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-white/50">
             © {new Date().getFullYear()} Metaskills Institute. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-primary-foreground/40 hover:text-accent transition-colors">
+            <a href="#" className="text-xs text-white/50 hover:text-accent transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-xs text-primary-foreground/40 hover:text-accent transition-colors">
+            <a href="#" className="text-xs text-white/50 hover:text-accent transition-colors">
               Terms of Service
             </a>
           </div>

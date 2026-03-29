@@ -115,12 +115,12 @@ const ProgramsSection = () => {
   return (
     <section id="courses" className="bg-background">
       <div className="relative h-[280px] bg-primary overflow-hidden flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary to-primary/80" />
+        <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-6 w-full">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white">
             Our Programmes
           </h2>
-          <p className="text-primary-foreground/70 mt-3 text-lg max-w-xl">
+          <p className="text-white/75 mt-3 text-lg max-w-xl">
             Find the right programme for you.
           </p>
         </div>
