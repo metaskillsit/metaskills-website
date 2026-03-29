@@ -26,7 +26,7 @@ import CourseSidebar from "@/components/course/CourseSidebar";
 import CoursePolicies from "@/components/course/CoursePolicies";
 import CourseRelated from "@/components/course/CourseRelated";
 import CourseGallery from "@/components/course/CourseGallery";
-
+import CoursePastRuns from "@/components/course/CoursePastRuns";
 const CoursePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
