@@ -138,6 +138,9 @@ export const courses: Course[] = [
     tagline: "Python Programming | Machine Learning | Data Analytics",
     heroImage: "/src/assets/course-python.png",
     jointlyOfferedBy: "JCube Institute & Metaskills Institute",
+    totalRuns: 20,
+    totalParticipants: "500+",
+    runHistory: "Over 20 runs conducted since 2019. Faculty have collectively trained 10,000+ professionals.",
     whyAttend:
       "Taught by Leading Singaporean Data Scientists working on existing Data Science and A.I Projects with MNCs and Government Bodies. This programme is uniquely designed by industry leaders in Data Science, AI, Machine Learning and Deep Learning.",
     objectives: [
@@ -160,7 +163,7 @@ export const courses: Course[] = [
       { day: "Session 2 (15 hours)", items: ["Class 1: Weekday evening", "Class 2: Weekday evening", "Class 3: Full Saturday"] },
     ],
     nextRunDate: "Contact admissions@metaskills.sg for next run dates",
-    fees: { selfSponsored: "Contact for pricing", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
+    fees: { selfSponsored: "S$3,000 (CITREP+ eligible)", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
   },
   {
     slug: "certified-data-analyst",
@@ -169,12 +172,19 @@ export const courses: Course[] = [
     tagline: "Industry-recognised Data Analyst certification designed for career advancement.",
     heroImage: "/src/assets/course-python.png",
     jointlyOfferedBy: "JCube Institute & Metaskills Institute",
-    whyAttend: "The Certified Data Analyst programme equips you with the analytical skills and tools needed to extract insights from complex datasets. This certification is recognised across Singapore and ASEAN.",
+    totalRuns: 15,
+    totalParticipants: "300+",
+    runHistory: "Multiple runs since 2020. CITREP+ endorsed. Faculty trained 10,000+ professionals across JCube programmes.",
+    whyAttend: "The Certified Data Analyst programme equips you with the analytical skills and tools needed to extract insights from complex datasets. This certification is endorsed by CITREP+ and recognised across Singapore and ASEAN. Singaporeans/PRs may be eligible for up to S$3,000 subsidy.",
     objectives: ["Master data wrangling, cleaning, and transformation techniques.", "Build proficiency in statistical analysis and hypothesis testing.", "Create compelling data visualizations and dashboards.", "Apply machine learning fundamentals to real-world business problems.", "Earn an industry-recognised certification from JCube Institute."],
-    courseDesign: "A comprehensive programme combining theoretical foundations with hands-on projects using real-world datasets.",
-    schedule: [{ day: "Programme Structure", items: ["Modular learning with flexible scheduling", "Hands-on lab sessions", "Capstone project and peer review", "Certification examination"] }],
+    courseDesign: "A comprehensive programme conducted over 2 blocks of 15 hours each (2 weekday evenings + full Saturday per block). Total: 30 hours.",
+    duration: "30 hours",
+    schedule: [
+      { day: "Block 1 (15 hours)", items: ["Weekday evening session", "Weekday evening session", "Full Saturday session"] },
+      { day: "Block 2 (15 hours)", items: ["Weekday evening session", "Weekday evening session", "Full Saturday session"] },
+    ],
     nextRunDate: "Contact admissions@metaskills.sg for next run dates",
-    fees: { selfSponsored: "Contact for pricing", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
+    fees: { selfSponsored: "S$3,000 (CITREP+ eligible — nett from S$300)", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
   },
   {
     slug: "certified-data-scientist",
