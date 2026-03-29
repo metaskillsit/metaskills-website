@@ -59,6 +59,7 @@ const CoursePage = () => {
   }
 
   const categoryImages = getCourseImages(course.slug);
+  const pastRuns = getPastRuns(course.slug);
 
   return (
     <div className="min-h-screen bg-background">
