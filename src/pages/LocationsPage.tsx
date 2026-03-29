@@ -10,7 +10,7 @@ const locations = [
   {
     name: "Singapore HQ — CT Hub 2",
     description: "Located at 114 Lavender Street, CT Hub 2, #07-74, Singapore 338729. Our main campus equipped with state-of-the-art facilities for hands-on AI training and workshops.",
-    image: location1Img,
+    image: cthub2Img,
   },
   {
     name: "Training Centre",
