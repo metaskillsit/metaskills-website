@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Award } from "lucide-react";
+import { ArrowLeft, Award, Users, RotateCcw } from "lucide-react";
 import { Course } from "@/data/courses";
 import ImageSlideshow from "@/components/ImageSlideshow";
 
@@ -60,6 +60,30 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
           <p className="text-primary-foreground/70 text-lg leading-relaxed max-w-2xl">
             {course.tagline}
           </p>
+
+          {/* Stats badges */}
+          {(course.totalRuns || course.totalParticipants) && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="flex flex-wrap gap-3 mt-5"
+            >
+              {course.totalRuns && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent/20 border border-accent/30 rounded-full text-accent text-sm font-semibold backdrop-blur-sm">
+                  <RotateCcw className="w-3.5 h-3.5" />
+                  {course.totalRuns} Runs Completed
+                </span>
+              )}
+              {course.totalParticipants && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent/20 border border-accent/30 rounded-full text-accent text-sm font-semibold backdrop-blur-sm">
+                  <Users className="w-3.5 h-3.5" />
+                  {course.totalParticipants} Participants Trained
+                </span>
+              )}
+            </motion.div>
+          )}
+
           {course.jointlyOfferedBy && (
             <motion.p
               initial={{ opacity: 0 }}
