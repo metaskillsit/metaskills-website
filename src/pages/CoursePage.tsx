@@ -96,6 +96,7 @@ const CoursePage = () => {
           </div>
         </div>
 
+        <CoursePastRuns pastRuns={pastRuns} courseTitle={course.title} />
         <CoursePolicies />
         <CourseRelated relatedCourses={relatedCourses} />
       </main>
