@@ -50,6 +50,9 @@ export interface Course {
   jointlyOfferedBy?: string;
   whatYouLearn?: string[];
   afterCompleting?: string[];
+  totalRuns?: number;
+  totalParticipants?: string;
+  runHistory?: string;
 }
 
 export const courses: Course[] = [
@@ -135,6 +138,9 @@ export const courses: Course[] = [
     tagline: "Python Programming | Machine Learning | Data Analytics",
     heroImage: "/src/assets/course-python.png",
     jointlyOfferedBy: "JCube Institute & Metaskills Institute",
+    totalRuns: 20,
+    totalParticipants: "500+",
+    runHistory: "Over 20 runs conducted since 2019. Faculty have collectively trained 10,000+ professionals.",
     whyAttend:
       "Taught by Leading Singaporean Data Scientists working on existing Data Science and A.I Projects with MNCs and Government Bodies. This programme is uniquely designed by industry leaders in Data Science, AI, Machine Learning and Deep Learning.",
     objectives: [
@@ -157,7 +163,7 @@ export const courses: Course[] = [
       { day: "Session 2 (15 hours)", items: ["Class 1: Weekday evening", "Class 2: Weekday evening", "Class 3: Full Saturday"] },
     ],
     nextRunDate: "Contact admissions@metaskills.sg for next run dates",
-    fees: { selfSponsored: "Contact for pricing", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
+    fees: { selfSponsored: "S$3,000 (CITREP+ eligible)", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
   },
   {
     slug: "certified-data-analyst",
@@ -166,12 +172,19 @@ export const courses: Course[] = [
     tagline: "Industry-recognised Data Analyst certification designed for career advancement.",
     heroImage: "/src/assets/course-python.png",
     jointlyOfferedBy: "JCube Institute & Metaskills Institute",
-    whyAttend: "The Certified Data Analyst programme equips you with the analytical skills and tools needed to extract insights from complex datasets. This certification is recognised across Singapore and ASEAN.",
+    totalRuns: 15,
+    totalParticipants: "300+",
+    runHistory: "Multiple runs since 2020. CITREP+ endorsed. Faculty trained 10,000+ professionals across JCube programmes.",
+    whyAttend: "The Certified Data Analyst programme equips you with the analytical skills and tools needed to extract insights from complex datasets. This certification is endorsed by CITREP+ and recognised across Singapore and ASEAN. Singaporeans/PRs may be eligible for up to S$3,000 subsidy.",
     objectives: ["Master data wrangling, cleaning, and transformation techniques.", "Build proficiency in statistical analysis and hypothesis testing.", "Create compelling data visualizations and dashboards.", "Apply machine learning fundamentals to real-world business problems.", "Earn an industry-recognised certification from JCube Institute."],
-    courseDesign: "A comprehensive programme combining theoretical foundations with hands-on projects using real-world datasets.",
-    schedule: [{ day: "Programme Structure", items: ["Modular learning with flexible scheduling", "Hands-on lab sessions", "Capstone project and peer review", "Certification examination"] }],
+    courseDesign: "A comprehensive programme conducted over 2 blocks of 15 hours each (2 weekday evenings + full Saturday per block). Total: 30 hours.",
+    duration: "30 hours",
+    schedule: [
+      { day: "Block 1 (15 hours)", items: ["Weekday evening session", "Weekday evening session", "Full Saturday session"] },
+      { day: "Block 2 (15 hours)", items: ["Weekday evening session", "Weekday evening session", "Full Saturday session"] },
+    ],
     nextRunDate: "Contact admissions@metaskills.sg for next run dates",
-    fees: { selfSponsored: "Contact for pricing", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
+    fees: { selfSponsored: "S$3,000 (CITREP+ eligible — nett from S$300)", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
   },
   {
     slug: "certified-data-scientist",
@@ -195,12 +208,15 @@ export const courses: Course[] = [
     category: "Fintech / Algorithmic Trading",
     tagline: "Data-driven trading strategies powered by automation and analytics for financial markets.",
     heroImage: "/src/assets/course-agentic1.png",
-    whyAttend: "Learn the foundations of algorithmic trading, from technical analysis to automated strategy development.",
-    objectives: ["Understand the fundamentals of algorithmic trading and quantitative finance.", "Learn technical analysis indicators and chart pattern recognition.", "Build basic automated trading strategies using code.", "Understand risk management and backtesting principles.", "Gain hands-on experience with trading platforms and APIs."],
-    courseDesign: "A practical workshop combining financial theory with hands-on coding exercises.",
-    schedule: [{ day: "Workshop Structure", items: ["Technical analysis fundamentals and indicator design", "Strategy development and coding exercises", "Backtesting and performance evaluation", "Risk management frameworks"] }],
-    nextRunDate: "Contact admissions@metaskills.sg for next run dates",
-    fees: { selfSponsored: "Contact for pricing", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
+    totalRuns: 11,
+    totalParticipants: "140+",
+    runHistory: "Run 1–10 fully subscribed (12–16 pax each). Run 11 open for registration.",
+    whyAttend: "Learn the foundations of algorithmic trading, from technical analysis to automated strategy development. This course teaches you the essentials of trading on MetaTrader 4 (MT4) and how to auto-trade strategies using expert advisors to generate consistent income.",
+    objectives: ["Understand the fundamentals of algorithmic trading and quantitative finance.", "Learn technical analysis indicators and chart pattern recognition.", "Build basic automated trading strategies using code.", "Understand risk management and backtesting principles.", "Gain hands-on experience with trading platforms and APIs.", "Set up VPS to trade 24×7.", "Learn trading psychology and risk mitigation."],
+    courseDesign: "A practical 3-evening workshop (7 pm – 10 pm) combining financial theory with hands-on coding exercises. Classes are on-site at CT Hub premises. Class sizes are capped to enhance learning.",
+    schedule: [{ day: "Evening 1", items: ["Market profile of forex, gold & crypto", "Choosing the right MT4 broker", "Power of leverage and compounding"] }, { day: "Evening 2", items: ["Trading framework and indicators", "Setup trading environment", "Auto trading with Expert Advisors"] }, { day: "Evening 3", items: ["Trading psychology", "Strategy optimisation", "VPS setup for 24/7 trading"] }],
+    nextRunDate: "Run 11 – Registration Open\nContact admissions@metaskills.sg",
+    fees: { selfSponsored: "S$2,750", corporateSmall: "Special rates for JCube/MSI alumni", corporateLarge: "Contact for group rates" },
   },
   {
     slug: "algorithmic-trading-level-2",
@@ -208,11 +224,15 @@ export const courses: Course[] = [
     category: "Fintech / Algorithmic Trading",
     tagline: "Advanced algorithmic strategies and portfolio optimization for financial professionals.",
     heroImage: "/src/assets/course-agentic2.png",
+    totalRuns: 4,
+    totalParticipants: "50+",
+    runHistory: "Run 1–3 fully subscribed. Run 4 open for registration.",
+    jointlyOfferedBy: "JCube Institute & Metaskills Institute",
     whyAttend: "Building on Level 1, this advanced programme dives deep into sophisticated trading algorithms, machine learning-driven strategies, and portfolio optimization techniques.",
     objectives: ["Design and implement advanced algorithmic trading strategies.", "Apply machine learning techniques to financial market prediction.", "Master portfolio optimization and multi-asset allocation.", "Develop high-frequency and event-driven trading systems.", "Understand regulatory considerations for algorithmic trading."],
-    courseDesign: "An advanced workshop for participants with foundational trading knowledge.",
+    courseDesign: "An advanced workshop for participants with foundational trading knowledge. Classes are on-site at CT Hub premises.",
     schedule: [{ day: "Workshop Structure", items: ["Advanced strategy design and ML-driven models", "Portfolio optimization and risk analytics", "High-frequency trading concepts", "Live trading simulation and review"] }],
-    nextRunDate: "Contact admissions@metaskills.sg for next run dates",
+    nextRunDate: "Run 4 – Registration Open\nContact admissions@metaskills.sg",
     fees: { selfSponsored: "Contact for pricing", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
   },
 
