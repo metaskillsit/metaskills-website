@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import location1Img from "@/assets/location1.jpg";
+import cthub2Img from "@/assets/cthub2-building.jpg";
 import trainingCenterImg from "@/assets/training-center-real.png";
-import classroomImg from "@/assets/classroom-cthub2.jpg";
+import classroomImg from "@/assets/classroom-cthub2-edited.jpg";
 
 const locations = [
   {
