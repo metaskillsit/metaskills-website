@@ -26,9 +26,9 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
           showDots={false}
           kenBurns={true}
         />
-        {/* Cinematic gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.7)] to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.8)] via-transparent to-[hsl(var(--hero-overlay)/0.3)]" />
+        {/* Cinematic gradient overlay — stronger for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.97)] via-[hsl(var(--hero-overlay)/0.82)] to-[hsl(var(--hero-overlay)/0.4)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.85)] via-transparent to-[hsl(var(--hero-overlay)/0.4)]" />
       </div>
 
       <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-16 md:py-24 flex flex-col justify-end min-h-[340px] md:min-h-[420px]">
