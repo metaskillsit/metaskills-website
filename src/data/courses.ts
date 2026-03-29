@@ -50,6 +50,9 @@ export interface Course {
   jointlyOfferedBy?: string;
   whatYouLearn?: string[];
   afterCompleting?: string[];
+  totalRuns?: number;
+  totalParticipants?: string;
+  runHistory?: string;
 }
 
 export const courses: Course[] = [
