@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { getPastRuns } from "@/data/pastRuns";
 import {
   ArrowLeft,
   Calendar,
