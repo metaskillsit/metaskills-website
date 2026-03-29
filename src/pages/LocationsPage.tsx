@@ -3,8 +3,8 @@ import { MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import location1Img from "@/assets/location1.jpg";
-import facilityImg from "@/assets/facility.jpg";
-import location2Img from "@/assets/location2.jpg";
+import trainingCenterImg from "@/assets/training-center-real.png";
+import classroomImg from "@/assets/classroom-cthub2.jpg";
 
 const locations = [
   {
@@ -15,12 +15,12 @@ const locations = [
   {
     name: "Training Centre",
     description: "Modern collaborative learning spaces designed for immersive, project-based programmes.",
-    image: facilityImg,
+    image: trainingCenterImg,
   },
   {
     name: "Innovation Lab",
     description: "A dedicated space for AI research, prototyping, and industry collaborations.",
-    image: location2Img,
+    image: classroomImg,
   },
 ];
 
