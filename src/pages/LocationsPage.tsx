@@ -15,12 +15,12 @@ const locations = [
   {
     name: "Training Centre",
     description: "Modern collaborative learning spaces designed for immersive, project-based programmes.",
-    image: facilityImg,
+    image: trainingCenterImg,
   },
   {
     name: "Innovation Lab",
     description: "A dedicated space for AI research, prototyping, and industry collaborations.",
-    image: location2Img,
+    image: classroomImg,
   },
 ];
 
