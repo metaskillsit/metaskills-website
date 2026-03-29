@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import location1Img from "@/assets/location1.jpg";
+import cthub2Img from "@/assets/cthub2-building.jpg";
 import trainingCenterImg from "@/assets/training-center-real.png";
-import classroomImg from "@/assets/classroom-cthub2.jpg";
+import classroomImg from "@/assets/classroom-cthub2-edited.jpg";
 
 const locations = [
   {
     name: "Singapore HQ — CT Hub 2",
     description: "Located at 114 Lavender Street, CT Hub 2, #07-74, Singapore 338729. Our main campus equipped with state-of-the-art facilities for hands-on AI training and workshops.",
-    image: location1Img,
+    image: cthub2Img,
   },
   {
     name: "Training Centre",
