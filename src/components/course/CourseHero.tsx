@@ -34,7 +34,7 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
       <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-16 md:py-24 flex flex-col justify-end min-h-[340px] md:min-h-[420px]">
         <Link
           to="/programmes"
-          className="inline-flex items-center gap-2 text-primary-foreground/50 hover:text-accent transition-colors mb-6 text-sm group w-fit"
+          className="inline-flex items-center gap-2 text-white/60 hover:text-accent transition-colors mb-6 text-sm group w-fit"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           All Programmes
@@ -54,10 +54,10 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
           >
             {course.category}
           </motion.p>
-          <h1 className="font-heading text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary-foreground leading-tight mb-4">
+          <h1 className="font-heading text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-tight mb-4 drop-shadow-lg">
             {course.title}
           </h1>
-          <p className="text-primary-foreground/70 text-lg leading-relaxed max-w-2xl">
+          <p className="text-white/80 text-lg leading-relaxed max-w-2xl drop-shadow-md">
             {course.tagline}
           </p>
           {course.jointlyOfferedBy && (
