@@ -5,6 +5,7 @@ import FooterSection from "@/components/FooterSection";
 import cthub2Img from "@/assets/cthub2-building.jpg";
 import trainingCenterImg from "@/assets/training-center-real.png";
 import classroomImg from "@/assets/classroom-cthub2-edited.jpg";
+import conferenceRoomImg from "@/assets/conference-room.jpg";
 
 const locations = [
   {
@@ -21,6 +22,11 @@ const locations = [
     name: "Innovation Lab",
     description: "A dedicated space for AI research, prototyping, and industry collaborations.",
     image: classroomImg,
+  },
+  {
+    name: "Conference Room",
+    description: "Fully equipped boardroom with presentation displays and whiteboard for strategy sessions and corporate workshops.",
+    image: conferenceRoomImg,
   },
 ];
 
