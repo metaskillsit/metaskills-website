@@ -111,35 +111,6 @@ const ClientsPage = () => {
           </div>
         </section>
 
-        {/* Featured Clients — Large Logo Bar */}
-        <section className="py-16 bg-muted/30">
-          <div className="max-w-[1140px] mx-auto px-6">
-            <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-muted-foreground text-center mb-10">
-              Featured Clients
-            </h2>
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
-              {featuredClients.map((client, i) => (
-                <motion.div
-                  key={client.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="group"
-                >
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    loading="lazy"
-                    width={512}
-                    height={512}
-                    className="h-16 md:h-20 w-auto max-w-[140px] object-contain transition-all duration-500"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Full Client Grid by Category */}
         <section className="py-16 md:py-20">
