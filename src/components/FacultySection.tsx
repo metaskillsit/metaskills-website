@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState, useCallback } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const allFaculty = [
@@ -59,27 +59,43 @@ const allFaculty = [
   },
 ];
 
-const VISIBLE = 4;
 const AUTO_INTERVAL = 4000;
+const GAP = 32; // gap-8 = 32px
 
 const FacultySection = () => {
-  const [startIdx, setStartIdx] = useState(0);
-  const maxStart = allFaculty.length - VISIBLE;
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardWidth, setCardWidth] = useState(0);
+  const maxIdx = allFaculty.length - 4;
+
+  const updateCardWidth = useCallback(() => {
+    if (trackRef.current) {
+      const containerWidth = trackRef.current.parentElement?.clientWidth || 0;
+      setCardWidth((containerWidth - GAP * 3) / 4);
+    }
+  }, []);
+
+  useEffect(() => {
+    updateCardWidth();
+    window.addEventListener("resize", updateCardWidth);
+    return () => window.removeEventListener("resize", updateCardWidth);
+  }, [updateCardWidth]);
 
   const next = useCallback(() => {
-    setStartIdx((prev) => (prev >= maxStart ? 0 : prev + 1));
-  }, [maxStart]);
+    setCurrentIdx((prev) => (prev >= maxIdx ? 0 : prev + 1));
+  }, [maxIdx]);
 
   const prev = useCallback(() => {
-    setStartIdx((prev) => (prev <= 0 ? maxStart : prev - 1));
-  }, [maxStart]);
+    setCurrentIdx((prev) => (prev <= 0 ? maxIdx : prev - 1));
+  }, [maxIdx]);
 
   useEffect(() => {
     const timer = setInterval(next, AUTO_INTERVAL);
     return () => clearInterval(timer);
   }, [next]);
 
-  const visible = allFaculty.slice(startIdx, startIdx + VISIBLE);
+  const translateX = currentIdx * (cardWidth + GAP);
 
   return (
     <section id="faculty" className="bg-muted">
@@ -118,44 +134,40 @@ const FacultySection = () => {
 
         {/* Progress dots */}
         <div className="flex gap-1.5 mb-8">
-          {Array.from({ length: maxStart + 1 }).map((_, i) => (
+          {Array.from({ length: maxIdx + 1 }).map((_, i) => (
             <button
               key={i}
-              onClick={() => setStartIdx(i)}
+              onClick={() => setCurrentIdx(i)}
               className={`h-1 rounded-full transition-all duration-300 ${
-                i === startIdx ? "w-6 bg-primary" : "w-2 bg-border"
+                i === currentIdx ? "w-6 bg-primary" : "w-2 bg-border"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 overflow-hidden">
-          <AnimatePresence mode="popLayout">
-            {visible.map((f) => (
-              <motion.div
+        <div className="overflow-hidden" ref={trackRef}>
+          <div
+            className="flex gap-8"
+            style={{
+              transform: `translateX(-${translateX}px)`,
+              transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
+            }}
+          >
+            {allFaculty.map((f) => (
+              <div
                 key={f.name}
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.4 }}
-                className="group"
+                ref={cardRef}
+                className="group flex-shrink-0"
+                style={{ width: cardWidth > 0 ? cardWidth : "calc(25% - 24px)" }}
               >
                 <div className="aspect-square overflow-hidden rounded-sm mb-4 bg-muted">
-                  {f.image ? (
-                    <img
-                      src={f.image}
-                      alt={f.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-4xl font-heading font-bold text-muted-foreground/30">
-                        {f.name.charAt(0)}
-                      </span>
-                    </div>
-                  )}
+                  <img
+                    src={f.image}
+                    alt={f.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
                 </div>
                 <h3 className="font-heading text-lg font-bold text-foreground">
                   {f.name}
@@ -164,9 +176,9 @@ const FacultySection = () => {
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   {f.expertise}
                 </p>
-              </motion.div>
+              </div>
             ))}
-          </AnimatePresence>
+          </div>
         </div>
 
         {/* Mobile arrows */}
