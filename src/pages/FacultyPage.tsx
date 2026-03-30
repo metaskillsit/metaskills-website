@@ -89,13 +89,6 @@ const adjunctTrainers = [
     image: "",
     bio: "Magdalene Yang is a Transformational Learning & Development leader within Integrum Global, specializing in organizational change, workforce transformation, and learning consultancy.",
   },
-  {
-    name: "Chua Aik Tuck",
-    role: "Adjunct Trainer",
-    expertise: "Generative AI | Prompt Engineering | LLM Applications | Enterprise AI Systems",
-    image: "",
-    bio: "Chua Aik Tuck is a specialist in generative AI and prompt engineering, with experience building LLM-based domain-specific applications and deploying enterprise hybrid/on-prem AI systems.",
-  },
 ];
 
 interface FacultyMember {
