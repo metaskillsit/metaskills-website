@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, CheckCircle, Clock, Mail } from "lucide-react";
+import { Calendar, CheckCircle, Clock, Mail, TrendingUp, Users, Flame, ArrowRight } from "lucide-react";
 import { CourseRunDate } from "@/data/courseSchedule";
 
 interface CourseScheduleProps {
@@ -12,101 +12,172 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
 
   const pastRuns = schedule.filter((r) => r.status === "full");
   const upcomingRuns = schedule.filter((r) => r.status === "upcoming" || r.status === "filling");
+  const clientRuns = pastRuns.filter((r) => r.client);
+  const uniqueClients = [...new Set(clientRuns.map((r) => r.client))];
 
   return (
-    <section className="border-t border-border bg-muted/20">
-      <div className="max-w-[1140px] mx-auto px-6 py-16">
+    <section className="bg-gradient-to-b from-primary/5 to-background border-b border-border">
+      <div className="max-w-[1140px] mx-auto px-6 py-14">
+        {/* Social Proof Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="mb-10"
         >
-          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">
-            Course Schedule
-          </p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Past & Upcoming Dates
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            View our training schedule. Past runs are fully subscribed — register early for upcoming sessions.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto"
-        >
-          {/* Past Runs */}
-          {pastRuns.length > 0 && (
-            <div className="mb-8">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                Past Runs ({pastRuns.length} completed)
-              </h3>
-              <div className="space-y-2">
-                {pastRuns.map((run, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between p-4 bg-card border border-border rounded-lg"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Calendar className="w-4 h-4 text-muted-foreground" />
-                      <div>
-                        <p className="text-sm font-semibold text-foreground">{run.intake}</p>
-                        <p className="text-xs text-muted-foreground">{run.dates}</p>
-                      </div>
-                    </div>
-                    <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-muted text-muted-foreground border border-border">
-                      Full
-                    </span>
-                  </div>
-                ))}
+          {/* Stats Bar */}
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-8">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-foreground">{pastRuns.length}</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wide">Runs Completed</div>
               </div>
             </div>
-          )}
+            {uniqueClients.length > 0 && (
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-foreground">{uniqueClients.length}</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">Corporate Clients</div>
+                </div>
+              </div>
+            )}
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <Flame className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-foreground">100%</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wide">Fully Subscribed</div>
+              </div>
+            </div>
+          </div>
 
-          {/* Upcoming Runs */}
+          {/* Urgency CTA */}
           {upcomingRuns.length > 0 && (
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4 flex items-center gap-2">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-primary text-primary-foreground rounded-xl p-6 md:p-8 text-center relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--accent)/0.15),transparent_70%)]" />
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-foreground/15 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+                  <Flame className="w-3 h-3" />
+                  Limited Seats Available
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-2">
+                  All {pastRuns.length} past runs were fully subscribed
+                </h3>
+                <p className="text-primary-foreground/80 text-sm mb-5 max-w-lg mx-auto">
+                  Don't miss the next intake. Register early to secure your seat.
+                </p>
+                <a
+                  href="mailto:admissions@metaskills.sg"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary-foreground text-primary font-bold rounded-lg hover:brightness-95 transition-all text-sm"
+                >
+                  <Mail className="w-4 h-4" />
+                  Register for Next Run
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Upcoming Runs - Left, Prominent */}
+          {upcomingRuns.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4 flex items-center gap-2">
                 <Clock className="w-4 h-4 text-accent" />
                 Upcoming Runs
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {upcomingRuns.map((run, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-between p-4 bg-card border border-primary/20 rounded-lg"
+                    className="flex items-center justify-between p-4 bg-card border-2 border-primary/20 rounded-xl hover:border-primary/40 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <Calendar className="w-4 h-4 text-primary" />
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <Calendar className="w-5 h-5 text-primary" />
+                      </div>
                       <div>
                         <p className="text-sm font-semibold text-foreground">{run.intake}</p>
                         <p className="text-xs text-muted-foreground">{run.dates}</p>
                       </div>
                     </div>
                     {run.status === "filling" ? (
-                      <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20">
+                      <span className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20">
+                        <Flame className="w-3 h-3" />
                         Filling Fast
                       </span>
                     ) : (
                       <a
                         href="mailto:admissions@metaskills.sg"
-                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full bg-primary text-primary-foreground hover:brightness-110 transition-all"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg bg-primary text-primary-foreground hover:brightness-110 transition-all"
                       >
                         <Mail className="w-3 h-3" />
-                        Contact Us
+                        Enquire
                       </a>
                     )}
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           )}
-        </motion.div>
+
+          {/* Past Runs - Right, Compact */}
+          {pastRuns.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4 flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                Past Runs ({pastRuns.length} completed)
+              </h3>
+              <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2 scrollbar-thin">
+                {pastRuns.map((run, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-between p-3 bg-muted/50 border border-border rounded-lg"
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <Calendar className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-foreground truncate">{run.intake}</p>
+                        <p className="text-xs text-muted-foreground">{run.dates}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      {run.client && (
+                        <span className="hidden sm:inline-flex px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-primary/10 text-primary border border-primary/20">
+                          {run.client}
+                        </span>
+                      )}
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-muted text-muted-foreground border border-border">
+                        Full
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </div>
       </div>
     </section>
   );

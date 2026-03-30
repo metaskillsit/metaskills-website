@@ -29,12 +29,12 @@ import CourseRelated from "@/components/course/CourseRelated";
 import CourseGallery from "@/components/course/CourseGallery";
 import CoursePastRuns from "@/components/course/CoursePastRuns";
 import CourseSchedule from "@/components/course/CourseSchedule";
+
 const CoursePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const course = getCourseBySlug(slug || "");
 
-  // Scroll to top on slug change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [slug]);
@@ -88,6 +88,9 @@ const CoursePage = () => {
           </div>
         </section>
 
+        {/* === COURSE SCHEDULE (TOP - Social Proof + CTA) === */}
+        <CourseSchedule schedule={courseSchedule} courseTitle={course.title} />
+
         {/* === MAIN CONTENT === */}
         <div className="max-w-[1140px] mx-auto px-6 py-14">
           <div className="grid lg:grid-cols-3 gap-14">
@@ -99,7 +102,6 @@ const CoursePage = () => {
           </div>
         </div>
 
-        <CourseSchedule schedule={courseSchedule} courseTitle={course.title} />
         <CoursePastRuns pastRuns={pastRuns} courseTitle={course.title} />
         <CoursePolicies />
         <CourseRelated relatedCourses={relatedCourses} />
