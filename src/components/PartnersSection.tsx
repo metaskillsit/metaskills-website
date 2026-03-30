@@ -57,7 +57,7 @@ const PartnersSection = () => {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full w-auto max-w-[160px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                  className="max-h-full w-auto max-w-[160px] object-contain transition-all duration-300"
                   loading="lazy"
                 />
               </div>
