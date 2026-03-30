@@ -20,6 +20,13 @@ import certisLogo from "@/assets/clients/certis.png";
 import safraLogo from "@/assets/clients/safra.png";
 import kkhLogo from "@/assets/clients/kkh.png";
 import dstaLogo from "@/assets/clients/dsta.png";
+import bcaLogo from "@/assets/clients/bca-academy.png";
+import neaLogo from "@/assets/clients/nea.png";
+import customsLogo from "@/assets/clients/singapore-customs.png";
+import mddiLogo from "@/assets/clients/mddi.png";
+import paLogo from "@/assets/clients/peoples-association.png";
+import momLogo from "@/assets/clients/mom.png";
+import mohLogo from "@/assets/clients/moh.png";
 
 interface Client {
   name: string;
@@ -50,18 +57,18 @@ const allClients: Client[] = [
   { name: "SAFRA", logo: safraLogo, category: "Government & Defence" },
   { name: "KK Women's & Children's Hospital", logo: kkhLogo, category: "Healthcare" },
   { name: "DSTA", logo: dstaLogo, category: "Government & Defence" },
+  { name: "BCA Academy", logo: bcaLogo, category: "Government & Defence" },
+  { name: "NEA", logo: neaLogo, category: "Government & Defence" },
+  { name: "Singapore Customs", logo: customsLogo, category: "Government & Defence" },
+  { name: "MDDI", logo: mddiLogo, category: "Government & Defence" },
+  { name: "People's Association", logo: paLogo, category: "Government & Defence" },
+  { name: "Ministry of Manpower", logo: momLogo, category: "Government & Defence" },
+  { name: "Ministry of Health", logo: mohLogo, category: "Healthcare" },
 ];
 
 const additionalOrgs = [
-  "BCA Academy",
-  "National Environment Agency (NEA)",
-  "Singapore Customs",
   "Defence Psychology Department",
   "Golden Equator (Asia Finance)",
-  "Ministry of Communications & Information (MCI)",
-  "Ministry of Health (MOH)",
-  "Ministry of Manpower (MOM)",
-  "People's Association (PA)",
   "Penang State Administration",
   "Nanyang Optical",
   "Red House Seafood",
