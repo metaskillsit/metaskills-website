@@ -3,6 +3,7 @@ import { MapPin } from "lucide-react";
 import cthub2Img from "@/assets/cthub2-building.jpg";
 import trainingCenterImg from "@/assets/training-center-real.png";
 import classroomImg from "@/assets/classroom-cthub2-edited.jpg";
+import conferenceRoomImg from "@/assets/conference-room.jpg";
 
 const locations = [
   {
@@ -19,6 +20,11 @@ const locations = [
     name: "Innovation Lab",
     description: "A dedicated space for AI research, prototyping, and industry collaborations.",
     image: classroomImg,
+  },
+  {
+    name: "Conference Room",
+    description: "Fully equipped boardroom with presentation displays and whiteboard for strategy sessions and corporate workshops.",
+    image: conferenceRoomImg,
   },
 ];
 
@@ -40,7 +46,7 @@ const LocationsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {locations.map((loc, i) => (
             <motion.div
               key={loc.name}
