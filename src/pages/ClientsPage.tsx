@@ -27,6 +27,23 @@ import mddiLogo from "@/assets/clients/mddi.png";
 import paLogo from "@/assets/clients/peoples-association.png";
 import momLogo from "@/assets/clients/mom.png";
 import mohLogo from "@/assets/clients/moh.png";
+import singtelLogo from "@/assets/clients/singtel.png";
+import bocLogo from "@/assets/clients/bank-of-china.png";
+import tcsLogo from "@/assets/clients/tcs.png";
+import hpLogo from "@/assets/clients/hp.png";
+import axaLogo from "@/assets/clients/axa.png";
+import siaLogo from "@/assets/clients/singapore-airlines.png";
+import ingLogo from "@/assets/clients/ing-bank.png";
+import capitalandLogo from "@/assets/clients/capitaland.png";
+import cghLogo from "@/assets/clients/changi-general-hospital.png";
+import hsbcLogo from "@/assets/clients/hsbc.png";
+import sembcorpLogo from "@/assets/clients/sembcorp-marine.png";
+import ttshLogo from "@/assets/clients/ttsh.png";
+import mindchampsLogo from "@/assets/clients/mindchamps.png";
+import mentorMediaLogo from "@/assets/clients/mentor-media.png";
+import fastflowLogo from "@/assets/clients/fastflow.png";
+import wizvisionLogo from "@/assets/clients/wizvision.png";
+import jasonLogo from "@/assets/clients/jason.png";
 
 interface Client {
   name: string;
@@ -34,28 +51,12 @@ interface Client {
   category: string;
 }
 
-const featuredClients: Client[] = [
-  { name: "MINDEF", logo: mindefLogo, category: "Government & Defence" },
-  { name: "OCBC Bank", logo: ocbcLogo, category: "Banking & Finance" },
-  { name: "Maybank", logo: maybankLogo, category: "Banking & Finance" },
-  { name: "UOB", logo: uobLogo, category: "Banking & Finance" },
-  { name: "ST Logistics", logo: stLogLogo, category: "Defence & Logistics" },
-  { name: "IMDA", logo: imdaLogo, category: "Government & Defence" },
-  { name: "NUS", logo: nusLogo, category: "Universities & Education" },
-];
-
 const allClients: Client[] = [
-  ...featuredClients,
+  // Government & Defence
+  { name: "MINDEF", logo: mindefLogo, category: "Government & Defence" },
+  { name: "IMDA", logo: imdaLogo, category: "Government & Defence" },
   { name: "MAS", logo: masLogo, category: "Government & Defence" },
-  { name: "SMU", logo: smuLogo, category: "Universities & Education" },
-  { name: "Ernst & Young", logo: eyLogo, category: "Consulting & Technology" },
-  { name: "Google", logo: googleLogo, category: "Consulting & Technology" },
-  { name: "Panasonic Asia Pacific", logo: panasonicLogo, category: "Consulting & Technology" },
-  { name: "SMRT", logo: smrtLogo, category: "Transport & Infrastructure" },
-  { name: "NEC Asia Pacific", logo: necLogo, category: "Consulting & Technology" },
-  { name: "Certis", logo: certisLogo, category: "Defence & Logistics" },
   { name: "SAFRA", logo: safraLogo, category: "Government & Defence" },
-  { name: "KK Women's & Children's Hospital", logo: kkhLogo, category: "Healthcare" },
   { name: "DSTA", logo: dstaLogo, category: "Government & Defence" },
   { name: "BCA Academy", logo: bcaLogo, category: "Government & Defence" },
   { name: "NEA", logo: neaLogo, category: "Government & Defence" },
@@ -63,7 +64,51 @@ const allClients: Client[] = [
   { name: "MDDI", logo: mddiLogo, category: "Government & Defence" },
   { name: "People's Association", logo: paLogo, category: "Government & Defence" },
   { name: "Ministry of Manpower", logo: momLogo, category: "Government & Defence" },
+
+  // Banking & Finance
+  { name: "OCBC Bank", logo: ocbcLogo, category: "Banking & Finance" },
+  { name: "Maybank", logo: maybankLogo, category: "Banking & Finance" },
+  { name: "UOB", logo: uobLogo, category: "Banking & Finance" },
+  { name: "Bank of China", logo: bocLogo, category: "Banking & Finance" },
+  { name: "HSBC", logo: hsbcLogo, category: "Banking & Finance" },
+  { name: "ING Bank", logo: ingLogo, category: "Banking & Finance" },
+  { name: "AXA", logo: axaLogo, category: "Banking & Finance" },
+
+  // Consulting & Technology
+  { name: "Ernst & Young", logo: eyLogo, category: "Consulting & Technology" },
+  { name: "Google", logo: googleLogo, category: "Consulting & Technology" },
+  { name: "Panasonic Asia Pacific", logo: panasonicLogo, category: "Consulting & Technology" },
+  { name: "NEC Asia Pacific", logo: necLogo, category: "Consulting & Technology" },
+  { name: "HP", logo: hpLogo, category: "Consulting & Technology" },
+  { name: "Tata Consultancy Services", logo: tcsLogo, category: "Consulting & Technology" },
+  { name: "Singtel", logo: singtelLogo, category: "Consulting & Technology" },
+  { name: "WizVision", logo: wizvisionLogo, category: "Consulting & Technology" },
+
+  // Defence & Logistics
+  { name: "ST Logistics", logo: stLogLogo, category: "Defence & Logistics" },
+  { name: "Certis", logo: certisLogo, category: "Defence & Logistics" },
+
+  // Transport & Infrastructure
+  { name: "SMRT", logo: smrtLogo, category: "Transport & Infrastructure" },
+  { name: "Singapore Airlines", logo: siaLogo, category: "Transport & Infrastructure" },
+  { name: "Sembcorp Marine", logo: sembcorpLogo, category: "Transport & Infrastructure" },
+  { name: "CapitaLand", logo: capitalandLogo, category: "Transport & Infrastructure" },
+
+  // Healthcare
+  { name: "KK Women's & Children's Hospital", logo: kkhLogo, category: "Healthcare" },
   { name: "Ministry of Health", logo: mohLogo, category: "Healthcare" },
+  { name: "Tan Tock Seng Hospital", logo: ttshLogo, category: "Healthcare" },
+  { name: "Changi General Hospital", logo: cghLogo, category: "Healthcare" },
+
+  // Universities & Education
+  { name: "NUS", logo: nusLogo, category: "Universities & Education" },
+  { name: "SMU", logo: smuLogo, category: "Universities & Education" },
+  { name: "MindChamps Preschool", logo: mindchampsLogo, category: "Universities & Education" },
+
+  // Media & Services
+  { name: "Mentor Media", logo: mentorMediaLogo, category: "Media & Services" },
+  { name: "Jason Electronics", logo: jasonLogo, category: "Media & Services" },
+  { name: "FastFlow", logo: fastflowLogo, category: "Media & Services" },
 ];
 
 const additionalOrgs = [
@@ -111,7 +156,6 @@ const ClientsPage = () => {
           </div>
         </section>
 
-
         {/* Full Client Grid by Category */}
         <section className="py-16 md:py-20">
           <div className="max-w-[1140px] mx-auto px-6">
@@ -140,14 +184,16 @@ const ClientsPage = () => {
                         transition={{ delay: i * 0.04 }}
                         className="flex flex-col items-center gap-3 p-5 rounded-lg border border-border/50 bg-card hover:shadow-lg hover:border-primary/30 transition-all duration-300 group"
                       >
-                        <img
-                          src={client.logo}
-                          alt={client.name}
-                          loading="lazy"
-                          width={512}
-                          height={512}
-                          className="h-14 w-auto max-w-[120px] object-contain transition-all duration-500"
-                        />
+                        <div className="h-14 w-full flex items-center justify-center">
+                          <img
+                            src={client.logo}
+                            alt={client.name}
+                            loading="lazy"
+                            width={512}
+                            height={512}
+                            className="h-14 w-auto max-w-[120px] object-contain"
+                          />
+                        </div>
                         <span className="text-xs text-muted-foreground text-center font-medium">
                           {client.name}
                         </span>
