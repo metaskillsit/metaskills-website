@@ -126,7 +126,7 @@ const ClientsPage = () => {
                     loading="lazy"
                     width={512}
                     height={512}
-                    className="h-16 md:h-20 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500 opacity-70 group-hover:opacity-100"
+                    className="h-16 md:h-20 w-auto max-w-[140px] object-contain transition-all duration-500"
                   />
                 </motion.div>
               ))}
@@ -168,7 +168,7 @@ const ClientsPage = () => {
                           loading="lazy"
                           width={512}
                           height={512}
-                          className="h-14 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                          className="h-14 w-auto max-w-[120px] object-contain transition-all duration-500"
                         />
                         <span className="text-xs text-muted-foreground text-center font-medium">
                           {client.name}

@@ -62,7 +62,7 @@ const PartnersPage = () => {
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="h-20 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="h-20 w-auto object-contain transition-all duration-300"
                     loading="lazy"
                   />
                 </div>
