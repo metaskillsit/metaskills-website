@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { getPastRuns } from "@/data/pastRuns";
+import { getCourseSchedule } from "@/data/courseSchedule";
 import {
   ArrowLeft,
   Calendar,
@@ -27,6 +28,7 @@ import CoursePolicies from "@/components/course/CoursePolicies";
 import CourseRelated from "@/components/course/CourseRelated";
 import CourseGallery from "@/components/course/CourseGallery";
 import CoursePastRuns from "@/components/course/CoursePastRuns";
+import CourseSchedule from "@/components/course/CourseSchedule";
 const CoursePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -60,6 +62,7 @@ const CoursePage = () => {
 
   const categoryImages = getCourseImages(course.slug);
   const pastRuns = getPastRuns(course.slug);
+  const courseSchedule = getCourseSchedule(course.slug);
 
   return (
     <div className="min-h-screen bg-background">
@@ -96,6 +99,7 @@ const CoursePage = () => {
           </div>
         </div>
 
+        <CourseSchedule schedule={courseSchedule} courseTitle={course.title} />
         <CoursePastRuns pastRuns={pastRuns} courseTitle={course.title} />
         <CoursePolicies />
         <CourseRelated relatedCourses={relatedCourses} />
