@@ -8,9 +8,9 @@ export interface CourseRunDate {
 export const courseScheduleData: Record<string, CourseRunDate[]> = {
   // ── Data Science ──
   "python-programming-for-data-analytics": [
-    { intake: "Jun 2020 Class A", dates: "1 Jun – 1 Jul 2020", status: "full" },
-    { intake: "Jun 2020 Class B", dates: "2 Jun – 2 Jul 2020", status: "full" },
-    { intake: "Jul 2020 Class A", dates: "6 Jul – 5 Aug 2020", status: "full" },
+    { intake: "Jun 2020 Run (Corporate)", dates: "1 Jun – 1 Jul 2020", status: "full", client: "Corporate" },
+    { intake: "Jun 2020 Run (Corporate)", dates: "2 Jun – 2 Jul 2020", status: "full", client: "Corporate" },
+    { intake: "Jul 2020 Run (Corporate)", dates: "6 Jul – 5 Aug 2020", status: "full", client: "Corporate" },
     { intake: "Nov 2024 Run (MINDEF)", dates: "14–15 Nov 2024", status: "full", client: "MINDEF" },
     { intake: "Mar 2025 Run (Corporate)", dates: "10–11 Mar 2025", status: "full", client: "Corporate" },
     { intake: "May 2025 Run (Corporate)", dates: "19–20 May 2025", status: "full", client: "Corporate" },
@@ -40,7 +40,7 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
     { intake: "Nov 2025 Run (Corporate)", dates: "3–4 Nov 2025", status: "full", client: "Corporate" },
     // Public runs (e2i)
     { intake: "Dec 2020 Class A (e2i)", dates: "3 Dec 2020 – 23 Jan 2021", status: "full" },
-    { intake: "Dec 2020 (CITREP+)", dates: "3 Dec – 19 Dec 2020", status: "full" },
+    { intake: "Dec 2020 Run (Corporate)", dates: "3 Dec – 19 Dec 2020", status: "full", client: "Corporate" },
     { intake: "Mar 2021 Class (e2i)", dates: "4 Mar – 10 Apr 2021", status: "full" },
     { intake: "Apr 2021 Class (e2i)", dates: "22 Apr – 10 Jul 2021", status: "full" },
     { intake: "May 2021 Class (e2i)", dates: "27 May – 10 Jul 2021", status: "full" },
@@ -68,7 +68,7 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
     { intake: "May 2025 Run (Corporate)", dates: "5–6 May 2025", status: "full", client: "Corporate" },
     { intake: "Jul 2025 Run (Corporate)", dates: "14–15 Jul 2025", status: "full", client: "Corporate" },
     { intake: "Sep 2025 Run (Corporate)", dates: "8–9 Sep 2025", status: "full", client: "Corporate" },
-    { intake: "Nov 2020 Class A", dates: "3 Nov – 17 Dec 2020", status: "full" },
+    { intake: "Nov 2020 Run (Corporate)", dates: "3 Nov – 17 Dec 2020", status: "full", client: "Corporate" },
     { intake: "Upcoming Run", dates: "Contact admissions@metaskills.sg", status: "upcoming" },
   ],
 
@@ -77,23 +77,23 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
     { intake: "Jun 2025 Run (MINDEF)", dates: "12–13 Jun 2025", status: "full", client: "MINDEF" },
     { intake: "Aug 2025 Run (Corporate)", dates: "11–12 Aug 2025", status: "full", client: "Corporate" },
     { intake: "Oct 2025 Run (Corporate)", dates: "20–21 Oct 2025", status: "full", client: "Corporate" },
-    { intake: "Dec 2024 Run", dates: "2–3 Dec 2024", status: "full" },
-    { intake: "Nov 2025 Run", dates: "Nov 2025", status: "full" },
-    { intake: "Jan 2026 Run", dates: "Jan 2026", status: "full" },
+    { intake: "Dec 2024 Run (Corporate)", dates: "2–3 Dec 2024", status: "full", client: "Corporate" },
+    { intake: "Nov 2025 Run (Corporate)", dates: "Nov 2025", status: "full", client: "Corporate" },
+    { intake: "Jan 2026 Run (Corporate)", dates: "Jan 2026", status: "full", client: "Corporate" },
     { intake: "Sep 2025 Run", dates: "18–19 Sep 2025", status: "upcoming" },
   ],
   "agentic-ai-use-case": [
     { intake: "Jun 2025 Run (MINDEF)", dates: "26–27 Jun 2025", status: "full", client: "MINDEF" },
     { intake: "Sep 2025 Run (Corporate)", dates: "15–16 Sep 2025", status: "full", client: "Corporate" },
     { intake: "Nov 2025 Run (Corporate)", dates: "10–11 Nov 2025", status: "full", client: "Corporate" },
-    { intake: "Feb 2026 Run", dates: "Feb 2026", status: "full" },
+    { intake: "Feb 2026 Run (Corporate)", dates: "Feb 2026", status: "full", client: "Corporate" },
     { intake: "Oct 2025 Run", dates: "2–3 Oct 2025", status: "upcoming" },
   ],
   "agentic-ai-deploy-secure-systems": [
     { intake: "Jul 2025 Run (MINDEF)", dates: "31 Jul – 1 Aug 2025", status: "full", client: "MINDEF" },
     { intake: "Oct 2025 Run (Corporate)", dates: "27–28 Oct 2025", status: "full", client: "Corporate" },
     { intake: "Dec 2025 Run (Corporate)", dates: "8–9 Dec 2025", status: "full", client: "Corporate" },
-    { intake: "Mar 2026 Run", dates: "Mar 2026", status: "full" },
+    { intake: "Mar 2026 Run (Corporate)", dates: "Mar 2026", status: "full", client: "Corporate" },
     { intake: "Upcoming Run", dates: "Contact admissions@metaskills.sg", status: "upcoming" },
   ],
 
@@ -102,7 +102,7 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
     { intake: "Oct 2025 Run (Corporate)", dates: "13–14 Oct 2025", status: "full", client: "Corporate" },
     { intake: "Nov 2025 Run (Corporate)", dates: "17–18 Nov 2025", status: "full", client: "Corporate" },
     { intake: "Dec 2025 Run (Corporate)", dates: "8–9 Dec 2025", status: "full", client: "Corporate" },
-    { intake: "Feb 2026 Run", dates: "Feb 2026", status: "full" },
+    { intake: "Feb 2026 Run (Corporate)", dates: "Feb 2026", status: "full", client: "Corporate" },
     { intake: "Upcoming Run", dates: "Contact admissions@metaskills.sg", status: "upcoming" },
   ],
   "algorithmic-trading-level-2": [
