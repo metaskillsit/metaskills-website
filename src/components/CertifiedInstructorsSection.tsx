@@ -38,9 +38,7 @@ const CertifiedInstructorsSection = () => {
           {doubled.map((cert, i) => (
             <div
               key={`${cert.name}-${i}`}
-              className={`flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center ${
-                cert.darkBackdrop ? "bg-foreground rounded-md px-3" : ""
-              }`}
+              className="flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center"
             >
               <img
                 src={cert.logo}
