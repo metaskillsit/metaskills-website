@@ -9,6 +9,10 @@ import pastClass5 from "@/assets/past-class-5.jpg";
 import pastClass6 from "@/assets/past-class-6.jpg";
 import pastClass7 from "@/assets/past-class-7.jpg";
 import pastClass8 from "@/assets/past-class-8.jpg";
+import pastClass9 from "@/assets/past-class-9.jpg";
+import pastClass10 from "@/assets/past-class-10.jpg";
+import pastClass11 from "@/assets/past-class-11.jpg";
+import pastClass12 from "@/assets/past-class-12.jpg";
 
 const photos = [
   { src: pastClass1, caption: "Algorithmic Trading Mastery — Level 1, Run 8" },
@@ -19,11 +23,15 @@ const photos = [
   { src: pastClass6, caption: "Certified Data Analyst — Run 31" },
   { src: pastClass7, caption: "Corporate Training — Small Group Session" },
   { src: pastClass8, caption: "SMU Academy — Algorithmic Trading Cohort" },
+  { src: pastClass9, caption: "SMU Academy — Internationalisation Series" },
+  { src: pastClass10, caption: "Corporate Workshop — Video Conference Session" },
+  { src: pastClass11, caption: "AI Powerhouses — Asia AI Workshop" },
+  { src: pastClass12, caption: "Generative AI — Group Activity & Final Project" },
 ];
 
 // Split into two rows for dual-direction scrolling
-const row1 = photos.slice(0, 4);
-const row2 = photos.slice(4, 8);
+const row1 = photos.slice(0, 6);
+const row2 = photos.slice(6, 12);
 
 const ScrollingRow = ({
   items,
