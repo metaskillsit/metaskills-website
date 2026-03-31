@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { motion } from "framer-motion";
 import { getPastRuns } from "@/data/pastRuns";
 import { getCourseSchedule } from "@/data/courseSchedule";
