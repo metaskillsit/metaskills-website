@@ -3,10 +3,12 @@ import ImageSlideshow from "@/components/ImageSlideshow";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroBg2 from "@/assets/hero-bg-2.jpg";
 import heroBg3 from "@/assets/hero-bg-3.jpg";
+import { useTranslation } from "react-i18next";
 
 const heroImages = [heroBg, heroBg2, heroBg3];
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="relative w-full overflow-hidden bg-[hsl(var(--hero-overlay))] aspect-[4/5] md:aspect-[1920/900]">
       <ImageSlideshow
@@ -32,10 +34,10 @@ const HeroSection = () => {
         >
           <div>
             <h1 className="font-heading text-2xl font-bold leading-none text-foreground md:text-3xl">
-              The AI Institute for Asia
+              {t("hero.title")}
             </h1>
             <p className="mt-1.5 text-xs text-muted-foreground md:text-sm">
-              Equipping professionals with Agentic AI, Algorithmic Trading &amp; Cybersecurity capabilities.
+              {t("hero.subtitle")}
             </p>
           </div>
         </motion.div>
