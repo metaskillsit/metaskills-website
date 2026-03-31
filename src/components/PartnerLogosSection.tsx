@@ -21,7 +21,7 @@ const PartnerLogosSection = () => {
   const doubled = [...partnerLogos, ...partnerLogos];
 
   return (
-    <section className="bg-muted border-t border-border py-12 overflow-hidden">
+    <section className="bg-card border-t border-border py-12 overflow-hidden">
       <div className="max-w-[1140px] mx-auto px-6 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
