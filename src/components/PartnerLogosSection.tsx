@@ -4,13 +4,14 @@ import smuAcademyLogo from "@/assets/logo-smu-academy.png";
 import integrumLogo from "@/assets/partner-integrum.png";
 import jcubeLogo from "@/assets/partner-jcube.jpg";
 import svbbLogo from "@/assets/partner-svbb.png";
+import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 
 const partnerLogos = [
   { name: "AISG", logo: aisgLogo },
-  { name: "ISCA", logo: "https://www.isca.org.sg/Content/img/logo.png" },
+  { name: "ISCA", logo: "https://isca.org.sg/Content/img/logo.png" },
   { name: "SMU Academy", logo: smuAcademyLogo },
   { name: "NUS AIDF", logo: "https://aidf.nus.edu.sg/wp-content/uploads/2023/03/NUS-AIDF-logo-dark.png" },
-  { name: "Tinkercademy", logo: "https://framerusercontent.com/images/bMgq19Cvo9jSECKl8JEaUC60c.png" },
+  { name: "Tinkercademy", logo: tinkercademyLogo },
   { name: "JCube Institute", logo: jcubeLogo },
   { name: "Integrum Global", logo: integrumLogo },
   { name: "Singapore Vietnam Business Bridge", logo: svbbLogo },
@@ -37,16 +38,16 @@ const PartnerLogosSection = () => {
         </motion.div>
       </div>
       <div className="relative">
-        <div className="flex animate-scroll-right gap-20 items-center w-max">
+        <div className="flex animate-scroll-right gap-20 items-center w-max px-10">
           {doubled.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="flex-shrink-0 h-12 md:h-14 flex items-center justify-center"
+              className="flex-shrink-0 w-[160px] h-[52px] flex items-center justify-center"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-full w-auto max-w-[160px] object-contain"
+                className="max-h-[52px] max-w-[160px] w-auto h-auto object-contain"
                 loading="lazy"
               />
             </div>
