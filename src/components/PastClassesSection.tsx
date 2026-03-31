@@ -43,6 +43,7 @@ import pastClass39 from "@/assets/past-class-39.jpg";
 import pastClass40 from "@/assets/past-class-40.jpg";
 import pastClass41 from "@/assets/past-class-41.jpg";
 import pastClass42 from "@/assets/past-class-42.jpg";
+import pastClass43 from "@/assets/past-class-43.jpg";
 
 const photos = [
   { src: pastClass1, caption: "Algorithmic Trading Mastery — Level 1, Run 8" },
@@ -87,12 +88,14 @@ const photos = [
   { src: pastClass40, caption: "Algorithmic Trading Mastery — Level 1, Run 5 Classroom" },
   { src: pastClass41, caption: "CDA Stream A — Virtual Class, June 2020 Cohort" },
   { src: pastClass42, caption: "Online Workshop — Zoom Live Session" },
+  { src: pastClass43, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 2" },
 ];
 
-// Split into two rows for dual-direction scrolling
-const half = Math.ceil(photos.length / 2);
-const row1 = photos.slice(0, half);
-const row2 = photos.slice(half);
+// Split into three rows for a richer visual experience
+const third = Math.ceil(photos.length / 3);
+const row1 = photos.slice(0, third);
+const row2 = photos.slice(third, third * 2);
+const row3 = photos.slice(third * 2);
 
 const ScrollingRow = ({
   items,
@@ -103,13 +106,12 @@ const ScrollingRow = ({
   direction?: "left" | "right";
   speed?: number;
 }) => {
-  // Triple the items for seamless loop
   const tripled = [...items, ...items, ...items];
 
   return (
     <div className="overflow-hidden relative">
       <motion.div
-        className="flex gap-4"
+        className="flex gap-3 md:gap-4"
         animate={{
           x: direction === "left"
             ? ["0%", "-33.333%"]
@@ -126,21 +128,21 @@ const ScrollingRow = ({
         {tripled.map((photo, i) => (
           <div
             key={`${photo.caption}-${i}`}
-            className="flex-shrink-0 w-[340px] md:w-[420px] group relative overflow-hidden rounded-lg"
+            className="flex-shrink-0 w-[300px] md:w-[380px] lg:w-[420px] group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-500"
           >
-            <div className="aspect-[16/10] overflow-hidden">
+            <div className="aspect-[16/10] overflow-hidden bg-muted">
               <img
                 src={photo.src}
                 alt={photo.caption}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[1.02] contrast-[1.02] saturate-[1.05]"
                 loading="lazy"
                 width={420}
                 height={263}
               />
             </div>
-            {/* Hover overlay with caption */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-              <p className="text-white text-sm font-medium px-4 pb-4 leading-snug">
+            {/* Always-visible subtle gradient + caption on hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <p className="text-white text-sm font-medium px-4 pb-4 leading-snug drop-shadow-lg">
                 {photo.caption}
               </p>
             </div>
@@ -155,8 +157,8 @@ const PastClassesSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="py-16 md:py-20 bg-muted/30 overflow-hidden">
-      <div className="max-w-[1140px] mx-auto px-6 mb-10">
+    <section className="py-16 md:py-24 bg-muted/30 overflow-hidden">
+      <div className="max-w-[1140px] mx-auto px-6 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -168,16 +170,24 @@ const PastClassesSection = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-3">
             Past Classes & Workshops
           </h2>
-          <p className="text-muted-foreground max-w-2xl">
-            Real photos from our training sessions across Singapore — from algorithmic trading bootcamps to data science workshops and corporate programmes.
+          <p className="text-muted-foreground max-w-2xl leading-relaxed">
+            Real photos from our training sessions across Singapore — from algorithmic trading bootcamps to AI workshops, data science masterclasses, and corporate programmes.
           </p>
         </motion.div>
       </div>
 
-      {/* Scrolling rows — full width, no container constraint */}
-      <div className="space-y-4">
-        <ScrollingRow items={row1} direction="left" speed={40} />
-        <ScrollingRow items={row2} direction="right" speed={45} />
+      {/* Three scrolling rows — full width, alternating directions */}
+      <div className="space-y-3 md:space-y-4">
+        <ScrollingRow items={row1} direction="left" speed={50} />
+        <ScrollingRow items={row2} direction="right" speed={55} />
+        <ScrollingRow items={row3} direction="left" speed={48} />
+      </div>
+
+      {/* Photo count badge */}
+      <div className="max-w-[1140px] mx-auto px-6 mt-8">
+        <p className="text-xs text-muted-foreground/60 text-center md:text-right">
+          {photos.length} photos from real training sessions
+        </p>
       </div>
     </section>
   );

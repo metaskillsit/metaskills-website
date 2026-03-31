@@ -1,5 +1,4 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { getPastRuns } from "@/data/pastRuns";
 import { getCourseSchedule } from "@/data/courseSchedule";
@@ -35,9 +34,6 @@ const CoursePage = () => {
   const navigate = useNavigate();
   const course = getCourseBySlug(slug || "");
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [slug]);
 
   const relatedCourses = courses
     .filter((c) => c.category === course?.category && c.slug !== slug)
