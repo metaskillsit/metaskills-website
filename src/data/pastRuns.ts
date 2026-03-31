@@ -25,14 +25,14 @@ export interface PastRun {
 // Map course slugs to their past runs
 // Only verified past runs with real data are included
 export const pastRunsData: Record<string, PastRun[]> = {
-  // ── Agentic AI Series (only MINDEF runs verified) ──
+  // ── Agentic AI Series ──
   "agentic-ai-foundations": [
     {
       date: "Jan 2026",
       venue: "CT Hub 2, Singapore",
       participants: 18,
       organization: "Corporate",
-      photos: [pastRun3, pastRun1],
+      photos: [pastClass7, pastClass1],
       highlight: "100% of participants rated the workshop 'Excellent'",
     },
   ],
@@ -42,7 +42,7 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "CT Hub 2, Singapore",
       participants: 15,
       organization: "Corporate",
-      photos: [pastRun5, pastRun6],
+      photos: [pastClass3, pastClass7],
       highlight: "Participants built 8 real-world AI use cases during the workshop",
     },
   ],
@@ -52,19 +52,19 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "CT Hub 2, Singapore",
       participants: 12,
       organization: "Corporate",
-      photos: [pastRun4, pastRun3],
+      photos: [pastClass1, pastClass7],
       highlight: "Deep-dive into secure deployment pipelines for AI agents",
     },
   ],
 
-  // ── Data Science (JCube courses — real testimonials from jcube-institute.com) ──
+  // ── Data Science (JCube courses — real testimonials) ──
   "certified-data-analyst": [
     {
       date: "2024",
       venue: "Singapore",
       participants: 20,
       organization: "Corporate",
-      photos: [pastRun2, pastRun1],
+      photos: [pastClass6, pastClass7],
       highlight: "Industry-recognised certification with high pass rate",
       testimonial: {
         quote: "The course curriculum is exceptionally well-structured and focused on equipping students with the practical skills needed to handle real-world data analyst work using Python. The skills learned during the course have been directly applicable to my job, significantly improving my efficiency and productivity.",
@@ -78,7 +78,7 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "Singapore",
       participants: 18,
       organization: "Corporate",
-      photos: [pastRun3, pastRun4],
+      photos: [pastClass7, pastClass6],
       highlight: "Graduates placed in data governance and analytics roles",
       testimonial: {
         quote: "The curriculum is hands-on and practical, emphasising on developing data science intuition rather than simply coding. Coming from a non-programming background, I picked up data analytics, data visualisation and machine learning skills that are relevant to industry practices.",
@@ -94,7 +94,7 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "Singapore",
       participants: 15,
       organization: "Corporate",
-      photos: [pastRun5, pastRun4],
+      photos: [pastClass6, pastClass8],
       highlight: "Intensive deep learning capstone projects completed",
       testimonial: {
         quote: "I have picked up skills from really nothing to working with APIs, data cleaning, data visualisation and data analysis. Both Dr. Ke and Jack are competent, patient and motivating, encouraging us to learn and complete our projects! The practicum was the highlight, providing valuable insights into AI and data science applications in the industry.",
@@ -110,7 +110,7 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "Singapore",
       participants: 22,
       organization: "Corporate",
-      photos: [pastRun1, pastRun4],
+      photos: [pastClass7, pastClass6],
       highlight: "Professionals upskilled in Python data analytics",
       testimonial: {
         quote: "Thank you so much, Dr. Jack! The resources you've provided have been incredibly helpful and have significantly enhanced my learning experience. The skills and knowledge I've gained from your course have been directly applicable to improving these workflows.",
@@ -127,35 +127,35 @@ export const pastRunsData: Record<string, PastRun[]> = {
       date: "Jun 2022",
       venue: "Singapore",
       participants: 15,
-      photos: [pastRun4, pastRun3],
+      photos: [pastClass1, pastClass2],
       highlight: "Inaugural cohort — live trading simulation with real market data",
     },
     {
       date: "Oct 2022",
       venue: "Singapore",
       participants: 18,
-      photos: [pastRun1, pastRun5],
+      photos: [pastClass3, pastClass4],
       highlight: "Participants built functional trading algorithms",
     },
     {
       date: "Mar 2023",
       venue: "Singapore",
       participants: 20,
-      photos: [pastRun3, pastRun6],
+      photos: [pastClass2, pastClass5],
       highlight: "Expanded cohort with cross-industry participation",
     },
     {
       date: "Aug 2023",
       venue: "Singapore",
       participants: 16,
-      photos: [pastRun2, pastRun4],
+      photos: [pastClass4, pastClass1],
       highlight: "Strong demand from finance professionals",
     },
     {
       date: "Dec 2023",
       venue: "Singapore",
       participants: 14,
-      photos: [pastRun5, pastRun1],
+      photos: [pastClass5, pastClass3],
       highlight: "Final run of the year with advanced strategy modules",
     },
   ],
@@ -164,40 +164,40 @@ export const pastRunsData: Record<string, PastRun[]> = {
       date: "Sep 2022",
       venue: "Singapore",
       participants: 10,
-      photos: [pastRun5, pastRun4],
+      photos: [pastClass2, pastClass4],
       highlight: "Advanced ML-driven strategy development",
     },
     {
       date: "Feb 2023",
       venue: "Singapore",
       participants: 12,
-      photos: [pastRun3, pastRun1],
+      photos: [pastClass5, pastClass1],
       highlight: "Deep reinforcement learning applied to trading",
     },
     {
       date: "Jul 2023",
       venue: "Singapore",
       participants: 14,
-      photos: [pastRun6, pastRun2],
+      photos: [pastClass3, pastClass2],
       highlight: "Backtesting and live simulation modules",
     },
     {
       date: "Nov 2023",
       venue: "Singapore",
       participants: 11,
-      photos: [pastRun4, pastRun5],
+      photos: [pastClass4, pastClass5],
       highlight: "Final cohort — portfolio optimisation capstone",
     },
   ],
 
-  // ── MCC+ Cyber Defence (MINDEF run verified) ──
+  // ── MCC+ Cyber Defence ──
   "mcc-plus-cyber-defence-foundation": [
     {
       date: "Feb 2026",
       venue: "CT Hub 2, Singapore",
       participants: 16,
       organization: "Corporate",
-      photos: [pastRun4, pastRun1],
+      photos: [pastClass7, pastClass1],
       highlight: "Foundation certification completed",
     },
   ],
@@ -207,7 +207,7 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "CT Hub 2, Singapore",
       participants: 12,
       organization: "Corporate",
-      photos: [pastRun3, pastRun4],
+      photos: [pastClass1, pastClass7],
       highlight: "Live SOC simulation exercises completed",
     },
   ],
