@@ -10,7 +10,7 @@ import awsLogo from "@/assets/logo-aws.png";
 const certifications = [
   { name: "AISG", logo: aisgLogo },
   { name: "CompTIA", logo: comptiaLogo },
-  { name: "EC-Council", logo: ecCouncilLogo },
+  { name: "EC-Council", logo: ecCouncilLogo, darkBackdrop: true },
   { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
   { name: "AWS", logo: awsLogo },
   { name: "SMU Academy", logo: smuAcademyLogo },
@@ -38,7 +38,9 @@ const CertifiedInstructorsSection = () => {
           {doubled.map((cert, i) => (
             <div
               key={`${cert.name}-${i}`}
-              className="flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center"
+              className={`flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center ${
+                cert.darkBackdrop ? "bg-foreground rounded-md px-3" : ""
+              }`}
             >
               <img
                 src={cert.logo}
