@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import PastClassesSection from "@/components/PastClassesSection";
 import agenticImg from "@/assets/programmes-agentic.jpg";
 import aiAutomationImg from "@/assets/programmes-aiautomation.jpg";
 import datasciImg from "@/assets/programmes-datascience.jpg";
@@ -155,6 +156,8 @@ const ProgrammesPage = () => {
             ))}
           </div>
         </section>
+
+        <PastClassesSection />
       </main>
       <FooterSection />
     </div>
