@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
+import aisgLogo from "@/assets/logo-aisg.png";
+import smuAcademyLogo from "@/assets/logo-smu-academy.png";
 import integrumLogo from "@/assets/partner-integrum.png";
 import jcubeLogo from "@/assets/partner-jcube.jpg";
 import svbbLogo from "@/assets/partner-svbb.png";
 
 const partnerLogos = [
-  { name: "AISG", logo: "https://aisingapore.org/wp-content/uploads/2023/01/AISG-Logo-Horizontal-Colour.png" },
+  { name: "AISG", logo: aisgLogo },
   { name: "ISCA", logo: "https://www.isca.org.sg/Content/img/logo.png" },
-  { name: "SMU Academy", logo: "https://academy.smu.edu.sg/sites/academy.smu.edu.sg/files/SMU%20Academy_1.png" },
+  { name: "SMU Academy", logo: smuAcademyLogo },
   { name: "NUS AIDF", logo: "https://aidf.nus.edu.sg/wp-content/uploads/2023/03/NUS-AIDF-logo-dark.png" },
   { name: "Tinkercademy", logo: "https://framerusercontent.com/images/bMgq19Cvo9jSECKl8JEaUC60c.png" },
   { name: "JCube Institute", logo: jcubeLogo },
@@ -39,7 +41,7 @@ const PartnerLogosSection = () => {
           {doubled.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="flex-shrink-0 h-12 md:h-14 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="flex-shrink-0 h-12 md:h-14 flex items-center justify-center"
             >
               <img
                 src={partner.logo}
