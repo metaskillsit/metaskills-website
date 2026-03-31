@@ -38,16 +38,16 @@ const PartnerLogosSection = () => {
         </motion.div>
       </div>
       <div className="relative">
-        <div className="flex animate-scroll-right gap-16 items-center w-max px-10">
+        <div className="flex animate-scroll-right gap-20 items-center w-max px-10">
           {doubled.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="flex-shrink-0 w-[180px] h-[64px] flex items-center justify-center"
+              className="flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-[64px] max-w-[180px] w-auto h-auto object-contain"
+                className="max-h-[80px] max-w-[200px] w-auto h-auto object-contain"
                 loading="lazy"
               />
             </div>

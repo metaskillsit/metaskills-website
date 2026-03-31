@@ -20,8 +20,8 @@ const CertifiedInstructorsSection = () => {
   const doubled = [...certifications, ...certifications];
 
   return (
-    <section className="bg-card border-t border-border py-10 overflow-hidden">
-      <div className="max-w-[1140px] mx-auto px-6 mb-6">
+    <section className="bg-card border-t border-border py-12 overflow-hidden">
+      <div className="max-w-[1140px] mx-auto px-6 mb-8">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,16 +32,16 @@ const CertifiedInstructorsSection = () => {
         </motion.p>
       </div>
       <div className="relative">
-        <div className="flex animate-scroll-left gap-16 items-center w-max px-10">
+        <div className="flex animate-scroll-left gap-20 items-center w-max px-10">
           {doubled.map((cert, i) => (
             <div
               key={`${cert.name}-${i}`}
-              className="flex-shrink-0 w-[180px] h-[64px] flex items-center justify-center"
+              className="flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center"
             >
               <img
                 src={cert.logo}
                 alt={cert.name}
-                className="max-h-[64px] max-w-[180px] w-auto h-auto object-contain"
+                className="max-h-[80px] max-w-[200px] w-auto h-auto object-contain"
                 loading="lazy"
               />
             </div>
