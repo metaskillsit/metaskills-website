@@ -4,13 +4,14 @@ import comptiaLogo from "@/assets/logo-comptia.png";
 import ecCouncilLogo from "@/assets/logo-ec-council.webp";
 import smuAcademyLogo from "@/assets/logo-smu-academy.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
+import awsLogo from "@/assets/logo-aws.png";
 
 const certifications = [
   { name: "AISG", logo: aisgLogo },
   { name: "CompTIA", logo: comptiaLogo },
   { name: "EC-Council", logo: ecCouncilLogo },
   { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
-  { name: "AWS", logo: "https://d1.awsstatic.com/logos/aws-logo-lockups/poweredbyaws/PB_AWS_logo_RGB.61d334f1a1172c3f7f5140ddc773571c16e9d04c.png" },
+  { name: "AWS", logo: awsLogo },
   { name: "SMU Academy", logo: smuAcademyLogo },
   { name: "Tinkercademy", logo: tinkercademyLogo },
 ];
@@ -31,16 +32,16 @@ const CertifiedInstructorsSection = () => {
         </motion.p>
       </div>
       <div className="relative">
-        <div className="flex animate-scroll-left gap-20 items-center w-max px-10">
+        <div className="flex animate-scroll-left gap-16 items-center w-max px-10">
           {doubled.map((cert, i) => (
             <div
               key={`${cert.name}-${i}`}
-              className="flex-shrink-0 w-[160px] h-[52px] flex items-center justify-center"
+              className="flex-shrink-0 w-[180px] h-[64px] flex items-center justify-center"
             >
               <img
                 src={cert.logo}
                 alt={cert.name}
-                className="max-h-[52px] max-w-[160px] w-auto h-auto object-contain"
+                className="max-h-[64px] max-w-[180px] w-auto h-auto object-contain"
                 loading="lazy"
               />
             </div>
