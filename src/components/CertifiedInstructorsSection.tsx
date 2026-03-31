@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import aisgLogo from "@/assets/logo-aisg.png";
 import comptiaLogo from "@/assets/logo-comptia.png";
-import ecCouncilLogo from "@/assets/logo-ec-council.webp";
+import ecCouncilLogo from "@/assets/logo-ec-council.png";
 import smuAcademyLogo from "@/assets/logo-smu-academy.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import awsLogo from "@/assets/logo-aws.png";
