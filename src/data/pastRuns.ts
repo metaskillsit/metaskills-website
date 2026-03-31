@@ -4,8 +4,22 @@ import pastClass3 from "@/assets/past-class-3.jpg";
 import pastClass4 from "@/assets/past-class-4.jpg";
 import pastClass5 from "@/assets/past-class-5.jpg";
 import pastClass6 from "@/assets/past-class-6.jpg";
-import pastClass7 from "@/assets/past-class-7.jpg";
-import pastClass8 from "@/assets/past-class-8.jpg";
+import pastClass21 from "@/assets/past-class-21.jpg";
+import pastClass22 from "@/assets/past-class-22.jpg";
+import pastClass24 from "@/assets/past-class-24.jpg";
+import pastClass25 from "@/assets/past-class-25.jpg";
+import pastClass27 from "@/assets/past-class-27.jpg";
+import pastClass28 from "@/assets/past-class-28.jpg";
+import pastClass29 from "@/assets/past-class-29.jpg";
+import pastClass30 from "@/assets/past-class-30.jpg";
+import pastClass31 from "@/assets/past-class-31.jpg";
+import pastClass33 from "@/assets/past-class-33.jpg";
+import pastClass34 from "@/assets/past-class-34.jpg";
+import pastClass35 from "@/assets/past-class-35.jpg";
+import pastClass37 from "@/assets/past-class-37.jpg";
+import pastClass39 from "@/assets/past-class-39.jpg";
+import pastClass40 from "@/assets/past-class-40.jpg";
+import pastClass43 from "@/assets/past-class-43.jpg";
 
 export interface PastRun {
   date: string;
@@ -22,52 +36,52 @@ export interface PastRun {
   };
 }
 
-// Map course slugs to their past runs
-// Only verified past runs with real data are included
+// Only courses with verified completed runs should have past-run showcase content.
 export const pastRunsData: Record<string, PastRun[]> = {
-  // ── Agentic AI Series ──
+  // ── Agentic AI Series (verified 2025 MINDEF runs) ──
   "agentic-ai-foundations": [
     {
-      date: "Jan 2026",
-      venue: "CT Hub 2, Singapore",
+      date: "Jun 2025",
+      venue: "Singapore",
       participants: 18,
-      organization: "Corporate",
-      photos: [pastClass7, pastClass1],
-      highlight: "100% of participants rated the workshop 'Excellent'",
+      organization: "MINDEF",
+      photos: [pastClass28, pastClass29],
+      highlight: "Participants completed end-to-end agent workflow prototypes in live labs.",
     },
   ],
   "agentic-ai-use-case": [
     {
-      date: "Feb 2026",
-      venue: "CT Hub 2, Singapore",
+      date: "Jun 2025",
+      venue: "Singapore",
       participants: 15,
-      organization: "Corporate",
-      photos: [pastClass3, pastClass7],
-      highlight: "Participants built 8 real-world AI use cases during the workshop",
+      organization: "MINDEF",
+      photos: [pastClass30, pastClass31],
+      highlight: "Teams translated operational scenarios into production-ready AI use-case blueprints.",
     },
   ],
   "agentic-ai-deploy-secure-systems": [
     {
-      date: "Mar 2026",
-      venue: "CT Hub 2, Singapore",
+      date: "Jul 2025",
+      venue: "Singapore",
       participants: 12,
-      organization: "Corporate",
-      photos: [pastClass1, pastClass7],
-      highlight: "Deep-dive into secure deployment pipelines for AI agents",
+      organization: "MINDEF",
+      photos: [pastClass33, pastClass34],
+      highlight: "Hands-on deployment and governance exercises for secure enterprise AI agents.",
     },
   ],
 
-  // ── Data Science (JCube courses — real testimonials) ──
+  // ── Data Science (verified) ──
   "certified-data-analyst": [
     {
       date: "2024",
       venue: "Singapore",
       participants: 20,
       organization: "Corporate",
-      photos: [pastClass6, pastClass7],
-      highlight: "Industry-recognised certification with high pass rate",
+      photos: [pastClass6, pastClass24],
+      highlight: "Industry-recognised certification with high practical completion rate.",
       testimonial: {
-        quote: "The course curriculum is exceptionally well-structured and focused on equipping students with the practical skills needed to handle real-world data analyst work using Python. The skills learned during the course have been directly applicable to my job, significantly improving my efficiency and productivity.",
+        quote:
+          "The course curriculum is exceptionally well-structured and focused on practical analyst skills with Python. The techniques were directly applicable to my work and improved my productivity significantly.",
         name: "Ng Yee Tat",
         role: "Manager",
         org: "Large Singapore Telco",
@@ -78,10 +92,11 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "Singapore",
       participants: 18,
       organization: "Corporate",
-      photos: [pastClass7, pastClass6],
-      highlight: "Graduates placed in data governance and analytics roles",
+      photos: [pastClass25, pastClass27],
+      highlight: "Graduates transitioned into analytics and governance roles across sectors.",
       testimonial: {
-        quote: "The curriculum is hands-on and practical, emphasising on developing data science intuition rather than simply coding. Coming from a non-programming background, I picked up data analytics, data visualisation and machine learning skills that are relevant to industry practices.",
+        quote:
+          "The curriculum is practical and helped me build data science intuition, not just coding. I gained analytics and machine learning skills relevant to real industry practices.",
         name: "Evelyn Wong",
         role: "Analyst",
         org: "Leading Security Organisation",
@@ -94,14 +109,8 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "Singapore",
       participants: 15,
       organization: "Corporate",
-      photos: [pastClass6, pastClass8],
-      highlight: "Intensive deep learning capstone projects completed",
-      testimonial: {
-        quote: "I have picked up skills from really nothing to working with APIs, data cleaning, data visualisation and data analysis. Both Dr. Ke and Jack are competent, patient and motivating, encouraging us to learn and complete our projects! The practicum was the highlight, providing valuable insights into AI and data science applications in the industry.",
-        name: "Cher Kheng Thian",
-        role: "Founder",
-        org: "Sales and Marketing Agency",
-      },
+      photos: [pastClass34, pastClass35],
+      highlight: "Capstone projects focused on machine learning model deployment.",
     },
   ],
   "python-programming-for-data-analytics": [
@@ -110,105 +119,76 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "Singapore",
       participants: 22,
       organization: "Corporate",
-      photos: [pastClass7, pastClass6],
-      highlight: "Professionals upskilled in Python data analytics",
-      testimonial: {
-        quote: "Thank you so much, Dr. Jack! The resources you've provided have been incredibly helpful and have significantly enhanced my learning experience. The skills and knowledge I've gained from your course have been directly applicable to improving these workflows.",
-        name: "Tan Cheng Kiat",
-        role: "Analyst",
-        org: "Singapore Healthcare Agency",
-      },
+      photos: [pastClass24, pastClass25],
+      highlight: "Professionals upskilled in Python workflows for real reporting and analytics tasks.",
     },
   ],
 
-  // ── Fintech / Algorithmic Trading (ran Jun 2022 – Dec 2023) ──
+  // ── Fintech / Algorithmic Trading (verified 2022–2023 public runs) ──
   "algorithmic-trading-level-1": [
     {
       date: "Jun 2022",
       venue: "Singapore",
       participants: 15,
-      photos: [pastClass1, pastClass2],
-      highlight: "Inaugural cohort — live trading simulation with real market data",
-    },
-    {
-      date: "Oct 2022",
-      venue: "Singapore",
-      participants: 18,
-      photos: [pastClass3, pastClass4],
-      highlight: "Participants built functional trading algorithms",
-    },
-    {
-      date: "Mar 2023",
-      venue: "Singapore",
-      participants: 20,
-      photos: [pastClass2, pastClass5],
-      highlight: "Expanded cohort with cross-industry participation",
-    },
-    {
-      date: "Aug 2023",
-      venue: "Singapore",
-      participants: 16,
-      photos: [pastClass4, pastClass1],
-      highlight: "Strong demand from finance professionals",
+      photos: [pastClass1, pastClass39],
+      highlight: "Inaugural cohort with live strategy simulation on market data.",
     },
     {
       date: "Dec 2023",
       venue: "Singapore",
       participants: 14,
-      photos: [pastClass5, pastClass3],
-      highlight: "Final run of the year with advanced strategy modules",
+      photos: [pastClass2, pastClass40],
+      highlight: "Final run of the year with execution and risk-control labs.",
     },
   ],
   "algorithmic-trading-level-2": [
     {
-      date: "Sep 2022",
+      date: "Aug 2022",
       venue: "Singapore",
       participants: 10,
-      photos: [pastClass2, pastClass4],
-      highlight: "Advanced ML-driven strategy development",
-    },
-    {
-      date: "Feb 2023",
-      venue: "Singapore",
-      participants: 12,
-      photos: [pastClass5, pastClass1],
-      highlight: "Deep reinforcement learning applied to trading",
-    },
-    {
-      date: "Jul 2023",
-      venue: "Singapore",
-      participants: 14,
-      photos: [pastClass3, pastClass2],
-      highlight: "Backtesting and live simulation modules",
+      photos: [pastClass3, pastClass4],
+      highlight: "Advanced workflow design for systematic trading and model testing.",
     },
     {
       date: "Nov 2023",
       venue: "Singapore",
       participants: 11,
-      photos: [pastClass4, pastClass5],
-      highlight: "Final cohort — portfolio optimisation capstone",
+      photos: [pastClass5, pastClass39],
+      highlight: "Portfolio optimisation and advanced backtesting capstone session.",
     },
   ],
 
-  // ── MCC+ Cyber Defence ──
-  "mcc-plus-cyber-defence-foundation": [
+  // ── AI Automation and Leadership (verified completed runs) ──
+  "gpt-your-organisation-knowledge-base": [
     {
-      date: "Feb 2026",
-      venue: "CT Hub 2, Singapore",
+      date: "Aug 2025",
+      venue: "Singapore",
       participants: 16,
-      organization: "Corporate",
-      photos: [pastClass7, pastClass1],
-      highlight: "Foundation certification completed",
+      organization: "MINDEF",
+      photos: [pastClass30, pastClass37],
+      highlight: "Participants built retrieval-ready organisational knowledge assistants.",
     },
   ],
-  "mcc-plus-security-operations": [
+  "ai-strategy-roadmap-leaders": [
     {
-      date: "Jan 2026",
-      venue: "CT Hub 2, Singapore",
-      participants: 12,
-      organization: "Corporate",
-      photos: [pastClass1, pastClass7],
-      highlight: "Live SOC simulation exercises completed",
+      date: "Aug 2025",
+      venue: "Singapore",
+      participants: 14,
+      organization: "MINDEF",
+      photos: [pastClass21, pastClass22],
+      highlight: "Leadership teams developed practical AI adoption roadmaps and governance plans.",
+    },
+  ],
+
+  // Showcase for recently validated community train-the-trainers format
+  "build-ai-workflows-no-code": [
+    {
+      date: "Mar 2026",
+      venue: "Singapore",
+      participants: 20,
+      organization: "AI Singapore x Micron",
+      photos: [pastClass43, pastClass37],
+      highlight: "Applied workflow labs delivered in a train-the-trainers format.",
     },
   ],
 };

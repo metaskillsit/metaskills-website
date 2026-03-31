@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
+import GalleryLightbox from "@/components/GalleryLightbox";
 import pastClass1 from "@/assets/past-class-1.jpg";
 import pastClass2 from "@/assets/past-class-2.jpg";
 import pastClass3 from "@/assets/past-class-3.jpg";
@@ -91,7 +92,6 @@ const photos = [
   { src: pastClass43, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 2" },
 ];
 
-// Split into three rows for a richer visual experience
 const third = Math.ceil(photos.length / 3);
 const row1 = photos.slice(0, third);
 const row2 = photos.slice(third, third * 2);
@@ -99,12 +99,16 @@ const row3 = photos.slice(third * 2);
 
 const ScrollingRow = ({
   items,
+  startIndex,
   direction = "left",
   speed = 35,
+  onPhotoClick,
 }: {
   items: typeof photos;
+  startIndex: number;
   direction?: "left" | "right";
   speed?: number;
+  onPhotoClick: (index: number) => void;
 }) => {
   const tripled = [...items, ...items, ...items];
 
@@ -112,83 +116,83 @@ const ScrollingRow = ({
     <div className="overflow-hidden relative">
       <motion.div
         className="flex gap-3 md:gap-4"
-        animate={{
-          x: direction === "left"
-            ? ["0%", "-33.333%"]
-            : ["-33.333%", "0%"],
-        }}
-        transition={{
-          x: {
-            duration: speed,
-            repeat: Infinity,
-            ease: "linear",
-          },
-        }}
+        animate={{ x: direction === "left" ? ["0%", "-33.333%"] : ["-33.333%", "0%"] }}
+        transition={{ x: { duration: speed, repeat: Infinity, ease: "linear" } }}
       >
-        {tripled.map((photo, i) => (
-          <div
-            key={`${photo.caption}-${i}`}
-            className="flex-shrink-0 w-[300px] md:w-[380px] lg:w-[420px] group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-500"
-          >
-            <div className="aspect-[16/10] overflow-hidden bg-muted">
-              <img
-                src={photo.src}
-                alt={photo.caption}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[1.02] contrast-[1.02] saturate-[1.05]"
-                loading="lazy"
-                width={420}
-                height={263}
-              />
-            </div>
-            {/* Always-visible subtle gradient + caption on hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-              <p className="text-white text-sm font-medium px-4 pb-4 leading-snug drop-shadow-lg">
-                {photo.caption}
-              </p>
-            </div>
-          </div>
-        ))}
+        {tripled.map((photo, i) => {
+          const realIndex = startIndex + (i % items.length);
+          return (
+            <button
+              key={`${photo.caption}-${i}`}
+              type="button"
+              onClick={() => onPhotoClick(realIndex)}
+              className="flex-shrink-0 w-[300px] md:w-[380px] lg:w-[420px] group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-500"
+              aria-label={`Open photo: ${photo.caption}`}
+            >
+              <div className="aspect-[16/10] overflow-hidden bg-muted">
+                <img
+                  src={photo.src}
+                  alt={photo.caption}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[1.02] contrast-[1.02] saturate-[1.05]"
+                  loading="lazy"
+                  width={420}
+                  height={263}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <p className="text-white text-sm font-medium px-4 pb-4 leading-snug drop-shadow-lg">{photo.caption}</p>
+              </div>
+            </button>
+          );
+        })}
       </motion.div>
     </div>
   );
 };
 
 const PastClassesSection = () => {
-  const { t } = useTranslation();
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
+
+  const closeLightbox = () => setSelectedPhotoIndex(null);
+  const nextLightboxPhoto = () => {
+    if (selectedPhotoIndex === null) return;
+    setSelectedPhotoIndex((selectedPhotoIndex + 1) % photos.length);
+  };
+  const prevLightboxPhoto = () => {
+    if (selectedPhotoIndex === null) return;
+    setSelectedPhotoIndex((selectedPhotoIndex - 1 + photos.length) % photos.length);
+  };
 
   return (
     <section className="py-16 md:py-24 bg-muted/30 overflow-hidden">
       <div className="max-w-[1140px] mx-auto px-6 mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">
-            Our Training in Action
-          </p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Past Classes & Workshops
-          </h2>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">Our Training in Action</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-3">Past Classes & Workshops</h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed">
             Real photos from our training sessions across Singapore — from algorithmic trading bootcamps to AI workshops, data science masterclasses, and corporate programmes.
           </p>
         </motion.div>
       </div>
 
-      {/* Three scrolling rows — full width, alternating directions */}
       <div className="space-y-3 md:space-y-4">
-        <ScrollingRow items={row1} direction="left" speed={50} />
-        <ScrollingRow items={row2} direction="right" speed={55} />
-        <ScrollingRow items={row3} direction="left" speed={48} />
+        <ScrollingRow items={row1} startIndex={0} direction="left" speed={50} onPhotoClick={setSelectedPhotoIndex} />
+        <ScrollingRow items={row2} startIndex={third} direction="right" speed={55} onPhotoClick={setSelectedPhotoIndex} />
+        <ScrollingRow items={row3} startIndex={third * 2} direction="left" speed={48} onPhotoClick={setSelectedPhotoIndex} />
       </div>
 
-      {/* Photo count badge */}
       <div className="max-w-[1140px] mx-auto px-6 mt-8">
-        <p className="text-xs text-muted-foreground/60 text-center md:text-right">
-          {photos.length} photos from real training sessions
-        </p>
+        <p className="text-xs text-muted-foreground/60 text-center md:text-right">{photos.length} photos from real training sessions</p>
       </div>
+
+      <GalleryLightbox
+        isOpen={selectedPhotoIndex !== null}
+        items={photos.map((photo) => ({ src: photo.src, alt: photo.caption, caption: photo.caption }))}
+        currentIndex={selectedPhotoIndex ?? 0}
+        onClose={closeLightbox}
+        onPrev={prevLightboxPhoto}
+        onNext={nextLightboxPhoto}
+      />
     </section>
   );
 };
