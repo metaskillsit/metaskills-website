@@ -8,12 +8,12 @@ import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import awsLogo from "@/assets/logo-aws.png";
 
 const certifications = [
-  { name: "AISG", logo: aisgLogo },
+  { name: "AISG", logo: aisgLogo, large: true },
   { name: "CompTIA", logo: comptiaLogo },
-  { name: "EC-Council", logo: ecCouncilLogo },
+  { name: "EC-Council", logo: ecCouncilLogo, large: true },
   { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
   { name: "AWS", logo: awsLogo },
-  { name: "SMU Academy", logo: smuAcademyLogo },
+  { name: "SMU Academy", logo: smuAcademyLogo, large: true },
   { name: "Tinkercademy", logo: tinkercademyLogo },
 ];
 

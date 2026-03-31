@@ -11,10 +11,10 @@ import safraLogo from "@/assets/logo-safra.jpg";
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 
 const partnerLogos = [
-  { name: "AISG", logo: aisgLogo },
-  { name: "ISCA", logo: iscaLogo },
-  { name: "SMU Academy", logo: smuAcademyLogo },
-  { name: "NUS AIDF", logo: nusAidfLogo },
+  { name: "AISG", logo: aisgLogo, large: true },
+  { name: "ISCA", logo: iscaLogo, large: true },
+  { name: "SMU Academy", logo: smuAcademyLogo, large: true },
+  { name: "NUS AIDF", logo: nusAidfLogo, large: true },
   { name: "Tinkercademy", logo: tinkercademyLogo },
   { name: "JCube Institute", logo: jcubeLogo },
   { name: "Integrum Global", logo: integrumLogo },
