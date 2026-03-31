@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
+import aisgLogo from "@/assets/logo-aisg.png";
+import comptiaLogo from "@/assets/logo-comptia.png";
+import smuAcademyLogo from "@/assets/logo-smu-academy.png";
 
 const certifications = [
-  { name: "AISG", logo: "https://aisingapore.org/wp-content/uploads/2023/01/AISG-Logo-Horizontal-Colour.png" },
-  { name: "CompTIA", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/CompTIA_logo.svg/1200px-CompTIA_logo.svg.png" },
+  { name: "AISG", logo: aisgLogo },
+  { name: "CompTIA", logo: comptiaLogo },
   { name: "EC-Council", logo: "https://www.eccouncil.org/wp-content/uploads/2022/02/EC-Council-Logo.png" },
   { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
   { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png" },
-  { name: "SMU Academy", logo: "https://academy.smu.edu.sg/sites/academy.smu.edu.sg/files/SMU%20Academy_1.png" },
+  { name: "SMU Academy", logo: smuAcademyLogo },
 ];
 
 const CertifiedInstructorsSection = () => {
@@ -29,7 +32,7 @@ const CertifiedInstructorsSection = () => {
           {doubled.map((cert, i) => (
             <div
               key={`${cert.name}-${i}`}
-              className="flex-shrink-0 h-10 md:h-12 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+              className="flex-shrink-0 h-10 md:h-12 flex items-center justify-center"
             >
               <img
                 src={cert.logo}
