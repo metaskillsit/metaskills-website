@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "about": "About",
+    "programmes": "Programmes",
+    "faculty": "Faculty",
+    "admissions": "Admissions",
+    "aboutMetaskills": "About Metaskills",
+    "aboutUs": "About Us",
+    "ourFaculty": "Our Faculty",
+    "partners": "Partners",
+    "ourClients": "Our Clients",
+    "learningSpaces": "Learning Spaces",
+    "allProgrammes": "All Programmes",
+    "howToApply": "How to Apply",
+    "courseFeesAndFunding": "Course Fees & Funding",
+    "enquireNow": "Enquire Now"
+  },
+  "hero": {
+    "title": "The AI Institute for Asia",
+    "subtitle": "Equipping professionals with Agentic AI, Algorithmic Trading & Cybersecurity capabilities."
+  },
+  "certified": {
+    "heading": "Curriculum designed and delivered by officially certified instructors"
+  },
+  "mission": {
+    "statement": "Metaskills Institute equips our community with the knowledge, skills and experiences to",
+    "highlight1": "tackle the AI challenges of tomorrow",
+    "and": "and",
+    "highlight2": "drive digital transformation across ASEAN.",
+    "pillar1Title": "Transformational Learning",
+    "pillar1Desc": "A portfolio of impactful programmes for early professionals to senior executives in Agentic AI, Data Science, and Algorithmic Trading.",
+    "pillar2Title": "Pioneering Faculty",
+    "pillar2Desc": "Our faculty bring their real-world consulting and deployment expertise — combined with over a decade of university-level teaching — to every classroom.",
+    "pillar3Title": "Industry-Ready Skills",
+    "pillar3Desc": "Every programme integrates technical depth, strategic thinking, and implementation frameworks aligned with enterprise and government standards."
+  },
+  "stats": {
+    "profTrained": "Professionals Trained",
+    "yearsExp": "Years Combined Faculty Experience",
+    "orgsPartnered": "Organisations Partnered",
+    "progsOffered": "Programmes Offered"
+  },
+  "programmes": {
+    "title": "Our Programmes",
+    "subtitle": "Find the right programme for you.",
+    "glance": "All our programmes at a glance",
+    "agenticTitle": "Agentic AI Workshop Series",
+    "agenticDesc": "Designing, deploying, and governing autonomous AI agents for real-world enterprise applications.",
+    "aiAutoTitle": "AI Automation and Agents",
+    "aiAutoDesc": "From no-code workflows to AI coding agents — practical, hands-on workshops on building and deploying intelligent automation systems.",
+    "dataTitle": "Data Science & Analytics",
+    "dataDesc": "From Python programming to advanced machine learning — practical, project-based data science education.",
+    "fintechTitle": "Fintech & Algorithmic Trading",
+    "fintechDesc": "Data-driven trading strategies powered by automation and analytics for financial markets.",
+    "cyberTitle": "Cyber Defence",
+    "cyberDesc": "Comprehensive cybersecurity overview — fundamentals, threat landscape, key roles, and certification roadmap planning.",
+    "aiLeadTitle": "AI Leadership and Governance",
+    "aiLeadDesc": "Strategy workshops for senior leaders — AI adoption roadmaps, accountability frameworks, agent governance, and AI wargaming.",
+    "mccTitle": "MCC+ Cyber Defence Certification",
+    "mccDesc": "Consolidated cybersecurity certification programme — 4-day core foundation plus 1-day electives aligned to Security+, CySA+, CEH, CHFI, and SecAI."
+  },
+  "why": {
+    "title": "Why Metaskills",
+    "intro": "Our trainers are active AI consultants and deployment specialists. This industry immersion means every lesson is grounded in practical challenges and opportunities that matter today.",
+    "feat1Title": "Practitioners First",
+    "feat1Desc": "Our instructors are active AI consultants and deployment specialists working with corporates, government agencies, and universities.",
+    "feat2Title": "Master Trainers",
+    "feat2Desc": "Guided by master trainers with over a decade of university-level teaching and corporate training experience.",
+    "feat3Title": "Industry-Recognised Certifications",
+    "feat3Desc": "Certifications designed in partnership with industry and government — recognised across Singapore and ASEAN.",
+    "feat4Title": "Applied Learning",
+    "feat4Desc": "We simplify complex AI concepts into practical steps, making them accessible for learners at all levels.",
+    "feat5Title": "10,000+ Professionals Trained",
+    "feat5Desc": "Our faculty have collectively trained more than 10,000 professionals across Singapore and ASEAN.",
+    "feat6Title": "Career Networking",
+    "feat6Desc": "Connect to Singapore's growing AI and digital innovation ecosystem through alumni events and industry partnerships."
+  },
+  "faculty": {
+    "title": "Our Core Faculty",
+    "subtitle": "Practitioners, researchers, and educators who have collectively trained more than 10,000 professionals."
+  },
+  "testimonials": {
+    "title": "What Our Learners Say"
+  },
+  "partners": {
+    "title": "Partnering Institutions"
+  },
+  "locations": {
+    "title": "Our Learning Spaces",
+    "subtitle": "World-class facilities designed for hands-on, immersive learning experiences.",
+    "hqName": "Singapore HQ — CT Hub 2",
+    "hqDesc": "Located at 114 Lavender Street, CT Hub 2, #07-74, Singapore 338729. Our main campus equipped with state-of-the-art facilities for hands-on AI training.",
+    "trainingName": "Training Centre",
+    "trainingDesc": "Modern collaborative learning spaces designed for immersive, project-based programmes.",
+    "labName": "Innovation Lab",
+    "labDesc": "A dedicated space for AI research, prototyping, and industry collaborations.",
+    "confName": "Conference Room",
+    "confDesc": "Fully equipped boardroom with presentation displays and whiteboard for strategy sessions and corporate workshops."
+  },
+  "admissions": {
+    "title": "Admissions",
+    "subtitle": "Join a community of forward-thinking professionals. Our programmes are designed for individuals and organisations seeking to build real-world AI capabilities.",
+    "benefit1": "Industry-recognised certifications in Agentic AI and Applied Data Science",
+    "benefit2": "Practical, project-based curriculum designed by master trainers",
+    "benefit3": "Access to Singapore's growing AI and digital innovation ecosystem",
+    "benefit4": "Alumni events and industry partnership opportunities",
+    "benefit5": "Programmes endorsed by faculty teaching at universities and government agencies",
+    "benefit6": "Available in English, Chinese, and Vietnamese",
+    "requestInfo": "Request Information",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Your full name",
+    "email": "Email",
+    "emailPlaceholder": "you@email.com",
+    "programmeOfInterest": "Programme of Interest",
+    "selectProgramme": "Select a programme",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your goals...",
+    "submit": "Submit Enquiry"
+  },
+  "footer": {
+    "tagline": "ASEAN's go-to partner for Agentic AI, Algorithmic Trading, and Cybersecurity capability building.",
+    "programmes": "Programmes",
+    "institute": "Institute",
+    "resources": "Resources",
+    "allProgrammes": "All Programmes",
+    "agenticAI": "Agentic AI Workflows",
+    "dataScience": "Data Science & Analytics",
+    "algoTrading": "Algorithmic Trading",
+    "aboutUs": "About Us",
+    "faculty": "Faculty",
+    "partners": "Partners",
+    "learningSpaces": "Learning Spaces",
+    "admissions": "Admissions",
+    "courseFeesAndFunding": "Course Fees & Funding",
+    "copyright": "© {{year}} Metaskills Institute. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
