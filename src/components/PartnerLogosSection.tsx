@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import aisgLogo from "@/assets/logo-aisg.png";
 import smuAcademyLogo from "@/assets/logo-smu-academy.png";
 import integrumLogo from "@/assets/partner-integrum.png";
@@ -21,6 +22,7 @@ const partnerLogos = [
 ];
 
 const PartnerLogosSection = () => {
+  const { t } = useTranslation();
   const doubled = [...partnerLogos, ...partnerLogos];
 
   return (
@@ -33,7 +35,7 @@ const PartnerLogosSection = () => {
           className="text-center"
         >
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-            Partnering Institutions
+            {t("partners.title")}
           </h2>
         </motion.div>
       </div>

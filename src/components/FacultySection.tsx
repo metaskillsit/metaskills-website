@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
@@ -67,9 +68,10 @@ const allFaculty = [
 ];
 
 const AUTO_INTERVAL = 4000;
-const GAP = 32; // gap-8 = 32px
+const GAP = 32;
 
 const FacultySection = () => {
+  const { t } = useTranslation();
   const [currentIdx, setCurrentIdx] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
   const [cardWidth, setCardWidth] = useState(0);
@@ -114,92 +116,53 @@ const FacultySection = () => {
         >
           <div>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-              Our Core Faculty
+              {t("faculty.title")}
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl">
-              Practitioners, researchers, and educators who have collectively trained more than 10,000 professionals.
+              {t("faculty.subtitle")}
             </p>
           </div>
           <div className="hidden md:flex gap-2">
-            <button
-              onClick={prev}
-              className="p-2 rounded-sm border border-border hover:bg-accent transition-colors"
-              aria-label="Previous"
-            >
+            <button onClick={prev} className="p-2 rounded-sm border border-border hover:bg-accent transition-colors" aria-label="Previous">
               <ChevronLeft className="w-5 h-5 text-foreground" />
             </button>
-            <button
-              onClick={next}
-              className="p-2 rounded-sm border border-border hover:bg-accent transition-colors"
-              aria-label="Next"
-            >
+            <button onClick={next} className="p-2 rounded-sm border border-border hover:bg-accent transition-colors" aria-label="Next">
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
           </div>
         </motion.div>
 
-        {/* Progress dots */}
         <div className="flex gap-1.5 mb-8">
           {Array.from({ length: maxIdx + 1 }).map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentIdx(i)}
-              className={`h-1 rounded-full transition-all duration-300 ${
-                i === currentIdx ? "w-6 bg-primary" : "w-2 bg-border"
-              }`}
+              className={`h-1 rounded-full transition-all duration-300 ${i === currentIdx ? "w-6 bg-primary" : "w-2 bg-border"}`}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
         </div>
 
         <div className="overflow-hidden" ref={trackRef}>
-          <div
-            className="flex gap-8"
-            style={{
-              transform: `translateX(-${translateX}px)`,
-              transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
-            }}
-          >
+          <div className="flex gap-8" style={{ transform: `translateX(-${translateX}px)`, transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)" }}>
             {allFaculty.map((f) => (
-              <div
-                key={f.name}
-                className="group flex-shrink-0"
-                style={{ width: cardWidth > 0 ? cardWidth : "calc(25% - 24px)" }}
-              >
+              <div key={f.name} className="group flex-shrink-0" style={{ width: cardWidth > 0 ? cardWidth : "calc(25% - 24px)" }}>
                 <div className="aspect-square overflow-hidden rounded-sm mb-4 bg-muted">
-                  <img
-                    src={f.image}
-                    alt={f.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
+                  <img src={f.image} alt={f.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
-                <h3 className="font-heading text-lg font-bold text-foreground">
-                  {f.name}
-                </h3>
+                <h3 className="font-heading text-lg font-bold text-foreground">{f.name}</h3>
                 <p className="text-sm text-primary font-medium mb-1">{f.role}</p>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {f.expertise}
-                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{f.expertise}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Mobile arrows */}
         <div className="flex md:hidden justify-center gap-4 mt-6">
-          <button
-            onClick={prev}
-            className="p-2 rounded-sm border border-border hover:bg-accent transition-colors"
-            aria-label="Previous"
-          >
+          <button onClick={prev} className="p-2 rounded-sm border border-border hover:bg-accent transition-colors" aria-label="Previous">
             <ChevronLeft className="w-5 h-5 text-foreground" />
           </button>
-          <button
-            onClick={next}
-            className="p-2 rounded-sm border border-border hover:bg-accent transition-colors"
-            aria-label="Next"
-          >
+          <button onClick={next} className="p-2 rounded-sm border border-border hover:bg-accent transition-colors" aria-label="Next">
             <ChevronRight className="w-5 h-5 text-foreground" />
           </button>
         </div>
