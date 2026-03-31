@@ -12,9 +12,9 @@ const executiveTeam = [
     bio: "Dr. Jinghao Ke is a recognised leader in applied AI, finance, and analytics, with projects spanning AI development, digital transformation, and executive education.\n\nAs CEO of JCube Institute and Chief Research Officer of Integrum Global, he has led cross-border consulting projects in AI-driven finance, supply chains, and sustainability. He also serves as adjunct faculty at Singapore Management University, teaching business analytics and finance, and has developed curricula for universities, corporates, and government agencies across ASEAN.",
   },
   {
-    name: "Andrew",
+    name: "Andrew Toh",
     role: "Head, Operations | Consultant",
-    expertise: "Operational Leadership | AI-Driven Transformation | Prompt Engineering | Workflow Architecture",
+    expertise: "Operational Leadership | AI-Driven Transformation | Vibe Coding | Prompt Engineering | Workflow Architecture",
     image: "https://metaskills.sg/wp-content/uploads/2026/02/Andrew-e1772293476358.jpeg",
     bio: "Blending 17 years of defense and corporate experience, Andrew brings a unique mix of operational leadership, technical expertise, business development, and AI-driven transformation.\n\nAndrew spent 16 years in the Singapore Armed Forces (SAF), serving as a Subject Matter Expert in LAN/WAN and radio communication systems and as an Institute Trainer designing structured curricula for Regulars and NSFs. As Company Sergeant Major, he led and developed over 80 personnel, ensuring operational readiness, discipline, and performance excellence. He also spearheaded large-scale communications exercises locally and overseas, and contributed to national initiatives such as NDP 2013 and NDP 2018 in media and content roles.\n\nTransitioning into the corporate sector, he expanded into business growth and digital transformation. He has also driven professional upskilling initiatives, promoting AI and digital capabilities to organizations and working professionals.\n\nCurrently, overseeing operations at Metaskills Institute and Integrum Global, he designs and deploys practical AI workflows in live business environments. Notable work includes AI-powered ticket triaging, helpdesk automation and SLA monitoring dashboards. He specialises in prompt engineering and workflow architecture, leveraging Claude and other LLMs to reduce turnaround time, improve reporting clarity, and enhance decision-making.",
   },
@@ -73,6 +73,13 @@ const cyberTeam = [
     image: "https://metaskills.sg/wp-content/uploads/2026/03/STeven-e1772366589711.jpeg",
     bio: "Steven Ong is a seasoned cybersecurity executive and academic leader with over 25 years of experience in enterprise security governance, regulatory compliance, digital transformation, and higher education leadership. As a Chief Information Security Officer, he transformed institutional cybersecurity into a structured, risk-based program aligned with ISO 27001 and the NIST Cybersecurity Framework. He implemented comprehensive security policies, established a cross-functional Cybersecurity Steering Committee, and strengthened compliance across FERPA, PDPA, and GDPR frameworks. Through enterprise-wide risk assessments and formalized risk registers, he significantly reduced regulatory exposure and enhanced executive oversight.\n\nHe also built centralized Security Operations capability with 24/7 monitoring, deployed SIEM and EDR solutions, and implemented tested Incident Response Plan that successfully contained phishing and ransomware threats without operational disruption. He secured research environments using Zero Trust principles and network segmentation, introduced institution-wide Multi-Factor Authentication and Role-Based Access Control, automated identity lifecycle management, and reduced phishing click rates from 35% to 12% through targeted awareness initiatives. He also led cloud security governance, implemented CASB monitoring, optimized cybersecurity investments, and secured increased funding through strategic business cases.\n\nAs a Senior Lecturer, Steven has designed industry-aligned cybersecurity curricula, developed advanced cybersecurity laboratories, supervised over 100 undergraduate and 30+ Master's projects, and trained corporate clients from leading organizations. His career reflects a rare integration of executive strategy, operational excellence, academic leadership, and national cybersecurity capacity building.",
   },
+  {
+    name: "Jimmy Leong",
+    role: "Adjunct Trainer",
+    expertise: "Adult Education | AI & Cybersecurity Training | Instructor Development | Competency-Based Curricula",
+    image: jimmyImg,
+    bio: "Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He specialises in the design and delivery of instructor development programmes, competency-based curricula, and hands-on technical training, with a focus on AI and cybersecurity domains. Throughout his career, he has supported organisations such as MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation), and the Institute for Adult Learning Singapore, delivering capability development initiatives for both public and private sector audiences. Jimmy adopts an evidence-based approach to adult learning, integrating practical methodologies such as simulated labs, tabletop exercises, and structured assessment frameworks to ensure effective knowledge transfer and measurable training outcomes.",
+  },
 ];
 
 const adjunctTrainers = [
@@ -82,13 +89,6 @@ const adjunctTrainers = [
     expertise: "Machine Learning | Python Development | Cloud-Native Workflows | VR",
     image: "",
     bio: "YJ Soon is a full-stack software engineer and educator specializing in machine learning, Python development, and cloud-native workflows. He has extensive experience in web and mobile application development, as well as immersive technologies such as VR. YJ conducts technical training that merges hands-on coding with best practices in AI/ML deployment, making complex implementations approachable for learners from both technical and non-technical backgrounds.",
-  },
-  {
-    name: "Jimmy Leong",
-    role: "Adjunct Trainer",
-    expertise: "Adult Education | AI & Cybersecurity Training | Instructor Development | Competency-Based Curricula",
-    image: jimmyImg,
-    bio: "Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He specialises in the design and delivery of instructor development programmes, competency-based curricula, and hands-on technical training, with a focus on AI and cybersecurity domains. Throughout his career, he has supported organisations such as MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation), and the Institute for Adult Learning Singapore, delivering capability development initiatives for both public and private sector audiences. Jimmy adopts an evidence-based approach to adult learning, integrating practical methodologies such as simulated labs, tabletop exercises, and structured assessment frameworks to ensure effective knowledge transfer and measurable training outcomes.",
   },
 ];
 
@@ -115,7 +115,7 @@ const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => (
           <img
             src={f.image}
             alt={f.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
             loading="lazy"
           />
         </div>
