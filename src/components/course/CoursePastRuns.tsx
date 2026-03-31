@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Users, Star, Quote, ChevronLeft, ChevronRight, Expand } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { PastRun } from "@/data/pastRuns";
 import GalleryLightbox from "@/components/GalleryLightbox";
 
