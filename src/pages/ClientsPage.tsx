@@ -89,7 +89,7 @@ const ClientsPage = () => {
       <Navbar />
       <main className="pt-16 md:pt-[70px]">
         {/* Hero */}
-        <section className="section-dark py-20 md:py-28">
+        <section className="section-dark py-16 md:py-20">
           <div className="max-w-[1140px] mx-auto px-6 text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
