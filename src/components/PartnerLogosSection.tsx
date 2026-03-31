@@ -45,12 +45,12 @@ const PartnerLogosSection = () => {
           {doubled.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center"
+              className="flex-shrink-0 w-[260px] h-[100px] flex items-center justify-center"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-[80px] max-w-[200px] w-auto h-auto object-contain"
+                className="max-h-[100px] max-w-[260px] w-auto h-auto object-contain"
                 loading="lazy"
               />
             </div>
