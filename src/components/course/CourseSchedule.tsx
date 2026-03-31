@@ -14,6 +14,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
   const upcomingRuns = schedule.filter((r) => r.status === "upcoming" || r.status === "filling");
   const clientRuns = pastRuns.filter((r) => r.client);
   const uniqueClients = [...new Set(clientRuns.map((r) => r.client))];
+  const hasCompletedRuns = pastRuns.length > 0;
 
   return (
     <section className="bg-gradient-to-b from-primary/5 to-background border-b border-border">
@@ -47,15 +48,27 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                 </div>
               </div>
             )}
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Flame className="w-6 h-6 text-primary" />
+            {hasCompletedRuns ? (
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Flame className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-foreground">100%</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">Fully Subscribed</div>
+                </div>
               </div>
-              <div>
-                <div className="text-2xl md:text-3xl font-bold text-foreground">100%</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wide">Fully Subscribed</div>
+            ) : (
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Flame className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-foreground">New</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">First Cohorts Open</div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Urgency CTA */}
@@ -73,10 +86,14 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                   Limited Seats Available
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-2">
-                  All {pastRuns.length} past runs were fully subscribed
+                  {hasCompletedRuns
+                    ? `All ${pastRuns.length} past runs were fully subscribed`
+                    : "Be among the first cohort for this programme"}
                 </h3>
                 <p className="text-primary-foreground/80 text-sm mb-5 max-w-lg mx-auto">
-                  Don't miss the next intake. Register early to secure your seat.
+                  {hasCompletedRuns
+                    ? "Don't miss the next intake. Register early to secure your seat."
+                    : "Early registration is now open for upcoming intakes. Enquire to reserve your seat."}
                 </p>
                 <a
                   href="mailto:admissions@metaskills.sg"
