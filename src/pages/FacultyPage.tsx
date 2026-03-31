@@ -115,7 +115,7 @@ const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => (
           <img
             src={f.image}
             alt={f.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
             loading="lazy"
           />
         </div>
