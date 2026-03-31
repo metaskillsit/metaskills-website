@@ -23,9 +23,9 @@ const allFaculty = [
     image: "https://metaskills.sg/wp-content/uploads/2026/03/Chris-Tan-e1772416392943.jpg",
   },
   {
-    name: "Andrew",
+    name: "Andrew Toh",
     role: "Head, Operations",
-    expertise: "Operational Leadership | AI-Driven Transformation",
+    expertise: "Operational Leadership | AI-Driven Transformation | Vibe Coding",
     image: "https://metaskills.sg/wp-content/uploads/2026/02/Andrew-e1772293476358.jpeg",
   },
   {
