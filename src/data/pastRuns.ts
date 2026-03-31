@@ -1,9 +1,11 @@
-import pastRun1 from "@/assets/past-run-1.jpg";
-import pastRun2 from "@/assets/past-run-2.jpg";
-import pastRun3 from "@/assets/past-run-3.jpg";
-import pastRun4 from "@/assets/past-run-4.jpg";
-import pastRun5 from "@/assets/past-run-5.jpg";
-import pastRun6 from "@/assets/past-run-6.jpg";
+import pastClass1 from "@/assets/past-class-1.jpg";
+import pastClass2 from "@/assets/past-class-2.jpg";
+import pastClass3 from "@/assets/past-class-3.jpg";
+import pastClass4 from "@/assets/past-class-4.jpg";
+import pastClass5 from "@/assets/past-class-5.jpg";
+import pastClass6 from "@/assets/past-class-6.jpg";
+import pastClass7 from "@/assets/past-class-7.jpg";
+import pastClass8 from "@/assets/past-class-8.jpg";
 
 export interface PastRun {
   date: string;

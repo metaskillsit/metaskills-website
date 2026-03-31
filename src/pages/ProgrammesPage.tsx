@@ -156,6 +156,8 @@ const ProgrammesPage = () => {
             ))}
           </div>
         </section>
+
+        <PastClassesSection />
       </main>
       <FooterSection />
     </div>

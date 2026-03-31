@@ -27,6 +27,7 @@ const Index = () => {
         <WhyMetaskillsSection />
         <FacultySection />
         <TestimonialsSection />
+        <PastClassesSection />
         <PartnerLogosSection />
         
         <LocationsSection />
