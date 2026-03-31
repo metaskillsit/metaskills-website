@@ -61,6 +61,10 @@ const photos = [
   { src: pastClass25, caption: "Applied Data Science — Instructor-Led Session" },
   { src: pastClass26, caption: "Industry Showcase — JCube/Integrum Event Booth" },
   { src: pastClass27, caption: "Applied Data Science — Learner Engagement Session" },
+  { src: pastClass28, caption: "LLM-Assisted Planning — Mermaid Workshop Day 1" },
+  { src: pastClass29, caption: "Hands-On Coding — Full Classroom Group Session" },
+  { src: pastClass30, caption: "Smarter AI for All — Lenovo x Intel Industry Talk" },
+  { src: pastClass31, caption: "Context Engineering — Enterprise AI Assistants Workshop" },
 ];
 
 // Split into two rows for dual-direction scrolling
