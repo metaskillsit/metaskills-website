@@ -10,6 +10,9 @@ import PartnersSection from "@/components/PartnersSection";
 import LocationsSection from "@/components/LocationsSection";
 import AdmissionsSection from "@/components/AdmissionsSection";
 import FooterSection from "@/components/FooterSection";
+import CertifiedInstructorsSection from "@/components/CertifiedInstructorsSection";
+import PartnerLogosSection from "@/components/PartnerLogosSection";
+import TranslationWidget from "@/components/TranslationWidget";
 
 const Index = () => {
   return (
@@ -17,17 +20,20 @@ const Index = () => {
       <Navbar />
       <main className="pt-16 md:pt-[70px]">
         <HeroSection />
+        <CertifiedInstructorsSection />
         <MissionSection />
         <StatsSection />
         <ProgramsSection />
         <WhyMetaskillsSection />
         <FacultySection />
         <TestimonialsSection />
+        <PartnerLogosSection />
         <PartnersSection />
         <LocationsSection />
         <AdmissionsSection />
       </main>
       <FooterSection />
+      <TranslationWidget />
     </div>
   );
 };
