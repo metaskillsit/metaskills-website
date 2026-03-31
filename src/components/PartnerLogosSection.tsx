@@ -8,12 +8,13 @@ import svbbLogo from "@/assets/partner-svbb.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import iscaLogo from "@/assets/logo-isca.png";
 import safraLogo from "@/assets/logo-safra.jpg";
+import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 
 const partnerLogos = [
   { name: "AISG", logo: aisgLogo },
   { name: "ISCA", logo: iscaLogo },
   { name: "SMU Academy", logo: smuAcademyLogo },
-  { name: "NUS AIDF", logo: "https://aidf.nus.edu.sg/wp-content/uploads/2023/03/NUS-AIDF-logo-dark.png" },
+  { name: "NUS AIDF", logo: nusAidfLogo },
   { name: "Tinkercademy", logo: tinkercademyLogo },
   { name: "JCube Institute", logo: jcubeLogo },
   { name: "Integrum Global", logo: integrumLogo },
