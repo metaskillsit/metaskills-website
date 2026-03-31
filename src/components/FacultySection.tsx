@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import jimmyImg from "@/assets/jimmy-profile.jpg";
 
 const allFaculty = [
   {
@@ -57,6 +58,12 @@ const allFaculty = [
     expertise: "Cybersecurity Governance | ISO 27001 | NIST | Cloud Security",
     image: "https://metaskills.sg/wp-content/uploads/2026/03/STeven-e1772366589711.jpeg",
   },
+  {
+    name: "Jimmy Leong",
+    role: "Adjunct Trainer",
+    expertise: "Adult Education | AI & Cybersecurity Training | Instructor Development",
+    image: jimmyImg,
+  },
 ];
 
 const AUTO_INTERVAL = 4000;
@@ -65,7 +72,6 @@ const GAP = 32; // gap-8 = 32px
 const FacultySection = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
   const [cardWidth, setCardWidth] = useState(0);
   const maxIdx = allFaculty.length - 4;
 
@@ -108,7 +114,7 @@ const FacultySection = () => {
         >
           <div>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-              Our Faculty
+              Our Core Faculty
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl">
               Practitioners, researchers, and educators who have collectively trained more than 10,000 professionals.
@@ -157,7 +163,6 @@ const FacultySection = () => {
             {allFaculty.map((f) => (
               <div
                 key={f.name}
-                ref={cardRef}
                 className="group flex-shrink-0"
                 style={{ width: cardWidth > 0 ? cardWidth : "calc(25% - 24px)" }}
               >
