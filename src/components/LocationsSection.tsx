@@ -1,34 +1,21 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { MapPin } from "lucide-react";
 import cthub2Img from "@/assets/cthub2-building.jpg";
 import trainingCenterImg from "@/assets/training-center-real.png";
 import classroomImg from "@/assets/classroom-cthub2-edited.jpg";
 import conferenceRoomImg from "@/assets/conference-room.jpg";
 
-const locations = [
-  {
-    name: "Singapore HQ — CT Hub 2",
-    description: "Located at 114 Lavender Street, CT Hub 2, #07-74, Singapore 338729. Our main campus equipped with state-of-the-art facilities for hands-on AI training.",
-    image: cthub2Img,
-  },
-  {
-    name: "Training Centre",
-    description: "Modern collaborative learning spaces designed for immersive, project-based programmes.",
-    image: trainingCenterImg,
-  },
-  {
-    name: "Innovation Lab",
-    description: "A dedicated space for AI research, prototyping, and industry collaborations.",
-    image: classroomImg,
-  },
-  {
-    name: "Conference Room",
-    description: "Fully equipped boardroom with presentation displays and whiteboard for strategy sessions and corporate workshops.",
-    image: conferenceRoomImg,
-  },
-];
-
 const LocationsSection = () => {
+  const { t } = useTranslation();
+
+  const locations = [
+    { name: t("locations.hqName"), description: t("locations.hqDesc"), image: cthub2Img },
+    { name: t("locations.trainingName"), description: t("locations.trainingDesc"), image: trainingCenterImg },
+    { name: t("locations.labName"), description: t("locations.labDesc"), image: classroomImg },
+    { name: t("locations.confName"), description: t("locations.confDesc"), image: conferenceRoomImg },
+  ];
+
   return (
     <section id="locations" className="bg-muted">
       <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-20">
@@ -39,10 +26,10 @@ const LocationsSection = () => {
           className="mb-12"
         >
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-            Our Learning Spaces
+            {t("locations.title")}
           </h2>
           <p className="text-muted-foreground mt-3 max-w-xl">
-            World-class facilities designed for hands-on, immersive learning experiences.
+            {t("locations.subtitle")}
           </p>
         </motion.div>
 

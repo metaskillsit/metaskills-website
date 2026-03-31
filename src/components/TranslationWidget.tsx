@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const languages = [
   { code: "en", label: "English", flag: "🇬🇧" },
@@ -8,8 +9,8 @@ const languages = [
 ];
 
 const TranslationWidget = () => {
+  const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState("en");
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,15 +24,11 @@ const TranslationWidget = () => {
   }, []);
 
   const handleSelect = (code: string) => {
-    setCurrent(code);
+    i18n.changeLanguage(code);
     setOpen(false);
-    // Google Translate integration placeholder
-    if (code !== "en" && (window as any).google?.translate) {
-      // Would trigger Google Translate here
-    }
   };
 
-  const currentLang = languages.find((l) => l.code === current);
+  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
 
   return (
     <div ref={ref} className="fixed bottom-6 right-6 z-50">
@@ -42,7 +39,7 @@ const TranslationWidget = () => {
               key={lang.code}
               onClick={() => handleSelect(lang.code)}
               className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
-                current === lang.code
+                i18n.language === lang.code
                   ? "bg-primary/10 text-primary font-medium"
                   : "text-foreground/80 hover:bg-muted"
               }`}
@@ -59,7 +56,7 @@ const TranslationWidget = () => {
         aria-label="Translate"
       >
         <Globe className="w-4 h-4" />
-        <span>{currentLang?.flag} {currentLang?.label}</span>
+        <span>{currentLang.flag} {currentLang.label}</span>
       </button>
     </div>
   );

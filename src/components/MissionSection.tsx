@@ -1,31 +1,30 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Brain, ShieldCheck, TrendingUp } from "lucide-react";
 
-const pillars = [
-  {
-    icon: Brain,
-    title: "Transformational Learning",
-    description:
-      "A portfolio of impactful programmes for early professionals to senior executives in Agentic AI, Data Science, and Algorithmic Trading.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Pioneering Faculty",
-    description:
-      "Our faculty bring their real-world consulting and deployment expertise — combined with over a decade of university-level teaching — to every classroom.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Industry-Ready Skills",
-    description:
-      "Every programme integrates technical depth, strategic thinking, and implementation frameworks aligned with enterprise and government standards.",
-  },
-];
-
 const MissionSection = () => {
+  const { t } = useTranslation();
+
+  const pillars = [
+    {
+      icon: Brain,
+      title: t("mission.pillar1Title"),
+      description: t("mission.pillar1Desc"),
+    },
+    {
+      icon: TrendingUp,
+      title: t("mission.pillar2Title"),
+      description: t("mission.pillar2Desc"),
+    },
+    {
+      icon: ShieldCheck,
+      title: t("mission.pillar3Title"),
+      description: t("mission.pillar3Desc"),
+    },
+  ];
+
   return (
     <section id="about" className="bg-background">
-      {/* Mission statement - INSEAD style centered block */}
       <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,14 +33,13 @@ const MissionSection = () => {
           className="max-w-4xl mx-auto text-center"
         >
           <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed font-body">
-            Metaskills Institute equips our community with the knowledge, skills and experiences to{" "}
-            <strong className="text-primary">tackle the AI challenges of tomorrow</strong> and{" "}
-            <strong className="text-primary">drive digital transformation across ASEAN.</strong>
+            {t("mission.statement")}{" "}
+            <strong className="text-primary">{t("mission.highlight1")}</strong> {t("mission.and")}{" "}
+            <strong className="text-primary">{t("mission.highlight2")}</strong>
           </p>
         </motion.div>
       </div>
 
-      {/* Three pillars - INSEAD style */}
       <div className="border-t border-border">
         <div className="max-w-[1140px] mx-auto px-6 py-14">
           <div className="grid md:grid-cols-3 gap-10">

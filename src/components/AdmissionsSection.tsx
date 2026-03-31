@@ -1,16 +1,19 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { CheckCircle } from "lucide-react";
 
-const benefits = [
-  "Industry-recognised certifications in Agentic AI and Applied Data Science",
-  "Practical, project-based curriculum designed by master trainers",
-  "Access to Singapore's growing AI and digital innovation ecosystem",
-  "Alumni events and industry partnership opportunities",
-  "Programmes endorsed by faculty teaching at universities and government agencies",
-  "Available in English, Chinese, and Vietnamese",
-];
-
 const AdmissionsSection = () => {
+  const { t } = useTranslation();
+
+  const benefits = [
+    t("admissions.benefit1"),
+    t("admissions.benefit2"),
+    t("admissions.benefit3"),
+    t("admissions.benefit4"),
+    t("admissions.benefit5"),
+    t("admissions.benefit6"),
+  ];
+
   return (
     <section id="admissions" className="bg-background">
       <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-20">
@@ -21,12 +24,10 @@ const AdmissionsSection = () => {
             viewport={{ once: true }}
           >
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Admissions
+              {t("admissions.title")}
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
-              Join a community of forward-thinking professionals. Our programmes
-              are designed for individuals and organisations seeking to build
-              real-world AI capabilities.
+              {t("admissions.subtitle")}
             </p>
             <ul className="space-y-4">
               {benefits.map((b, i) => (
@@ -52,29 +53,29 @@ const AdmissionsSection = () => {
             className="bg-muted rounded-sm p-8 border border-border"
           >
             <h3 className="font-heading text-2xl font-bold text-foreground mb-6">
-              Request Information
+              {t("admissions.requestInfo")}
             </h3>
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-1">Full Name</label>
+                <label className="block text-sm font-medium text-muted-foreground mb-1">{t("admissions.fullName")}</label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 rounded-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="Your full name"
+                  placeholder={t("admissions.fullNamePlaceholder")}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-1">Email</label>
+                <label className="block text-sm font-medium text-muted-foreground mb-1">{t("admissions.email")}</label>
                 <input
                   type="email"
                   className="w-full px-4 py-3 rounded-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="you@email.com"
+                  placeholder={t("admissions.emailPlaceholder")}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-1">Programme of Interest</label>
+                <label className="block text-sm font-medium text-muted-foreground mb-1">{t("admissions.programmeOfInterest")}</label>
                 <select className="w-full px-4 py-3 rounded-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option value="">Select a programme</option>
+                  <option value="">{t("admissions.selectProgramme")}</option>
                   <option>Foundations of Agentic AI Workflows</option>
                   <option>Empowering Agentic AI with LLMs</option>
                   <option>Deploying & Securing Agentic AI Systems</option>
@@ -85,18 +86,18 @@ const AdmissionsSection = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-1">Message</label>
+                <label className="block text-sm font-medium text-muted-foreground mb-1">{t("admissions.message")}</label>
                 <textarea
                   className="w-full px-4 py-3 rounded-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                   rows={3}
-                  placeholder="Tell us about your goals..."
+                  placeholder={t("admissions.messagePlaceholder")}
                 />
               </div>
               <button
                 type="submit"
                 className="w-full px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-sm text-sm uppercase tracking-wider hover:brightness-110 transition-all"
               >
-                Submit Enquiry
+                {t("admissions.submit")}
               </button>
             </form>
           </motion.div>

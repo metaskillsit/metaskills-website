@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "about": "关于我们",
+    "programmes": "课程",
+    "faculty": "师资",
+    "admissions": "招生",
+    "aboutMetaskills": "关于 Metaskills",
+    "aboutUs": "关于我们",
+    "ourFaculty": "我们的师资",
+    "partners": "合作伙伴",
+    "ourClients": "我们的客户",
+    "learningSpaces": "学习空间",
+    "allProgrammes": "所有课程",
+    "howToApply": "如何申请",
+    "courseFeesAndFunding": "学费与资助",
+    "enquireNow": "立即咨询"
+  },
+  "hero": {
+    "title": "亚洲人工智能学院",
+    "subtitle": "为专业人士提供智能体AI、算法交易和网络安全能力培训。"
+  },
+  "certified": {
+    "heading": "课程由官方认证讲师设计和教授"
+  },
+  "mission": {
+    "statement": "Metaskills Institute 为我们的社区提供知识、技能和经验，以",
+    "highlight1": "应对未来的人工智能挑战",
+    "and": "并",
+    "highlight2": "推动东盟的数字化转型。",
+    "pillar1Title": "变革性学习",
+    "pillar1Desc": "为初级专业人士到高级管理人员提供智能体AI、数据科学和算法交易领域的高影响力课程组合。",
+    "pillar2Title": "先驱师资",
+    "pillar2Desc": "我们的师资将真实世界的咨询和部署经验——结合超过十年的大学级别教学——带入每一间教室。",
+    "pillar3Title": "行业就绪技能",
+    "pillar3Desc": "每个课程都融合了技术深度、战略思维和与企业及政府标准对齐的实施框架。"
+  },
+  "stats": {
+    "profTrained": "已培训专业人士",
+    "yearsExp": "师资综合经验年数",
+    "orgsPartnered": "合作机构",
+    "progsOffered": "提供的课程"
+  },
+  "programmes": {
+    "title": "我们的课程",
+    "subtitle": "找到适合您的课程。",
+    "glance": "所有课程一览",
+    "agenticTitle": "智能体AI工作坊系列",
+    "agenticDesc": "为现实企业应用设计、部署和治理自主AI智能体。",
+    "aiAutoTitle": "AI自动化与智能体",
+    "aiAutoDesc": "从无代码工作流到AI编码智能体——构建和部署智能自动化系统的实用动手工作坊。",
+    "dataTitle": "数据科学与分析",
+    "dataDesc": "从Python编程到高级机器学习——实用的、基于项目的数据科学教育。",
+    "fintechTitle": "金融科技与算法交易",
+    "fintechDesc": "由自动化和分析驱动的数据化交易策略。",
+    "cyberTitle": "网络防御",
+    "cyberDesc": "全面的网络安全概述——基础知识、威胁格局、关键角色和认证路线图规划。",
+    "aiLeadTitle": "AI领导力与治理",
+    "aiLeadDesc": "面向高层领导者的战略工作坊——AI采用路线图、问责框架、智能体治理和AI兵棋推演。",
+    "mccTitle": "MCC+ 网络防御认证",
+    "mccDesc": "整合的网络安全认证课程——4天核心基础加1天选修课，对齐Security+、CySA+、CEH、CHFI和SecAI。"
+  },
+  "why": {
+    "title": "为何选择 Metaskills",
+    "intro": "我们的培训师是活跃的AI顾问和部署专家。这种行业沉浸意味着每节课都基于当今重要的实际挑战和机遇。",
+    "feat1Title": "实践者优先",
+    "feat1Desc": "我们的讲师是活跃的AI顾问和部署专家，与企业、政府机构和大学合作。",
+    "feat2Title": "资深培训师",
+    "feat2Desc": "由拥有超过十年大学级别教学和企业培训经验的资深培训师指导。",
+    "feat3Title": "行业认可的认证",
+    "feat3Desc": "与行业和政府合作设计的认证——在新加坡和东盟得到认可。",
+    "feat4Title": "应用学习",
+    "feat4Desc": "我们将复杂的AI概念简化为实际步骤，使各级学习者都能理解。",
+    "feat5Title": "10,000+ 已培训专业人士",
+    "feat5Desc": "我们的师资已在新加坡和东盟培训了超过10,000名专业人士。",
+    "feat6Title": "职业网络",
+    "feat6Desc": "通过校友活动和行业合作连接新加坡不断增长的AI和数字创新生态系统。"
+  },
+  "faculty": {
+    "title": "我们的核心师资",
+    "subtitle": "已培训超过10,000名专业人士的实践者、研究者和教育者。"
+  },
+  "testimonials": {
+    "title": "学员反馈"
+  },
+  "partners": {
+    "title": "合作机构"
+  },
+  "locations": {
+    "title": "我们的学习空间",
+    "subtitle": "为沉浸式动手学习体验而设计的世界级设施。",
+    "hqName": "新加坡总部 — CT Hub 2",
+    "hqDesc": "位于114 Lavender Street, CT Hub 2, #07-74, Singapore 338729。我们的主校区配备了先进的AI实训设施。",
+    "trainingName": "培训中心",
+    "trainingDesc": "为沉浸式、基于项目的课程设计的现代协作学习空间。",
+    "labName": "创新实验室",
+    "labDesc": "专用于AI研究、原型设计和行业合作的空间。",
+    "confName": "会议室",
+    "confDesc": "配备演示显示器和白板的全功能会议室，用于战略会议和企业研讨会。"
+  },
+  "admissions": {
+    "title": "招生",
+    "subtitle": "加入前瞻性专业人士社区。我们的课程专为寻求建立现实世界AI能力的个人和组织设计。",
+    "benefit1": "智能体AI和应用数据科学的行业认可认证",
+    "benefit2": "由资深培训师设计的实用、基于项目的课程",
+    "benefit3": "接入新加坡不断增长的AI和数字创新生态系统",
+    "benefit4": "校友活动和行业合作机会",
+    "benefit5": "由在大学和政府机构任教的师资认可的课程",
+    "benefit6": "提供英语、中文和越南语版本",
+    "requestInfo": "索取信息",
+    "fullName": "全名",
+    "fullNamePlaceholder": "您的全名",
+    "email": "电子邮箱",
+    "emailPlaceholder": "you@email.com",
+    "programmeOfInterest": "感兴趣的课程",
+    "selectProgramme": "选择课程",
+    "message": "留言",
+    "messagePlaceholder": "告诉我们您的目标...",
+    "submit": "提交咨询"
+  },
+  "footer": {
+    "tagline": "东盟在智能体AI、算法交易和网络安全能力建设方面的首选合作伙伴。",
+    "programmes": "课程",
+    "institute": "学院",
+    "resources": "资源",
+    "allProgrammes": "所有课程",
+    "agenticAI": "智能体AI工作流",
+    "dataScience": "数据科学与分析",
+    "algoTrading": "算法交易",
+    "aboutUs": "关于我们",
+    "faculty": "师资",
+    "partners": "合作伙伴",
+    "learningSpaces": "学习空间",
+    "admissions": "招生",
+    "courseFeesAndFunding": "学费与资助",
+    "copyright": "© {{year}} Metaskills Institute. 版权所有。",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  }
+}

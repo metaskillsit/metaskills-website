@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import aisgLogo from "@/assets/logo-aisg.png";
 import comptiaLogo from "@/assets/logo-comptia.png";
 import ecCouncilLogo from "@/assets/logo-ec-council.webp";
@@ -17,6 +18,7 @@ const certifications = [
 ];
 
 const CertifiedInstructorsSection = () => {
+  const { t } = useTranslation();
   const doubled = [...certifications, ...certifications];
 
   return (
@@ -28,7 +30,7 @@ const CertifiedInstructorsSection = () => {
           viewport={{ once: true }}
           className="text-center text-sm font-semibold uppercase tracking-widest text-muted-foreground"
         >
-          Curriculum designed and delivered by officially certified instructors
+          {t("certified.heading")}
         </motion.p>
       </div>
       <div className="relative">

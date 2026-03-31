@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "about": "Giới thiệu",
+    "programmes": "Chương trình",
+    "faculty": "Giảng viên",
+    "admissions": "Tuyển sinh",
+    "aboutMetaskills": "Giới thiệu Metaskills",
+    "aboutUs": "Về chúng tôi",
+    "ourFaculty": "Đội ngũ giảng viên",
+    "partners": "Đối tác",
+    "ourClients": "Khách hàng",
+    "learningSpaces": "Không gian học tập",
+    "allProgrammes": "Tất cả chương trình",
+    "howToApply": "Cách đăng ký",
+    "courseFeesAndFunding": "Học phí & Tài trợ",
+    "enquireNow": "Liên hệ ngay"
+  },
+  "hero": {
+    "title": "Viện AI cho Châu Á",
+    "subtitle": "Trang bị cho chuyên gia năng lực AI Đại lý, Giao dịch Thuật toán & An ninh mạng."
+  },
+  "certified": {
+    "heading": "Chương trình được thiết kế và giảng dạy bởi giảng viên được chứng nhận chính thức"
+  },
+  "mission": {
+    "statement": "Metaskills Institute trang bị cho cộng đồng kiến thức, kỹ năng và kinh nghiệm để",
+    "highlight1": "đối mặt với thách thức AI của ngày mai",
+    "and": "và",
+    "highlight2": "thúc đẩy chuyển đổi số trên khắp ASEAN.",
+    "pillar1Title": "Học tập Chuyển đổi",
+    "pillar1Desc": "Danh mục chương trình có tác động mạnh mẽ cho các chuyên gia từ sơ cấp đến cấp cao trong AI Đại lý, Khoa học Dữ liệu và Giao dịch Thuật toán.",
+    "pillar2Title": "Giảng viên Tiên phong",
+    "pillar2Desc": "Giảng viên mang kinh nghiệm tư vấn và triển khai thực tế — kết hợp hơn một thập kỷ giảng dạy đại học — vào mỗi lớp học.",
+    "pillar3Title": "Kỹ năng Sẵn sàng cho Ngành",
+    "pillar3Desc": "Mỗi chương trình tích hợp chiều sâu kỹ thuật, tư duy chiến lược và khung triển khai phù hợp với tiêu chuẩn doanh nghiệp và chính phủ."
+  },
+  "stats": {
+    "profTrained": "Chuyên gia đã Đào tạo",
+    "yearsExp": "Năm Kinh nghiệm Giảng viên",
+    "orgsPartnered": "Tổ chức Đối tác",
+    "progsOffered": "Chương trình Cung cấp"
+  },
+  "programmes": {
+    "title": "Chương trình của Chúng tôi",
+    "subtitle": "Tìm chương trình phù hợp với bạn.",
+    "glance": "Tất cả chương trình trong một cái nhìn",
+    "agenticTitle": "Chuỗi Hội thảo AI Đại lý",
+    "agenticDesc": "Thiết kế, triển khai và quản trị các tác nhân AI tự chủ cho ứng dụng doanh nghiệp thực tế.",
+    "aiAutoTitle": "Tự động hóa AI và Đại lý",
+    "aiAutoDesc": "Từ quy trình không cần mã đến đại lý mã hóa AI — hội thảo thực hành xây dựng và triển khai hệ thống tự động hóa thông minh.",
+    "dataTitle": "Khoa học Dữ liệu & Phân tích",
+    "dataDesc": "Từ lập trình Python đến machine learning nâng cao — giáo dục khoa học dữ liệu thực tế dựa trên dự án.",
+    "fintechTitle": "Fintech & Giao dịch Thuật toán",
+    "fintechDesc": "Chiến lược giao dịch dựa trên dữ liệu với tự động hóa và phân tích cho thị trường tài chính.",
+    "cyberTitle": "Phòng thủ Mạng",
+    "cyberDesc": "Tổng quan an ninh mạng toàn diện — cơ bản, bối cảnh mối đe dọa, vai trò chính và lập kế hoạch lộ trình chứng nhận.",
+    "aiLeadTitle": "Lãnh đạo & Quản trị AI",
+    "aiLeadDesc": "Hội thảo chiến lược cho lãnh đạo cấp cao — lộ trình áp dụng AI, khung trách nhiệm, quản trị đại lý và AI wargaming.",
+    "mccTitle": "Chứng nhận Phòng thủ Mạng MCC+",
+    "mccDesc": "Chương trình chứng nhận an ninh mạng tổng hợp — 4 ngày nền tảng cốt lõi cộng 1 ngày tự chọn phù hợp Security+, CySA+, CEH, CHFI và SecAI."
+  },
+  "why": {
+    "title": "Tại sao chọn Metaskills",
+    "intro": "Giảng viên của chúng tôi là các chuyên gia tư vấn và triển khai AI đang hoạt động. Sự đắm chìm trong ngành này có nghĩa là mỗi bài học đều dựa trên những thách thức và cơ hội thực tế quan trọng ngày nay.",
+    "feat1Title": "Người Thực hành Đầu tiên",
+    "feat1Desc": "Giảng viên là các chuyên gia tư vấn và triển khai AI đang hoạt động, làm việc với doanh nghiệp, cơ quan chính phủ và đại học.",
+    "feat2Title": "Giảng viên Cao cấp",
+    "feat2Desc": "Được hướng dẫn bởi các giảng viên cao cấp với hơn một thập kỷ kinh nghiệm giảng dạy đại học và đào tạo doanh nghiệp.",
+    "feat3Title": "Chứng nhận Được Ngành Công nhận",
+    "feat3Desc": "Chứng nhận được thiết kế hợp tác với ngành và chính phủ — được công nhận trên khắp Singapore và ASEAN.",
+    "feat4Title": "Học tập Ứng dụng",
+    "feat4Desc": "Chúng tôi đơn giản hóa các khái niệm AI phức tạp thành các bước thực tế, giúp người học ở mọi cấp độ tiếp cận được.",
+    "feat5Title": "10,000+ Chuyên gia đã Đào tạo",
+    "feat5Desc": "Giảng viên của chúng tôi đã đào tạo hơn 10,000 chuyên gia trên khắp Singapore và ASEAN.",
+    "feat6Title": "Kết nối Nghề nghiệp",
+    "feat6Desc": "Kết nối với hệ sinh thái AI và đổi mới số đang phát triển của Singapore thông qua các sự kiện cựu sinh viên và quan hệ đối tác ngành."
+  },
+  "faculty": {
+    "title": "Đội ngũ Giảng viên Cốt lõi",
+    "subtitle": "Những người thực hành, nhà nghiên cứu và nhà giáo dục đã đào tạo hơn 10,000 chuyên gia."
+  },
+  "testimonials": {
+    "title": "Học viên Nói gì"
+  },
+  "partners": {
+    "title": "Các Tổ chức Đối tác"
+  },
+  "locations": {
+    "title": "Không gian Học tập",
+    "subtitle": "Cơ sở vật chất đẳng cấp thế giới được thiết kế cho trải nghiệm học tập thực hành, nhập vai.",
+    "hqName": "Trụ sở Singapore — CT Hub 2",
+    "hqDesc": "Tọa lạc tại 114 Lavender Street, CT Hub 2, #07-74, Singapore 338729. Khuôn viên chính được trang bị cơ sở vật chất tiên tiến cho đào tạo AI thực hành.",
+    "trainingName": "Trung tâm Đào tạo",
+    "trainingDesc": "Không gian học tập hợp tác hiện đại được thiết kế cho các chương trình nhập vai, dựa trên dự án.",
+    "labName": "Phòng thí nghiệm Đổi mới",
+    "labDesc": "Không gian chuyên dụng cho nghiên cứu AI, tạo mẫu và hợp tác ngành.",
+    "confName": "Phòng Hội nghị",
+    "confDesc": "Phòng họp đầy đủ tiện nghi với màn hình trình chiếu và bảng trắng cho các buổi họp chiến lược và hội thảo doanh nghiệp."
+  },
+  "admissions": {
+    "title": "Tuyển sinh",
+    "subtitle": "Tham gia cộng đồng các chuyên gia có tầm nhìn. Chương trình của chúng tôi được thiết kế cho các cá nhân và tổ chức muốn xây dựng năng lực AI thực tế.",
+    "benefit1": "Chứng nhận được ngành công nhận trong AI Đại lý và Khoa học Dữ liệu Ứng dụng",
+    "benefit2": "Chương trình thực tế, dựa trên dự án do giảng viên cao cấp thiết kế",
+    "benefit3": "Tiếp cận hệ sinh thái AI và đổi mới số đang phát triển của Singapore",
+    "benefit4": "Sự kiện cựu sinh viên và cơ hội hợp tác ngành",
+    "benefit5": "Chương trình được giảng viên giảng dạy tại đại học và cơ quan chính phủ xác nhận",
+    "benefit6": "Có sẵn bằng tiếng Anh, tiếng Trung và tiếng Việt",
+    "requestInfo": "Yêu cầu Thông tin",
+    "fullName": "Họ và Tên",
+    "fullNamePlaceholder": "Họ và tên của bạn",
+    "email": "Email",
+    "emailPlaceholder": "you@email.com",
+    "programmeOfInterest": "Chương trình Quan tâm",
+    "selectProgramme": "Chọn chương trình",
+    "message": "Tin nhắn",
+    "messagePlaceholder": "Cho chúng tôi biết mục tiêu của bạn...",
+    "submit": "Gửi Yêu cầu"
+  },
+  "footer": {
+    "tagline": "Đối tác hàng đầu của ASEAN trong xây dựng năng lực AI Đại lý, Giao dịch Thuật toán và An ninh mạng.",
+    "programmes": "Chương trình",
+    "institute": "Viện",
+    "resources": "Tài nguyên",
+    "allProgrammes": "Tất cả Chương trình",
+    "agenticAI": "Quy trình AI Đại lý",
+    "dataScience": "Khoa học Dữ liệu & Phân tích",
+    "algoTrading": "Giao dịch Thuật toán",
+    "aboutUs": "Về chúng tôi",
+    "faculty": "Giảng viên",
+    "partners": "Đối tác",
+    "learningSpaces": "Không gian Học tập",
+    "admissions": "Tuyển sinh",
+    "courseFeesAndFunding": "Học phí & Tài trợ",
+    "copyright": "© {{year}} Metaskills Institute. Bảo lưu mọi quyền.",
+    "privacy": "Chính sách Bảo mật",
+    "terms": "Điều khoản Dịch vụ"
+  }
+}

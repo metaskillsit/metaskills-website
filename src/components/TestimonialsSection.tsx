@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const testimonials = [
   {
@@ -22,6 +23,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="bg-primary">
       <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-20">
@@ -32,12 +34,12 @@ const TestimonialsSection = () => {
           className="mb-12"
         >
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">
-            What Our Learners Say
+            {t("testimonials.title")}
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((t, i) => (
+          {testimonials.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -47,10 +49,10 @@ const TestimonialsSection = () => {
               className="border-t border-white/20 pt-6"
             >
               <p className="text-white/85 text-sm leading-relaxed mb-6">
-                "{t.quote}"
+                "{item.quote}"
               </p>
-              <p className="text-sm font-semibold text-accent">{t.author}</p>
-              <p className="text-xs text-white/60">{t.role}</p>
+              <p className="text-sm font-semibold text-accent">{item.author}</p>
+              <p className="text-xs text-white/60">{item.role}</p>
             </motion.div>
           ))}
         </div>

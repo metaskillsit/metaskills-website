@@ -1,35 +1,38 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/metaskills-logo.jpg";
 
-const footerLinks = [
-  {
-    title: "Programmes",
-    links: [
-      { label: "All Programmes", href: "/programmes" },
-      { label: "Agentic AI Workflows", href: "/course/agentic-ai-foundations" },
-      { label: "Data Science & Analytics", href: "/course/python-programming-for-data-analytics" },
-      { label: "Algorithmic Trading", href: "/course/algorithmic-trading-level-1" },
-    ],
-  },
-  {
-    title: "Institute",
-    links: [
-      { label: "About Us", href: "/about" },
-      { label: "Faculty", href: "/faculty" },
-      { label: "Partners", href: "/partners" },
-      { label: "Learning Spaces", href: "/locations" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Admissions", href: "/admissions" },
-      { label: "Course Fees & Funding", href: "/admissions#fees" },
-    ],
-  },
-];
-
 const FooterSection = () => {
+  const { t } = useTranslation();
+
+  const footerLinks = [
+    {
+      title: t("footer.programmes"),
+      links: [
+        { label: t("footer.allProgrammes"), href: "/programmes" },
+        { label: t("footer.agenticAI"), href: "/course/agentic-ai-foundations" },
+        { label: t("footer.dataScience"), href: "/course/python-programming-for-data-analytics" },
+        { label: t("footer.algoTrading"), href: "/course/algorithmic-trading-level-1" },
+      ],
+    },
+    {
+      title: t("footer.institute"),
+      links: [
+        { label: t("footer.aboutUs"), href: "/about" },
+        { label: t("footer.faculty"), href: "/faculty" },
+        { label: t("footer.partners"), href: "/partners" },
+        { label: t("footer.learningSpaces"), href: "/locations" },
+      ],
+    },
+    {
+      title: t("footer.resources"),
+      links: [
+        { label: t("footer.admissions"), href: "/admissions" },
+        { label: t("footer.courseFeesAndFunding"), href: "/admissions#fees" },
+      ],
+    },
+  ];
+
   return (
     <footer className="section-dark">
       <div className="max-w-[1140px] mx-auto px-6 py-16">
@@ -41,8 +44,7 @@ const FooterSection = () => {
               className="h-12 w-auto object-contain mb-4"
             />
             <p className="text-sm text-white/70 leading-relaxed">
-              ASEAN's go-to partner for Agentic AI, Algorithmic Trading, and
-              Cybersecurity capability building.
+              {t("footer.tagline")}
             </p>
           </div>
           {footerLinks.map((group) => (
@@ -68,14 +70,14 @@ const FooterSection = () => {
 
         <div className="border-t border-white/15 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/50">
-            © {new Date().getFullYear()} Metaskills Institute. All rights reserved.
+            {t("footer.copyright", { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-white/50 hover:text-accent transition-colors">
-              Privacy Policy
+              {t("footer.privacy")}
             </a>
             <a href="#" className="text-xs text-white/50 hover:text-accent transition-colors">
-              Terms of Service
+              {t("footer.terms")}
             </a>
           </div>
         </div>

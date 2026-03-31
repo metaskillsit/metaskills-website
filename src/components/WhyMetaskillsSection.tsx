@@ -1,54 +1,26 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Award, Briefcase, GraduationCap, Lightbulb, Target, Network } from "lucide-react";
 import facilityImg from "@/assets/facility.jpg";
 
-const features = [
-  {
-    icon: Briefcase,
-    title: "Practitioners First",
-    description:
-      "Our instructors are active AI consultants and deployment specialists working with corporates, government agencies, and universities.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Master Trainers",
-    description:
-      "Guided by master trainers with over a decade of university-level teaching and corporate training experience.",
-  },
-  {
-    icon: Award,
-    title: "Industry-Recognised Certifications",
-    description:
-      "Certifications designed in partnership with industry and government — recognised across Singapore and ASEAN.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Applied Learning",
-    description:
-      "We simplify complex AI concepts into practical steps, making them accessible for learners at all levels.",
-  },
-  {
-    icon: Target,
-    title: "10,000+ Professionals Trained",
-    description:
-      "Our faculty have collectively trained more than 10,000 professionals across Singapore and ASEAN.",
-  },
-  {
-    icon: Network,
-    title: "Career Networking",
-    description:
-      "Connect to Singapore's growing AI and digital innovation ecosystem through alumni events and industry partnerships.",
-  },
-];
-
 const WhyMetaskillsSection = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    { icon: Briefcase, title: t("why.feat1Title"), description: t("why.feat1Desc") },
+    { icon: GraduationCap, title: t("why.feat2Title"), description: t("why.feat2Desc") },
+    { icon: Award, title: t("why.feat3Title"), description: t("why.feat3Desc") },
+    { icon: Lightbulb, title: t("why.feat4Title"), description: t("why.feat4Desc") },
+    { icon: Target, title: t("why.feat5Title"), description: t("why.feat5Desc") },
+    { icon: Network, title: t("why.feat6Title"), description: t("why.feat6Desc") },
+  ];
+
   return (
     <section id="consultants" className="bg-background">
-      {/* Full-width image banner - INSEAD style */}
       <div className="relative h-[300px] overflow-hidden">
         <img
           src={facilityImg}
-          alt="Metaskills training facility"
+          alt={t("why.title")}
           className="w-full h-full object-cover"
           loading="lazy"
           width={800}
@@ -58,7 +30,7 @@ const WhyMetaskillsSection = () => {
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <div className="max-w-[1140px] mx-auto">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-white">
-              Why Metaskills
+              {t("why.title")}
             </h2>
           </div>
         </div>
@@ -66,7 +38,7 @@ const WhyMetaskillsSection = () => {
 
       <div className="max-w-[1140px] mx-auto px-6 py-16">
         <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-14">
-          Our trainers are active AI consultants and deployment specialists. This industry immersion means every lesson is grounded in practical challenges and opportunities that matter today.
+          {t("why.intro")}
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">

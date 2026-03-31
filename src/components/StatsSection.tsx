@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-
-const stats = [
-  { value: 10000, suffix: "+", label: "Professionals Trained" },
-  { value: 50, suffix: "+", label: "Years Combined Faculty Experience" },
-  { value: 100, suffix: "+", label: "Organisations Partnered" },
-  { value: 30, suffix: "+", label: "Programmes Offered" },
-];
+import { useTranslation } from "react-i18next";
 
 const AnimatedNumber = ({ target, suffix }: { target: number; suffix: string }) => {
   const [count, setCount] = useState(0);
@@ -47,6 +41,15 @@ const AnimatedNumber = ({ target, suffix }: { target: number; suffix: string }) 
 };
 
 const StatsSection = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: 10000, suffix: "+", label: t("stats.profTrained") },
+    { value: 50, suffix: "+", label: t("stats.yearsExp") },
+    { value: 100, suffix: "+", label: t("stats.orgsPartnered") },
+    { value: 30, suffix: "+", label: t("stats.progsOffered") },
+  ];
+
   return (
     <section className="border-y border-border bg-muted">
       <div className="max-w-[1140px] mx-auto px-6 py-12">
