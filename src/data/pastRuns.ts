@@ -180,17 +180,6 @@ export const pastRunsData: Record<string, PastRun[]> = {
     },
   ],
 
-  // Showcase for recently validated community train-the-trainers format
-  "build-ai-workflows-no-code": [
-    {
-      date: "Mar 2026",
-      venue: "Singapore",
-      participants: 20,
-      organization: "AI Singapore x Micron",
-      photos: [pastClass43, pastClass37],
-      highlight: "Applied workflow labs delivered in a train-the-trainers format.",
-    },
-  ],
 };
 
 export const getPastRuns = (slug: string): PastRun[] => pastRunsData[slug] || [];
