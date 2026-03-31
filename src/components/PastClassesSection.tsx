@@ -28,6 +28,10 @@ import pastClass24 from "@/assets/past-class-24.jpg";
 import pastClass25 from "@/assets/past-class-25.jpg";
 import pastClass26 from "@/assets/past-class-26.jpg";
 import pastClass27 from "@/assets/past-class-27.jpg";
+import pastClass28 from "@/assets/past-class-28.jpg";
+import pastClass29 from "@/assets/past-class-29.jpg";
+import pastClass30 from "@/assets/past-class-30.jpg";
+import pastClass31 from "@/assets/past-class-31.jpg";
 
 const photos = [
   { src: pastClass1, caption: "Algorithmic Trading Mastery — Level 1, Run 8" },
