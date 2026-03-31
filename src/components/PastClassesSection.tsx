@@ -28,6 +28,10 @@ import pastClass24 from "@/assets/past-class-24.jpg";
 import pastClass25 from "@/assets/past-class-25.jpg";
 import pastClass26 from "@/assets/past-class-26.jpg";
 import pastClass27 from "@/assets/past-class-27.jpg";
+import pastClass28 from "@/assets/past-class-28.jpg";
+import pastClass29 from "@/assets/past-class-29.jpg";
+import pastClass30 from "@/assets/past-class-30.jpg";
+import pastClass31 from "@/assets/past-class-31.jpg";
 
 const photos = [
   { src: pastClass1, caption: "Algorithmic Trading Mastery — Level 1, Run 8" },
@@ -57,6 +61,10 @@ const photos = [
   { src: pastClass25, caption: "Applied Data Science — Instructor-Led Session" },
   { src: pastClass26, caption: "Industry Showcase — JCube/Integrum Event Booth" },
   { src: pastClass27, caption: "Applied Data Science — Learner Engagement Session" },
+  { src: pastClass28, caption: "LLM-Assisted Planning — Mermaid Workshop Day 1" },
+  { src: pastClass29, caption: "Hands-On Coding — Full Classroom Group Session" },
+  { src: pastClass30, caption: "Smarter AI for All — Lenovo x Intel Industry Talk" },
+  { src: pastClass31, caption: "Context Engineering — Enterprise AI Assistants Workshop" },
 ];
 
 // Split into two rows for dual-direction scrolling
