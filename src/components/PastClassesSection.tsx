@@ -21,6 +21,9 @@ import pastClass17 from "@/assets/past-class-17.jpg";
 import pastClass18 from "@/assets/past-class-18.jpg";
 import pastClass19 from "@/assets/past-class-19.jpg";
 import pastClass20 from "@/assets/past-class-20.jpg";
+import pastClass21 from "@/assets/past-class-21.jpg";
+import pastClass22 from "@/assets/past-class-22.jpg";
+import pastClass23 from "@/assets/past-class-23.jpg";
 
 const photos = [
   { src: pastClass1, caption: "Algorithmic Trading Mastery — Level 1, Run 8" },
@@ -43,6 +46,9 @@ const photos = [
   { src: pastClass18, caption: "AI Transformation Workshop — Full Classroom View" },
   { src: pastClass19, caption: "Prompt Engineering Workshop — Intensive Training Cohort" },
   { src: pastClass20, caption: "Small Group Coaching — Peer Discussion Session" },
+  { src: pastClass21, caption: "Leadership Session — Interactive Class Discussion" },
+  { src: pastClass22, caption: "Leadership Session — Participant Engagement" },
+  { src: pastClass23, caption: "Workshop Cohort — Group Graduation Photo" },
 ];
 
 // Split into two rows for dual-direction scrolling
