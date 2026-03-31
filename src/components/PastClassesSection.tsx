@@ -32,6 +32,10 @@ import pastClass28 from "@/assets/past-class-28.jpg";
 import pastClass29 from "@/assets/past-class-29.jpg";
 import pastClass30 from "@/assets/past-class-30.jpg";
 import pastClass31 from "@/assets/past-class-31.jpg";
+import pastClass32 from "@/assets/past-class-32.jpg";
+import pastClass33 from "@/assets/past-class-33.jpg";
+import pastClass34 from "@/assets/past-class-34.jpg";
+import pastClass35 from "@/assets/past-class-35.jpg";
 
 const photos = [
   { src: pastClass1, caption: "Algorithmic Trading Mastery — Level 1, Run 8" },
@@ -65,6 +69,10 @@ const photos = [
   { src: pastClass29, caption: "Hands-On Coding — Full Classroom Group Session" },
   { src: pastClass30, caption: "Smarter AI for All — Lenovo x Intel Industry Talk" },
   { src: pastClass31, caption: "Context Engineering — Enterprise AI Assistants Workshop" },
+  { src: pastClass32, caption: "Prompt Design with ChatGPT — Instructor-Led Workshop" },
+  { src: pastClass33, caption: "Data is the New Gold — SMU Lecture Hall Session" },
+  { src: pastClass34, caption: "Data Science Masterclass — SMU Lecture Theatre" },
+  { src: pastClass35, caption: "Data Analytics — Full Lecture Hall Presentation" },
 ];
 
 // Split into two rows for dual-direction scrolling
