@@ -3,6 +3,7 @@ import aisgLogo from "@/assets/logo-aisg.png";
 import comptiaLogo from "@/assets/logo-comptia.png";
 import ecCouncilLogo from "@/assets/logo-ec-council.webp";
 import smuAcademyLogo from "@/assets/logo-smu-academy.png";
+import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 
 const certifications = [
   { name: "AISG", logo: aisgLogo },
@@ -11,6 +12,7 @@ const certifications = [
   { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
   { name: "AWS", logo: "https://d1.awsstatic.com/logos/aws-logo-lockups/poweredbyaws/PB_AWS_logo_RGB.61d334f1a1172c3f7f5140ddc773571c16e9d04c.png" },
   { name: "SMU Academy", logo: smuAcademyLogo },
+  { name: "Tinkercademy", logo: tinkercademyLogo },
 ];
 
 const CertifiedInstructorsSection = () => {
@@ -33,12 +35,12 @@ const CertifiedInstructorsSection = () => {
           {doubled.map((cert, i) => (
             <div
               key={`${cert.name}-${i}`}
-              className="flex-shrink-0 w-[140px] h-[48px] flex items-center justify-center"
+              className="flex-shrink-0 w-[160px] h-[52px] flex items-center justify-center"
             >
               <img
                 src={cert.logo}
                 alt={cert.name}
-                className="max-h-[48px] max-w-[140px] w-auto h-auto object-contain"
+                className="max-h-[52px] max-w-[160px] w-auto h-auto object-contain"
                 loading="lazy"
               />
             </div>
