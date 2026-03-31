@@ -35,9 +35,6 @@ const CoursePage = () => {
   const navigate = useNavigate();
   const course = getCourseBySlug(slug || "");
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [slug]);
 
   const relatedCourses = courses
     .filter((c) => c.category === course?.category && c.slug !== slug)
