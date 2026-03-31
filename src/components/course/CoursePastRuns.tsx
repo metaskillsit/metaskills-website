@@ -33,15 +33,13 @@ const CoursePastRuns = ({ pastRuns, courseTitle }: CoursePastRunsProps) => {
     }));
   };
 
-  const lightboxItems = useMemo(() => {
-    if (!lightboxState) return [];
-    const run = pastRuns[lightboxState.runIndex];
-    return run.photos.map((photo, index) => ({
-      src: photo,
-      alt: `${courseTitle} - ${run.date} - Photo ${index + 1}`,
-      caption: `${courseTitle} — ${run.date} (${run.venue})`,
-    }));
-  }, [lightboxState, pastRuns, courseTitle]);
+  const lightboxItems = lightboxState
+    ? pastRuns[lightboxState.runIndex].photos.map((photo, index) => ({
+        src: photo,
+        alt: `${courseTitle} - ${pastRuns[lightboxState.runIndex].date} - Photo ${index + 1}`,
+        caption: `${courseTitle} — ${pastRuns[lightboxState.runIndex].date} (${pastRuns[lightboxState.runIndex].venue})`,
+      }))
+    : [];
 
   const openLightbox = (runIndex: number, photoIndex: number) => {
     setLightboxState({ runIndex, photoIndex });
