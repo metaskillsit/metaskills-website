@@ -36,6 +36,13 @@ import pastClass32 from "@/assets/past-class-32.jpg";
 import pastClass33 from "@/assets/past-class-33.jpg";
 import pastClass34 from "@/assets/past-class-34.jpg";
 import pastClass35 from "@/assets/past-class-35.jpg";
+import pastClass36 from "@/assets/past-class-36.jpg";
+import pastClass37 from "@/assets/past-class-37.jpg";
+import pastClass38 from "@/assets/past-class-38.jpg";
+import pastClass39 from "@/assets/past-class-39.jpg";
+import pastClass40 from "@/assets/past-class-40.jpg";
+import pastClass41 from "@/assets/past-class-41.jpg";
+import pastClass42 from "@/assets/past-class-42.jpg";
 
 const photos = [
   { src: pastClass1, caption: "Algorithmic Trading Mastery — Level 1, Run 8" },
@@ -73,6 +80,13 @@ const photos = [
   { src: pastClass33, caption: "Data is the New Gold — SMU Lecture Hall Session" },
   { src: pastClass34, caption: "Data Science Masterclass — SMU Lecture Theatre" },
   { src: pastClass35, caption: "Data Analytics — Full Lecture Hall Presentation" },
+  { src: pastClass36, caption: "Corporate Lab — Hands-On Technical Mentoring" },
+  { src: pastClass37, caption: "Algorithmic Trading Mastery — Evening Intensive Session" },
+  { src: pastClass38, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 1" },
+  { src: pastClass39, caption: "Algorithmic Trading Mastery — Level 1, Run 5 Live Charts" },
+  { src: pastClass40, caption: "Algorithmic Trading Mastery — Level 1, Run 5 Classroom" },
+  { src: pastClass41, caption: "CDA Stream A — Virtual Class, June 2020 Cohort" },
+  { src: pastClass42, caption: "Online Workshop — Zoom Live Session" },
 ];
 
 // Split into two rows for dual-direction scrolling
