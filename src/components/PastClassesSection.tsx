@@ -182,7 +182,7 @@ const PastClassesSection = () => {
       </div>
 
       <div className="max-w-[1140px] mx-auto px-6 mt-8">
-        <p className="text-xs text-muted-foreground/60 text-center md:text-right">{photos.length} photos from real training sessions</p>
+        <p className="text-xs text-muted-foreground/60 text-center md:text-right">{t("pastClasses.photoCount", { count: photos.length })}</p>
       </div>
 
       <GalleryLightbox
