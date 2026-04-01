@@ -22,8 +22,8 @@ const CertifiedInstructorsSection = () => {
   const doubled = [...certifications, ...certifications];
 
   return (
-    <section className="bg-card border-t border-border py-12 overflow-hidden">
-      <div className="max-w-[1140px] mx-auto px-6 mb-8">
+    <section className="bg-card border-t border-border py-6 md:py-12 overflow-hidden">
+      <div className="max-w-[1140px] mx-auto px-6 mb-4 md:mb-8">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
