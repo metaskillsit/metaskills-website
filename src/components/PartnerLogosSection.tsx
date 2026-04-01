@@ -41,12 +41,12 @@ const PartnerLogosSection = () => {
         </motion.div>
       </div>
       <div className="relative">
-        <div className="flex animate-scroll-right gap-20 items-center w-max px-10">
+        <div className="flex animate-scroll-right gap-10 md:gap-20 items-center w-max px-6 md:px-10">
           {doubled.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
               className={`flex-shrink-0 flex items-center justify-center ${
-                (partner as any).large ? "w-[320px] h-[120px]" : "w-[260px] h-[100px]"
+                (partner as any).large ? "w-[180px] h-[70px] md:w-[320px] md:h-[120px]" : "w-[140px] h-[56px] md:w-[260px] md:h-[100px]"
               }`}
             >
               <img
