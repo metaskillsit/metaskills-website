@@ -7,12 +7,12 @@ import appleLogo from "@/assets/logo-apple.png";
 import googleLogo from "@/assets/logo-google.png";
 
 const certifications = [
-  { name: "EC-Council", logo: ecCouncilLogo },
-  { name: "CompTIA", logo: comptiaLogo },
-  { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
-  { name: "AWS", logo: awsLogo },
-  { name: "Apple", logo: appleLogo },
-  { name: "Google", logo: googleLogo },
+  { name: "EC-Council", logo: ecCouncilLogo, smaller: false },
+  { name: "CompTIA", logo: comptiaLogo, smaller: false },
+  { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31", smaller: true },
+  { name: "AWS", logo: awsLogo, smaller: false },
+  { name: "Apple", logo: appleLogo, smaller: true },
+  { name: "Google", logo: googleLogo, smaller: true },
 ];
 
 const CertifiedInstructorsSection = () => {
