@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Menu, X, Search, ChevronRight, ChevronDown } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X, Search, ChevronRight, ChevronDown, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
