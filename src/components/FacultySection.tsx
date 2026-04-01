@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
+import yinjieImg from "@/assets/faculty-yinjie.jpeg";
 
 const allFaculty = [
   {

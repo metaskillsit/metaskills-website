@@ -97,11 +97,11 @@ const cyberTeam = [
 
 const adjunctTrainers = [
   {
-    name: "YJ Soon",
+    name: "Yinjie",
     role: "Adjunct Trainer",
-    expertise: "Machine Learning | Python Development | Cloud-Native Workflows | VR",
-    image: "",
-    bio: "YJ Soon is a full-stack software engineer and educator specializing in machine learning, Python development, and cloud-native workflows. He has extensive experience in web and mobile application development, as well as immersive technologies such as VR. YJ conducts technical training that merges hands-on coding with best practices in AI/ML deployment, making complex implementations approachable for learners from both technical and non-technical backgrounds.",
+    expertise: "Programming Education | Partnerships & Strategy | EdTech | Curriculum Development",
+    image: yinjieImg,
+    bio: "Yinjie is co-founder at Tinkercademy and Tinkertanker Pte Ltd., a technology and education company in Singapore, building software, electronics, curriculum, and the next generation of coders, makers, and creators. YJ handles partnerships, strategy, and business development, while always making time to teach a few of his favourite programming classes.\n\nYJ received his Bachelor's and Master's degrees in Electrical Engineering from Stanford University in the USA, and a Post-Graduate Diploma in Secondary Education from the National Institute of Education in Singapore.\n\nBefore Tinkertanker, YJ taught computing at Raffles Institution as Curriculum Head for Infocomm Technology, and served as a Senior Head for Policy & Planning at the Higher Education Division in the Ministry of Education, Singapore.",
   },
 ];
 
