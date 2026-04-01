@@ -18,6 +18,9 @@ const certifications = [
 const CertifiedInstructorsSection = () => {
   const { t } = useTranslation();
 
+  // Double the logos for seamless loop
+  const doubled = [...certifications, ...certifications];
+
   return (
     <section className="bg-card border-t border-border py-3 md:py-4 overflow-hidden">
       <div className="max-w-[1140px] mx-auto px-6">
@@ -29,11 +32,27 @@ const CertifiedInstructorsSection = () => {
         >
           {t("certified.heading")}
         </motion.p>
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-          {certifications.map((cert) => (
+      </div>
+      <div className="relative w-full">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-card to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-card to-transparent z-10 pointer-events-none" />
+        <motion.div
+          className="flex items-center gap-8 md:gap-12 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 25,
+              ease: "linear",
+            },
+          }}
+        >
+          {doubled.map((cert, i) => (
             <div
-              key={cert.name}
-              className={`flex items-center justify-center ${cert.smaller ? 'h-[70px] md:h-[100px]' : 'h-[100px] md:h-[140px]'}`}
+              key={`${cert.name}-${i}`}
+              className={`flex-shrink-0 flex items-center justify-center ${cert.smaller ? 'h-[70px] md:h-[100px]' : 'h-[100px] md:h-[140px]'}`}
             >
               <img
                 src={cert.logo}
@@ -43,7 +62,7 @@ const CertifiedInstructorsSection = () => {
               />
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
