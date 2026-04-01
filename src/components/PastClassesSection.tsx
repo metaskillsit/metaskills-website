@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import GalleryLightbox from "@/components/GalleryLightbox";
 import pastClass1 from "@/assets/past-class-1.jpg";
