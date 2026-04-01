@@ -15,7 +15,7 @@ const CertifiedInstructorsSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-card border-t border-border py-4 md:py-6 overflow-hidden">
+    <section className="bg-card border-t border-border py-3 md:py-4 overflow-hidden">
       <div className="max-w-[1140px] mx-auto px-6">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
