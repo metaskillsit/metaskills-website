@@ -185,6 +185,7 @@ const FacultyPage = () => {
 
           <TeamSection title={t("facultyPage.executiveTeam")} members={executiveTeam} />
           <TeamSection title={t("facultyPage.aiTeam")} members={aiTeam} />
+          <TeamSection title="Fintech & Algorithmic Trading" members={algoTradingTeam} />
           <TeamSection title={t("facultyPage.cyberTeam")} members={cyberTeam} />
           <TeamSection title={t("facultyPage.adjunctTrainers")} members={adjunctTrainers} />
         </section>
