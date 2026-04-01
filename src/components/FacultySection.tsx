@@ -73,7 +73,7 @@ const allFaculty = [
     image: jimmyImg,
   },
   {
-    name: "Yinjie",
+    name: "Soon Yinjie",
     role: "Adjunct Trainer",
     expertise: "Programming Education | EdTech | Partnerships & Strategy",
     image: yinjieImg,
