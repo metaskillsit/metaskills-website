@@ -22,10 +22,18 @@ interface NavGroup {
   categories?: NavCategory[];
 }
 
+const languages = [
+  { code: "en", label: "EN", flag: "🇬🇧" },
+  { code: "zh", label: "中文", flag: "🇨🇳" },
+  { code: "vi", label: "VI", flag: "🇻🇳" },
+];
+
 const Navbar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   const navGroups: NavGroup[] = [
