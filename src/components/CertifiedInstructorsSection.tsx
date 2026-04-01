@@ -46,7 +46,7 @@ const CertifiedInstructorsSection = () => {
                 src={cert.logo}
                 alt={cert.name}
                 className={`w-auto h-auto object-contain ${
-                  (cert as any).large ? "max-h-[120px] max-w-[320px]" : "max-h-[100px] max-w-[260px]"
+                  (cert as any).large ? "max-h-[70px] max-w-[180px] md:max-h-[120px] md:max-w-[320px]" : "max-h-[56px] max-w-[140px] md:max-h-[100px] md:max-w-[260px]"
                 }`}
                 loading="lazy"
               />
