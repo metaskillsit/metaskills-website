@@ -54,6 +54,12 @@ const allFaculty = [
     image: "https://metaskills.sg/wp-content/uploads/2025/09/Alena1.jpg",
   },
   {
+    name: "Victor",
+    role: "Lead Consultant, Algo Trading",
+    expertise: "Algorithmic Trading | Forex & Gold Markets | Machine Learning",
+    image: "https://metaskills.sg/wp-content/uploads/2022/08/Victor-300sq-300x300.jpg",
+  },
+  {
     name: "Mr Steven Ong",
     role: "Lead Consultant",
     expertise: "Cybersecurity Governance | ISO 27001 | NIST | Cloud Security",
