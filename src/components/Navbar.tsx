@@ -171,6 +171,36 @@ const Navbar = () => {
             </Link>
           </div>
 
+          {/* Mobile language selector */}
+          <div className="lg:hidden relative" ref={langRef}>
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-1 text-xs font-medium text-foreground/70 hover:text-primary transition-colors"
+              aria-label="Select language"
+            >
+              <Globe size={15} />
+              <span>{currentLang.flag}</span>
+            </button>
+            {langOpen && (
+              <div className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[130px] animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => { i18n.changeLanguage(lang.code); setLangOpen(false); }}
+                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
+                      i18n.language === lang.code
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted"
+                    }`}
+                  >
+                    <span>{lang.flag}</span>
+                    <span>{lang.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
           <div className="hidden lg:flex items-center gap-7">
             {topNavItems.map((item) => (
               <Link

@@ -12,7 +12,7 @@ import AdmissionsSection from "@/components/AdmissionsSection";
 import FooterSection from "@/components/FooterSection";
 import CertifiedInstructorsSection from "@/components/CertifiedInstructorsSection";
 import PartnerLogosSection from "@/components/PartnerLogosSection";
-import TranslationWidget from "@/components/TranslationWidget";
+
 
 const Index = () => {
   return (
