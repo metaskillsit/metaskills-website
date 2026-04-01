@@ -33,12 +33,12 @@ const CertifiedInstructorsSection = () => {
           {certifications.map((cert) => (
             <div
               key={cert.name}
-              className="flex items-center justify-center h-[100px] md:h-[140px]"
+              className={`flex items-center justify-center ${cert.smaller ? 'h-[70px] md:h-[100px]' : 'h-[100px] md:h-[140px]'}`}
             >
               <img
                 src={cert.logo}
                 alt={cert.name}
-                className="h-full w-auto max-w-[240px] md:max-w-[360px] object-contain"
+                className={`h-full w-auto object-contain ${cert.smaller ? 'max-w-[170px] md:max-w-[260px]' : 'max-w-[240px] md:max-w-[360px]'}`}
                 loading="lazy"
               />
             </div>
