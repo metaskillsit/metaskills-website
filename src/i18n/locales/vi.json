@@ -80,7 +80,16 @@
     "subtitle": "Những người thực hành, nhà nghiên cứu và nhà giáo dục đã đào tạo hơn 10,000 chuyên gia."
   },
   "testimonials": {
-    "title": "Học viên Nói gì"
+    "title": "Học viên Nói gì",
+    "quote1": "Sau hai tháng hoàn thành chương trình, tôi đã tự động hóa 30% nhiệm vụ báo cáo bằng quy trình AI Đại lý. Kinh nghiệm tư vấn thực tế của giảng viên giúp khóa đào tạo ngay lập tức có thể áp dụng.",
+    "author1": "Chuyên gia Chuỗi Cung ứng Cao cấp",
+    "role1": "Học viên, Singapore",
+    "quote2": "Metaskills thiết kế chương trình nâng cao kỹ năng AI tùy chỉnh cho các quản lý của chúng tôi. Ngoài đào tạo, họ còn làm việc với chúng tôi để xác định các dự án thí điểm nơi AI có thể mang lại giá trị kinh doanh cụ thể.",
+    "author2": "Trưởng nhóm Phân tích",
+    "role2": "Đối tác Tổ chức Tài chính",
+    "quote3": "Khóa học cung cấp cho chúng tôi một khung rõ ràng để đánh giá cơ hội AI Đại lý đồng thời cân bằng quản trị và tuân thủ. Hiếm có giảng viên nào có thể kết nối chiến lược với kiến thức kỹ thuật hiệu quả như vậy.",
+    "author3": "Cán bộ Chính sách",
+    "role3": "Học viên"
   },
   "partners": {
     "title": "Các Tổ chức Đối tác"
@@ -106,6 +115,10 @@
     "benefit4": "Sự kiện cựu sinh viên và cơ hội hợp tác ngành",
     "benefit5": "Chương trình được giảng viên giảng dạy tại đại học và cơ quan chính phủ xác nhận",
     "benefit6": "Có sẵn bằng tiếng Anh, tiếng Trung và tiếng Việt",
+    "whyJoin": "Tại sao tham gia Metaskills",
+    "feesTitle": "Học phí & Tài trợ",
+    "feesDesc": "Học phí của chúng tôi được miễn GST. Chúng tôi cung cấp mức giá tự tài trợ và doanh nghiệp. Để biết giá chi tiết, vui lòng tham khảo các trang khóa học riêng lẻ hoặc liên hệ đội ngũ tuyển sinh.",
+    "cancellation": "Chính sách hủy: Trước 30 ngày: Hoàn lại toàn bộ trừ phí xử lý SGD 900. Trong 30 ngày: Không hoàn lại. Cho phép thay thế trước 3 ngày khai giảng.",
     "requestInfo": "Yêu cầu Thông tin",
     "fullName": "Họ và Tên",
     "fullNamePlaceholder": "Họ và tên của bạn",
@@ -135,5 +148,58 @@
     "copyright": "© {{year}} Metaskills Institute. Bảo lưu mọi quyền.",
     "privacy": "Chính sách Bảo mật",
     "terms": "Điều khoản Dịch vụ"
+  },
+  "aboutPage": {
+    "heroTitle": "Giới thiệu Metaskills Institute",
+    "heroSubtitle": "Đối tác hàng đầu của ASEAN trong xây dựng năng lực AI Đại lý, Giao dịch Thuật toán và An ninh mạng.",
+    "missionTitle": "Sứ mệnh của Chúng tôi",
+    "missionP1": "Metaskills Institute là viện đào tạo và tư vấn thế hệ mới đi đầu trong AI Đại lý, Giao dịch Thuật toán và An ninh mạng. Chúng tôi trang bị cho tổ chức và chuyên gia năng lực cần thiết để hoạt động trong nền kinh tế tự chủ do AI điều khiển — nơi các tác nhân thông minh đưa ra quyết định, khả năng phục hồi mạng quyết định sự tồn tại, và thị trường tài chính được định hình bởi thuật toán.",
+    "missionP2": "Chúng tôi vượt xa lý thuyết. Chương trình của chúng tôi tích hợp chiều sâu kỹ thuật, tư duy chiến lược và khung triển khai phù hợp với tiêu chuẩn doanh nghiệp. Các giảng viên cao cấp, nhiều người có hơn một thập kỷ kinh nghiệm giảng dạy tại các đại học và tổ chức địa phương, thiết kế định hướng và chương trình giảng dạy.",
+    "visionTitle": "Tầm nhìn của Chúng tôi",
+    "visionP1": "Metaskills Institute là Viện Khoa học Số hàng đầu tại Châu Á, được tạo thành từ những người thực hành và lãnh đạo được tôn trọng và đam mê nhất, nhiều người có bằng Tiến sĩ, trong lĩnh vực khoa học số và chuyển đổi.",
+    "visionP2": "Đam mê của chúng tôi là hỗ trợ cá nhân hướng tới Làm chủ Kỹ năng Số trong các lĩnh vực có nhu cầu việc làm cao như Khoa học Dữ liệu, Trí tuệ Nhân tạo, Học máy, Công nghệ Web và nhiều hơn nữa.",
+    "coreAreas": "Lĩnh vực Cốt lõi",
+    "pillar1Title": "Hệ thống AI Đại lý",
+    "pillar1Desc": "Thiết kế, triển khai và quản trị các tác nhân AI tự chủ cho ứng dụng doanh nghiệp thực tế.",
+    "pillar2Title": "Hệ thống Giao dịch Thuật toán",
+    "pillar2Desc": "Chiến lược giao dịch dựa trên dữ liệu với tự động hóa và phân tích cho thị trường tài chính.",
+    "pillar3Title": "An ninh mạng & Quản trị AI",
+    "pillar3Desc": "Bảo vệ hạ tầng số, bảo vệ hệ thống AI và xây dựng kiến trúc sẵn sàng tuân thủ.",
+    "pillar4Title": "Được tin tưởng trên khắp ASEAN",
+    "pillar4Desc": "Được tin tưởng bởi doanh nghiệp, đại học và cơ quan chính phủ trên khắp Singapore và ASEAN.",
+    "langTitle": "Ngôn ngữ & Phạm vi",
+    "langDesc": "Chương trình có sẵn bằng tiếng Anh, tiếng Trung và tiếng Việt — tiếp cận chuyên gia và tổ chức trên khắp Singapore và khu vực ASEAN."
+  },
+  "facultyPage": {
+    "heroTitle": "Gặp gỡ Huấn luyện viên & Chuyên gia Tư vấn",
+    "heroSubtitle": "Những người thực hành, nhà nghiên cứu và nhà giáo dục đứng sau các chương trình.",
+    "intro": "Đội ngũ giảng viên đã đào tạo hơn 10,000 chuyên gia và giảng dạy Khoa học Dữ liệu tại các trường đại học danh tiếng. Tất cả giảng viên được lựa chọn kỹ lưỡng và nổi tiếng với khả năng đơn giản hóa các khái niệm phức tạp.",
+    "executiveTeam": "Đội ngũ Điều hành MetaSkills",
+    "aiTeam": "Đội ngũ AI / Khoa học Dữ liệu",
+    "cyberTeam": "Đội ngũ An ninh Mạng",
+    "adjunctTrainers": "Giảng viên Thỉnh giảng"
+  },
+  "partnersPage": {
+    "heroTitle": "Đối tác của Chúng tôi",
+    "heroSubtitle": "Hợp tác với các nhà lãnh đạo ngành trên khắp Singapore và ASEAN."
+  },
+  "clientsPage": {
+    "heroTitle": "Được các Tổ chức Hàng đầu Tin tưởng",
+    "heroSubtitle": "Từ cơ quan chính phủ đến tập đoàn đa quốc gia, giảng viên và chuyên gia tư vấn đã đào tạo và hợp tác với các tổ chức trên khắp Singapore và khu vực.",
+    "workedWith": "Các Tổ chức Chúng tôi Đã Hợp tác",
+    "workedWithDesc": "Đào tạo, tư vấn, phát triển sản phẩm và các lớp bậc thầy được cung cấp ở tất cả các cấp tổ chức.",
+    "alsoWorkedWith": "Chúng tôi Cũng Đã Hợp tác Với",
+    "ctaTitle": "Tham gia Mạng lưới Khách hàng Đang Phát triển",
+    "ctaDesc": "Sẵn sàng nâng cao kỹ năng cho đội ngũ? Liên hệ chúng tôi để nhận giải pháp đào tạo tùy chỉnh."
+  },
+  "locationsPage": {
+    "heroTitle": "Không gian Học tập",
+    "heroSubtitle": "Cơ sở vật chất đẳng cấp thế giới được thiết kế cho trải nghiệm học tập thực hành, nhập vai."
+  },
+  "pastClasses": {
+    "label": "Đào tạo Thực tế",
+    "title": "Các Lớp học & Hội thảo Trước đây",
+    "subtitle": "Ảnh thực từ các buổi đào tạo trên khắp Singapore — từ bootcamp giao dịch thuật toán đến hội thảo AI, lớp bậc thầy khoa học dữ liệu và chương trình doanh nghiệp.",
+    "photoCount": "{{count}} ảnh từ các buổi đào tạo thực tế"
   }
 }

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
@@ -84,11 +85,12 @@ const additionalOrgs = [
 const categories = [...new Set(allClients.map((c) => c.category))];
 
 const ClientsPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16 md:pt-[70px]">
-        {/* Hero */}
         <section className="section-dark py-16 md:py-20">
           <div className="max-w-[1140px] mx-auto px-6 text-center">
             <motion.h1
@@ -96,7 +98,7 @@ const ClientsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               className="font-heading text-3xl md:text-5xl font-bold text-white"
             >
-              Trusted by Leading Organisations
+              {t("clientsPage.heroTitle")}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -104,23 +106,18 @@ const ClientsPage = () => {
               transition={{ delay: 0.1 }}
               className="text-white/70 mt-4 text-lg max-w-2xl mx-auto"
             >
-              From government agencies to multinational corporations, our faculty
-              and consultants have trained and partnered with organisations
-              across Singapore and the region.
+              {t("clientsPage.heroSubtitle")}
             </motion.p>
           </div>
         </section>
 
-
-        {/* Full Client Grid by Category */}
         <section className="py-16 md:py-20">
           <div className="max-w-[1140px] mx-auto px-6">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
-              Organisations We've Worked With
+              {t("clientsPage.workedWith")}
             </h2>
             <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
-              Training, consulting, product development, and masterclasses
-              delivered across all organisational levels.
+              {t("clientsPage.workedWithDesc")}
             </p>
 
             {categories.map((cat) => (
@@ -159,11 +156,10 @@ const ClientsPage = () => {
           </div>
         </section>
 
-        {/* Additional Organisations — Text List */}
         <section className="py-16 bg-muted/30">
           <div className="max-w-[1140px] mx-auto px-6">
             <h2 className="font-heading text-xl font-bold text-foreground text-center mb-8">
-              We've Also Worked With
+              {t("clientsPage.alsoWorkedWith")}
             </h2>
             <div className="flex flex-wrap justify-center gap-3">
               {additionalOrgs.map((org) => (
@@ -178,21 +174,19 @@ const ClientsPage = () => {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="section-dark py-16 text-center">
           <div className="max-w-[1140px] mx-auto px-6">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
-              Join Our Growing Client Network
+              {t("clientsPage.ctaTitle")}
             </h2>
             <p className="text-white/70 mb-8 max-w-lg mx-auto">
-              Ready to upskill your team? Contact us for customised training
-              solutions tailored to your organisation's needs.
+              {t("clientsPage.ctaDesc")}
             </p>
             <a
               href="/admissions"
               className="inline-block px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-sm hover:brightness-110 transition-all"
             >
-              Enquire Now
+              {t("nav.enquireNow")}
             </a>
           </div>
         </section>

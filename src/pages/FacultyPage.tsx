@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
@@ -112,27 +113,18 @@ const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => (
     <div className="md:col-span-1">
       {f.image ? (
         <div className="aspect-square overflow-hidden rounded-sm">
-          <img
-            src={f.image}
-            alt={f.name}
-            className="w-full h-full object-cover object-top"
-            loading="lazy"
-          />
+          <img src={f.image} alt={f.name} className="w-full h-full object-cover object-top" loading="lazy" />
         </div>
       ) : (
         <div className="aspect-square overflow-hidden rounded-sm bg-muted flex items-center justify-center">
-          <span className="text-4xl font-heading font-bold text-muted-foreground/30">
-            {f.name.charAt(0)}
-          </span>
+          <span className="text-4xl font-heading font-bold text-muted-foreground/30">{f.name.charAt(0)}</span>
         </div>
       )}
     </div>
     <div className="md:col-span-3">
       <h3 className="font-heading text-xl font-bold text-foreground">{f.name}</h3>
       <p className="text-sm text-primary font-medium mb-1">{f.role}</p>
-      <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-4">
-        {f.expertise}
-      </p>
+      <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-4">{f.expertise}</p>
       {f.bio && (
         <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
           {f.bio.split("\n\n").map((paragraph, idx) => (
@@ -156,34 +148,34 @@ const TeamSection = ({ title, members }: { title: string; members: FacultyMember
 );
 
 const FacultyPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16 md:pt-[70px]">
-        {/* Hero */}
         <section className="section-dark py-16 md:py-20">
           <div className="max-w-[1140px] mx-auto px-6">
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-              Meet Our Coaches & Consultants
+              {t("facultyPage.heroTitle")}
             </h1>
             <p className="text-white/70 mt-4 text-lg max-w-2xl">
-              Practitioners, researchers, and educators behind our programmes.
+              {t("facultyPage.heroSubtitle")}
             </p>
           </div>
         </section>
 
-        {/* Faculty intro */}
         <section className="max-w-[1140px] mx-auto px-6 py-16">
           <div className="max-w-3xl space-y-4 mb-14">
             <p className="text-muted-foreground leading-relaxed">
-              Our faculty have collectively trained more than 10,000 professionals and teach Data Science at renowned Universities. All our trainers are carefully selected and known for simplifying difficult concepts for learners.
+              {t("facultyPage.intro")}
             </p>
           </div>
 
-          <TeamSection title="MetaSkills Executive Team" members={executiveTeam} />
-          <TeamSection title="AI / Data Science Team" members={aiTeam} />
-          <TeamSection title="Cyber Security Team" members={cyberTeam} />
-          <TeamSection title="Adjunct Trainers" members={adjunctTrainers} />
+          <TeamSection title={t("facultyPage.executiveTeam")} members={executiveTeam} />
+          <TeamSection title={t("facultyPage.aiTeam")} members={aiTeam} />
+          <TeamSection title={t("facultyPage.cyberTeam")} members={cyberTeam} />
+          <TeamSection title={t("facultyPage.adjunctTrainers")} members={adjunctTrainers} />
         </section>
       </main>
       <FooterSection />
