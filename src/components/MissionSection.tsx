@@ -25,7 +25,7 @@ const MissionSection = () => {
 
   return (
     <section id="about" className="bg-background">
-      <div className="max-w-[1140px] mx-auto px-6 py-10 md:py-20">
+      <div className="max-w-[1140px] mx-auto px-6 py-8 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
