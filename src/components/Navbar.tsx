@@ -142,6 +142,18 @@ const Navbar = () => {
     setExpandedCategory((prev) => (prev === label ? null : label));
   };
 
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
+
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
