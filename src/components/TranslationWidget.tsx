@@ -24,11 +24,14 @@ const TranslationWidget = () => {
   }, []);
 
   const handleSelect = (code: string) => {
-    i18n.changeLanguage(code);
+    i18n.changeLanguage(code).then(() => {
+      document.documentElement.lang = code;
+    });
     setOpen(false);
   };
 
-  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
+  const resolvedLang = (i18n.resolvedLanguage || i18n.language || "en").split("-")[0];
+  const currentLang = languages.find((l) => l.code === resolvedLang) || languages[0];
 
   return (
     <div ref={ref} className="fixed bottom-6 right-6 z-50">
@@ -39,7 +42,7 @@ const TranslationWidget = () => {
               key={lang.code}
               onClick={() => handleSelect(lang.code)}
               className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
-                i18n.language === lang.code
+                resolvedLang === lang.code
                   ? "bg-primary/10 text-primary font-medium"
                   : "text-foreground/80 hover:bg-muted"
               }`}
