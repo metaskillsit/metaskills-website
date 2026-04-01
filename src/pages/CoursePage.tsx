@@ -1,25 +1,12 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Clock, Users, Award, ArrowLeft } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { getPastRuns } from "@/data/pastRuns";
 import { getCourseSchedule } from "@/data/courseSchedule";
-import {
-  ArrowLeft,
-  Calendar,
-  DollarSign,
-  Clock,
-  CheckCircle,
-  BookOpen,
-  Users,
-  Award,
-  ArrowRight,
-  Mail,
-  Play,
-} from "lucide-react";
-import { getCourseBySlug, courses, getCategoryImages } from "@/data/courses";
+import { getCourseBySlug, courses } from "@/data/courses";
 import { getCourseImages } from "@/data/courseImages";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import ImageSlideshow from "@/components/ImageSlideshow";
 import CourseHero from "@/components/course/CourseHero";
 import CourseContent from "@/components/course/CourseContent";
 import CourseSidebar from "@/components/course/CourseSidebar";
@@ -31,9 +18,9 @@ import CourseSchedule from "@/components/course/CourseSchedule";
 
 const CoursePage = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const course = getCourseBySlug(slug || "");
-
 
   const relatedCourses = courses
     .filter((c) => c.category === course?.category && c.slug !== slug)
@@ -43,13 +30,13 @@ const CoursePage = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-foreground mb-4">Course Not Found</h1>
-          <p className="text-muted-foreground mb-6">The course you're looking for doesn't exist.</p>
+          <h1 className="text-3xl font-bold text-foreground mb-4">{t("coursePage.notFoundTitle")}</h1>
+          <p className="text-muted-foreground mb-6">{t("coursePage.notFoundDesc")}</p>
           <Link
             to="/programmes"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-sm font-semibold hover:brightness-110 transition-all"
           >
-            <ArrowLeft className="w-4 h-4" /> Browse Programmes
+            <ArrowLeft className="w-4 h-4" /> {t("coursePage.browseProgrammes")}
           </Link>
         </div>
       </div>
@@ -66,7 +53,6 @@ const CoursePage = () => {
       <main className="pt-16 md:pt-[70px]">
         <CourseHero course={course} categoryImages={categoryImages} />
 
-        {/* === KEY INFO BAR === */}
         <section className="border-b border-border bg-muted">
           <div className="max-w-[1140px] mx-auto px-6 py-4 flex flex-wrap gap-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -75,19 +61,17 @@ const CoursePage = () => {
             </div>
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-primary" />
-              <span>Expert Faculty</span>
+              <span>{t("coursePage.keyInfoFaculty")}</span>
             </div>
             <div className="flex items-center gap-2">
               <Award className="w-4 h-4 text-primary" />
-              <span>Certification Included</span>
+              <span>{t("coursePage.keyInfoCertification")}</span>
             </div>
           </div>
         </section>
 
-        {/* === COURSE SCHEDULE (TOP - Social Proof + CTA) === */}
         <CourseSchedule schedule={courseSchedule} courseTitle={course.title} />
 
-        {/* === MAIN CONTENT === */}
         <div className="max-w-[1140px] mx-auto px-6 py-14">
           <div className="grid lg:grid-cols-3 gap-14">
             <div className="lg:col-span-2 space-y-14">

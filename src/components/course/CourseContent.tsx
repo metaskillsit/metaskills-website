@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Clock, BookOpen } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 
 interface CourseContentProps {
@@ -7,28 +8,28 @@ interface CourseContentProps {
 }
 
 const CourseContent = ({ course }: CourseContentProps) => {
+  const { t } = useTranslation();
+
   return (
     <>
-      {/* Why Attend */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
         <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
-          Why Attend This Programme
+          {t("coursePage.whyAttend")}
         </h2>
-        <p className="text-muted-foreground leading-relaxed">{course.whyAttend}</p>
+        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{course.whyAttend}</p>
       </motion.div>
 
-      {/* Objectives */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
         <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
-          Course Objectives
+          {t("coursePage.objectives")}
         </h2>
         <div className="space-y-3">
           {course.objectives.map((obj, i) => (
@@ -47,7 +48,6 @@ const CourseContent = ({ course }: CourseContentProps) => {
         </div>
       </motion.div>
 
-      {/* After Completing */}
       {course.afterCompleting && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
           viewport={{ once: true }}
         >
           <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
-            After Completing This Programme
+            {t("coursePage.afterCompleting")}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {course.afterCompleting.map((item, i) => (
@@ -77,7 +77,6 @@ const CourseContent = ({ course }: CourseContentProps) => {
         </motion.div>
       )}
 
-      {/* Course Structure */}
       <motion.div
         id="structure"
         initial={{ opacity: 0, y: 20 }}
@@ -85,7 +84,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
         viewport={{ once: true }}
       >
         <h2 className="font-heading text-2xl font-bold text-foreground mb-2">
-          Course Design & Structure
+          {t("coursePage.courseStructure")}
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-8">
           {course.courseDesign}
