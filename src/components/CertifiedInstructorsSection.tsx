@@ -3,12 +3,16 @@ import { useTranslation } from "react-i18next";
 import comptiaLogo from "@/assets/logo-comptia.png";
 import ecCouncilLogo from "@/assets/logo-ec-council.png";
 import awsLogo from "@/assets/logo-aws.png";
+import appleLogo from "@/assets/logo-apple.png";
+import googleLogo from "@/assets/logo-google.png";
 
 const certifications = [
   { name: "EC-Council", logo: ecCouncilLogo },
   { name: "CompTIA", logo: comptiaLogo },
   { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
   { name: "AWS", logo: awsLogo },
+  { name: "Apple", logo: appleLogo },
+  { name: "Google", logo: googleLogo },
 ];
 
 const CertifiedInstructorsSection = () => {
