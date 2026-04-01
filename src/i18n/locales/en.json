@@ -80,7 +80,16 @@
     "subtitle": "Practitioners, researchers, and educators who have collectively trained more than 10,000 professionals."
   },
   "testimonials": {
-    "title": "What Our Learners Say"
+    "title": "What Our Learners Say",
+    "quote1": "Within two months of completing the programme, I automated 30% of my reporting tasks using Agentic AI workflows. The trainers' real-world consulting experience made the training immediately applicable.",
+    "author1": "Senior Supply Chain Professional",
+    "role1": "Course Participant, Singapore",
+    "quote2": "Metaskills designed a customised AI upskilling programme for our managers. Beyond training, they worked with us to identify pilot projects where AI could deliver tangible business value.",
+    "author2": "Analytics Lead",
+    "role2": "Financial Institution Partner",
+    "quote3": "The course gave us a clear framework to evaluate Agentic AI opportunities while balancing governance and compliance. It's rare to have trainers who can bridge strategy with technical know-how this effectively.",
+    "author3": "Policy Officer",
+    "role3": "Course Participant"
   },
   "partners": {
     "title": "Partnering Institutions"
@@ -106,6 +115,10 @@
     "benefit4": "Alumni events and industry partnership opportunities",
     "benefit5": "Programmes endorsed by faculty teaching at universities and government agencies",
     "benefit6": "Available in English, Chinese, and Vietnamese",
+    "whyJoin": "Why Join Metaskills",
+    "feesTitle": "Course Fees & Funding",
+    "feesDesc": "Our course fees are exempt from GST. We offer both self-sponsored and corporate rates. For detailed pricing, please refer to the individual course pages or contact our admissions team.",
+    "cancellation": "Cancellation Policy: Up to 30 days before: Full refund minus SGD 900 processing fee. 30 days or less: No refund. Substitutions allowed up to 3 days before the programme start date.",
     "requestInfo": "Request Information",
     "fullName": "Full Name",
     "fullNamePlaceholder": "Your full name",
@@ -135,5 +148,58 @@
     "copyright": "© {{year}} Metaskills Institute. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "aboutPage": {
+    "heroTitle": "About Metaskills Institute",
+    "heroSubtitle": "ASEAN's go-to partner for Agentic AI, Algorithmic Trading, and Cybersecurity capability building.",
+    "missionTitle": "Our Mission",
+    "missionP1": "Metaskills Institute is a next-generation training and advisory institute at the forefront of Agentic AI, Algorithmic Trading, and Cybersecurity. We equip organisations and professionals with the capabilities required to operate in an autonomous, AI-driven economy — where intelligent agents make decisions, cyber resilience determines survival, and financial markets are shaped by algorithms.",
+    "missionP2": "We go beyond theory. Our programmes integrate technical depth, strategic thinking, and implementation frameworks aligned with enterprise standards. Our master trainers, many with over a decade of experience teaching in local universities and institutions, design the direction and curriculum. This ensures every instructor delivers value rooted in real-world consulting and deployment projects.",
+    "visionTitle": "Our Vision",
+    "visionP1": "Metaskills Institute is a premier Digital Science Institute in Asia that is made up of the most respected and passionate practitioners and leaders, many who are Ph.Ds, in the field of digital science and transformation.",
+    "visionP2": "Our passion is to support individuals towards Digital Skills Mastery in high job demand areas such as Data Science, Artificial Intelligence, Machine Learning, Web Technologies, amongst others. With over 8 years of practical experience working on bespoke implementations of data driven strategies, our faculty and consultants have developed training programmes and certification standards that are high and relevant for existing and future industries.",
+    "coreAreas": "Our Core Areas",
+    "pillar1Title": "Agentic AI Systems",
+    "pillar1Desc": "Designing, deploying, and governing autonomous AI agents for real-world enterprise applications.",
+    "pillar2Title": "Algorithmic Trading Systems",
+    "pillar2Desc": "Data-driven trading strategies powered by automation and analytics for financial markets.",
+    "pillar3Title": "Cybersecurity & AI Governance",
+    "pillar3Desc": "Securing digital infrastructures, safeguarding AI systems, and building compliance-ready architectures.",
+    "pillar4Title": "Trusted Across ASEAN",
+    "pillar4Desc": "Trusted by corporates, universities, and government agencies across Singapore and ASEAN as a go-to partner for capability building.",
+    "langTitle": "Languages & Reach",
+    "langDesc": "Our programmes are available in English, Chinese, and Vietnamese — reaching professionals and organisations across Singapore and the wider ASEAN region."
+  },
+  "facultyPage": {
+    "heroTitle": "Meet Our Coaches & Consultants",
+    "heroSubtitle": "Practitioners, researchers, and educators behind our programmes.",
+    "intro": "Our faculty have collectively trained more than 10,000 professionals and teach Data Science at renowned Universities. All our trainers are carefully selected and known for simplifying difficult concepts for learners.",
+    "executiveTeam": "MetaSkills Executive Team",
+    "aiTeam": "AI / Data Science Team",
+    "cyberTeam": "Cyber Security Team",
+    "adjunctTrainers": "Adjunct Trainers"
+  },
+  "partnersPage": {
+    "heroTitle": "Our Partners",
+    "heroSubtitle": "Collaborating with industry leaders across Singapore and ASEAN."
+  },
+  "clientsPage": {
+    "heroTitle": "Trusted by Leading Organisations",
+    "heroSubtitle": "From government agencies to multinational corporations, our faculty and consultants have trained and partnered with organisations across Singapore and the region.",
+    "workedWith": "Organisations We've Worked With",
+    "workedWithDesc": "Training, consulting, product development, and masterclasses delivered across all organisational levels.",
+    "alsoWorkedWith": "We've Also Worked With",
+    "ctaTitle": "Join Our Growing Client Network",
+    "ctaDesc": "Ready to upskill your team? Contact us for customised training solutions tailored to your organisation's needs."
+  },
+  "locationsPage": {
+    "heroTitle": "Our Learning Spaces",
+    "heroSubtitle": "World-class facilities designed for hands-on, immersive learning experiences."
+  },
+  "pastClasses": {
+    "label": "Our Training in Action",
+    "title": "Past Classes & Workshops",
+    "subtitle": "Real photos from our training sessions across Singapore — from algorithmic trading bootcamps to AI workshops, data science masterclasses, and corporate programmes.",
+    "photoCount": "{{count}} photos from real training sessions"
   }
 }
