@@ -6,31 +6,36 @@ on:
       - main
   workflow_dispatch:
 
+concurrency:
+  group: deploy-metaskills
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
+          cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build site
         run: npm run build
 
-      - name: Install tools
+      - name: Install deploy tools
         run: |
           sudo apt-get update
           sudo apt-get install -y sshpass rsync
 
-      - name: Deploy to A2
+      - name: Deploy dist to A2
         env:
           A2_HOST: ${{ secrets.A2_HOST }}
           A2_USER: ${{ secrets.A2_USER }}
