@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import integrumLogo from "@/assets/partner-integrum.png";
@@ -28,18 +29,19 @@ const partners = [
 ];
 
 const PartnersPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16 md:pt-[70px]">
-        {/* Hero */}
         <section className="section-dark py-16 md:py-20">
           <div className="max-w-[1140px] mx-auto px-6">
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-              Our Partners
+              {t("partnersPage.heroTitle")}
             </h1>
             <p className="text-white/75 mt-4 text-lg max-w-xl">
-              Collaborating with industry leaders across Singapore and ASEAN.
+              {t("partnersPage.heroSubtitle")}
             </p>
           </div>
         </section>
@@ -59,23 +61,14 @@ const PartnersPage = () => {
                 className="grid md:grid-cols-4 gap-8 border-t border-border pt-10 group"
               >
                 <div className="md:col-span-1 flex items-start justify-center">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-20 w-auto object-contain transition-all duration-300"
-                    loading="lazy"
-                  />
+                  <img src={partner.logo} alt={partner.name} className="h-20 w-auto object-contain transition-all duration-300" loading="lazy" />
                 </div>
                 <div className="md:col-span-3">
                   <h3 className="font-heading text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {partner.name}
                   </h3>
-                  {partner.subtitle && (
-                    <p className="text-sm text-muted-foreground mb-2">{partner.subtitle}</p>
-                  )}
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {partner.description}
-                  </p>
+                  {partner.subtitle && <p className="text-sm text-muted-foreground mb-2">{partner.subtitle}</p>}
+                  <p className="text-sm text-muted-foreground leading-relaxed">{partner.description}</p>
                 </div>
               </motion.a>
             ))}
