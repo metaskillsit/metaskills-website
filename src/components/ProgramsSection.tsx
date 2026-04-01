@@ -30,6 +30,17 @@ const ProgramsSection = () => {
 
   const programCategories = [
     {
+      title: t("programmes.aiLeadTitle"),
+      description: t("programmes.aiLeadDesc"),
+      images: [aiLeadershipImg, aiLeadershipImg2, aiLeadershipImg3],
+      courses: [
+        { name: "AI Strategy and Roadmap for Leaders", slug: "ai-strategy-roadmap-leaders" },
+        { name: "Who Is Accountable When AI Decides?", slug: "ai-accountability-when-ai-decides" },
+        { name: "Governing AI Agents: Trust, Boundaries, and Audit Trails", slug: "governing-ai-agents-trust-boundaries" },
+        { name: "AI Wargaming: Test Decisions Before They Count", slug: "ai-wargaming-test-decisions" },
+      ],
+    },
+    {
       title: t("programmes.agenticTitle"),
       description: t("programmes.agenticDesc"),
       images: [agenticImg, agenticImg2, agenticImg3],
@@ -80,17 +91,6 @@ const ProgramsSection = () => {
       images: [cyberDefenceImg, cyberDefenceImg2, cyberDefenceImg3],
       courses: [
         { name: "Cybersecurity: Roles, Threats, and Certification Pathways", slug: "cybersecurity-roles-threats-pathways" },
-      ],
-    },
-    {
-      title: t("programmes.aiLeadTitle"),
-      description: t("programmes.aiLeadDesc"),
-      images: [aiLeadershipImg, aiLeadershipImg2, aiLeadershipImg3],
-      courses: [
-        { name: "AI Strategy and Roadmap for Leaders", slug: "ai-strategy-roadmap-leaders" },
-        { name: "Who Is Accountable When AI Decides?", slug: "ai-accountability-when-ai-decides" },
-        { name: "Governing AI Agents: Trust, Boundaries, and Audit Trails", slug: "governing-ai-agents-trust-boundaries" },
-        { name: "AI Wargaming: Test Decisions Before They Count", slug: "ai-wargaming-test-decisions" },
       ],
     },
     {
