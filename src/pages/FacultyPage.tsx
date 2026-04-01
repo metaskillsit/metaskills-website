@@ -77,6 +77,7 @@ const algoTradingTeam = [
 ];
 
 
+const cyberTeam = [
   {
     name: "Mr Steven Ong",
     role: "Lead Consultant",
