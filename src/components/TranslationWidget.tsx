@@ -42,7 +42,7 @@ const TranslationWidget = () => {
               key={lang.code}
               onClick={() => handleSelect(lang.code)}
               className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
-                i18n.language === lang.code
+                resolvedLang === lang.code
                   ? "bg-primary/10 text-primary font-medium"
                   : "text-foreground/80 hover:bg-muted"
               }`}
