@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
+import yinjieImg from "@/assets/faculty-yinjie.jpeg";
 
 const executiveTeam = [
   {
