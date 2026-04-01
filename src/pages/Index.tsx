@@ -20,6 +20,7 @@ const Index = () => {
       <Navbar />
       <main className="pt-16 md:pt-[70px]">
         <HeroSection />
+        <PartnerLogosSection />
         <CertifiedInstructorsSection />
         <MissionSection />
         <StatsSection />
@@ -28,7 +29,6 @@ const Index = () => {
         <FacultySection />
         <TestimonialsSection />
         <PastClassesSection />
-        <PartnerLogosSection />
         
         <LocationsSection />
         <AdmissionsSection />
