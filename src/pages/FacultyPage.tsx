@@ -97,7 +97,7 @@ const cyberTeam = [
 
 const adjunctTrainers = [
   {
-    name: "Yinjie",
+    name: "Soon Yinjie",
     role: "Adjunct Trainer",
     expertise: "Programming Education | Partnerships & Strategy | EdTech | Curriculum Development",
     image: yinjieImg,
