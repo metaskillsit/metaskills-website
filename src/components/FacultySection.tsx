@@ -72,6 +72,12 @@ const allFaculty = [
     expertise: "Adult Education | AI & Cybersecurity Training | Instructor Development",
     image: jimmyImg,
   },
+  {
+    name: "Yinjie",
+    role: "Adjunct Trainer",
+    expertise: "Programming Education | EdTech | Partnerships & Strategy",
+    image: yinjieImg,
+  },
 ];
 
 const AUTO_INTERVAL = 4000;
