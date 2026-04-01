@@ -201,5 +201,20 @@
     "title": "Past Classes & Workshops",
     "subtitle": "Real photos from our training sessions across Singapore — from algorithmic trading bootcamps to AI workshops, data science masterclasses, and corporate programmes.",
     "photoCount": "{{count}} photos from real training sessions"
+  },
+  "coursePage": {
+    "whyAttend": "Why Attend This Programme",
+    "objectives": "Programme Objectives",
+    "afterCompleting": "After Completing This Programme",
+    "courseStructure": "Course Structure",
+    "allProgrammes": "All Programmes",
+    "jointlyOfferedBy": "Jointly offered by {{name}}",
+    "nextRunDate": "Next Run Date",
+    "courseFees": "Course Fees",
+    "selfSponsored": "Self-Sponsored",
+    "corporateRates": "Corporate Rates",
+    "gstNote": "All fees are exempt from GST.",
+    "enquireNow": "Enquire Now",
+    "submitEnquiryForm": "Submit Enquiry Form"
   }
 }
