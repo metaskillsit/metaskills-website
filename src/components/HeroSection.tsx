@@ -10,12 +10,12 @@ const heroImages = [heroBg, heroBg2, heroBg3];
 const HeroSection = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full overflow-hidden bg-[hsl(var(--hero-overlay))] aspect-[4/5] md:aspect-[1920/900]">
+    <section className="relative w-full overflow-hidden bg-[hsl(var(--hero-overlay))] aspect-[16/9] md:aspect-[1920/900]">
       <ImageSlideshow
         images={heroImages}
         alt="Professional AI training"
         className="absolute inset-0 h-full w-full"
-        imgClassName="absolute inset-0 h-full w-full object-contain object-center"
+        imgClassName="absolute inset-0 h-full w-full object-cover object-center"
         width={1920}
         height={900}
         interval={7000}
