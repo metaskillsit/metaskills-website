@@ -66,7 +66,17 @@ const aiTeam = [
   },
 ];
 
-const cyberTeam = [
+const algoTradingTeam = [
+  {
+    name: "Victor",
+    role: "Lead Consultant, Algorithmic Trading",
+    expertise: "Algorithmic Trading | Forex & Gold Markets | MetaTrader 4/5 | Machine Learning | Deep Reinforcement Learning | C++ | Python",
+    image: "https://metaskills.sg/wp-content/uploads/2022/08/Victor-300sq-300x300.jpg",
+    bio: "Victor used to run his own firm with more than 20 years of financial experience in sales and marketing financial products and risk management, fiscal planning for high-net-worth individuals in the greater China region.\n\nFor the past 4 years, he has self-funded his other passion which is algorithmic trading in the trillion dollar forex and gold market. Currently he has a consistent and successful portfolio in the market using proprietary trading systems that he has developed to run on auto mode using machine learning especially in deep reinforcement learning on time series analysis. He runs a lot of statistical analysis on currencies and commodities market and then writes algorithms and programs using C++ and Python.\n\nBesides Victor, all our trainers are self-funded and successful algorithmic trading masters with very consistent, lucrative and successful portfolio in the forex and precious metals market. Together with our research team at Metaskills Institute, they have field tested over hundreds of trading bots (EAs) with a good knowledge of the sustainable and profitable ones. In addition to selecting and giving away some of these trading bots, the team has also developed proprietary trading bots (worth more than USD4k) that can be optimally configured to generate high returns.",
+  },
+];
+
+
   {
     name: "Mr Steven Ong",
     role: "Lead Consultant",
