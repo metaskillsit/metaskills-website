@@ -27,8 +27,8 @@ const PartnerLogosSection = () => {
   const doubled = [...partnerLogos, ...partnerLogos];
 
   return (
-    <section className="bg-card border-t border-border py-12 overflow-hidden">
-      <div className="max-w-[1140px] mx-auto px-6 mb-8">
+    <section className="bg-card border-t border-border py-6 md:py-12 overflow-hidden">
+      <div className="max-w-[1140px] mx-auto px-6 mb-4 md:mb-8">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,19 +41,19 @@ const PartnerLogosSection = () => {
         </motion.div>
       </div>
       <div className="relative">
-        <div className="flex animate-scroll-right gap-20 items-center w-max px-10">
+        <div className="flex animate-scroll-right gap-10 md:gap-20 items-center w-max px-6 md:px-10">
           {doubled.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
               className={`flex-shrink-0 flex items-center justify-center ${
-                (partner as any).large ? "w-[320px] h-[120px]" : "w-[260px] h-[100px]"
+                (partner as any).large ? "w-[180px] h-[70px] md:w-[320px] md:h-[120px]" : "w-[140px] h-[56px] md:w-[260px] md:h-[100px]"
               }`}
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
                 className={`w-auto h-auto object-contain ${
-                  (partner as any).large ? "max-h-[120px] max-w-[320px]" : "max-h-[100px] max-w-[260px]"
+                  (partner as any).large ? "max-h-[70px] max-w-[180px] md:max-h-[120px] md:max-w-[320px]" : "max-h-[56px] max-w-[140px] md:max-h-[100px] md:max-w-[260px]"
                 }`}
                 loading="lazy"
               />
