@@ -11,53 +11,49 @@ import safraLogo from "@/assets/logo-safra.jpg";
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 
 const partnerLogos = [
-  { name: "AISG", logo: aisgLogo, large: true },
-  { name: "ISCA", logo: iscaLogo, large: true },
-  { name: "SMU Academy", logo: smuAcademyLogo, large: true },
-  { name: "NUS AIDF", logo: nusAidfLogo, large: true },
-  { name: "Tinkercademy", logo: tinkercademyLogo },
-  { name: "JCube Institute", logo: jcubeLogo },
+  { name: "AISG", logo: aisgLogo },
+  { name: "SMU Academy", logo: smuAcademyLogo },
+  { name: "NUS AIDF", logo: nusAidfLogo },
+  { name: "ISCA", logo: iscaLogo },
   { name: "Integrum Global", logo: integrumLogo },
+  { name: "JCube Institute", logo: jcubeLogo },
+  { name: "Tinkercademy", logo: tinkercademyLogo },
   { name: "Singapore Vietnam Business Bridge", logo: svbbLogo },
   { name: "SAFRA", logo: safraLogo },
 ];
 
 const PartnerLogosSection = () => {
   const { t } = useTranslation();
-  const doubled = [...partnerLogos, ...partnerLogos];
 
   return (
-    <section className="bg-card border-t border-border py-6 md:py-12 overflow-hidden">
-      <div className="max-w-[1140px] mx-auto px-6 mb-4 md:mb-8">
+    <section className="bg-card border-t border-border py-6 md:py-10">
+      <div className="max-w-[1140px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center mb-4 md:mb-6"
         >
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
+          <h2 className="font-heading text-xl md:text-2xl font-bold text-foreground">
             {t("partners.title")}
           </h2>
         </motion.div>
-      </div>
-      <div className="relative">
-        <div className="flex animate-scroll-right gap-10 md:gap-20 items-center w-max px-6 md:px-10">
-          {doubled.map((partner, i) => (
-            <div
-              key={`${partner.name}-${i}`}
-              className={`flex-shrink-0 flex items-center justify-center ${
-                (partner as any).large ? "w-[180px] h-[70px] md:w-[320px] md:h-[120px]" : "w-[140px] h-[56px] md:w-[260px] md:h-[100px]"
-              }`}
+        <div className="flex flex-wrap items-center justify-center gap-5 md:gap-8">
+          {partnerLogos.map((partner) => (
+            <motion.div
+              key={partner.name}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center h-[45px] md:h-[65px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className={`w-auto h-auto object-contain ${
-                  (partner as any).large ? "max-h-[70px] max-w-[180px] md:max-h-[120px] md:max-w-[320px]" : "max-h-[56px] max-w-[140px] md:max-h-[100px] md:max-w-[260px]"
-                }`}
+                className="h-full w-auto max-w-[100px] md:max-w-[150px] object-contain"
                 loading="lazy"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
