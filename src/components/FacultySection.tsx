@@ -13,16 +13,16 @@ const allFaculty = [
     image: "https://metaskills.sg/wp-content/uploads/2025/09/JinghaoKe-ProfilePic-gemini-light-square.png",
   },
   {
-    name: "Dr Jack Hong",
-    role: "Lead Consultant",
-    expertise: "Data Science | AI | Machine Learning | Deep Learning",
-    image: "https://metaskills.sg/wp-content/uploads/2022/01/founder-300-sq-300x300.jpg",
-  },
-  {
     name: "Christopher Tan",
     role: "CBDO, Metaskills Institute",
     expertise: "Data Science | Algorithmic Trading | Business Development",
     image: "https://metaskills.sg/wp-content/uploads/2026/03/Chris-Tan-e1772416392943.jpg",
+  },
+  {
+    name: "Dr Jack Hong",
+    role: "Lead Consultant",
+    expertise: "Data Science | AI | Machine Learning | Deep Learning",
+    image: "https://metaskills.sg/wp-content/uploads/2022/01/founder-300-sq-300x300.jpg",
   },
   {
     name: "Andrew Toh",
