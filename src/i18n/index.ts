@@ -14,13 +14,19 @@ i18n
       zh: { translation: zh },
       vi: { translation: vi },
     },
+    supportedLngs: ["en", "zh", "vi"],
     fallbackLng: "en",
+    load: "languageOnly",
     interpolation: {
       escapeValue: false,
     },
     detection: {
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],
+      lookupLocalStorage: "i18nextLng",
+    },
+    react: {
+      useSuspense: false,
     },
   });
 
