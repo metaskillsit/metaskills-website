@@ -152,7 +152,8 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
+  const resolvedLang = (i18n.resolvedLanguage || i18n.language || "en").split("-")[0];
+  const currentLang = languages.find((l) => l.code === resolvedLang) || languages[0];
 
   return (
     <>

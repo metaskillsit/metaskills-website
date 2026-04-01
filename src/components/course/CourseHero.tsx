@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Award } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 import ImageSlideshow from "@/components/ImageSlideshow";
 
@@ -10,11 +11,10 @@ interface CourseHeroProps {
 }
 
 const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative bg-[hsl(var(--hero-overlay))] overflow-hidden">
-      {/* Two-part layout: photo takes full space, text sits at very bottom as a slim bar */}
-      
-      {/* Full photo area — no overlay on the main image */}
       <div className="relative w-full h-[380px] md:h-[480px] lg:h-[540px]">
         <ImageSlideshow
           images={categoryImages}
@@ -28,20 +28,17 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
           showDots={false}
           kenBurns={true}
         />
-        {/* Only darken the very bottom edge for text readability */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[hsl(var(--hero-overlay))] to-transparent" />
-        
-        {/* Back button floats top-left with subtle backdrop */}
+
         <Link
           to="/programmes"
           className="absolute top-4 left-4 md:top-6 md:left-6 z-20 inline-flex items-center gap-2 text-white/80 hover:text-accent transition-colors text-sm group backdrop-blur-sm bg-black/20 rounded-full px-3 py-1.5"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          All Programmes
+          {t("coursePage.allProgrammes")}
         </Link>
       </div>
 
-      {/* Text strip below the photo — clean separation, no overlap */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -71,7 +68,7 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
               className="flex items-center gap-2 text-accent text-xs font-medium mt-2"
             >
               <Award className="w-3.5 h-3.5" />
-              Jointly offered by {course.jointlyOfferedBy}
+              {t("coursePage.jointlyOfferedBy", { name: course.jointlyOfferedBy })}
             </motion.p>
           )}
         </div>
