@@ -34,7 +34,7 @@ const Index = () => {
         <AdmissionsSection />
       </main>
       <FooterSection />
-      <TranslationWidget />
+      
     </div>
   );
 };
