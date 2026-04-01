@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
+import yinjieImg from "@/assets/faculty-yinjie.jpeg";
 
 const allFaculty = [
   {
@@ -70,6 +71,12 @@ const allFaculty = [
     role: "Adjunct Trainer",
     expertise: "Adult Education | AI & Cybersecurity Training | Instructor Development",
     image: jimmyImg,
+  },
+  {
+    name: "Yinjie",
+    role: "Adjunct Trainer",
+    expertise: "Programming Education | EdTech | Partnerships & Strategy",
+    image: yinjieImg,
   },
 ];
 
