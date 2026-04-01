@@ -45,12 +45,12 @@ const PartnerLogosSection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center h-[45px] md:h-[65px]"
+              className="flex items-center justify-center h-[135px] md:h-[195px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-full w-auto max-w-[100px] md:max-w-[150px] object-contain"
+                className="h-full w-auto max-w-[300px] md:max-w-[450px] object-contain"
                 loading="lazy"
               />
             </motion.div>

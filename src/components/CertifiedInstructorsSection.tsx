@@ -33,12 +33,12 @@ const CertifiedInstructorsSection = () => {
           {certifications.map((cert) => (
             <div
               key={cert.name}
-              className="flex items-center justify-center h-[50px] md:h-[70px]"
+              className="flex items-center justify-center h-[150px] md:h-[210px]"
             >
               <img
                 src={cert.logo}
                 alt={cert.name}
-                className="h-full w-auto max-w-[120px] md:max-w-[180px] object-contain"
+                className="h-full w-auto max-w-[360px] md:max-w-[540px] object-contain"
                 loading="lazy"
               />
             </div>
