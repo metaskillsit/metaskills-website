@@ -23,7 +23,7 @@ const AppRoutes = () => {
   const languageKey = (i18n.resolvedLanguage || i18n.language || "en").split("-")[0];
 
   return (
-    <BrowserRouter key={languageKey}>
+    <BrowserRouter>
       <ScrollToTop />
       <Routes key={languageKey}>
         <Route path="/" element={<Index />} />
