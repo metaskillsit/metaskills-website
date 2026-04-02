@@ -18,7 +18,7 @@ import panasonicLogo from "@/assets/clients/panasonic.png";
 import smrtLogo from "@/assets/clients/smrt.png";
 import necLogo from "@/assets/clients/nec.png";
 import certisLogo from "@/assets/clients/certis.png";
-import safraLogo from "@/assets/clients/safra.png";
+
 import kkhLogo from "@/assets/clients/kkh.png";
 import dstaLogo from "@/assets/clients/dsta.png";
 import bcaLogo from "@/assets/clients/bca-academy.png";
@@ -55,7 +55,7 @@ const allClients: Client[] = [
   { name: "SMRT", logo: smrtLogo, category: "Transport & Infrastructure" },
   { name: "NEC Asia Pacific", logo: necLogo, category: "Consulting & Technology" },
   { name: "Certis", logo: certisLogo, category: "Defence & Logistics" },
-  { name: "SAFRA", logo: safraLogo, category: "Government & Defence" },
+  
   { name: "KK Women's & Children's Hospital", logo: kkhLogo, category: "Healthcare" },
   { name: "DSTA", logo: dstaLogo, category: "Government & Defence" },
   { name: "BCA Academy", logo: bcaLogo, category: "Government & Defence" },
