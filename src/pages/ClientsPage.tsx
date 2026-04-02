@@ -18,7 +18,7 @@ import panasonicLogo from "@/assets/clients/panasonic.png";
 import smrtLogo from "@/assets/clients/smrt.png";
 import necLogo from "@/assets/clients/nec.png";
 import certisLogo from "@/assets/clients/certis.png";
-import safraLogo from "@/assets/clients/safra.png";
+
 import kkhLogo from "@/assets/clients/kkh.png";
 import dstaLogo from "@/assets/clients/dsta.png";
 import bcaLogo from "@/assets/clients/bca-academy.png";
