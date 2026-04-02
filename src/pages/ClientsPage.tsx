@@ -55,7 +55,7 @@ const allClients: Client[] = [
   { name: "SMRT", logo: smrtLogo, category: "Transport & Infrastructure" },
   { name: "NEC Asia Pacific", logo: necLogo, category: "Consulting & Technology" },
   { name: "Certis", logo: certisLogo, category: "Defence & Logistics" },
-  { name: "SAFRA", logo: safraLogo, category: "Government & Defence" },
+  
   { name: "KK Women's & Children's Hospital", logo: kkhLogo, category: "Healthcare" },
   { name: "DSTA", logo: dstaLogo, category: "Government & Defence" },
   { name: "BCA Academy", logo: bcaLogo, category: "Government & Defence" },
