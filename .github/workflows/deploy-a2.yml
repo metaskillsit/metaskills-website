@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup Node
+      - name: Setup Nod
         uses: actions/setup-node@v6
         with:
           node-version: 20
@@ -38,5 +38,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
-          local-dir: dist/
-          server-dir: ./
+          local-dir: dist
+          server-dir: public_html/
