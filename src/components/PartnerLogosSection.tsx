@@ -19,7 +19,7 @@ const partnerLogos = [
   { name: "JCube Institute", logo: jcubeLogo },
   { name: "Tinkercademy", logo: tinkercademyLogo },
   { name: "Singapore Vietnam Business Bridge", logo: svbbLogo },
-  { name: "SAFRA", logo: safraLogo },
+  
 ];
 
 const PartnerLogosSection = () => {
