@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
 import yinjieImg from "@/assets/faculty-yinjie.jpeg";
+import evelynImg from "@/assets/faculty-evelyn.png";
 
 const executiveTeam = [
   {

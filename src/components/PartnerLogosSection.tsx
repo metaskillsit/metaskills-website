@@ -7,6 +7,7 @@ import jcubeLogo from "@/assets/partner-jcube.jpg";
 import svbbLogo from "@/assets/partner-svbb.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import iscaLogo from "@/assets/logo-isca.png";
+import lxCopilotLogo from "@/assets/partner-lxcopilot.png";
 
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 
@@ -19,7 +20,7 @@ const partnerLogos = [
   { name: "JCube Institute", logo: jcubeLogo },
   { name: "Tinkercademy", logo: tinkercademyLogo },
   { name: "Singapore Vietnam Business Bridge", logo: svbbLogo },
-  
+  { name: "LX Copilot", logo: lxCopilotLogo },
 ];
 
 const PartnerLogosSection = () => {

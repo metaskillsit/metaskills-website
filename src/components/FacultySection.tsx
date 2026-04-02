@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
 import yinjieImg from "@/assets/faculty-yinjie.jpeg";
-import evelynImg from "@/assets/faculty-evelyn.jpg";
+import evelynImg from "@/assets/faculty-evelyn.png";
 
 const allFaculty = [
   {
