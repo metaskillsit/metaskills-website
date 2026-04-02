@@ -18,12 +18,12 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
-const AppRoutes = () => {
+const AppContent = () => {
   const { i18n } = useTranslation();
   const languageKey = (i18n.resolvedLanguage || i18n.language || "en").split("-")[0];
 
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Routes key={languageKey}>
         <Route path="/" element={<Index />} />
@@ -37,7 +37,7 @@ const AppRoutes = () => {
         <Route path="/course/:slug" element={<CoursePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 
@@ -46,7 +46,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <AppRoutes />
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
