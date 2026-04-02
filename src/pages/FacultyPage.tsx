@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
 import yinjieImg from "@/assets/faculty-yinjie.jpeg";
+import evelynImg from "@/assets/faculty-evelyn.png";
 
 const executiveTeam = [
   {
@@ -55,7 +56,7 @@ const aiTeam = [
     name: "Evelyn Wong",
     role: "Consultant",
     expertise: "Data Governance | Business & Data Analytics | Adult Learning | Compliance & Risk Management",
-    image: "https://metaskills.sg/wp-content/uploads/2022/01/Evelyn-300-300x300.jpg",
+    image: evelynImg,
     bio: "Evelyn Wong is a data governance specialist with deep expertise in creating and operationalising frameworks that elevate data quality, ensure compliance, and enable trustworthy AI and analytics. She has worked across functions—finance, IT, risk, marketing, and data science—to harmonise data ownership and stewardship, ensuring integrated analytics while maintaining regulatory standards under PDPA and GDPR.\n\nEvelyn is also an experienced adult learning practitioner, having trained more than 200 professionals in data analytics, business intelligence, and machine learning tools including Power BI, MySQL, Python, and VBA. She is an Adjunct Trainer with SMU Academy and JCube Institute, where she equips mid-career professionals with the skills to transition into data and AI roles.\n\nPassionate about promoting data literacy, Evelyn links governance initiatives to business outcomes—improving data quality, enhancing decision-making, and fostering a data-conscious culture.",
   },
   {
