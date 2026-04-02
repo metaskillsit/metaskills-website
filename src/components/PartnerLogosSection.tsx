@@ -7,7 +7,7 @@ import jcubeLogo from "@/assets/partner-jcube.jpg";
 import svbbLogo from "@/assets/partner-svbb.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import iscaLogo from "@/assets/logo-isca.png";
-import safraLogo from "@/assets/logo-safra.jpg";
+
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 
 const partnerLogos = [
