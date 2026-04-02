@@ -34,7 +34,7 @@ const PartnerLogosSection = () => {
           viewport={{ once: true }}
           className="text-center mb-4 md:mb-6"
         >
-          <h2 className="font-heading text-xl md:text-2xl font-bold text-foreground">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
             {t("partners.title")}
           </h2>
         </motion.div>

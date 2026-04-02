@@ -47,7 +47,7 @@ const allFaculty = [
     name: "Evelyn Wong",
     role: "Consultant",
     expertise: "Data Governance | Business & Data Analytics | Compliance",
-    image: "https://metaskills.sg/wp-content/uploads/2022/01/Evelyn-300-300x300.jpg",
+    image: evelynImg,
   },
   {
     name: "Ms. Alena Lavrinenko",

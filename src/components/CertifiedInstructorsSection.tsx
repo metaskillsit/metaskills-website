@@ -28,7 +28,7 @@ const CertifiedInstructorsSection = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-xs md:text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4 md:mb-6"
+          className="text-center font-heading text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6"
         >
           {t("certified.heading")}
         </motion.p>
