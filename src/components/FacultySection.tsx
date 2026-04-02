@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
 import yinjieImg from "@/assets/faculty-yinjie.jpeg";
+import evelynImg from "@/assets/faculty-evelyn.jpg";
 
 const allFaculty = [
   {
@@ -46,7 +47,7 @@ const allFaculty = [
     name: "Evelyn Wong",
     role: "Consultant",
     expertise: "Data Governance | Business & Data Analytics | Compliance",
-    image: "https://metaskills.sg/wp-content/uploads/2022/01/Evelyn-300-300x300.jpg",
+    image: evelynImg,
   },
   {
     name: "Ms. Alena Lavrinenko",
