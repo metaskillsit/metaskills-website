@@ -16,16 +16,18 @@ import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 const ProgrammesPage = () => {
   const { t } = useTranslation();
 
+  const ct = (key: string) => t(`courses.${key}.title`);
+
   const programCategories = [
     {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
       image: aiLeadershipImg,
       courses: [
-        { name: "AI Strategy and Roadmap for Leaders", slug: "ai-strategy-roadmap-leaders" },
-        { name: "Who Is Accountable When AI Decides?", slug: "ai-accountability-when-ai-decides" },
-        { name: "Governing AI Agents: Trust, Boundaries, and Audit Trails", slug: "governing-ai-agents-trust-boundaries" },
-        { name: "AI Wargaming: Test Decisions Before They Count", slug: "ai-wargaming-test-decisions" },
+        { name: ct("aiStrategyLeaders"), slug: "ai-strategy-roadmap-leaders" },
+        { name: ct("aiAccountability"), slug: "ai-accountability-when-ai-decides" },
+        { name: ct("governingAiAgents"), slug: "governing-ai-agents-trust-boundaries" },
+        { name: ct("aiWargaming"), slug: "ai-wargaming-test-decisions" },
       ],
     },
     {
@@ -33,9 +35,9 @@ const ProgrammesPage = () => {
       description: t("programmes.agenticDesc"),
       image: agenticImg,
       courses: [
-        { name: "Foundations of Agentic AI Workflows", slug: "agentic-ai-foundations" },
-        { name: "Empowering Agentic AI with LLMs and Use-Case Development", slug: "agentic-ai-use-case" },
-        { name: "Deploying and Securing Advanced Agentic AI Systems", slug: "agentic-ai-deploy-secure-systems" },
+        { name: ct("agenticFoundations"), slug: "agentic-ai-foundations" },
+        { name: ct("agenticUseCase"), slug: "agentic-ai-use-case" },
+        { name: ct("agenticDeploy"), slug: "agentic-ai-deploy-secure-systems" },
       ],
     },
     {
@@ -43,15 +45,15 @@ const ProgrammesPage = () => {
       description: t("programmes.aiAutoDesc"),
       image: aiAutomationImg,
       courses: [
-        { name: "The Rise of AI Agents in 2026", slug: "rise-of-ai-agents-2026" },
-        { name: "Build AI Workflows with No Code", slug: "build-ai-workflows-no-code" },
-        { name: "Design AI Automations Using Plain Language", slug: "design-ai-automations-plain-language" },
-        { name: "Build Operational Tools with AI Coding Agents", slug: "build-operational-tools-ai-coding-agents" },
-        { name: "Build Your Own AI Assistant/Agent", slug: "build-your-own-ai-assistant" },
-        { name: "GPT Your Organisation's Knowledge Base", slug: "gpt-your-organisation-knowledge-base" },
-        { name: "Secure Your Agentic AI Infrastructure", slug: "secure-agentic-ai-infrastructure" },
-        { name: "AI for Training Design and Curriculum", slug: "ai-training-design-curriculum" },
-        { name: "Build AI Tutors with Adaptive Learning", slug: "build-ai-tutors-adaptive-learning" },
+        { name: ct("riseAiAgents"), slug: "rise-of-ai-agents-2026" },
+        { name: ct("buildAiNoCode"), slug: "build-ai-workflows-no-code" },
+        { name: ct("designAiPlainLang"), slug: "design-ai-automations-plain-language" },
+        { name: ct("buildOpTools"), slug: "build-operational-tools-ai-coding-agents" },
+        { name: ct("buildAiAssistant"), slug: "build-your-own-ai-assistant" },
+        { name: ct("gptKnowledgeBase"), slug: "gpt-your-organisation-knowledge-base" },
+        { name: ct("secureAgenticInfra"), slug: "secure-agentic-ai-infrastructure" },
+        { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
+        { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
       ],
     },
     {
@@ -59,9 +61,9 @@ const ProgrammesPage = () => {
       description: t("programmes.dataDesc"),
       image: datasciImg,
       courses: [
-        { name: "Python Programming For Data Analytics", slug: "python-programming-for-data-analytics" },
-        { name: "Certified Data Analyst — JCube Institute", slug: "certified-data-analyst" },
-        { name: "Certified Data Scientist — JCube Institute", slug: "certified-data-scientist" },
+        { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
+        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
+        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
       ],
     },
     {
@@ -69,8 +71,8 @@ const ProgrammesPage = () => {
       description: t("programmes.fintechDesc"),
       image: fintechImg,
       courses: [
-        { name: "Algorithmic Trading Mastery Series — Level 1", slug: "algorithmic-trading-level-1" },
-        { name: "Algorithmic Trading Mastery Series — Level 2", slug: "algorithmic-trading-level-2" },
+        { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
+        { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
       ],
     },
     {
@@ -78,7 +80,7 @@ const ProgrammesPage = () => {
       description: t("programmes.cyberDesc"),
       image: cyberDefenceImg,
       courses: [
-        { name: "Cybersecurity: Roles, Threats, and Certification Pathways", slug: "cybersecurity-roles-threats-pathways" },
+        { name: ct("cyberRolesThreats"), slug: "cybersecurity-roles-threats-pathways" },
       ],
     },
     {
@@ -86,12 +88,12 @@ const ProgrammesPage = () => {
       description: t("programmes.mccDesc"),
       image: cyberCertImg,
       courses: [
-        { name: "MCC+ Cyber Defence Foundation (4 Days)", slug: "mcc-plus-cyber-defence-foundation" },
-        { name: "MCC+ Security Operations (Security+)", slug: "mcc-plus-security-operations" },
-        { name: "MCC+ Threat Hunting & Blue Team (CySA+)", slug: "mcc-plus-threat-hunting-blue-team" },
-        { name: "MCC+ Offensive Cyber (CEH)", slug: "mcc-plus-offensive-cyber-fundamentals" },
-        { name: "MCC+ Digital Forensics (CHFI)", slug: "mcc-plus-digital-forensics" },
-        { name: "MCC+ AI Security (SecAI)", slug: "mcc-plus-ai-security-autonomous-defence" },
+        { name: ct("mccFoundation"), slug: "mcc-plus-cyber-defence-foundation" },
+        { name: ct("mccSecurityOps"), slug: "mcc-plus-security-operations" },
+        { name: ct("mccThreatHunting"), slug: "mcc-plus-threat-hunting-blue-team" },
+        { name: ct("mccOffensiveCyber"), slug: "mcc-plus-offensive-cyber-fundamentals" },
+        { name: ct("mccDigitalForensics"), slug: "mcc-plus-digital-forensics" },
+        { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
       ],
     },
   ];
