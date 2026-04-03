@@ -82,6 +82,7 @@ export const courses: Course[] = [
   },
   {
     slug: "agentic-ai-use-case",
+    i18nKey: "agenticUseCase",
     title: "Empowering Agentic AI with LLMs and Use-Case Development",
     category: "Agentic AI Workshop Series",
     tagline: "Harness the power of language models to create dynamic, autonomous agentic systems.",
@@ -106,6 +107,7 @@ export const courses: Course[] = [
   },
   {
     slug: "agentic-ai-deploy-secure-systems",
+    i18nKey: "agenticDeploy",
     title: "Deploying and Securing Advanced Agentic AI Systems",
     category: "Agentic AI Workshop Series",
     tagline: "Master the deployment of autonomous AI agents in secure, scalable environments.",
@@ -132,6 +134,7 @@ export const courses: Course[] = [
   // ── Data Science (existing) ──
   {
     slug: "python-programming-for-data-analytics",
+    i18nKey: "pythonDataAnalytics",
     title: "Python Programming For Data Analytics",
     category: "Data Science",
     tagline: "Python Programming | Machine Learning | Data Analytics",
@@ -163,6 +166,7 @@ export const courses: Course[] = [
   },
   {
     slug: "certified-data-analyst",
+    i18nKey: "certifiedDataAnalyst",
     title: "Certified Data Analyst — JCube Institute",
     category: "Data Science",
     tagline: "Industry-recognised Data Analyst certification designed for career advancement.",
@@ -177,6 +181,7 @@ export const courses: Course[] = [
   },
   {
     slug: "certified-data-scientist",
+    i18nKey: "certifiedDataScientist",
     title: "Certified Data Scientist — JCube Institute",
     category: "Data Science",
     tagline: "Advanced Data Science certification for professionals seeking mastery.",
@@ -193,6 +198,7 @@ export const courses: Course[] = [
   // ── Fintech / Algorithmic Trading ──
   {
     slug: "algorithmic-trading-level-1",
+    i18nKey: "algoTradingL1",
     title: "Algorithmic Trading Mastery in Financial Markets for Non-Professionals — Level 1",
     category: "Fintech / Algorithmic Trading",
     tagline: "Take your first step towards becoming a successful trader in the trillion dollar Forex, Gold and Crypto markets.",
@@ -235,6 +241,7 @@ export const courses: Course[] = [
   },
   {
     slug: "algorithmic-trading-level-2",
+    i18nKey: "algoTradingL2",
     title: "Algorithmic Trading Mastery in Financial Markets for Non-Professionals — Level 2",
     category: "Fintech / Algorithmic Trading",
     tagline: "Advanced algorithmic trading strategies with backtesting, optimization, and proprietary EAs for the Forex, Gold and Crypto markets.",
@@ -270,6 +277,7 @@ export const courses: Course[] = [
   // ── AI Automation and Agents (MSI) ──
   {
     slug: "rise-of-ai-agents-2026",
+    i18nKey: "riseAiAgents",
     title: "The Rise of AI Agents in 2026: Automating Everything with Intelligent AI Systems Now",
     category: "AI Automation and Agents",
     tagline: "A comprehensive introduction to the world of AI automation and autonomous agents.",
@@ -284,6 +292,7 @@ export const courses: Course[] = [
   },
   {
     slug: "build-ai-workflows-no-code",
+    i18nKey: "buildAiNoCode",
     title: "Build AI Workflows with No Code (2026 Edition)",
     category: "AI Automation and Agents",
     tagline: "Create agentic AI workflows using visual automation — no programming required.",
@@ -298,6 +307,7 @@ export const courses: Course[] = [
   },
   {
     slug: "design-ai-automations-plain-language",
+    i18nKey: "designAiPlainLang",
     title: "Design AI Automations Using Plain Language (2026 Edition)",
     category: "AI Automation and Agents",
     tagline: "Use LLMs to generate AI workflows from natural language descriptions.",
@@ -312,6 +322,7 @@ export const courses: Course[] = [
   },
   {
     slug: "build-operational-tools-ai-coding-agents",
+    i18nKey: "buildOpTools",
     title: "Build Operational Tools with AI Coding Agents (2026 Edition)",
     category: "AI Automation and Agents",
     tagline: "Build production-quality tools using a structured five-layer AI coding approach.",
@@ -326,6 +337,7 @@ export const courses: Course[] = [
   },
   {
     slug: "build-your-own-ai-assistant",
+    i18nKey: "buildAiAssistant",
     title: "Build Your Own AI Assistant/Agent To Work For You (2026 Edition)",
     category: "AI Automation and Agents",
     tagline: "Install, configure, and customise a personal AI agent on modest hardware.",
@@ -340,6 +352,7 @@ export const courses: Course[] = [
   },
   {
     slug: "gpt-your-organisation-knowledge-base",
+    i18nKey: "gptKnowledgeBase",
     title: "How To GPT Your Organisation's Knowledge Base (2026 Edition)",
     category: "AI Automation and Agents",
     tagline: "Build searchable AI knowledge systems from your organisation's documents.",
@@ -354,6 +367,7 @@ export const courses: Course[] = [
   },
   {
     slug: "secure-agentic-ai-infrastructure",
+    i18nKey: "secureAgenticInfra",
     title: "Secure Your Agentic AI Infrastructure: Threats, Defences, and Governance (2026 Edition)",
     category: "AI Automation and Agents",
     tagline: "Security and governance for agentic AI systems — from threats to policy.",
@@ -368,6 +382,7 @@ export const courses: Course[] = [
   },
   {
     slug: "ai-training-design-curriculum",
+    i18nKey: "aiTrainingDesign",
     title: "Using AI for Training Design and Curriculum Development (2026 Edition)",
     category: "AI Automation and Agents",
     tagline: "For L&D professionals — use AI to create lesson plans, rubrics, and curriculum materials.",
@@ -382,6 +397,7 @@ export const courses: Course[] = [
   },
   {
     slug: "build-ai-tutors-adaptive-learning",
+    i18nKey: "buildAiTutors",
     title: "Build Powerful AI Tutors That Adapt To Students' Learning Paths (2026 Edition)",
     category: "AI Automation and Agents",
     tagline: "Build custom AI tutors and adaptive learning pathways for your organisation.",
@@ -398,6 +414,7 @@ export const courses: Course[] = [
   // ── Cyber Defence (MSI) ──
   {
     slug: "cybersecurity-roles-threats-pathways",
+    i18nKey: "cyberRolesThreats",
     title: "Cybersecurity: Roles, Threats, and Certification Pathways",
     category: "Cyber Defence",
     tagline: "Comprehensive cybersecurity overview — fundamentals, roles, threats, and certification roadmap.",
@@ -414,6 +431,7 @@ export const courses: Course[] = [
   // ── AI Leadership and Governance (MSI) ──
   {
     slug: "ai-strategy-roadmap-leaders",
+    i18nKey: "aiStrategyLeaders",
     title: "AI Strategy and Roadmap for Leaders",
     category: "AI Leadership and Governance",
     tagline: "A strategy workshop for senior leaders to evaluate AI potential and build adoption plans.",
@@ -428,6 +446,7 @@ export const courses: Course[] = [
   },
   {
     slug: "ai-accountability-when-ai-decides",
+    i18nKey: "aiAccountability",
     title: "Who Is Accountable When AI Decides?",
     category: "AI Leadership and Governance",
     tagline: "Tackle the accountability question for AI-driven decisions head-on.",
@@ -442,6 +461,7 @@ export const courses: Course[] = [
   },
   {
     slug: "governing-ai-agents-trust-boundaries",
+    i18nKey: "governingAiAgents",
     title: "Governing AI Agents: Trust, Boundaries, and Audit Trails",
     category: "AI Leadership and Governance",
     tagline: "Set boundaries and trace every AI agent action back to human authority.",
@@ -456,6 +476,7 @@ export const courses: Course[] = [
   },
   {
     slug: "ai-wargaming-test-decisions",
+    i18nKey: "aiWargaming",
     title: "AI Wargaming: Test Decisions Before They Count",
     category: "AI Leadership and Governance",
     tagline: "Hands-on wargaming exercise where AI tools serve as analytical advisors.",
@@ -472,6 +493,7 @@ export const courses: Course[] = [
   // ── MCC+ Cyber Defence Certification (MSI) ──
   {
     slug: "mcc-plus-cyber-defence-foundation",
+    i18nKey: "mccFoundation",
     title: "MSI CyberCore+ (MCC+) Cyber Defence Foundation",
     category: "MCC+ Cyber Defence Certification",
     tagline: "4-day intensive foundation covering core cybersecurity knowledge across all major certifications.",
@@ -489,6 +511,7 @@ export const courses: Course[] = [
   },
   {
     slug: "mcc-plus-security-operations",
+    i18nKey: "mccSecurityOps",
     title: "MCC+ Security Operations (CompTIA Security+ Aligned)",
     category: "MCC+ Cyber Defence Certification",
     tagline: "1-day elective aligned to CompTIA Security+ domains.",
@@ -503,6 +526,7 @@ export const courses: Course[] = [
   },
   {
     slug: "mcc-plus-threat-hunting-blue-team",
+    i18nKey: "mccThreatHunting",
     title: "MCC+ Threat Hunting and Blue Team (CompTIA CySA+ Aligned)",
     category: "MCC+ Cyber Defence Certification",
     tagline: "1-day elective aligned to CompTIA CySA+ domains.",
@@ -517,6 +541,7 @@ export const courses: Course[] = [
   },
   {
     slug: "mcc-plus-offensive-cyber-fundamentals",
+    i18nKey: "mccOffensiveCyber",
     title: "MCC+ Offensive Cyber Fundamentals (EC-Council CEH Aligned)",
     category: "MCC+ Cyber Defence Certification",
     tagline: "1-day elective aligned to EC-Council CEH domains.",
@@ -531,6 +556,7 @@ export const courses: Course[] = [
   },
   {
     slug: "mcc-plus-digital-forensics",
+    i18nKey: "mccDigitalForensics",
     title: "MCC+ Digital Forensics and Incident Investigation (EC-Council CHFI Aligned)",
     category: "MCC+ Cyber Defence Certification",
     tagline: "1-day elective aligned to EC-Council CHFI domains.",
@@ -545,6 +571,7 @@ export const courses: Course[] = [
   },
   {
     slug: "mcc-plus-ai-security-autonomous-defence",
+    i18nKey: "mccAiSecurity",
     title: "MCC+ AI Security and Autonomous Defence (CompTIA SecAI Aligned)",
     category: "MCC+ Cyber Defence Certification",
     tagline: "1-day elective aligned to CompTIA SecAI domains.",
