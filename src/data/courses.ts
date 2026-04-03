@@ -50,6 +50,7 @@ export interface Course {
   jointlyOfferedBy?: string;
   whatYouLearn?: string[];
   afterCompleting?: string[];
+  i18nKey?: string;
 }
 
 export const courses: Course[] = [
