@@ -15,7 +15,7 @@ import LocationsPage from "./pages/LocationsPage.tsx";
 import AdmissionsPage from "./pages/AdmissionsPage.tsx";
 import ClientsPage from "./pages/ClientsPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+
 
 const queryClient = new QueryClient();
 
