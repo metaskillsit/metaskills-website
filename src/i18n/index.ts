@@ -30,6 +30,9 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
   },
 });
 
-document.documentElement.lang = (i18n.resolvedLanguage || i18n.language || "en").split("-")[0];
+i18n.on("languageChanged", (lng) => {
+  document.documentElement.lang = lng;
+  localStorage.setItem("i18nextLng", lng);
+});
 
 export default i18n;
