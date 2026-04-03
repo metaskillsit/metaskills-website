@@ -2,46 +2,56 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import jimmyImg from "@/assets/jimmy-profile.jpg";
 import yinjieImg from "@/assets/faculty-yinjie.jpeg";
 import evelynImg from "@/assets/faculty-evelyn.png";
+import jinghaoImg from "@/assets/faculty-jinghao.jpg";
+import chrisImg from "@/assets/faculty-chris.jpg";
+import jackHongImg from "@/assets/faculty-jackhong.jpg";
+import andrewImg from "@/assets/faculty-andrew.jpg";
+import jackTeeImg from "@/assets/faculty-jacktee.jpg";
+import jonathanImg from "@/assets/faculty-jonathan.jpg";
+import alenaImg from "@/assets/faculty-alena.jpg";
+import victorImg from "@/assets/faculty-victor.jpg";
+import stevenImg from "@/assets/faculty-steven.jpg";
 
 const allFaculty = [
   {
     name: "Dr Ke Jinghao",
     role: "CEO, Metaskills Institute",
     expertise: "Data Analytics | Data Science | Agentic AI | Machine Learning",
-    image: "https://metaskills.sg/wp-content/uploads/2025/09/JinghaoKe-ProfilePic-gemini-light-square.png",
+    image: jinghaoImg,
   },
   {
     name: "Christopher Tan",
     role: "CBDO, Metaskills Institute",
     expertise: "Data Science | Algorithmic Trading | Business Development",
-    image: "https://metaskills.sg/wp-content/uploads/2026/03/Chris-Tan-e1772416392943.jpg",
+    image: chrisImg,
   },
   {
     name: "Dr Jack Hong",
     role: "Lead Consultant",
     expertise: "Data Science | AI | Machine Learning | Deep Learning",
-    image: "https://metaskills.sg/wp-content/uploads/2022/01/founder-300-sq-300x300.jpg",
+    image: jackHongImg,
   },
   {
     name: "Andrew Toh",
     role: "Head, Operations",
     expertise: "Operational Leadership | AI-Driven Transformation | Vibe Coding",
-    image: "https://metaskills.sg/wp-content/uploads/2026/02/Andrew-e1772293476358.jpeg",
+    image: andrewImg,
   },
   {
     name: "Jack Tee",
     role: "Consultant",
     expertise: "Data Science | AI | Machine Learning | NLP | Computer Vision",
-    image: "https://metaskills.sg/wp-content/uploads/2026/03/Jack-Tee.jpeg",
+    image: jackTeeImg,
   },
   {
     name: "Dr Jonathan Khoo",
     role: "Consultant",
     expertise: "Data Science | AI | Machine Learning | Deep Learning",
-    image: "https://metaskills.sg/wp-content/uploads/2022/10/Jon-300x300-1.jpg",
+    image: jonathanImg,
   },
   {
     name: "Evelyn Wong",
@@ -53,19 +63,19 @@ const allFaculty = [
     name: "Ms. Alena Lavrinenko",
     role: "Consultant",
     expertise: "Generative & Agentic AI | Supply Chain | Professional Training",
-    image: "https://metaskills.sg/wp-content/uploads/2025/09/Alena1.jpg",
+    image: alenaImg,
   },
   {
     name: "Victor",
     role: "Lead Consultant, Algo Trading",
     expertise: "Algorithmic Trading | Forex & Gold Markets | Machine Learning",
-    image: "https://metaskills.sg/wp-content/uploads/2022/08/Victor-300sq-300x300.jpg",
+    image: victorImg,
   },
   {
     name: "Mr Steven Ong",
     role: "Lead Consultant",
     expertise: "Cybersecurity Governance | ISO 27001 | NIST | Cloud Security",
-    image: "https://metaskills.sg/wp-content/uploads/2026/03/STeven-e1772366589711.jpeg",
+    image: stevenImg,
   },
   {
     name: "Jimmy Leong",
@@ -145,7 +155,6 @@ const FacultySection = () => {
             </button>
           </div>
         </motion.div>
-
         <div className="flex gap-1.5 mb-8">
           {Array.from({ length: maxIdx + 1 }).map((_, i) => (
             <button
@@ -156,13 +165,17 @@ const FacultySection = () => {
             />
           ))}
         </div>
-
         <div className="overflow-hidden" ref={trackRef}>
           <div className="flex gap-8" style={{ transform: `translateX(-${translateX}px)`, transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)" }}>
             {allFaculty.map((f) => (
               <div key={f.name} className="group flex-shrink-0" style={{ width: cardWidth > 0 ? cardWidth : "calc(25% - 24px)" }}>
                 <div className="aspect-square overflow-hidden rounded-sm mb-4 bg-muted">
-                  <img src={f.image} alt={f.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img
+                    src={f.image}
+                    alt={f.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
                 </div>
                 <h3 className="font-heading text-lg font-bold text-foreground">{f.name}</h3>
                 <p className="text-sm text-primary font-medium mb-1">{f.role}</p>
@@ -171,7 +184,6 @@ const FacultySection = () => {
             ))}
           </div>
         </div>
-
         <div className="flex md:hidden justify-center gap-4 mt-6">
           <button onClick={prev} className="p-2 rounded-sm border border-border hover:bg-accent transition-colors" aria-label="Previous">
             <ChevronLeft className="w-5 h-5 text-foreground" />
