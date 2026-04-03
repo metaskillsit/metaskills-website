@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Camera } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface CourseGalleryProps {
   images: string[];
@@ -7,6 +8,7 @@ interface CourseGalleryProps {
 }
 
 const CourseGallery = ({ images, title }: CourseGalleryProps) => {
+  const { t } = useTranslation();
   if (images.length < 2) return null;
 
   return (
@@ -18,7 +20,7 @@ const CourseGallery = ({ images, title }: CourseGalleryProps) => {
       <div className="flex items-center gap-2 mb-6">
         <Camera className="w-5 h-5 text-primary" />
         <h2 className="font-heading text-2xl font-bold text-foreground">
-          Learning Environment
+          {t("coursePage.learningEnvironment")}
         </h2>
       </div>
       <div className="grid grid-cols-3 gap-3">

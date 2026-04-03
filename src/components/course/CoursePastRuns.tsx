@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Users, Star, Quote, ChevronLeft, ChevronRight, Expand } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { PastRun } from "@/data/pastRuns";
 import GalleryLightbox from "@/components/GalleryLightbox";
 
@@ -10,6 +11,7 @@ interface CoursePastRunsProps {
 }
 
 const CoursePastRuns = ({ pastRuns, courseTitle }: CoursePastRunsProps) => {
+  const { t } = useTranslation();
   const [activePhotoIndex, setActivePhotoIndex] = useState<Record<number, number>>({});
   const [lightboxState, setLightboxState] = useState<{ runIndex: number; photoIndex: number } | null>(null);
 
@@ -74,26 +76,26 @@ const CoursePastRuns = ({ pastRuns, courseTitle }: CoursePastRunsProps) => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">Proven Track Record</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-3">Past Course Runs</h2>
+          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">{t("coursePage.provenTrackRecord")}</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-3">{t("coursePage.pastCourseRuns")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join the growing community of professionals who have transformed their careers through our programmes.
+            {t("coursePage.pastCourseRunsDesc")}
           </p>
 
           <div className="flex justify-center gap-8 mt-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">{pastRuns.length}</div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Runs Completed</div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wide mt-1">{t("coursePage.runsCompleted")}</div>
             </div>
             <div className="w-px bg-border" />
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">{totalParticipants}+</div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Participants Trained</div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wide mt-1">{t("coursePage.participantsTrained")}</div>
             </div>
             <div className="w-px bg-border" />
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">4.9</div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Avg. Rating</div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wide mt-1">{t("coursePage.avgRating")}</div>
             </div>
           </div>
         </motion.div>
@@ -131,7 +133,7 @@ const CoursePastRuns = ({ pastRuns, courseTitle }: CoursePastRunsProps) => {
 
                   <div className="absolute bottom-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-medium bg-foreground/60 text-background rounded-full backdrop-blur-sm">
                     <Expand className="w-3 h-3" />
-                    Tap to enlarge
+                    {t("coursePage.tapToEnlarge")}
                   </div>
 
                   {run.photos.length > 1 && (
@@ -184,7 +186,7 @@ const CoursePastRuns = ({ pastRuns, courseTitle }: CoursePastRunsProps) => {
                     </span>
                     <span className="flex items-center gap-1.5">
                       <Users className="w-4 h-4 text-primary" />
-                      {run.participants} Participants
+                      {run.participants} {t("coursePage.participants")}
                     </span>
                   </div>
 
