@@ -145,7 +145,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+      if (
+        langRef.current && !langRef.current.contains(e.target as Node) &&
+        langRefMobile.current && !langRefMobile.current.contains(e.target as Node)
+      ) {
         setLangOpen(false);
       }
     };
