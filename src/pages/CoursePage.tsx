@@ -5,6 +5,7 @@ import { getPastRuns } from "@/data/pastRuns";
 import { getCourseSchedule } from "@/data/courseSchedule";
 import { getCourseBySlug, courses } from "@/data/courses";
 import { getCourseImages } from "@/data/courseImages";
+import { useCourseTranslation } from "@/hooks/useCourseTranslation";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import CourseHero from "@/components/course/CourseHero";
