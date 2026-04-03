@@ -17,11 +17,9 @@ import CourseGallery from "@/components/course/CourseGallery";
 import CoursePastRuns from "@/components/course/CoursePastRuns";
 import CourseSchedule from "@/components/course/CourseSchedule";
 
-const CoursePage = () => {
-  const { slug } = useParams<{ slug: string }>();
+const CoursePageContent = ({ slug }: { slug: string }) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const course = getCourseBySlug(slug || "");
+  const course = getCourseBySlug(slug);
 
   const relatedCourses = courses
     .filter((c) => c.category === course?.category && c.slug !== slug)
@@ -48,6 +46,13 @@ const CoursePage = () => {
   const pastRuns = getPastRuns(course.slug);
   const courseSchedule = getCourseSchedule(course.slug);
 
+  return <CoursePageInner course={course} categoryImages={categoryImages} pastRuns={pastRuns} courseSchedule={courseSchedule} relatedCourses={relatedCourses} />;
+};
+
+const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, relatedCourses }: any) => {
+  const { t } = useTranslation();
+  const ct = useCourseTranslation(course);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -71,25 +76,30 @@ const CoursePage = () => {
           </div>
         </section>
 
-        <CourseSchedule schedule={courseSchedule} courseTitle={course.title} />
+        <CourseSchedule schedule={courseSchedule} courseTitle={ct.title} />
 
         <div className="max-w-[1140px] mx-auto px-6 py-14">
           <div className="grid lg:grid-cols-3 gap-14">
             <div className="lg:col-span-2 space-y-14">
               <CourseContent course={course} />
-              <CourseGallery images={categoryImages} title={course.title} />
+              <CourseGallery images={categoryImages} title={ct.title} />
             </div>
             <CourseSidebar course={course} />
           </div>
         </div>
 
-        <CoursePastRuns pastRuns={pastRuns} courseTitle={course.title} />
+        <CoursePastRuns pastRuns={pastRuns} courseTitle={ct.title} />
         <CoursePolicies />
         <CourseRelated relatedCourses={relatedCourses} />
       </main>
       <FooterSection />
     </div>
   );
+};
+
+const CoursePage = () => {
+  const { slug } = useParams<{ slug: string }>();
+  return <CoursePageContent slug={slug || ""} />;
 };
 
 export default CoursePage;
