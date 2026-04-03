@@ -40,3 +40,9 @@ jobs:
           port: 21
           local-dir: dist/
           server-dir: public_html/
+          exclude: |
+            **/wp-content/**
+            **/wp-includes/**
+            **/wp-admin/**
+            **/wp-*.php
+            **/.ftp-deploy-sync-state.json
