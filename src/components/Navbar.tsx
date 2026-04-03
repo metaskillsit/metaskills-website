@@ -34,6 +34,7 @@ const Navbar = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
+  const langRefMobile = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   const navGroups: NavGroup[] = [
@@ -144,7 +145,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+      if (
+        langRef.current && !langRef.current.contains(e.target as Node) &&
+        langRefMobile.current && !langRefMobile.current.contains(e.target as Node)
+      ) {
         setLangOpen(false);
       }
     };
@@ -173,7 +177,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile language selector */}
-          <div className="lg:hidden relative" ref={langRef}>
+          <div className="lg:hidden relative" ref={langRefMobile}>
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1 text-xs font-medium text-foreground/70 hover:text-primary transition-colors"
