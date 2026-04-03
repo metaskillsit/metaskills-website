@@ -177,7 +177,8 @@
     "executiveTeam": "MetaSkills Executive Team",
     "aiTeam": "AI / Data Science Team",
     "cyberTeam": "Cyber Security Team",
-    "adjunctTrainers": "Adjunct Trainers"
+    "adjunctTrainers": "Adjunct Trainers",
+    "algoTeam": "Algorithmic Trading Team"
   },
   "partnersPage": {
     "heroTitle": "Our Partners",
@@ -253,7 +254,9 @@
     "policyReschedulingTitle": "Rescheduling",
     "policyReschedulingText": "Client-initiated rescheduling at least 14 days before. SGD 600 rescheduling fee may apply. Metaskills-initiated changes offer full refund option.",
     "policyAttendanceTitle": "Attendance",
-    "policyAttendanceText": "75% attendance required for certification. Participants should arrive on time. Notify absence via email to admissions@metaskills.sg."
+    "policyAttendanceText": "75% attendance required for certification. Participants should arrive on time. Notify absence via email to admissions@metaskills.sg.",
+    "defaultDuration": "2-Day Workshop",
+    "whatYouLearn": "What You Will Learn"
   },
   "courses": {
     "agenticFoundations": {
@@ -276,7 +279,13 @@
       "scheduleDay2Item1": "Interactive Lab",
       "scheduleDay2Item2": "Scenario-Based Exercises",
       "scheduleDay2Item3": "Peer Review & Presentations",
-      "scheduleDay2Item4": "Wrap-Up & Q&A"
+      "scheduleDay2Item4": "Wrap-Up & Q&A",
+      "nextRunDate": "Day 1 – 18 September 2025 (Thursday)\nDay 2 – 19 September 2025 (Friday)",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "S$1,800 for 2-day workshop",
+      "feesCorporateSmall": "Less than 8 pax – S$11,000",
+      "feesCorporateLarge": "8 to 15 pax – S$12,000",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "agenticUseCase": {
       "title": "Empowering Agentic AI with LLMs and Use-Case Development",
@@ -298,7 +307,13 @@
       "scheduleDay2Item1": "Coding Lab",
       "scheduleDay2Item2": "Prompt Engineering for Agentic Systems",
       "scheduleDay2Item3": "Scenario-Based Development",
-      "scheduleDay2Item4": "Group Presentations & Peer Review"
+      "scheduleDay2Item4": "Group Presentations & Peer Review",
+      "nextRunDate": "Day 1 – 02 October 2025 (Thursday)\nDay 2 – 03 October 2025 (Friday)",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "S$1,800 for 2-day workshop",
+      "feesCorporateSmall": "Less than 8 pax – S$11,000",
+      "feesCorporateLarge": "8 to 15 pax – S$12,000",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "agenticDeploy": {
       "title": "Deploying and Securing Advanced Agentic AI Systems",
@@ -320,7 +335,13 @@
       "scheduleDay2Item1": "Simulation Lab",
       "scheduleDay2Item2": "Deployment Strategy Workshop",
       "scheduleDay2Item3": "Hands-On Troubleshooting",
-      "scheduleDay2Item4": "Group Presentations & Expert Feedback"
+      "scheduleDay2Item4": "Group Presentations & Expert Feedback",
+      "nextRunDate": "TBC",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "S$1,800 for 2-day workshop",
+      "feesCorporateSmall": "Less than 8 pax – S$11,000",
+      "feesCorporateLarge": "8 to 15 pax – S$12,000",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "pythonDataAnalytics": {
       "title": "Python Programming For Data Analytics",
@@ -344,7 +365,13 @@
       "scheduleDay2": "Session 2 (15 hours)",
       "scheduleDay2Item1": "Class 1: Weekday evening",
       "scheduleDay2Item2": "Class 2: Weekday evening",
-      "scheduleDay2Item3": "Class 3: Full Saturday"
+      "scheduleDay2Item3": "Class 3: Full Saturday",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "Contact for pricing",
+      "feesCorporateSmall": "Contact for corporate rates",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "certifiedDataAnalyst": {
       "title": "Certified Data Analyst — JCube Institute",
@@ -361,7 +388,13 @@
       "scheduleDay1Item1": "Modular learning with flexible scheduling",
       "scheduleDay1Item2": "Hands-on lab sessions",
       "scheduleDay1Item3": "Capstone project and peer review",
-      "scheduleDay1Item4": "Certification examination"
+      "scheduleDay1Item4": "Certification examination",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "Contact for pricing",
+      "feesCorporateSmall": "Contact for corporate rates",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "certifiedDataScientist": {
       "title": "Certified Data Scientist — JCube Institute",
@@ -378,7 +411,13 @@
       "scheduleDay1Item1": "Advanced modular learning blocks",
       "scheduleDay1Item2": "Industry mentorship sessions",
       "scheduleDay1Item3": "Portfolio development and review",
-      "scheduleDay1Item4": "Certification examination and defence"
+      "scheduleDay1Item4": "Certification examination and defence",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "Contact for pricing",
+      "feesCorporateSmall": "Contact for corporate rates",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "algoTradingL1": {
       "title": "Algorithmic Trading Mastery in Financial Markets for Non-Professionals — Level 1",
@@ -419,7 +458,13 @@
       "scheduleDay3Item1": "Setup trading environment for high success rates",
       "scheduleDay3Item2": "Auto trading with Expert Advisors",
       "scheduleDay3Item3": "Setup VPS to trade 24X7",
-      "scheduleDay3Item4": "Trading psychology and resources"
+      "scheduleDay3Item4": "Trading psychology and resources",
+      "nextRunDate": "Run 11 – Registration Open\nContact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "SGD $2,750 (Full Fee Before Subsidies)",
+      "feesCorporateSmall": "Special rates for JCube Institute Students/Alumni",
+      "feesCorporateLarge": "Special rates for MINDEF CDA Alumni and MSI Members",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "algoTradingL2": {
       "title": "Algorithmic Trading Mastery in Financial Markets for Non-Professionals — Level 2",
@@ -448,7 +493,13 @@
       "scheduleDay3": "Evening 3",
       "scheduleDay3Item1": "Proprietary trading companies and funding assessment",
       "scheduleDay3Item2": "Free proprietary EAs: FXV-Avalanche and FXV-Z-Scalper",
-      "scheduleDay3Item3": "Competition briefing and next steps"
+      "scheduleDay3Item3": "Competition briefing and next steps",
+      "nextRunDate": "Run 4 – Registration Open\nContact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "SGD $3,500 (Full Fee Before Subsidies)",
+      "feesCorporateSmall": "SGD $2,250 for JCube Institute Students/Alumni & MSI L1 Students",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "riseAiAgents": {
       "title": "The Rise of AI Agents in 2026: Automating Everything with Intelligent AI Systems Now",
@@ -465,7 +516,12 @@
       "scheduleDay1Item1": "AI agent landscape overview",
       "scheduleDay1Item2": "Live platform demonstrations",
       "scheduleDay1Item3": "Hands-on workflow building",
-      "scheduleDay1Item4": "Learning path planning"
+      "scheduleDay1Item4": "Learning path planning",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiNoCode": {
       "title": "Build AI Workflows with No Code (2026 Edition)",
@@ -482,7 +538,12 @@
       "scheduleDay1Item1": "n8n platform fundamentals",
       "scheduleDay1Item2": "Node connections and API integration",
       "scheduleDay1Item3": "AI agent node embedding",
-      "scheduleDay1Item4": "Testing, debugging, and deployment"
+      "scheduleDay1Item4": "Testing, debugging, and deployment",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "designAiPlainLang": {
       "title": "Design AI Automations Using Plain Language (2026 Edition)",
@@ -499,7 +560,12 @@
       "scheduleDay1Item1": "Natural language workflow generation",
       "scheduleDay1Item2": "AI-driven configuration creation",
       "scheduleDay1Item3": "Output validation and refinement",
-      "scheduleDay1Item4": "Production deployment"
+      "scheduleDay1Item4": "Production deployment",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildOpTools": {
       "title": "Build Operational Tools with AI Coding Agents (2026 Edition)",
@@ -516,7 +582,12 @@
       "scheduleDay1Item1": "Five-layer approach methodology",
       "scheduleDay1Item2": "Data pipeline construction",
       "scheduleDay1Item3": "Report generator and dashboard building",
-      "scheduleDay1Item4": "Quality assurance and deployment"
+      "scheduleDay1Item4": "Quality assurance and deployment",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiAssistant": {
       "title": "Build Your Own AI Assistant/Agent To Work For You (2026 Edition)",
@@ -533,7 +604,12 @@
       "scheduleDay1Item1": "Framework overview and installation",
       "scheduleDay1Item2": "Configuration and customisation",
       "scheduleDay1Item3": "Messaging integration and custom skills",
-      "scheduleDay1Item4": "Security and risk management"
+      "scheduleDay1Item4": "Security and risk management",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "gptKnowledgeBase": {
       "title": "How To GPT Your Organisation's Knowledge Base (2026 Edition)",
@@ -550,7 +626,12 @@
       "scheduleDay1Item1": "Document upload and structuring",
       "scheduleDay1Item2": "NotebookLM and Gemini integration",
       "scheduleDay1Item3": "Context engineering and chunking",
-      "scheduleDay1Item4": "Knowledge retrieval and testing"
+      "scheduleDay1Item4": "Knowledge retrieval and testing",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "secureAgenticInfra": {
       "title": "Secure Your Agentic AI Infrastructure: Threats, Defences, and Governance (2026 Edition)",
@@ -567,7 +648,12 @@
       "scheduleDay1Item1": "Threat landscape for agentic AI",
       "scheduleDay1Item2": "Red-team exercise",
       "scheduleDay1Item3": "Defence strategies and implementation",
-      "scheduleDay1Item4": "Governance policy drafting"
+      "scheduleDay1Item4": "Governance policy drafting",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiTrainingDesign": {
       "title": "Using AI for Training Design and Curriculum Development (2026 Edition)",
@@ -584,7 +670,12 @@
       "scheduleDay1Item1": "AI tools for L&D professionals",
       "scheduleDay1Item2": "Lesson plan and rubric creation",
       "scheduleDay1Item3": "Custom Gems development",
-      "scheduleDay1Item4": "Content synthesis and review"
+      "scheduleDay1Item4": "Content synthesis and review",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiTutors": {
       "title": "Build Powerful AI Tutors That Adapt To Students' Learning Paths (2026 Edition)",
@@ -601,7 +692,12 @@
       "scheduleDay1Item1": "AI tutor architecture and design",
       "scheduleDay1Item2": "Adaptive learning pathway creation",
       "scheduleDay1Item3": "Deployment options and security",
-      "scheduleDay1Item4": "Scaling strategies and review"
+      "scheduleDay1Item4": "Scaling strategies and review",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "cyberRolesThreats": {
       "title": "Cybersecurity: Roles, Threats, and Certification Pathways",
@@ -618,7 +714,12 @@
       "scheduleDay1Item1": "Cybersecurity fundamentals",
       "scheduleDay1Item2": "Threat landscape overview",
       "scheduleDay1Item3": "Roles and career pathways",
-      "scheduleDay1Item4": "Certification roadmap planning"
+      "scheduleDay1Item4": "Certification roadmap planning",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiStrategyLeaders": {
       "title": "AI Strategy and Roadmap for Leaders",
@@ -635,7 +736,12 @@
       "scheduleDay1Item1": "AI fundamentals for leaders",
       "scheduleDay1Item2": "Real-world use cases and ethics",
       "scheduleDay1Item3": "Strategy exercise: challenge identification",
-      "scheduleDay1Item4": "Roadmap development and presentation"
+      "scheduleDay1Item4": "Roadmap development and presentation",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiAccountability": {
       "title": "Who Is Accountable When AI Decides?",
@@ -652,7 +758,12 @@
       "scheduleDay1Item1": "Accountability frameworks for AI",
       "scheduleDay1Item2": "Realistic scenario analysis",
       "scheduleDay1Item3": "Group exercise: accountability model design",
-      "scheduleDay1Item4": "Peer review and presentation"
+      "scheduleDay1Item4": "Peer review and presentation",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "governingAiAgents": {
       "title": "Governing AI Agents: Trust, Boundaries, and Audit Trails",
@@ -669,7 +780,12 @@
       "scheduleDay1Item1": "AI agent boundary setting",
       "scheduleDay1Item2": "Autonomy levels and risk assessment",
       "scheduleDay1Item3": "Audit trail design",
-      "scheduleDay1Item4": "Boundary scenario exercises"
+      "scheduleDay1Item4": "Boundary scenario exercises",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiWargaming": {
       "title": "AI Wargaming: Test Decisions Before They Count",
@@ -686,7 +802,12 @@
       "scheduleDay1Item1": "Strategic scenario construction",
       "scheduleDay1Item2": "AI advisor guardrail definition",
       "scheduleDay1Item3": "Wargaming exercise with AI advisors",
-      "scheduleDay1Item4": "Governance evaluation and debrief"
+      "scheduleDay1Item4": "Governance evaluation and debrief",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "mccFoundation": {
       "title": "MSI CyberCore+ (MCC+) Cyber Defence Foundation",
@@ -704,7 +825,12 @@
       "scheduleDay1Item2": "System hardening fundamentals",
       "scheduleDay2": "Day 3–4",
       "scheduleDay2Item1": "Incident response procedures",
-      "scheduleDay2Item2": "Risk management and compliance"
+      "scheduleDay2Item2": "Risk management and compliance",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "4 Days",
+      "feesSelfSponsored": "S$3,200 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$3,200/pax",
+      "feesCorporateLarge": "S$3,200/pax"
     },
     "mccSecurityOps": {
       "title": "MCC+ Security Operations (CompTIA Security+ Aligned)",
@@ -721,7 +847,12 @@
       "scheduleDay1Item1": "Security architecture",
       "scheduleDay1Item2": "IAM and access controls",
       "scheduleDay1Item3": "Network monitoring",
-      "scheduleDay1Item4": "Operational security controls"
+      "scheduleDay1Item4": "Operational security controls",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$1,800/pax",
+      "feesCorporateLarge": "S$1,800/pax"
     },
     "mccThreatHunting": {
       "title": "MCC+ Threat Hunting and Blue Team (CompTIA CySA+ Aligned)",
@@ -738,7 +869,12 @@
       "scheduleDay1Item1": "Threat detection fundamentals",
       "scheduleDay1Item2": "Log analysis and behavioural analytics",
       "scheduleDay1Item3": "SOC workflows",
-      "scheduleDay1Item4": "Advanced threat identification"
+      "scheduleDay1Item4": "Advanced threat identification",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$1,800/pax",
+      "feesCorporateLarge": "S$1,800/pax"
     },
     "mccOffensiveCyber": {
       "title": "MCC+ Offensive Cyber Fundamentals (EC-Council CEH Aligned)",
@@ -755,7 +891,12 @@
       "scheduleDay1Item1": "Reconnaissance and scanning",
       "scheduleDay1Item2": "Enumeration techniques",
       "scheduleDay1Item3": "Vulnerability assessment",
-      "scheduleDay1Item4": "Basic exploitation methods"
+      "scheduleDay1Item4": "Basic exploitation methods",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$3,000 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$3,000/pax",
+      "feesCorporateLarge": "S$3,000/pax"
     },
     "mccDigitalForensics": {
       "title": "MCC+ Digital Forensics and Incident Investigation (EC-Council CHFI Aligned)",
@@ -772,7 +913,12 @@
       "scheduleDay1Item1": "Digital evidence collection",
       "scheduleDay1Item2": "Forensic investigation procedures",
       "scheduleDay1Item3": "Chain-of-custody documentation",
-      "scheduleDay1Item4": "Incident reconstruction"
+      "scheduleDay1Item4": "Incident reconstruction",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$3,000 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$3,000/pax",
+      "feesCorporateLarge": "S$3,000/pax"
     },
     "mccAiSecurity": {
       "title": "MCC+ AI Security and Autonomous Defence (CompTIA SecAI Aligned)",
@@ -789,7 +935,74 @@
       "scheduleDay1Item1": "AI-specific threat landscape",
       "scheduleDay1Item2": "AI security lifecycle management",
       "scheduleDay1Item3": "Autonomous system defence strategies",
-      "scheduleDay1Item4": "AI governance and compliance"
+      "scheduleDay1Item4": "AI governance and compliance",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$1,800/pax",
+      "feesCorporateLarge": "S$1,800/pax"
+    }
+  },
+  "facultyProfiles": {
+    "drKeJinghao": {
+      "role": "CEO, Metaskills Institute | Senior Consultant",
+      "expertise": "Data Analytics | Data Science | Agentic AI | AI | Machine Learning | Business Intelligence | Corporate Finance | Applied AI Consulting",
+      "bio": "Dr. Jinghao Ke is a recognised leader in applied AI, finance, and analytics, with projects spanning AI development, digital transformation, and executive education.\n\nAs CEO of JCube Institute and Chief Research Officer of Integrum Global, he has led cross-border consulting projects in AI-driven finance, supply chains, and sustainability. He also serves as adjunct faculty at Singapore Management University, teaching business analytics and finance, and has developed curricula for universities, corporates, and government agencies across ASEAN."
+    },
+    "christopherTan": {
+      "role": "CBDO, Metaskills Institute | Senior Consultant",
+      "expertise": "Data Science | Algorithmic Trading | Business Development | Higher Education Leadership",
+      "bio": "Entrepreneurial Education, Technology and Strategy leader with 20+ years of impact across Government, Higher Education and Industry. Recognised for building high-performance teams, securing strategic collaborations, delivering funding-backed innovation, and aligning strategy, operations and technology to measurable growth and quality outcomes.\n\nFounding team of SMU's Office of Business Improvement while earning a Lean Six Sigma Black Belt and driving 12 institution-wide transformation projects. Was also subsequently part of the initial founding team to set up SMU Academy.\n\nAt Ministry of Education Higher Education Division, led national manpower planning, policy evaluation and cross-institution partnerships."
+    },
+    "andrewToh": {
+      "role": "Head, Operations | Consultant",
+      "expertise": "Operational Leadership | AI-Driven Transformation | Vibe Coding | Prompt Engineering | Workflow Architecture",
+      "bio": "Blending 17 years of defense and corporate experience, Andrew brings a unique mix of operational leadership, technical expertise, business development, and AI-driven transformation.\n\nCurrently, overseeing operations at Metaskills Institute and Integrum Global, he designs and deploys practical AI workflows in live business environments. He specialises in prompt engineering and workflow architecture, leveraging Claude and other LLMs to reduce turnaround time, improve reporting clarity, and enhance decision-making."
+    },
+    "drJackHong": {
+      "role": "Lead Consultant",
+      "expertise": "Data Science | AI | Agentic AI | Machine Learning | Deep Learning | Business Intelligence | Leadership",
+      "bio": "Dr. Jack Hong is Founder & CEO of Integrum Global, a consultancy, training, and software company driving enterprise AI adoption. As Adjunct Faculty at Singapore Management University for over 10 years, Jack teaches MBA, EMBA, doctoral, and executive education programmes in digital transformation, machine learning, and finance.\n\nJack also serves in key leadership roles including Chair of Advocacy & Research at ASME, SME Committee Member at SBF, and Executive Committee Member of the AI Ethics & Governance Chapter at SCS."
+    },
+    "jackTee": {
+      "role": "Consultant",
+      "expertise": "Data Science | AI | Agentic AI | Machine Learning | Deep Learning | Business Intelligence | Leadership",
+      "bio": "As the business-minded AI Engineering Head at Integrum Global, Jack Tee leverages his MBA from SMU and Mechanical Engineering background to craft impactful AI solutions. He has spearheaded projects in Natural Language Processing, Computer Vision, and route optimization."
+    },
+    "drJonathanKhoo": {
+      "role": "Consultant",
+      "expertise": "Data Science | AI | Agentic AI | Machine Learning | Deep Learning",
+      "bio": "Dr Jonathan Khoo is a full-stack app developer with bespoke implementations of data driven strategies. He obtained his Ph.D. at SMU, completed his Masters at the University of Michigan, and is an alumnus of Raffles Institution and Hwa Chong Institution."
+    },
+    "evelynWong": {
+      "role": "Consultant",
+      "expertise": "Data Governance | Business & Data Analytics | Adult Learning | Compliance & Risk Management | Lean Six Sigma | Agile & Scrum",
+      "bio": "Evelyn Wong is a data governance specialist who currently leads Infinuem, playing a pivotal role in data governance initiatives. She has worked across functions including finance, IT, risk, marketing, and data science.\n\nBeyond governance, Evelyn brings an extensive corporate background spanning Compliance, Business Development, Sales & Marketing, and Project Management at 3M and Agilent Technologies. A Certified Lean Six Sigma Green Belt and Certified Scrum Master.\n\nEvelyn is also an experienced adult learning practitioner, having trained more than 200 professionals in data analytics, business intelligence, and machine learning tools."
+    },
+    "alenaLavrinenko": {
+      "role": "Consultant",
+      "expertise": "Generative & Agentic AI | AI Solutions Consulting | Supply Chain & Built Environment | Professional Training",
+      "bio": "Alena Lavrinenko is an AI Solutions Manager at Integrum Global and an AI Trainer with JCube Institute and Metaskills Institute. She designs and delivers enterprise-ready programmes in Generative and Agentic AI.\n\nAlena holds an MBA from Singapore Management University and has worked with leading organisations including CDL, SingLand, TPC Group, and MINDEF."
+    },
+    "victor": {
+      "role": "Lead Consultant, Algorithmic Trading",
+      "expertise": "Algorithmic Trading | Forex & Gold Markets | MetaTrader 4/5 | Machine Learning | Deep Reinforcement Learning | C++ | Python",
+      "bio": "Victor has more than 20 years of financial experience. For the past 4 years, he has self-funded his passion in algorithmic trading in the trillion dollar forex and gold market, using proprietary trading systems with machine learning especially deep reinforcement learning on time series analysis."
+    },
+    "stevenOng": {
+      "role": "Lead Consultant",
+      "expertise": "Cybersecurity Governance | ISO 27001 | NIST | Cloud Security | Zero Trust | Incident Response",
+      "bio": "Steven Ong is a seasoned cybersecurity executive and academic leader with over 25 years of experience. As a CISO, he transformed institutional cybersecurity into a structured, risk-based program aligned with ISO 27001 and NIST. As a Senior Lecturer, he has designed industry-aligned cybersecurity curricula and supervised over 100 projects."
+    },
+    "jimmyLeong": {
+      "role": "Adjunct Trainer",
+      "expertise": "Adult Education | AI & Cybersecurity Training | Instructor Development | Competency-Based Curricula",
+      "bio": "Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He has supported organisations such as MINDEF, AWS, Grab, McKinsey & Company, and the Institute for Adult Learning Singapore."
+    },
+    "soonYinjie": {
+      "role": "Adjunct Trainer",
+      "expertise": "Programming Education | Partnerships & Strategy | EdTech | Curriculum Development",
+      "bio": "Yinjie is co-founder at Tinkercademy and Tinkertanker Pte Ltd. YJ received his degrees from Stanford University and a Post-Graduate Diploma from NIE Singapore. Before Tinkertanker, YJ taught computing at Raffles Institution and served at the Ministry of Education, Singapore."
     }
   }
 }

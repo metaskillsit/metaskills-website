@@ -177,7 +177,8 @@
     "executiveTeam": "Đội ngũ Điều hành MetaSkills",
     "aiTeam": "Đội ngũ AI / Khoa học Dữ liệu",
     "cyberTeam": "Đội ngũ An ninh Mạng",
-    "adjunctTrainers": "Giảng viên Thỉnh giảng"
+    "adjunctTrainers": "Giảng viên Thỉnh giảng",
+    "algoTeam": "Algorithmic Trading Team"
   },
   "partnersPage": {
     "heroTitle": "Đối tác của Chúng tôi",
@@ -253,14 +254,16 @@
     "policyReschedulingTitle": "Dời lịch",
     "policyReschedulingText": "Dời lịch do khách hàng ít nhất 14 ngày trước. Có thể thu phí SGD 600. Dời lịch do Metaskills được hoàn lại toàn bộ.",
     "policyAttendanceTitle": "Tham dự",
-    "policyAttendanceText": "Yêu cầu 75% tham dự để nhận chứng nhận. Học viên cần đến đúng giờ. Báo vắng qua email admissions@metaskills.sg."
+    "policyAttendanceText": "Yêu cầu 75% tham dự để nhận chứng nhận. Học viên cần đến đúng giờ. Báo vắng qua email admissions@metaskills.sg.",
+    "defaultDuration": "2-Day Workshop",
+    "whatYouLearn": "What You Will Learn"
   },
   "courses": {
     "agenticFoundations": {
       "title": "Nền tảng Quy trình AI Đại lý",
       "category": "Chuỗi Hội thảo AI Đại lý",
       "tagline": "Khám phá kiến thức cơ bản về hệ thống AI để chuyển đổi quy trình ra quyết định.",
-      "whyAttend": "In today's fast-paced environment, understanding how to harness AI-driven workflows is essential. This introductory workshop equips you with the core concepts and practical tools to implement agentic systems that streamline and enhance decision-making.",
+      "whyAttend": "Trong môi trường có nhịp độ nhanh ngày nay, việc hiểu cách khai thác quy trình làm việc dựa trên AI là điều cần thiết. Hội thảo giới thiệu này trang bị cho bạn các khái niệm cốt lõi và các công cụ thực tế để triển khai các hệ thống tác nhân nhằm hợp lý hóa và nâng cao khả năng ra quyết định.\n|||Tách|||\nHội thảo kéo dài hai ngày này cung cấp phần giới thiệu toàn diện về quy trình làm việc AI tác nhân. Những người tham gia sẽ tìm hiểu về các nguyên tắc cơ bản của tác nhân AI, khám phá các công cụ phổ biến được sử dụng để xây dựng các hệ thống này và tham gia vào các bài tập thực hành mô phỏng các ứng dụng trong thế giới thực.\n|||Tách|||\nHiểu các nguyên tắc và thành phần cốt lõi của hệ thống AI tác nhân.\n|||Tách|||\nXác định các công cụ và nền tảng phổ biến được sử dụng trong việc phát triển quy trình làm việc AI.\n|||Tách|||\nKhám phá các ứng dụng trong thế giới thực và các kịch bản hoạt động.\n|||Tách|||\nCó được trải nghiệm thực tế bằng cách xây dựng quy trình làm việc của tác nhân AI cơ bản.\n|||Tách|||\nPhát triển tư duy vận hành để tích hợp AI vào quá trình ra quyết định.\n|||Tách|||\nNgày 1\n|||Tách|||\nChào mừng & Tổng quan về khóa học\n|||Tách|||\nNguyên tắc cơ bản của hệ thống tác nhân AI\n|||Tách|||\nTổng quan về Công cụ & Nền tảng\n|||Tách|||\nNghiên cứu điển hình\n|||Tách|||\nNgày 2\n|||Tách|||\nPhòng thí nghiệm tương tác\n|||Tách|||\nBài tập dựa trên kịch bản\n|||Tách|||\nĐánh giá và thuyết trình ngang hàng\n|||Tách|||\nTóm tắt & Hỏi đáp\n|||Tách|||\nNgày 1 – 18 tháng 9 năm 2025 (Thứ Năm)\nNgày 2 – 19 tháng 9 năm 2025 (Thứ Sáu)\n|||Tách|||\n30 giờ (2 buổi)\n|||Tách|||\nS$1,800 cho hội thảo 2 ngày\n|||Tách|||\nÍt hơn 8 người – S$11,000\n|||Tách|||\n8 đến 15 khách – 12.000 đô la Singapore\n|||Tách|||\nViện JCube & Viện Metaskills\n|||Tách|||\nHội thảo này tập trung vào việc tích hợp các mô hình ngôn ngữ lớn (LLM) vào khung AI tác nhân, cho phép người tham gia thiết kế và triển khai các hệ thống hoạt động như tác nhân tự trị.\n|||Tách|||\nHội thảo kéo dài hai ngày này đi sâu vào lĩnh vực trung cấp của AI tác nhân. Thông qua các bài giảng và bài tập thực hành, khóa học bao gồm việc xây dựng các tác nhân AI có khả năng bắt đầu hành động, đưa ra quyết định và phát triển dựa trên phản hồi.\n|||Tách|||\nNâng cao hiểu biết của bạn về AI tác nhân và các hệ thống ra quyết định tự động.\n|||Tách|||\nTìm hiểu cách tích hợp LLM vào quy trình làm việc tổng thể để nâng cao quyền tự chủ của hệ thống.\n|||Tách|||\nPhát triển các kỹ năng thực tế về mã hóa, tích hợp API và kỹ thuật nhanh chóng.\n|||Tách|||\nKhám phá các tình huống thực tế trong đó AI tác nhân biến đổi các quy trình vận hành.\n|||Tách|||\nThiết kế và trình bày các trường hợp sử dụng AI phù hợp tận dụng các hệ thống tác tử.\n|||Tách|||\nNgày 1\n|||Tách|||\nGiới thiệu & Tổng quan về khóa học\n|||Tách|||\nNghiên cứu chuyên sâu AI của Agentic\n|||Tách|||\nTích hợp LLM vào quy trình làm việc đại lý\n|||Tách|||\nCác trường hợp sử dụng trong thế giới thực\n|||Tách|||\nNgày 2\n|||Tách|||\nPhòng thí nghiệm mã hóa\n|||Tách|||\nKỹ thuật nhanh chóng cho hệ thống Agentic\n|||Tách|||\nPhát triển dựa trên kịch bản\n|||Tách|||\nThuyết trình nhóm & Đánh giá ngang hàng\n|||Tách|||\nNgày 1 – 02 tháng 10 năm 2025 (Thứ Năm)\nNgày 2 – 03 tháng 10 năm 2025 (Thứ Sáu)\n|||Tách|||\n30 giờ (2 buổi)\n|||Tách|||\nS$1,800 cho hội thảo 2 ngày\n|||Tách|||\nÍt hơn 8 người – S$11,000\n|||Tách|||\n8 đến 15 khách – 12.000 đô la Singapore\n|||Tách|||\nViện JCube & Viện Metaskills\n|||Tách|||\nViệc triển khai các hệ thống AI tác nhân trong môi trường an toàn, đáng tin cậy là rất quan trọng đối với các hoạt động mang tính rủi ro cao. Hội thảo nâng cao này được thiết kế dành cho các chuyên gia sẵn sàng chuyển từ giai đoạn phát triển sang triển khai mạnh mẽ ở cấp độ sản xuất.\n|||Tách|||\nHội thảo kéo dài hai ngày này tập trung vào việc triển khai và vận hành nâng cao các hệ thống AI tác nhân, tập trung vào các chiến lược triển khai tại chỗ, giao thức bảo mật và khả năng mở rộng.\n|||Tách|||\nHiểu những thách thức đặc biệt của việc triển khai hệ thống AI tác nhân tự trị.\n|||Tách|||\nCó được thông tin chuyên sâu về thực tiễn triển khai an toàn và tích hợp tại chỗ.\n|||Tách|||\nTìm hiểu các kỹ thuật tích hợp và khắc phục sự cố nâng cao.\n|||Tách|||\nPhát triển các chiến lược để mở rộng quy mô hệ thống AI tác nhân với mức độ bảo mật nghiêm ngặt.\n|||Tách|||\nÁp dụng kiến ​​thức trong phòng thí nghiệm mô phỏng thực hành.\n|||Tách|||\nNgày 1\n|||Tách|||\nGiới thiệu & Tổng quan về khóa học",
       "courseDesign": "This two-day workshop provides a comprehensive introduction to agentic AI workflows. Participants will learn about the fundamentals of AI agents, explore common tools used to build these systems, and engage in hands-on exercises that simulate real-world applications.",
       "objective1": "Understand the core principles and components of agentic AI systems.",
       "objective2": "Identify common tools and platforms used in developing AI workflows.",
@@ -276,7 +279,13 @@
       "scheduleDay2Item1": "Interactive Lab",
       "scheduleDay2Item2": "Scenario-Based Exercises",
       "scheduleDay2Item3": "Peer Review & Presentations",
-      "scheduleDay2Item4": "Wrap-Up & Q&A"
+      "scheduleDay2Item4": "Wrap-Up & Q&A",
+      "nextRunDate": "Day 1 – 18 September 2025 (Thursday)\nDay 2 – 19 September 2025 (Friday)",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "S$1,800 for 2-day workshop",
+      "feesCorporateSmall": "Less than 8 pax – S$11,000",
+      "feesCorporateLarge": "8 to 15 pax – S$12,000",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "agenticUseCase": {
       "title": "Tăng cường AI Đại lý với LLM và Phát triển Trường hợp Sử dụng",
@@ -298,7 +307,13 @@
       "scheduleDay2Item1": "Coding Lab",
       "scheduleDay2Item2": "Prompt Engineering for Agentic Systems",
       "scheduleDay2Item3": "Scenario-Based Development",
-      "scheduleDay2Item4": "Group Presentations & Peer Review"
+      "scheduleDay2Item4": "Group Presentations & Peer Review",
+      "nextRunDate": "Day 1 – 02 October 2025 (Thursday)\nDay 2 – 03 October 2025 (Friday)",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "S$1,800 for 2-day workshop",
+      "feesCorporateSmall": "Less than 8 pax – S$11,000",
+      "feesCorporateLarge": "8 to 15 pax – S$12,000",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "agenticDeploy": {
       "title": "Triển khai và Bảo mật Hệ thống AI Đại lý Nâng cao",
@@ -313,14 +328,20 @@
       "objective5": "Apply knowledge in hands-on simulation labs.",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "Introduction & Course Overview",
-      "scheduleDay1Item2": "Agentic AI Deployment Strategies",
+      "scheduleDay1Item2": "Chiến lược triển khai AI đại lý\n|||Tách|||\nBảo mật & Tuân thủ\n|||Tách|||\nKỹ thuật tích hợp nâng cao\n|||Tách|||\nNgày 2\n|||Tách|||\nPhòng thí nghiệm mô phỏng\n|||Tách|||\nHội thảo chiến lược triển khai\n|||Tách|||\nKhắc phục sự cố thực hành\n|||Tách|||\nThuyết trình nhóm & Phản hồi của chuyên gia\n|||Tách|||\nTBC\n|||Tách|||\n30 giờ (2 buổi)\n|||Tách|||\nS$1,800 cho hội thảo 2 ngày\n|||Tách|||\nÍt hơn 8 người – S$11,000\n|||Tách|||\n8 đến 15 khách – 12.000 đô la Singapore\n|||Tách|||\nViện JCube & Viện Metaskills\n|||Tách|||\nĐược giảng dạy bởi các Nhà khoa học dữ liệu hàng đầu của Singapore đang làm việc trong các Dự án Khoa học dữ liệu và A.I hiện có với các MNC và Cơ quan chính phủ. Chương trình này được thiết kế độc đáo bởi các nhà lãnh đạo ngành về Khoa học dữ liệu, AI, Học máy và Học sâu.\n|||Tách|||\nĐược tiến hành trên 2 khối - mỗi khối bao gồm 2 buổi tối các ngày trong tuần (7 giờ tối đến 10 giờ 30 tối) và cả ngày Thứ Bảy (9 giờ sáng đến 6 giờ chiều). Tổng số giờ đào tạo: 30 giờ.\n|||Tách|||\nTìm hiểu các kỹ thuật lập trình Python cần thiết để phân tích dữ liệu.\n|||Tách|||\nTìm hiểu các kỹ thuật sắp xếp dữ liệu cần thiết – nhập, kiểm tra, làm sạch, hợp nhất và chuyển đổi dữ liệu.\n|||Tách|||\nTìm hiểu cách trình bày dữ liệu và thông tin chuyên sâu bằng hình ảnh trực quan.\n|||Tách|||\nÁp dụng tất cả các kỹ thuật đã học trên các tập dữ liệu và trường hợp sử dụng trong thế giới thực.\n|||Tách|||\nThực hiện các kỹ thuật phân tích dữ liệu cần thiết bằng Python\n|||Tách|||\nĐưa ra quyết định kinh doanh tốt hơn và sáng suốt hơn bằng cách sử dụng dữ liệu\n|||Tách|||\nXác định rủi ro kinh doanh từ dữ liệu\n|||Tách|||\nPhân tích dữ liệu về các quy trình và đưa ra khuyến nghị\n|||Tách|||\nTrình bày những phát hiện với các kỹ thuật trực quan thích hợp\n|||Tách|||\nBuổi 1 (15 giờ)\n|||Tách|||\nLớp 1: Buổi tối các ngày trong tuần\n|||Tách|||\nLớp 2: Buổi tối các ngày trong tuần\n|||Tách|||\nLớp 3: Cả ngày thứ bảy\n|||Tách|||\nBuổi 2 (15 giờ)\n|||Tách|||\nLớp 1: Buổi tối các ngày trong tuần\n|||Tách|||\nLớp 2: Buổi tối các ngày trong tuần\n|||Tách|||\nLớp 3: Cả ngày thứ bảy\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n30 giờ (2 buổi)\n|||Tách|||\nLiên hệ để biết giá\n|||Tách|||\nLiên hệ để biết giá doanh nghiệp\n|||Tách|||\nLiên hệ để biết giá nhóm\n|||Tách|||\nViện JCube & Viện Metaskills\n|||Tách|||\nChương trình Nhà phân tích dữ liệu được chứng nhận trang bị cho bạn các kỹ năng và công cụ phân tích cần thiết để rút ra thông tin chuyên sâu từ các bộ dữ liệu phức tạp. Chứng nhận này được công nhận trên khắp Singapore và ASEAN.\n|||Tách|||\nMột chương trình toàn diện kết hợp nền tảng lý thuyết với các dự án thực hành sử dụng bộ dữ liệu trong thế giới thực.\n|||Tách|||\nLàm chủ các kỹ thuật sắp xếp, làm sạch và chuyển đổi dữ liệu.\n|||Tách|||\nXây dựng trình độ thành thạo trong phân tích thống kê và kiểm tra giả thuyết.\n|||Tách|||\nTạo trực quan hóa dữ liệu và bảng chỉ số hấp dẫn.\n|||Tách|||\nÁp dụng các nguyên tắc cơ bản của máy học vào các vấn đề kinh doanh trong thế giới thực.\n|||Tách|||\nGiành được chứng chỉ được công nhận trong ngành từ Viện JCube.\n|||Tách|||\nCấu trúc chương trình\n|||Tách|||\nHọc tập theo mô-đun với lịch trình linh hoạt\n|||Tách|||\nCác buổi thí nghiệm thực hành\n|||Tách|||\nDự án Capstone và đánh giá ngang hàng\n|||Tách|||\nKiểm tra chứng chỉ\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nLiên hệ để biết giá\n|||Tách|||\nLiên hệ để biết giá doanh nghiệp\n|||Tách|||\nLiên hệ để biết giá nhóm\n|||Tách|||\nViện JCube & Viện Metaskills\n|||Tách|||\nChương trình Nhà khoa học dữ liệu được chứng nhận sẽ đưa kỹ năng của bạn lên một tầm cao mới với các kỹ thuật học máy, học sâu và AI nâng cao.\n|||Tách|||\nMột chương trình chuyên sâu kết hợp các khái niệm lý thuyết nâng cao với các dự án cấp ngành.\n|||Tách|||\nXây dựng và triển khai các mô hình học máy và học sâu tiên tiến.\n|||Tách|||\nKỹ thuật tính năng bậc thầy và kỹ thuật tối ưu hóa mô hình.\n|||Tách|||\nTriển khai các quy trình khoa học dữ liệu từ đầu đến cuối.\n|||Tách|||\nLàm việc với dữ liệu phi cấu trúc bao gồm văn bản, hình ảnh và chuỗi thời gian.\n|||Tách|||\nGiành được chứng chỉ Nhà khoa học dữ liệu được ngành công nhận.\n|||Tách|||\nCấu trúc chương trình\n|||Tách|||\nKhối học tập mô-đun nâng cao",
       "scheduleDay1Item3": "Security & Compliance",
       "scheduleDay1Item4": "Advanced Integration Techniques",
       "scheduleDay2": "Day 2",
       "scheduleDay2Item1": "Simulation Lab",
       "scheduleDay2Item2": "Deployment Strategy Workshop",
       "scheduleDay2Item3": "Hands-On Troubleshooting",
-      "scheduleDay2Item4": "Group Presentations & Expert Feedback"
+      "scheduleDay2Item4": "Group Presentations & Expert Feedback",
+      "nextRunDate": "TBC",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "S$1,800 for 2-day workshop",
+      "feesCorporateSmall": "Less than 8 pax – S$11,000",
+      "feesCorporateLarge": "8 to 15 pax – S$12,000",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "pythonDataAnalytics": {
       "title": "Lập trình Python cho Phân tích Dữ liệu",
@@ -344,7 +365,13 @@
       "scheduleDay2": "Session 2 (15 hours)",
       "scheduleDay2Item1": "Class 1: Weekday evening",
       "scheduleDay2Item2": "Class 2: Weekday evening",
-      "scheduleDay2Item3": "Class 3: Full Saturday"
+      "scheduleDay2Item3": "Class 3: Full Saturday",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "Contact for pricing",
+      "feesCorporateSmall": "Contact for corporate rates",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "certifiedDataAnalyst": {
       "title": "Chứng nhận Phân tích Dữ liệu — JCube Institute",
@@ -361,7 +388,13 @@
       "scheduleDay1Item1": "Modular learning with flexible scheduling",
       "scheduleDay1Item2": "Hands-on lab sessions",
       "scheduleDay1Item3": "Capstone project and peer review",
-      "scheduleDay1Item4": "Certification examination"
+      "scheduleDay1Item4": "Certification examination",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "Contact for pricing",
+      "feesCorporateSmall": "Contact for corporate rates",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "certifiedDataScientist": {
       "title": "Chứng nhận Khoa học Dữ liệu — JCube Institute",
@@ -376,9 +409,15 @@
       "objective5": "Earn an industry-recognised Data Scientist certification.",
       "scheduleDay1": "Programme Structure",
       "scheduleDay1Item1": "Advanced modular learning blocks",
-      "scheduleDay1Item2": "Industry mentorship sessions",
+      "scheduleDay1Item2": "Các buổi cố vấn ngành\n|||Tách|||\nPhát triển và đánh giá danh mục đầu tư\n|||Tách|||\nKiểm tra chứng chỉ và bảo vệ\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nLiên hệ để biết giá\n|||Tách|||\nLiên hệ để biết giá doanh nghiệp\n|||Tách|||\nLiên hệ để biết giá nhóm\n|||Tách|||\nViện JCube & Viện Metaskills\n|||Tách|||\nHầu hết các nhà đầu tư hàng đầu không tiết lộ bí mật đầu tư của họ nhưng sau khi thu được đủ lợi nhuận thông qua các chiến lược đầu tư khôn ngoan trong nhiều năm, các chuyên gia của chúng tôi đã quyết định mở rộng kiến ​​thức và kỹ năng của họ cho một cộng đồng rộng lớn hơn để nhiều người có thể hưởng lợi từ thị trường mới thú vị xuất hiện cùng với những tiến bộ công nghệ.\n\nKhóa học này được thiết kế để dạy cho bạn những kiến ​​thức cơ bản về giao dịch trên nền tảng giao dịch phổ biến nhất thế giới, Meta Trader 4 (MT4) và tự động giao dịch theo các chiến lược hoặc thuật toán mà bạn cảm thấy thoải mái và học cách quản lý rủi ro để tạo thu nhập ổn định.\n\nGiao dịch thuật toán, còn được gọi là 'Giao dịch tự động' hoặc 'Giao dịch hệ thống', sử dụng các nền tảng điện tử như MetaTrader 4/5 để nhập lệnh giao dịch bằng thuật toán. Lợi ích chính của giao dịch thuật toán là nó không đưa ra quyết định dựa trên cảm xúc. Nó cũng có thể giúp bạn thực hiện nhiều giao dịch hơn vì bạn không bị giới hạn bởi khả năng ngồi trước máy tính và nhập lệnh theo cách thủ công. Điều quan trọng cần lưu ý là có những rủi ro liên quan nhưng tất cả những rủi ro này đều có thể được giảm thiểu và được hướng dẫn thực hành trong khóa học độc đáo này. Hãy bắt đầu kiếm thu nhập thụ động và bền vững ngay bây giờ!\n|||Tách|||\nThực hành đầy đủ với các lớp huấn luyện bên ngoài. Tất cả các lớp học đều diễn ra tại chỗ tại cơ sở CT Hub của chúng tôi. Quy mô lớp học được giới hạn để nâng cao trải nghiệm học tập của sinh viên. 3 buổi tối (7 giờ tối đến 10 giờ tối), tổng cộng 9 giờ.\n|||Tách|||\nBất kỳ nhà giao dịch đầy tham vọng nào mới bắt đầu và muốn bắt đầu hành trình giao dịch tài chính của mình để bắt đầu kiếm thu nhập thụ động bằng cách sử dụng robot giao dịch.\n|||Tách|||\nBất kỳ ai muốn tìm hiểu về Expert Advisors bằng cách sử dụng cửa hàng trực tuyến lớn nhất của MT4 về robot giao dịch, chỉ báo kỹ thuật, bảng điều khiển, thư viện, máy phân tích trong MT4.\n|||Tách|||\nKhông cần có kinh nghiệm giao dịch trước đó. Khóa học MetaTrader này được thiết kế dành cho những người giao dịch mới bắt đầu hoặc dành cho những người chưa bao giờ sử dụng MetaTrader 4.\n|||Tách|||\nĐánh giá hồ sơ giao dịch cá nhân của bạn\n|||Tách|||\nHồ sơ thị trường ngoại hối, vàng và tiền điện tử trên nền tảng giao dịch MT4\n|||Tách|||\nChọn nhà môi giới MT4 phù hợp\n|||Tách|||\nSức mạnh của đòn bẩy, lãi kép và khái niệm về khoản thanh toán dự kiến\n|||Tách|||\nCơ chế tài chính giao dịch trên nền tảng MT4\n|||Tách|||\nRủi ro và lợi ích của giao dịch\n|||Tách|||\nCác khung thời gian khác nhau và phong cách giao dịch liên quan\n|||Tách|||\nThời điểm thích hợp, các yếu tố thuận lợi và khung giao dịch đúng đắn\n|||Tách|||\nGiờ giao dịch và phạm vi giao dịch tốt nhất\n|||Tách|||\nThiết lập môi trường giao dịch để có tỷ lệ thành công cao với các chỉ báo, mẫu và cài đặt\n|||Tách|||\nCách kiếm thu nhập ổn định chỉ với 300 USD\n|||Tách|||\nTâm lý giao dịch\n|||Tách|||\nGiao dịch tự động hoặc giao dịch với Expert Advisors\n|||Tách|||\nTài nguyên miễn phí để tìm các công cụ, chiến lược giao dịch, cố vấn chuyên môn và chỉ báo mới\n|||Tách|||\nGiao dịch bằng tiền từ người khác – công ty thương mại độc quyền\n|||Tách|||\nThiết lập VPS để giao dịch 24X7\n|||Tách|||\nBuổi tối 1\n|||Tách|||\nĐánh giá hồ sơ giao dịch cá nhân\n|||Tách|||\nHồ sơ thị trường ngoại hối, vàng và tiền điện tử\n|||Tách|||\nChọn nhà môi giới MT4 phù hợp\n|||Tách|||\nSức mạnh của đòn bẩy và lãi kép\n|||Tách|||\nTối 2\n|||Tách|||\nCơ chế tài chính giao dịch trên MT4\n|||Tách|||\nRủi ro và lợi ích của giao dịch\n|||Tách|||\nKhung thời gian và phong cách giao dịch khác nhau\n|||Tách|||\nKhung giao dịch và giờ giao dịch tốt nhất\n|||Tách|||\nTối 3\n|||Tách|||\nThiết lập môi trường giao dịch để có tỷ lệ thành công cao\n|||Tách|||\nGiao dịch tự động với Expert Advisors\n|||Tách|||\nThiết lập VPS để giao dịch 24X7\n|||Tách|||\nTâm lý giao dịch và tài nguyên",
       "scheduleDay1Item3": "Portfolio development and review",
-      "scheduleDay1Item4": "Certification examination and defence"
+      "scheduleDay1Item4": "Certification examination and defence",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "Contact for pricing",
+      "feesCorporateSmall": "Contact for corporate rates",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "algoTradingL1": {
       "title": "Thành thạo Giao dịch Thuật toán trên Thị trường Tài chính — Cấp 1",
@@ -419,7 +458,13 @@
       "scheduleDay3Item1": "Setup trading environment for high success rates",
       "scheduleDay3Item2": "Auto trading with Expert Advisors",
       "scheduleDay3Item3": "Setup VPS to trade 24X7",
-      "scheduleDay3Item4": "Trading psychology and resources"
+      "scheduleDay3Item4": "Trading psychology and resources",
+      "nextRunDate": "Cuộc chạy 11 – Mở đăng ký\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nSGD $2,750 (Phí đầy đủ trước khi trợ cấp)\n|||Tách|||\nGiá đặc biệt dành cho sinh viên/cựu sinh viên Học viện JCube\n|||Tách|||\nƯu đãi đặc biệt dành cho cựu sinh viên MINDEF CDA và thành viên MSI\n|||Tách|||\nViện JCube & Viện Metaskills\n|||Tách|||\nDựa trên Cấp độ 1, chương trình nâng cao này sẽ đưa bạn đi sâu hơn vào thế giới giao dịch thuật toán. Hầu hết các nhà đầu tư hàng đầu không tiết lộ bí mật đầu tư của họ nhưng sau khi thu được đủ lợi nhuận thông qua các chiến lược đầu tư khôn ngoan trong nhiều năm, các chuyên gia của chúng tôi đã quyết định mở rộng kiến ​​thức và kỹ năng của họ cho một cộng đồng rộng lớn hơn.\n\nKhóa học này được thiết kế để dạy cho bạn những kiến ​​thức cơ bản về giao dịch trên nền tảng giao dịch phổ biến nhất thế giới, Meta Trader 4 (MT4) và tự động giao dịch theo các chiến lược hoặc thuật toán mà bạn cảm thấy thoải mái và học cách quản lý rủi ro để tạo thu nhập ổn định.\n\nNhững người tham gia đã hoàn thành khóa học sẽ đủ điều kiện tham gia cuộc thi của Viện Metaskills với 100 USD cho giải nhất và 50 USD x 2 cho giải khuyến khích.\n|||Tách|||\nĐược cung cấp chung với Viện JCube (Lớp học tại chỗ). Tất cả các lớp học đều diễn ra tại chỗ tại cơ sở CT Hub của chúng tôi. Quy mô lớp học được giới hạn để nâng cao trải nghiệm học tập của sinh viên. 3 buổi tối (7 giờ tối đến 10 giờ tối), tổng cộng 9 giờ.\n|||Tách|||\nBất kỳ nhà giao dịch đầy tham vọng nào muốn nâng cao kỹ năng giao dịch thuật toán của mình vượt quá Cấp 1.\n|||Tách|||\nBất kỳ ai muốn tìm hiểu các chiến lược Expert Advisor, kiểm tra ngược và tối ưu hóa nâng cao.\n|||Tách|||\nĐiều kiện tiên quyết: Người tham gia phải hoàn thành Thành thạo giao dịch thuật toán Cấp độ 1.\n|||Tách|||\nKiểm tra lại - tìm hiểu cách kiểm tra tính hiệu quả của chiến lược giao dịch\n|||Tách|||\nTối ưu hóa thông số của từng chiến lược\n|||Tách|||\nNhận mười EA có lợi nhuận cao nhất trên thị trường và thiết lập trong VPS của bạn\n|||Tách|||\nCác chiến lược phổ biến được các nhà phát triển EA áp dụng\n|||Tách|||\nKiến thức làm việc setup VPS để tối ưu hóa hiệu suất giao dịch\n|||Tách|||\n2 EA miễn phí được phát triển bởi giảng viên: FXV-Avalanche và FXV-Z-Scalper\n|||Tách|||\nCác công ty thương mại độc quyền và vượt qua đánh giá của họ để tài trợ cho sự nghiệp giao dịch của bạn\n|||Tách|||\nBuổi tối 1\n|||Tách|||\nKiểm tra lại các nguyên tắc cơ bản\n|||Tách|||\nKiểm tra hiệu quả của chiến lược giao dịch\n|||Tách|||\nKỹ thuật tối ưu hóa tham số\n|||Tách|||\nTối 2\n|||Tách|||\nTop 10 EA có lợi nhuận cao nhất trên thị trường\n|||Tách|||\nCác chiến lược phổ biến được các nhà phát triển EA áp dụng\n|||Tách|||\nThiết lập VPS để có hiệu suất giao dịch tối ưu\n|||Tách|||\nTối 3\n|||Tách|||\nCông ty thương mại độc quyền và đánh giá nguồn vốn\n|||Tách|||\nEA độc quyền miễn phí: FXV-Avalanche và FXV-Z-Scalper\n|||Tách|||\nTóm tắt cuộc thi và các bước tiếp theo\n|||Tách|||\nChạy 4 – Mở đăng ký\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nSGD $3,500 (Phí đầy đủ trước khi trợ cấp)\n|||Tách|||\nSGD $2,250 dành cho sinh viên/cựu sinh viên Học viện JCube và sinh viên MSI L1\n|||Tách|||\nLiên hệ để biết giá nhóm\n|||Tách|||\nViện JCube & Viện Metaskills\n|||Tách|||\nKhóa học này trình bày bối cảnh hiện tại: tác nhân AI là gì, chúng khác với tự động hóa truyền thống như thế nào, nền tảng không mã và mã ngắn nào tồn tại, cách các tổ chức triển khai tác nhân để lập kế hoạch, báo cáo, quản lý kiến ​​thức và hỗ trợ quyết định cũng như xu hướng mới nổi là gì (hệ thống đa tác nhân, trợ lý AI cá nhân, bảo mật tác nhân).\n|||Tách|||\nHội thảo kéo dài một ngày với các minh họa trực tiếp, bài tập thực hành và đánh giá lộ trình học tập có hướng dẫn.\n|||Tách|||\nHiểu tác nhân AI là gì và chúng khác với tự động hóa truyền thống như thế nào.\n|||Tách|||\nKhám phá nền tảng AI không mã và mã thấp.\n|||Tách|||\nXem các buổi trình diễn trực tiếp về các nền tảng đại lý hàng đầu.\n|||Tách|||\nXây dựng quy trình làm việc tự động đơn giản bằng tay.\n|||Tách|||\nVạch ra những khóa học phù hợp với vai trò và mục tiêu của bạn.\n|||Tách|||\nNgày 1\n|||Tách|||\nTổng quan về bối cảnh đại lý AI\n|||Tách|||\nTrình diễn nền tảng trực tiếp",
+      "duration": "1 Day",
+      "feesSelfSponsored": "SGD $2,750 (Full Fee Before Subsidies)",
+      "feesCorporateSmall": "Special rates for JCube Institute Students/Alumni",
+      "feesCorporateLarge": "Special rates for MINDEF CDA Alumni and MSI Members",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "algoTradingL2": {
       "title": "Thành thạo Giao dịch Thuật toán trên Thị trường Tài chính — Cấp 2",
@@ -448,7 +493,13 @@
       "scheduleDay3": "Evening 3",
       "scheduleDay3Item1": "Proprietary trading companies and funding assessment",
       "scheduleDay3Item2": "Free proprietary EAs: FXV-Avalanche and FXV-Z-Scalper",
-      "scheduleDay3Item3": "Competition briefing and next steps"
+      "scheduleDay3Item3": "Competition briefing and next steps",
+      "nextRunDate": "Run 4 – Registration Open\nContact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "SGD $3,500 (Full Fee Before Subsidies)",
+      "feesCorporateSmall": "SGD $2,250 for JCube Institute Students/Alumni & MSI L1 Students",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "riseAiAgents": {
       "title": "Sự trỗi dậy của AI Đại lý năm 2026: Tự động hóa Mọi thứ với Hệ thống AI Thông minh",
@@ -464,8 +515,13 @@
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "AI agent landscape overview",
       "scheduleDay1Item2": "Live platform demonstrations",
-      "scheduleDay1Item3": "Hands-on workflow building",
-      "scheduleDay1Item4": "Learning path planning"
+      "scheduleDay1Item3": "Xây dựng quy trình làm việc thực tế\n|||Tách|||\nLập kế hoạch lộ trình học tập\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nTìm hiểu cách tạo quy trình làm việc AI tác nhân bằng nền tảng tự động hóa hình ảnh n8n. Tạo quy trình công việc bằng cách kết nối các nút, tích hợp API và nhúng các nút tác nhân AI — tất cả đều có tính năng kéo và thả.\n|||Tách|||\nHội thảo thực hành kéo dài một ngày sử dụng nền tảng tự động hóa hình ảnh n8n.\n|||Tách|||\nXây dựng quy trình làm việc bằng nền tảng tự động hóa trực quan n8n.\n|||Tách|||\nKết nối các nút, tích hợp API và nhúng các nút tác nhân AI.\n|||Tách|||\nKiểm tra, gỡ lỗi và triển khai các quy trình công việc chức năng.\n|||Tách|||\nXây dựng quy trình làm việc kéo và thả thành thạo.\n|||Tách|||\nTạo tự động hóa sẵn sàng sản xuất mà không cần mã hóa.\n|||Tách|||\nNgày 1\n|||Tách|||\nnguyên tắc cơ bản của nền tảng n8n\n|||Tách|||\nKết nối nút và tích hợp API\n|||Tách|||\nNhúng nút tác nhân AI\n|||Tách|||\nKiểm tra, gỡ lỗi và triển khai\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nMô tả quá trình tự động hóa mong muốn bằng ngôn ngữ đơn giản, tạo cấu hình quy trình làm việc thông qua AI, xác thực kết quả đầu ra và tinh chỉnh lặp đi lặp lại cho đến khi sẵn sàng sản xuất.\n|||Tách|||\nHội thảo kéo dài một ngày tập trung vào việc tạo quy trình làm việc dựa trên ngôn ngữ tự nhiên.\n|||Tách|||\nSử dụng LLM để tạo quy trình công việc n8n từ ngôn ngữ tự nhiên.\n|||Tách|||\nMô tả quá trình tự động hóa bằng ngôn ngữ đơn giản và xác thực các kết quả đầu ra do AI tạo ra.\n|||Tách|||\nTinh chỉnh lặp đi lặp lại các quy trình công việc cho đến khi sẵn sàng sản xuất.\n|||Tách|||\nHiểu bản dịch nhanh chóng sang quy trình làm việc.\n|||Tách|||\nTriển khai các biện pháp tự động hóa do AI thiết kế một cách tự tin.\n|||Tách|||\nNgày 1\n|||Tách|||\nTạo quy trình làm việc bằng ngôn ngữ tự nhiên\n|||Tách|||\nTạo cấu hình dựa trên AI\n|||Tách|||\nXác thực và sàng lọc đầu ra\n|||Tách|||\nTriển khai sản xuất\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nXây dựng các công cụ liên quan đến hoạt động (đường dẫn dữ liệu, trình tạo báo cáo, bảng thông tin) bằng cách sử dụng tác nhân mã hóa AI. Thực hiện theo cách tiếp cận năm lớp có cấu trúc: xác định mục tiêu, cung cấp bối cảnh tổ chức, đặt ra ranh giới, viết hướng dẫn rõ ràng và nắm bắt bài học.\n|||Tách|||\nHội thảo thực hành kéo dài một ngày xây dựng các công cụ vận hành thực sự với các tác nhân mã hóa AI.\n|||Tách|||\nXây dựng đường dẫn dữ liệu, trình tạo báo cáo và bảng thông tin bằng các tác nhân AI.\n|||Tách|||\nThực hiện theo cách tiếp cận năm lớp có cấu trúc để có đầu ra đáng tin cậy.\n|||Tách|||\nVượt xa việc thử và sai để chuyển sang mã hóa AI chất lượng sản xuất.\n|||Tách|||\nCung cấp bối cảnh tổ chức cho các tác nhân mã hóa AI.\n|||Tách|||\nNắm bắt và áp dụng các bài học để cải tiến liên tục.\n|||Tách|||\nNgày 1\n|||Tách|||\nPhương pháp tiếp cận năm lớp\n|||Tách|||\nXây dựng đường ống dữ liệu\n|||Tách|||\nTrình tạo báo cáo và xây dựng bảng điều khiển\n|||Tách|||\nĐảm bảo chất lượng và triển khai\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nGiới thiệu thực tế về các khung tác nhân AI cá nhân nguồn mở, nhẹ (nanobot, zeroclaw, picoclaw). Cài đặt, định cấu hình và tùy chỉnh tác nhân AI cá nhân. Bao gồm tích hợp nhắn tin, kỹ năng tùy chỉnh và quản lý rủi ro bảo mật.\n|||Tách|||\nHội thảo thực hành kéo dài một ngày về xây dựng và triển khai các tác nhân AI cá nhân.\n|||Tách|||\nLàm việc với các khung tác nhân AI nguồn mở.\n|||Tách|||\nCài đặt và định cấu hình các tác nhân AI cá nhân trên phần cứng khiêm tốn.\n|||Tách|||\nTích hợp nền tảng nhắn tin và kỹ năng tùy chỉnh.\n|||Tách|||\nQuản lý rủi ro bảo mật cho các tác nhân AI cá nhân.\n|||Tách|||\nTùy chỉnh hành vi của đại lý cho nhu cầu cụ thể của bạn.\n|||Tách|||\nNgày 1\n|||Tách|||\nTổng quan và cài đặt khung",
+      "scheduleDay1Item4": "Learning path planning",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiNoCode": {
       "title": "Xây dựng Quy trình AI Không cần Mã (Phiên bản 2026)",
@@ -482,7 +538,12 @@
       "scheduleDay1Item1": "n8n platform fundamentals",
       "scheduleDay1Item2": "Node connections and API integration",
       "scheduleDay1Item3": "AI agent node embedding",
-      "scheduleDay1Item4": "Testing, debugging, and deployment"
+      "scheduleDay1Item4": "Testing, debugging, and deployment",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "designAiPlainLang": {
       "title": "Thiết kế Tự động hóa AI bằng Ngôn ngữ Tự nhiên (Phiên bản 2026)",
@@ -499,7 +560,12 @@
       "scheduleDay1Item1": "Natural language workflow generation",
       "scheduleDay1Item2": "AI-driven configuration creation",
       "scheduleDay1Item3": "Output validation and refinement",
-      "scheduleDay1Item4": "Production deployment"
+      "scheduleDay1Item4": "Production deployment",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildOpTools": {
       "title": "Xây dựng Công cụ Vận hành với AI Mã hóa (Phiên bản 2026)",
@@ -516,7 +582,12 @@
       "scheduleDay1Item1": "Five-layer approach methodology",
       "scheduleDay1Item2": "Data pipeline construction",
       "scheduleDay1Item3": "Report generator and dashboard building",
-      "scheduleDay1Item4": "Quality assurance and deployment"
+      "scheduleDay1Item4": "Quality assurance and deployment",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiAssistant": {
       "title": "Xây dựng Trợ lý/Đại lý AI Cá nhân (Phiên bản 2026)",
@@ -531,9 +602,14 @@
       "objective5": "Customise agent behaviour for your specific needs.",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "Framework overview and installation",
-      "scheduleDay1Item2": "Configuration and customisation",
+      "scheduleDay1Item2": "Cấu hình và tùy chỉnh\n|||Tách|||\nTích hợp tin nhắn và kỹ năng tùy chỉnh\n|||Tách|||\nAn ninh và quản lý rủi ro\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nXây dựng hệ thống kiến ​​thức AI có thể tìm kiếm được từ các tài liệu đơn vị (SOP, chính sách, đánh giá sau hành động). Tải lên, cấu trúc và lập chỉ mục nội dung với NotebookLM và Gemini. Tập trung vào kỹ thuật ngữ cảnh, chiến lược phân chia và truy xuất kiến ​​thức vận hành để giảm ảo giác.\n|||Tách|||\nHội thảo kéo dài một ngày tập trung vào việc xây dựng hệ thống quản lý kiến ​​thức AI.\n|||Tách|||\nXây dựng hệ thống kiến ​​thức AI từ các tài liệu của tổ chức.\n|||Tách|||\nTải lên, cấu trúc và lập chỉ mục nội dung với NotebookLM và Gemini.\n|||Tách|||\nÁp dụng kỹ thuật bối cảnh và chiến lược chunking.\n|||Tách|||\nGiảm ảo giác thông qua việc tìm lại kiến ​​thức thích hợp.\n|||Tách|||\nTạo cơ sở kiến ​​thức được hỗ trợ bởi AI có thể tìm kiếm được.\n|||Tách|||\nNgày 1\n|||Tách|||\nTải lên và cấu trúc tài liệu\n|||Tách|||\nTích hợp NotebookLM và Gemini\n|||Tách|||\nKỹ thuật bối cảnh và phân đoạn\n|||Tách|||\nTruy xuất và kiểm tra kiến thức\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nBao gồm việc đưa vào nhanh chóng, lọc dữ liệu, cấp quyền và các hành động tự động ngoài ý muốn. Bao gồm bài tập của đội đỏ dựa trên quy trình làm việc mẫu và soạn thảo chính sách quản trị.\n|||Tách|||\nHội thảo kéo dài một ngày kết hợp phân tích mối đe dọa, bài tập của đội đỏ và phát triển chính sách quản trị.\n|||Tách|||\nXác định các mối đe dọa chính đối với hệ thống AI tác nhân.\n|||Tách|||\nHiểu cách đưa nội dung nhanh chóng, trích xuất dữ liệu và cấp quyền.\n|||Tách|||\nTiến hành các bài tập của nhóm đỏ dựa trên quy trình làm việc mẫu.\n|||Tách|||\nDự thảo chính sách quản trị để triển khai tác nhân AI.\n|||Tách|||\nThực hiện các chiến lược phòng thủ cho các hệ thống tự trị.\n|||Tách|||\nNgày 1\n|||Tách|||\nBối cảnh mối đe dọa đối với AI tác nhân\n|||Tách|||\nBuổi tập của đội đỏ\n|||Tách|||\nChiến lược phòng thủ và thực hiện\n|||Tách|||\nSoạn thảo chính sách quản trị\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nDành cho các chuyên gia L&D và cán bộ đào tạo. Sử dụng Gemini và NotebookLM để tạo giáo án, đề cương, phiếu tự đánh giá và Đá quý tùy chỉnh. Nghiên cứu dựa trên nguồn và tổng hợp nội dung cho các tài liệu giảng dạy.\n|||Tách|||\nHội thảo kéo dài một ngày dành cho các chuyên gia L&D về thiết kế đào tạo dựa trên AI.\n|||Tách|||\nSử dụng Gemini và NotebookLM để phát triển chương trình giảng dạy.\n|||Tách|||\nTạo kế hoạch bài học, đề cương và phiếu tự đánh giá bằng AI.\n|||Tách|||\nXây dựng Đá quý tùy chỉnh cho các ứng dụng đào tạo.\n|||Tách|||\nTiến hành nghiên cứu dựa trên nguồn và tổng hợp nội dung.\n|||Tách|||\nThiết kế tài liệu giảng dạy toàn diện một cách hiệu quả.\n|||Tách|||\nNgày 1\n|||Tách|||\nCông cụ AI dành cho chuyên gia L&D\n|||Tách|||\nKế hoạch bài học và xây dựng phiếu tự đánh giá\n|||Tách|||\nPhát triển đá quý tùy chỉnh\n|||Tách|||\nTổng hợp và đánh giá nội dung\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nDành cho các chuyên gia L&D. Xây dựng các gia sư AI tùy chỉnh và lộ trình học tập thích ứng bằng cách sử dụng các công cụ tạo nguyên mẫu Gems, NotebookLM và chatbot. Bao gồm các chiến lược triển khai tại chỗ và trên nền tảng đám mây, bảo mật và mở rộng quy mô.\n|||Tách|||\nHội thảo kéo dài một ngày dành cho các chuyên gia L&D về xây dựng gia sư AI có khả năng thích ứng.\n|||Tách|||\nXây dựng gia sư AI tùy chỉnh với lộ trình học tập thích ứng.\n|||Tách|||\nSử dụng các công cụ tạo mẫu Gems, NotebookLM và chatbot.\n|||Tách|||\nĐánh giá các tùy chọn triển khai tại chỗ và trên đám mây.\n|||Tách|||\nThực hiện các biện pháp bảo mật cho hệ thống AI học tập.",
       "scheduleDay1Item3": "Messaging integration and custom skills",
-      "scheduleDay1Item4": "Security and risk management"
+      "scheduleDay1Item4": "Security and risk management",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "gptKnowledgeBase": {
       "title": "Cách GPT hóa Cơ sở Kiến thức Tổ chức (Phiên bản 2026)",
@@ -550,7 +626,12 @@
       "scheduleDay1Item1": "Document upload and structuring",
       "scheduleDay1Item2": "NotebookLM and Gemini integration",
       "scheduleDay1Item3": "Context engineering and chunking",
-      "scheduleDay1Item4": "Knowledge retrieval and testing"
+      "scheduleDay1Item4": "Knowledge retrieval and testing",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "secureAgenticInfra": {
       "title": "Bảo mật Hạ tầng AI Đại lý: Mối đe dọa, Phòng thủ và Quản trị (Phiên bản 2026)",
@@ -567,7 +648,12 @@
       "scheduleDay1Item1": "Threat landscape for agentic AI",
       "scheduleDay1Item2": "Red-team exercise",
       "scheduleDay1Item3": "Defence strategies and implementation",
-      "scheduleDay1Item4": "Governance policy drafting"
+      "scheduleDay1Item4": "Governance policy drafting",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiTrainingDesign": {
       "title": "Sử dụng AI cho Thiết kế Đào tạo và Phát triển Chương trình (Phiên bản 2026)",
@@ -584,7 +670,12 @@
       "scheduleDay1Item1": "AI tools for L&D professionals",
       "scheduleDay1Item2": "Lesson plan and rubric creation",
       "scheduleDay1Item3": "Custom Gems development",
-      "scheduleDay1Item4": "Content synthesis and review"
+      "scheduleDay1Item4": "Content synthesis and review",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiTutors": {
       "title": "Xây dựng AI Gia sư Thích ứng Lộ trình Học tập (Phiên bản 2026)",
@@ -596,12 +687,17 @@
       "objective2": "Use Gems, NotebookLM, and chatbot prototyping tools.",
       "objective3": "Evaluate on-premise vs. cloud deployment options.",
       "objective4": "Implement security measures for learning AI systems.",
-      "objective5": "Scale AI tutors for organisational learning environments.",
+      "objective5": "Mở rộng quy mô gia sư AI cho môi trường học tập của tổ chức.\n|||Tách|||\nNgày 1\n|||Tách|||\nKiến trúc và thiết kế gia sư AI\n|||Tách|||\nXây dựng lộ trình học tập thích ứng\n|||Tách|||\nTùy chọn triển khai và bảo mật\n|||Tách|||\nChiến lược mở rộng và đánh giá\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nBao gồm các nguyên tắc cơ bản (bộ ba CIA, không tin cậy, quản lý rủi ro), bối cảnh mối đe dọa hiện tại, các vai trò chính (nhà phân tích SOC, người kiểm tra bút, điều tra viên pháp y, chuyên gia bảo mật AI) và các lộ trình chứng nhận chính (Security+, CySA+, SecAI, CEH, CHFI). Những người tham gia xây dựng lộ trình chứng nhận được cá nhân hóa từ 12 đến 24 tháng.\n|||Tách|||\nHội thảo toàn diện kéo dài một ngày bao gồm các nguyên tắc cơ bản về an ninh mạng, vai trò nghề nghiệp và lập kế hoạch cấp chứng chỉ.\n|||Tách|||\nHiểu các nguyên tắc cơ bản về an ninh mạng bao gồm bộ ba CIA và không tin cậy.\n|||Tách|||\nĐiều hướng bối cảnh mối đe dọa hiện tại.\n|||Tách|||\nKhám phá các vai trò quan trọng về an ninh mạng và con đường sự nghiệp.\n|||Tách|||\nLập bản đồ các lộ trình chứng nhận chính (Security+, CySA+, CEH, CHFI).\n|||Tách|||\nXây dựng lộ trình chứng nhận 12–24 tháng được cá nhân hóa.\n|||Tách|||\nNgày 1\n|||Tách|||\nNguyên tắc cơ bản về an ninh mạng\n|||Tách|||\nTổng quan về bối cảnh mối đe dọa\n|||Tách|||\nVai trò và con đường sự nghiệp\n|||Tách|||\nLập kế hoạch lộ trình chứng nhận\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nBuổi sáng đề cập đến các nguyên tắc cơ bản về AI bằng ngôn ngữ đơn giản - AI có thể và không thể làm gì, AI tổng hợp hoạt động như thế nào, các trường hợp sử dụng thực sự của chính phủ và quốc phòng cũng như các rủi ro đạo đức mà các nhà lãnh đạo phải quản lý. Buổi chiều là bài tập chiến lược thực hành: các nhóm xác định thách thức thực sự, đánh giá liệu AI có thể trợ giúp hay không và phát triển lộ trình thực tế với các mốc quan trọng, yêu cầu về nguồn lực và giảm thiểu rủi ro.\n|||Tách|||\nHội thảo chiến lược kéo dài một ngày kết hợp các nguyên tắc cơ bản của AI với việc phát triển lộ trình thực hành. Không cần nền tảng kỹ thuật.\n|||Tách|||\nHiểu các nguyên tắc cơ bản của AI bằng ngôn ngữ đơn giản.\n|||Tách|||\nĐánh giá các trường hợp sử dụng AI thực tế của chính phủ và quốc phòng.\n|||Tách|||\nXác định những thách thức mà AI có thể mang lại giá trị.\n|||Tách|||\nPhát triển lộ trình áp dụng AI thực tế.\n|||Tách|||\nQuản lý rủi ro đạo đức và yêu cầu nguồn lực.\n|||Tách|||\nNgày 1\n|||Tách|||\nNguyên tắc cơ bản về AI dành cho nhà lãnh đạo\n|||Tách|||\nCác trường hợp sử dụng và đạo đức trong thế giới thực\n|||Tách|||\nBài tập chiến lược: xác định thách thức\n|||Tách|||\nXây dựng và trình bày lộ trình\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nKhi hệ thống AI xử lý yêu cầu mua sắm, phân loại phiếu bảo trì hoặc soạn thảo thông tin liên lạc vận hành, ai sẽ chịu trách nhiệm nếu có sự cố xảy ra? Hội thảo này đề cập đến trách nhiệm giải trình thông qua các tình huống thực tế. Tìm hiểu cách tách các quyết định phải thuộc về con người khỏi các nhiệm vụ mà AI có thể xử lý và thiết kế các mô hình giám sát hoạt động ở tốc độ hoạt động.\n|||Tách|||\nHội thảo kéo dài một ngày với các tình huống thực tế và bài tập nhóm thiết kế các mô hình trách nhiệm giải trình. Không cần nền tảng kỹ thuật.\n|||Tách|||\nTách biệt các quyết định do con người chịu trách nhiệm với các nhiệm vụ được AI ủy quyền.\n|||Tách|||\nThiết kế các mô hình giám sát hoạt động ở tốc độ hoạt động.\n|||Tách|||\nXác định nơi mà sự phán xét của con người vẫn không thể thay thế được.\n|||Tách|||\nXây dựng mô hình trách nhiệm giải trình cho việc sử dụng AI của đơn vị bạn.\n|||Tách|||\nCác khuôn khổ trách nhiệm trình bày và đánh giá ngang hàng.\n|||Tách|||\nNgày 1\n|||Tách|||\nKhung trách nhiệm giải trình cho AI\n|||Tách|||\nPhân tích kịch bản thực tế\n|||Tách|||\nBài tập nhóm: thiết kế mô hình trách nhiệm giải trình\n|||Tách|||\nĐánh giá ngang hàng và trình bày\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "AI tutor architecture and design",
       "scheduleDay1Item2": "Adaptive learning pathway creation",
       "scheduleDay1Item3": "Deployment options and security",
-      "scheduleDay1Item4": "Scaling strategies and review"
+      "scheduleDay1Item4": "Scaling strategies and review",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "cyberRolesThreats": {
       "title": "An ninh mạng: Vai trò, Mối đe dọa và Lộ trình Chứng nhận",
@@ -618,7 +714,12 @@
       "scheduleDay1Item1": "Cybersecurity fundamentals",
       "scheduleDay1Item2": "Threat landscape overview",
       "scheduleDay1Item3": "Roles and career pathways",
-      "scheduleDay1Item4": "Certification roadmap planning"
+      "scheduleDay1Item4": "Certification roadmap planning",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiStrategyLeaders": {
       "title": "Chiến lược AI và Lộ trình cho Lãnh đạo",
@@ -635,7 +736,12 @@
       "scheduleDay1Item1": "AI fundamentals for leaders",
       "scheduleDay1Item2": "Real-world use cases and ethics",
       "scheduleDay1Item3": "Strategy exercise: challenge identification",
-      "scheduleDay1Item4": "Roadmap development and presentation"
+      "scheduleDay1Item4": "Roadmap development and presentation",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiAccountability": {
       "title": "Ai Chịu Trách nhiệm khi AI Ra Quyết định?",
@@ -652,7 +758,12 @@
       "scheduleDay1Item1": "Accountability frameworks for AI",
       "scheduleDay1Item2": "Realistic scenario analysis",
       "scheduleDay1Item3": "Group exercise: accountability model design",
-      "scheduleDay1Item4": "Peer review and presentation"
+      "scheduleDay1Item4": "Peer review and presentation",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nTìm hiểu cách đặt ranh giới rõ ràng cho những gì tác nhân AI có thể và không thể làm (giới hạn chi tiêu, truy cập dữ liệu, quyền liên lạc, khoảng thời gian), chỉ định mức độ tự chủ dựa trên rủi ro và mức độ quan trọng của nhiệm vụ, đồng thời theo dõi bất kỳ hành động AI nào thông qua chuỗi quyền hạn.\n|||Tách|||\nHội thảo kéo dài một ngày về quản trị tác nhân AI với các bài tập thiết kế ranh giới. Không cần nền tảng kỹ thuật.\n|||Tách|||\nĐặt ranh giới rõ ràng cho quyền và quyền tự chủ của tác nhân AI.\n|||Tách|||\nChỉ định mức độ tự chủ dựa trên rủi ro và mức độ quan trọng của nhiệm vụ.\n|||Tách|||\nXây dựng các đường kiểm tra theo dõi các hành động của AI theo thẩm quyền của con người.\n|||Tách|||\nThiết kế khung ranh giới cho các kịch bản tác nhân thực tế.\n|||Tách|||\nXử lý các tình huống khi đại lý vượt quá thẩm quyền.\n|||Tách|||\nNgày 1\n|||Tách|||\nCài đặt ranh giới tác nhân AI\n|||Tách|||\nMức độ tự chủ và đánh giá rủi ro\n|||Tách|||\nThiết kế đường mòn kiểm toán\n|||Tách|||\nBài tập kịch bản ranh giới\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nCác nhóm xây dựng một kịch bản chiến lược, sau đó sử dụng AI để tạo ra các lựa chọn, thách thức các giả định và mô phỏng các phản ứng đối nghịch tại mỗi thời điểm quyết định. Bài tập tích hợp quản trị: trước khi trận đấu bắt đầu, các đội xác định cố vấn AI là gì và không được phép làm gì, và sau trận đấu, họ đánh giá xem liệu AI có nằm trong giới hạn hay không.\n|||Tách|||\nBài tập chiến tranh thực hành kéo dài một ngày kết hợp việc ra quyết định của AI với đánh giá quản trị. Không cần nền tảng kỹ thuật.\n|||Tách|||\nSử dụng các công cụ AI làm cố vấn phân tích trong các bài tập chiến đấu.\n|||Tách|||\nXây dựng các kịch bản chiến lược và tạo ra các tùy chọn dựa trên AI.\n|||Tách|||\nThách thức các giả định và mô phỏng các phản ứng đối nghịch.\n|||Tách|||\nXác định và thực thi các biện pháp bảo vệ cố vấn AI.\n|||Tách|||\nĐánh giá hành vi của AI so với ranh giới quản trị.\n|||Tách|||\nNgày 1\n|||Tách|||\nXây dựng kịch bản chiến lược\n|||Tách|||\nĐịnh nghĩa lan can cố vấn AI\n|||Tách|||\nBài tập Wargaming với cố vấn AI\n|||Tách|||\nĐánh giá và tổng kết quản trị\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n1 ngày\n|||Tách|||\nS$6.000 mỗi workshop (tối đa 15 khách)\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nS$6.000/lần\n|||Tách|||\nNền tảng chuyên sâu kéo dài 4 ngày bao gồm kiến ​​thức cốt lõi được chia sẻ trong tất cả các chứng chỉ an ninh mạng chính: bối cảnh mối đe dọa, an ninh mạng, tăng cường hệ thống, ứng phó sự cố và quản lý rủi ro. Sau khi hoàn thành MCC+, người tham gia chỉ cần thêm 1 ngày cho mỗi môn tự chọn để chứng nhận thay vì 4–5 ngày cho mỗi môn.\n|||Tách|||\nMột chương trình chuyên sâu kéo dài 4 ngày nhằm củng cố các nền tảng an ninh mạng được chia sẻ phù hợp với các miền CompTIA và EC-Council.\n|||Tách|||\nNắm vững kiến ​​thức cốt lõi về an ninh mạng trên tất cả các chứng chỉ chính.\n|||Tách|||\nHiểu bối cảnh mối đe dọa, an ninh mạng và tăng cường hệ thống.\n|||Tách|||\nTìm hiểu các nguyên tắc cơ bản về ứng phó sự cố và quản lý rủi ro.\n|||Tách|||\nChuẩn bị cho các chứng chỉ Security+, CySA+, CEH và CHFI.\n|||Tách|||\nTiết kiệm thời gian đào tạo với chương trình cơ bản tổng hợp.\n|||Tách|||\nNgày 1–2\n|||Tách|||\nBối cảnh mối đe dọa và an ninh mạng\n|||Tách|||\nNguyên tắc cơ bản về củng cố hệ thống\n|||Tách|||\nNgày 3–4\n|||Tách|||\nQuy trình ứng phó sự cố\n|||Tách|||\nQuản lý rủi ro và tuân thủ\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\n4 ngày\n|||Tách|||\nS$3,200 mỗi khách (tối thiểu 5, tối đa 15)\n|||Tách|||\nS$3,200/khách\n|||Tách|||\nS$3,200/khách\n|||Tách|||\nXây dựng trên nền tảng MCC+ để bao gồm kiến ​​trúc bảo mật, IAM, giám sát mạng và kiểm soát hoạt động cụ thể cho kỳ thi Security+. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nXây dựng tự chọn chuyên sâu 1 ngày trên nền tảng MCC+. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nMaster Security+ tên miền cụ thể.\n|||Tách|||\nHiểu kiến ​​trúc bảo mật và IAM.",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "governingAiAgents": {
       "title": "Quản trị AI Đại lý: Tin cậy, Ranh giới và Dấu vết Kiểm toán",
@@ -669,7 +780,12 @@
       "scheduleDay1Item1": "AI agent boundary setting",
       "scheduleDay1Item2": "Autonomy levels and risk assessment",
       "scheduleDay1Item3": "Audit trail design",
-      "scheduleDay1Item4": "Boundary scenario exercises"
+      "scheduleDay1Item4": "Boundary scenario exercises",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiWargaming": {
       "title": "AI Mô phỏng Chiến tranh: Kiểm tra Quyết định Trước khi Thực hiện",
@@ -686,7 +802,12 @@
       "scheduleDay1Item1": "Strategic scenario construction",
       "scheduleDay1Item2": "AI advisor guardrail definition",
       "scheduleDay1Item3": "Wargaming exercise with AI advisors",
-      "scheduleDay1Item4": "Governance evaluation and debrief"
+      "scheduleDay1Item4": "Governance evaluation and debrief",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "mccFoundation": {
       "title": "MSI CyberCore+ (MCC+) Nền tảng Phòng thủ Mạng",
@@ -704,7 +825,12 @@
       "scheduleDay1Item2": "System hardening fundamentals",
       "scheduleDay2": "Day 3–4",
       "scheduleDay2Item1": "Incident response procedures",
-      "scheduleDay2Item2": "Risk management and compliance"
+      "scheduleDay2Item2": "Risk management and compliance",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "4 Days",
+      "feesSelfSponsored": "S$3,200 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$3,200/pax",
+      "feesCorporateLarge": "S$3,200/pax"
     },
     "mccSecurityOps": {
       "title": "MCC+ Vận hành An ninh (Phù hợp CompTIA Security+)",
@@ -714,14 +840,19 @@
       "courseDesign": "Intensive 1-day elective building on MCC+ foundation. Requires MCC+ completion.",
       "objective1": "Master Security+ specific domains.",
       "objective2": "Understand security architecture and IAM.",
-      "objective3": "Implement network monitoring and operational controls.",
+      "objective3": "Thực hiện giám sát mạng và kiểm soát hoạt động.\n|||Tách|||\nChuẩn bị cho kỳ thi CompTIA Security+.\n|||Tách|||\nÁp dụng các khái niệm hoạt động an ninh trong thực tế.\n|||Tách|||\nNgày 1\n|||Tách|||\nKiến trúc bảo mật\n|||Tách|||\nIAM và kiểm soát truy cập\n|||Tách|||\nGiám sát mạng\n|||Tách|||\nKiểm soát an ninh hoạt động\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\nTiện ích bổ sung 1 ngày\n|||Tách|||\nS$1,800 mỗi khách (tối thiểu 5, tối đa 15)\n|||Tách|||\nS$1,800/khách\n|||Tách|||\nS$1,800/khách\n|||Tách|||\nĐược xây dựng trên nền tảng MCC+ để phát hiện mối đe dọa, phân tích nhật ký, phân tích hành vi và quy trình làm việc SOC để xác định các mối đe dọa nâng cao. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nXây dựng tự chọn chuyên sâu 1 ngày trên nền tảng MCC+. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nPhát hiện mối đe dọa tổng thể và phân tích nhật ký.\n|||Tách|||\nÁp dụng phân tích hành vi để săn lùng mối đe dọa.\n|||Tách|||\nTriển khai quy trình công việc SOC để xác định mối đe dọa nâng cao.\n|||Tách|||\nChuẩn bị cho kỳ thi CompTIA CySA+.\n|||Tách|||\nXây dựng năng lực hoạt động của đội xanh.\n|||Tách|||\nNgày 1\n|||Tách|||\nNguyên tắc cơ bản về phát hiện mối đe dọa\n|||Tách|||\nPhân tích nhật ký và phân tích hành vi\n|||Tách|||\nQuy trình làm việc SOC\n|||Tách|||\nNhận dạng mối đe dọa nâng cao\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\nTiện ích bổ sung 1 ngày\n|||Tách|||\nS$1,800 mỗi khách (tối thiểu 5, tối đa 15)\n|||Tách|||\nS$1,800/khách\n|||Tách|||\nS$1,800/khách\n|||Tách|||\nĐược xây dựng trên nền tảng MCC+ để đề cập đến phương pháp tấn công có đạo đức: trinh sát, quét, liệt kê, đánh giá lỗ hổng và các kỹ thuật khai thác cơ bản. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nXây dựng tự chọn chuyên sâu 1 ngày trên nền tảng MCC+. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nHiểu phương pháp hack đạo đức.\n|||Tách|||\nTiến hành trinh sát và quét.\n|||Tách|||\nThực hiện điều tra và đánh giá tính dễ bị tổn thương.\n|||Tách|||\nÁp dụng các kỹ thuật khai thác cơ bản.\n|||Tách|||\nChuẩn bị cho kỳ thi CEH của Hội đồng EC.\n|||Tách|||\nNgày 1\n|||Tách|||\nTrinh sát và quét\n|||Tách|||\nKỹ thuật đếm\n|||Tách|||\nĐánh giá lỗ hổng\n|||Tách|||\nPhương pháp khai thác cơ bản\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\nTiện ích bổ sung 1 ngày\n|||Tách|||\nS$3,000 mỗi khách (tối thiểu 5, tối đa 15)\n|||Tách|||\n3.000 đô la Singapore/khách\n|||Tách|||\n3.000 đô la Singapore/khách\n|||Tách|||\nĐược xây dựng trên nền tảng MCC+ để bao gồm việc thu thập bằng chứng kỹ thuật số, điều tra pháp y, tài liệu về chuỗi hành trình và tái thiết sự cố. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nXây dựng tự chọn chuyên sâu 1 ngày trên nền tảng MCC+. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nNắm vững kỹ thuật thu thập bằng chứng kỹ thuật số.\n|||Tách|||\nTiến hành điều tra pháp y.\n|||Tách|||\nGhi lại chuỗi hành trình sản phẩm một cách hợp lý.\n|||Tách|||\nTái tạo lại sự cố từ bằng chứng kỹ thuật số.\n|||Tách|||\nChuẩn bị cho kỳ thi CHFI của Hội đồng EC.\n|||Tách|||\nNgày 1\n|||Tách|||\nThu thập bằng chứng kỹ thuật số\n|||Tách|||\nThủ tục điều tra pháp y\n|||Tách|||\nTài liệu về chuỗi hành trình sản phẩm\n|||Tách|||\nTái thiết sự cố\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\nTiện ích bổ sung 1 ngày\n|||Tách|||\nS$3,000 mỗi khách (tối thiểu 5, tối đa 15)\n|||Tách|||\n3.000 đô la Singapore/khách\n|||Tách|||\n3.000 đô la Singapore/khách\n|||Tách|||\nĐược xây dựng trên nền tảng MCC+ để xử lý các mối đe dọa dành riêng cho AI (tấn công đối nghịch, đầu độc dữ liệu, đánh cắp mô hình), vòng đời bảo mật AI và chiến lược phòng thủ cho các hệ thống AI tự trị. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nXây dựng tự chọn chuyên sâu 1 ngày trên nền tảng MCC+. Yêu cầu hoàn thành MCC+.\n|||Tách|||\nHiểu các mối đe dọa dành riêng cho AI bao gồm các cuộc tấn công đối nghịch và đầu độc dữ liệu.\n|||Tách|||\nQuản lý vòng đời bảo mật AI.\n|||Tách|||\nThực hiện các chiến lược phòng thủ cho các hệ thống AI tự trị.\n|||Tách|||\nGiải quyết vấn đề trộm cắp mô hình và rủi ro chuỗi cung ứng AI.\n|||Tách|||\nChuẩn bị cho kỳ thi CompTIA SecAI.\n|||Tách|||\nNgày 1\n|||Tách|||\nBối cảnh mối đe dọa dành riêng cho AI",
       "objective4": "Prepare for CompTIA Security+ examination.",
       "objective5": "Apply security operations concepts in practice.",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "Security architecture",
       "scheduleDay1Item2": "IAM and access controls",
       "scheduleDay1Item3": "Network monitoring",
-      "scheduleDay1Item4": "Operational security controls"
+      "scheduleDay1Item4": "Operational security controls",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$1,800/pax",
+      "feesCorporateLarge": "S$1,800/pax"
     },
     "mccThreatHunting": {
       "title": "MCC+ Săn Mối đe dọa và Blue Team (Phù hợp CompTIA CySA+)",
@@ -738,7 +869,12 @@
       "scheduleDay1Item1": "Threat detection fundamentals",
       "scheduleDay1Item2": "Log analysis and behavioural analytics",
       "scheduleDay1Item3": "SOC workflows",
-      "scheduleDay1Item4": "Advanced threat identification"
+      "scheduleDay1Item4": "Advanced threat identification",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$1,800/pax",
+      "feesCorporateLarge": "S$1,800/pax"
     },
     "mccOffensiveCyber": {
       "title": "MCC+ Nền tảng Tấn công Mạng (Phù hợp EC-Council CEH)",
@@ -755,7 +891,12 @@
       "scheduleDay1Item1": "Reconnaissance and scanning",
       "scheduleDay1Item2": "Enumeration techniques",
       "scheduleDay1Item3": "Vulnerability assessment",
-      "scheduleDay1Item4": "Basic exploitation methods"
+      "scheduleDay1Item4": "Basic exploitation methods",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$3,000 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$3,000/pax",
+      "feesCorporateLarge": "S$3,000/pax"
     },
     "mccDigitalForensics": {
       "title": "MCC+ Pháp y Số và Điều tra Sự cố (Phù hợp EC-Council CHFI)",
@@ -772,7 +913,12 @@
       "scheduleDay1Item1": "Digital evidence collection",
       "scheduleDay1Item2": "Forensic investigation procedures",
       "scheduleDay1Item3": "Chain-of-custody documentation",
-      "scheduleDay1Item4": "Incident reconstruction"
+      "scheduleDay1Item4": "Incident reconstruction",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$3,000 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$3,000/pax",
+      "feesCorporateLarge": "S$3,000/pax"
     },
     "mccAiSecurity": {
       "title": "MCC+ An ninh AI và Phòng thủ Tự chủ (Phù hợp CompTIA SecAI)",
@@ -787,9 +933,76 @@
       "objective5": "Prepare for CompTIA SecAI examination.",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "AI-specific threat landscape",
-      "scheduleDay1Item2": "AI security lifecycle management",
+      "scheduleDay1Item2": "Quản lý vòng đời bảo mật AI\n|||Tách|||\nChiến lược bảo vệ hệ thống tự trị\n|||Tách|||\nQuản trị và tuân thủ AI\n|||Tách|||\nLiên hệ emailmissions@metaskills.sg để biết ngày chạy tiếp theo\n|||Tách|||\nTiện ích bổ sung 1 ngày\n|||Tách|||\nS$1,800 mỗi khách (tối thiểu 5, tối đa 15)\n|||Tách|||\nS$1,800/khách\n|||Tách|||\nS$1,800/khách\n|||Tách|||\nGiám đốc điều hành, Viện Metaskills | Tư vấn cấp cao\n|||Tách|||\nPhân tích dữ liệu | Khoa học dữ liệu | AI đặc vụ | AI | Học máy | Kinh doanh thông minh | Tài chính doanh nghiệp | Tư vấn AI ứng dụng\n|||Tách|||\nTiến sĩ Jinghao Ke là nhà lãnh đạo được công nhận trong lĩnh vực AI ứng dụng, tài chính và phân tích, với các dự án bao gồm phát triển AI, chuyển đổi kỹ thuật số và giáo dục điều hành.\n\nVới tư cách là Giám đốc điều hành của Viện JCube và Giám đốc Nghiên cứu của Integrum Global, ông đã lãnh đạo các dự án tư vấn xuyên biên giới về tài chính, chuỗi cung ứng và tính bền vững dựa trên AI. Ông cũng là giảng viên phụ trợ tại Đại học Quản lý Singapore, giảng dạy về phân tích kinh doanh và tài chính, đồng thời phát triển chương trình giảng dạy cho các trường đại học, doanh nghiệp và cơ quan chính phủ trên khắp ASEAN.\n|||Tách|||\nCBDO, Viện Metaskills | Tư vấn cấp cao\n|||Tách|||\nKhoa học dữ liệu | Giao dịch theo thuật toán | Phát triển kinh doanh | Lãnh đạo giáo dục đại học\n|||Tách|||\nNhà lãnh đạo về Giáo dục, Công nghệ và Chiến lược Doanh nghiệp với hơn 20 năm tác động trong Chính phủ, Giáo dục Đại học và Công nghiệp. Được công nhận vì đã xây dựng các nhóm có hiệu suất cao, đảm bảo sự hợp tác chiến lược, mang lại sự đổi mới được hỗ trợ tài trợ và điều chỉnh chiến lược, hoạt động và công nghệ để đạt được kết quả chất lượng và tăng trưởng có thể đo lường được.\n\nNhóm sáng lập Văn phòng Cải tiến Kinh doanh của SMU đồng thời đạt được Đai đen Lean Six Sigma và thúc đẩy 12 dự án chuyển đổi trên toàn tổ chức. Sau đó cũng là thành viên của nhóm sáng lập ban đầu để thành lập Học viện SMU.\n\nTại Phòng Giáo dục Đại học của Bộ Giáo dục, lãnh đạo việc lập kế hoạch nhân lực quốc gia, đánh giá chính sách và hợp tác giữa các tổ chức.\n|||Tách|||\nTrưởng phòng Vận hành | tư vấn viên\n|||Tách|||\nLãnh đạo vận hành | Chuyển đổi dựa trên AI | Mã hóa Vibe | Kỹ thuật nhanh chóng | Kiến trúc quy trình làm việc\n|||Tách|||\nKết hợp 17 năm kinh nghiệm quốc phòng và doanh nghiệp, Andrew mang đến sự kết hợp độc đáo giữa khả năng lãnh đạo hoạt động, chuyên môn kỹ thuật, phát triển kinh doanh và chuyển đổi dựa trên AI.\n\nHiện đang giám sát các hoạt động tại Viện Metaskills và Integrum Global, ông thiết kế và triển khai các quy trình làm việc AI thực tế trong môi trường kinh doanh trực tiếp. Anh ấy chuyên về kỹ thuật nhanh chóng và kiến ​​trúc quy trình làm việc, tận dụng Claude và các LLM khác để giảm thời gian xử lý, cải thiện tính rõ ràng của báo cáo và nâng cao khả năng ra quyết định.\n|||Tách|||\nTư vấn trưởng\n|||Tách|||\nKhoa học dữ liệu | AI | AI đặc vụ | Học máy | Học sâu | Kinh doanh thông minh | Lãnh đạo\n|||Tách|||\nTiến sĩ Jack Hong là Người sáng lập & Giám đốc điều hành của Integrum Global, một công ty tư vấn, đào tạo và phần mềm thúc đẩy việc áp dụng AI cho doanh nghiệp. Là Giảng viên phụ trợ tại Đại học Quản lý Singapore trong hơn 10 năm, Jack giảng dạy các chương trình MBA, EMBA, tiến sĩ và giáo dục điều hành về chuyển đổi kỹ thuật số, học máy và tài chính.\n\nJack cũng đảm nhận các vai trò lãnh đạo chủ chốt bao gồm Chủ tịch Vận động & Nghiên cứu tại ASME, Thành viên Ủy ban SME tại SBF và Thành viên Ủy ban Điều hành của Ban Đạo đức & Quản trị AI tại SCS.\n|||Tách|||\ntư vấn viên\n|||Tách|||\nKhoa học dữ liệu | AI | AI đặc vụ | Học máy | Học sâu | Kinh doanh thông minh | Lãnh đạo\n|||Tách|||\nVới tư cách là Giám đốc Kỹ thuật AI có đầu óc kinh doanh tại Integrum Global, Jack Tee tận dụng bằng MBA của mình từ SMU và nền tảng Kỹ thuật Cơ khí để tạo ra các giải pháp AI có tác động mạnh mẽ. Ông đã dẫn đầu các dự án về Xử lý ngôn ngữ tự nhiên, Thị giác máy tính và tối ưu hóa tuyến đường.\n|||Tách|||\ntư vấn viên\n|||Tách|||\nKhoa học dữ liệu | AI | AI đặc vụ | Học máy | Học sâu",
       "scheduleDay1Item3": "Autonomous system defence strategies",
-      "scheduleDay1Item4": "AI governance and compliance"
+      "scheduleDay1Item4": "AI governance and compliance",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$1,800/pax",
+      "feesCorporateLarge": "S$1,800/pax"
+    }
+  },
+  "facultyProfiles": {
+    "drKeJinghao": {
+      "role": "CEO, Metaskills Institute | Senior Consultant",
+      "expertise": "Data Analytics | Data Science | Agentic AI | AI | Machine Learning | Business Intelligence | Corporate Finance | Applied AI Consulting",
+      "bio": "Dr. Jinghao Ke is a recognised leader in applied AI, finance, and analytics, with projects spanning AI development, digital transformation, and executive education.\n\nAs CEO of JCube Institute and Chief Research Officer of Integrum Global, he has led cross-border consulting projects in AI-driven finance, supply chains, and sustainability. He also serves as adjunct faculty at Singapore Management University, teaching business analytics and finance, and has developed curricula for universities, corporates, and government agencies across ASEAN."
+    },
+    "christopherTan": {
+      "role": "CBDO, Metaskills Institute | Senior Consultant",
+      "expertise": "Data Science | Algorithmic Trading | Business Development | Higher Education Leadership",
+      "bio": "Entrepreneurial Education, Technology and Strategy leader with 20+ years of impact across Government, Higher Education and Industry. Recognised for building high-performance teams, securing strategic collaborations, delivering funding-backed innovation, and aligning strategy, operations and technology to measurable growth and quality outcomes.\n\nFounding team of SMU's Office of Business Improvement while earning a Lean Six Sigma Black Belt and driving 12 institution-wide transformation projects. Was also subsequently part of the initial founding team to set up SMU Academy.\n\nAt Ministry of Education Higher Education Division, led national manpower planning, policy evaluation and cross-institution partnerships."
+    },
+    "andrewToh": {
+      "role": "Head, Operations | Consultant",
+      "expertise": "Operational Leadership | AI-Driven Transformation | Vibe Coding | Prompt Engineering | Workflow Architecture",
+      "bio": "Blending 17 years of defense and corporate experience, Andrew brings a unique mix of operational leadership, technical expertise, business development, and AI-driven transformation.\n\nCurrently, overseeing operations at Metaskills Institute and Integrum Global, he designs and deploys practical AI workflows in live business environments. He specialises in prompt engineering and workflow architecture, leveraging Claude and other LLMs to reduce turnaround time, improve reporting clarity, and enhance decision-making."
+    },
+    "drJackHong": {
+      "role": "Lead Consultant",
+      "expertise": "Data Science | AI | Agentic AI | Machine Learning | Deep Learning | Business Intelligence | Leadership",
+      "bio": "Dr. Jack Hong is Founder & CEO of Integrum Global, a consultancy, training, and software company driving enterprise AI adoption. As Adjunct Faculty at Singapore Management University for over 10 years, Jack teaches MBA, EMBA, doctoral, and executive education programmes in digital transformation, machine learning, and finance.\n\nJack also serves in key leadership roles including Chair of Advocacy & Research at ASME, SME Committee Member at SBF, and Executive Committee Member of the AI Ethics & Governance Chapter at SCS."
+    },
+    "jackTee": {
+      "role": "Consultant",
+      "expertise": "Data Science | AI | Agentic AI | Machine Learning | Deep Learning | Business Intelligence | Leadership",
+      "bio": "As the business-minded AI Engineering Head at Integrum Global, Jack Tee leverages his MBA from SMU and Mechanical Engineering background to craft impactful AI solutions. He has spearheaded projects in Natural Language Processing, Computer Vision, and route optimization."
+    },
+    "drJonathanKhoo": {
+      "role": "Consultant",
+      "expertise": "Data Science | AI | Agentic AI | Machine Learning | Deep Learning",
+      "bio": "Tiến sĩ Jonathan Khoo là nhà phát triển ứng dụng toàn diện với việc triển khai các chiến lược dựa trên dữ liệu riêng biệt. Ông đã lấy bằng Tiến sĩ. tại SMU, đã hoàn thành chương trình Thạc sĩ tại Đại học Michigan và là cựu sinh viên của Học viện Raffles và Học viện Hwa Chong.\n|||Tách|||\ntư vấn viên\n|||Tách|||\nQuản trị dữ liệu | Phân tích dữ liệu & kinh doanh | Học tập dành cho người lớn | Tuân thủ & Quản lý rủi ro | Lean Six Sigma | Nhanh nhẹn & Scrum\n|||Tách|||\nEvelyn Wong là chuyên gia quản trị dữ liệu, hiện đang lãnh đạo Infinuem, đóng vai trò then chốt trong các sáng kiến ​​quản trị dữ liệu. Cô đã làm việc ở nhiều lĩnh vực bao gồm tài chính, CNTT, rủi ro, tiếp thị và khoa học dữ liệu.\n\nNgoài quản trị, Evelyn còn có kiến ​​thức nền tảng sâu rộng về Tuân thủ, Phát triển Kinh doanh, Bán hàng & Tiếp thị cũng như Quản lý Dự án tại 3M và Agilent Technologies. Đai xanh Lean Six Sigma được chứng nhận và Scrum Master được chứng nhận.\n\nEvelyn cũng là một nhà thực hành học tập dành cho người lớn có kinh nghiệm, đã đào tạo hơn 200 chuyên gia về phân tích dữ liệu, kinh doanh thông minh và các công cụ học máy.\n|||Tách|||\ntư vấn viên\n|||Tách|||\nAI sáng tạo & tác nhân | Tư vấn giải pháp AI | Chuỗi Cung ứng & Môi trường Xây dựng | Đào tạo chuyên nghiệp\n|||Tách|||\nAlena Lavrinenko là Giám đốc Giải pháp AI tại Integrum Global và là Nhà đào tạo AI của Viện JCube và Viện Metaskills. Cô thiết kế và cung cấp các chương trình dành cho doanh nghiệp về AI Sáng tạo và Tác nhân.\n\nAlena có bằng MBA của Đại học Quản lý Singapore và đã làm việc với các tổ chức hàng đầu bao gồm CDL, SingLand, TPC Group và MINDEF.\n|||Tách|||\nTư vấn trưởng, Giao dịch thuật toán\n|||Tách|||\nGiao dịch theo thuật toán | Thị trường ngoại hối và vàng | MetaTrader 4/5 | Học máy | Học tăng cường sâu | C++ | Python\n|||Tách|||\nVictor có hơn 20 năm kinh nghiệm tài chính. Trong 4 năm qua, anh đã tự tài trợ cho niềm đam mê giao dịch thuật toán trên thị trường vàng và ngoại hối nghìn tỷ đô la, sử dụng hệ thống giao dịch độc quyền với học máy, đặc biệt là học tăng cường sâu về phân tích chuỗi thời gian.\n|||Tách|||\nTư vấn trưởng\n|||Tách|||\nQuản trị an ninh mạng | ISO 27001 | NIST | Bảo mật đám mây | Không tin cậy | Phản hồi sự cố\n|||Tách|||\nSteven Ong là nhà điều hành an ninh mạng dày dạn kinh nghiệm và lãnh đạo học thuật với hơn 25 năm kinh nghiệm. Với tư cách là CISO, ông đã chuyển đổi an ninh mạng của tổ chức thành một chương trình có cấu trúc, dựa trên rủi ro phù hợp với ISO 27001 và NIST. Với tư cách là Giảng viên cao cấp, ông đã thiết kế chương trình giảng dạy về an ninh mạng phù hợp với ngành và giám sát hơn 100 dự án.\n|||Tách|||\nHuấn luyện viên phụ trợ\n|||Tách|||\nGiáo Dục Người Lớn | Đào tạo AI & An ninh mạng | Phát triển giảng viên | Chương trình giảng dạy dựa trên năng lực\n|||Tách|||\nJimmy Leong (AFHEA) là chuyên gia đào tạo bậc thầy và chuyên gia giáo dục người lớn có trụ sở tại Singapore với hơn 20 năm kinh nghiệm trong lĩnh vực công nghệ thông tin và học tập dành cho người lớn. Ông đã hỗ trợ các tổ chức như MINDEF, AWS, Grab, McKinsey & Company và Viện Học tập cho Người lớn Singapore.\n|||Tách|||\nHuấn luyện viên phụ trợ\n|||Tách|||\nGiáo dục lập trình | Quan hệ đối tác & Chiến lược | EdTech | Phát triển chương trình giảng dạy\n|||Tách|||\nYinjie là người đồng sáng lập tại Tinkercademy và Tinkertanker Pte Ltd. YJ nhận bằng của Đại học Stanford và Chứng chỉ Sau đại học của NIE Singapore. Trước Tinkertanker, YJ dạy máy tính tại Học viện Raffles và phục vụ tại Bộ Giáo dục, Singapore.\n|||Tách|||\nHội thảo 2 ngày\n|||Tách|||\nBạn sẽ học được gì\n|||Tách|||\nNhóm giao dịch thuật toán"
+    },
+    "evelynWong": {
+      "role": "Consultant",
+      "expertise": "Data Governance | Business & Data Analytics | Adult Learning | Compliance & Risk Management | Lean Six Sigma | Agile & Scrum",
+      "bio": "Evelyn Wong is a data governance specialist who currently leads Infinuem, playing a pivotal role in data governance initiatives. She has worked across functions including finance, IT, risk, marketing, and data science.\n\nBeyond governance, Evelyn brings an extensive corporate background spanning Compliance, Business Development, Sales & Marketing, and Project Management at 3M and Agilent Technologies. A Certified Lean Six Sigma Green Belt and Certified Scrum Master.\n\nEvelyn is also an experienced adult learning practitioner, having trained more than 200 professionals in data analytics, business intelligence, and machine learning tools."
+    },
+    "alenaLavrinenko": {
+      "role": "Consultant",
+      "expertise": "Generative & Agentic AI | AI Solutions Consulting | Supply Chain & Built Environment | Professional Training",
+      "bio": "Alena Lavrinenko is an AI Solutions Manager at Integrum Global and an AI Trainer with JCube Institute and Metaskills Institute. She designs and delivers enterprise-ready programmes in Generative and Agentic AI.\n\nAlena holds an MBA from Singapore Management University and has worked with leading organisations including CDL, SingLand, TPC Group, and MINDEF."
+    },
+    "victor": {
+      "role": "Lead Consultant, Algorithmic Trading",
+      "expertise": "Algorithmic Trading | Forex & Gold Markets | MetaTrader 4/5 | Machine Learning | Deep Reinforcement Learning | C++ | Python",
+      "bio": "Victor has more than 20 years of financial experience. For the past 4 years, he has self-funded his passion in algorithmic trading in the trillion dollar forex and gold market, using proprietary trading systems with machine learning especially deep reinforcement learning on time series analysis."
+    },
+    "stevenOng": {
+      "role": "Lead Consultant",
+      "expertise": "Cybersecurity Governance | ISO 27001 | NIST | Cloud Security | Zero Trust | Incident Response",
+      "bio": "Steven Ong is a seasoned cybersecurity executive and academic leader with over 25 years of experience. As a CISO, he transformed institutional cybersecurity into a structured, risk-based program aligned with ISO 27001 and NIST. As a Senior Lecturer, he has designed industry-aligned cybersecurity curricula and supervised over 100 projects."
+    },
+    "jimmyLeong": {
+      "role": "Adjunct Trainer",
+      "expertise": "Adult Education | AI & Cybersecurity Training | Instructor Development | Competency-Based Curricula",
+      "bio": "Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He has supported organisations such as MINDEF, AWS, Grab, McKinsey & Company, and the Institute for Adult Learning Singapore."
+    },
+    "soonYinjie": {
+      "role": "Adjunct Trainer",
+      "expertise": "Programming Education | Partnerships & Strategy | EdTech | Curriculum Development",
+      "bio": "Yinjie is co-founder at Tinkercademy and Tinkertanker Pte Ltd. YJ received his degrees from Stanford University and a Post-Graduate Diploma from NIE Singapore. Before Tinkertanker, YJ taught computing at Raffles Institution and served at the Ministry of Education, Singapore."
     }
   }
 }

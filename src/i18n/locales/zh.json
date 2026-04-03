@@ -177,7 +177,8 @@
     "executiveTeam": "MetaSkills 管理团队",
     "aiTeam": "AI / 数据科学团队",
     "cyberTeam": "网络安全团队",
-    "adjunctTrainers": "兼职培训师"
+    "adjunctTrainers": "兼职培训师",
+    "algoTeam": "Algorithmic Trading Team"
   },
   "partnersPage": {
     "heroTitle": "我们的合作伙伴",
@@ -253,14 +254,16 @@
     "policyReschedulingTitle": "改期政策",
     "policyReschedulingText": "客户发起的改期至少需在开课14天前。可能收取SGD 600改期费。Metaskills发起的改期提供全额退款选择。",
     "policyAttendanceTitle": "出勤政策",
-    "policyAttendanceText": "获得认证需75%出勤率。学员应准时到达。缺席请发邮件至admissions@metaskills.sg通知。"
+    "policyAttendanceText": "获得认证需75%出勤率。学员应准时到达。缺席请发邮件至admissions@metaskills.sg通知。",
+    "defaultDuration": "2-Day Workshop",
+    "whatYouLearn": "What You Will Learn"
   },
   "courses": {
     "agenticFoundations": {
       "title": "智能体AI工作流基础",
       "category": "智能体AI工作坊系列",
       "tagline": "探索AI驱动系统的基础知识，以转变决策流程。",
-      "whyAttend": "In today's fast-paced environment, understanding how to harness AI-driven workflows is essential. This introductory workshop equips you with the core concepts and practical tools to implement agentic systems that streamline and enhance decision-making.",
+      "whyAttend": "在当今快节奏的环境中，了解如何利用人工智能驱动的工作流程至关重要。这个介绍性研讨会为您提供核心概念和实用工具，以实施简化和增强决策的代理系统。\n|||分割|||\n这个为期两天的研讨会全面介绍了代理人工智能工作流程。参与者将了解人工智能代理的基础知识，探索用于构建这些系统的常用工具，并参与模拟现实世界应用程序的实践练习。\n|||分割|||\n了解代理人工智能系统的核心原理和组件。\n|||分割|||\n确定开发人工智能工作流程时使用的常用工具和平台。\n|||分割|||\n探索现实世界的应用程序和操作场景。\n|||分割|||\n通过构建基本的人工智能代理工作流程来获得实践经验。\n|||分割|||\n培养将人工智能整合到决策过程中的运营思维。\n|||分割|||\n第一天\n|||分割|||\n欢迎和课程概述\n|||分割|||\n人工智能代理系统的基础知识\n|||分割|||\n工具和平台概述\n|||分割|||\n案例研究\n|||分割|||\n第二天\n|||分割|||\n互动实验室\n|||分割|||\n基于场景的练习\n|||分割|||\n同行评审和演示\n|||分割|||\n总结及问答\n|||分割|||\n第一天 – 2025 年 9 月 18 日（星期四）\n第 2 天 – 2025 年 9 月 19 日（星期五）\n|||分割|||\n30 小时（2 节）\n|||分割|||\n为期 2 天的研讨会 1,800 新元\n|||分割|||\n少于 8 人 – S$11,000\n|||分割|||\n8 至 15 人 – S$12,000\n|||分割|||\nJCube 学院和元技能学院\n|||分割|||\n本次研讨会的重点是将大型语言模型 (LLM) 集成到代理人工智能框架中，使参与者能够设计和实现充当自主代理的系统。\n|||分割|||\n这个为期两天的研讨会将深入探讨代理人工智能的中间领域。通过讲座和实践练习，该课程涵盖了构建能够发起行动、做出决策并根据反馈进行发展的人工智能代理。\n|||分割|||\n加深您对代理人工智能和自主决策系统的理解。\n|||分割|||\n学习将法学硕士集成到代理工作流程中以增强系统自主权。\n|||分割|||\n培养编码、API 集成和提示工程方面的实用技能。\n|||分割|||\n探索代理 AI 改变运营流程的现实场景。\n|||分割|||\n利用代理系统设计并呈现定制的人工智能用例。\n|||分割|||\n第一天\n|||分割|||\n简介和课程概述\n|||分割|||\n代理人工智能深入研究\n|||分割|||\n将法学硕士集成到代理工作流程中\n|||分割|||\n现实世界的用例\n|||分割|||\n第二天\n|||分割|||\n编码实验室\n|||分割|||\n代理系统的快速工程\n|||分割|||\n场景化开发\n|||分割|||\n小组演示和同行评审\n|||分割|||\n第一天 – 2025 年 10 月 2 日（星期四）\n第 2 天 – 2025 年 10 月 3 日（星期五）\n|||分割|||\n30 小时（2 节）\n|||分割|||\n为期 2 天的研讨会 1,800 新元\n|||分割|||\n少于 8 人 – S$11,000\n|||分割|||\n8 至 15 人 – S$12,000\n|||分割|||\nJCube 学院和元技能学院\n|||分割|||\n在安全、可靠的环境中部署代理人工智能系统对于高风险运营至关重要。这个高级研讨会是为准备从开发过渡到强大的生产级部署的专业人士量身定制的。\n|||分割|||\n这个为期两天的研讨会专注于代理人工智能系统的高级部署和操作，重点是本地部署策略、安全协议和可扩展性。\n|||分割|||\n了解部署自主代理人工智能系统的独特挑战。\n|||分割|||\n深入了解安全部署实践和本地集成。\n|||分割|||\n学习高级故障排除和集成技术。\n|||分割|||\n制定具有严格安全性的扩展代理人工智能系统的策略。\n|||分割|||\n在动手模拟实验室中应用知识。\n|||分割|||\n第一天\n|||分割|||\n简介和课程概述",
       "courseDesign": "This two-day workshop provides a comprehensive introduction to agentic AI workflows. Participants will learn about the fundamentals of AI agents, explore common tools used to build these systems, and engage in hands-on exercises that simulate real-world applications.",
       "objective1": "Understand the core principles and components of agentic AI systems.",
       "objective2": "Identify common tools and platforms used in developing AI workflows.",
@@ -276,7 +279,13 @@
       "scheduleDay2Item1": "Interactive Lab",
       "scheduleDay2Item2": "Scenario-Based Exercises",
       "scheduleDay2Item3": "Peer Review & Presentations",
-      "scheduleDay2Item4": "Wrap-Up & Q&A"
+      "scheduleDay2Item4": "Wrap-Up & Q&A",
+      "nextRunDate": "Day 1 – 18 September 2025 (Thursday)\nDay 2 – 19 September 2025 (Friday)",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "S$1,800 for 2-day workshop",
+      "feesCorporateSmall": "Less than 8 pax – S$11,000",
+      "feesCorporateLarge": "8 to 15 pax – S$12,000",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "agenticUseCase": {
       "title": "利用大语言模型赋能智能体AI与用例开发",
@@ -298,7 +307,13 @@
       "scheduleDay2Item1": "Coding Lab",
       "scheduleDay2Item2": "Prompt Engineering for Agentic Systems",
       "scheduleDay2Item3": "Scenario-Based Development",
-      "scheduleDay2Item4": "Group Presentations & Peer Review"
+      "scheduleDay2Item4": "Group Presentations & Peer Review",
+      "nextRunDate": "Day 1 – 02 October 2025 (Thursday)\nDay 2 – 03 October 2025 (Friday)",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "S$1,800 for 2-day workshop",
+      "feesCorporateSmall": "Less than 8 pax – S$11,000",
+      "feesCorporateLarge": "8 to 15 pax – S$12,000",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "agenticDeploy": {
       "title": "部署和保护高级智能体AI系统",
@@ -313,14 +328,20 @@
       "objective5": "Apply knowledge in hands-on simulation labs.",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "Introduction & Course Overview",
-      "scheduleDay1Item2": "Agentic AI Deployment Strategies",
+      "scheduleDay1Item2": "代理人工智能部署策略\n|||分割|||\n安全与合规性\n|||分割|||\n先进的集成技术\n|||分割|||\n第二天\n|||分割|||\n模拟实验室\n|||分割|||\n部署策略研讨会\n|||分割|||\n手动故障排除\n|||分割|||\n小组演讲和专家反馈\n|||分割|||\n待定\n|||分割|||\n30 小时（2 节）\n|||分割|||\n为期 2 天的研讨会 1,800 新元\n|||分割|||\n少于 8 人 – S$11,000\n|||分割|||\n8 至 15 人 – S$12,000\n|||分割|||\nJCube 学院和元技能学院\n|||分割|||\n由与跨国公司和政府机构合作开展现有数据科学和人工智能项目的新加坡顶尖数据科学家授课。该项目由数据科学、人工智能、机器学习和深度学习领域的行业领导者独特设计。\n|||分割|||\n分 2 个区块进行——每个区块涵盖 2 个工作日晚上（晚上 7 点至晚上 10.30）和一个完整的周六（上午 9 点至下午 6 点）。总培训时数：30小时。\n|||分割|||\n学习数据分析的基本 Python 编程技术。\n|||分割|||\n学习基本的数据整理技术 - 导入、检查、清理、合并和转换数据。\n|||分割|||\n了解如何通过可视化来呈现数据和见解。\n|||分割|||\n将所有学到的技术应用于现实世界的数据集和用例。\n|||分割|||\n使用 Python 执行基本的数据分析师技术\n|||分割|||\n使用数据做出更好、更明智的业务决策\n|||分割|||\n从数据中识别业务风险\n|||分割|||\n分析流程数据并生成建议\n|||分割|||\n使用适当的可视化技术呈现研究结果\n|||分割|||\n第 1 节（15 小时）\n|||分割|||\n第一类：工作日晚上\n|||分割|||\n第二课：工作日晚上\n|||分割|||\n第三课：全周六\n|||分割|||\n第 2 节（15 小时）\n|||分割|||\n第一类：工作日晚上\n|||分割|||\n第二课：工作日晚上\n|||分割|||\n第三课：全周六\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n30 小时（2 节）\n|||分割|||\n联系定价\n|||分割|||\n联系公司了解价格\n|||分割|||\n联系团体价格\n|||分割|||\nJCube 学院和元技能学院\n|||分割|||\n认证数据分析师计划为您提供从复杂数据集中提取见解所需的分析技能和工具。该认证在新加坡和东盟得到认可。\n|||分割|||\n一个综合性的项目，将理论基础与使用真实世界数据集的实践项目相结合。\n|||分割|||\n掌握数据整理、清理和转换技术。\n|||分割|||\n培养统计分析和假设检验的熟练程度。\n|||分割|||\n创建引人注目的数据可视化和仪表板。\n|||分割|||\n将机器学习基础知识应用于现实世界的业务问题。\n|||分割|||\n获得 JCube Institute 的行业认可的认证。\n|||分割|||\n程序结构\n|||分割|||\n模块化学习，灵活安排\n|||分割|||\n实践实验室课程\n|||分割|||\n顶点项目和同行评审\n|||分割|||\n认证考试\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n联系定价\n|||分割|||\n联系公司了解价格\n|||分割|||\n联系团体价格\n|||分割|||\nJCube 学院和元技能学院\n|||分割|||\n认证数据科学家计划通过先进的机器学习、深度学习和人工智能技术将您的技能提升到一个新的水平。\n|||分割|||\n将先进理论概念与行业级项目相结合的强化课程。\n|||分割|||\n构建和部署高级机器学习和深度学习模型。\n|||分割|||\n掌握特征工程和模型优化技术。\n|||分割|||\n实施端到端数据科学管道。\n|||分割|||\n处理非结构化数据，包括文本、图像和时间序列。\n|||分割|||\n获得行业认可的数据科学家认证。\n|||分割|||\n程序结构\n|||分割|||\n高级模块化学习块",
       "scheduleDay1Item3": "Security & Compliance",
       "scheduleDay1Item4": "Advanced Integration Techniques",
       "scheduleDay2": "Day 2",
       "scheduleDay2Item1": "Simulation Lab",
       "scheduleDay2Item2": "Deployment Strategy Workshop",
       "scheduleDay2Item3": "Hands-On Troubleshooting",
-      "scheduleDay2Item4": "Group Presentations & Expert Feedback"
+      "scheduleDay2Item4": "Group Presentations & Expert Feedback",
+      "nextRunDate": "TBC",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "S$1,800 for 2-day workshop",
+      "feesCorporateSmall": "Less than 8 pax – S$11,000",
+      "feesCorporateLarge": "8 to 15 pax – S$12,000",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "pythonDataAnalytics": {
       "title": "Python数据分析编程",
@@ -344,7 +365,13 @@
       "scheduleDay2": "Session 2 (15 hours)",
       "scheduleDay2Item1": "Class 1: Weekday evening",
       "scheduleDay2Item2": "Class 2: Weekday evening",
-      "scheduleDay2Item3": "Class 3: Full Saturday"
+      "scheduleDay2Item3": "Class 3: Full Saturday",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "30 hours (2 Sessions)",
+      "feesSelfSponsored": "Contact for pricing",
+      "feesCorporateSmall": "Contact for corporate rates",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "certifiedDataAnalyst": {
       "title": "认证数据分析师 — JCube学院",
@@ -361,7 +388,13 @@
       "scheduleDay1Item1": "Modular learning with flexible scheduling",
       "scheduleDay1Item2": "Hands-on lab sessions",
       "scheduleDay1Item3": "Capstone project and peer review",
-      "scheduleDay1Item4": "Certification examination"
+      "scheduleDay1Item4": "Certification examination",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "Contact for pricing",
+      "feesCorporateSmall": "Contact for corporate rates",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "certifiedDataScientist": {
       "title": "认证数据科学家 — JCube学院",
@@ -376,9 +409,15 @@
       "objective5": "Earn an industry-recognised Data Scientist certification.",
       "scheduleDay1": "Programme Structure",
       "scheduleDay1Item1": "Advanced modular learning blocks",
-      "scheduleDay1Item2": "Industry mentorship sessions",
+      "scheduleDay1Item2": "行业指导会议\n|||分割|||\n投资组合开发和审查\n|||分割|||\n认证考试及答辩\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n联系定价\n|||分割|||\n联系公司了解价格\n|||分割|||\n联系团体价格\n|||分割|||\nJCube 学院和元技能学院\n|||分割|||\n大多数顶级投资者不会透露他们的投资秘密，但多年来通过精明的投资策略充分获利后，我们的专家决定向更广泛的社区释放他们的知识和技能，以便更多人能够从随着技术进步而出现的令人兴奋的新市场中受益。\n\n本课程旨在教您在世界上最受欢迎的交易平台 Meta Trader 4 (MT4) 上进行交易的要点，并使用您熟悉的策略或算法进行自动交易，并学习管理风险以产生持续的收入。\n\n算法交易，也称为“自动交易”或“系统交易”，使用 MetaTrader 4/5 等电子平台通过算法输入交易订单。算法交易的主要好处是它不会根据情绪做出决策。它还可以帮助您进行更多交易，因为您不受坐在电脑前手动输入订单的能力的限制。值得注意的是，存在相关风险，但所有这些风险都可以在这门独特的课程中得到缓解和实践教学。现在就开始赚取被动且可持续的收入！\n|||分割|||\n在课外进行全面的实践指导。课程均在我们的 CT Hub 场地进行。班级规模有上限，以增强学生的学习体验。 3个晚上（晚上7点至晚上10点），总共9小时。\n|||分割|||\n任何刚刚起步并希望开启金融交易之旅并开始使用交易机器人赚取被动收入的有抱负的交易者。\n|||分割|||\n任何想要了解 EA 交易的人都可以使用 MT4 最大的 MT4 交易机器人、技术指标、面板、库、分析器在线商店。\n|||分割|||\n无需任何交易经验。本 MetaTrader 课程专为刚刚开始交易的交易者或从未使用过 MetaTrader 4 的交易者而设计。\n|||分割|||\n评估您的个人交易资料\n|||分割|||\nMT4 交易平台上外汇、黄金和加密货币市场的市场概况\n|||分割|||\n选择合适的 MT4 经纪商\n|||分割|||\n杠杆的力量、复利和预期支出的概念\n|||分割|||\nMT4 平台交易的金融机制\n|||分割|||\n交易的风险和回报\n|||分割|||\n不同的时间范围和相关的交易风格\n|||分割|||\n时机、有利因素、正确心态交易框架\n|||分割|||\n最佳交易时间和交易范围\n|||分割|||\n通过指标、模板和设置设置交易环境以获得高成功率\n|||分割|||\n如何用300美元获得稳定的收入\n|||分割|||\n交易心理\n|||分割|||\n自动交易或使用 Expert Advisor 进行交易\n|||分割|||\n免费资源寻找新工具、交易策略、专家顾问和指标\n|||分割|||\n用他人资金进行交易——自营贸易公司\n|||分割|||\n设置 VPS 进行 24X7 交易\n|||分割|||\n晚上 1\n|||分割|||\n个人交易概况评估\n|||分割|||\n外汇、黄金和加密货币的市场概况\n|||分割|||\n选择合适的 MT4 经纪商\n|||分割|||\n杠杆和复利的力量\n|||分割|||\n晚上2\n|||分割|||\nMT4 交易的金融机制\n|||分割|||\n交易的风险和回报\n|||分割|||\n不同的时间框架和交易风格\n|||分割|||\n交易框架和最佳交易时间\n|||分割|||\n晚上 3\n|||分割|||\n设置交易环境以获得高成功率\n|||分割|||\n使用 EA 进行自动交易\n|||分割|||\n设置 VPS 进行 24X7 交易\n|||分割|||\n交易心理和资源",
       "scheduleDay1Item3": "Portfolio development and review",
-      "scheduleDay1Item4": "Certification examination and defence"
+      "scheduleDay1Item4": "Certification examination and defence",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "Contact for pricing",
+      "feesCorporateSmall": "Contact for corporate rates",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "algoTradingL1": {
       "title": "非专业人士金融市场算法交易精通 — 第1级",
@@ -419,7 +458,13 @@
       "scheduleDay3Item1": "Setup trading environment for high success rates",
       "scheduleDay3Item2": "Auto trading with Expert Advisors",
       "scheduleDay3Item3": "Setup VPS to trade 24X7",
-      "scheduleDay3Item4": "Trading psychology and resources"
+      "scheduleDay3Item4": "Trading psychology and resources",
+      "nextRunDate": "第 11 轮比赛 – 报名开放\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\nSGD $2,750（补贴前全额费用）\n|||分割|||\nJCube 学院学生/校友特价\n|||分割|||\nMINDEF CDA 校友和 MSI 会员可享受特价\n|||分割|||\nJCube 学院和元技能学院\n|||分割|||\n这个高级程序以第 1 级为基础，带您更深入地了解算法交易的世界。大多数顶级投资者不会透露他们的投资秘密，但多年来通过精明的投资策略充分获利后，我们的专家决定向更广泛的社区释放他们的知识和技能。\n\n本课程旨在教您在世界上最受欢迎的交易平台 Meta Trader 4 (MT4) 上进行交易的要点，并使用您熟悉的策略或算法进行自动交易，并学习管理风险以产生持续的收入。\n\n完成课程的参与者将有资格参加 Metaskills Institute 竞赛，最高奖金为 100 美元，安慰奖为 50 美元 x 2。\n|||分割|||\n与 JCube Institute 联合提供（现场课程）。课程均在我们的 CT Hub 场地进行。班级规模有上限，以增强学生的学习体验。 3个晚上（晚上7点至晚上10点），总共9小时。\n|||分割|||\n任何想要将算法交易技能提升到 1 级以上的有抱负的交易者。\n|||分割|||\n任何想要学习高级 EA 策略、回溯测试和优化的人。\n|||分割|||\n先决条件：参与者必须完成算法交易精通级别 1。\n|||分割|||\n回溯测试 – 了解如何检查交易策略的有效性\n|||分割|||\n优化每个策略的参数\n|||分割|||\n获取市场上十个最赚钱的 EA 并在您的 VPS 中进行设置\n|||分割|||\nEA 开发者采用的常见策略\n|||分割|||\n设置 VPS 以优化交易性能的实用知识\n|||分割|||\n培训师开发的 2 个免费 EA：FXV-Avalanche 和 FXV-Z-Scalper\n|||分割|||\n自营贸易公司并通过他们的评估，为您的贸易生涯提供资金\n|||分割|||\n晚上 1\n|||分割|||\n回测基础知识\n|||分割|||\n检查交易策略的有效性\n|||分割|||\n参数优化技术\n|||分割|||\n晚上2\n|||分割|||\n市场上 10 名最赚钱的 EA\n|||分割|||\nEA 开发人员采用的常见策略\n|||分割|||\nVPS 设置以获得最佳交易性能\n|||分割|||\n晚上 3\n|||分割|||\n自营贸易公司和资金评估\n|||分割|||\n免费专有 EA：FXV-Avalanche 和 FXV-Z-Scalper\n|||分割|||\n竞赛简介和后续步骤\n|||分割|||\n第 4 轮比赛 – 报名开放\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\nSGD $3,500（补贴前全额费用）\n|||分割|||\nJCube 学院学生/校友和 MSI L1 学生 2,250 新元\n|||分割|||\n联系团体价格\n|||分割|||\nJCube 学院和元技能学院\n|||分割|||\n本课程描绘了当前的情况：人工智能代理是什么，它们与传统自动化有何不同，存在哪些无代码和低代码平台，组织如何部署代理进行调度、报告、知识管理和决策支持，以及新兴趋势是什么（多代理系统、个人人工智能助理、代理安全）。\n|||分割|||\n为期一天的研讨会，包括现场演示、实践练习和指导学习路径评估。\n|||分割|||\n了解人工智能代理是什么以及它们与传统自动化有何不同。\n|||分割|||\n探索无代码和低代码人工智能平台。\n|||分割|||\n查看领先代理平台的现场演示。\n|||分割|||\n亲自构建一个简单的自动化工作流程。\n|||分割|||\n找出哪些课程符合您的角色和目标。\n|||分割|||\n第一天\n|||分割|||\nAI 代理前景概述\n|||分割|||\n现场平台演示",
+      "duration": "1 Day",
+      "feesSelfSponsored": "SGD $2,750 (Full Fee Before Subsidies)",
+      "feesCorporateSmall": "Special rates for JCube Institute Students/Alumni",
+      "feesCorporateLarge": "Special rates for MINDEF CDA Alumni and MSI Members",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "algoTradingL2": {
       "title": "非专业人士金融市场算法交易精通 — 第2级",
@@ -448,7 +493,13 @@
       "scheduleDay3": "Evening 3",
       "scheduleDay3Item1": "Proprietary trading companies and funding assessment",
       "scheduleDay3Item2": "Free proprietary EAs: FXV-Avalanche and FXV-Z-Scalper",
-      "scheduleDay3Item3": "Competition briefing and next steps"
+      "scheduleDay3Item3": "Competition briefing and next steps",
+      "nextRunDate": "Run 4 – Registration Open\nContact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "SGD $3,500 (Full Fee Before Subsidies)",
+      "feesCorporateSmall": "SGD $2,250 for JCube Institute Students/Alumni & MSI L1 Students",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "JCube Institute & Metaskills Institute"
     },
     "riseAiAgents": {
       "title": "2026年AI智能体崛起：用智能AI系统实现全面自动化",
@@ -464,8 +515,13 @@
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "AI agent landscape overview",
       "scheduleDay1Item2": "Live platform demonstrations",
-      "scheduleDay1Item3": "Hands-on workflow building",
-      "scheduleDay1Item4": "Learning path planning"
+      "scheduleDay1Item3": "动手构建工作流程\n|||分割|||\n学习路径规划\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n学习使用 n8n 视觉自动化平台创建代理 AI 工作流程。通过连接节点、集成 API 和嵌入 AI 代理节点来创建工作流程 - 所有这些都通过拖放操作。\n|||分割|||\n使用 n8n 视觉自动化平台的为期一天的实践研讨会。\n|||分割|||\n使用 n8n 视觉自动化平台构建工作流程。\n|||分割|||\n连接节点、集成 API、嵌入 AI 代理节点。\n|||分割|||\n测试、调试和部署功能工作流程。\n|||分割|||\n掌握拖放工作流程构建。\n|||分割|||\n无需编码即可创建生产就绪的自动化。\n|||分割|||\n第一天\n|||分割|||\nn8n 平台基础知识\n|||分割|||\n节点连接和API集成\n|||分割|||\nAI代理节点嵌入\n|||分割|||\n测试、调试和部署\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n用简单的语言描述所需的自动化，通过人工智能生成工作流程配置，验证输出，并迭代完善直到生产就绪。\n|||分割|||\n为期一天的研讨会，重点关注自然语言驱动的工作流程生成。\n|||分割|||\n使用 LLM 从自然语言生成 n8n 工作流程。\n|||分割|||\n用简单的语言描述自动化并验证人工智能生成的输出。\n|||分割|||\n迭代地完善工作流程，直到生产就绪。\n|||分割|||\n了解提示到工作流程的转换。\n|||分割|||\n自信地部署人工智能设计的自动化。\n|||分割|||\n第一天\n|||分割|||\n自然语言工作流程生成\n|||分割|||\nAI驱动的配置创建\n|||分割|||\n输出验证和细化\n|||分割|||\n生产部署\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n使用 AI 编码代理构建操作相关的工具（数据管道、报告生成器、仪表板）。遵循结构化的五层方法：定义目标、提供组织背景、设定界限、编写清晰的指示并吸取经验教训。\n|||分割|||\n为期一天的实践研讨会，利用人工智能编码代理构建真实的操作工具。\n|||分割|||\n使用 AI 代理构建数据管道、报告生成器和仪表板。\n|||分割|||\n遵循结构化五层方法以获得可靠的输出。\n|||分割|||\n超越反复试验，转向生产质量的人工智能编码。\n|||分割|||\n为 AI 编码代理提供组织背景。\n|||分割|||\n吸取并应用经验教训以持续改进。\n|||分割|||\n第一天\n|||分割|||\n五层方法论\n|||分割|||\n数据管道建设\n|||分割|||\n报告生成器和仪表板构建\n|||分割|||\n质量保证和部署\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n实践介绍轻量级开源个人人工智能代理框架（nanobot、zeroclaw、picoclaw）。安装、配置和自定义个人 AI 代理。涵盖消息传递集成、自定义技能和安全风险管理。\n|||分割|||\n为期一天的实践研讨会，构建和部署个人人工智能代理。\n|||分割|||\n使用开源 AI 代理框架。\n|||分割|||\n在普通硬件上安装和配置个人人工智能代理。\n|||分割|||\n集成消息传递平台和自定义技能。\n|||分割|||\n管理个人人工智能代理的安全风险。\n|||分割|||\n根据您的特定需求自定义代理行为。\n|||分割|||\n第一天\n|||分割|||\n框架概述和安装",
+      "scheduleDay1Item4": "Learning path planning",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiNoCode": {
       "title": "零代码构建AI工作流（2026版）",
@@ -482,7 +538,12 @@
       "scheduleDay1Item1": "n8n platform fundamentals",
       "scheduleDay1Item2": "Node connections and API integration",
       "scheduleDay1Item3": "AI agent node embedding",
-      "scheduleDay1Item4": "Testing, debugging, and deployment"
+      "scheduleDay1Item4": "Testing, debugging, and deployment",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "designAiPlainLang": {
       "title": "用自然语言设计AI自动化（2026版）",
@@ -499,7 +560,12 @@
       "scheduleDay1Item1": "Natural language workflow generation",
       "scheduleDay1Item2": "AI-driven configuration creation",
       "scheduleDay1Item3": "Output validation and refinement",
-      "scheduleDay1Item4": "Production deployment"
+      "scheduleDay1Item4": "Production deployment",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildOpTools": {
       "title": "用AI编码智能体构建运营工具（2026版）",
@@ -516,7 +582,12 @@
       "scheduleDay1Item1": "Five-layer approach methodology",
       "scheduleDay1Item2": "Data pipeline construction",
       "scheduleDay1Item3": "Report generator and dashboard building",
-      "scheduleDay1Item4": "Quality assurance and deployment"
+      "scheduleDay1Item4": "Quality assurance and deployment",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiAssistant": {
       "title": "构建你的专属AI助手/智能体（2026版）",
@@ -531,9 +602,14 @@
       "objective5": "Customise agent behaviour for your specific needs.",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "Framework overview and installation",
-      "scheduleDay1Item2": "Configuration and customisation",
+      "scheduleDay1Item2": "配置和定制\n|||分割|||\n消息集成和自定义技能\n|||分割|||\n安全和风险管理\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n从单位文档（SOP、政策、事后审查）构建可搜索的人工智能知识系统。使用 NotebookLM 和 Gemini 上传、构建和索引内容。专注于上下文工程、组块策略和减少幻觉的操作知识检索。\n|||分割|||\n为期一天的研讨会，重点关注构建人工智能知识管理系统。\n|||分割|||\n从组织文档构建人工智能知识系统。\n|||分割|||\n使用 NotebookLM 和 Gemini 上传、构建和索引内容。\n|||分割|||\n应用上下文工程和分块策略。\n|||分割|||\n通过适当的知识检索减少幻觉。\n|||分割|||\n创建可搜索的人工智能驱动的知识库。\n|||分割|||\n第一天\n|||分割|||\n文档上传和构建\n|||分割|||\nNotebookLM 和 Gemini 集成\n|||分割|||\n上下文工程和分块\n|||分割|||\n知识检索和测试\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n涵盖即时注入、数据泄露、权限升级和意外的自主操作。包括针对示例工作流程的红队练习以及起草治理策略。\n|||分割|||\n为期一天的研讨会，结合了威胁分析、红队练习和治理政策制定。\n|||分割|||\n识别代理人工智能系统的主要威胁。\n|||分割|||\n了解提示注入、数据泄露和权限升级。\n|||分割|||\n针对示例工作流程进行红队练习。\n|||分割|||\n起草人工智能代理部署的治理政策。\n|||分割|||\n实施自主系统的防御策略。\n|||分割|||\n第一天\n|||分割|||\n代理人工智能的威胁格局\n|||分割|||\n红队演习\n|||分割|||\n防御策略和实施\n|||分割|||\n治理政策起草\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n适用于 L&D 专业人员和培训官员。使用 Gemini 和 NotebookLM 创建课程计划、大纲、细则和自定义 Gems。课程材料的基于来源的研究和内容合成。\n|||分割|||\n为 L&D 专业人员举办的为期一天的人工智能培训设计研讨会。\n|||分割|||\n使用 Gemini 和 NotebookLM 进行课程开发。\n|||分割|||\n使用 AI 创建课程计划、大纲和细则。\n|||分割|||\n为培训应用程序构建自定义 Gems。\n|||分割|||\n进行基于来源的研究和内容合成。\n|||分割|||\n高效设计综合课程材料。\n|||分割|||\n第一天\n|||分割|||\n面向 L&D 专业人员的 AI 工具\n|||分割|||\n课程计划和标题创建\n|||分割|||\n定制宝石开发\n|||分割|||\n内容综合和审查\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n对于 L&D 专业人士。使用 Gems、NotebookLM 和聊天机器人原型设计工具构建自定义 AI 导师和自适应学习路径。涵盖本地部署与云部署、安全性和扩展策略。\n|||分割|||\n为 L&D 专业人士举办的为期一天的研讨会，内容涉及构建自适应人工智能导师。\n|||分割|||\n构建具有自适应学习路径的定制人工智能导师。\n|||分割|||\n使用 Gems、NotebookLM 和聊天机器人原型设计工具。\n|||分割|||\n评估本地部署与云部署选项。\n|||分割|||\n实施学习人工智能系统的安全措施。",
       "scheduleDay1Item3": "Messaging integration and custom skills",
-      "scheduleDay1Item4": "Security and risk management"
+      "scheduleDay1Item4": "Security and risk management",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "gptKnowledgeBase": {
       "title": "如何用GPT构建组织知识库（2026版）",
@@ -550,7 +626,12 @@
       "scheduleDay1Item1": "Document upload and structuring",
       "scheduleDay1Item2": "NotebookLM and Gemini integration",
       "scheduleDay1Item3": "Context engineering and chunking",
-      "scheduleDay1Item4": "Knowledge retrieval and testing"
+      "scheduleDay1Item4": "Knowledge retrieval and testing",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "secureAgenticInfra": {
       "title": "保护智能体AI基础设施：威胁、防御与治理（2026版）",
@@ -567,7 +648,12 @@
       "scheduleDay1Item1": "Threat landscape for agentic AI",
       "scheduleDay1Item2": "Red-team exercise",
       "scheduleDay1Item3": "Defence strategies and implementation",
-      "scheduleDay1Item4": "Governance policy drafting"
+      "scheduleDay1Item4": "Governance policy drafting",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiTrainingDesign": {
       "title": "使用AI进行培训设计和课程开发（2026版）",
@@ -584,7 +670,12 @@
       "scheduleDay1Item1": "AI tools for L&D professionals",
       "scheduleDay1Item2": "Lesson plan and rubric creation",
       "scheduleDay1Item3": "Custom Gems development",
-      "scheduleDay1Item4": "Content synthesis and review"
+      "scheduleDay1Item4": "Content synthesis and review",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiTutors": {
       "title": "构建适应学生学习路径的强大AI导师（2026版）",
@@ -596,12 +687,17 @@
       "objective2": "Use Gems, NotebookLM, and chatbot prototyping tools.",
       "objective3": "Evaluate on-premise vs. cloud deployment options.",
       "objective4": "Implement security measures for learning AI systems.",
-      "objective5": "Scale AI tutors for organisational learning environments.",
+      "objective5": "为组织学习环境扩展人工智能导师。\n|||分割|||\n第一天\n|||分割|||\nAI导师架构与设计\n|||分割|||\n适应性学习路径创建\n|||分割|||\n部署选项和安全性\n|||分割|||\n扩展策略和审查\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n涵盖基础知识（CIA 三元组、零信任、风险管理）、当前威胁形势、关键角色（SOC 分析师、笔测试员、取证调查员、AI 安全专家）以及主要认证途径（Security+、CySA+、SecAI、CEH、CHFI）。参与者构建个性化的 12 至 24 个月认证路线图。\n|||分割|||\n为期一天的综合研讨会，涵盖网络安全基础知识、职业角色和认证规划。\n|||分割|||\n了解网络安全基础知识，包括 CIA 三合会和零信任。\n|||分割|||\n应对当前的威胁形势。\n|||分割|||\n探索关键的网络安全角色和职业道路。\n|||分割|||\n绘制主要认证途径（Security+、CySA+、CEH、CHFI）。\n|||分割|||\n制定个性化的 12-24 个月认证路线图。\n|||分割|||\n第一天\n|||分割|||\n网络安全基础知识\n|||分割|||\n威胁态势概述\n|||分割|||\n角色和职业道路\n|||分割|||\n认证路线图规划\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n上午的课程以通俗易懂的语言介绍了人工智能基础知识——人工智能能做什么、不能做什么、生成式人工智能如何工作、真正的国防和政府用例，以及领导者必须管理的道德风险。下午是实践策略练习：团队确定真正的挑战，评估人工智能是否可以提供帮助，并制定包含里程碑、资源需求和风险缓解的实用路线图。\n|||分割|||\n为期一天的战略研讨会将人工智能基础知识与实践路线图开发相结合。无需技术背景。\n|||分割|||\n用通俗易懂的语言了解人工智能基础知识。\n|||分割|||\n评估真实的国防和政府人工智能用例。\n|||分割|||\n确定人工智能可以提供价值的挑战。\n|||分割|||\n制定实用的人工智能采用路线图。\n|||分割|||\n管理道德风险和资源需求。\n|||分割|||\n第一天\n|||分割|||\n领导者的人工智能基础知识\n|||分割|||\n现实世界的用例和道德规范\n|||分割|||\n策略练习：挑战识别\n|||分割|||\n路线图制定和演示\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n当人工智能系统处理采购请求、分类维护票据或起草运营通信时，如果出现问题，谁负责？本研讨会通过现实场景讨论问责制。学会将必须由人类做出的决策与人工智能可以处理的任务分开，并设计以运行速度运行的监督模型。\n|||分割|||\n为期一天的研讨会，包含现实场景和设计问责模型的小组练习。无需技术背景。\n|||分割|||\n将人类负责的决策与人工智能委托的任务分开。\n|||分割|||\n设计以运行速度运行的监督模型。\n|||分割|||\n确定人类判断在哪些方面仍然不可替代。\n|||分割|||\n为您所在单位的人工智能使用建立问责模型。\n|||分割|||\n当前和同行评审问责框架。\n|||分割|||\n第一天\n|||分割|||\n人工智能的问责框架\n|||分割|||\n现实场景分析\n|||分割|||\n小组练习：问责模型设计\n|||分割|||\n同行评审和演示\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "AI tutor architecture and design",
       "scheduleDay1Item2": "Adaptive learning pathway creation",
       "scheduleDay1Item3": "Deployment options and security",
-      "scheduleDay1Item4": "Scaling strategies and review"
+      "scheduleDay1Item4": "Scaling strategies and review",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "cyberRolesThreats": {
       "title": "网络安全：角色、威胁与认证路径",
@@ -618,7 +714,12 @@
       "scheduleDay1Item1": "Cybersecurity fundamentals",
       "scheduleDay1Item2": "Threat landscape overview",
       "scheduleDay1Item3": "Roles and career pathways",
-      "scheduleDay1Item4": "Certification roadmap planning"
+      "scheduleDay1Item4": "Certification roadmap planning",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiStrategyLeaders": {
       "title": "领导者的AI战略与路线图",
@@ -635,7 +736,12 @@
       "scheduleDay1Item1": "AI fundamentals for leaders",
       "scheduleDay1Item2": "Real-world use cases and ethics",
       "scheduleDay1Item3": "Strategy exercise: challenge identification",
-      "scheduleDay1Item4": "Roadmap development and presentation"
+      "scheduleDay1Item4": "Roadmap development and presentation",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiAccountability": {
       "title": "AI做决定时谁负责？",
@@ -652,7 +758,12 @@
       "scheduleDay1Item1": "Accountability frameworks for AI",
       "scheduleDay1Item2": "Realistic scenario analysis",
       "scheduleDay1Item3": "Group exercise: accountability model design",
-      "scheduleDay1Item4": "Peer review and presentation"
+      "scheduleDay1Item4": "Peer review and presentation",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n学习为人工智能代理可以做什么和不可以做什么设定明确的界限（支出限制、数据访问、通信权限、时间窗口），根据风险和任务关键性分配自主级别，并通过权限链追溯任何人工智能操作。\n|||分割|||\n为期一天的关于人工智能代理治理和边界设计练习的研讨会。无需技术背景。\n|||分割|||\n为人工智能代理的权限和自主权设定明确的界限。\n|||分割|||\n根据风险和任务关键性分配自主级别。\n|||分割|||\n建立审计跟踪，将人工智能行为追溯到人类权威。\n|||分割|||\n为现实的代理场景设计边界框架。\n|||分割|||\n处理代理人超越权限的情况。\n|||分割|||\n第一天\n|||分割|||\nAI代理边界设置\n|||分割|||\n自主级别和风险评估\n|||分割|||\n审计追踪设计\n|||分割|||\n边界场景练习\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n团队构建一个战略场景，然后使用人工智能生成选项、挑战假设并模拟每个决策点的对抗性反应。该练习整合了治理：在游戏开始之前，团队定义人工智能顾问可以做什么和不允许做什么，在游戏结束后，他们评估人工智能是否在范围内。\n|||分割|||\n为期一天的兵棋推演实践练习，将人工智能决策与治理评估相结合。无需技术背景。\n|||分割|||\n在兵棋推演中使用人工智能工具作为分析顾问。\n|||分割|||\n构建战略场景并生成人工智能驱动的选项。\n|||分割|||\n挑战假设并模拟对抗性反应。\n|||分割|||\n定义并实施人工智能顾问护栏。\n|||分割|||\n根据治理边界评估人工智能行为。\n|||分割|||\n第一天\n|||分割|||\n战略场景构建\n|||分割|||\nAI顾问护栏定义\n|||分割|||\n与人工智能顾问进行兵棋推演\n|||分割|||\n治理评估和汇报\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天\n|||分割|||\n每个研讨会 6,000 新元（最多 15 人）\n|||分割|||\n6,000 新元/次\n|||分割|||\n6,000 新元/次\n|||分割|||\n为期 4 天的强化基础课程，涵盖所有主要网络安全认证共享的核心知识：威胁态势、网络安全、系统强化、事件响应和风险管理。完成 MCC+ 后，参与者每个认证选修课只需额外 1 天，而不是每次 4-5 天。\n|||分割|||\n为期 4 天的强化计划，巩固与 CompTIA 和 EC-Council 领域一致的共享网络安全基础。\n|||分割|||\n掌握所有主要认证的核心网络安全知识。\n|||分割|||\n了解威胁形势、网络安全和系统强化。\n|||分割|||\n了解事件响应和风险管理基础知识。\n|||分割|||\n准备 Security+、CySA+、CEH 和 CHFI 认证。\n|||分割|||\n通过综合基础课程节省培训时间。\n|||分割|||\n第 1-2 天\n|||分割|||\n威胁态势和网络安全\n|||分割|||\n系统强化基础\n|||分割|||\n第 3-4 天\n|||分割|||\n事件响应程序\n|||分割|||\n风险管理与合规\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n4 天\n|||分割|||\n每人 3,200 新元（最少 5 人，最多 15 人）\n|||分割|||\n3,200 新元/人\n|||分割|||\n3,200 新元/人\n|||分割|||\n建立在 MCC+ 基础上，涵盖安全架构、IAM、网络监控和特定于 Security+ 考试的操作控制。需要完成 MCC+。\n|||分割|||\n为期 1 天的 MCC+ 基础强化选修课。需要完成 MCC+。\n|||分割|||\n掌握安全+特定域。\n|||分割|||\n了解安全架构和 IAM。",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "governingAiAgents": {
       "title": "治理AI智能体：信任、边界与审计追踪",
@@ -669,7 +780,12 @@
       "scheduleDay1Item1": "AI agent boundary setting",
       "scheduleDay1Item2": "Autonomy levels and risk assessment",
       "scheduleDay1Item3": "Audit trail design",
-      "scheduleDay1Item4": "Boundary scenario exercises"
+      "scheduleDay1Item4": "Boundary scenario exercises",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiWargaming": {
       "title": "AI兵棋推演：在决策生效前测试",
@@ -686,7 +802,12 @@
       "scheduleDay1Item1": "Strategic scenario construction",
       "scheduleDay1Item2": "AI advisor guardrail definition",
       "scheduleDay1Item3": "Wargaming exercise with AI advisors",
-      "scheduleDay1Item4": "Governance evaluation and debrief"
+      "scheduleDay1Item4": "Governance evaluation and debrief",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day",
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "mccFoundation": {
       "title": "MSI CyberCore+（MCC+）网络防御基础",
@@ -704,7 +825,12 @@
       "scheduleDay1Item2": "System hardening fundamentals",
       "scheduleDay2": "Day 3–4",
       "scheduleDay2Item1": "Incident response procedures",
-      "scheduleDay2Item2": "Risk management and compliance"
+      "scheduleDay2Item2": "Risk management and compliance",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "4 Days",
+      "feesSelfSponsored": "S$3,200 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$3,200/pax",
+      "feesCorporateLarge": "S$3,200/pax"
     },
     "mccSecurityOps": {
       "title": "MCC+ 安全运营（对齐CompTIA Security+）",
@@ -714,14 +840,19 @@
       "courseDesign": "Intensive 1-day elective building on MCC+ foundation. Requires MCC+ completion.",
       "objective1": "Master Security+ specific domains.",
       "objective2": "Understand security architecture and IAM.",
-      "objective3": "Implement network monitoring and operational controls.",
+      "objective3": "实施网络监控和运营控制。\n|||分割|||\n准备 CompTIA Security+ 考试。\n|||分割|||\n将安全运营概念应用于实践。\n|||分割|||\n第一天\n|||分割|||\n安全架构\n|||分割|||\nIAM 和访问控制\n|||分割|||\n网络监控\n|||分割|||\n操作安全控制\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天附加项目\n|||分割|||\n每人 1,800 新元（最少 5 人，最多 15 人）\n|||分割|||\n1,800 新元/人\n|||分割|||\n1,800 新元/人\n|||分割|||\n基于 MCC+ 基础构建，涵盖威胁检测、日志分析、行为分析和用于识别高级威胁的 SOC 工作流程。需要完成 MCC+。\n|||分割|||\n为期 1 天的 MCC+ 基础强化选修课。需要完成 MCC+。\n|||分割|||\n掌握威胁检测和日志分析。\n|||分割|||\n应用行为分析进行威胁搜寻。\n|||分割|||\n实施 SOC 工作流程以进行高级威胁识别。\n|||分割|||\n准备 CompTIA CySA+ 考试。\n|||分割|||\n打造蓝队运营能力。\n|||分割|||\n第一天\n|||分割|||\n威胁检测基础知识\n|||分割|||\n日志分析和行为分析\n|||分割|||\nSOC 工作流程\n|||分割|||\n高级威胁识别\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天附加项目\n|||分割|||\n每人 1,800 新元（最少 5 人，最多 15 人）\n|||分割|||\n1,800 新元/人\n|||分割|||\n1,800 新元/人\n|||分割|||\n以 MCC+ 为基础，涵盖道德黑客方法：侦察、扫描、枚举、漏洞评估和基本利用技术。需要完成 MCC+。\n|||分割|||\n为期 1 天的 MCC+ 基础强化选修课。需要完成 MCC+。\n|||分割|||\n了解道德黑客方法。\n|||分割|||\n进行侦察和扫描。\n|||分割|||\n执行枚举和漏洞评估。\n|||分割|||\n应用基本的开发技术。\n|||分割|||\n准备 EC 理事会 CEH 考试。\n|||分割|||\n第一天\n|||分割|||\n勘察和扫描\n|||分割|||\n枚举技术\n|||分割|||\n漏洞评估\n|||分割|||\n基本利用方法\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天附加项目\n|||分割|||\n每人 3,000 新元（最少 5 人，最多 15 人）\n|||分割|||\n3,000 新元/人\n|||分割|||\n3,000 新元/人\n|||分割|||\n以 MCC+ 为基础，涵盖数字证据收集、法证调查、监管链文档和事件重建。需要完成 MCC+。\n|||分割|||\n为期 1 天的 MCC+ 基础强化选修课。需要完成 MCC+。\n|||分割|||\n掌握数字证据收集技术。\n|||分割|||\n进行法医调查。\n|||分割|||\n正确记录监管链。\n|||分割|||\n从数字证据重建事件。\n|||分割|||\n准备 EC 理事会 CHFI 考试。\n|||分割|||\n第一天\n|||分割|||\n数字证据收集\n|||分割|||\n法医调查程序\n|||分割|||\n监管链文档\n|||分割|||\n事件重建\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天附加项目\n|||分割|||\n每人 3,000 新元（最少 5 人，最多 15 人）\n|||分割|||\n3,000 新元/人\n|||分割|||\n3,000 新元/人\n|||分割|||\n基于 MCC+ 基础构建，涵盖 AI 特定威胁（对抗性攻击、数据中毒、模型盗窃）、AI 安全生命周期以及自主 AI 系统的防御策略。需要完成 MCC+。\n|||分割|||\n为期 1 天的 MCC+ 基础强化选修课。需要完成 MCC+。\n|||分割|||\n了解人工智能特定的威胁，包括对抗性攻击和数据中毒。\n|||分割|||\n管理人工智能安全生命周期。\n|||分割|||\n实施自主人工智能系统的防御策略。\n|||分割|||\n解决模型盗窃和人工智能供应链风险。\n|||分割|||\n准备 CompTIA SecAI 考试。\n|||分割|||\n第一天\n|||分割|||\n特定于 AI 的威胁态势",
       "objective4": "Prepare for CompTIA Security+ examination.",
       "objective5": "Apply security operations concepts in practice.",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "Security architecture",
       "scheduleDay1Item2": "IAM and access controls",
       "scheduleDay1Item3": "Network monitoring",
-      "scheduleDay1Item4": "Operational security controls"
+      "scheduleDay1Item4": "Operational security controls",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$1,800/pax",
+      "feesCorporateLarge": "S$1,800/pax"
     },
     "mccThreatHunting": {
       "title": "MCC+ 威胁追踪与蓝队（对齐CompTIA CySA+）",
@@ -738,7 +869,12 @@
       "scheduleDay1Item1": "Threat detection fundamentals",
       "scheduleDay1Item2": "Log analysis and behavioural analytics",
       "scheduleDay1Item3": "SOC workflows",
-      "scheduleDay1Item4": "Advanced threat identification"
+      "scheduleDay1Item4": "Advanced threat identification",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$1,800/pax",
+      "feesCorporateLarge": "S$1,800/pax"
     },
     "mccOffensiveCyber": {
       "title": "MCC+ 进攻性网络基础（对齐EC-Council CEH）",
@@ -755,7 +891,12 @@
       "scheduleDay1Item1": "Reconnaissance and scanning",
       "scheduleDay1Item2": "Enumeration techniques",
       "scheduleDay1Item3": "Vulnerability assessment",
-      "scheduleDay1Item4": "Basic exploitation methods"
+      "scheduleDay1Item4": "Basic exploitation methods",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$3,000 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$3,000/pax",
+      "feesCorporateLarge": "S$3,000/pax"
     },
     "mccDigitalForensics": {
       "title": "MCC+ 数字取证与事件调查（对齐EC-Council CHFI）",
@@ -772,7 +913,12 @@
       "scheduleDay1Item1": "Digital evidence collection",
       "scheduleDay1Item2": "Forensic investigation procedures",
       "scheduleDay1Item3": "Chain-of-custody documentation",
-      "scheduleDay1Item4": "Incident reconstruction"
+      "scheduleDay1Item4": "Incident reconstruction",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$3,000 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$3,000/pax",
+      "feesCorporateLarge": "S$3,000/pax"
     },
     "mccAiSecurity": {
       "title": "MCC+ AI安全与自主防御（对齐CompTIA SecAI）",
@@ -787,9 +933,76 @@
       "objective5": "Prepare for CompTIA SecAI examination.",
       "scheduleDay1": "Day 1",
       "scheduleDay1Item1": "AI-specific threat landscape",
-      "scheduleDay1Item2": "AI security lifecycle management",
+      "scheduleDay1Item2": "AI安全生命周期管理\n|||分割|||\n自主系统防御策略\n|||分割|||\n人工智能治理与合规性\n|||分割|||\n请联系admissions@metaskills.sg 了解下次运行日期\n|||分割|||\n1 天附加项目\n|||分割|||\n每人 1,800 新元（最少 5 人，最多 15 人）\n|||分割|||\n1,800 新元/人\n|||分割|||\n1,800 新元/人\n|||分割|||\n元技能研究所首席执行官 |高级顾问\n|||分割|||\n数据分析 |数据科学|代理人工智能 |人工智能 |机器学习 |商业智能|企业融资|应用人工智能咨询\n|||分割|||\n柯景浩博士是应用人工智能、金融和分析领域公认的领导者，其项目涵盖人工智能开发、数字化转型和高管教育。\n\n作为 JCube Institute 的首席执行官和 Integrum Global 的首席研究官，他领导了人工智能驱动的金融、供应链和可持续发展领域的跨境咨询项目。他还在新加坡管理大学担任兼职教师，教授商业分析和金融，并为东盟各地的大学、企业和政府机构开发课程。\n|||分割|||\nCBDO，元技能研究所 |高级顾问\n|||分割|||\n数据科学|算法交易 |业务发展|高等教育领导力\n|||分割|||\n创业教育、技术和战略领导者，在政府、高等教育和行业领域拥有 20 多年的影响力。因建立高绩效团队、确保战略合作、提供资金支持的创新以及根据可衡量的增长和质量成果调整战略、运营和技术而获得认可。\n\nSMU 业务改进办公室的创始团队，同时获得精益六西格码黑带并推动 12 个机构范围的转型项目。随后也是 SMU 学院最初创始团队的成员之一。\n\n在教育部高等教育司领导国家人力规划、政策评估和跨机构伙伴关系。\n|||分割|||\n运营主管 |顾问\n|||分割|||\n运营领导 |人工智能驱动的转型 |氛围编码 |及时工程|工作流程架构\n|||分割|||\nAndrew 融合了 17 年的国防和企业经验，带来了运营领导力、技术专长、业务开发和人工智能驱动转型的独特组合。\n\n目前，他负责监督 Metaskills Institute 和 Integrum Global 的运营，在实时业务环境中设计和部署实用的人工智能工作流程。他专门研究即时工程和工作流程架构，利用 Claude 和其他法学硕士来缩短周转时间、提高报告清晰度并增强决策能力。\n|||分割|||\n首席顾问\n|||分割|||\n数据科学|人工智能 |代理人工智能 |机器学习 |深度学习 |商业智能|领导力\n|||分割|||\nJack Hong 博士是 Integrum Global 的创始人兼首席执行官，该公司是一家推动企业人工智能采用的咨询、培训和软件公司。 Jack 在新加坡管理大学担任兼职教师十多年，教授数字化转型、机器学习和金融领域的 MBA、EMBA、博士和高管教育课程。\n\nJack 还担任重要领导职务，包括 ASME 倡导与研究主席、SBF 中小企业委员会成员以及 SCS 人工智能道德与治理分会执行委员会成员。\n|||分割|||\n顾问\n|||分割|||\n数据科学|人工智能 |代理人工智能 |机器学习 |深度学习 |商业智能|领导力\n|||分割|||\n作为 Integrum Global 具有商业头脑的 AI 工程主管，Jack Tee 利用他在 SMU 获得的 MBA 学位和机械工程背景来制定有影响力的 AI 解决方案。他领导了自然语言处理、计算机视觉和路线优化方面的项目。\n|||分割|||\n顾问\n|||分割|||\n数据科学|人工智能 |代理人工智能 |机器学习 |深度学习",
       "scheduleDay1Item3": "Autonomous system defence strategies",
-      "scheduleDay1Item4": "AI governance and compliance"
+      "scheduleDay1Item4": "AI governance and compliance",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "1 Day Add-On",
+      "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
+      "feesCorporateSmall": "S$1,800/pax",
+      "feesCorporateLarge": "S$1,800/pax"
+    }
+  },
+  "facultyProfiles": {
+    "drKeJinghao": {
+      "role": "CEO, Metaskills Institute | Senior Consultant",
+      "expertise": "Data Analytics | Data Science | Agentic AI | AI | Machine Learning | Business Intelligence | Corporate Finance | Applied AI Consulting",
+      "bio": "Dr. Jinghao Ke is a recognised leader in applied AI, finance, and analytics, with projects spanning AI development, digital transformation, and executive education.\n\nAs CEO of JCube Institute and Chief Research Officer of Integrum Global, he has led cross-border consulting projects in AI-driven finance, supply chains, and sustainability. He also serves as adjunct faculty at Singapore Management University, teaching business analytics and finance, and has developed curricula for universities, corporates, and government agencies across ASEAN."
+    },
+    "christopherTan": {
+      "role": "CBDO, Metaskills Institute | Senior Consultant",
+      "expertise": "Data Science | Algorithmic Trading | Business Development | Higher Education Leadership",
+      "bio": "Entrepreneurial Education, Technology and Strategy leader with 20+ years of impact across Government, Higher Education and Industry. Recognised for building high-performance teams, securing strategic collaborations, delivering funding-backed innovation, and aligning strategy, operations and technology to measurable growth and quality outcomes.\n\nFounding team of SMU's Office of Business Improvement while earning a Lean Six Sigma Black Belt and driving 12 institution-wide transformation projects. Was also subsequently part of the initial founding team to set up SMU Academy.\n\nAt Ministry of Education Higher Education Division, led national manpower planning, policy evaluation and cross-institution partnerships."
+    },
+    "andrewToh": {
+      "role": "Head, Operations | Consultant",
+      "expertise": "Operational Leadership | AI-Driven Transformation | Vibe Coding | Prompt Engineering | Workflow Architecture",
+      "bio": "Blending 17 years of defense and corporate experience, Andrew brings a unique mix of operational leadership, technical expertise, business development, and AI-driven transformation.\n\nCurrently, overseeing operations at Metaskills Institute and Integrum Global, he designs and deploys practical AI workflows in live business environments. He specialises in prompt engineering and workflow architecture, leveraging Claude and other LLMs to reduce turnaround time, improve reporting clarity, and enhance decision-making."
+    },
+    "drJackHong": {
+      "role": "Lead Consultant",
+      "expertise": "Data Science | AI | Agentic AI | Machine Learning | Deep Learning | Business Intelligence | Leadership",
+      "bio": "Dr. Jack Hong is Founder & CEO of Integrum Global, a consultancy, training, and software company driving enterprise AI adoption. As Adjunct Faculty at Singapore Management University for over 10 years, Jack teaches MBA, EMBA, doctoral, and executive education programmes in digital transformation, machine learning, and finance.\n\nJack also serves in key leadership roles including Chair of Advocacy & Research at ASME, SME Committee Member at SBF, and Executive Committee Member of the AI Ethics & Governance Chapter at SCS."
+    },
+    "jackTee": {
+      "role": "Consultant",
+      "expertise": "Data Science | AI | Agentic AI | Machine Learning | Deep Learning | Business Intelligence | Leadership",
+      "bio": "As the business-minded AI Engineering Head at Integrum Global, Jack Tee leverages his MBA from SMU and Mechanical Engineering background to craft impactful AI solutions. He has spearheaded projects in Natural Language Processing, Computer Vision, and route optimization."
+    },
+    "drJonathanKhoo": {
+      "role": "Consultant",
+      "expertise": "Data Science | AI | Agentic AI | Machine Learning | Deep Learning",
+      "bio": "Jonathan Khoo 博士是一位全栈应用程序开发人员，负责数据驱动策略的定制实施。他获得了博士学位。他在 SMU 就读，在密歇根大学完成硕士学位，并且是莱佛士书院和华侨中学的校友。\n|||分割|||\n顾问\n|||分割|||\n数据治理|商业与数据分析 |成人学习 |合规与风险管理|精益六西格码|敏捷与 Scrum\n|||分割|||\nEvelyn Wong 是一位数据治理专家，目前领导 Infinuem，在数据治理计划中发挥着关键作用。她曾在财务、IT、风险、营销和数据科学等多个职能部门工作过。\n\n除了治理之外，Evelyn 还拥有广泛的企业背景，涵盖 3M 和安捷伦科技的合规性、业务开发、销售和营销以及项目管理。获得精益六西格码绿带认证和 Scrum Master 认证。\n\nEvelyn 也是一位经验丰富的成人学习从业者，培训了 200 多名数据分析、商业智能和机器学习工具方面的专业人员。\n|||分割|||\n顾问\n|||分割|||\n生成式和代理式人工智能 |人工智能解决方案咨询|供应链与建筑环境|专业培训\n|||分割|||\nAlena Lavrinenko 是 Integrum Global 的人工智能解决方案经理，也是 JCube Institute 和 Metaskills Institute 的人工智能培训师。她设计并提供了生成式和代理式人工智能方面的企业级程序。\n\nAlena 拥有新加坡管理大学 MBA 学位，曾与 CDL、SingLand、TPC Group 和 MINDEF 等领先组织合作。\n|||分割|||\n算法交易首席顾问\n|||分割|||\n算法交易 |外汇和黄金市场 | MetaTrader 4/5 |机器学习 |深度强化学习 | C++ |蟒蛇\n|||分割|||\nVictor 拥有 20 多年的财务经验。在过去的 4 年里，他将自己的热情投入到万亿美元的外汇和黄金市场的算法交易中，使用带有机器学习功能的专有交易系统，尤其是时间序列分析上的深度强化学习。\n|||分割|||\n首席顾问\n|||分割|||\n网络安全治理| ISO 27001 | ISO 27001美国国家标准技术研究院 |云安全|零信任 |事件响应\n|||分割|||\nSteven Ong 是一位经验丰富的网络安全高管和学术领袖，拥有超过 25 年的经验。作为 CISO，他将机构网络安全转变为符合 ISO 27001 和 NIST 的结构化、基于风险的计划。作为高级讲师，他设计了符合行业的网络安全课程并监督了 100 多个项目。\n|||分割|||\n兼职培训师\n|||分割|||\n成人教育|人工智能与网络安全培训 |教练发展|基于能力的课程\n|||分割|||\nJimmy Leong (AFHEA) 是一位驻新加坡的高级培训师和成人教育专家，在成人学习和信息技术领域拥有 20 多年的经验。他支持过 MINDEF、AWS、Grab、麦肯锡公司和新加坡成人学习学院等组织。\n|||分割|||\n兼职培训师\n|||分割|||\n编程教育|合作伙伴与战略|教育科技 |课程开发\n|||分割|||\nYinjie 是 Tinkercademy 和 Tinkertanker Pte Ltd 的联合创始人。YJ 获得了斯坦福大学的学位和新加坡 NIE 的研究生文凭。在加入 Tinkertanker 之前，YJ 在莱佛士学院教授计算机，并在新加坡教育部任职。\n|||分割|||\n为期 2 天的研讨会\n|||分割|||\n你将学到什么\n|||分割|||\n算法交易团队"
+    },
+    "evelynWong": {
+      "role": "Consultant",
+      "expertise": "Data Governance | Business & Data Analytics | Adult Learning | Compliance & Risk Management | Lean Six Sigma | Agile & Scrum",
+      "bio": "Evelyn Wong is a data governance specialist who currently leads Infinuem, playing a pivotal role in data governance initiatives. She has worked across functions including finance, IT, risk, marketing, and data science.\n\nBeyond governance, Evelyn brings an extensive corporate background spanning Compliance, Business Development, Sales & Marketing, and Project Management at 3M and Agilent Technologies. A Certified Lean Six Sigma Green Belt and Certified Scrum Master.\n\nEvelyn is also an experienced adult learning practitioner, having trained more than 200 professionals in data analytics, business intelligence, and machine learning tools."
+    },
+    "alenaLavrinenko": {
+      "role": "Consultant",
+      "expertise": "Generative & Agentic AI | AI Solutions Consulting | Supply Chain & Built Environment | Professional Training",
+      "bio": "Alena Lavrinenko is an AI Solutions Manager at Integrum Global and an AI Trainer with JCube Institute and Metaskills Institute. She designs and delivers enterprise-ready programmes in Generative and Agentic AI.\n\nAlena holds an MBA from Singapore Management University and has worked with leading organisations including CDL, SingLand, TPC Group, and MINDEF."
+    },
+    "victor": {
+      "role": "Lead Consultant, Algorithmic Trading",
+      "expertise": "Algorithmic Trading | Forex & Gold Markets | MetaTrader 4/5 | Machine Learning | Deep Reinforcement Learning | C++ | Python",
+      "bio": "Victor has more than 20 years of financial experience. For the past 4 years, he has self-funded his passion in algorithmic trading in the trillion dollar forex and gold market, using proprietary trading systems with machine learning especially deep reinforcement learning on time series analysis."
+    },
+    "stevenOng": {
+      "role": "Lead Consultant",
+      "expertise": "Cybersecurity Governance | ISO 27001 | NIST | Cloud Security | Zero Trust | Incident Response",
+      "bio": "Steven Ong is a seasoned cybersecurity executive and academic leader with over 25 years of experience. As a CISO, he transformed institutional cybersecurity into a structured, risk-based program aligned with ISO 27001 and NIST. As a Senior Lecturer, he has designed industry-aligned cybersecurity curricula and supervised over 100 projects."
+    },
+    "jimmyLeong": {
+      "role": "Adjunct Trainer",
+      "expertise": "Adult Education | AI & Cybersecurity Training | Instructor Development | Competency-Based Curricula",
+      "bio": "Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He has supported organisations such as MINDEF, AWS, Grab, McKinsey & Company, and the Institute for Adult Learning Singapore."
+    },
+    "soonYinjie": {
+      "role": "Adjunct Trainer",
+      "expertise": "Programming Education | Partnerships & Strategy | EdTech | Curriculum Development",
+      "bio": "Yinjie is co-founder at Tinkercademy and Tinkertanker Pte Ltd. YJ received his degrees from Stanford University and a Post-Graduate Diploma from NIE Singapore. Before Tinkertanker, YJ taught computing at Raffles Institution and served at the Ministry of Education, Singapore."
     }
   }
 }
