@@ -201,5 +201,26 @@
     "title": "Các Lớp học & Hội thảo Trước đây",
     "subtitle": "Ảnh thực từ các buổi đào tạo trên khắp Singapore — từ bootcamp giao dịch thuật toán đến hội thảo AI, lớp bậc thầy khoa học dữ liệu và chương trình doanh nghiệp.",
     "photoCount": "{{count}} ảnh từ các buổi đào tạo thực tế"
+  },
+  "coursePage": {
+    "whyAttend": "Tại sao tham gia chương trình này",
+    "objectives": "Mục tiêu chương trình",
+    "afterCompleting": "Sau khi hoàn thành chương trình",
+    "courseStructure": "Cấu trúc khóa học",
+    "allProgrammes": "Tất cả chương trình",
+    "jointlyOfferedBy": "Được cung cấp cùng với {{name}}",
+    "nextRunDate": "Ngày khai giảng tiếp theo",
+    "courseFees": "Học phí",
+    "selfSponsored": "Tự tài trợ",
+    "corporateRates": "Giá doanh nghiệp",
+    "gstNote": "Tất cả học phí được miễn GST.",
+    "enquireNow": "Liên hệ ngay",
+    "submitEnquiryForm": "Gửi đơn yêu cầu",
+    "notFoundTitle": "Không tìm thấy khóa học",
+    "notFoundDesc": "Xin lỗi, chúng tôi không thể tìm thấy khóa học bạn đang tìm kiếm.",
+    "browseProgrammes": "Xem tất cả chương trình",
+    "keyInfoFaculty": "Giảng viên",
+    "keyInfoCertification": "Chứng nhận",
+    "duration": "Thời lượng"
   }
 }
