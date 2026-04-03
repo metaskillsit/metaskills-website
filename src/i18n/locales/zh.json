@@ -201,5 +201,26 @@
     "title": "往期课程与工作坊",
     "subtitle": "来自新加坡各地培训课程的真实照片——从算法交易训练营到AI工作坊、数据科学大师班和企业课程。",
     "photoCount": "{{count}} 张来自真实培训课程的照片"
+  },
+  "coursePage": {
+    "whyAttend": "为何参加本课程",
+    "objectives": "课程目标",
+    "afterCompleting": "完成本课程后",
+    "courseStructure": "课程结构",
+    "allProgrammes": "所有课程",
+    "jointlyOfferedBy": "与 {{name}} 联合提供",
+    "nextRunDate": "下次开课日期",
+    "courseFees": "课程费用",
+    "selfSponsored": "自费",
+    "corporateRates": "企业费率",
+    "gstNote": "所有费用免征消费税。",
+    "enquireNow": "立即咨询",
+    "submitEnquiryForm": "提交咨询表",
+    "notFoundTitle": "未找到课程",
+    "notFoundDesc": "抱歉，我们找不到您正在寻找的课程。",
+    "browseProgrammes": "浏览所有课程",
+    "keyInfoFaculty": "师资",
+    "keyInfoCertification": "认证",
+    "duration": "课程时长"
   }
 }
