@@ -177,7 +177,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile language selector */}
-          <div className="lg:hidden relative" ref={langRef}>
+          <div className="lg:hidden relative" ref={langRefMobile}>
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1 text-xs font-medium text-foreground/70 hover:text-primary transition-colors"
