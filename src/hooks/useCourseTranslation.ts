@@ -7,7 +7,7 @@ import { Course } from "@/data/courses";
  * Otherwise, it falls back to the hardcoded English values in the course object.
  */
 export const useCourseTranslation = (course: Course) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const key = course.i18nKey;
 
   const ct = (field: string, fallback: string): string => {
@@ -21,6 +21,11 @@ export const useCourseTranslation = (course: Course) => {
   const tagline = ct("tagline", course.tagline);
   const whyAttend = ct("whyAttend", course.whyAttend);
   const courseDesign = ct("courseDesign", course.courseDesign);
+  const duration = course.duration ? ct("duration", course.duration) : undefined;
+  const nextRunDate = ct("nextRunDate", course.nextRunDate);
+  const jointlyOfferedBy = course.jointlyOfferedBy
+    ? ct("jointlyOfferedBy", course.jointlyOfferedBy)
+    : undefined;
 
   const objectives = key
     ? course.objectives.map((obj, i) => {
@@ -51,11 +56,19 @@ export const useCourseTranslation = (course: Course) => {
     ? course.schedule.map((s, dayIdx) => ({
         day: t(`courses.${key}.scheduleDay${dayIdx + 1}`, { defaultValue: "" }) || s.day,
         items: s.items.map((item, itemIdx) => {
-          const translated = t(`courses.${key}.scheduleDay${dayIdx + 1}Item${itemIdx + 1}`, { defaultValue: "" });
+          const translated = t(`courses.${key}.scheduleDay${dayIdx + 1}Item${itemIdx + 1}`, {
+            defaultValue: "",
+          });
           return translated || item;
         }),
       }))
     : course.schedule;
+
+  const fees = {
+    selfSponsored: ct("feesSelfSponsored", course.fees.selfSponsored),
+    corporateSmall: ct("feesCorporateSmall", course.fees.corporateSmall),
+    corporateLarge: ct("feesCorporateLarge", course.fees.corporateLarge),
+  };
 
   return {
     title,
@@ -67,5 +80,9 @@ export const useCourseTranslation = (course: Course) => {
     afterCompleting,
     whatYouLearn,
     schedule,
+    duration,
+    nextRunDate,
+    jointlyOfferedBy,
+    fees,
   };
 };

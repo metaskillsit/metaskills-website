@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { useTranslation, TFunction } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import jimmyImg from "@/assets/jimmy-profile.jpg";
@@ -78,7 +78,6 @@ const algoTradingTeam = [
   },
 ];
 
-
 const cyberTeam = [
   {
     name: "Mr Steven Ong",
@@ -114,40 +113,72 @@ interface FacultyMember {
   bio: string;
 }
 
-const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => (
-  <motion.div
-    key={f.name}
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: i * 0.1 }}
-    className="grid md:grid-cols-4 gap-8 border-t border-border pt-10"
-  >
-    <div className="md:col-span-1">
-      {f.image ? (
-        <div className="aspect-square overflow-hidden rounded-sm">
-          <img src={f.image} alt={f.name} className="w-full h-full object-cover object-top" loading="lazy" />
-        </div>
-      ) : (
-        <div className="aspect-square overflow-hidden rounded-sm bg-muted flex items-center justify-center">
-          <span className="text-4xl font-heading font-bold text-muted-foreground/30">{f.name.charAt(0)}</span>
-        </div>
-      )}
-    </div>
-    <div className="md:col-span-3">
-      <h3 className="font-heading text-xl font-bold text-foreground">{f.name}</h3>
-      <p className="text-sm text-primary font-medium mb-1">{f.role}</p>
-      <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-4">{f.expertise}</p>
-      {f.bio && (
-        <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
-          {f.bio.split("\n\n").map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
-        </div>
-      )}
-    </div>
-  </motion.div>
-);
+const facultyTranslationKeys: Record<string, string> = {
+  "Dr Ke Jinghao": "drKeJinghao",
+  "Christopher Tan": "christopherTan",
+  "Andrew Toh": "andrewToh",
+  "Dr Jack Hong": "drJackHong",
+  "Jack Tee": "jackTee",
+  "Dr Jonathan Khoo": "drJonathanKhoo",
+  "Evelyn Wong": "evelynWong",
+  "Ms. Alena Lavrinenko": "alenaLavrinenko",
+  Victor: "victor",
+  "Mr Steven Ong": "stevenOng",
+  "Jimmy Leong": "jimmyLeong",
+  "Soon Yinjie": "soonYinjie",
+};
+
+const getFacultyField = (
+  t: TFunction,
+  member: FacultyMember,
+  field: "role" | "expertise" | "bio",
+) => {
+  const key = facultyTranslationKeys[member.name];
+  if (!key) return member[field];
+  return t(`facultyProfiles.${key}.${field}`, { defaultValue: member[field] });
+};
+
+const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
+  const { t } = useTranslation();
+  const role = getFacultyField(t, f, "role");
+  const expertise = getFacultyField(t, f, "expertise");
+  const bio = getFacultyField(t, f, "bio");
+
+  return (
+    <motion.div
+      key={f.name}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: i * 0.1 }}
+      className="grid md:grid-cols-4 gap-8 border-t border-border pt-10"
+    >
+      <div className="md:col-span-1">
+        {f.image ? (
+          <div className="aspect-square overflow-hidden rounded-sm">
+            <img src={f.image} alt={f.name} className="w-full h-full object-cover object-top" loading="lazy" />
+          </div>
+        ) : (
+          <div className="aspect-square overflow-hidden rounded-sm bg-muted flex items-center justify-center">
+            <span className="text-4xl font-heading font-bold text-muted-foreground/30">{f.name.charAt(0)}</span>
+          </div>
+        )}
+      </div>
+      <div className="md:col-span-3">
+        <h3 className="font-heading text-xl font-bold text-foreground">{f.name}</h3>
+        <p className="text-sm text-primary font-medium mb-1">{role}</p>
+        <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-4">{expertise}</p>
+        {bio && (
+          <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
+            {bio.split("\n\n").map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+};
 
 const TeamSection = ({ title, members }: { title: string; members: FacultyMember[] }) => (
   <div className="mb-16">
