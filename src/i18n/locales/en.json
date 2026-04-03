@@ -222,5 +222,29 @@
     "keyInfoFaculty": "Faculty",
     "keyInfoCertification": "Certification",
     "duration": "Duration"
+  },
+  "courses": {
+    "agenticFoundations": {
+      "title": "Foundations of Agentic AI Workflows",
+      "category": "Agentic AI Workshop Series",
+      "tagline": "Discover the basics of AI-driven systems to transform decision-making processes.",
+      "whyAttend": "In today's fast-paced environment, understanding how to harness AI-driven workflows is essential. This introductory workshop equips you with the core concepts and practical tools to implement agentic systems that streamline and enhance decision-making.",
+      "courseDesign": "This two-day workshop provides a comprehensive introduction to agentic AI workflows. Participants will learn about the fundamentals of AI agents, explore common tools used to build these systems, and engage in hands-on exercises that simulate real-world applications.",
+      "objective1": "Understand the core principles and components of agentic AI systems.",
+      "objective2": "Identify common tools and platforms used in developing AI workflows.",
+      "objective3": "Explore real-world applications and operational scenarios.",
+      "objective4": "Gain hands-on experience by building basic AI agentic workflows.",
+      "objective5": "Develop an operational mindset for integrating AI into decision-making processes.",
+      "scheduleDay1": "Day 1",
+      "scheduleDay1Item1": "Welcome & Course Overview",
+      "scheduleDay1Item2": "Fundamentals of AI Agentic Systems",
+      "scheduleDay1Item3": "Overview of Tools & Platforms",
+      "scheduleDay1Item4": "Case Studies",
+      "scheduleDay2": "Day 2",
+      "scheduleDay2Item1": "Interactive Lab",
+      "scheduleDay2Item2": "Scenario-Based Exercises",
+      "scheduleDay2Item3": "Peer Review & Presentations",
+      "scheduleDay2Item4": "Wrap-Up & Q&A"
+    }
   }
 }
