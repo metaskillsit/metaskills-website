@@ -62,7 +62,7 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
           <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-3xl">
             {ct.tagline}
           </p>
-          {course.jointlyOfferedBy && (
+          {ct.jointlyOfferedBy && (
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -70,7 +70,7 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
               className="flex items-center gap-2 text-accent text-xs font-medium mt-2"
             >
               <Award className="w-3.5 h-3.5" />
-              {t("coursePage.jointlyOfferedBy", { name: course.jointlyOfferedBy })}
+              {t("coursePage.jointlyOfferedBy", { name: ct.jointlyOfferedBy })}
             </motion.p>
           )}
         </div>
