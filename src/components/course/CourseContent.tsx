@@ -92,10 +92,10 @@ const CourseContent = ({ course }: CourseContentProps) => {
           {ct.courseDesign}
         </p>
 
-        {course.duration && (
+        {ct.duration && (
           <div className="flex items-center gap-2 text-sm text-primary font-medium mb-6">
             <Clock className="w-4 h-4" />
-            {course.duration}
+            {ct.duration}
           </div>
         )}
 

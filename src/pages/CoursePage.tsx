@@ -63,7 +63,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
           <div className="max-w-[1140px] mx-auto px-6 py-4 flex flex-wrap gap-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-primary" />
-              <span>{course.duration || "2-Day Workshop"}</span>
+              <span>{ct.duration || t("coursePage.defaultDuration")}</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-primary" />

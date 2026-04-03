@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { useTranslation, TFunction } from "react-i18next";
+import { useTranslation } from "react-i18next";
+import type { TFunction } from "i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import jimmyImg from "@/assets/jimmy-profile.jpg";

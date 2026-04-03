@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Calendar, DollarSign, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
+import { useCourseTranslation } from "@/hooks/useCourseTranslation";
 
 interface CourseSidebarProps {
   course: Course;
@@ -9,6 +10,7 @@ interface CourseSidebarProps {
 
 const CourseSidebar = ({ course }: CourseSidebarProps) => {
   const { t } = useTranslation();
+  const ct = useCourseTranslation(course);
 
   return (
     <div className="lg:col-span-1">
@@ -21,7 +23,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
             </h3>
           </div>
           <p className="text-foreground text-sm whitespace-pre-line">
-            {course.nextRunDate}
+            {ct.nextRunDate}
           </p>
         </div>
 
@@ -35,12 +37,12 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
           <div className="space-y-3">
             <div>
               <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.selfSponsored")}</p>
-              <p className="font-bold text-foreground">{course.fees.selfSponsored}</p>
+              <p className="font-bold text-foreground">{ct.fees.selfSponsored}</p>
             </div>
             <div className="border-t border-border pt-3">
               <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.corporateRates")}</p>
-              <p className="text-sm text-foreground">{course.fees.corporateSmall}</p>
-              <p className="text-sm text-foreground">{course.fees.corporateLarge}</p>
+              <p className="text-sm text-foreground">{ct.fees.corporateSmall}</p>
+              <p className="text-sm text-foreground">{ct.fees.corporateLarge}</p>
             </div>
             <p className="text-xs text-muted-foreground italic pt-2">
               {t("coursePage.gstNote")}
