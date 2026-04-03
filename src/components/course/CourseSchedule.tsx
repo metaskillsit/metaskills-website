@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, CheckCircle, Clock, Mail, TrendingUp, Users, Flame, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { CourseRunDate } from "@/data/courseSchedule";
 
 interface CourseScheduleProps {
@@ -8,6 +9,7 @@ interface CourseScheduleProps {
 }
 
 const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
+  const { t } = useTranslation();
   if (!schedule.length) return null;
 
   const pastRuns = schedule.filter((r) => r.status === "full");
@@ -19,14 +21,12 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
   return (
     <section className="bg-gradient-to-b from-primary/5 to-background border-b border-border">
       <div className="max-w-[1140px] mx-auto px-6 py-14">
-        {/* Social Proof Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-10"
         >
-          {/* Stats Bar */}
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-8">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -34,7 +34,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
               </div>
               <div>
                 <div className="text-2xl md:text-3xl font-bold text-foreground">{pastRuns.length}</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wide">Runs Completed</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("coursePage.runsCompleted")}</div>
               </div>
             </div>
             {uniqueClients.length > 0 && (
@@ -44,7 +44,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                 </div>
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-foreground">{uniqueClients.length}</div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wide">Corporate Clients</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("coursePage.corporateClients")}</div>
                 </div>
               </div>
             )}
@@ -55,7 +55,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                 </div>
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-foreground">100%</div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wide">Fully Subscribed</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("coursePage.fullySubscribed")}</div>
                 </div>
               </div>
             ) : (
@@ -65,13 +65,12 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                 </div>
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-foreground">New</div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wide">First Cohorts Open</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("coursePage.firstCohortsOpen")}</div>
                 </div>
               </div>
             )}
           </div>
 
-          {/* Urgency CTA */}
           {upcomingRuns.length > 0 && (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -83,24 +82,24 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-foreground/15 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
                   <Flame className="w-3 h-3" />
-                  Limited Seats Available
+                  {t("coursePage.limitedSeats")}
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-2">
                   {hasCompletedRuns
-                    ? `All ${pastRuns.length} past runs were fully subscribed`
-                    : "Be among the first cohort for this programme"}
+                    ? t("coursePage.allPastRunsFull", { count: pastRuns.length })
+                    : t("coursePage.firstCohortCta")}
                 </h3>
                 <p className="text-primary-foreground/80 text-sm mb-5 max-w-lg mx-auto">
                   {hasCompletedRuns
-                    ? "Don't miss the next intake. Register early to secure your seat."
-                    : "Early registration is now open for upcoming intakes. Enquire to reserve your seat."}
+                    ? t("coursePage.dontMissNext")
+                    : t("coursePage.earlyRegistration")}
                 </p>
                 <a
                   href="mailto:admissions@metaskills.sg"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary-foreground text-primary font-bold rounded-lg hover:brightness-95 transition-all text-sm"
                 >
                   <Mail className="w-4 h-4" />
-                  Register for Next Run
+                  {t("coursePage.registerNextRun")}
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
@@ -109,7 +108,6 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Upcoming Runs - Left, Prominent */}
           {upcomingRuns.length > 0 && (
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -118,7 +116,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
             >
               <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4 flex items-center gap-2">
                 <Clock className="w-4 h-4 text-accent" />
-                Upcoming Runs
+                {t("coursePage.upcomingRuns")}
               </h3>
               <div className="space-y-3">
                 {upcomingRuns.map((run, i) => (
@@ -138,7 +136,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                     {run.status === "filling" ? (
                       <span className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20">
                         <Flame className="w-3 h-3" />
-                        Filling Fast
+                        {t("coursePage.fillingFast")}
                       </span>
                     ) : (
                       <a
@@ -146,7 +144,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                         className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg bg-primary text-primary-foreground hover:brightness-110 transition-all"
                       >
                         <Mail className="w-3 h-3" />
-                        Enquire
+                        {t("coursePage.enquire")}
                       </a>
                     )}
                   </div>
@@ -155,7 +153,6 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
             </motion.div>
           )}
 
-          {/* Past Runs - Right, Compact */}
           {pastRuns.length > 0 && (
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -164,7 +161,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
             >
               <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4 flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-primary" />
-                Past Runs ({pastRuns.length} completed)
+                {t("coursePage.pastRunsCount", { count: pastRuns.length })}
               </h3>
               <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2 scrollbar-thin">
                 {pastRuns.map((run, i) => (
@@ -186,7 +183,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                         </span>
                       )}
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-muted text-muted-foreground border border-border">
-                        Full
+                        {t("coursePage.full")}
                       </span>
                     </div>
                   </div>

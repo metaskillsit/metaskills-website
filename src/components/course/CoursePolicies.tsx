@@ -1,16 +1,20 @@
+import { useTranslation } from "react-i18next";
+
 const CoursePolicies = () => {
+  const { t } = useTranslation();
+
   const policies = [
     {
-      title: "Cancellation",
-      text: "Up to 30 days before: Full refund minus SGD 900 processing fee. 30 days or less: No refund. Substitutions allowed up to 3 days before.",
+      title: t("coursePage.policyCancellationTitle"),
+      text: t("coursePage.policyCancellationText"),
     },
     {
-      title: "Rescheduling",
-      text: "Client-initiated rescheduling at least 14 days before. SGD 600 rescheduling fee may apply. Metaskills-initiated changes offer full refund option.",
+      title: t("coursePage.policyReschedulingTitle"),
+      text: t("coursePage.policyReschedulingText"),
     },
     {
-      title: "Attendance",
-      text: "75% attendance required for certification. Participants should arrive on time. Notify absence via email to admissions@metaskills.sg.",
+      title: t("coursePage.policyAttendanceTitle"),
+      text: t("coursePage.policyAttendanceText"),
     },
   ];
 
@@ -18,7 +22,7 @@ const CoursePolicies = () => {
     <section className="border-t border-border bg-muted">
       <div className="max-w-[1140px] mx-auto px-6 py-12">
         <h2 className="font-heading text-xl font-bold text-foreground mb-6">
-          Course Policies
+          {t("coursePage.coursePolicies")}
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {policies.map((policy) => (
