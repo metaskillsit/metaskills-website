@@ -25,7 +25,6 @@ const AppContent = () => {
 
   return (
     <>
-      <LanguageSwitcher />
       <ScrollToTop />
       <Routes key={languageKey}>
         <Route path="/" element={<Index />} />
