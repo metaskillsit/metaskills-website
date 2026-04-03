@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Award } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
+import { useCourseTranslation } from "@/hooks/useCourseTranslation";
 import ImageSlideshow from "@/components/ImageSlideshow";
 
 interface CourseHeroProps {
@@ -12,13 +13,14 @@ interface CourseHeroProps {
 
 const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
   const { t } = useTranslation();
+  const ct = useCourseTranslation(course);
 
   return (
     <section className="relative bg-[hsl(var(--hero-overlay))] overflow-hidden">
       <div className="relative w-full h-[380px] md:h-[480px] lg:h-[540px]">
         <ImageSlideshow
           images={categoryImages}
-          alt={course.title}
+          alt={ct.title}
           className="absolute inset-0 h-full w-full"
           imgClassName="absolute inset-0 h-full w-full object-cover object-[center_20%]"
           width={1280}
@@ -52,13 +54,13 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-accent text-xs font-semibold uppercase tracking-widest mb-1.5"
           >
-            {course.category}
+            {ct.category}
           </motion.p>
           <h1 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight mb-1">
-            {course.title}
+            {ct.title}
           </h1>
           <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-3xl">
-            {course.tagline}
+            {ct.tagline}
           </p>
           {course.jointlyOfferedBy && (
             <motion.p
