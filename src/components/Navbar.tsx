@@ -34,6 +34,7 @@ const Navbar = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
+  const langRefMobile = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   const navGroups: NavGroup[] = [
