@@ -50,12 +50,14 @@ export interface Course {
   jointlyOfferedBy?: string;
   whatYouLearn?: string[];
   afterCompleting?: string[];
+  i18nKey?: string;
 }
 
 export const courses: Course[] = [
   // ── Agentic AI Workshop Series (existing) ──
   {
     slug: "agentic-ai-foundations",
+    i18nKey: "agenticFoundations",
     title: "Foundations of Agentic AI Workflows",
     category: "Agentic AI Workshop Series",
     tagline: "Discover the basics of AI-driven systems to transform decision-making processes.",

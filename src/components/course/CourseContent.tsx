@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle, Clock, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
+import { useCourseTranslation } from "@/hooks/useCourseTranslation";
 
 interface CourseContentProps {
   course: Course;
@@ -9,6 +10,7 @@ interface CourseContentProps {
 
 const CourseContent = ({ course }: CourseContentProps) => {
   const { t } = useTranslation();
+  const ct = useCourseTranslation(course);
 
   return (
     <>
@@ -20,7 +22,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
         <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
           {t("coursePage.whyAttend")}
         </h2>
-        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{course.whyAttend}</p>
+        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{ct.whyAttend}</p>
       </motion.div>
 
       <motion.div
@@ -32,7 +34,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
           {t("coursePage.objectives")}
         </h2>
         <div className="space-y-3">
-          {course.objectives.map((obj, i) => (
+          {ct.objectives.map((obj, i) => (
             <motion.div
               key={i}
               className="flex gap-3"
@@ -48,7 +50,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
         </div>
       </motion.div>
 
-      {course.afterCompleting && (
+      {ct.afterCompleting && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +60,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
             {t("coursePage.afterCompleting")}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            {course.afterCompleting.map((item, i) => (
+            {ct.afterCompleting.map((item, i) => (
               <motion.div
                 key={i}
                 className="flex gap-3 p-4 bg-muted rounded-sm border border-border"
@@ -87,7 +89,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
           {t("coursePage.courseStructure")}
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-8">
-          {course.courseDesign}
+          {ct.courseDesign}
         </p>
 
         {course.duration && (
@@ -98,7 +100,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
         )}
 
         <div className="space-y-6">
-          {course.schedule.map((s) => (
+          {ct.schedule.map((s) => (
             <div key={s.day} className="border border-border rounded-sm overflow-hidden">
               <div className="bg-primary px-6 py-3 flex items-center gap-3">
                 <BookOpen className="w-4 h-4 text-accent" />

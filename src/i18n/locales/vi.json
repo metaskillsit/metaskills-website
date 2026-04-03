@@ -222,5 +222,29 @@
     "keyInfoFaculty": "Giảng viên",
     "keyInfoCertification": "Chứng nhận",
     "duration": "Thời lượng"
+  },
+  "courses": {
+    "agenticFoundations": {
+      "title": "Nền tảng Quy trình AI Đại lý",
+      "category": "Chuỗi Hội thảo AI Đại lý",
+      "tagline": "Khám phá những kiến thức cơ bản về hệ thống AI để chuyển đổi quy trình ra quyết định.",
+      "whyAttend": "Trong môi trường phát triển nhanh chóng ngày nay, việc hiểu cách tận dụng quy trình công việc do AI điều khiển là rất cần thiết. Hội thảo nhập môn này trang bị cho bạn các khái niệm cốt lõi và công cụ thực tế để triển khai hệ thống đại lý giúp tối ưu hóa và nâng cao quá trình ra quyết định.",
+      "courseDesign": "Hội thảo hai ngày này cung cấp phần giới thiệu toàn diện về quy trình AI đại lý. Học viên sẽ tìm hiểu về nền tảng của các đại lý AI, khám phá các công cụ phổ biến để xây dựng hệ thống này và tham gia các bài tập thực hành mô phỏng ứng dụng thực tế.",
+      "objective1": "Hiểu các nguyên tắc và thành phần cốt lõi của hệ thống AI đại lý.",
+      "objective2": "Xác định các công cụ và nền tảng phổ biến trong phát triển quy trình AI.",
+      "objective3": "Khám phá các ứng dụng và kịch bản vận hành thực tế.",
+      "objective4": "Có được kinh nghiệm thực hành bằng cách xây dựng quy trình AI đại lý cơ bản.",
+      "objective5": "Phát triển tư duy vận hành để tích hợp AI vào quy trình ra quyết định.",
+      "scheduleDay1": "Ngày 1",
+      "scheduleDay1Item1": "Chào mừng & Tổng quan Khóa học",
+      "scheduleDay1Item2": "Nền tảng Hệ thống AI Đại lý",
+      "scheduleDay1Item3": "Tổng quan Công cụ & Nền tảng",
+      "scheduleDay1Item4": "Nghiên cứu Tình huống",
+      "scheduleDay2": "Ngày 2",
+      "scheduleDay2Item1": "Phòng thí nghiệm Tương tác",
+      "scheduleDay2Item2": "Bài tập Dựa trên Kịch bản",
+      "scheduleDay2Item3": "Đánh giá Đồng nghiệp & Trình bày",
+      "scheduleDay2Item4": "Tổng kết & Hỏi đáp"
+    }
   }
 }

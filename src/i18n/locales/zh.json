@@ -222,5 +222,29 @@
     "keyInfoFaculty": "师资",
     "keyInfoCertification": "认证",
     "duration": "课程时长"
+  },
+  "courses": {
+    "agenticFoundations": {
+      "title": "智能体AI工作流基础",
+      "category": "智能体AI工作坊系列",
+      "tagline": "探索AI驱动系统的基础知识，以转变决策流程。",
+      "whyAttend": "在当今快节奏的环境中，了解如何利用AI驱动的工作流至关重要。这个入门工作坊为您提供核心概念和实用工具，帮助您实施智能体系统，简化并增强决策过程。",
+      "courseDesign": "这个为期两天的工作坊全面介绍智能体AI工作流。参与者将学习AI智能体的基础知识，探索用于构建这些系统的常用工具，并参与模拟真实应用的实践练习。",
+      "objective1": "了解智能体AI系统的核心原理和组件。",
+      "objective2": "识别开发AI工作流中使用的常用工具和平台。",
+      "objective3": "探索真实世界的应用场景和运营场景。",
+      "objective4": "通过构建基本的AI智能体工作流获得实践经验。",
+      "objective5": "培养将AI融入决策过程的运营思维。",
+      "scheduleDay1": "第一天",
+      "scheduleDay1Item1": "欢迎与课程概述",
+      "scheduleDay1Item2": "AI智能体系统基础",
+      "scheduleDay1Item3": "工具与平台概述",
+      "scheduleDay1Item4": "案例研究",
+      "scheduleDay2": "第二天",
+      "scheduleDay2Item1": "互动实验室",
+      "scheduleDay2Item2": "基于场景的练习",
+      "scheduleDay2Item3": "同行评审与演示",
+      "scheduleDay2Item4": "总结与问答"
+    }
   }
 }
