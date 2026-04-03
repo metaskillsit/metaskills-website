@@ -215,6 +215,12 @@
     "corporateRates": "Corporate Rates",
     "gstNote": "All fees are exempt from GST.",
     "enquireNow": "Enquire Now",
-    "submitEnquiryForm": "Submit Enquiry Form"
+    "submitEnquiryForm": "Submit Enquiry Form",
+    "notFoundTitle": "Course Not Found",
+    "notFoundDesc": "Sorry, we couldn't find the course you're looking for.",
+    "browseProgrammes": "Browse All Programmes",
+    "keyInfoFaculty": "Faculty",
+    "keyInfoCertification": "Certification",
+    "duration": "Duration"
   }
 }
