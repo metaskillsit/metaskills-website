@@ -10,21 +10,21 @@ const executiveTeam = [
     role: "CEO, Metaskills Institute | Senior Consultant",
     expertise: "Data Analytics | Data Science | Agentic AI | AI | Machine Learning",
     image: "/images/faculty/faculty-jinghao.png",
-    bio: "Dr. Jinghao Ke is a recognised leader in applied AI...",
+    bio: "Dr. Jinghao Ke is a recognised leader in applied AI, finance, and analytics, with extensive experience spanning AI development, digital transformation, and executive education across ASEAN. He has led cross-border consulting projects and is known for bridging advanced AI capabilities with practical business applications.",
   },
   {
     name: "Christopher Tan",
     role: "CBDO, Metaskills Institute | Senior Consultant",
     expertise: "Data Science | Algorithmic Trading | Business Development",
     image: "/images/faculty/faculty-chris.jpg",
-    bio: "Entrepreneurial Education, Technology and Strategy leader...",
+    bio: "Christopher Tan is an entrepreneurial education, technology, and strategy leader with over 20 years of experience across Government, Higher Education, and Industry. He has built high-performance teams, led transformation initiatives, and played key roles in SMU Academy and national policy development.",
   },
   {
     name: "Andrew Toh",
     role: "Head, Operations | Consultant",
     expertise: "Operational Leadership | AI-Driven Transformation",
     image: "/images/faculty/faculty-andrew.png",
-    bio: "Blending 17 years of defense and corporate experience...",
+    bio: "Andrew Toh brings a unique combination of military leadership, adult education expertise, and AI-driven business transformation. He served 16 years in the Singapore Armed Forces (SAF) as a Subject Matter Expert in signal operations, designing and delivering structured training programmes for Regulars, NSFs, and NSmen. He specialises in training system design, trainer development, and adaptive delivery methodologies, and was involved in National Day Parade (NDP) 2009, 2013, and 2018. Transitioning into the corporate space, he now focuses on AI operations, vibe coding, customised corporate training, train-the-trainer programmes, and business consulting, driving practical AI adoption aligned to real-world business use cases.",
   },
 ];
 
@@ -34,35 +34,35 @@ const aiTeam = [
     role: "Lead Consultant",
     expertise: "Data Science | AI | Machine Learning",
     image: "/images/faculty/faculty-jackhong.jpg",
-    bio: "Dr. Jack Hong is Founder & CEO of Integrum Global...",
+    bio: "Dr. Jack Hong is a leader in enterprise AI adoption, guiding organisations from strategy to large-scale deployment. He has trained thousands of professionals across ASEAN and specialises in practical AI implementation.",
   },
   {
     name: "Jack Tee",
     role: "Consultant",
     expertise: "AI | Machine Learning | Deep Learning",
     image: "/images/faculty/faculty-jacktee.png",
-    bio: "As the business-minded AI Engineering Head...",
+    bio: "Jack Tee is an AI Engineering leader specialising in developing practical AI solutions for real-world business applications, including NLP, computer vision, and optimisation systems.",
   },
   {
     name: "Dr Jonathan Khoo",
     role: "Consultant",
     expertise: "Data Science | AI",
     image: "/images/faculty/faculty-jonathan.png",
-    bio: "Dr Jonathan Khoo is a full-stack app developer...",
+    bio: "Dr Jonathan Khoo is a full-stack AI developer with strong academic credentials from SMU and the University of Michigan, specialising in predictive modelling and data-driven decision systems.",
   },
   {
     name: "Evelyn Wong",
     role: "Consultant",
     expertise: "Data Governance | Analytics",
     image: "/images/faculty/faculty-evelyn.png",
-    bio: "Evelyn Wong is a data governance specialist...",
+    bio: "Evelyn Wong is a data governance specialist with experience across finance, IT, and risk, leading enterprise data frameworks and training professionals in analytics and AI tools.",
   },
   {
     name: "Ms. Alena Lavrinenko",
     role: "Consultant",
     expertise: "Generative AI | AI Solutions",
     image: "/images/faculty/faculty-alena.jpg",
-    bio: "Alena Lavrinenko is an AI Solutions Manager...",
+    bio: "Alena Lavrinenko is an AI Solutions Manager specialising in generative and agentic AI, helping organisations transition from experimentation to operational deployment.",
   },
 ];
 
@@ -71,8 +71,8 @@ const algoTradingTeam = [
     name: "Victor",
     role: "Lead Consultant, Algorithmic Trading",
     expertise: "Algorithmic Trading | Forex | ML",
-    image: "/images/faculty/faculty-victor.png",
-    bio: "Victor used to run his own firm...",
+    image: "/images/faculty/faculty-victor.jpg",
+    bio: "Victor brings over 20 years of experience in financial markets, specialising in algorithmic trading systems powered by machine learning and reinforcement learning for automated trading performance.",
   },
 ];
 
@@ -82,14 +82,14 @@ const cyberTeam = [
     role: "Lead Consultant",
     expertise: "Cybersecurity | ISO 27001",
     image: "/images/faculty/faculty-steven.jpg",
-    bio: "Steven Ong is a seasoned cybersecurity executive...",
+    bio: "Steven Ong is a cybersecurity leader with over 25 years of experience in enterprise security, governance, and compliance, with strong expertise in ISO 27001 and NIST frameworks.",
   },
   {
     name: "Jimmy Leong",
     role: "Adjunct Trainer",
     expertise: "Adult Education | AI Training",
     image: "/images/faculty/faculty-jimmy.jpg",
-    bio: "Jimmy Leong is a master trainer...",
+    bio: "Jimmy Leong is a master trainer with over 20 years of experience in adult education and IT training, specialising in AI and cybersecurity curriculum design and delivery.",
   },
 ];
 
@@ -99,7 +99,7 @@ const adjunctTrainers = [
     role: "Adjunct Trainer",
     expertise: "Programming | EdTech",
     image: "/images/faculty/faculty-yinjie.jpg",
-    bio: "Yinjie is co-founder at Tinkercademy...",
+    bio: "Soon Yinjie is co-founder of Tinkercademy and a leader in programming education and curriculum innovation with strong academic and policy experience.",
   },
 ];
 
