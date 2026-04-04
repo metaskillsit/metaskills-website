@@ -2,8 +2,22 @@ Options -MultiViews
 
 RewriteEngine On
 
+# React SPA routing
 RewriteCond %{REQUEST_FILENAME} !-f
-
 RewriteCond %{REQUEST_FILENAME} !-d
-
 RewriteRule ^ index.html [QSA,L]
+
+# TEMP: Disable caching (remove later)
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|html)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </IfModule>
+</FilesMatch>
