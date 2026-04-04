@@ -34,7 +34,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # 5. Deploy to A2 via FTP
+      # 5. Deploy to A2 via FTP (FULL RESET DEPLOY)
       - name: Deploy to A2 via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -44,16 +44,17 @@ jobs:
           protocol: ftps
           port: 21
 
-          # THIS is your built site
+          # Upload ONLY built files
           local-dir: dist/
 
-          # THIS is the MOST IMPORTANT FIX
+          # 🔥 CRITICAL: MUST BE public_html
           server-dir: public_html/
 
-          # CLEAN old files before upload
+          # 🔥 FORCE CLEAN (removes old images, old build, EVERYTHING)
           dangerous-clean-slate: true
 
-          # optional but safe
+          # Ignore unnecessary files
           exclude: |
             **/.git*
             **/.github*
+            **/node_modules/**
