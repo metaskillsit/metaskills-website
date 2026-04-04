@@ -99,7 +99,7 @@ const adjunctTrainers = [
     role: "Adjunct Trainer",
     expertise: "Programming | EdTech",
     image: "/images/faculty/faculty-yinjie.jpg",
-    bio: "Soon Yinjie is co-founder of Tinkercademy and a leader in programming education and curriculum innovation with strong academic and policy experience.",
+    bio: "SYInjie is co-founder at Tinkercademy and Tinkertanker Pte Ltd., a technology and education company in Singapore, building software, electronics, curriculum, and the next generation of coders, makers, and creators. YJ handles partnerships, strategy, and business development, while always making time to teach a few of his favourite programming classes. YJ received his Bachelor's and Master's degrees in Electrical Engineering from Stanford University in the USA, and a Post-Graduate Diploma in Secondary Education from the National Institute of Education in Singapore. Before Tinkertanker, YJ taught computing at Raffles Institution as Curriculum Head for Infocomm Technology, and served as a Senior Head for Policy & Planning at the Higher Education Division in the Ministry of Education, Singapore.",
   },
 ];
 
