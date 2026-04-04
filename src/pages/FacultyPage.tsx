@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface FacultyMember {
   name: string;
