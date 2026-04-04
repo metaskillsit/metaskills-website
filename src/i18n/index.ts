@@ -20,7 +20,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
     escapeValue: false,
   },
   detection: {
-    order: ["localStorage", "navigator"],
+    order: ["localStorage"],
     caches: ["localStorage"],
     lookupLocalStorage: "i18nextLng",
   },
