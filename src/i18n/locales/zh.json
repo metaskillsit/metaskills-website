@@ -171,14 +171,19 @@
     "langDesc": "我们的课程提供英语、中文和越南语版本——覆盖新加坡和更广泛东盟地区的专业人士和组织。"
   },
   "facultyPage": {
-    "heroTitle": "认识我们的教练与顾问",
-    "heroSubtitle": "课程背后的实践者、研究者和教育者。",
+    "heroTitle": "我们的师资",
+    "heroSubtitle": "推动亚洲AI教育、商业转型和专业发展的行业领袖和领域专家。",
     "intro": "我们的师资已培训超过10,000名专业人士，并在知名大学教授数据科学。所有培训师都经过精心挑选，以简化复杂概念而著称。",
-    "executiveTeam": "MetaSkills 管理团队",
+    "executiveTeam": "管理团队",
+    "execDesc": "推动 Metaskills Institute 愿景与增长的战略领导层。",
     "aiTeam": "AI / 数据科学团队",
+    "aiDesc": "人工智能、机器学习、数据治理和数字化转型方面的专家。",
+    "algoTeam": "算法交易团队",
+    "algoDesc": "量化金融、自动化交易系统和市场机器学习方面的专家。",
     "cyberTeam": "网络安全团队",
-    "adjunctTrainers": "兼职培训师",
-    "algoTeam": "算法交易团队"
+    "cyberDesc": "企业安全治理、合规和网络安全教育领域的领导者。",
+    "readFullBio": "阅读完整简历",
+    "showLess": "收起"
   },
   "partnersPage": {
     "heroTitle": "我们的合作伙伴",
