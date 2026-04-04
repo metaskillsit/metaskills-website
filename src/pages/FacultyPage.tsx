@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface FacultyMember {
   name: string;
@@ -81,7 +83,7 @@ An ardent educator, Dr. Hong has been imparting his vast knowledge in digital tr
     name: "Sriven Naidu",
     role: "Lead Senior Consultant, AI Leadership",
     expertise: "AI Governance | Leadership | Human-Centric AI",
-    image: "/images/faculty/faculty-sriven.jpg",
+    image: "/images/faculty/faculty-sriven.png",
     bio: `Sriven is an executive educator, leadership advisor, and AI-focused consultant with more than 20 years of experience across management education, leadership development, executive training, mindfulness practice, and facilitation in Asia, Europe, and North America. He is currently Executive-in-Residence at IMD, the Swiss business school that ranked #1 worldwide for custom programs in the Financial Times Executive Education Rankings 2025.
 His advisory work sits at the intersection of human development, high performance, and disruptive technology. Drawing on a cross-sector career spanning public policy, strategy, sport, law, executive education, and leadership development, Sriven helps leaders, institutions, and families respond wisely to the opportunities and risks created by AI, social media, and other emerging technologies.
 A core area of his work is helping organizations and communities understand how new technologies are reshaping wellbeing, education, cognitive development, and creativity. He speaks and advises on the human costs of tech overexposure, including diminished attention, weakened reflection, fragmented learning, and the erosion of deep creativity, while offering practical safeguards for leaders, parents, educators, and children.
@@ -97,7 +99,7 @@ Sriven holds an MBA from INSEAD and a Bachelor of Laws from the National Univers
     name: "Phan Phi Long",
     role: "Senior Consultant and Trainer, AI Leadership",
     expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
-    image: "/images/faculty/faculty-philong.jpg",
+    image: "/images/faculty/faculty-philong.png",
     bio: `Mr. Long Phan is the Managing Director of Way4SME Pte Ltd and VASSS Pte Ltd, where he serves as a trusted IT partner to over 1,000 SMEs across Singapore. With deep expertise in IT service management and enterprise transformation, he has played a pivotal role in helping SMEs and startups redesign their IT infrastructure, streamline operational processes, and achieve scalable, sustainable growth.
 An accomplished professional holding certifications such as PMP, ITIL Expert, and CEH, Mr. Phan brings extensive experience in process engineering, operations management, and cybersecurity. In recent years, he has also developed strong practical capabilities across Generative AI and agentic technology stacks, enabling organisations to adopt AI-driven automation, intelligent workflows, and next-generation digital solutions. His work has empowered companies to enhance system stability, improve operational efficiency, and build future-ready, AI-enabled capabilities.
 Beyond his corporate leadership, Mr. Phan is actively engaged in the regional business community. He serves as President of the Vietnamese Association in Singapore, Vice-President of the Vietnam Chamber of Commerce in Singapore, and Director of Regulus Investment and Capital Holdings. Through these roles, he has supported more than 100 Vietnamese SMEs and startups in expanding into Singapore and leveraging it as a gateway to global markets.
@@ -202,40 +204,83 @@ As a Senior Lecturer, he designed industry-aligned cybersecurity curricula, supe
    COMPONENTS (UNCHANGED)
 ========================= */
 
+const BioText = ({ bio }: { bio: string }) => {
+  const [expanded, setExpanded] = useState(false);
+  const paragraphs = bio.trim().split("\n").filter(Boolean);
+  const preview = paragraphs.slice(0, 2).join("\n");
+  const hasMore = paragraphs.length > 2;
+
+  return (
+    <div>
+      <p className="text-sm text-muted-foreground whitespace-pre-line leading-relaxed">
+        {expanded ? bio.trim() : preview}
+      </p>
+      {hasMore && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="mt-2 text-sm font-medium text-primary hover:text-primary/80 flex items-center gap-1 transition-colors"
+        >
+          {expanded ? (
+            <>Show Less <ChevronUp className="w-4 h-4" /></>
+          ) : (
+            <>Read Full Bio <ChevronDown className="w-4 h-4" /></>
+          )}
+        </button>
+      )}
+    </div>
+  );
+};
+
 const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => (
   <motion.div
     key={f.name}
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: i * 0.1 }}
-    className="grid md:grid-cols-4 gap-8 border-t pt-10"
+    viewport={{ once: true }}
+    transition={{ delay: i * 0.08 }}
+    className="grid md:grid-cols-[240px_1fr] gap-8 py-10 border-b border-border last:border-b-0"
   >
-    <div className="md:col-span-1">
-      <div className="aspect-square overflow-hidden rounded-sm">
-        <img src={f.image} alt={f.name} className="w-full h-full object-cover" />
+    <div>
+      <div className="aspect-square overflow-hidden rounded-lg shadow-md">
+        <img src={f.image} alt={f.name} className="w-full h-full object-cover object-top" />
       </div>
     </div>
 
-    <div className="md:col-span-3">
-      <h3 className="text-xl font-bold">{f.name}</h3>
-      <p className="text-sm text-primary">{f.role}</p>
-      <p className="text-xs text-accent uppercase">{f.expertise}</p>
-      <p className="text-sm text-muted-foreground whitespace-pre-line">
-        {f.bio}
-      </p>
+    <div className="flex flex-col gap-2">
+      <div>
+        <h3 className="text-xl font-bold text-foreground">{f.name}</h3>
+        <p className="text-sm font-medium text-primary mt-0.5">{f.role}</p>
+        <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">{f.expertise}</p>
+      </div>
+      <div className="mt-2">
+        <BioText bio={f.bio} />
+      </div>
     </div>
   </motion.div>
 );
 
-const TeamSection = ({ title, members }: { title: string; members: FacultyMember[] }) => (
-  <div className="mb-16">
-    <h2 className="text-2xl font-bold mb-8">{title}</h2>
-    <div className="space-y-14">
+const TeamSection = ({ title, description, members }: { title: string; description?: string; members: FacultyMember[] }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="mb-20"
+  >
+    <div className="mb-8">
+      <div className="flex items-center gap-3 mb-2">
+        <div className="w-1 h-8 bg-primary rounded-full" />
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground">{title}</h2>
+      </div>
+      {description && (
+        <p className="text-muted-foreground ml-[19px] max-w-2xl">{description}</p>
+      )}
+    </div>
+    <div className="divide-y divide-border border-t border-border">
       {members.map((f, i) => (
         <FacultyCard key={f.name} f={f} i={i} />
       ))}
     </div>
-  </div>
+  </motion.div>
 );
 
 const FacultyPage = () => {
@@ -243,12 +288,47 @@ const FacultyPage = () => {
     <div>
       <Navbar />
       <main className="pt-16">
+        {/* Hero Banner */}
+        <section className="bg-primary/5 py-16 md:py-20">
+          <div className="max-w-[1140px] mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center"
+            >
+              <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Our Faculty
+              </h1>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                Industry leaders and domain experts driving AI education, business transformation, and professional development across Asia.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Faculty Sections */}
         <section className="py-16">
           <div className="max-w-[1140px] mx-auto px-6">
-            <TeamSection title="Executive Team" members={executiveTeam} />
-            <TeamSection title="AI Team" members={aiTeam} />
-            <TeamSection title="Algo Trading Team" members={algoTradingTeam} />
-            <TeamSection title="Cyber Team" members={cyberTeam} />
+            <TeamSection
+              title="Executive Team"
+              description="Strategic leadership driving Metaskills Institute's vision and growth."
+              members={executiveTeam}
+            />
+            <TeamSection
+              title="AI & Data Science Team"
+              description="Specialists in artificial intelligence, machine learning, data governance, and digital transformation."
+              members={aiTeam}
+            />
+            <TeamSection
+              title="Algorithmic Trading Team"
+              description="Experts in quantitative finance, automated trading systems, and machine learning for markets."
+              members={algoTradingTeam}
+            />
+            <TeamSection
+              title="Cybersecurity Team"
+              description="Leaders in enterprise security governance, compliance, and cybersecurity education."
+              members={cyberTeam}
+            />
           </div>
         </section>
       </main>
