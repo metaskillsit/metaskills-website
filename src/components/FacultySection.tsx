@@ -3,91 +3,78 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import jimmyImg from "@/assets/jimmy.jpg";
-import yinjieImg from "@/assets/yinjie.jpg";
-import evelynImg from "@/assets/evelyn.png";
-import jinghaoImg from "@/assets/jinghao.png";
-import chrisImg from "@/assets/christan.jpg";
-import jackHongImg from "@/assets/jackhong.jpg";
-import andrewImg from "@/assets/andrew.png";
-import jackTeeImg from "@/assets/jacktee.png";
-import jonathanImg from "@/assets/jonathan.png";
-import alenaImg from "@/assets/alena.jpg";
-import stevenImg from "@/assets/steven.jpg";
-import victorImg from "@/assets/victor.jpg";
-
 const allFaculty = [
   {
     name: "Dr Ke Jinghao",
     role: "CEO, Metaskills Institute",
     expertise: "Data Analytics | Data Science | Agentic AI | Machine Learning",
-    image: jinghaoImg,
+    image: "/images/faculty/faculty-jinghao.png",
   },
   {
     name: "Christopher Tan",
     role: "CBDO, Metaskills Institute",
     expertise: "Data Science | Algorithmic Trading | Business Development",
-    image: chrisImg,
+    image: "/images/faculty/faculty-chris.jpg",
   },
   {
     name: "Dr Jack Hong",
     role: "Lead Consultant",
     expertise: "Data Science | AI | Machine Learning | Deep Learning",
-    image: jackHongImg,
+    image: "/images/faculty/faculty-jackhong.jpg",
   },
   {
     name: "Andrew Toh",
     role: "Head, Operations",
     expertise: "Operational Leadership | AI-Driven Transformation | Vibe Coding",
-    image: andrewImg,
+    image: "/images/faculty/faculty-andrew.png",
   },
   {
     name: "Jack Tee",
     role: "Consultant",
     expertise: "Data Science | AI | Machine Learning | NLP | Computer Vision",
-    image: jackTeeImg,
+    image: "/images/faculty/faculty-jacktee.png",
   },
   {
     name: "Dr Jonathan Khoo",
     role: "Consultant",
     expertise: "Data Science | AI | Machine Learning | Deep Learning",
-    image: jonathanImg,
+    image: "/images/faculty/faculty-jonathan.png",
   },
   {
     name: "Evelyn Wong",
     role: "Consultant",
     expertise: "Data Governance | Business & Data Analytics | Compliance",
-    image: evelynImg,
+    image: "/images/faculty/faculty-evelyn.png",
   },
   {
     name: "Ms. Alena Lavrinenko",
     role: "Consultant",
     expertise: "Generative & Agentic AI | Supply Chain | Professional Training",
-    image: alenaImg,
+    image: "/images/faculty/faculty-alena.jpg",
   },
   {
     name: "Victor",
     role: "Lead Consultant, Algo Trading",
     expertise: "Algorithmic Trading | Forex & Gold Markets | Machine Learning",
-    image: victorImg,
+    image: "/images/faculty/faculty-victor.jpg",
   },
   {
     name: "Mr Steven Ong",
     role: "Lead Consultant",
     expertise: "Cybersecurity Governance | ISO 27001 | NIST | Cloud Security",
-    image: stevenImg,
+    image: "/images/faculty/faculty-steven.jpg",
   },
   {
     name: "Jimmy Leong",
     role: "Adjunct Trainer",
     expertise: "Adult Education | AI & Cybersecurity Training | Instructor Development",
-    image: jimmyImg,
+    image: "/images/faculty/faculty-jimmy.jpg",
   },
   {
     name: "Soon Yinjie",
     role: "Adjunct Trainer",
     expertise: "Programming Education | EdTech | Partnerships & Strategy",
-    image: yinjieImg,
+    image: "/images/faculty/faculty-yinjie.jpg",
   },
 ];
 
@@ -147,50 +134,32 @@ const FacultySection = () => {
             </p>
           </div>
           <div className="hidden md:flex gap-2">
-            <button onClick={prev} className="p-2 rounded-sm border border-border hover:bg-accent transition-colors" aria-label="Previous">
-              <ChevronLeft className="w-5 h-5 text-foreground" />
+            <button onClick={prev} className="p-2 border hover:bg-accent">
+              <ChevronLeft className="w-5 h-5" />
             </button>
-            <button onClick={next} className="p-2 rounded-sm border border-border hover:bg-accent transition-colors" aria-label="Next">
-              <ChevronRight className="w-5 h-5 text-foreground" />
+            <button onClick={next} className="p-2 border hover:bg-accent">
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </motion.div>
-        <div className="flex gap-1.5 mb-8">
-          {Array.from({ length: maxIdx + 1 }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIdx(i)}
-              className={`h-1 rounded-full transition-all duration-300 ${i === currentIdx ? "w-6 bg-primary" : "w-2 bg-border"}`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
+
         <div className="overflow-hidden" ref={trackRef}>
-          <div className="flex gap-8" style={{ transform: `translateX(-${translateX}px)`, transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)" }}>
+          <div className="flex gap-8" style={{ transform: `translateX(-${translateX}px)` }}>
             {allFaculty.map((f) => (
-              <div key={f.name} className="group flex-shrink-0" style={{ width: cardWidth > 0 ? cardWidth : "calc(25% - 24px)" }}>
-                <div className="aspect-square overflow-hidden rounded-sm mb-4 bg-muted">
+              <div key={f.name} className="flex-shrink-0" style={{ width: cardWidth }}>
+                <div className="aspect-square overflow-hidden mb-4">
                   <img
                     src={f.image}
                     alt={f.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="font-heading text-lg font-bold text-foreground">{f.name}</h3>
-                <p className="text-sm text-primary font-medium mb-1">{f.role}</p>
-                <p className="text-xs text-muted-foreground leading-relaxed">{f.expertise}</p>
+                <h3 className="font-bold">{f.name}</h3>
+                <p className="text-primary">{f.role}</p>
+                <p className="text-sm">{f.expertise}</p>
               </div>
             ))}
           </div>
-        </div>
-        <div className="flex md:hidden justify-center gap-4 mt-6">
-          <button onClick={prev} className="p-2 rounded-sm border border-border hover:bg-accent transition-colors" aria-label="Previous">
-            <ChevronLeft className="w-5 h-5 text-foreground" />
-          </button>
-          <button onClick={next} className="p-2 rounded-sm border border-border hover:bg-accent transition-colors" aria-label="Next">
-            <ChevronRight className="w-5 h-5 text-foreground" />
-          </button>
         </div>
       </div>
     </section>
