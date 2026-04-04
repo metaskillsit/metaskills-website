@@ -3,18 +3,18 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import jimmyImg from "@/assets/Jimmy Profile.jpg";
-import yinjieImg from "@/assets/Yin Jie.jpeg";
+import jimmyImg from "@/assets/jimmy.jpg";
+import yinjieImg from "@/assets/yinjie.jpg";
 import evelynImg from "@/assets/evelyn.png";
-import jinghaoImg from "@/assets/Jinghao.png";
-import chrisImg from "@/assets/Chris Tan.jpg";
-import jackHongImg from "@/assets/JackHong.jpg";
-import andrewImg from "@/assets/Andrew.png";
-import jackTeeImg from "@/assets/Jack Tee.png";
-import jonathanImg from "@/assets/Jonathan.png";
-import alenaImg from "@/assets/Alena.jpeg";
-import stevenImg from "@/assets/Steven.jpg";
-import victorImg from "@/assets/victor.jpg"; // 👈 THIS IS NEW
+import jinghaoImg from "@/assets/jinghao.png";
+import chrisImg from "@/assets/christan.jpg";
+import jackHongImg from "@/assets/jackhong.jpg";
+import andrewImg from "@/assets/andrew.png";
+import jackTeeImg from "@/assets/jacktee.png";
+import jonathanImg from "@/assets/jonathan.png";
+import alenaImg from "@/assets/alena.jpg";
+import stevenImg from "@/assets/steven.jpg";
+import victorImg from "@/assets/victor.jpg";
 
 const allFaculty = [
   {
