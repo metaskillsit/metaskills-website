@@ -71,7 +71,7 @@ const algoTradingTeam = [
     name: "Victor",
     role: "Lead Consultant, Algorithmic Trading",
     expertise: "Algorithmic Trading | Forex | ML",
-    image: "/images/faculty/faculty-victor.jpg",
+    image: "/images/faculty/faculty-victor.png",
     bio: "Victor brings over 20 years of experience in financial markets, specialising in algorithmic trading systems powered by machine learning and reinforcement learning for automated trading performance.",
   },
 ];
