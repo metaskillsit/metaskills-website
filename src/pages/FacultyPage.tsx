@@ -55,7 +55,7 @@ const aiTeam = [
     role: "Consultant",
     expertise: "Data Governance | Analytics",
     image: "/images/faculty/faculty-evelyn.png",
-    bio: "Evelyn Wong is a data governance specialist with experience across finance, IT, and risk, leading enterprise data frameworks and training professionals in analytics and AI tools.",
+    bio: "Evelyn currently leads infinuem as a Data Governance Specialist to play a pivotal role in participating in data governance initiatives, develop and implement data governance frameworks, policies, standards and roles. Besides being adept in software development, data analysis, machine learning, natural language programming and applications, Evelyn has an extensive background in corporate functions, including Compliance, Business Development, Sales & Marketing and Project Management at 3M and Agilent Technologies. Evelyn is also a Certified Lean Six Sigma Green Belt and Certified Scrum Master. She is well-versed in applying the advanced elements of the Lean Six Sigma, Agile and Scrum Methodologies in any organisation. Evelyn's professional education includes certifications in IT service management, enterprise architecture, and algorithmic trading, further underscoring her commitment to continuous learning and excellence in her field.",
   },
   {
     name: "Ms. Alena Lavrinenko",
