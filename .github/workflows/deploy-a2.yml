@@ -15,22 +15,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      # 1. Checkout repo
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Nod
-        uses: actions/setup-node@v6
+      # 2. Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
+      # 3. Install dependencies
       - name: Install dependencies
         run: npm install
 
-      - name: Build site
+      # 4. Build project
+      - name: Build project
         run: npm run build
 
-      - name: Deploy dist via FTP
+      # 5. Deploy to A2 via FTP
+      - name: Deploy to A2 via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -38,11 +43,17 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
+
+          # THIS is your built site
           local-dir: dist/
-          server-dir: metaskills.sg/
+
+          # THIS is the MOST IMPORTANT FIX
+          server-dir: public_html/
+
+          # CLEAN old files before upload
+          dangerous-clean-slate: true
+
+          # optional but safe
           exclude: |
-            **/wp-content/**
-            **/wp-includes/**
-            **/wp-admin/**
-            **/wp-*.php
-            **/.ftp-deploy-sync-state.json
+            **/.git*
+            **/.github*
