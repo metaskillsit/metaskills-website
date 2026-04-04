@@ -81,7 +81,7 @@ An ardent educator, Dr. Hong has been imparting his vast knowledge in digital tr
     name: "Sriven Naidu",
     role: "Lead Senior Consultant, AI Leadership",
     expertise: "AI Governance | Leadership | Human-Centric AI",
-    image: "/images/faculty/faculty-sriven.jpg",
+    image: "/images/faculty/faculty-sriven.png",
     bio: `Sriven is an executive educator, leadership advisor, and AI-focused consultant with more than 20 years of experience across management education, leadership development, executive training, mindfulness practice, and facilitation in Asia, Europe, and North America. He is currently Executive-in-Residence at IMD, the Swiss business school that ranked #1 worldwide for custom programs in the Financial Times Executive Education Rankings 2025.
 His advisory work sits at the intersection of human development, high performance, and disruptive technology. Drawing on a cross-sector career spanning public policy, strategy, sport, law, executive education, and leadership development, Sriven helps leaders, institutions, and families respond wisely to the opportunities and risks created by AI, social media, and other emerging technologies.
 A core area of his work is helping organizations and communities understand how new technologies are reshaping wellbeing, education, cognitive development, and creativity. He speaks and advises on the human costs of tech overexposure, including diminished attention, weakened reflection, fragmented learning, and the erosion of deep creativity, while offering practical safeguards for leaders, parents, educators, and children.
