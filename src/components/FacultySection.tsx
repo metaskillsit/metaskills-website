@@ -11,7 +11,7 @@ const allFaculty = [
     image: "/images/faculty/faculty-jinghao.png",
   },
   {
-    name: "Christopher Tan",
+    name: "Chris Tan",
     role: "CBDO, Metaskills Institute",
     expertise: "Data Science | Algorithmic Trading | Business Development",
     image: "/images/faculty/faculty-chris.jpg",
@@ -27,6 +27,18 @@ const allFaculty = [
     role: "Head, Operations",
     expertise: "Operational Leadership | AI-Driven Transformation | Vibe Coding",
     image: "/images/faculty/faculty-andrew.png",
+  },
+  {
+    name: "Sriven Naidu",
+    role: "Lead Senior Consultant, AI Leadership",
+    expertise: "AI Governance | Leadership | Human-Centric AI",
+    image: "/images/faculty/faculty-sriven.png",
+  },
+  {
+    name: "Phan Phi Long",
+    role: "Senior Consultant and Trainer",
+    expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
+    image: "/images/faculty/faculty-philong.png",
   },
   {
     name: "Jack Tee",
