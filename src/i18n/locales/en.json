@@ -171,14 +171,19 @@
     "langDesc": "Our programmes are available in English, Chinese, and Vietnamese — reaching professionals and organisations across Singapore and the wider ASEAN region."
   },
   "facultyPage": {
-    "heroTitle": "Meet Our Coaches & Consultants",
-    "heroSubtitle": "Practitioners, researchers, and educators behind our programmes.",
+    "heroTitle": "Our Faculty",
+    "heroSubtitle": "Industry leaders and domain experts driving AI education, business transformation, and professional development across Asia.",
     "intro": "Our faculty have collectively trained more than 10,000 professionals and teach Data Science at renowned Universities. All our trainers are carefully selected and known for simplifying difficult concepts for learners.",
-    "executiveTeam": "MetaSkills Executive Team",
-    "aiTeam": "AI / Data Science Team",
-    "cyberTeam": "Cyber Security Team",
-    "adjunctTrainers": "Adjunct Trainers",
-    "algoTeam": "Algorithmic Trading Team"
+    "executiveTeam": "Executive Team",
+    "execDesc": "Strategic leadership driving Metaskills Institute's vision and growth.",
+    "aiTeam": "AI & Data Science Team",
+    "aiDesc": "Specialists in artificial intelligence, machine learning, data governance, and digital transformation.",
+    "algoTeam": "Algorithmic Trading Team",
+    "algoDesc": "Experts in quantitative finance, automated trading systems, and machine learning for markets.",
+    "cyberTeam": "Cybersecurity Team",
+    "cyberDesc": "Leaders in enterprise security governance, compliance, and cybersecurity education.",
+    "readFullBio": "Read Full Bio",
+    "showLess": "Show Less"
   },
   "partnersPage": {
     "heroTitle": "Our Partners",
