@@ -10,7 +10,7 @@ const executiveTeam = [
     role: "CEO, Metaskills Institute | Senior Consultant",
     expertise: "Data Analytics | Data Science | Agentic AI | AI | Machine Learning",
     image: "/images/faculty/faculty-jinghao.png",
-    bio: "Dr. Jinghao Ke is a recognised leader in applied AI, finance, and analytics, with extensive experience spanning AI development, digital transformation, and executive education across ASEAN. He has led cross-border consulting projects and is known for bridging advanced AI capabilities with practical business applications.",
+    bio: "Dr. Ke is the co-founder of Research Room, a highly trained team of Data Scientists and Analysts with domain expertise in economics, finance, strategy, and business management. He has provided management consulting for and managed teams to help thousands of individuals, SMEs, MNCs and various Singapore Government agencies deliver bespoke implementations of data-driven turn-key technology solutions in areas of complex prediction, decision making, machine learning, deep learning, amongst others. Dr. Ke is also co-founder of JCube Institute and a full-stack programmer well versed in various analytics stacks such as Python, R, SAS, Power BI, Microsoft Analytics and Stata. On top of his work, he is adjunct faculty with the Singapore Management University in his spare time and teaches at Professional, Masters and Undergraduate levels.",
   },
   {
     name: "Christopher Tan",
@@ -34,7 +34,7 @@ const aiTeam = [
     role: "Lead Consultant",
     expertise: "Data Science | AI | Machine Learning",
     image: "/images/faculty/faculty-jackhong.jpg",
-    bio: "Dr. Jack Hong is a leader in enterprise AI adoption, guiding organisations from strategy to large-scale deployment. He has trained thousands of professionals across ASEAN and specialises in practical AI implementation.",
+    bio: "Co-founder of Research Room, an A.I. consulting and development outfit that delivers decision-making capabilities for complex use-cases, Dr. Hong specializes in developing prediction and decision engines with the use of alternative data. Some of his notable works include omni-channel content personalization systems, manpower resource optimization using deep reinforcement learning, real estate valuation engines, and highly personalized portfolio strategies using applied artificial intelligence (AI). He is also AI Technology Consultant at Certis Group, Data Science Advisor at Vertex Holdings, advising on Human Conversational AI, Predictive Resource Allocation, Super-Intelligence in Natural Language Capabilities in Finance. He is also CEO of Integrum Global. Adjunct faculty with the Singapore Management University (SMU), and has been actively teaching undergraduate, postgraduate, and professional programmes since 2015. He is also the lead faculty for the highly acclaimed "Leading Digital Transformation" course for MBA students.",
   },
   {
     name: "Jack Tee",
@@ -48,7 +48,7 @@ const aiTeam = [
     role: "Consultant",
     expertise: "Data Science | AI",
     image: "/images/faculty/faculty-jonathan.png",
-    bio: "Dr Jonathan Khoo is a full-stack AI developer with strong academic credentials from SMU and the University of Michigan, specialising in predictive modelling and data-driven decision systems.",
+    bio: "Dr Jonathan Khoo is a full-stack app developer who has successfully delivered many projects on bespoke implementations of data driven strategies that deliver complex prediction and decision-making capabilities to many large organizations. Dr Khoo has published papers in Genetic Programming and a working paper in Energy Prediction. He obtained his Ph.D. at SMU where his dissertation thesis investigates corporate finance through the lens of social network graph analytics, where he found a statistically significant "ownership centrality" effect in firm performance. Prior to that, he completed his Masters in Industrial Engineering and Operations Research at the University of Michigan (Ann Arbor), a year after he received degrees with Highest Honors in Economics and Summa Cum Laude in Electrical Engineering. He is an alumnus of Raffles Institution and Hwa Chong Institution.",
   },
   {
     name: "Evelyn Wong",
