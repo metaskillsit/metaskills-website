@@ -3,18 +3,18 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import jimmyImg from "@/assets/jimmy-profile.jpg";
-import yinjieImg from "@/assets/faculty-yinjie.jpeg";
-import evelynImg from "@/assets/faculty-evelyn.png";
-import jinghaoImg from "@/assets/faculty-jinghao.jpg";
-import chrisImg from "@/assets/faculty-chris.jpg";
-import jackHongImg from "@/assets/faculty-jackhong.jpg";
-import andrewImg from "@/assets/faculty-andrew.jpg";
-import jackTeeImg from "@/assets/faculty-jacktee.jpg";
-import jonathanImg from "@/assets/faculty-jonathan.jpg";
-import alenaImg from "@/assets/faculty-alena.jpg";
-import victorImg from "@/assets/faculty-victor.jpg";
-import stevenImg from "@/assets/faculty-steven.jpg";
+import jimmyImg from "@/assets/Jimmy Profile.jpg";
+import yinjieImg from "@/assets/Yin Jie.jpeg";
+import evelynImg from "@/assets/evelyn.png";
+import jinghaoImg from "@/assets/Jinghao.png";
+import chrisImg from "@/assets/Chris Tan.jpg";
+import jackHongImg from "@/assets/JackHong.jpg";
+import andrewImg from "@/assets/Andrew.png";
+import jackTeeImg from "@/assets/Jack Tee.png";
+import jonathanImg from "@/assets/Jonathan.png";
+import alenaImg from "@/assets/Alena.jpeg";
+import stevenImg from "@/assets/Steven.jpg";
+import victorImg from "@/assets/victor.jpg"; // 👈 THIS IS NEW
 
 const allFaculty = [
   {
