@@ -80,7 +80,7 @@ const allFaculty = [
     name: "Jimmy Leong",
     role: "Adjunct Trainer",
     expertise: "Adult Education | AI & Cybersecurity Training | Instructor Development",
-    image: "/images/faculty/faculty-jimmy.jpg",
+    image: "/images/faculty/faculty-jimmy.png",
   },
   {
     name: "Soon Yinjie",
