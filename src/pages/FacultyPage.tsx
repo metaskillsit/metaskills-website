@@ -226,9 +226,11 @@ const BioText = ({ bio }: { bio: string }) => {
 
   return (
     <div>
-      <p className="text-sm text-muted-foreground whitespace-pre-line leading-relaxed">
-        {expanded ? bio.trim() : preview}
-      </p>
+      <div className="text-sm text-muted-foreground leading-relaxed">
+        {(expanded ? bio.trim().split("\n").filter(Boolean) : preview.split("\n").filter(Boolean)).map((p, idx) => (
+          <p key={idx} className="text-justify mb-3 last:mb-0">{p}</p>
+        ))}
+      </div>
       {hasMore && (
         <button
           onClick={() => setExpanded(!expanded)}
