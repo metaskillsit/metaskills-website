@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Index from "./pages/Index.tsx";
 import CoursePage from "./pages/CoursePage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
