@@ -68,7 +68,7 @@ const allFaculty = [
     name: "Victor",
     role: "Lead Consultant, Algo Trading",
     expertise: "Algorithmic Trading | Forex & Gold Markets | Machine Learning",
-    image: "/images/faculty/faculty-victor.png",
+    image: "/images/faculty/faculty-victor.jpg",
   },
   {
     name: "Mr Steven Ong",
