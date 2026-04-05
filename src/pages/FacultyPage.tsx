@@ -159,7 +159,7 @@ const algoTradingTeam: FacultyMember[] = [
     i18nKey: "victor",
     role: "Lead Consultant, Algorithmic Trading",
     expertise: "Algo Trading | ML | Forex | Reinforcement Learning",
-    image: "/images/faculty/faculty-victor.png",
+    image: "/images/faculty/faculty-victor.jpg",
     bio: `Victor is a seasoned financial professional and algorithmic trading specialist with over 20 years of experience in financial services, having previously founded and led his own firm focused on sales and marketing of financial products, risk management, and fiscal planning for high-net-worth individuals across the Greater China region.
 Over the past four years, he has dedicated himself to his passion for algorithmic trading, self-funding and building a consistently profitable portfolio within the trillion-dollar forex and gold markets. Leveraging proprietary trading systems, Victor has successfully developed and deployed automated strategies powered by machine learning, with a particular focus on deep reinforcement learning for time-series analysis.
 His methodology combines rigorous statistical modelling of currencies and commodities markets with advanced engineering, writing high-performance algorithms in C++ and Python to execute trades with precision, scalability, and consistency.
