@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { withFacultyImageVersion } from "@/lib/facultyImages";
 
 interface FacultyMember {
   name: string;
@@ -261,7 +262,7 @@ const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
     >
       <div>
         <div className="aspect-square overflow-hidden rounded-lg shadow-md">
-          <img src={f.image} alt={f.name} className="w-full h-full object-cover object-top" />
+          <img src={withFacultyImageVersion(f.image)} alt={f.name} className="w-full h-full object-cover object-top" />
         </div>
       </div>
       <div className="flex flex-col gap-2">

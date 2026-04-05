@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { withFacultyImageVersion } from "@/lib/facultyImages";
 
 const allFaculty = [
   {
@@ -161,7 +162,7 @@ const FacultySection = () => {
               <div key={f.name} className="flex-shrink-0" style={{ width: cardWidth }}>
                 <div className="aspect-square overflow-hidden mb-4">
                   <img
-                    src={f.image}
+                    src={withFacultyImageVersion(f.image)}
                     alt={f.name}
                     className="w-full h-full object-cover"
                   />
