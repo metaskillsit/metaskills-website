@@ -79,19 +79,26 @@ Before embarking on his current trailblazing path, Dr. Hong garnered extensive e
 An ardent educator, Dr. Hong has been imparting his vast knowledge in digital transformation, artificial intelligence, and financial economics to undergraduates, postgraduates (MBA, EMBA, DBA), and professionals in academy programs since 2014. His academic contributions are further highlighted by his authorship of two applied works: "Financial Management, Theory and Practice" and "A Practitioner's Guide to Digital Platform Business," essential readings in Singapore Management University's MBA program.`,
   },
   {
-    name: "Sriven Naidu",
+    name: "Sriven Naidu | Sound Mind, Sound Body",
     i18nKey: "srivenNaidu",
     role: "Lead Senior Consultant, AI Leadership",
     expertise: "AI Governance | Leadership | Human-Centric AI",
     image: "/images/faculty/faculty-sriven.png",
     bio: `Sriven is an executive educator, leadership advisor, and AI-focused consultant with more than 20 years of experience across management education, leadership development, executive training, mindfulness practice, and facilitation in Asia, Europe, and North America. He is currently Executive-in-Residence at IMD, the Swiss business school that ranked #1 worldwide for custom programs in the Financial Times Executive Education Rankings 2025.
+
 His advisory work sits at the intersection of human development, high performance, and disruptive technology. Drawing on a cross-sector career spanning public policy, strategy, sport, law, executive education, and leadership development, Sriven helps leaders, institutions, and families respond wisely to the opportunities and risks created by AI, social media, and other emerging technologies.
+
 A core area of his work is helping organizations and communities understand how new technologies are reshaping wellbeing, education, cognitive development, and creativity. He speaks and advises on the human costs of tech overexposure, including diminished attention, weakened reflection, fragmented learning, and the erosion of deep creativity, while offering practical safeguards for leaders, parents, educators, and children.
+
 Sriven also brings a distinctive approach to capability development through mind-training. Building on his experience in mindfulness facilitation, leadership development, and high-performance sport, he teaches practical techniques to strengthen attention, focus, creativity, emotional regulation, and intuition in an age of tech-accelerated cognitive atrophy. In 2023, he developed a "Mind-Training for High Performance" programme for the Infijoy platform integrating Stoic philosophy, Himalayan mind-training practices, and positive psychology.
+
 A further dimension of his consulting focuses on the governance of disruptive technologies, including AI and quantum computing. He helps senior leaders make sense of emerging regulation and its implications across consumer trust, privacy, sustainability, human rights, cybersecurity, military and geopolitical competition, and the strategic interests of major technology firms. His background in higher education policy, law, strategy, and executive leadership allows him to bridge the perspectives of governments, corporations, and civil society.
-Sriven's earlier roles include Director of Strategy at Singapore Management University, Deputy Director of Higher Education Policy at Singapore's Ministry of Education, General Manager of a start-up in the creative industries, and Intellectual Property and Corporate Banking Lawyer. He has also designed and delivered leadership and transformation programmes for organizations including CapitaLand's Catapult executive learning centre, Banyan Tree Hotels & Resorts, and major institutions and companies across the UK, US, India, and ASEAN.
-He previously led a team of Coach Developers at the Singapore Sport Institute, supporting high-performance coaches in reflective practice and continuing professional development. He also serves as consultant and advisor to Benber Yu, Head Coach of Team Cicada Trackers, linking elite sport, reflective learning, and sustained performance development in ways that inform his broader leadership and AI advisory practice.
-Sriven holds an MBA from INSEAD and a Bachelor of Laws from the National University of Singapore. He is adept in psychometric assessment, strengths-based development, and leadership facilitation, and brings a rare combination of strategic range, human insight, and cross-disciplinary depth to clients navigating technological disruption and transformation.`,
+
+Sriven's earlier roles include Director of Strategy at Singapore Management University, Deputy Director of Higher Education Policy at Singapore's Ministry of Education, General Manager of a start-up in the creative industries, and Intellectual Property and Corporate Banking Lawyer. He has also designed and delivered leadership and transformation programmes for organizations including CapitaLand's Catapult executive learning centre, and major institutions and companies across the UK, US, India, and ASEAN.
+
+He also serves as consultant and advisor to Benber Yu, Head Coach of Team Cicada Trackers, linking elite sport, reflective learning, and sustained performance development in ways that inform his broader leadership and AI advisory practice.
+
+Sriven is adept in psychometric assessment, strengths-based development, and leadership facilitation, and brings a rare combination of strategic range, human insight, and cross-disciplinary depth to clients navigating technological disruption and transformation.`,
   },
   {
     name: "Phan Phi Long",
