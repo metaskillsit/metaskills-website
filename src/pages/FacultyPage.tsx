@@ -159,7 +159,7 @@ const algoTradingTeam: FacultyMember[] = [
     i18nKey: "victor",
     role: "Lead Consultant, Algorithmic Trading",
     expertise: "Algo Trading | ML | Forex | Reinforcement Learning",
-    image: "/images/faculty/faculty-victor.png",
+    image: "/images/faculty/faculty-victor.jpg",
     bio: `Victor is a seasoned financial professional and algorithmic trading specialist with over 20 years of experience in financial services, having previously founded and led his own firm focused on sales and marketing of financial products, risk management, and fiscal planning for high-net-worth individuals across the Greater China region.
 Over the past four years, he has dedicated himself to his passion for algorithmic trading, self-funding and building a consistently profitable portfolio within the trillion-dollar forex and gold markets. Leveraging proprietary trading systems, Victor has successfully developed and deployed automated strategies powered by machine learning, with a particular focus on deep reinforcement learning for time-series analysis.
 His methodology combines rigorous statistical modelling of currencies and commodities markets with advanced engineering, writing high-performance algorithms in C++ and Python to execute trades with precision, scalability, and consistency.
@@ -189,7 +189,7 @@ As a Senior Lecturer, he designed industry-aligned cybersecurity curricula, supe
     i18nKey: "jimmyLeong",
     role: "Senior Cyber Security Consultant",
     expertise: "Adult Learning | AI & Cyber Training",
-    image: "/images/faculty/faculty-jimmy.jpg",
+    image: "/images/faculty/faculty-jimmy.png",
     bio: `Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He specialises in the design and delivery of instructor development programmes, competency-based curricula, and hands-on technical training, with a focus on AI and cybersecurity domains. Throughout his career, he has supported organisations such as MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation), and the Institute for Adult Learning Singapore, delivering capability development initiatives for both public and private sector audiences. Jimmy adopts an evidence-based approach to adult learning, integrating practical methodologies such as simulated labs, tabletop exercises, and structured assessment frameworks to ensure effective knowledge transfer and measurable training outcomes.`,
   },
 ];
@@ -226,9 +226,11 @@ const BioText = ({ bio }: { bio: string }) => {
 
   return (
     <div>
-      <p className="text-sm text-muted-foreground whitespace-pre-line leading-relaxed">
-        {expanded ? bio.trim() : preview}
-      </p>
+      <div className="text-sm text-muted-foreground leading-relaxed">
+        {(expanded ? bio.trim().split("\n").filter(Boolean) : preview.split("\n").filter(Boolean)).map((p, idx) => (
+          <p key={idx} className="text-justify mb-3 last:mb-0">{p}</p>
+        ))}
+      </div>
       {hasMore && (
         <button
           onClick={() => setExpanded(!expanded)}
