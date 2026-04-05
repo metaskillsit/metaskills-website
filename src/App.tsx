@@ -27,6 +27,7 @@ const AppContent = () => {
   return (
     <>
       <ScrollToTop />
+      <FloatingWhatsApp />
       <Routes key={languageKey}>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<AboutPage />} />
