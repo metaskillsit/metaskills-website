@@ -47,20 +47,12 @@ const PartnerLogosSection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className={`flex items-center justify-center ${
-                partner.name === "IMDA"
-                  ? "h-[180px] md:h-[260px]"
-                  : "h-[90px] md:h-[130px]"
-              }`}
+              className="flex items-center justify-center h-[90px] md:h-[130px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className={`h-full w-auto object-contain ${
-                  partner.name === "IMDA"
-                    ? "max-w-[400px] md:max-w-[500px]"
-                    : "max-w-[200px] md:max-w-[300px]"
-                }`}
+                className="h-full w-auto max-w-[200px] md:max-w-[300px] object-contain"
                 loading="lazy"
               />
             </motion.div>
