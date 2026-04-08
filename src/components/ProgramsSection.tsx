@@ -126,7 +126,7 @@ const ProgramsSection = () => {
       <div className="max-w-[1140px] mx-auto px-6 py-16">
         <button
           onClick={() => setSectionOpen(!sectionOpen)}
-          className="flex items-center gap-3 w-full text-left mb-10"
+          className="flex items-center gap-3 w-full text-left mb-8"
         >
           <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
             {t("programmes.glance")}
@@ -134,9 +134,47 @@ const ProgramsSection = () => {
           <ChevronDown className={`w-6 h-6 text-foreground transition-transform duration-300 ${sectionOpen ? "rotate-180" : ""}`} />
         </button>
 
-        <AnimatePresence>
+        {/* Collapsed preview: 7 category thumbnails */}
+        <AnimatePresence mode="wait">
+          {!sectionOpen && (
+            <motion.div
+              key="preview"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                {programCategories.map((cat, i) => (
+                  <button
+                    key={cat.title}
+                    onClick={() => setSectionOpen(true)}
+                    className="group text-left"
+                  >
+                    <div className="aspect-[4/3] overflow-hidden rounded-lg mb-2 shadow-sm">
+                      <img
+                        src={cat.images[0]}
+                        alt={cat.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        width={200}
+                        height={150}
+                      />
+                    </div>
+                    <p className="text-xs font-semibold text-foreground leading-tight group-hover:text-primary transition-colors">
+                      {cat.title}
+                    </p>
+                  </button>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">{t("programmes.clickToExplore", "Click any category or the heading above to explore all courses")}</p>
+            </motion.div>
+          )}
+
+          {/* Expanded full view */}
           {sectionOpen && (
             <motion.div
+              key="expanded"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
