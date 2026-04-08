@@ -28,11 +28,7 @@ import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
 
 const ProgramsSection = () => {
   const { t } = useTranslation();
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-  const toggleExpand = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
+  const [sectionOpen, setSectionOpen] = useState(false);
   const programCategories = [
     {
       title: t("programmes.aiLeadTitle"),
@@ -128,68 +124,69 @@ const ProgramsSection = () => {
       </div>
 
       <div className="max-w-[1140px] mx-auto px-6 py-16">
-        <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-10">
-          {t("programmes.glance")}
-        </h3>
+        <button
+          onClick={() => setSectionOpen(!sectionOpen)}
+          className="flex items-center gap-3 w-full text-left mb-10"
+        >
+          <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
+            {t("programmes.glance")}
+          </h3>
+          <ChevronDown className={`w-6 h-6 text-foreground transition-transform duration-300 ${sectionOpen ? "rotate-180" : ""}`} />
+        </button>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {programCategories.map((cat, i) => (
+        <AnimatePresence>
+          {sectionOpen && (
             <motion.div
-              key={cat.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="overflow-hidden"
             >
-              <ImageSlideshow
-                images={cat.images}
-                alt={cat.title}
-                className="aspect-[4/3] overflow-hidden rounded-sm mb-5"
-                imgClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                interval={3500 + i * 500}
-                width={800}
-                height={600}
-              />
-              <h4 className="font-heading text-xl font-bold text-foreground mb-2">
-                {cat.title}
-              </h4>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                {cat.description}
-              </p>
-              <button
-                onClick={() => toggleExpand(i)}
-                className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors w-full border-t border-border pt-4"
-              >
-                <span>{expandedIndex === i ? t("programmes.hideCourses", "Hide courses") : t("programmes.viewCourses", "View all courses")}</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedIndex === i ? "rotate-180" : ""}`} />
-              </button>
-              <AnimatePresence>
-                {expandedIndex === i && (
-                  <motion.ul
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden space-y-2 pt-3"
+              <div className="grid md:grid-cols-3 gap-8">
+                {programCategories.map((cat, i) => (
+                  <motion.div
+                    key={cat.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="group"
                   >
-                    {cat.courses.map((course) => (
-                      <li key={course.slug}>
-                        <Link
-                          to={`/course/${course.slug}`}
-                          className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
-                        >
-                          <span>{course.name}</span>
-                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                        </Link>
-                      </li>
-                    ))}
-                  </motion.ul>
-                )}
-              </AnimatePresence>
+                    <ImageSlideshow
+                      images={cat.images}
+                      alt={cat.title}
+                      className="aspect-[4/3] overflow-hidden rounded-sm mb-5"
+                      imgClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      interval={3500 + i * 500}
+                      width={800}
+                      height={600}
+                    />
+                    <h4 className="font-heading text-xl font-bold text-foreground mb-2">
+                      {cat.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      {cat.description}
+                    </p>
+                    <ul className="space-y-2 border-t border-border pt-4">
+                      {cat.courses.map((course) => (
+                        <li key={course.slug}>
+                          <Link
+                            to={`/course/${course.slug}`}
+                            className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
+                          >
+                            <span>{course.name}</span>
+                            <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
-          ))}
-        </div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
