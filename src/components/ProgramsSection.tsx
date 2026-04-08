@@ -111,19 +111,19 @@ const ProgramsSection = () => {
 
   return (
     <section id="courses" className="bg-background">
-      <div className="relative h-[280px] bg-primary overflow-hidden flex items-center">
+      <div className="relative h-[180px] md:h-[200px] bg-primary overflow-hidden flex items-center">
         <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-6 w-full">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white">
             {t("programmes.title")}
           </h2>
-          <p className="text-white/75 mt-3 text-lg max-w-xl">
+          <p className="text-white/75 mt-2 text-base max-w-xl">
             {t("programmes.subtitle")}
           </p>
         </div>
       </div>
 
-      <div className="max-w-[1140px] mx-auto px-6 py-16">
+      <div className="max-w-[1140px] mx-auto px-6 py-8 md:py-10">
         <button
           onClick={() => setSectionOpen(!sectionOpen)}
           className="flex items-center gap-3 w-full text-left mb-8"
