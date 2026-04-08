@@ -44,7 +44,7 @@ const StatsSection = () => {
   const { t } = useTranslation();
 
   const stats = [
-    { value: 10000, suffix: "+", label: t("stats.profTrained") },
+    { value: 9116, suffix: "+", label: t("stats.profTrained") },
     { value: 50, suffix: "+", label: t("stats.yearsExp") },
     { value: 100, suffix: "+", label: t("stats.orgsPartnered") },
     { value: 30, suffix: "+", label: t("stats.progsOffered") },
