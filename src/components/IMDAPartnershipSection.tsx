@@ -28,7 +28,7 @@ const IMDAPartnershipSection = () => {
               <img
                 src={imdaLogo}
                 alt="Infocomm Media Development Authority (IMDA)"
-                className="h-14 md:h-[72px] w-auto object-contain"
+                className="h-20 md:h-28 w-auto object-contain"
               />
               <span className="text-2xl md:text-3xl font-heading text-muted-foreground/30 font-light select-none">×</span>
               <img
