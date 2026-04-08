@@ -159,6 +159,9 @@ const Navbar = () => {
       ) {
         setLangOpen(false);
       }
+      if (labsRef.current && !labsRef.current.contains(e.target as Node)) {
+        setLabsOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
