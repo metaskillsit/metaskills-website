@@ -49,6 +49,8 @@ import pastClass42 from "@/assets/past-class-42.jpg";
 import pastClass43 from "@/assets/past-class-43.jpg";
 
 const photos = [
+  { src: pastClass38, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 1" },
+  { src: pastClass43, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 2" },
   { src: pastClass1, caption: "Algorithmic Trading Mastery — Level 1, Run 8" },
   { src: pastClass2, caption: "Algorithmic Trading Mastery — Live Trading Session" },
   { src: pastClass3, caption: "Algorithmic Trading Mastery — Classroom Workshop" },
@@ -86,12 +88,10 @@ const photos = [
   { src: pastClass35, caption: "Data Analytics — Full Lecture Hall Presentation" },
   { src: pastClass36, caption: "Corporate Lab — Hands-On Technical Mentoring" },
   { src: pastClass37, caption: "Algorithmic Trading Mastery — Evening Intensive Session" },
-  { src: pastClass38, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 1" },
   { src: pastClass39, caption: "Algorithmic Trading Mastery — Level 1, Run 5 Live Charts" },
   { src: pastClass40, caption: "Algorithmic Trading Mastery — Level 1, Run 5 Classroom" },
   { src: pastClass41, caption: "CDA Stream A — Virtual Class, June 2020 Cohort" },
   { src: pastClass42, caption: "Online Workshop — Zoom Live Session" },
-  { src: pastClass43, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 2" },
 ];
 
 const third = Math.ceil(photos.length / 3);
