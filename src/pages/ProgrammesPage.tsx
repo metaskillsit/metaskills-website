@@ -1,10 +1,12 @@
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import PastClassesSection from "@/components/PastClassesSection";
+import { Button } from "@/components/ui/button";
 import agenticImg from "@/assets/programmes-agentic.jpg";
 import aiAutomationImg from "@/assets/programmes-aiautomation.jpg";
 import datasciImg from "@/assets/programmes-datascience.jpg";
@@ -15,6 +17,7 @@ import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 
 const ProgrammesPage = () => {
   const { t } = useTranslation();
+  const [showPrograms, setShowPrograms] = useState(false);
 
   const ct = (key: string) => t(`courses.${key}.title`);
 
@@ -102,6 +105,7 @@ const ProgrammesPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16 md:pt-[70px]">
+        {/* Hero */}
         <section className="relative section-dark py-16 md:py-20 overflow-hidden">
           <div className="max-w-[1140px] mx-auto px-6">
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white">
@@ -113,51 +117,74 @@ const ProgrammesPage = () => {
           </div>
         </section>
 
+        {/* Programmes Dropdown Section */}
         <section className="max-w-[1140px] mx-auto px-6 py-16">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-10">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
             {t("programmes.glance")}
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {programCategories.map((cat, i) => (
+          <Button
+            onClick={() => setShowPrograms(!showPrograms)}
+            variant="default"
+            size="lg"
+            className="w-full md:w-auto gap-2 text-base font-semibold"
+          >
+            {showPrograms ? "Hide All Programmes" : "Click Here to View All Programmes"}
+            {showPrograms ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+          </Button>
+
+          <AnimatePresence>
+            {showPrograms && (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="overflow-hidden"
               >
-                <div className="aspect-[4/3] overflow-hidden rounded-sm mb-5">
-                  <img
-                    src={cat.image}
-                    alt={cat.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                  />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-foreground mb-2">{cat.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{cat.description}</p>
-                <ul className="space-y-2 border-t border-border pt-4">
-                  {cat.courses.map((course) => (
-                    <li key={course.slug}>
-                      <Link
-                        to={`/course/${course.slug}`}
-                        className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
-                      >
-                        <span>{course.name}</span>
-                        <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                      </Link>
-                    </li>
+                <div className="grid md:grid-cols-3 gap-8 mt-10">
+                  {programCategories.map((cat, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.08 }}
+                      className="group"
+                    >
+                      <div className="aspect-[4/3] overflow-hidden rounded-sm mb-5">
+                        <img
+                          src={cat.image}
+                          alt={cat.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                          width={800}
+                          height={600}
+                        />
+                      </div>
+                      <h3 className="font-heading text-xl font-bold text-foreground mb-2">{cat.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{cat.description}</p>
+                      <ul className="space-y-2 border-t border-border pt-4">
+                        {cat.courses.map((course) => (
+                          <li key={course.slug}>
+                            <Link
+                              to={`/course/${course.slug}`}
+                              className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
+                            >
+                              <span>{course.name}</span>
+                              <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
                   ))}
-                </ul>
+                </div>
               </motion.div>
-            ))}
-          </div>
+            )}
+          </AnimatePresence>
         </section>
 
+        {/* Past Classes moved up - right below programmes */}
         <PastClassesSection />
       </main>
       <FooterSection />
