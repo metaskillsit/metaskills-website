@@ -65,10 +65,10 @@ const AgenticAIPage = () => {
               <div className="inline-flex items-center gap-2 rounded-full border border-[hsl(43,96%,56%,0.3)] bg-[hsl(43,96%,56%,0.08)] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[hsl(var(--gold))] mb-6">
                 <Shield className="w-3.5 h-3.5" /> Enterprise AI Governance
               </div>
-              <h1 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-5 leading-[1.1]">
                 Don't Just Build AI Agents. <span className="text-[hsl(var(--gold))]">Build Them Right.</span>
               </h1>
-              <p className="text-[hsl(220,15%,55%)] text-base md:text-lg max-w-xl mx-auto mb-10">
+              <p className="text-[hsl(220,15%,55%)] text-base md:text-lg max-w-xl mb-10">
                 AI is becoming autonomous. Governance is no longer optional.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -545,11 +545,11 @@ const AgenticAIPage = () => {
         <section className="py-20 md:py-32 bg-gradient-to-b from-[hsl(220,25%,6%)] to-[hsl(220,30%,4%)] border-t border-[hsl(220,20%,12%)]">
           <div className="max-w-[1140px] mx-auto px-6 text-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-              <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-4">
+              <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
                 Agentic AI — <span className="text-[hsl(var(--gold))]">With Governance Built&nbsp;In,</span> Not
                 Bolted&nbsp;On.
               </h2>
-              <p className="text-base md:text-lg text-[hsl(220,15%,65%)] leading-relaxed max-w-2xl mb-8">
+              <p className="text-base md:text-lg text-[hsl(220,15%,65%)] leading-relaxed max-w-2xl mx-auto mb-10">
                 We design and deploy end-to-end agentic AI systems where every action is controlled, auditable, and
                 aligned with business rules.
               </p>
