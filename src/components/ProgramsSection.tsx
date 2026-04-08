@@ -28,8 +28,11 @@ import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
 
 const ProgramsSection = () => {
   const { t } = useTranslation();
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  const programCategories = [
+  const toggleExpand = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
     {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
@@ -153,19 +156,36 @@ const ProgramsSection = () => {
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                 {cat.description}
               </p>
-              <ul className="space-y-2 border-t border-border pt-4">
-                {cat.courses.map((course) => (
-                  <li key={course.slug}>
-                    <Link
-                      to={`/course/${course.slug}`}
-                      className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
-                    >
-                      <span>{course.name}</span>
-                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <button
+                onClick={() => toggleExpand(i)}
+                className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors w-full border-t border-border pt-4"
+              >
+                <span>{expandedIndex === i ? t("programmes.hideCourses", "Hide courses") : t("programmes.viewCourses", "View all courses")}</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedIndex === i ? "rotate-180" : ""}`} />
+              </button>
+              <AnimatePresence>
+                {expandedIndex === i && (
+                  <motion.ul
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden space-y-2 pt-3"
+                  >
+                    {cat.courses.map((course) => (
+                      <li key={course.slug}>
+                        <Link
+                          to={`/course/${course.slug}`}
+                          className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
+                        >
+                          <span>{course.name}</span>
+                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                        </Link>
+                      </li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>
