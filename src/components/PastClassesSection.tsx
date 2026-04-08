@@ -103,7 +103,7 @@ const ScrollingRow = ({
   items,
   startIndex,
   direction = "left",
-  speed = 35,
+  speed = 25,
   onPhotoClick,
 }: {
   items: typeof photos;
@@ -113,41 +113,68 @@ const ScrollingRow = ({
   onPhotoClick: (index: number) => void;
 }) => {
   const tripled = [...items, ...items, ...items];
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const scrollBy = (dir: "left" | "right") => {
+    if (!containerRef.current) return;
+    const parent = containerRef.current.parentElement;
+    if (!parent) return;
+    const scrollAmount = dir === "left" ? -440 : 440;
+    // We need to manipulate the scroll of the overflow container
+    parent.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  };
 
   return (
-    <div className="overflow-hidden relative">
-      <motion.div
-        className="flex gap-3 md:gap-4"
-        animate={{ x: direction === "left" ? ["0%", "-33.333%"] : ["-33.333%", "0%"] }}
-        transition={{ x: { duration: speed, repeat: Infinity, ease: "linear" } }}
+    <div className="relative group/row">
+      <button
+        onClick={() => scrollBy("left")}
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full p-2 opacity-0 group-hover/row:opacity-100 transition-opacity shadow-lg hover:bg-background"
+        aria-label="Scroll left"
       >
-        {tripled.map((photo, i) => {
-          const realIndex = startIndex + (i % items.length);
-          return (
-            <button
-              key={`${photo.caption}-${i}`}
-              type="button"
-              onClick={() => onPhotoClick(realIndex)}
-              className="flex-shrink-0 w-[300px] md:w-[380px] lg:w-[420px] group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-500"
-              aria-label={`Open photo: ${photo.caption}`}
-            >
-              <div className="aspect-[16/10] overflow-hidden bg-muted">
-                <img
-                  src={photo.src}
-                  alt={photo.caption}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[1.02] contrast-[1.02] saturate-[1.05]"
-                  loading="lazy"
-                  width={420}
-                  height={263}
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <p className="text-white text-sm font-medium px-4 pb-4 leading-snug drop-shadow-lg">{photo.caption}</p>
-              </div>
-            </button>
-          );
-        })}
-      </motion.div>
+        <ChevronLeft className="w-5 h-5 text-foreground" />
+      </button>
+      <div className="overflow-hidden">
+        <motion.div
+          ref={containerRef}
+          className="flex gap-3 md:gap-4"
+          animate={{ x: direction === "left" ? ["0%", "-33.333%"] : ["-33.333%", "0%"] }}
+          transition={{ x: { duration: speed, repeat: Infinity, ease: "linear" } }}
+        >
+          {tripled.map((photo, i) => {
+            const realIndex = startIndex + (i % items.length);
+            return (
+              <button
+                key={`${photo.caption}-${i}`}
+                type="button"
+                onClick={() => onPhotoClick(realIndex)}
+                className="flex-shrink-0 w-[300px] md:w-[380px] lg:w-[420px] group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-500"
+                aria-label={`Open photo: ${photo.caption}`}
+              >
+                <div className="aspect-[16/10] overflow-hidden bg-muted">
+                  <img
+                    src={photo.src}
+                    alt={photo.caption}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[1.02] contrast-[1.02] saturate-[1.05]"
+                    loading="lazy"
+                    width={420}
+                    height={263}
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <p className="text-white text-sm font-medium px-4 pb-4 leading-snug drop-shadow-lg">{photo.caption}</p>
+                </div>
+              </button>
+            );
+          })}
+        </motion.div>
+      </div>
+      <button
+        onClick={() => scrollBy("right")}
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full p-2 opacity-0 group-hover/row:opacity-100 transition-opacity shadow-lg hover:bg-background"
+        aria-label="Scroll right"
+      >
+        <ChevronRight className="w-5 h-5 text-foreground" />
+      </button>
     </div>
   );
 };
