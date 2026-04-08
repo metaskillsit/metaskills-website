@@ -229,6 +229,34 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+
+            {/* MSI Live Labs dropdown */}
+            <div ref={labsRef} className="relative">
+              <button
+                onClick={() => setLabsOpen(!labsOpen)}
+                className={`flex items-center gap-1 text-[13px] font-medium tracking-wide transition-colors ${
+                  location.pathname === "/agentic-ai-governance" ? "text-primary" : "text-foreground/70 hover:text-primary"
+                }`}
+              >
+                <span>{t("nav.msiLiveLabs")}</span>
+                <ChevronDown size={14} />
+              </button>
+              {labsOpen && (
+                <div className="absolute top-full left-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[260px] animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                  <Link
+                    to="/agentic-ai-governance"
+                    onClick={() => setLabsOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/agentic-ai-governance"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    {t("nav.agenticAIGovernance")}
+                  </Link>
+                </div>
+              )}
+            </div>
             <button className="text-foreground/50 hover:text-primary transition-colors ml-2">
               <Search size={18} />
             </button>
