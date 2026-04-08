@@ -39,6 +39,7 @@ const AppContent = () => {
         <Route path="/admissions" element={<AdmissionsPage />} />
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/course/:slug" element={<CoursePage />} />
+        <Route path="/agentic-ai-governance" element={<AgenticAIPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
