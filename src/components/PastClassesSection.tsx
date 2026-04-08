@@ -176,9 +176,9 @@ const PastClassesSection = () => {
       </div>
 
       <div className="space-y-3 md:space-y-4">
-        <ScrollingRow items={row1} startIndex={0} direction="left" speed={50} onPhotoClick={setSelectedPhotoIndex} />
-        <ScrollingRow items={row2} startIndex={third} direction="right" speed={55} onPhotoClick={setSelectedPhotoIndex} />
-        <ScrollingRow items={row3} startIndex={third * 2} direction="left" speed={48} onPhotoClick={setSelectedPhotoIndex} />
+        <ScrollingRow items={row1} startIndex={0} direction="left" speed={25} onPhotoClick={setSelectedPhotoIndex} />
+        <ScrollingRow items={row2} startIndex={third} direction="right" speed={27} onPhotoClick={setSelectedPhotoIndex} />
+        <ScrollingRow items={row3} startIndex={third * 2} direction="left" speed={24} onPhotoClick={setSelectedPhotoIndex} />
       </div>
 
       <div className="max-w-[1140px] mx-auto px-6 mt-8">

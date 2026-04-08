@@ -25,10 +25,10 @@ const Index = () => {
         <MissionSection />
         <StatsSection />
         <ProgramsSection />
+        <PastClassesSection />
         <WhyMetaskillsSection />
         <FacultySection />
         <TestimonialsSection />
-        <PastClassesSection />
         
         <LocationsSection />
         <AdmissionsSection />
