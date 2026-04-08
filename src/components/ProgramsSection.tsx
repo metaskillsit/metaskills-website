@@ -32,7 +32,8 @@ const ProgramsSection = () => {
 
   const toggleExpand = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
-  };
+
+  const programCategories = [
     {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
