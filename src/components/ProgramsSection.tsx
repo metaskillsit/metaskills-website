@@ -28,11 +28,7 @@ import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
 
 const ProgramsSection = () => {
   const { t } = useTranslation();
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-  const toggleExpand = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
+  const [sectionOpen, setSectionOpen] = useState(false);
   const programCategories = [
     {
       title: t("programmes.aiLeadTitle"),
