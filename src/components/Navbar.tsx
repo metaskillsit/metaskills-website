@@ -137,6 +137,7 @@ const Navbar = () => {
     { label: t("nav.programmes"), href: "/programmes" },
     { label: t("nav.faculty"), href: "/faculty" },
     { label: t("nav.admissions"), href: "/admissions" },
+    { label: t("nav.agenticAI"), href: "/agentic-ai-governance" },
   ];
 
   const toggleCategory = (label: string) => {
