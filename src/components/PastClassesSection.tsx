@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useAnimationControls } from "framer-motion";
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import GalleryLightbox from "@/components/GalleryLightbox";
 import pastClass1 from "@/assets/past-class-1.jpg";
