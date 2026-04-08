@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import ImageSlideshow from "@/components/ImageSlideshow";
 import agenticImg from "@/assets/programmes-agentic.jpg";
