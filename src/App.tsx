@@ -15,6 +15,7 @@ import PartnersPage from "./pages/PartnersPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import AdmissionsPage from "./pages/AdmissionsPage.tsx";
 import ClientsPage from "./pages/ClientsPage.tsx";
+import AgenticAIPage from "./pages/AgenticAIPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
