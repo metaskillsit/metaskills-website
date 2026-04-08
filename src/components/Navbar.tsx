@@ -132,6 +132,12 @@ const Navbar = () => {
         { label: t("nav.courseFeesAndFunding"), href: "/admissions#fees" },
       ],
     },
+    {
+      label: t("nav.msiLiveLabs"),
+      items: [
+        { label: t("nav.agenticAIGovernance"), href: "/agentic-ai-governance" },
+      ],
+    },
   ];
 
   const topNavItems = [
@@ -139,7 +145,6 @@ const Navbar = () => {
     { label: t("nav.programmes"), href: "/programmes" },
     { label: t("nav.faculty"), href: "/faculty" },
     { label: t("nav.admissions"), href: "/admissions" },
-    { label: t("nav.agenticAI"), href: "/agentic-ai-governance" },
   ];
 
   const toggleCategory = (label: string) => {
