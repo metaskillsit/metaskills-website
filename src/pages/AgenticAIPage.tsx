@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import agenticHeroBg from "@/assets/agentic-hero-bg.jpg";
 import {
   Shield,
   Cpu,
@@ -50,15 +51,10 @@ const AgenticAIPage = () => {
       <main className="pt-16 md:pt-[70px]">
         {/* ═══ HERO ═══ */}
         <section className="relative overflow-hidden py-20 md:py-32 lg:py-40">
-          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,25%,8%)] via-[hsl(220,25%,6%)] to-[hsl(220,30%,4%)]" />
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: "radial-gradient(circle at 1px 1px, hsl(43,96%,56%) 1px, transparent 0)",
-              backgroundSize: "40px 40px",
-            }}
-          />
-          <div className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full bg-[hsl(43,96%,56%,0.04)] blur-[120px]" />
+          <div className="absolute inset-0">
+            <img src={agenticHeroBg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,25%,6%,0.85)] via-[hsl(220,25%,6%,0.7)] to-[hsl(220,25%,6%,0.5)]" />
+          </div>
 
           <div className="relative z-10 max-w-[1140px] mx-auto px-6">
             <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="max-w-3xl">
