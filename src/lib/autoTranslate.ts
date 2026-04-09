@@ -1,4 +1,5 @@
 import { supabase } from "@/integrations/supabase/client";
+import i18n from "i18next";
 
 // In-memory cache for translated strings per session
 const translationCache: Record<string, Record<string, string>> = {};
@@ -6,22 +7,16 @@ const translationCache: Record<string, Record<string, string>> = {};
 // Pending batch: collects keys that need translation
 let pendingKeys: { key: string; fallback: string; lang: string }[] = [];
 let batchTimer: ReturnType<typeof setTimeout> | null = null;
-let batchResolvers: Array<() => void> = [];
-
-function getCacheKey(lang: string) {
-  return lang;
-}
 
 function getCachedTranslation(lang: string, key: string): string | undefined {
-  return translationCache[getCacheKey(lang)]?.[key];
+  return translationCache[lang]?.[key];
 }
 
 function setCachedTranslation(lang: string, key: string, value: string) {
-  const cacheKey = getCacheKey(lang);
-  if (!translationCache[cacheKey]) {
-    translationCache[cacheKey] = {};
+  if (!translationCache[lang]) {
+    translationCache[lang] = {};
   }
-  translationCache[cacheKey][key] = value;
+  translationCache[lang][key] = value;
 }
 
 // Also persist to localStorage for offline access
@@ -36,9 +31,8 @@ function loadFromStorage(lang: string): Record<string, string> {
 
 function saveToStorage(lang: string) {
   try {
-    const cacheKey = getCacheKey(lang);
-    if (translationCache[cacheKey]) {
-      localStorage.setItem(`auto-translations-${lang}`, JSON.stringify(translationCache[cacheKey]));
+    if (translationCache[lang]) {
+      localStorage.setItem(`auto-translations-${lang}`, JSON.stringify(translationCache[lang]));
     }
   } catch {
     // localStorage full or unavailable
@@ -48,17 +42,19 @@ function saveToStorage(lang: string) {
 // Initialize cache from localStorage
 export function initAutoTranslateCache(lang: string) {
   const stored = loadFromStorage(lang);
-  const cacheKey = getCacheKey(lang);
-  translationCache[cacheKey] = { ...stored, ...translationCache[cacheKey] };
+  translationCache[lang] = { ...stored, ...translationCache[lang] };
+
+  // Inject any cached translations into i18next immediately
+  for (const [key, value] of Object.entries(translationCache[lang])) {
+    i18n.addResource(lang, "translation", key, value);
+  }
 }
 
 async function flushBatch() {
   if (pendingKeys.length === 0) return;
 
   const batch = [...pendingKeys];
-  const resolvers = [...batchResolvers];
   pendingKeys = [];
-  batchResolvers = [];
   batchTimer = null;
 
   // Group by language
@@ -77,23 +73,25 @@ async function flushBatch() {
 
       if (error) {
         console.warn("Auto-translate error:", error);
-        // Cache fallbacks so we don't retry immediately
         items.forEach((item) => setCachedTranslation(lang, item.key, item.fallback));
       } else {
         const translations: string[] = data?.translations || texts;
         items.forEach((item, i) => {
-          setCachedTranslation(lang, item.key, translations[i] || item.fallback);
+          const translated = translations[i] || item.fallback;
+          setCachedTranslation(lang, item.key, translated);
+          // Inject into i18next so components re-render with translated text
+          i18n.addResource(lang, "translation", item.key, translated);
         });
       }
       saveToStorage(lang);
+
+      // Force re-render by emitting languageChanged
+      i18n.emit("languageChanged", lang);
     } catch (err) {
       console.warn("Auto-translate network error:", err);
       items.forEach((item) => setCachedTranslation(lang, item.key, item.fallback));
     }
   }
-
-  // Resolve all waiting promises
-  resolvers.forEach((r) => r());
 }
 
 export function requestAutoTranslation(key: string, fallback: string, lang: string): string {
@@ -106,11 +104,11 @@ export function requestAutoTranslation(key: string, fallback: string, lang: stri
     pendingKeys.push({ key, fallback, lang });
   }
 
-  // Debounce: flush after 100ms of no new requests
+  // Debounce: flush after 150ms of no new requests
   if (batchTimer) clearTimeout(batchTimer);
   batchTimer = setTimeout(() => {
     flushBatch();
-  }, 100);
+  }, 150);
 
   // Return English fallback while translation loads
   return fallback;
