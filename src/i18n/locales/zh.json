@@ -22,7 +22,8 @@
     "subtitle": "为专业人士提供智能体AI、算法交易和网络安全能力培训。"
   },
   "certified": {
-    "heading": "课程由官方认证讲师设计和教授"
+    "heading": "课程由行业从业者和认证讲师设计并教授",
+    "techStackHeading": "我们培训的工具与技术"
   },
   "mission": {
     "statement": "Metaskills Institute 为我们的社区提供知识、技能和经验，以",
