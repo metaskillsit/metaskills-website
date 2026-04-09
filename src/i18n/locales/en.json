@@ -22,8 +22,15 @@
     "subtitle": "Equipping professionals with Agentic AI, Algorithmic Trading & Cybersecurity capabilities."
   },
   "certified": {
-    "heading": "Curriculum designed and delivered by industry practitioners and certified instructors",
-    "techStackHeading": "Tools & Technologies We Train On"
+    "heading": "Curriculum designed and delivered by industry practitioners and certified instructors"
+  },
+  "techStack": {
+    "label": "Technology Stack",
+    "heading": "Tools & Technologies We Train On",
+    "llmProviders": "LLM Providers",
+    "agentsAutomation": "AI Agents & Automation",
+    "devTools": "AI Dev Tools",
+    "aiMedia": "AI Media & Video"
   },
   "mission": {
     "statement": "Metaskills Institute equips our community with the knowledge, skills and experiences to",
