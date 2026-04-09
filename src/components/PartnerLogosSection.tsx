@@ -12,6 +12,7 @@ import iscaLogo from "@/assets/logo-isca.png";
 import lxCopilotLogo from "@/assets/partner-lxcopilot.png";
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 import imdaLogo from "@/assets/logo-imda.png";
+import imdaTrainingBg from "@/assets/imda-training-bg.jpg";
 
 const partnerLogos = [
   { name: "AISG", logo: aisgLogo },
@@ -32,22 +33,30 @@ const PartnerLogosSection = () => {
 
   return (
     <section className="bg-card border-t border-border py-6 md:py-8 overflow-hidden">
-      {/* Featured Partnership Banner */}
+      {/* Featured Partnership Banner with Photo Background */}
       <div className="max-w-[1140px] mx-auto px-6 mb-6 md:mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-card via-card to-primary/5 shadow-lg"
+          className="relative overflow-hidden rounded-2xl border border-primary/20 shadow-lg"
         >
+          {/* Background image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${imdaTrainingBg})` }}
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60" />
+          
           {/* Top accent bar */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary z-10" />
 
-          <div className="p-6 md:p-8">
+          <div className="relative z-10 p-6 md:p-8">
             {/* Badge */}
             <div className="flex justify-center mb-5">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] md:text-xs font-semibold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-1.5 rounded-full text-[10px] md:text-xs font-semibold uppercase tracking-widest backdrop-blur-sm">
                 <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5" />
                 {t("imda.badge")}
               </div>
@@ -58,20 +67,20 @@ const PartnerLogosSection = () => {
               <img
                 src={tinkercademyLogo}
                 alt="Tinkercademy"
-                className="h-8 md:h-12 w-auto object-contain"
+                className="h-8 md:h-12 w-auto object-contain brightness-0 invert"
                 loading="lazy"
               />
             </div>
 
             {/* Description with IMDA logo beside it */}
             <div className="flex items-center justify-center gap-5 md:gap-8 mb-5 max-w-3xl mx-auto">
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center flex-1">
+              <p className="text-sm md:text-base text-white/90 leading-relaxed text-center flex-1">
                 {t("imda.description")}
               </p>
               <img
                 src={imdaLogo}
                 alt="Infocomm Media Development Authority (IMDA)"
-                className="h-12 md:h-16 w-auto object-contain flex-shrink-0"
+                className="h-12 md:h-16 w-auto object-contain flex-shrink-0 brightness-0 invert"
                 loading="lazy"
               />
             </div>
