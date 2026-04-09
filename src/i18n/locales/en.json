@@ -1130,5 +1130,30 @@
     "ctaDesc": "We design and deploy end-to-end agentic AI systems where every action is controlled, auditable, and aligned with business rules.",
     "exploreResearch": "Explore Agentic Research",
     "bookConsultation": "Book Consultation"
+  },
+  "clientsPage": {
+    "heroTitle": "Trusted by Leading Organisations",
+    "heroSubtitle": "From government agencies to multinational corporations, our faculty and consultants have trained and partnered with organisations across Singapore and the region.",
+    "workedWith": "Organisations We've Worked With",
+    "workedWithDesc": "Training, consulting, product development, and masterclasses delivered across all organisational levels.",
+    "alsoWorkedWith": "We've Also Worked With",
+    "ctaTitle": "Join Our Growing Client Network",
+    "ctaDesc": "Ready to upskill your team? Contact us for customised training solutions tailored to your organisation's needs.",
+    "catGovDefence": "Government & Defence",
+    "catBanking": "Banking & Finance",
+    "catUni": "Universities & Education",
+    "catConsulting": "Consulting & Technology",
+    "catTransport": "Transport & Infrastructure",
+    "catDefenceLog": "Defence & Logistics",
+    "catHealthcare": "Healthcare",
+    "additionalNda": "… and many other organisations under NDA"
+  },
+  "partnersPage": {
+    "heroTitle": "Our Partners",
+    "heroSubtitle": "Collaborating with industry leaders across Singapore and ASEAN.",
+    "integrumDesc": "An A.I. consulting and development outfit that delivers decision-making capabilities for complex use-cases. Specializes in developing prediction and decision engines using alternative data.",
+    "jcubeDesc": "A partner institute co-founded by Dr Ke Jinghao, offering certified Data Analyst and Data Scientist programmes with hands-on, project-based curriculum.",
+    "jcubeSubtitle": "by j3Cube Pte Ltd",
+    "svbbDesc": "Facilitating cross-border collaboration between Singapore and Vietnam, enabling knowledge exchange and business networking across ASEAN."
   }
 }
