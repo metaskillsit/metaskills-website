@@ -41,12 +41,11 @@ const PartnerLogosSection = () => {
           </div>
           <div className="flex items-center gap-3 md:gap-4">
             <img src={tinkercademyLogo} alt="Tinkercademy" className="h-6 md:h-8 w-auto object-contain" loading="lazy" />
-            <span className="text-muted-foreground text-xs">×</span>
-            <img src={imdaLogo} alt="IMDA" className="h-8 md:h-10 w-auto object-contain" loading="lazy" />
           </div>
           <p className="text-xs text-muted-foreground max-w-sm text-center md:text-left hidden md:block">
             {t("imda.description")}
           </p>
+          <img src={imdaLogo} alt="IMDA" className="h-8 md:h-10 w-auto object-contain" loading="lazy" />
           <a
             href="https://wa.me/6589483482?text=Hi%20I'm%20interested%20in%20the%20Vibe%20Coding%20programme%20with%20IMDA.%20Can%20you%20share%20more?"
             target="_blank"
