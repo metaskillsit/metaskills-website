@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import imdaLogo from "@/assets/logo-imda.png";
+
 import aisgLogo from "@/assets/logo-aisg.png";
 import smuAcademyLogo from "@/assets/logo-smu-academy.png";
 import integrumLogo from "@/assets/partner-integrum.png";
@@ -12,7 +12,6 @@ import lxCopilotLogo from "@/assets/partner-lxcopilot.png";
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 
 const partnerLogos = [
-  { name: "IMDA", logo: imdaLogo },
   { name: "AISG", logo: aisgLogo },
   { name: "SMU Academy", logo: smuAcademyLogo },
   { name: "NUS AIDF", logo: nusAidfLogo },
