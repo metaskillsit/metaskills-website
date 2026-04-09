@@ -33,6 +33,7 @@ import veo3Logo from "@/assets/techlogos/veo3.png";
 import higgsfieldLogo from "@/assets/techlogos/higgsfield.png";
 import seedanceLogo from "@/assets/techlogos/seedance.png";
 import openclawLogo from "@/assets/techlogos/openclaw.png";
+import copilotLogo from "@/assets/techlogos/copilot.jpg";
 
 const certifications = [
   { name: "EC-Council", logo: ecCouncilLogo, smaller: false },
