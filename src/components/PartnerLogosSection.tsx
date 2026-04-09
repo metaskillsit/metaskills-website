@@ -53,27 +53,28 @@ const PartnerLogosSection = () => {
               </div>
             </div>
 
-            {/* Logos side by side */}
-            <div className="flex items-center justify-center gap-4 md:gap-8 mb-5">
+            {/* Tinkercademy logo centered */}
+            <div className="flex items-center justify-center mb-5">
               <img
                 src={tinkercademyLogo}
                 alt="Tinkercademy"
                 className="h-8 md:h-12 w-auto object-contain"
                 loading="lazy"
               />
-              <div className="w-px h-8 md:h-10 bg-border" />
+            </div>
+
+            {/* Description with IMDA logo beside it */}
+            <div className="flex items-center justify-center gap-5 md:gap-8 mb-5 max-w-3xl mx-auto">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center flex-1">
+                {t("imda.description")}
+              </p>
               <img
                 src={imdaLogo}
                 alt="Infocomm Media Development Authority (IMDA)"
-                className="h-10 md:h-14 w-auto object-contain"
+                className="h-12 md:h-16 w-auto object-contain flex-shrink-0"
                 loading="lazy"
               />
             </div>
-
-            {/* Description */}
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto mb-5">
-              {t("imda.description")}
-            </p>
 
             {/* CTA */}
             <div className="flex justify-center">
