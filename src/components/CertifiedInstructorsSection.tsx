@@ -51,6 +51,7 @@ const techStacks = [
   { name: "CapCut", logo: "https://lf16-web-buz.capcut.com/obj/capcut-web-buz-us/common/images/capcut-logo.svg" },
   { name: "Veo 3", logo: "https://deepmind.google/favicon.ico" },
   { name: "HiggfieldAI", logo: "https://higgsfield.ai/favicon.ico" },
+  { name: "OpenClaw", logo: "https://openclaw.ai/favicon.ico" },
   { name: "Seedance", logo: "https://seedance.ai/favicon.ico" },
 ];
 
