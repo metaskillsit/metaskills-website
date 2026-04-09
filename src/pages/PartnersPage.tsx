@@ -6,30 +6,30 @@ import integrumLogo from "@/assets/partner-integrum.png";
 import jcubeLogo from "@/assets/partner-jcube.jpg";
 import svbbLogo from "@/assets/partner-svbb.png";
 
-const partners = [
-  {
-    name: "Integrum Global",
-    logo: integrumLogo,
-    url: "https://integrum.global/",
-    description: "An A.I. consulting and development outfit that delivers decision-making capabilities for complex use-cases. Specializes in developing prediction and decision engines using alternative data.",
-  },
-  {
-    name: "JCube Institute",
-    subtitle: "by j3Cube Pte Ltd",
-    logo: jcubeLogo,
-    url: "http://www.jcube-institute.com/",
-    description: "A partner institute co-founded by Dr Ke Jinghao, offering certified Data Analyst and Data Scientist programmes with hands-on, project-based curriculum.",
-  },
-  {
-    name: "Singapore-Vietnam Business Bridge",
-    logo: svbbLogo,
-    url: "https://svbb.sg/",
-    description: "Facilitating cross-border collaboration between Singapore and Vietnam, enabling knowledge exchange and business networking across ASEAN.",
-  },
-];
-
 const PartnersPage = () => {
   const { t } = useTranslation();
+
+  const partners = [
+    {
+      name: "Integrum Global",
+      logo: integrumLogo,
+      url: "https://integrum.global/",
+      description: t("partnersPage.integrumDesc"),
+    },
+    {
+      name: "JCube Institute",
+      subtitle: t("partnersPage.jcubeSubtitle"),
+      logo: jcubeLogo,
+      url: "http://www.jcube-institute.com/",
+      description: t("partnersPage.jcubeDesc"),
+    },
+    {
+      name: "Singapore-Vietnam Business Bridge",
+      logo: svbbLogo,
+      url: "https://svbb.sg/",
+      description: t("partnersPage.svbbDesc"),
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
