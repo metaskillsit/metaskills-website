@@ -1,7 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import ImageSlideshow from "@/components/ImageSlideshow";
 import agenticImg from "@/assets/programmes-agentic.jpg";
@@ -28,17 +27,18 @@ import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
 
 const ProgramsSection = () => {
   const { t } = useTranslation();
-  const [sectionOpen, setSectionOpen] = useState(false);
+  const ct = (key: string) => t(`courses.${key}.title`);
+
   const programCategories = [
     {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
       images: [aiLeadershipImg, aiLeadershipImg2, aiLeadershipImg3],
       courses: [
-        { name: "AI Strategy and Roadmap for Leaders", slug: "ai-strategy-roadmap-leaders" },
-        { name: "Who Is Accountable When AI Decides?", slug: "ai-accountability-when-ai-decides" },
-        { name: "Governing AI Agents: Trust, Boundaries, and Audit Trails", slug: "governing-ai-agents-trust-boundaries" },
-        { name: "AI Wargaming: Test Decisions Before They Count", slug: "ai-wargaming-test-decisions" },
+        { name: ct("aiStrategyLeaders"), slug: "ai-strategy-roadmap-leaders" },
+        { name: ct("aiAccountability"), slug: "ai-accountability-when-ai-decides" },
+        { name: ct("governingAiAgents"), slug: "governing-ai-agents-trust-boundaries" },
+        { name: ct("aiWargaming"), slug: "ai-wargaming-test-decisions" },
       ],
     },
     {
@@ -46,9 +46,9 @@ const ProgramsSection = () => {
       description: t("programmes.agenticDesc"),
       images: [agenticImg, agenticImg2, agenticImg3],
       courses: [
-        { name: "Foundations of Agentic AI Workflows", slug: "agentic-ai-foundations" },
-        { name: "Empowering Agentic AI with LLMs and Use-Case Development", slug: "agentic-ai-use-case" },
-        { name: "Deploying and Securing Advanced Agentic AI Systems", slug: "agentic-ai-deploy-secure-systems" },
+        { name: ct("agenticFoundations"), slug: "agentic-ai-foundations" },
+        { name: ct("agenticUseCase"), slug: "agentic-ai-use-case" },
+        { name: ct("agenticDeploy"), slug: "agentic-ai-deploy-secure-systems" },
       ],
     },
     {
@@ -56,15 +56,15 @@ const ProgramsSection = () => {
       description: t("programmes.aiAutoDesc"),
       images: [aiAutomationImg, aiAutomationImg2, aiAutomationImg3],
       courses: [
-        { name: "The Rise of AI Agents in 2026", slug: "rise-of-ai-agents-2026" },
-        { name: "Build AI Workflows with No Code", slug: "build-ai-workflows-no-code" },
-        { name: "Design AI Automations Using Plain Language", slug: "design-ai-automations-plain-language" },
-        { name: "Build Operational Tools with AI Coding Agents", slug: "build-operational-tools-ai-coding-agents" },
-        { name: "Build Your Own AI Assistant/Agent", slug: "build-your-own-ai-assistant" },
-        { name: "GPT Your Organisation's Knowledge Base", slug: "gpt-your-organisation-knowledge-base" },
-        { name: "Secure Your Agentic AI Infrastructure", slug: "secure-agentic-ai-infrastructure" },
-        { name: "AI for Training Design and Curriculum", slug: "ai-training-design-curriculum" },
-        { name: "Build AI Tutors with Adaptive Learning", slug: "build-ai-tutors-adaptive-learning" },
+        { name: ct("riseAiAgents"), slug: "rise-of-ai-agents-2026" },
+        { name: ct("buildAiNoCode"), slug: "build-ai-workflows-no-code" },
+        { name: ct("designAiPlainLang"), slug: "design-ai-automations-plain-language" },
+        { name: ct("buildOpTools"), slug: "build-operational-tools-ai-coding-agents" },
+        { name: ct("buildAiAssistant"), slug: "build-your-own-ai-assistant" },
+        { name: ct("gptKnowledgeBase"), slug: "gpt-your-organisation-knowledge-base" },
+        { name: ct("secureAgenticInfra"), slug: "secure-agentic-ai-infrastructure" },
+        { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
+        { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
       ],
     },
     {
@@ -72,9 +72,9 @@ const ProgramsSection = () => {
       description: t("programmes.dataDesc"),
       images: [datasciImg, datasciImg2, datasciImg3],
       courses: [
-        { name: "Python Programming For Data Analytics", slug: "python-programming-for-data-analytics" },
-        { name: "Certified Data Analyst — JCube Institute", slug: "certified-data-analyst" },
-        { name: "Certified Data Scientist — JCube Institute", slug: "certified-data-scientist" },
+        { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
+        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
+        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
       ],
     },
     {
@@ -82,8 +82,8 @@ const ProgramsSection = () => {
       description: t("programmes.fintechDesc"),
       images: [fintechImg, fintechImg2, fintechImg3],
       courses: [
-        { name: "Algorithmic Trading Mastery Series — Level 1", slug: "algorithmic-trading-level-1" },
-        { name: "Algorithmic Trading Mastery Series — Level 2", slug: "algorithmic-trading-level-2" },
+        { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
+        { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
       ],
     },
     {
@@ -91,7 +91,7 @@ const ProgramsSection = () => {
       description: t("programmes.cyberDesc"),
       images: [cyberDefenceImg, cyberDefenceImg2, cyberDefenceImg3],
       courses: [
-        { name: "Cybersecurity: Roles, Threats, and Certification Pathways", slug: "cybersecurity-roles-threats-pathways" },
+        { name: ct("cyberRolesThreats"), slug: "cybersecurity-roles-threats-pathways" },
       ],
     },
     {
@@ -99,12 +99,12 @@ const ProgramsSection = () => {
       description: t("programmes.mccDesc"),
       images: [cyberCertImg, cyberCertImg2, cyberCertImg3],
       courses: [
-        { name: "MCC+ Cyber Defence Foundation (4 Days)", slug: "mcc-plus-cyber-defence-foundation" },
-        { name: "MCC+ Security Operations (Security+)", slug: "mcc-plus-security-operations" },
-        { name: "MCC+ Threat Hunting & Blue Team (CySA+)", slug: "mcc-plus-threat-hunting-blue-team" },
-        { name: "MCC+ Offensive Cyber (CEH)", slug: "mcc-plus-offensive-cyber-fundamentals" },
-        { name: "MCC+ Digital Forensics (CHFI)", slug: "mcc-plus-digital-forensics" },
-        { name: "MCC+ AI Security (SecAI)", slug: "mcc-plus-ai-security-autonomous-defence" },
+        { name: ct("mccFoundation"), slug: "mcc-plus-cyber-defence-foundation" },
+        { name: ct("mccSecurityOps"), slug: "mcc-plus-security-operations" },
+        { name: ct("mccThreatHunting"), slug: "mcc-plus-threat-hunting-blue-team" },
+        { name: ct("mccOffensiveCyber"), slug: "mcc-plus-offensive-cyber-fundamentals" },
+        { name: ct("mccDigitalForensics"), slug: "mcc-plus-digital-forensics" },
+        { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
       ],
     },
   ];
@@ -124,107 +124,51 @@ const ProgramsSection = () => {
       </div>
 
       <div className="max-w-[1140px] mx-auto px-6 py-8 md:py-10">
-        <button
-          onClick={() => setSectionOpen(!sectionOpen)}
-          className="flex items-center gap-3 w-full text-left mb-8"
-        >
-          <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-            {t("programmes.glance")}
-          </h3>
-          <ChevronDown className={`w-6 h-6 text-foreground transition-transform duration-300 ${sectionOpen ? "rotate-180" : ""}`} />
-        </button>
+        <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-8">
+          {t("programmes.glance")}
+        </h3>
 
-        {/* Collapsed preview: 7 category thumbnails */}
-        <AnimatePresence mode="wait">
-          {!sectionOpen && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {programCategories.map((cat, i) => (
             <motion.div
-              key="preview"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              key={cat.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="group"
             >
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-                {programCategories.map((cat, i) => (
-                  <button
-                    key={cat.title}
-                    onClick={() => setSectionOpen(true)}
-                    className="group text-left"
-                  >
-                    <div className="aspect-[4/3] overflow-hidden rounded-lg mb-2 shadow-sm">
-                      <img
-                        src={cat.images[0]}
-                        alt={cat.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                        width={200}
-                        height={150}
-                      />
-                    </div>
-                    <p className="text-xs font-semibold text-foreground leading-tight group-hover:text-primary transition-colors">
-                      {cat.title}
-                    </p>
-                  </button>
+              <ImageSlideshow
+                images={cat.images}
+                alt={cat.title}
+                className="aspect-[4/3] overflow-hidden rounded-sm mb-5"
+                imgClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                interval={3500 + i * 500}
+                width={800}
+                height={600}
+              />
+              <h4 className="font-heading text-xl font-bold text-foreground mb-2">
+                {cat.title}
+              </h4>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                {cat.description}
+              </p>
+              <ul className="space-y-2 border-t border-border pt-4">
+                {cat.courses.map((course) => (
+                  <li key={course.slug}>
+                    <Link
+                      to={`/course/${course.slug}`}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
+                    >
+                      <span>{course.name}</span>
+                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                    </Link>
+                  </li>
                 ))}
-              </div>
-              <p className="text-xs text-muted-foreground mt-4">{t("programmes.clickToExplore", "Click any category or the heading above to explore all courses")}</p>
+              </ul>
             </motion.div>
-          )}
-
-          {/* Expanded full view */}
-          {sectionOpen && (
-            <motion.div
-              key="expanded"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="overflow-hidden"
-            >
-              <div className="grid md:grid-cols-3 gap-8">
-                {programCategories.map((cat, i) => (
-                  <motion.div
-                    key={cat.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="group"
-                  >
-                    <ImageSlideshow
-                      images={cat.images}
-                      alt={cat.title}
-                      className="aspect-[4/3] overflow-hidden rounded-sm mb-5"
-                      imgClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      interval={3500 + i * 500}
-                      width={800}
-                      height={600}
-                    />
-                    <h4 className="font-heading text-xl font-bold text-foreground mb-2">
-                      {cat.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                      {cat.description}
-                    </p>
-                    <ul className="space-y-2 border-t border-border pt-4">
-                      {cat.courses.map((course) => (
-                        <li key={course.slug}>
-                          <Link
-                            to={`/course/${course.slug}`}
-                            className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
-                          >
-                            <span>{course.name}</span>
-                            <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+          ))}
+        </div>
       </div>
     </section>
   );
