@@ -38,6 +38,7 @@
   },
   "stats": {
     "profTrained": "Chuyên gia đã Đào tạo",
+    "tillDate": "đến nay",
     "yearsExp": "Năm Kinh nghiệm Giảng viên",
     "orgsPartnered": "Tổ chức Đối tác",
     "progsOffered": "Chương trình Cung cấp"
@@ -130,7 +131,9 @@
     "selectProgramme": "Chọn chương trình",
     "message": "Tin nhắn",
     "messagePlaceholder": "Cho chúng tôi biết mục tiêu của bạn...",
-    "submit": "Gửi Yêu cầu"
+    "submit": "Gửi Yêu cầu",
+    "whatsappDesc": "Liên hệ trực tiếp qua WhatsApp để được tư vấn nhanh về chương trình, lịch học và đăng ký.",
+    "whatsappButton": "WhatsApp 8948 3482"
   },
   "footer": {
     "tagline": "Đối tác hàng đầu của ASEAN trong xây dựng năng lực AI Đại lý, Giao dịch Thuật toán và An ninh mạng.",
@@ -1021,5 +1024,14 @@
       "expertise": "Lập trình | Công nghệ Giáo dục | Hệ thống AI",
       "bio": "Yinjie (YJ) là đồng sáng lập của Tinkertanker, một công ty công nghệ và giáo dục tại Singapore, xây dựng phần mềm, điện tử, chương trình giảng dạy — và thế hệ tiếp theo của các lập trình viên, nhà sáng tạo và người chế tạo. YJ phụ trách quan hệ đối tác, chiến lược và phát triển kinh doanh, đồng thời luôn dành thời gian giảng dạy một số lớp lập trình yêu thích.\nYJ nhận bằng Cử nhân và Thạc sĩ Kỹ thuật Điện từ Đại học Stanford, Hoa Kỳ, và Chứng chỉ Sau Đại học về Giáo dục Trung học từ Viện Giáo dục Quốc gia Singapore. Trước Tinkertanker, YJ dạy tin học tại Raffles Institution với tư cách Trưởng Chương trình Giảng dạy Công nghệ Thông tin, và từng là Trưởng Cấp cao về Chính sách & Kế hoạch tại Vụ Giáo dục Đại học thuộc MOE. Trong thời gian rảnh, anh vẽ tranh, sưu tập meme lập trình và cố gắng ngừng chi tiền cho các đăng ký AI.\nYJ Soon là kỹ sư phần mềm full-stack và nhà giáo dục chuyên về học máy, phát triển Python và quy trình cloud-native. Anh có kinh nghiệm phong phú trong phát triển ứng dụng web và di động, cũng như các công nghệ nhập vai như VR. YJ tiến hành đào tạo kỹ thuật kết hợp lập trình thực hành với các phương pháp tốt nhất trong triển khai AI/ML, giúp người học từ cả nền tảng kỹ thuật và phi kỹ thuật dễ dàng tiếp cận các triển khai phức tạp."
     }
+  },
+  "imda": {
+    "badge": "Hợp tác Nổi bật",
+    "title": "Vibe Coding cho IMDA",
+    "description": "Metaskills Institute hợp tác với Tinkercademy cung cấp đào tạo Vibe Coding cho toàn bộ Cơ quan Phát triển Truyền thông Thông tin — trang bị cho cán bộ công chức năng lực phát triển hỗ trợ bởi AI.",
+    "cta": "Tìm hiểu Chương trình này"
+  },
+  "whatsapp": {
+    "chatSpecialist": "Tư vấn Chuyên gia"
   }
 }

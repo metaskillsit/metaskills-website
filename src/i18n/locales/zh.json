@@ -38,6 +38,7 @@
   },
   "stats": {
     "profTrained": "已培训专业人士",
+    "tillDate": "至今",
     "yearsExp": "师资综合经验年数",
     "orgsPartnered": "合作机构",
     "progsOffered": "提供的课程"
@@ -130,7 +131,9 @@
     "selectProgramme": "选择课程",
     "message": "留言",
     "messagePlaceholder": "告诉我们您的目标...",
-    "submit": "提交咨询"
+    "submit": "提交咨询",
+    "whatsappDesc": "通过WhatsApp直接联系我们，快速咨询课程、时间安排和报名信息。",
+    "whatsappButton": "WhatsApp联系我们 8948 3482"
   },
   "footer": {
     "tagline": "东盟在智能体AI、算法交易和网络安全能力建设方面的首选合作伙伴。",
@@ -1021,5 +1024,14 @@
       "expertise": "编程 | 教育科技 | AI系统",
       "bio": "尹杰（YJ）是新加坡科技和教育公司Tinkertanker的联合创始人，构建软件、电子产品和课程，培养下一代编程者、创客和创造者。YJ负责合作伙伴关系、战略和商务发展，同时始终抽出时间教授一些他最喜欢的编程课程。\nYJ在美国斯坦福大学获得了电气工程学士和硕士学位，并在新加坡国立教育学院获得了中学教育研究生文凭。在Tinkertanker之前，YJ在莱佛士书院担任资讯通信技术课程主管教授计算机课程，并曾在教育部高等教育司担任政策与规划高级主管。业余时间，他画画、收集编程表情包，并试图控制在AI订阅上的支出。\nYJ Soon是一位全栈软件工程师和教育者，专注于机器学习、Python开发和云原生工作流程。他在Web和移动应用开发以及VR等沉浸式技术方面拥有丰富的经验。YJ开展的技术培训将实践编程与AI/ML部署的最佳实践相结合，使来自技术和非技术背景的学习者都能轻松掌握复杂的实施方案。"
     }
+  },
+  "imda": {
+    "badge": "重点合作",
+    "title": "IMDA Vibe Coding",
+    "description": "Metaskills Institute 与 Tinkercademy 合作，为整个资讯通信媒体发展局提供 Vibe Coding 培训——赋能公务员AI辅助开发能力。",
+    "cta": "咨询此课程"
+  },
+  "whatsapp": {
+    "chatSpecialist": "咨询专家"
   }
 }
