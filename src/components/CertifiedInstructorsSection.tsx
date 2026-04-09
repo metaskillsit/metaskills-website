@@ -143,7 +143,7 @@ const CertifiedInstructorsSection = () => {
                 <img
                   src={tech.logo}
                   alt={tech.name}
-                  className="h-full w-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110"
                   loading="lazy"
                   width={40}
                   height={40}
