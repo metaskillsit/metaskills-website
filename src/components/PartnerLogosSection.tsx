@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 import aisgLogo from "@/assets/logo-aisg.png";
 import smuAcademyLogo from "@/assets/logo-smu-academy.png";
@@ -31,30 +31,64 @@ const PartnerLogosSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-card border-t border-border py-3 md:py-4 overflow-hidden">
+    <section className="bg-card border-t border-border py-6 md:py-8 overflow-hidden">
       {/* Featured Partnership Banner */}
-      <div className="bg-gradient-to-r from-primary/15 via-primary/10 to-primary/15 border-y border-primary/20 py-3 md:py-4 mb-4">
-        <div className="max-w-[1140px] mx-auto px-6 flex items-center justify-center gap-3 md:gap-6 flex-wrap">
-          <div className="inline-flex items-center gap-1.5 text-primary text-[10px] md:text-xs font-semibold uppercase tracking-widest">
-            <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5" />
-            {t("imda.badge")}
+      <div className="max-w-[1140px] mx-auto px-6 mb-6 md:mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-card via-card to-primary/5 shadow-lg"
+        >
+          {/* Top accent bar */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+
+          <div className="p-6 md:p-8">
+            {/* Badge */}
+            <div className="flex justify-center mb-5">
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] md:text-xs font-semibold uppercase tracking-widest">
+                <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                {t("imda.badge")}
+              </div>
+            </div>
+
+            {/* Logos side by side */}
+            <div className="flex items-center justify-center gap-4 md:gap-8 mb-5">
+              <img
+                src={tinkercademyLogo}
+                alt="Tinkercademy"
+                className="h-8 md:h-12 w-auto object-contain"
+                loading="lazy"
+              />
+              <div className="w-px h-8 md:h-10 bg-border" />
+              <img
+                src={imdaLogo}
+                alt="Infocomm Media Development Authority (IMDA)"
+                className="h-10 md:h-14 w-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Description */}
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto mb-5">
+              {t("imda.description")}
+            </p>
+
+            {/* CTA */}
+            <div className="flex justify-center">
+              <a
+                href="https://wa.me/6589483482?text=Hi%20I'm%20interested%20in%20the%20Vibe%20Coding%20programme%20with%20IMDA.%20Can%20you%20share%20more?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-all"
+              >
+                {t("imda.cta")}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
+            </div>
           </div>
-          <div className="flex items-center gap-3 md:gap-4">
-            <img src={tinkercademyLogo} alt="Tinkercademy" className="h-6 md:h-8 w-auto object-contain" loading="lazy" />
-          </div>
-          <p className="text-xs text-muted-foreground max-w-sm text-center md:text-left hidden md:block">
-            {t("imda.description")}
-          </p>
-          <img src={imdaLogo} alt="IMDA" className="h-8 md:h-10 w-auto object-contain" loading="lazy" />
-          <a
-            href="https://wa.me/6589483482?text=Hi%20I'm%20interested%20in%20the%20Vibe%20Coding%20programme%20with%20IMDA.%20Can%20you%20share%20more?"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground px-4 py-1.5 rounded-md font-semibold text-xs hover:opacity-90 transition-opacity"
-          >
-            {t("imda.cta")}
-          </a>
-        </div>
+        </motion.div>
       </div>
 
       {/* Partnering Institutions heading + scrolling logos */}
