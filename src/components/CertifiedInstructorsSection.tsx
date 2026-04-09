@@ -6,6 +6,34 @@ import awsLogo from "@/assets/logo-aws.png";
 import appleLogo from "@/assets/logo-apple.png";
 import googleLogo from "@/assets/logo-google.png";
 
+// Tech stack logos (local)
+import openaiLogo from "@/assets/techlogos/openai.svg";
+import anthropicLogo from "@/assets/techlogos/anthropic.svg";
+import geminiLogo from "@/assets/techlogos/gemini.svg";
+import deepseekLogo from "@/assets/techlogos/deepseek.png";
+import ollamaLogo from "@/assets/techlogos/ollama.png";
+import groqLogo from "@/assets/techlogos/groq.png";
+import huggingfaceLogo from "@/assets/techlogos/huggingface.svg";
+import perplexityLogo from "@/assets/techlogos/perplexity.svg";
+import githubLogo from "@/assets/techlogos/github.svg";
+import vercelLogo from "@/assets/techlogos/vercel.svg";
+import zapierLogo from "@/assets/techlogos/zapier.svg";
+import n8nLogo from "@/assets/techlogos/n8n.png";
+import cursorLogo from "@/assets/techlogos/cursor.png";
+import makeLogo from "@/assets/techlogos/make.png";
+import grokLogo from "@/assets/techlogos/grok.png";
+import openrouterLogo from "@/assets/techlogos/openrouter.png";
+import glmLogo from "@/assets/techlogos/glm.png";
+import doubaoLogo from "@/assets/techlogos/doubao.png";
+import kimiLogo from "@/assets/techlogos/kimi.png";
+import notebooklmLogo from "@/assets/techlogos/notebooklm.png";
+import lovableLogo from "@/assets/techlogos/lovable.png";
+import capcutLogo from "@/assets/techlogos/capcut.png";
+import veo3Logo from "@/assets/techlogos/veo3.png";
+import higgsfieldLogo from "@/assets/techlogos/higgsfield.png";
+import seedanceLogo from "@/assets/techlogos/seedance.png";
+import openclawLogo from "@/assets/techlogos/openclaw.png";
+
 const certifications = [
   { name: "EC-Council", logo: ecCouncilLogo, smaller: false },
   { name: "CompTIA", logo: comptiaLogo, smaller: false },
@@ -17,48 +45,40 @@ const certifications = [
 
 const techStacks = [
   // LLM Providers
-  { name: "OpenAI", logo: "https://cdn.worldvectorlogo.com/logos/openai-2.svg" },
-  { name: "Claude", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Anthropic_logo.svg/320px-Anthropic_logo.svg.png" },
-  { name: "Gemini", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/320px-Google_Gemini_logo.svg.png" },
-  { name: "Meta Llama", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg/320px-Meta_Platforms_Inc._logo_%28cropped%29.svg.png" },
-  { name: "Mistral", logo: "https://mistral.ai/images/logo_huBC6gyl.svg" },
-  { name: "DeepSeek", logo: "https://chat.deepseek.com/favicon.ico" },
-  { name: "Grok", logo: "https://x.ai/favicon.ico" },
-  { name: "Ollama", logo: "https://ollama.com/public/ollama.png" },
-  { name: "Groq", logo: "https://groq.com/wp-content/uploads/2024/03/PNGLogo_color.png" },
-  { name: "OpenRouter", logo: "https://openrouter.ai/favicon.ico" },
-  { name: "GLM", logo: "https://chatglm.cn/img/icons/chatglm-logo.svg" },
-  { name: "Doubao", logo: "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/logo-doubao-overflow.png" },
-  { name: "Kimi", logo: "https://kimi.moonshot.cn/favicon.ico" },
+  { name: "OpenAI", logo: openaiLogo },
+  { name: "Claude", logo: anthropicLogo },
+  { name: "Gemini", logo: geminiLogo },
+  { name: "DeepSeek", logo: deepseekLogo },
+  { name: "Grok", logo: grokLogo },
+  { name: "Ollama", logo: ollamaLogo },
+  { name: "Groq", logo: groqLogo },
+  { name: "OpenRouter", logo: openrouterLogo },
+  { name: "GLM", logo: glmLogo },
+  { name: "Doubao", logo: doubaoLogo },
+  { name: "Kimi", logo: kimiLogo },
   // AI Agents & Automation
-  { name: "n8n", logo: "https://n8n.io/favicon.ico" },
-  { name: "CrewAI", logo: "https://www.crewai.com/favicon.ico" },
-  { name: "AutoGen", logo: "https://microsoft.github.io/autogen/img/ag.svg" },
-  { name: "Zapier AI", logo: "https://cdn.worldvectorlogo.com/logos/zapier.svg" },
-  { name: "Make", logo: "https://images.ctfassets.net/qqlj6g4ee76j/1DdtIAIrIiiqmiSMYcGi2e/96af98f4b3ed10e29f10e0e1f36ffa4c/make-logo-mark-full-color-rgb.svg" },
+  { name: "n8n", logo: n8nLogo },
+  { name: "Zapier AI", logo: zapierLogo },
+  { name: "Make", logo: makeLogo },
   // AI Dev Tools
-  { name: "Hugging Face", logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
-  { name: "Cursor", logo: "https://www.cursor.com/favicon.ico" },
-  { name: "GitHub Copilot", logo: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" },
-  { name: "Lovable", logo: "https://lovable.dev/favicon.ico" },
-  { name: "Vercel AI", logo: "https://cdn.worldvectorlogo.com/logos/vercel.svg" },
-  { name: "Streamlit", logo: "https://streamlit.io/images/brand/streamlit-mark-color.svg" },
-  { name: "Gradio", logo: "https://www.gradio.app/assets/gradio.svg" },
-  { name: "MLflow", logo: "https://mlflow.org/img/mlflow-black.svg" },
-  { name: "NotebookLM", logo: "https://notebooklm.google/favicon.ico" },
-  // AI Media Tools
-  { name: "Perplexity", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Perplexity_AI_logo.svg" },
-  { name: "CapCut", logo: "https://lf16-web-buz.capcut.com/obj/capcut-web-buz-us/common/images/capcut-logo.svg" },
-  { name: "Veo 3", logo: "https://deepmind.google/favicon.ico" },
-  { name: "HiggfieldAI", logo: "https://higgsfield.ai/favicon.ico" },
-  { name: "OpenClaw", logo: "https://openclaw.ai/favicon.ico" },
-  { name: "Seedance", logo: "https://seedance.ai/favicon.ico" },
+  { name: "Hugging Face", logo: huggingfaceLogo },
+  { name: "Cursor", logo: cursorLogo },
+  { name: "GitHub Copilot", logo: githubLogo },
+  { name: "Lovable", logo: lovableLogo },
+  { name: "Vercel AI", logo: vercelLogo },
+  { name: "NotebookLM", logo: notebooklmLogo },
+  // AI Search & Media
+  { name: "Perplexity", logo: perplexityLogo },
+  { name: "CapCut", logo: capcutLogo },
+  { name: "Veo 3", logo: veo3Logo },
+  { name: "Higgsfield", logo: higgsfieldLogo },
+  { name: "Seedance", logo: seedanceLogo },
+  { name: "OpenClaw", logo: openclawLogo },
 ];
 
 const CertifiedInstructorsSection = () => {
   const { t } = useTranslation();
 
-  // Double the logos for seamless loop
   const doubled = [...certifications, ...certifications];
 
   return (
@@ -80,12 +100,7 @@ const CertifiedInstructorsSection = () => {
           className="flex items-center gap-8 md:gap-12 w-max"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 25,
-              ease: "linear",
-            },
+            x: { repeat: Infinity, repeatType: "loop", duration: 25, ease: "linear" },
           }}
         >
           {doubled.map((cert, i) => (
@@ -130,6 +145,8 @@ const CertifiedInstructorsSection = () => {
                   alt={tech.name}
                   className="h-full w-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                   loading="lazy"
+                  width={40}
+                  height={40}
                 />
               </div>
               <span className="text-[9px] md:text-[10px] text-muted-foreground/70 group-hover:text-foreground transition-colors whitespace-nowrap">
