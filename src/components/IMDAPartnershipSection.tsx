@@ -23,25 +23,22 @@ const IMDAPartnershipSection = () => {
               Featured Partnership
             </div>
 
-            {/* Logos side by side */}
-            <div className="flex items-center justify-center gap-6 md:gap-10">
-              <img
-                src={imdaLogo}
-                alt="Infocomm Media Development Authority (IMDA)"
-                className="h-20 md:h-28 w-auto object-contain"
-              />
-              <span className="text-2xl md:text-3xl font-heading text-muted-foreground/30 font-light select-none">×</span>
-              <img
-                src={tinkercademyLogo}
-                alt="Tinkercademy"
-                className="h-10 md:h-14 w-auto object-contain"
-              />
-            </div>
+            {/* Tinkercademy logo */}
+            <img
+              src={tinkercademyLogo}
+              alt="Tinkercademy"
+              className="h-10 md:h-14 w-auto object-contain"
+            />
 
-            {/* Title & description */}
+            {/* Title with IMDA logo inline */}
             <div className="max-w-xl">
-              <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2">
-                Vibe Coding for IMDA
+              <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mb-3 flex items-center justify-center gap-3 flex-wrap">
+                <span>Vibe Coding for IMDA</span>
+                <img
+                  src={imdaLogo}
+                  alt="Infocomm Media Development Authority (IMDA)"
+                  className="h-12 md:h-16 w-auto object-contain inline-block"
+                />
               </h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                 Metaskills Institute partners with Tinkercademy to deliver <strong className="text-foreground">Vibe Coding</strong> training
