@@ -12,7 +12,6 @@ import AdmissionsSection from "@/components/AdmissionsSection";
 import FooterSection from "@/components/FooterSection";
 import CertifiedInstructorsSection from "@/components/CertifiedInstructorsSection";
 import PartnerLogosSection from "@/components/PartnerLogosSection";
-import TechStackSection from "@/components/TechStackSection";
 
 
 const Index = () => {
@@ -25,7 +24,6 @@ const Index = () => {
         <PartnerLogosSection />
         <MissionSection />
         <PastClassesSection />
-        <TechStackSection />
         <ProgramsSection />
         <StatsSection />
         <WhyMetaskillsSection />
