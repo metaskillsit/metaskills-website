@@ -4,6 +4,9 @@ import i18n from "i18next";
 // In-memory cache for translated strings per session
 const translationCache: Record<string, Record<string, string>> = {};
 
+// Track keys we've already queued to avoid re-queuing
+const queuedKeys = new Set<string>();
+
 // Pending batch: collects keys that need translation
 let pendingKeys: { key: string; fallback: string; lang: string }[] = [];
 let batchTimer: ReturnType<typeof setTimeout> | null = null;
@@ -19,7 +22,6 @@ function setCachedTranslation(lang: string, key: string, value: string) {
   translationCache[lang][key] = value;
 }
 
-// Also persist to localStorage for offline access
 function loadFromStorage(lang: string): Record<string, string> {
   try {
     const stored = localStorage.getItem(`auto-translations-${lang}`);
@@ -34,17 +36,14 @@ function saveToStorage(lang: string) {
     if (translationCache[lang]) {
       localStorage.setItem(`auto-translations-${lang}`, JSON.stringify(translationCache[lang]));
     }
-  } catch {
-    // localStorage full or unavailable
-  }
+  } catch {}
 }
 
-// Initialize cache from localStorage
 export function initAutoTranslateCache(lang: string) {
   const stored = loadFromStorage(lang);
   translationCache[lang] = { ...stored, ...translationCache[lang] };
 
-  // Inject any cached translations into i18next immediately
+  // Inject cached translations into i18next
   for (const [key, value] of Object.entries(translationCache[lang])) {
     i18n.addResource(lang, "translation", key, value);
   }
@@ -57,7 +56,6 @@ async function flushBatch() {
   pendingKeys = [];
   batchTimer = null;
 
-  // Group by language
   const byLang: Record<string, { key: string; fallback: string }[]> = {};
   for (const item of batch) {
     if (!byLang[item.lang]) byLang[item.lang] = [];
@@ -76,16 +74,15 @@ async function flushBatch() {
         items.forEach((item) => setCachedTranslation(lang, item.key, item.fallback));
       } else {
         const translations: string[] = data?.translations || texts;
-        items.forEach((item, i) => {
-          const translated = translations[i] || item.fallback;
+        items.forEach((item, idx) => {
+          const translated = translations[idx] || item.fallback;
           setCachedTranslation(lang, item.key, translated);
-          // Inject into i18next so components re-render with translated text
           i18n.addResource(lang, "translation", item.key, translated);
         });
       }
       saveToStorage(lang);
 
-      // Force re-render by emitting languageChanged
+      // Force components to re-render
       i18n.emit("languageChanged", lang);
     } catch (err) {
       console.warn("Auto-translate network error:", err);
@@ -94,22 +91,57 @@ async function flushBatch() {
   }
 }
 
-export function requestAutoTranslation(key: string, fallback: string, lang: string): string {
-  // Return cached if available
-  const cached = getCachedTranslation(lang, key);
-  if (cached) return cached;
+function queueTranslation(key: string, fallback: string, lang: string) {
+  const cacheKey = `${lang}:${key}`;
+  if (queuedKeys.has(cacheKey)) return;
+  queuedKeys.add(cacheKey);
 
-  // Check if already in pending batch
-  if (!pendingKeys.some((p) => p.key === key && p.lang === lang)) {
-    pendingKeys.push({ key, fallback, lang });
-  }
+  pendingKeys.push({ key, fallback, lang });
 
-  // Debounce: flush after 150ms of no new requests
   if (batchTimer) clearTimeout(batchTimer);
   batchTimer = setTimeout(() => {
     flushBatch();
-  }, 150);
+  }, 200);
+}
 
-  // Return English fallback while translation loads
-  return fallback;
+/**
+ * i18next postProcessor plugin.
+ * After every t() call, checks if the resolved value came from the fallback (English).
+ * If so, queues auto-translation and returns cached translation if available.
+ */
+export const autoTranslatePostProcessor = {
+  type: "postProcessor" as const,
+  name: "autoTranslate",
+  process(value: string, key: string | string[], _options: any, translator: any) {
+    const currentLang = (i18n.resolvedLanguage || i18n.language || "en").split("-")[0];
+    if (currentLang === "en") return value;
+
+    const resolvedKey = Array.isArray(key) ? key[0] : key;
+    if (!resolvedKey) return value;
+
+    // Check if this key has a native translation in the current language's resource bundle
+    const nativeValue = i18n.getResource(currentLang, "translation", resolvedKey);
+    if (nativeValue && typeof nativeValue === "string") {
+      return nativeValue; // Already translated
+    }
+
+    // Check our auto-translate cache
+    const cached = getCachedTranslation(currentLang, resolvedKey);
+    if (cached) return cached;
+
+    // Get the English source text
+    const englishValue = i18n.getResource("en", "translation", resolvedKey) as string;
+    if (!englishValue) return value;
+
+    // Queue for translation
+    queueTranslation(resolvedKey, englishValue, currentLang);
+
+    // Return English for now (will re-render after translation arrives)
+    return value;
+  },
+};
+
+// Clear queued keys when language changes so we re-queue for new language
+export function clearQueuedKeys() {
+  queuedKeys.clear();
 }
