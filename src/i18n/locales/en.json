@@ -38,6 +38,7 @@
   },
   "stats": {
     "profTrained": "Professionals Trained",
+    "tillDate": "till date",
     "yearsExp": "Years Combined Faculty Experience",
     "orgsPartnered": "Organisations Partnered",
     "progsOffered": "Programmes Offered"
@@ -130,7 +131,9 @@
     "selectProgramme": "Select a programme",
     "message": "Message",
     "messagePlaceholder": "Tell us about your goals...",
-    "submit": "Submit Enquiry"
+    "submit": "Submit Enquiry",
+    "whatsappDesc": "Chat with us directly on WhatsApp for quick enquiries about our programmes, schedules, and enrollment.",
+    "whatsappButton": "WhatsApp Us at 8948 3482"
   },
   "footer": {
     "tagline": "ASEAN's go-to partner for Agentic AI, Algorithmic Trading, and Cybersecurity capability building.",
@@ -1021,5 +1024,14 @@
       "expertise": "Programming Education | Partnerships & Strategy | EdTech | Curriculum Development",
       "bio": ""
     }
+  },
+  "imda": {
+    "badge": "Featured Partnership",
+    "title": "Vibe Coding for IMDA",
+    "description": "Metaskills Institute partners with Tinkercademy to deliver Vibe Coding training across the entire Infocomm Media Development Authority — equipping public officers with AI-assisted development capabilities.",
+    "cta": "Enquire About This Programme"
+  },
+  "whatsapp": {
+    "chatSpecialist": "Chat with Specialist"
   }
 }
