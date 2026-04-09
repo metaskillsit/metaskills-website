@@ -15,26 +15,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repo
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      # 3. Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # 4. Build project
       - name: Build project
         run: npm run build
 
-      # 5. Deploy to A2 via FTP (FULL RESET DEPLOY)
       - name: Deploy to A2 via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -44,16 +39,14 @@ jobs:
           protocol: ftps
           port: 21
 
-          # Upload ONLY built files
           local-dir: dist/
-
-          # 🔥 CRITICAL: MUST BE public_html
           server-dir: public_html/
 
-          # 🔥 FORCE CLEAN (removes old images, old build, EVERYTHING)
-          dangerous-clean-slate: true
+          # ✅ Incremental deploy
+          dangerous-clean-slate: false
 
-          # Ignore unnecessary files
+          log-level: verbose
+
           exclude: |
             **/.git*
             **/.github*
