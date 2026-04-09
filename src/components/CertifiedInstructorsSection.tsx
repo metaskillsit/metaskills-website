@@ -33,6 +33,7 @@ import veo3Logo from "@/assets/techlogos/veo3.png";
 import higgsfieldLogo from "@/assets/techlogos/higgsfield.png";
 import seedanceLogo from "@/assets/techlogos/seedance.png";
 import openclawLogo from "@/assets/techlogos/openclaw.png";
+import copilotLogo from "@/assets/techlogos/copilot.jpg";
 
 const certifications = [
   { name: "EC-Council", logo: ecCouncilLogo, smaller: false },
@@ -64,6 +65,7 @@ const techStacks = [
   { name: "Hugging Face", logo: huggingfaceLogo },
   { name: "Cursor", logo: cursorLogo },
   { name: "GitHub Copilot", logo: githubLogo },
+  { name: "MS Copilot", logo: copilotLogo },
   { name: "Lovable", logo: lovableLogo },
   { name: "Vercel AI", logo: vercelLogo },
   { name: "NotebookLM", logo: notebooklmLogo },
@@ -88,7 +90,7 @@ const CertifiedInstructorsSection = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center font-heading text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6"
+          className="text-center text-xs font-semibold uppercase tracking-widest text-primary mb-4 md:mb-6"
         >
           {t("certified.heading")}
         </motion.p>
