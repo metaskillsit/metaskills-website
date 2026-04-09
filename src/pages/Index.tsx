@@ -25,8 +25,8 @@ const Index = () => {
         <PartnerLogosSection />
         <IMDAPartnershipSection />
         <MissionSection />
-        <ProgramsSection />
         <PastClassesSection />
+        <ProgramsSection />
         <StatsSection />
         <WhyMetaskillsSection />
         <FacultySection />
