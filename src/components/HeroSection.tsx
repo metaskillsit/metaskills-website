@@ -3,6 +3,7 @@ import ImageSlideshow from "@/components/ImageSlideshow";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroBg2 from "@/assets/hero-bg-2.jpg";
 import heroBg3 from "@/assets/hero-bg-3.jpg";
+import terreneLogo from "@/assets/terrene-logo.svg";
 import { useTranslation } from "react-i18next";
 
 const heroImages = [heroBg, heroBg2, heroBg3];
