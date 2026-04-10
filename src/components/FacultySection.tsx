@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback, useRef, TouchEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 
@@ -93,20 +93,27 @@ const allFaculty = [
 
 const AUTO_INTERVAL = 4000;
 const GAP = 32;
+const SWIPE_THRESHOLD = 50;
 
 const FacultySection = () => {
   const { t } = useTranslation();
   const [currentIdx, setCurrentIdx] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
   const [cardWidth, setCardWidth] = useState(0);
-  const maxIdx = allFaculty.length - 4;
+  const [visibleCards, setVisibleCards] = useState(4);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const updateCardWidth = useCallback(() => {
     if (trackRef.current) {
       const containerWidth = trackRef.current.parentElement?.clientWidth || 0;
-      setCardWidth((containerWidth - GAP * 3) / 4);
+      const cols = containerWidth < 640 ? 2 : containerWidth < 1024 ? 3 : 4;
+      setVisibleCards(cols);
+      setCardWidth((containerWidth - GAP * (cols - 1)) / cols);
     }
   }, []);
+
+  const maxIdx = Math.max(0, allFaculty.length - visibleCards);
 
   useEffect(() => {
     updateCardWidth();
@@ -126,6 +133,22 @@ const FacultySection = () => {
     const timer = setInterval(next, AUTO_INTERVAL);
     return () => clearInterval(timer);
   }, [next]);
+
+  const handleTouchStart = (e: TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > SWIPE_THRESHOLD) {
+      if (diff > 0) next();
+      else prev();
+    }
+  };
 
   const translateX = currentIdx * (cardWidth + GAP);
 
@@ -156,8 +179,20 @@ const FacultySection = () => {
           </div>
         </motion.div>
 
-        <div className="overflow-hidden" ref={trackRef}>
-          <div className="flex gap-8" style={{ transform: `translateX(-${translateX}px)` }}>
+        <div
+          className="overflow-hidden"
+          ref={trackRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div
+            className="flex gap-8"
+            style={{
+              transform: `translateX(-${translateX}px)`,
+              transition: "transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)",
+            }}
+          >
             {allFaculty.map((f) => (
               <div key={f.name} className="flex-shrink-0" style={{ width: cardWidth }}>
                 <div className="aspect-square overflow-hidden mb-4">
