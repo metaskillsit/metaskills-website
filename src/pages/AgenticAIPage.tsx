@@ -112,8 +112,8 @@ const AgenticAIPage = () => {
               </p>
               <div className="flex flex-wrap gap-4 items-start">
                 <div className="relative">
-                  <a href="https://terrene.foundation/" target="_blank" rel="noopener noreferrer" className="absolute -top-5 right-0 flex items-center gap-1.5 text-[9px] text-[hsl(220,15%,40%)] uppercase tracking-wider hover:text-[hsl(220,15%,60%)] transition-colors">
-                    Powered by <img src={terreneLogo} alt="Terrene Foundation" className="h-3 brightness-0 invert opacity-50" />
+                  <a href="https://terrene.foundation/" target="_blank" rel="noopener noreferrer" className="absolute -top-7 right-0 flex items-center gap-1.5 text-[9px] text-[hsl(220,15%,55%)] uppercase tracking-wider border border-[hsl(220,20%,25%)] bg-[hsl(220,25%,10%,0.8)] backdrop-blur-sm rounded-full px-2.5 py-1 hover:border-[hsl(var(--gold),0.4)] hover:text-[hsl(var(--gold))] transition-all">
+                    Powered by <img src={terreneLogo} alt="Terrene Foundation" className="h-3 brightness-0 invert opacity-70" />
                   </a>
                   <a href="#approach" className="inline-flex items-center gap-2 bg-[hsl(var(--gold))] text-[hsl(220,25%,6%)] font-semibold px-6 py-3 rounded-md hover:brightness-110 transition-all">
                     {t("agenticPage.requestDemo")}
