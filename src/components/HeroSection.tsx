@@ -47,6 +47,15 @@ const HeroSection = () => {
         <div className="hidden md:block absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-[1140px] px-6 pb-6">
           <div className="inline-flex items-center gap-6 rounded-sm border border-border/60 bg-background/85 px-6 py-4 shadow-xl backdrop-blur-sm">
             {heroContent}
+            <a
+              href="https://terrene.foundation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 border-l border-border/60 pl-6 text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <span>System powered by</span>
+              <img src={terreneLogo} alt="Terrene Foundation" className="h-5 w-auto" />
+            </a>
           </div>
         </div>
       </div>
