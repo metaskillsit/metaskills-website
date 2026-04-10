@@ -20,6 +20,9 @@ import pastClass37 from "@/assets/past-class-37.jpg";
 import pastClass39 from "@/assets/past-class-39.jpg";
 import pastClass40 from "@/assets/past-class-40.jpg";
 import pastClass43 from "@/assets/past-class-43.jpg";
+import pastClass44 from "@/assets/past-class-44.jpg";
+import pastClass45 from "@/assets/past-class-45.jpg";
+import pastClass46 from "@/assets/past-class-46.jpg";
 
 export interface PastRun {
   date: string;

@@ -59,6 +59,10 @@ import aiWargaming1 from "@/assets/courses/ai-wargaming-1.jpg";
 // MCC+
 import mccFoundation1 from "@/assets/courses/mcc-foundation-1.jpg";
 import mccSecOps1 from "@/assets/courses/mcc-security-ops-1.jpg";
+// Vibe Coding
+import vibeCoding1 from "@/assets/past-class-44.jpg";
+import vibeCoding2 from "@/assets/past-class-45.jpg";
+import vibeCoding3 from "@/assets/past-class-46.jpg";
 // Reuse some category-level images for variety (2nd and 3rd slides)
 import courseCyber1 from "@/assets/course-cyber-1.jpg";
 import courseCyber2 from "@/assets/course-cyber-2.jpg";
@@ -97,6 +101,7 @@ const courseImageMap: Record<string, string[]> = {
   "mcc-plus-offensive-cyber-fundamentals": [courseCyber2, cyberPathways1, mccFoundation1],
   "mcc-plus-digital-forensics": [courseCyber3, mccSecOps1, courseCyber1],
   "mcc-plus-ai-security-autonomous-defence": [secureInfra1, mccFoundation1, courseCyber2],
+  "vibe-coding-for-digital-builders": [vibeCoding1, vibeCoding2, vibeCoding3],
 };
 
 export const getCourseImages = (slug: string): string[] =>

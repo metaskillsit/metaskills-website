@@ -586,5 +586,38 @@ export const courses: Course[] = [
   },
 ];
 
+// ── Vibe Coding (Partnership with Tinkercademy) ──
+courses.push({
+  slug: "vibe-coding-for-digital-builders",
+  i18nKey: "vibeCodingDigitalBuilders",
+  title: "Vibe Coding for Digital Builders *(Partnership with Tinkercademy)",
+  category: "Vibe Coding",
+  tagline: "Leverage AI-driven tools like ChatGPT, Figma, and Lovable to rapidly prototype, design, and deploy web applications.",
+  heroImage: "/src/assets/course-agentic1.png",
+  jointlyOfferedBy: "Tinkercademy & Metaskills Institute",
+  duration: "2 Days",
+  whyAttend:
+    "Generative AI is reshaping the way organisations approach digital transformation, product design, and application development. This workshop provides hands-on experience in leveraging AI-driven tools like ChatGPT, Figma, and Lovable to rapidly prototype, design, and deploy web applications.\n\nIn this practical two-day course, you'll explore how generative AI can be effectively integrated into your organisation's workflow — starting with problem discovery and analysis using ChatGPT for deep research, solution proposals, user persona creation, and UAT writing. You'll then transition into visual design with Figma, creating user-centric prototypes and UI definitions. Finally, you'll employ Lovable, a powerful vibe-coding platform, to build and debug a complete web app backed by Supabase using natural language prompts.\n\nIMDA is one of our client pool for this programme.",
+  objectives: [
+    "Understand the fundamentals and practical applications of generative AI tools like ChatGPT.",
+    "Conduct in-depth problem analysis and generate comprehensive solution proposals.",
+    "Develop responsive user interface designs and wireframes using Figma.",
+    "Rapidly build and deploy web applications through vibe coding with Lovable and Supabase.",
+    "Evaluate the impact and integration strategies of AI tools within your organisation's digital transformation initiatives.",
+  ],
+  courseDesign:
+    "A practical two-day workshop. Day 1 focuses on problem discovery, research, and solution design using ChatGPT. Day 2 covers UI prototyping with Figma and full-stack web app development with Lovable. Participants are provided with paid ChatGPT Business and Lovable plans for the duration of the course.",
+  schedule: [
+    { day: "Day 1", items: ["Problem discovery and analysis with ChatGPT", "Deep research and solution proposals", "User persona creation and UAT writing", "Product development cycle with AI"] },
+    { day: "Day 2", items: ["Visual design and prototyping with Figma", "User-centric UI definitions", "Vibe coding with Lovable and Supabase", "Build, debug, and deploy a complete web app"] },
+  ],
+  nextRunDate: "Contact admissions@metaskills.sg for next run dates",
+  fees: {
+    selfSponsored: "16 pax and above: S$650/pax | 12–15 pax: S$750/pax | 8–11 pax: S$870/pax",
+    corporateSmall: "7 or fewer participants: S$6,800 flat fee",
+    corporateLarge: "Contact for group rates",
+  },
+});
+
 export const getCourseBySlug = (slug: string) =>
   courses.find((c) => c.slug === slug);
