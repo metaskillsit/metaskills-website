@@ -25,7 +25,7 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
           imgClassName="absolute inset-0 h-full w-full object-cover object-[center_20%]"
           width={1280}
           height={720}
-          interval={24000}
+          interval={15000}
           loading="eager"
           showDots={false}
           kenBurns={true}
