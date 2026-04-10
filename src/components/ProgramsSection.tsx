@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ImageSlideshow from "@/components/ImageSlideshow";
 import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
+import vibeCodingImg2 from "@/assets/programmes-vibecoding-2.jpg";
+import vibeCodingImg3 from "@/assets/programmes-vibecoding-3.jpg";
 import agenticImg from "@/assets/programmes-agentic.jpg";
 import agenticImg2 from "@/assets/programmes-agentic-2.jpg";
 import agenticImg3 from "@/assets/programmes-agentic-3.jpg";
@@ -34,7 +36,7 @@ const ProgramsSection = () => {
     {
       title: t("programmes.vibeCodingTitle"),
       description: t("programmes.vibeCodingDesc"),
-      images: [vibeCodingImg, vibeCodingImg, vibeCodingImg],
+      images: [vibeCodingImg, vibeCodingImg2, vibeCodingImg3],
       courses: [
         { name: ct("vibeCodingDigitalBuilders"), slug: "vibe-coding-for-digital-builders" },
       ],
