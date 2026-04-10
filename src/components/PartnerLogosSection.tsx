@@ -27,26 +27,28 @@ const PartnerLogosSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-card border-t border-border py-10 md:py-14">
-      <div className="max-w-[1140px] mx-auto px-6">
+    <section className="bg-card border-t border-border py-6 md:py-8">
+      <div className="max-w-[1140px] mx-auto px-6 mb-3 md:mb-4">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center font-heading text-2xl md:text-3xl font-bold text-foreground mb-8 md:mb-10"
+          className="text-center font-heading text-2xl md:text-3xl font-bold text-foreground"
         >
           {t("partners.title")}
         </motion.p>
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+      </div>
+      <div className="max-w-[1140px] mx-auto px-6">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
           {partnerLogos.map((partner) => (
             <div
               key={partner.name}
-              className="flex items-center justify-center h-[40px] md:h-[52px] grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="flex-shrink-0 flex items-center justify-center h-[60px] md:h-[80px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-full w-auto max-w-[110px] md:max-w-[150px] object-contain"
+                className="h-full w-auto max-w-[140px] md:max-w-[200px] object-contain"
                 loading="lazy"
               />
             </div>
