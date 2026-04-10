@@ -96,7 +96,7 @@ const CertifiedInstructorsSection = () => {
           className="flex items-center gap-6 md:gap-8 w-max"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
-            x: { repeat: Infinity, repeatType: "loop", duration: 480, ease: "linear" },
+            x: { repeat: Infinity, repeatType: "loop", duration: 240, ease: "linear" },
           }}
         >
           {doubled.map((cert, i) => (
