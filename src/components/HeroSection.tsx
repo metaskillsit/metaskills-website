@@ -3,9 +3,10 @@ import ImageSlideshow from "@/components/ImageSlideshow";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroBg2 from "@/assets/hero-bg-2.jpg";
 import heroBg3 from "@/assets/hero-bg-3.jpg";
+import heroBg4 from "@/assets/hero-bg-4.jpg";
 import { useTranslation } from "react-i18next";
 
-const heroImages = [heroBg, heroBg2, heroBg3];
+const heroImages = [heroBg, heroBg2, heroBg3, heroBg4];
 
 const HeroSection = () => {
   const { t } = useTranslation();
