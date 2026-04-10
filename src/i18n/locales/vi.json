@@ -61,7 +61,9 @@
     "aiLeadTitle": "Lãnh đạo & Quản trị AI",
     "aiLeadDesc": "Hội thảo chiến lược cho lãnh đạo cấp cao — lộ trình áp dụng AI, khung trách nhiệm, quản trị đại lý và AI wargaming.",
     "mccTitle": "Chứng nhận Phòng thủ Mạng MCC+",
-    "mccDesc": "Chương trình chứng nhận an ninh mạng tổng hợp — 4 ngày nền tảng cốt lõi cộng 1 ngày tự chọn phù hợp Security+, CySA+, CEH, CHFI và SecAI."
+    "mccDesc": "Chương trình chứng nhận an ninh mạng tổng hợp — 4 ngày nền tảng cốt lõi cộng 1 ngày tự chọn phù hợp Security+, CySA+, CEH, CHFI và SecAI.",
+    "vibeCodingTitle": "Vibe Coding",
+    "vibeCodingDesc": "Thực hành phát triển ứng dụng web do AI hỗ trợ — từ khám phá vấn đề đến triển khai sử dụng ChatGPT, Figma và Lovable. Hợp tác với Tinkercademy."
   },
   "why": {
     "title": "Tại sao chọn Metaskills",
@@ -952,6 +954,34 @@
       "feesSelfSponsored": "S$1,800 mỗi khách (tối thiểu 5, tối đa 15)",
       "feesCorporateSmall": "S$1,800/khách",
       "feesCorporateLarge": "S$1,800/khách"
+    },
+    "vibeCodingDigitalBuilders": {
+      "title": "Vibe Coding for Digital Builders (Hợp tác với Tinkercademy)",
+      "category": "Vibe Coding",
+      "tagline": "Tận dụng các công cụ AI như ChatGPT, Figma và Lovable để nhanh chóng tạo mẫu và triển khai ứng dụng web.",
+      "whyAttend": "AI tạo sinh đang thay đổi cách tổ chức tiếp cận chuyển đổi số, thiết kế sản phẩm và phát triển ứng dụng. Hội thảo này cung cấp trải nghiệm thực hành sử dụng các công cụ AI như ChatGPT, Figma và Lovable.\n\nIMDA là một trong những khách hàng của chương trình này.",
+      "courseDesign": "Hội thảo thực hành 2 ngày. Ngày 1 tập trung vào khám phá vấn đề và thiết kế giải pháp với ChatGPT. Ngày 2 bao gồm tạo mẫu UI với Figma và phát triển ứng dụng web full-stack với Lovable.",
+      "objective1": "Hiểu các nguyên tắc cơ bản và ứng dụng thực tế của các công cụ AI tạo sinh như ChatGPT.",
+      "objective2": "Tiến hành phân tích vấn đề chuyên sâu và tạo đề xuất giải pháp toàn diện.",
+      "objective3": "Phát triển thiết kế giao diện người dùng đáp ứng và wireframe bằng Figma.",
+      "objective4": "Nhanh chóng xây dựng và triển khai ứng dụng web thông qua vibe coding với Lovable và Supabase.",
+      "objective5": "Đánh giá tác động và chiến lược tích hợp các công cụ AI trong sáng kiến chuyển đổi số.",
+      "scheduleDay1": "Ngày 1",
+      "scheduleDay1Item1": "Khám phá và phân tích vấn đề với ChatGPT",
+      "scheduleDay1Item2": "Nghiên cứu chuyên sâu và đề xuất giải pháp",
+      "scheduleDay1Item3": "Tạo persona người dùng và viết UAT",
+      "scheduleDay1Item4": "Chu trình phát triển sản phẩm với AI",
+      "scheduleDay2": "Ngày 2",
+      "scheduleDay2Item1": "Thiết kế trực quan và tạo mẫu với Figma",
+      "scheduleDay2Item2": "Định nghĩa UI lấy người dùng làm trung tâm",
+      "scheduleDay2Item3": "Vibe coding với Lovable và Supabase",
+      "scheduleDay2Item4": "Xây dựng, gỡ lỗi và triển khai ứng dụng web hoàn chỉnh",
+      "nextRunDate": "Liên hệ admissions@metaskills.sg để biết lịch khai giảng",
+      "duration": "2 Ngày",
+      "feesSelfSponsored": "16 người trở lên: S$650/người | 12-15 người: S$750/người | 8-11 người: S$870/người",
+      "feesCorporateSmall": "7 người hoặc ít hơn: S$6,800 phí cố định",
+      "feesCorporateLarge": "Liên hệ để biết giá nhóm",
+      "jointlyOfferedBy": "Tinkercademy & Metaskills Institute"
     }
   },
   "facultyProfiles": {

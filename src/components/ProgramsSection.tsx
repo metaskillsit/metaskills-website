@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ImageSlideshow from "@/components/ImageSlideshow";
+import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
 import agenticImg from "@/assets/programmes-agentic.jpg";
 import agenticImg2 from "@/assets/programmes-agentic-2.jpg";
 import agenticImg3 from "@/assets/programmes-agentic-3.jpg";
@@ -30,6 +31,14 @@ const ProgramsSection = () => {
   const ct = (key: string) => t(`courses.${key}.title`);
 
   const programCategories = [
+    {
+      title: t("programmes.vibeCodingTitle"),
+      description: t("programmes.vibeCodingDesc"),
+      images: [vibeCodingImg, vibeCodingImg, vibeCodingImg],
+      courses: [
+        { name: ct("vibeCodingDigitalBuilders"), slug: "vibe-coding-for-digital-builders" },
+      ],
+    },
     {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
