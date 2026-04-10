@@ -3,6 +3,8 @@ import { CheckCircle, Clock, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 import { useCourseTranslation } from "@/hooks/useCourseTranslation";
+import imdaLogo from "@/assets/logo-imda.png";
+import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 
 interface CourseContentProps {
   course: Course;
