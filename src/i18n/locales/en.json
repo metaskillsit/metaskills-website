@@ -101,7 +101,7 @@
     "title": "Partnering Institutions"
   },
   "locations": {
-    "title": "Our Learning Spaces",
+    "title": "Contact Us",
     "subtitle": "World-class facilities designed for hands-on, immersive learning experiences.",
     "hqName": "Singapore HQ — CT Hub 2",
     "hqDesc": "Located at 114 Lavender Street, CT Hub 2, #07-74, Singapore 338729. Our main campus equipped with state-of-the-art facilities for hands-on AI training.",
@@ -150,7 +150,7 @@
     "aboutUs": "About Us",
     "faculty": "Faculty",
     "partners": "Partners",
-    "learningSpaces": "Learning Spaces",
+     "learningSpaces": "Contact Us",
     "admissions": "Admissions",
     "courseFeesAndFunding": "Course Fees & Funding",
     "copyright": "© {{year}} Metaskills Institute. All rights reserved.",
@@ -194,7 +194,7 @@
     "showLess": "Show Less"
   },
   "locationsPage": {
-    "heroTitle": "Our Learning Spaces",
+    "heroTitle": "Contact Us",
     "heroSubtitle": "World-class facilities designed for hands-on, immersive learning experiences."
   },
   "pastClasses": {
