@@ -40,7 +40,7 @@ const PartnerLogosSection = () => {
         </motion.p>
       </div>
       <div className="max-w-[1140px] mx-auto px-6">
-        <div className="flex flex-nowrap items-center justify-center gap-4 md:gap-6">
+        <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 md:gap-6">
           {partnerLogos.map((partner) => (
             <div
               key={partner.name}
