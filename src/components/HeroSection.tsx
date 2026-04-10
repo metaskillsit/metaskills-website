@@ -1,11 +1,6 @@
 import { motion } from "framer-motion";
-import ImageSlideshow from "@/components/ImageSlideshow";
-import heroBg from "@/assets/hero-bg.jpg";
-import heroBg2 from "@/assets/hero-bg-2.jpg";
-import heroBg3 from "@/assets/hero-bg-3.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import { useTranslation } from "react-i18next";
-
-const heroImages = [heroBg, heroBg2, heroBg3];
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -27,18 +22,15 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
-      {/* Image area */}
+      {/* Video area */}
       <div className="relative aspect-[16/9] md:aspect-[1920/900]">
-        <ImageSlideshow
-          images={heroImages}
-          alt="Professional AI training"
-          className="absolute inset-0 h-full w-full"
-          imgClassName="absolute inset-0 h-full w-full object-cover object-center"
-          width={1920}
-          height={900}
-          interval={7000}
-          loading="eager"
-          showDots={true}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          src={heroVideo.url}
         />
 
         {/* Desktop overlay — text on image */}
@@ -50,7 +42,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Mobile — text below image */}
+      {/* Mobile — text below video */}
       <div className="md:hidden bg-background px-6 py-5">
         {heroContent}
       </div>
