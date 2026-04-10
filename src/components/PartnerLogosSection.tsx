@@ -48,8 +48,9 @@ const PartnerLogosSection = () => {
           className="flex items-center gap-8 md:gap-12 w-max"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
-            x: { repeat: Infinity, repeatType: "loop", duration: 30, ease: "linear" },
+            x: { repeat: Infinity, repeatType: "loop", duration: 35, ease: "linear" },
           }}
+          style={{ willChange: "transform" }}
         >
           {doubled.map((partner, i) => (
             <div
