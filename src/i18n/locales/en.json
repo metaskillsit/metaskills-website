@@ -61,7 +61,9 @@
     "aiLeadTitle": "AI Leadership and Governance",
     "aiLeadDesc": "Strategy workshops for senior leaders — AI adoption roadmaps, accountability frameworks, agent governance, and AI wargaming.",
     "mccTitle": "MCC+ Cyber Defence Certification",
-    "mccDesc": "Consolidated cybersecurity certification programme — 4-day core foundation plus 1-day electives aligned to Security+, CySA+, CEH, CHFI, and SecAI."
+    "mccDesc": "Consolidated cybersecurity certification programme — 4-day core foundation plus 1-day electives aligned to Security+, CySA+, CEH, CHFI, and SecAI.",
+    "vibeCodingTitle": "Vibe Coding",
+    "vibeCodingDesc": "Hands-on AI-powered web application development — from problem discovery to deployment using ChatGPT, Figma, and Lovable. Partnership with Tinkercademy."
   },
   "why": {
     "title": "Why Metaskills",
