@@ -66,7 +66,7 @@ const ImageSlideshow = ({
 
   return (
     <div className={`relative ${className}`}>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         <motion.img
           key={current}
           src={images[current]}
@@ -75,7 +75,7 @@ const ImageSlideshow = ({
           width={width}
           height={height}
           loading={loading}
-          initial={{ opacity: 0, scale: kenBurns ? 1 : 1 }}
+          initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
             scale: kenBurns ? kbTarget.scale : 1,
@@ -84,7 +84,7 @@ const ImageSlideshow = ({
           }}
           exit={{ opacity: 0 }}
           transition={{
-            opacity: { duration: 1.5, ease: "easeInOut" },
+            opacity: { duration: 2, ease: [0.4, 0, 0.2, 1] },
             scale: { duration: kenBurns ? interval / 1000 + 2 : 0, ease: "linear" },
             x: { duration: kenBurns ? interval / 1000 + 2 : 0, ease: "linear" },
             y: { duration: kenBurns ? interval / 1000 + 2 : 0, ease: "linear" },
