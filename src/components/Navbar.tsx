@@ -154,6 +154,8 @@ const Navbar = () => {
     { label: t("nav.admissions"), href: "/admissions" },
   ];
 
+  const contactItem = { label: t("nav.contact", "Contact"), href: "/locations" };
+
   const toggleCategory = (label: string) => {
     setExpandedCategory((prev) => (prev === label ? null : label));
   };
@@ -264,6 +266,14 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+            <Link
+              to={contactItem.href}
+              className={`text-[13px] font-medium tracking-wide transition-colors ${
+                location.pathname === contactItem.href ? "text-primary" : "text-foreground/70 hover:text-primary"
+              }`}
+            >
+              {contactItem.label}
+            </Link>
             <button className="text-foreground/50 hover:text-primary transition-colors ml-2">
               <Search size={18} />
             </button>
