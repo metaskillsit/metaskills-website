@@ -63,6 +63,15 @@ const HeroSection = () => {
       {/* Mobile — text below image */}
       <div className="md:hidden bg-background px-6 py-5">
         {heroContent}
+        <a
+          href="https://terrene.foundation/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <span>System powered by</span>
+          <img src={terreneLogo} alt="Terrene Foundation" className="h-4 w-auto" />
+        </a>
       </div>
     </section>
   );
