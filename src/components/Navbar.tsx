@@ -154,7 +154,7 @@ const Navbar = () => {
     { label: t("nav.admissions"), href: "/admissions" },
   ];
 
-  const contactItem = { label: t("nav.contact", "Contact"), href: "/locations" };
+  const contactItem = { label: t("nav.contact", "Contact Us"), href: "/locations" };
 
   const toggleCategory = (label: string) => {
     setExpandedCategory((prev) => (prev === label ? null : label));
