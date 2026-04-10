@@ -61,7 +61,9 @@
     "aiLeadTitle": "AI Leadership and Governance",
     "aiLeadDesc": "Strategy workshops for senior leaders — AI adoption roadmaps, accountability frameworks, agent governance, and AI wargaming.",
     "mccTitle": "MCC+ Cyber Defence Certification",
-    "mccDesc": "Consolidated cybersecurity certification programme — 4-day core foundation plus 1-day electives aligned to Security+, CySA+, CEH, CHFI, and SecAI."
+    "mccDesc": "Consolidated cybersecurity certification programme — 4-day core foundation plus 1-day electives aligned to Security+, CySA+, CEH, CHFI, and SecAI.",
+    "vibeCodingTitle": "Vibe Coding",
+    "vibeCodingDesc": "Hands-on AI-powered web application development — from problem discovery to deployment using ChatGPT, Figma, and Lovable. Partnership with Tinkercademy."
   },
   "why": {
     "title": "Why Metaskills",
@@ -939,6 +941,34 @@
       "feesSelfSponsored": "S$1,800 per pax (min 5, max 15)",
       "feesCorporateSmall": "S$1,800/pax",
       "feesCorporateLarge": "S$1,800/pax"
+    },
+    "vibeCodingDigitalBuilders": {
+      "title": "Vibe Coding for Digital Builders *(Partnership with Tinkercademy)",
+      "category": "Vibe Coding",
+      "tagline": "Leverage AI-driven tools like ChatGPT, Figma, and Lovable to rapidly prototype, design, and deploy web applications.",
+      "whyAttend": "Generative AI is reshaping the way organisations approach digital transformation, product design, and application development. This workshop provides hands-on experience in leveraging AI-driven tools like ChatGPT, Figma, and Lovable to rapidly prototype, design, and deploy web applications.\n\nIMDA is one of our client pool for this programme.",
+      "courseDesign": "A practical two-day workshop. Day 1 focuses on problem discovery, research, and solution design using ChatGPT. Day 2 covers UI prototyping with Figma and full-stack web app development with Lovable. Participants are provided with paid ChatGPT Business and Lovable plans for the duration of the course.",
+      "objective1": "Understand the fundamentals and practical applications of generative AI tools like ChatGPT.",
+      "objective2": "Conduct in-depth problem analysis and generate comprehensive solution proposals.",
+      "objective3": "Develop responsive user interface designs and wireframes using Figma.",
+      "objective4": "Rapidly build and deploy web applications through vibe coding with Lovable and Supabase.",
+      "objective5": "Evaluate the impact and integration strategies of AI tools within your organisation's digital transformation initiatives.",
+      "scheduleDay1": "Day 1",
+      "scheduleDay1Item1": "Problem discovery and analysis with ChatGPT",
+      "scheduleDay1Item2": "Deep research and solution proposals",
+      "scheduleDay1Item3": "User persona creation and UAT writing",
+      "scheduleDay1Item4": "Product development cycle with AI",
+      "scheduleDay2": "Day 2",
+      "scheduleDay2Item1": "Visual design and prototyping with Figma",
+      "scheduleDay2Item2": "User-centric UI definitions",
+      "scheduleDay2Item3": "Vibe coding with Lovable and Supabase",
+      "scheduleDay2Item4": "Build, debug, and deploy a complete web app",
+      "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
+      "duration": "2 Days",
+      "feesSelfSponsored": "16 pax and above: S$650/pax | 12–15 pax: S$750/pax | 8–11 pax: S$870/pax",
+      "feesCorporateSmall": "7 or fewer participants: S$6,800 flat fee",
+      "feesCorporateLarge": "Contact for group rates",
+      "jointlyOfferedBy": "Tinkercademy & Metaskills Institute"
     }
   },
   "facultyProfiles": {

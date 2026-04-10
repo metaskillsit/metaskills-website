@@ -20,6 +20,9 @@ import pastClass37 from "@/assets/past-class-37.jpg";
 import pastClass39 from "@/assets/past-class-39.jpg";
 import pastClass40 from "@/assets/past-class-40.jpg";
 import pastClass43 from "@/assets/past-class-43.jpg";
+import pastClass44 from "@/assets/past-class-44.jpg";
+import pastClass45 from "@/assets/past-class-45.jpg";
+import pastClass46 from "@/assets/past-class-46.jpg";
 
 export interface PastRun {
   date: string;
@@ -184,6 +187,18 @@ export const pastRunsData: Record<string, PastRun[]> = {
       organization: "MINDEF",
       photos: [pastClass21, pastClass22],
       highlight: "Leadership teams developed practical AI adoption roadmaps and governance plans.",
+    },
+  ],
+
+  // ── Vibe Coding (Partnership with Tinkercademy) ──
+  "vibe-coding-for-digital-builders": [
+    {
+      date: "2025",
+      venue: "CT Hub 2, Singapore",
+      participants: 25,
+      organization: "IMDA",
+      photos: [pastClass44, pastClass45, pastClass46],
+      highlight: "Delivered in partnership with Tinkercademy for IMDA — participants built and deployed full web apps using AI-driven vibe coding tools.",
     },
   ],
 

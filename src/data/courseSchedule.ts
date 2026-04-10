@@ -180,6 +180,12 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
   "mcc-plus-ai-security-autonomous-defence": [
     { intake: "Upcoming Run", dates: "Contact admissions@metaskills.sg", status: "upcoming" },
   ],
+
+  // ── Vibe Coding ──
+  "vibe-coding-for-digital-builders": [
+    { intake: "IMDA Run", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "Upcoming Run", dates: "Contact admissions@metaskills.sg", status: "upcoming" },
+  ],
 };
 
 export const getCourseSchedule = (slug: string): CourseRunDate[] =>

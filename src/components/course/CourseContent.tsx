@@ -3,6 +3,8 @@ import { CheckCircle, Clock, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 import { useCourseTranslation } from "@/hooks/useCourseTranslation";
+import imdaLogo from "@/assets/logo-imda.png";
+import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 
 interface CourseContentProps {
   course: Course;
@@ -23,6 +25,19 @@ const CourseContent = ({ course }: CourseContentProps) => {
           {t("coursePage.whyAttend")}
         </h2>
         <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{ct.whyAttend}</p>
+
+        {course.slug === "vibe-coding-for-digital-builders" && (
+          <div className="mt-6 flex flex-wrap items-center gap-4 p-4 bg-muted rounded-lg border border-border">
+            <span className="text-xs font-semibold uppercase tracking-wider text-primary">Client Pool:</span>
+            <div className="bg-white rounded-lg px-4 py-2">
+              <img src={imdaLogo} alt="IMDA" className="h-8 md:h-10 w-auto object-contain" loading="lazy" />
+            </div>
+            <span className="text-xs font-semibold uppercase tracking-wider text-primary ml-2">In Partnership With:</span>
+            <div className="bg-white rounded-lg px-4 py-2">
+              <img src={tinkercademyLogo} alt="Tinkercademy" className="h-6 md:h-8 w-auto object-contain" loading="lazy" />
+            </div>
+          </div>
+        )}
       </motion.div>
 
       <motion.div
