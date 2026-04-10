@@ -25,6 +25,7 @@ const categoryImages: Record<string, string[]> = {
   "Cyber Defence": [courseCyber1, courseCyber2, courseCyber3],
   "AI Leadership and Governance": [courseLeadership1, courseLeadership2, courseLeadership3],
   "MCC+ Cyber Defence Certification": [courseCyber1, courseCyber2, courseCyber3],
+  "Vibe Coding": [courseAutomation1, courseAutomation2, courseAutomation3],
 };
 
 export const getCategoryImages = (category: string): string[] =>
