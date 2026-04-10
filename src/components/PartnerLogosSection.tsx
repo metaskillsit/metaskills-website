@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Separator } from "@/components/ui/separator";
 
 import aisgLogo from "@/assets/logo-aisg.png";
 import smuAcademyLogo from "@/assets/logo-smu-academy.png";
@@ -27,8 +28,8 @@ const PartnerLogosSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-card border-t border-border py-6 md:py-8">
-      <div className="max-w-[1140px] mx-auto px-6 mb-3 md:mb-4">
+    <section className="bg-card border-t border-border py-4 md:py-6">
+      <div className="max-w-[1140px] mx-auto px-6 mb-2 md:mb-3">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,21 +40,24 @@ const PartnerLogosSection = () => {
         </motion.p>
       </div>
       <div className="max-w-[1140px] mx-auto px-6">
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+        <div className="flex flex-nowrap items-center justify-center gap-4 md:gap-6">
           {partnerLogos.map((partner) => (
             <div
               key={partner.name}
-              className="flex-shrink-0 flex items-center justify-center h-[60px] md:h-[80px]"
+              className="flex-shrink-0 flex items-center justify-center h-[36px] md:h-[48px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-full w-auto max-w-[140px] md:max-w-[200px] object-contain"
+                className="h-full w-auto max-w-[90px] md:max-w-[120px] object-contain"
                 loading="lazy"
               />
             </div>
           ))}
         </div>
+      </div>
+      <div className="max-w-[1140px] mx-auto px-6 mt-4 md:mt-6">
+        <Separator />
       </div>
     </section>
   );
