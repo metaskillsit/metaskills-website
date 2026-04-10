@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import agenticHeroBg from "@/assets/agentic-hero-bg.jpg";
+import terreneLogo from "@/assets/terrene-logo.svg";
 import {
   Shield, Cpu, Eye, Activity, ArrowRight, CheckCircle2, AlertTriangle,
   BookOpen, Layers, Users, Bot, Brain, Building2, FileCheck, Workflow,
@@ -109,12 +110,18 @@ const AgenticAIPage = () => {
               <p className="text-[hsl(220,15%,55%)] text-base md:text-lg max-w-xl mb-10">
                 {t("agenticPage.heroSubtitle")}
               </p>
-              <div className="flex flex-wrap gap-4">
-                <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[hsl(var(--gold))] text-[hsl(220,25%,6%)] font-semibold px-6 py-3 rounded-md hover:brightness-110 transition-all">
-                  <MessageCircle className="w-4 h-4" /> {t("agenticPage.requestDemo")}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-xs text-[hsl(220,15%,55%)] uppercase tracking-wider">Built & Powered by</span>
+                <a href="https://terrene.foundation/" target="_blank" rel="noopener noreferrer">
+                  <img src={terreneLogo} alt="Terrene Foundation" className="h-6 md:h-7 brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
                 </a>
-                <a href="#research" className="inline-flex items-center gap-2 border border-[hsl(220,20%,25%)] text-[hsl(220,15%,80%)] font-medium px-6 py-3 rounded-md hover:border-[hsl(var(--gold),0.5)] hover:text-[hsl(var(--gold))] transition-all">
-                  <BookOpen className="w-4 h-4" /> {t("agenticPage.bookStrategy")}
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <a href="#approach" className="inline-flex items-center gap-2 bg-[hsl(var(--gold))] text-[hsl(220,25%,6%)] font-semibold px-6 py-3 rounded-md hover:brightness-110 transition-all">
+                  {t("agenticPage.requestDemo")}
+                </a>
+                <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-[hsl(220,20%,25%)] text-[hsl(220,15%,80%)] font-medium px-6 py-3 rounded-md hover:border-[hsl(var(--gold),0.5)] hover:text-[hsl(var(--gold))] transition-all">
+                  <MessageCircle className="w-4 h-4" /> {t("agenticPage.bookStrategy")}
                 </a>
               </div>
             </motion.div>
@@ -204,7 +211,7 @@ const AgenticAIPage = () => {
         </section>
 
         {/* SOLUTION */}
-        <section className="py-16 md:py-24 bg-[hsl(220,25%,6%)] border-t border-[hsl(220,20%,12%)]">
+        <section id="approach" className="py-16 md:py-24 bg-[hsl(220,25%,6%)] border-t border-[hsl(220,20%,12%)]">
           <div className="max-w-[1140px] mx-auto px-6">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="text-center max-w-2xl mx-auto mb-14">
               <p className="text-xs font-semibold uppercase tracking-widest text-[hsl(var(--gold))] mb-2">{t("agenticPage.approachLabel")}</p>
