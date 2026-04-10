@@ -36,16 +36,15 @@ import openclawLogo from "@/assets/techlogos/openclaw.png";
 import copilotLogo from "@/assets/techlogos/copilot.jpg";
 
 const certifications = [
-  { name: "EC-Council", logo: ecCouncilLogo, smaller: false },
-  { name: "CompTIA", logo: comptiaLogo, smaller: false },
-  { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31", smaller: true },
-  { name: "AWS", logo: awsLogo, smaller: false },
-  { name: "Apple", logo: appleLogo, smaller: true },
-  { name: "Google", logo: googleLogo, smaller: true },
+  { name: "EC-Council", logo: ecCouncilLogo },
+  { name: "CompTIA", logo: comptiaLogo },
+  { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
+  { name: "AWS", logo: awsLogo },
+  { name: "Apple", logo: appleLogo },
+  { name: "Google", logo: googleLogo },
 ];
 
 const techStacks = [
-  // LLM Providers
   { name: "OpenAI", logo: openaiLogo },
   { name: "Claude", logo: anthropicLogo },
   { name: "Gemini", logo: geminiLogo },
@@ -57,11 +56,9 @@ const techStacks = [
   { name: "GLM", logo: glmLogo },
   { name: "Doubao", logo: doubaoLogo },
   { name: "Kimi", logo: kimiLogo },
-  // AI Agents & Automation
   { name: "n8n", logo: n8nLogo },
   { name: "Zapier AI", logo: zapierLogo },
   { name: "Make", logo: makeLogo },
-  // AI Dev Tools
   { name: "Hugging Face", logo: huggingfaceLogo },
   { name: "Cursor", logo: cursorLogo },
   { name: "GitHub Copilot", logo: githubLogo },
@@ -69,7 +66,6 @@ const techStacks = [
   { name: "Lovable", logo: lovableLogo },
   { name: "Vercel AI", logo: vercelLogo },
   { name: "NotebookLM", logo: notebooklmLogo },
-  // AI Search & Media
   { name: "Perplexity", logo: perplexityLogo },
   { name: "CapCut", logo: capcutLogo },
   { name: "Veo 3", logo: veo3Logo },
@@ -81,77 +77,67 @@ const techStacks = [
 const CertifiedInstructorsSection = () => {
   const { t } = useTranslation();
 
-  const doubled = [...certifications, ...certifications];
-
   return (
-    <section className="bg-card border-t border-border py-3 md:py-4 overflow-hidden">
+    <section className="bg-card border-t border-border py-10 md:py-14">
       <div className="max-w-[1140px] mx-auto px-6">
+        {/* Certified Instructors */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-xs font-semibold uppercase tracking-widest text-primary mb-4 md:mb-6"
+          className="text-center text-xs font-semibold uppercase tracking-widest text-primary mb-6 md:mb-8"
         >
           {t("certified.heading")}
         </motion.p>
-      </div>
-      <div className="relative w-full">
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-card to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-card to-transparent z-10 pointer-events-none" />
-        <motion.div
-          className="flex items-center gap-8 md:gap-12 w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            x: { repeat: Infinity, repeatType: "loop", duration: 25, ease: "linear" },
-          }}
-        >
-          {doubled.map((cert, i) => (
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-10 md:mb-14">
+          {certifications.map((cert) => (
             <div
-              key={`${cert.name}-${i}`}
-              className="flex-shrink-0 flex items-center justify-center h-[36px] md:h-[48px]"
+              key={cert.name}
+              className="flex items-center justify-center h-[28px] md:h-[36px] grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
             >
               <img
                 src={cert.logo}
                 alt={cert.name}
-                className="h-full w-auto max-w-[100px] md:max-w-[140px] object-contain"
+                className="h-full w-auto max-w-[90px] md:max-w-[120px] object-contain"
                 loading="lazy"
               />
             </div>
           ))}
-        </motion.div>
-      </div>
+        </div>
 
-      {/* AI Tech Stack Grid */}
-      <div className="max-w-[1140px] mx-auto px-6 mt-6 md:mt-8 pb-4">
+        {/* Divider */}
+        <div className="w-16 h-px bg-border mx-auto mb-10 md:mb-14" />
+
+        {/* Tools & Technologies */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-xs font-semibold uppercase tracking-widest text-primary mb-5"
+          className="text-center text-xs font-semibold uppercase tracking-widest text-primary mb-6 md:mb-8"
         >
           {t("certified.techStackHeading")}
         </motion.p>
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+        <div className="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-14 gap-x-3 gap-y-5 md:gap-x-4 md:gap-y-6 justify-items-center">
           {techStacks.map((tech, i) => (
             <motion.div
               key={tech.name}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.02 }}
-              className="flex flex-col items-center gap-1.5 group"
+              transition={{ delay: i * 0.015 }}
+              className="flex flex-col items-center gap-1 group w-[52px] md:w-[60px]"
             >
-              <div className="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-lg bg-muted/50 p-1.5 group-hover:bg-primary/10 transition-colors">
+              <div className="h-7 w-7 md:h-8 md:w-8 flex items-center justify-center rounded-md bg-muted/40 p-1 group-hover:bg-primary/10 transition-colors">
                 <img
                   src={tech.logo}
                   alt={tech.name}
-                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110"
+                  className="h-full w-full object-contain"
                   loading="lazy"
-                  width={40}
-                  height={40}
+                  width={32}
+                  height={32}
                 />
               </div>
-              <span className="text-[9px] md:text-[10px] text-muted-foreground/70 group-hover:text-foreground transition-colors whitespace-nowrap">
+              <span className="text-[8px] md:text-[9px] text-muted-foreground/60 group-hover:text-foreground transition-colors text-center leading-tight">
                 {tech.name}
               </span>
             </motion.div>
