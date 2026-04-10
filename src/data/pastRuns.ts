@@ -190,6 +190,18 @@ export const pastRunsData: Record<string, PastRun[]> = {
     },
   ],
 
+  // ── Vibe Coding (Partnership with Tinkercademy) ──
+  "vibe-coding-for-digital-builders": [
+    {
+      date: "2025",
+      venue: "CT Hub 2, Singapore",
+      participants: 25,
+      organization: "IMDA",
+      photos: [pastClass44, pastClass45, pastClass46],
+      highlight: "Delivered in partnership with Tinkercademy for IMDA — participants built and deployed full web apps using AI-driven vibe coding tools.",
+    },
+  ],
+
 };
 
 export const getPastRuns = (slug: string): PastRun[] => pastRunsData[slug] || [];
