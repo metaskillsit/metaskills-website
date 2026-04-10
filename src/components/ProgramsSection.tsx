@@ -154,7 +154,7 @@ const ProgramsSection = () => {
                 alt={cat.title}
                 className="aspect-[4/3] overflow-hidden rounded-sm mb-5"
                 imgClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                interval={3500 + i * 500}
+                interval={(3500 + i * 500) * 3}
                 width={800}
                 height={600}
               />
