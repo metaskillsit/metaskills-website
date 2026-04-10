@@ -23,14 +23,11 @@ const partnerLogos = [
   { name: "LX Copilot", logo: lxCopilotLogo },
 ];
 
-const doubled = [...partnerLogos, ...partnerLogos];
-
 const PartnerLogosSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-card border-t border-border py-6 md:py-8 overflow-hidden">
-      {/* Partnering Institutions heading + scrolling logos */}
+    <section className="bg-card border-t border-border py-6 md:py-8">
       <div className="max-w-[1140px] mx-auto px-6 mb-3 md:mb-4">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -41,31 +38,22 @@ const PartnerLogosSection = () => {
           {t("partners.title")}
         </motion.p>
       </div>
-      <div className="relative w-full">
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-card to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-card to-transparent z-10 pointer-events-none" />
-        <motion.div
-          className="flex items-center gap-8 md:gap-12 w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            x: { repeat: Infinity, repeatType: "loop", duration: 35, ease: "linear" },
-          }}
-          style={{ willChange: "transform" }}
-        >
-          {doubled.map((partner, i) => (
+      <div className="max-w-[1140px] mx-auto px-6">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+          {partnerLogos.map((partner) => (
             <div
-              key={`${partner.name}-${i}`}
-              className="flex-shrink-0 flex items-center justify-center h-[70px] md:h-[100px]"
+              key={partner.name}
+              className="flex-shrink-0 flex items-center justify-center h-[60px] md:h-[80px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-full w-auto max-w-[160px] md:max-w-[240px] object-contain"
+                className="h-full w-auto max-w-[140px] md:max-w-[200px] object-contain"
                 loading="lazy"
               />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
