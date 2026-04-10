@@ -12,6 +12,7 @@ import fintechImg from "@/assets/programmes-fintech.jpg";
 import cyberDefenceImg from "@/assets/programmes-cyberdefence.jpg";
 import aiLeadershipImg from "@/assets/programmes-aileadership.jpg";
 import cyberCertImg from "@/assets/programmes-cybercert.jpg";
+import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
 
 const ProgrammesPage = () => {
   const { t } = useTranslation();
@@ -19,6 +20,14 @@ const ProgrammesPage = () => {
   const ct = (key: string) => t(`courses.${key}.title`);
 
   const programCategories = [
+    {
+      title: t("programmes.vibeCodingTitle"),
+      description: t("programmes.vibeCodingDesc"),
+      image: vibeCodingImg,
+      courses: [
+        { name: ct("vibeCodingDigitalBuilders"), slug: "vibe-coding-for-digital-builders" },
+      ],
+    },
     {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
