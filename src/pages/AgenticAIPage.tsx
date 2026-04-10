@@ -110,18 +110,18 @@ const AgenticAIPage = () => {
               <p className="text-[hsl(220,15%,55%)] text-base md:text-lg max-w-xl mb-10">
                 {t("agenticPage.heroSubtitle")}
               </p>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-xs text-[hsl(220,15%,55%)] uppercase tracking-wider">Built & Powered by</span>
-                <a href="https://terrene.foundation/" target="_blank" rel="noopener noreferrer">
-                  <img src={terreneLogo} alt="Terrene Foundation" className="h-6 md:h-7 brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
-                </a>
-              </div>
               <div className="flex flex-wrap gap-4">
                 <a href="#approach" className="inline-flex items-center gap-2 bg-[hsl(var(--gold))] text-[hsl(220,25%,6%)] font-semibold px-6 py-3 rounded-md hover:brightness-110 transition-all">
                   {t("agenticPage.requestDemo")}
                 </a>
                 <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-[hsl(220,20%,25%)] text-[hsl(220,15%,80%)] font-medium px-6 py-3 rounded-md hover:border-[hsl(var(--gold),0.5)] hover:text-[hsl(var(--gold))] transition-all">
                   <MessageCircle className="w-4 h-4" /> {t("agenticPage.bookStrategy")}
+                </a>
+              </div>
+              <div className="flex items-center gap-2 mt-5">
+                <span className="text-[10px] text-[hsl(220,15%,40%)] uppercase tracking-wider">Built & Powered by</span>
+                <a href="https://terrene.foundation/" target="_blank" rel="noopener noreferrer">
+                  <img src={terreneLogo} alt="Terrene Foundation" className="h-4 brightness-0 invert opacity-50 hover:opacity-80 transition-opacity" />
                 </a>
               </div>
             </motion.div>
