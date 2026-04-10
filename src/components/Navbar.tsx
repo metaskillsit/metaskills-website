@@ -54,6 +54,13 @@ const Navbar = () => {
       label: t("nav.programmes"),
       categories: [
         {
+          label: t("programmes.vibeCodingTitle"),
+          href: "/programmes",
+          subItems: [
+            { label: t("courses.vibeCodingDigitalBuilders.title"), href: "/course/vibe-coding-for-digital-builders" },
+          ],
+        },
+        {
           label: t("programmes.agenticTitle"),
           href: "/programmes",
           subItems: [

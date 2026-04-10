@@ -591,7 +591,7 @@ export const courses: Course[] = [
 courses.push({
   slug: "vibe-coding-for-digital-builders",
   i18nKey: "vibeCodingDigitalBuilders",
-  title: "Vibe Coding for Digital Builders *(Partnership with Tinkercademy)",
+  title: "Vibe Coding for Digital Builders (Partnership with Tinkercademy)",
   category: "Vibe Coding",
   tagline: "Leverage AI-driven tools like ChatGPT, Figma, and Lovable to rapidly prototype, design, and deploy web applications.",
   heroImage: "/src/assets/course-agentic1.png",

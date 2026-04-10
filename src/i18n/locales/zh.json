@@ -61,7 +61,9 @@
     "aiLeadTitle": "AI领导力与治理",
     "aiLeadDesc": "面向高层领导者的战略工作坊——AI采用路线图、问责框架、智能体治理和AI兵棋推演。",
     "mccTitle": "MCC+ 网络防御认证",
-    "mccDesc": "整合的网络安全认证课程——4天核心基础加1天选修课，对齐Security+、CySA+、CEH、CHFI和SecAI。"
+    "mccDesc": "整合的网络安全认证课程——4天核心基础加1天选修课，对齐Security+、CySA+、CEH、CHFI和SecAI。",
+    "vibeCodingTitle": "Vibe Coding",
+    "vibeCodingDesc": "动手实践AI驱动的Web应用开发——从问题发现到使用ChatGPT、Figma和Lovable进行部署。与Tinkercademy合作。"
   },
   "why": {
     "title": "为何选择 Metaskills",

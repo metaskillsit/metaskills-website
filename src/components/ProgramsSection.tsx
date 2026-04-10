@@ -31,6 +31,14 @@ const ProgramsSection = () => {
 
   const programCategories = [
     {
+      title: t("programmes.vibeCodingTitle"),
+      description: t("programmes.vibeCodingDesc"),
+      images: [aiAutomationImg, aiAutomationImg2, aiAutomationImg3],
+      courses: [
+        { name: ct("vibeCodingDigitalBuilders"), slug: "vibe-coding-for-digital-builders" },
+      ],
+    },
+    {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
       images: [aiLeadershipImg, aiLeadershipImg2, aiLeadershipImg3],

@@ -183,7 +183,24 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
 
   // ── Vibe Coding ──
   "vibe-coding-for-digital-builders": [
-    { intake: "IMDA Run", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 1", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 2", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 3", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 4", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 5", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 6", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 7", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 8", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 9", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 10", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 11", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 12", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 13", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 14", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 15", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 16", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 17", dates: "Completed", status: "full", client: "IMDA" },
+    { intake: "IMDA Run 18", dates: "Completed", status: "full", client: "IMDA" },
     { intake: "Upcoming Run", dates: "Contact admissions@metaskills.sg", status: "upcoming" },
   ],
 };

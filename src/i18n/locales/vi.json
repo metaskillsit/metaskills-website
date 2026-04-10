@@ -61,7 +61,9 @@
     "aiLeadTitle": "Lãnh đạo & Quản trị AI",
     "aiLeadDesc": "Hội thảo chiến lược cho lãnh đạo cấp cao — lộ trình áp dụng AI, khung trách nhiệm, quản trị đại lý và AI wargaming.",
     "mccTitle": "Chứng nhận Phòng thủ Mạng MCC+",
-    "mccDesc": "Chương trình chứng nhận an ninh mạng tổng hợp — 4 ngày nền tảng cốt lõi cộng 1 ngày tự chọn phù hợp Security+, CySA+, CEH, CHFI và SecAI."
+    "mccDesc": "Chương trình chứng nhận an ninh mạng tổng hợp — 4 ngày nền tảng cốt lõi cộng 1 ngày tự chọn phù hợp Security+, CySA+, CEH, CHFI và SecAI.",
+    "vibeCodingTitle": "Vibe Coding",
+    "vibeCodingDesc": "Thực hành phát triển ứng dụng web do AI hỗ trợ — từ khám phá vấn đề đến triển khai sử dụng ChatGPT, Figma và Lovable. Hợp tác với Tinkercademy."
   },
   "why": {
     "title": "Tại sao chọn Metaskills",
