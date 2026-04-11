@@ -192,7 +192,7 @@ const Navbar = () => {
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Metaskills Institute" className="h-10 md:h-12 w-auto object-contain" />
+              <img src={logo} alt="Metaskills Institute" className="h-[60px] md:h-[72px] w-auto object-contain" />
             </Link>
           </div>
 
@@ -330,7 +330,7 @@ const Navbar = () => {
             >
               <div className="flex items-center justify-between px-6 h-16 md:h-[70px] border-b border-border">
                 <Link to="/" onClick={() => setMenuOpen(false)}>
-                  <img src={logo} alt="Metaskills Institute" className="h-10 w-auto object-contain" />
+                  <img src={logo} alt="Metaskills Institute" className="h-[60px] w-auto object-contain" />
                 </Link>
                 <button onClick={() => setMenuOpen(false)} className="text-foreground hover:text-primary transition-colors">
                   <X size={22} />
