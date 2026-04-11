@@ -61,6 +61,16 @@ const Navbar = () => {
           ],
         },
         {
+          label: t("programmes.aiLeadTitle"),
+          href: "/programmes",
+          subItems: [
+            { label: t("courses.aiStrategyLeaders.title"), href: "/course/ai-strategy-roadmap-leaders" },
+            { label: t("courses.aiAccountability.title"), href: "/course/ai-accountability-when-ai-decides" },
+            { label: t("courses.governingAiAgents.title"), href: "/course/governing-ai-agents-trust-boundaries" },
+            { label: t("courses.aiWargaming.title"), href: "/course/ai-wargaming-test-decisions" },
+          ],
+        },
+        {
           label: t("programmes.agenticTitle"),
           href: "/programmes",
           subItems: [
@@ -106,16 +116,6 @@ const Navbar = () => {
           href: "/programmes",
           subItems: [
             { label: t("courses.cyberRolesThreats.title"), href: "/course/cybersecurity-roles-threats-pathways" },
-          ],
-        },
-        {
-          label: t("programmes.aiLeadTitle"),
-          href: "/programmes",
-          subItems: [
-            { label: t("courses.aiStrategyLeaders.title"), href: "/course/ai-strategy-roadmap-leaders" },
-            { label: t("courses.aiAccountability.title"), href: "/course/ai-accountability-when-ai-decides" },
-            { label: t("courses.governingAiAgents.title"), href: "/course/governing-ai-agents-trust-boundaries" },
-            { label: t("courses.aiWargaming.title"), href: "/course/ai-wargaming-test-decisions" },
           ],
         },
         {
