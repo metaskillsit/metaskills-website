@@ -92,7 +92,7 @@ const AgenticAIPage = () => {
   return (
     <div className="min-h-screen bg-[hsl(220,25%,6%)] text-[hsl(220,15%,95%)]">
       <Navbar />
-      <main className="pt-16 md:pt-[70px]">
+      <main className="pt-20 md:pt-[90px]">
         {/* HERO */}
         <section className="relative overflow-hidden py-20 md:py-32 lg:py-40">
           <div className="absolute inset-0">

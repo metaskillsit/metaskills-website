@@ -316,7 +316,7 @@ const FacultyPage = () => {
   return (
     <div>
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-20 md:pt-[90px]">
         <section className="bg-primary/5 py-16 md:py-20">
           <div className="max-w-[1140px] mx-auto px-6">
             <motion.div

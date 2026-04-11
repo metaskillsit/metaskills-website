@@ -56,7 +56,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="pt-16 md:pt-[70px]">
+      <main className="pt-20 md:pt-[90px]">
         <CourseHero course={course} categoryImages={categoryImages} />
 
         <section className="border-b border-border bg-muted">
