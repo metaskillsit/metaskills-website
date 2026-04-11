@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import ImageSlideshow from "@/components/ImageSlideshow";
+import heroAsean from "@/assets/hero-bg-asean.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroBg2 from "@/assets/hero-bg-2.jpg";
-import heroBg3 from "@/assets/hero-bg-3.jpg";
 import { useTranslation } from "react-i18next";
 
-const heroImages = [heroBg, heroBg2, heroBg3];
+const heroImages = [heroAsean, heroBg, heroBg2];
 
 const HeroSection = () => {
   const { t } = useTranslation();
