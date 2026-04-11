@@ -1,3 +1,16 @@
+# SPA fallback — serve index.html for all routes that don't match a real file
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # If the request is for an existing file or directory, serve it directly
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Otherwise, serve index.html (lets React Router handle the route)
+  RewriteRule ^ index.html [QSA,L]
+</IfModule>
+
 <IfModule mod_headers.c>
   # 🚨 NEVER cache HTML (VERY IMPORTANT)
   <FilesMatch "\.(html)$">
