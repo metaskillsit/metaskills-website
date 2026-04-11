@@ -16,6 +16,7 @@ import CourseRelated from "@/components/course/CourseRelated";
 import CourseGallery from "@/components/course/CourseGallery";
 import CoursePastRuns from "@/components/course/CoursePastRuns";
 import CourseSchedule from "@/components/course/CourseSchedule";
+import CourseNewLaunch from "@/components/course/CourseNewLaunch";
 
 const CoursePageContent = ({ slug }: { slug: string }) => {
   const { t } = useTranslation();
@@ -52,12 +53,13 @@ const CoursePageContent = ({ slug }: { slug: string }) => {
 const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, relatedCourses }: any) => {
   const { t } = useTranslation();
   const ct = useCourseTranslation(course);
+  const isNew = pastRuns.length === 0;
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-20 md:pt-[90px]">
-        <CourseHero course={course} categoryImages={categoryImages} />
+        <CourseHero course={course} categoryImages={categoryImages} isNew={isNew} />
 
         <section className="border-b border-border bg-muted">
           <div className="max-w-[1140px] mx-auto px-6 py-4 flex flex-wrap gap-8 text-sm text-muted-foreground">
@@ -88,7 +90,11 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
           </div>
         </div>
 
-        <CoursePastRuns pastRuns={pastRuns} courseTitle={ct.title} />
+        {isNew ? (
+          <CourseNewLaunch courseTitle={ct.title} />
+        ) : (
+          <CoursePastRuns pastRuns={pastRuns} courseTitle={ct.title} />
+        )}
         <CoursePolicies />
         <CourseRelated relatedCourses={relatedCourses} />
       </main>
