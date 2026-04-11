@@ -1,14 +1,38 @@
 import { motion } from "framer-motion";
-import ImageSlideshow from "@/components/ImageSlideshow";
-import heroBg from "@/assets/hero-bg.jpg";
-import heroBg2 from "@/assets/hero-bg-2.jpg";
-import heroBg3 from "@/assets/hero-bg-3.jpg";
+import { useRef, useEffect, useState } from "react";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import { useTranslation } from "react-i18next";
-
-const heroImages = [heroBg, heroBg2, heroBg3];
 
 const HeroSection = () => {
   const { t } = useTranslation();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      // Start fading 1.2s before the end
+      if (video.duration && video.currentTime >= video.duration - 1.2) {
+        setFading(true);
+      } else {
+        setFading(false);
+      }
+    };
+
+    const handleSeeked = () => {
+      // After loop restarts, briefly keep fade then remove
+      setTimeout(() => setFading(false), 100);
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    video.addEventListener("seeked", handleSeeked);
+    return () => {
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+      video.removeEventListener("seeked", handleSeeked);
+    };
+  }, []);
 
   const heroContent = (
     <motion.div
@@ -27,18 +51,20 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
-      {/* Image area */}
+      {/* Video area */}
       <div className="relative aspect-[16/9] md:aspect-[1920/900]">
-        <ImageSlideshow
-          images={heroImages}
-          alt="Professional AI training"
-          className="absolute inset-0 h-full w-full"
-          imgClassName="absolute inset-0 h-full w-full object-cover object-center"
-          width={1920}
-          height={900}
-          interval={7000}
-          loading="eager"
-          showDots={true}
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          style={{
+            opacity: fading ? 0 : 1,
+            transition: "opacity 1.2s ease-in-out",
+          }}
+          src={heroVideo.url}
         />
 
         {/* Desktop overlay — text on image */}
@@ -50,7 +76,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Mobile — text below image */}
+      {/* Mobile — text below video */}
       <div className="md:hidden bg-background px-6 py-5">
         {heroContent}
       </div>
