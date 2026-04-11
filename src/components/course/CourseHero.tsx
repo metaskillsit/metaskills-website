@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Award } from "lucide-react";
+import { ArrowLeft, Award, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 import { useCourseTranslation } from "@/hooks/useCourseTranslation";
@@ -9,9 +9,10 @@ import ImageSlideshow from "@/components/ImageSlideshow";
 interface CourseHeroProps {
   course: Course;
   categoryImages: string[];
+  isNew?: boolean;
 }
 
-const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
+const CourseHero = ({ course, categoryImages, isNew }: CourseHeroProps) => {
   const { t } = useTranslation();
   const ct = useCourseTranslation(course);
 
@@ -48,14 +49,27 @@ const CourseHero = ({ course, categoryImages }: CourseHeroProps) => {
         className="relative z-10 bg-[hsl(var(--hero-overlay))] border-t border-white/10"
       >
         <div className="max-w-[1140px] mx-auto px-6 py-5 md:py-6">
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-accent text-xs font-semibold uppercase tracking-widest mb-1.5"
-          >
-            {ct.category}
-          </motion.p>
+          <div className="flex items-center gap-3 mb-1.5">
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-accent text-xs font-semibold uppercase tracking-widest"
+            >
+              {ct.category}
+            </motion.p>
+            {isNew && (
+              <motion.span
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, type: "spring", stiffness: 300 }}
+                className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-wider shadow-lg shadow-primary/30"
+              >
+                <Sparkles className="w-3 h-3" />
+                {t("coursePage.newBadge", { defaultValue: "New" })}
+              </motion.span>
+            )}
+          </div>
           <h1 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight mb-1">
             {ct.title}
           </h1>
