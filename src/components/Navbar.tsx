@@ -182,7 +182,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
-        <div className="max-w-[1140px] mx-auto px-6 flex items-center justify-between h-16 md:h-[70px]">
+        <div className="max-w-[1140px] mx-auto px-6 flex items-center justify-between h-20 md:h-[90px]">
           <div className="flex items-center gap-4">
             <button
               className="text-foreground hover:text-primary transition-colors"
@@ -328,7 +328,7 @@ const Navbar = () => {
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 left-0 bottom-0 z-50 w-full max-w-md bg-card shadow-2xl overflow-y-auto"
             >
-              <div className="flex items-center justify-between px-6 h-16 md:h-[70px] border-b border-border">
+              <div className="flex items-center justify-between px-6 h-20 md:h-[90px] border-b border-border">
                 <Link to="/" onClick={() => setMenuOpen(false)}>
                   <img src={logo} alt="Metaskills Institute" className="h-[60px] w-auto object-contain" />
                 </Link>
