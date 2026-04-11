@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Search, ChevronRight, ChevronDown, Globe } from "lucide-react";
+import { Menu, X, ChevronRight, ChevronDown, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -192,7 +192,7 @@ const Navbar = () => {
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Metaskills Institute" className="h-[60px] md:h-[72px] w-auto object-contain" />
+              <img src={logo} alt="Metaskills Institute" className="h-12 md:h-[58px] w-auto object-contain" />
             </Link>
           </div>
 
@@ -274,9 +274,6 @@ const Navbar = () => {
             >
               {contactItem.label}
             </Link>
-            <button className="text-foreground/50 hover:text-primary transition-colors ml-2">
-              <Search size={18} />
-            </button>
 
             {/* Language selector - desktop */}
             <div ref={langRef} className="relative ml-1">
@@ -330,7 +327,7 @@ const Navbar = () => {
             >
               <div className="flex items-center justify-between px-6 h-20 md:h-[90px] border-b border-border">
                 <Link to="/" onClick={() => setMenuOpen(false)}>
-                  <img src={logo} alt="Metaskills Institute" className="h-[60px] w-auto object-contain" />
+                  <img src={logo} alt="Metaskills Institute" className="h-12 w-auto object-contain" />
                 </Link>
                 <button onClick={() => setMenuOpen(false)} className="text-foreground hover:text-primary transition-colors">
                   <X size={22} />
