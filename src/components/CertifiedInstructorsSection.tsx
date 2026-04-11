@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import comptiaLogo from "@/assets/logo-comptia.png";
 import ecCouncilLogo from "@/assets/logo-ec-council.png";
@@ -5,6 +6,7 @@ import awsLogo from "@/assets/logo-aws.png";
 import appleLogo from "@/assets/logo-apple.png";
 import googleLogo from "@/assets/logo-google.png";
 
+// Tech stack logos (local)
 import openaiLogo from "@/assets/techlogos/openai.svg";
 import anthropicLogo from "@/assets/techlogos/anthropic.svg";
 import geminiLogo from "@/assets/techlogos/gemini.svg";
@@ -40,6 +42,7 @@ const certifications = [
   { name: "AWS", logo: awsLogo },
   { name: "Apple", logo: appleLogo },
   { name: "Google", logo: googleLogo },
+  // Tech stack logos
   { name: "OpenAI", logo: openaiLogo },
   { name: "Claude", logo: anthropicLogo },
   { name: "Gemini", logo: geminiLogo },
@@ -77,14 +80,25 @@ const CertifiedInstructorsSection = () => {
   return (
     <section className="bg-card border-t border-border py-3 md:py-4 overflow-hidden">
       <div className="max-w-[1140px] mx-auto px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-widest text-primary mb-4 md:mb-6">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center text-xs font-semibold uppercase tracking-widest text-primary mb-4 md:mb-6"
+        >
           {t("certified.heading")}
-        </p>
+        </motion.p>
       </div>
       <div className="relative w-full">
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-card to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-card to-transparent z-10 pointer-events-none" />
-        <div className="flex items-center gap-6 md:gap-8 w-max animate-scroll-left">
+        <motion.div
+          className="flex items-center gap-6 md:gap-8 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            x: { repeat: Infinity, repeatType: "loop", duration: 80, ease: "linear" },
+          }}
+        >
           {doubled.map((cert, i) => (
             <div
               key={`${cert.name}-${i}`}
@@ -98,7 +112,7 @@ const CertifiedInstructorsSection = () => {
               />
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
