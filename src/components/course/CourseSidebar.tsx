@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
-import { Calendar, DollarSign, Mail } from "lucide-react";
+import { DollarSign, MessageCircle, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
-import { useCourseTranslation } from "@/hooks/useCourseTranslation";
 
 interface CourseSidebarProps {
   course: Course;
@@ -10,23 +8,10 @@ interface CourseSidebarProps {
 
 const CourseSidebar = ({ course }: CourseSidebarProps) => {
   const { t } = useTranslation();
-  const ct = useCourseTranslation(course);
 
   return (
     <div className="lg:col-span-1">
       <div className="sticky top-24 space-y-6">
-        <div className="bg-muted rounded-sm p-6 border border-border">
-          <div className="flex items-center gap-2 mb-4">
-            <Calendar className="w-4 h-4 text-primary" />
-            <h3 className="font-heading text-sm font-bold text-foreground uppercase tracking-wider">
-              {t("coursePage.nextRunDate")}
-            </h3>
-          </div>
-          <p className="text-foreground text-sm whitespace-pre-line">
-            {ct.nextRunDate}
-          </p>
-        </div>
-
         <div className="bg-muted rounded-sm p-6 border border-border">
           <div className="flex items-center gap-2 mb-4">
             <DollarSign className="w-4 h-4 text-primary" />
@@ -36,32 +21,37 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
           </div>
           <div className="space-y-3">
             <div>
-              <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.selfSponsored")}</p>
-              <p className="font-bold text-foreground">{ct.fees.selfSponsored}</p>
+              <p className="text-xs text-muted-foreground mb-0.5">Corporate Rates</p>
+              <p className="font-bold text-foreground">S$6,000 per workshop per day (up to 10 pax)</p>
             </div>
             <div className="border-t border-border pt-3">
-              <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.corporateRates")}</p>
-              <p className="text-sm text-foreground">{ct.fees.corporateSmall}</p>
-              <p className="text-sm text-foreground">{ct.fees.corporateLarge}</p>
+              <p className="text-xs text-muted-foreground mb-0.5">Self-Sponsored</p>
+              <p className="font-bold text-foreground">S$750 per pax per day</p>
             </div>
-            <p className="text-xs text-muted-foreground italic pt-2">
-              {t("coursePage.gstNote")}
-            </p>
+            <div className="border-t border-border pt-3 text-xs text-muted-foreground italic space-y-1">
+              <p className="font-semibold not-italic text-foreground/80">Note:</p>
+              <p>1) Training fee is based on a maximum class size of up to 10 participants per session.</p>
+              <p>2) For cohorts exceeding 10 participants, pricing may be adjusted accordingly.</p>
+              <p>3) Customised training arrangements, including class size, course scope, and delivery format, can be discussed and tailored to organisational requirements.</p>
+              <p className="pt-2">All fees are exempt from GST.</p>
+            </div>
           </div>
         </div>
 
         <a
-          href="mailto:admissions@metaskills.sg"
-          className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-primary text-primary-foreground font-semibold rounded-sm text-sm hover:brightness-110 transition-all shadow-lg shadow-primary/20"
+          href="https://wa.me/6589483482?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-[#25D366] text-white font-semibold rounded-sm text-sm hover:bg-[#1da851] transition-all shadow-lg"
         >
-          <Mail className="w-4 h-4" /> {t("coursePage.enquireNow")}
+          <MessageCircle className="w-4 h-4" /> WhatsApp Consultant
         </a>
-        <Link
-          to="/admissions"
+        <a
+          href="mailto:admissions@metaskills.sg"
           className="flex items-center justify-center gap-2 w-full px-6 py-3 border border-border text-foreground font-semibold rounded-sm text-sm hover:bg-muted transition-all"
         >
-          {t("coursePage.submitEnquiryForm")}
-        </Link>
+          <Mail className="w-4 h-4" /> Email Us
+        </a>
       </div>
     </div>
   );
