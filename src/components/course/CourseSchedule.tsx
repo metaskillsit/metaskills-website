@@ -71,40 +71,6 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
             )}
           </div>
 
-          {upcomingRuns.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="bg-primary text-primary-foreground rounded-xl p-6 md:p-8 text-center relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--accent)/0.15),transparent_70%)]" />
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-foreground/15 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-                  <Flame className="w-3 h-3" />
-                  {t("coursePage.limitedSeats")}
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-2">
-                  {hasCompletedRuns
-                    ? t("coursePage.allPastRunsFull", { count: pastRuns.length })
-                    : t("coursePage.firstCohortCta")}
-                </h3>
-                <p className="text-primary-foreground/80 text-sm mb-5 max-w-lg mx-auto">
-                  {hasCompletedRuns
-                    ? t("coursePage.dontMissNext")
-                    : t("coursePage.earlyRegistration")}
-                </p>
-                <a
-                  href="mailto:admissions@metaskills.sg"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary-foreground text-primary font-bold rounded-lg hover:brightness-95 transition-all text-sm"
-                >
-                  <Mail className="w-4 h-4" />
-                  {t("coursePage.registerNextRun")}
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            </motion.div>
-          )}
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -133,20 +99,13 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                         <p className="text-xs text-muted-foreground">{run.dates}</p>
                       </div>
                     </div>
-                    {run.status === "filling" ? (
-                      <span className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20">
-                        <Flame className="w-3 h-3" />
-                        {t("coursePage.fillingFast")}
-                      </span>
-                    ) : (
-                      <a
-                        href="mailto:admissions@metaskills.sg"
-                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg bg-primary text-primary-foreground hover:brightness-110 transition-all"
-                      >
-                        <Mail className="w-3 h-3" />
-                        {t("coursePage.enquire")}
-                      </a>
-                    )}
+                    <span className={`inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full ${run.status === "filling" ? "bg-accent/10 text-accent border border-accent/20" : "bg-primary/10 text-primary border border-primary/20"}`}>
+                      {run.status === "filling" ? (
+                        <><Flame className="w-3 h-3" />{t("coursePage.fillingFast")}</>
+                      ) : (
+                        t("coursePage.upcomingLabel", { defaultValue: "Upcoming" })
+                      )}
+                    </span>
                   </div>
                 ))}
               </div>
