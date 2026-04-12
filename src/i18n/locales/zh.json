@@ -9,7 +9,7 @@
     "ourFaculty": "我们的师资",
     "partners": "合作伙伴",
     "ourClients": "我们的客户",
-    "learningSpaces": "学习空间",
+    "learningSpaces": "联系我们",
     "allProgrammes": "所有课程",
     "howToApply": "如何申请",
     "courseFeesAndFunding": "学费与资助",
@@ -101,7 +101,7 @@
     "title": "合作机构"
   },
   "locations": {
-    "title": "我们的学习空间",
+    "title": "联系我们",
     "subtitle": "为沉浸式动手学习体验而设计的世界级设施。",
     "hqName": "新加坡总部 — CT Hub 2",
     "hqDesc": "位于114 Lavender Street, CT Hub 2, #07-74, Singapore 338729。我们的主校区配备了先进的AI实训设施。",
@@ -150,7 +150,7 @@
     "aboutUs": "关于我们",
     "faculty": "师资",
     "partners": "合作伙伴",
-    "learningSpaces": "学习空间",
+    "learningSpaces": "联系我们",
     "admissions": "招生",
     "courseFeesAndFunding": "学费与资助",
     "copyright": "© {{year}} Metaskills Institute. 版权所有。",
@@ -195,7 +195,11 @@
   },
   "partnersPage": {
     "heroTitle": "我们的合作伙伴",
-    "heroSubtitle": "与新加坡和东盟的行业领袖合作。"
+    "heroSubtitle": "与新加坡和东盟的行业领袖合作。",
+    "integrumDesc": "一家AI咨询和开发公司，为复杂用例提供决策能力。专注于使用替代数据开发预测和决策引擎。",
+    "jcubeDesc": "由柯景浩博士联合创立的合作学院，提供认证的数据分析师和数据科学家课程，采用实践式、基于项目的课程体系。",
+    "jcubeSubtitle": "由j3Cube Pte Ltd创办",
+    "svbbDesc": "促进新加坡和越南之间的跨境合作，实现东盟地区的知识交流和商业网络建设。"
   },
   "clientsPage": {
     "heroTitle": "受领先机构信赖",
@@ -204,10 +208,18 @@
     "workedWithDesc": "面向各组织层级提供培训、咨询、产品开发和大师班。",
     "alsoWorkedWith": "我们还合作过",
     "ctaTitle": "加入我们不断壮大的客户网络",
-    "ctaDesc": "准备好提升团队技能了吗？联系我们获取为您的组织量身定制的培训解决方案。"
+    "ctaDesc": "准备好提升团队技能了吗？联系我们获取为您的组织量身定制的培训解决方案。",
+    "catGovDefence": "政府与国防",
+    "catBanking": "银行与金融",
+    "catUni": "大学与教育",
+    "catConsulting": "咨询与科技",
+    "catTransport": "交通与基础设施",
+    "catDefenceLog": "国防与物流",
+    "catHealthcare": "医疗保健",
+    "additionalNda": "……以及更多受保密协议保护的机构"
   },
   "locationsPage": {
-    "heroTitle": "我们的学习空间",
+    "heroTitle": "联系我们",
     "heroSubtitle": "为沉浸式动手学习体验而设计的世界级设施。"
   },
   "pastClasses": {
@@ -269,7 +281,25 @@
     "policyAttendanceTitle": "出勤政策",
     "policyAttendanceText": "获得认证需75%出勤率。学员应准时到达。缺席请发邮件至admissions@metaskills.sg通知。",
     "defaultDuration": "为期 2 天的研讨会",
-    "whatYouLearn": "你将学到什么"
+    "whatYouLearn": "你将学到什么",
+    "newCourse": {
+      "badge": "新课程",
+      "heading": "即将推出",
+      "subheading": "这是由我们专家师资精心打造的全新课程。成为首批掌握这些前沿技能的学员。",
+      "freshTitle": "全新课程体系",
+      "freshDesc": "采用最新行业框架、工具和真实案例设计，面向2025年及未来。",
+      "smallTitle": "小班制，大成效",
+      "smallDesc": "小班教学确保个性化指导和行业专家师资的实践学习。",
+      "pioneerTitle": "成为先行者",
+      "pioneerDesc": "加入首批学员，获得同行尚未具备的先发优势技能。",
+      "ctaTitle": "登记兴趣",
+      "ctaDesc": "预留首批学员席位。早期报名者享有优先名额，并可能获得首发优惠价格。",
+      "ctaWhatsApp": "WhatsApp联系我们",
+      "ctaEmail": "邮件咨询招生",
+      "noObligation": "无需承诺",
+      "earlyBird": "早鸟价格",
+      "limitedSeats": "名额有限"
+    }
   },
   "courses": {
     "agenticFoundations": {
