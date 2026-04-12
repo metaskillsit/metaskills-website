@@ -99,20 +99,13 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                         <p className="text-xs text-muted-foreground">{run.dates}</p>
                       </div>
                     </div>
-                    {run.status === "filling" ? (
-                      <span className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-accent/10 text-accent border border-accent/20">
-                        <Flame className="w-3 h-3" />
-                        {t("coursePage.fillingFast")}
-                      </span>
-                    ) : (
-                      <a
-                        href="mailto:admissions@metaskills.sg"
-                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg bg-primary text-primary-foreground hover:brightness-110 transition-all"
-                      >
-                        <Mail className="w-3 h-3" />
-                        {t("coursePage.enquire")}
-                      </a>
-                    )}
+                    <span className={`inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full ${run.status === "filling" ? "bg-accent/10 text-accent border border-accent/20" : "bg-primary/10 text-primary border border-primary/20"}`}>
+                      {run.status === "filling" ? (
+                        <><Flame className="w-3 h-3" />{t("coursePage.fillingFast")}</>
+                      ) : (
+                        t("coursePage.upcomingLabel", { defaultValue: "Upcoming" })
+                      )}
+                    </span>
                   </div>
                 ))}
               </div>
