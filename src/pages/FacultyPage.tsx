@@ -57,6 +57,16 @@ Across his career, Christopher is recognised for his ability to build scalable g
     image: "/images/faculty/faculty-andrew.png",
     bio: `Andrew Toh brings a unique combination of military leadership, adult education expertise, and AI-driven business transformation. He served 16 years in the Singapore Armed Forces (SAF) as a Subject Matter Expert (SME) in signal operations, specialising in LAN/WAN and radio communication systems. During his service, he was deeply involved in adult training and coaching, designing and delivering structured programmes for Regulars, Full-Time National Servicemen (NSFs), and NSmen across leadership and technical domains. He specialised in man management, training system design, and trainer development, including matching different training methodologies to different learner profiles, and is highly adaptive in adjusting training delivery dynamically (adhoc/on-the-go) to meet operational needs. He was also actively involved in large-scale national events, including the National Day Parade (NDP) 2009, 2013, and 2018, contributing to planning, coordination, and execution at scale. After transitioning from the military, Andrew expanded into AI operations, business development, and consulting, specialising in AI workflow design and implementation, vibe coding and prompt engineering, customised AI courses tailored to company use cases, train-the-trainer programmes for AI literacy and adoption, and business development and operational consulting, driving practical AI adoption aligned to real-world business needs.`,
   },
+  {
+    name: "Gary Ye",
+    i18nKey: "garyYe",
+    role: "Country Head, China, Metaskills Institute",
+    expertise: "Business Development | China Market Expansion | Strategic Partnerships",
+    image: "/images/faculty/faculty-gary.jpg",
+    bio: `Gary Ye is a strategic "Go To Market" and partnerships leader with more than 10 years of experience in enterprise technology, channel management, and business development. He has held partner-facing and commercial roles at Hewlett Packard Enterprise, Ingram Micro, and Singtel, where he worked on channel growth, solution alignment, partner enablement, and revenue expansion. Besides his role at Metaskills Institute, he currently runs an education and consulting venture in Singapore, where he is developing partner networks in China and exploring practical AI applications in learner management, CRM, and digital marketing workflows.
+
+He also brings experience in regional sales leadership, strategic alliances, cloud and SaaS solutions, and stakeholder management. His education includes a Bachelor in Digital Business from University College Dublin and a Diploma in Electronic, Computer and Communication Engineering from Nanyang Polytechnic.`,
+  },
 ];
 
 /* =========================
