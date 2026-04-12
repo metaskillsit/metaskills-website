@@ -30,6 +30,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-andrew.png",
   },
   {
+    name: "Gary Ye",
+    role: "Country Head, China",
+    expertise: "Business Development | China Market Expansion | Strategic Partnerships",
+    image: "/images/faculty/faculty-gary.jpg",
+  },
+  {
     name: "Sriven Naidu",
     role: "Lead Senior Consultant, AI Leadership",
     expertise: "AI Governance | Leadership | Human-Centric AI",
