@@ -13,6 +13,9 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
   if (!schedule.length) return null;
 
   const pastRuns = schedule.filter((r) => r.status === "full");
+
+  // Hide entire section for new courses with 0 completed runs
+  if (pastRuns.length === 0) return null;
   const upcomingRuns = schedule.filter((r) => r.status === "upcoming" || r.status === "filling");
   const clientRuns = pastRuns.filter((r) => r.client);
   const uniqueClients = [...new Set(clientRuns.map((r) => r.client))];
