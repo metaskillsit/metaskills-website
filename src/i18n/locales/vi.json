@@ -9,7 +9,7 @@
     "ourFaculty": "Đội ngũ giảng viên",
     "partners": "Đối tác",
     "ourClients": "Khách hàng",
-    "learningSpaces": "Không gian học tập",
+    "learningSpaces": "Liên hệ",
     "allProgrammes": "Tất cả chương trình",
     "howToApply": "Cách đăng ký",
     "courseFeesAndFunding": "Học phí & Tài trợ",
@@ -101,7 +101,7 @@
     "title": "Các Tổ chức Đối tác"
   },
   "locations": {
-    "title": "Không gian Học tập",
+    "title": "Liên hệ",
     "subtitle": "Cơ sở vật chất đẳng cấp thế giới được thiết kế cho trải nghiệm học tập thực hành, nhập vai.",
     "hqName": "Trụ sở Singapore — CT Hub 2",
     "hqDesc": "Tọa lạc tại 114 Lavender Street, CT Hub 2, #07-74, Singapore 338729. Khuôn viên chính được trang bị cơ sở vật chất tiên tiến cho đào tạo AI thực hành.",
@@ -150,7 +150,7 @@
     "aboutUs": "Về chúng tôi",
     "faculty": "Giảng viên",
     "partners": "Đối tác",
-    "learningSpaces": "Không gian Học tập",
+    "learningSpaces": "Liên hệ",
     "admissions": "Tuyển sinh",
     "courseFeesAndFunding": "Học phí & Tài trợ",
     "copyright": "© {{year}} Metaskills Institute. Bảo lưu mọi quyền.",
@@ -195,7 +195,11 @@
   },
   "partnersPage": {
     "heroTitle": "Đối tác của Chúng tôi",
-    "heroSubtitle": "Hợp tác với các nhà lãnh đạo ngành trên khắp Singapore và ASEAN."
+    "heroSubtitle": "Hợp tác với các nhà lãnh đạo ngành trên khắp Singapore và ASEAN.",
+    "integrumDesc": "Công ty tư vấn và phát triển AI cung cấp khả năng ra quyết định cho các trường hợp sử dụng phức tạp. Chuyên phát triển công cụ dự đoán và ra quyết định sử dụng dữ liệu thay thế.",
+    "jcubeDesc": "Viện đối tác do Tiến sĩ Ke Jinghao đồng sáng lập, cung cấp các chương trình Phân tích Dữ liệu và Nhà Khoa học Dữ liệu được chứng nhận với chương trình giảng dạy thực hành, dựa trên dự án.",
+    "jcubeSubtitle": "bởi j3Cube Pte Ltd",
+    "svbbDesc": "Tạo điều kiện hợp tác xuyên biên giới giữa Singapore và Việt Nam, cho phép trao đổi kiến thức và kết nối kinh doanh trên khắp ASEAN."
   },
   "clientsPage": {
     "heroTitle": "Được các Tổ chức Hàng đầu Tin tưởng",
@@ -204,10 +208,18 @@
     "workedWithDesc": "Đào tạo, tư vấn, phát triển sản phẩm và các lớp bậc thầy được cung cấp ở tất cả các cấp tổ chức.",
     "alsoWorkedWith": "Chúng tôi Cũng Đã Hợp tác Với",
     "ctaTitle": "Tham gia Mạng lưới Khách hàng Đang Phát triển",
-    "ctaDesc": "Sẵn sàng nâng cao kỹ năng cho đội ngũ? Liên hệ chúng tôi để nhận giải pháp đào tạo tùy chỉnh."
+    "ctaDesc": "Sẵn sàng nâng cao kỹ năng cho đội ngũ? Liên hệ chúng tôi để nhận giải pháp đào tạo tùy chỉnh.",
+    "catGovDefence": "Chính phủ & Quốc phòng",
+    "catBanking": "Ngân hàng & Tài chính",
+    "catUni": "Đại học & Giáo dục",
+    "catConsulting": "Tư vấn & Công nghệ",
+    "catTransport": "Giao thông & Cơ sở hạ tầng",
+    "catDefenceLog": "Quốc phòng & Hậu cần",
+    "catHealthcare": "Y tế",
+    "additionalNda": "… và nhiều tổ chức khác theo thỏa thuận bảo mật"
   },
   "locationsPage": {
-    "heroTitle": "Không gian Học tập",
+    "heroTitle": "Liên hệ",
     "heroSubtitle": "Cơ sở vật chất đẳng cấp thế giới được thiết kế cho trải nghiệm học tập thực hành, nhập vai."
   },
   "pastClasses": {
@@ -269,7 +281,25 @@
     "policyAttendanceTitle": "Tham dự",
     "policyAttendanceText": "Yêu cầu 75% tham dự để nhận chứng nhận. Học viên cần đến đúng giờ. Báo vắng qua email admissions@metaskills.sg.",
     "defaultDuration": "Hội thảo 2 ngày",
-    "whatYouLearn": "Bạn sẽ học được gì"
+    "whatYouLearn": "Bạn sẽ học được gì",
+    "newCourse": {
+      "badge": "Chương trình Mới",
+      "heading": "Sắp Ra mắt",
+      "subheading": "Đây là chương trình hoàn toàn mới do đội ngũ giảng viên chuyên gia của chúng tôi thiết kế. Hãy là những người đầu tiên nắm bắt các kỹ năng tiên tiến này.",
+      "freshTitle": "Chương trình Hoàn toàn Mới",
+      "freshDesc": "Được thiết kế với các khung ngành mới nhất, công cụ và nghiên cứu điển hình thực tế cho năm 2025 trở đi.",
+      "smallTitle": "Lớp Nhỏ, Tác động Lớn",
+      "smallDesc": "Quy mô lớp nhỏ đảm bảo hướng dẫn cá nhân và học tập thực hành với giảng viên chuyên gia ngành.",
+      "pioneerTitle": "Trở thành Người Tiên phong",
+      "pioneerDesc": "Tham gia khóa đầu tiên và có được lợi thế đi trước với các kỹ năng mà đồng nghiệp chưa có.",
+      "ctaTitle": "Đăng ký Quan tâm",
+      "ctaDesc": "Đảm bảo vị trí trong khóa đầu tiên. Người đăng ký sớm được ưu tiên xếp lớp và có thể được hưởng giá ra mắt.",
+      "ctaWhatsApp": "WhatsApp Liên hệ",
+      "ctaEmail": "Email Tuyển sinh",
+      "noObligation": "Không ràng buộc",
+      "earlyBird": "Giá ưu đãi sớm",
+      "limitedSeats": "Số lượng có hạn"
+    }
   },
   "courses": {
     "agenticFoundations": {
