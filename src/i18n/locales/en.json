@@ -256,7 +256,25 @@
     "policyAttendanceTitle": "Attendance",
     "policyAttendanceText": "75% attendance required for certification. Participants should arrive on time. Notify absence via email to admissions@metaskills.sg.",
     "defaultDuration": "2-Day Workshop",
-    "whatYouLearn": "What You Will Learn"
+    "whatYouLearn": "What You Will Learn",
+    "newCourse": {
+      "badge": "New Programme",
+      "heading": "Launching Soon",
+      "subheading": "This is a brand-new programme crafted by our expert faculty. Be among the first to gain these cutting-edge skills.",
+      "freshTitle": "Brand New Curriculum",
+      "freshDesc": "Designed with the latest industry frameworks, tools, and real-world case studies for 2025 and beyond.",
+      "smallTitle": "Small Cohort, Big Impact",
+      "smallDesc": "Intimate class sizes ensure personalised mentorship and hands-on learning with industry-expert faculty.",
+      "pioneerTitle": "Be a Pioneer",
+      "pioneerDesc": "Join the inaugural cohort and gain a first-mover advantage with skills your peers won't have yet.",
+      "ctaTitle": "Register Your Interest",
+      "ctaDesc": "Secure your spot in the inaugural cohort. Early registrants enjoy priority placement and may qualify for launch pricing.",
+      "ctaWhatsApp": "WhatsApp Us",
+      "ctaEmail": "Email Admissions",
+      "noObligation": "No obligation",
+      "earlyBird": "Early-bird pricing",
+      "limitedSeats": "Limited seats"
+    }
   },
   "courses": {
     "agenticFoundations": {
