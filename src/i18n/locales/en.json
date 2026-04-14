@@ -2,11 +2,11 @@
   "nav": {
     "about": "About",
     "programmes": "Programmes",
-    "faculty": "Faculty",
+    "faculty": "Our Teams",
     "admissions": "Admissions",
     "aboutMetaskills": "About Metaskills",
     "aboutUs": "About Us",
-    "ourFaculty": "Our Faculty",
+    "ourFaculty": "My Teams",
     "partners": "Partners",
     "ourClients": "Our Clients",
     "learningSpaces": "Contact Us",
@@ -148,9 +148,9 @@
     "dataScience": "Data Science & Analytics",
     "algoTrading": "Algorithmic Trading",
     "aboutUs": "About Us",
-    "faculty": "Faculty",
+    "faculty": "Our Teams",
     "partners": "Partners",
-     "learningSpaces": "Contact Us",
+    "learningSpaces": "Contact Us",
     "admissions": "Admissions",
     "courseFeesAndFunding": "Course Fees & Funding",
     "copyright": "© {{year}} Metaskills Institute. All rights reserved.",
@@ -179,7 +179,7 @@
     "langDesc": "Our programmes are available in English, Chinese, and Vietnamese — reaching professionals and organisations across Singapore and the wider ASEAN region."
   },
   "facultyPage": {
-    "heroTitle": "Our Faculty",
+    "heroTitle": "My Teams",
     "heroSubtitle": "Industry leaders and domain experts driving AI education, business transformation, and professional development across Asia.",
     "intro": "Our faculty have collectively trained more than 10,000 professionals and teach Data Science at renowned Universities. All our trainers are carefully selected and known for simplifying difficult concepts for learners.",
     "executiveTeam": "Executive Team",
@@ -1002,7 +1002,7 @@
       "bio": ""
     },
     "christopherTan": {
-      "role": "CBDO, Metaskills Institute | Senior Consultant",
+      "role": "Chief Strategist and Consultant, Metaskills Institute | Senior Consultant",
       "expertise": "Data Science | Algorithmic Trading | Business Development | Higher Education Leadership",
       "bio": ""
     },
@@ -1081,7 +1081,7 @@
     "heroTitle": "Don't Just Build AI Agents.",
     "heroHighlight": "Build Them Right.",
     "heroSubtitle": "AI is becoming autonomous. Governance is no longer optional.",
-"requestDemo": "Metaskills Agentic Governance System (MAGS)",
+    "requestDemo": "Metaskills Agentic Governance System (MAGS)",
     "bookStrategy": "Deploy Now - Contact Us",
     "trustLabel": "Trust",
     "executionLabel": "Execution",
