@@ -34,9 +34,9 @@ const Navbar = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [langOpen, setLangOpen] = useState(false);
   const [labsOpen, setLabsOpen] = useState(false);
-  const [toolboxOpen, setToolboxOpen] = useState(false);
+  
   const labsRef = useRef<HTMLDivElement>(null);
-  const toolboxRef = useRef<HTMLDivElement>(null);
+  
   const langRef = useRef<HTMLDivElement>(null);
   const langRefMobile = useRef<HTMLDivElement>(null);
   const location = useLocation();
