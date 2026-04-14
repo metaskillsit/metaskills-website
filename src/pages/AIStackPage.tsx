@@ -298,6 +298,7 @@ const AIStackPage = () => {
 
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-xl font-bold text-[#C9A84C]">{course.price}</span>
+                    <span className="text-xs text-gray-400">per pax</span>
                   </div>
 
                   <div className="mt-auto">
