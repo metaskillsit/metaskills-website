@@ -130,6 +130,13 @@ const Navbar = () => {
             { label: t("courses.mccAiSecurity.title"), href: "/course/mcc-plus-ai-security-autonomous-defence" },
           ],
         },
+        {
+          label: t("nav.aiToolBox"),
+          href: "/programmes",
+          subItems: [
+            { label: t("nav.aiStackMasterclasses"), href: "/ai-stack-masterclasses" },
+          ],
+        },
       ],
     },
     {
@@ -145,12 +152,6 @@ const Navbar = () => {
         { label: t("nav.agenticAIGovernance"), href: "/agentic-ai-governance" },
       ],
     },
-    {
-      label: t("nav.aiInstitute"),
-      items: [
-        { label: t("nav.aiStackMasterclasses"), href: "/ai-stack-masterclasses" },
-      ],
-    },
   ];
 
   const topNavItems = [
@@ -158,7 +159,6 @@ const Navbar = () => {
     { label: t("nav.programmes"), href: "/programmes" },
     { label: t("nav.faculty"), href: "/faculty" },
     { label: t("nav.admissions"), href: "/admissions" },
-    { label: t("nav.aiInstitute"), href: "/ai-stack-masterclasses" },
   ];
 
   const contactItem = { label: t("nav.contact", "Contact Us"), href: "/locations" };
