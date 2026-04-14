@@ -13,6 +13,7 @@ import cyberDefenceImg from "@/assets/programmes-cyberdefence.jpg";
 import aiLeadershipImg from "@/assets/programmes-aileadership.jpg";
 import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
+import aiStackImg from "@/assets/programmes-aistack.jpg";
 
 const ProgrammesPage = () => {
   const { t } = useTranslation();
@@ -103,6 +104,14 @@ const ProgrammesPage = () => {
         { name: ct("mccOffensiveCyber"), slug: "mcc-plus-offensive-cyber-fundamentals" },
         { name: ct("mccDigitalForensics"), slug: "mcc-plus-digital-forensics" },
         { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
+      ],
+    },
+    {
+      title: t("programmes.aiStackTitle"),
+      description: t("programmes.aiStackDesc"),
+      image: aiStackImg,
+      courses: [
+        { name: t("programmes.aiStack1DayCourse"), slug: "ai-stack-masterclasses", isExternal: true },
       ],
     },
   ];
