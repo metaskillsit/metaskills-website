@@ -13,7 +13,9 @@ const coursePricingOverrides: Record<string, { corporate: string; selfSponsored?
 };
 
 const CourseSidebar = ({ course }: CourseSidebarProps) => {
-  const { t } = useTranslation();
+  const pricing = coursePricingOverrides[course.slug];
+  const corporateRate = pricing?.corporate || "S$6,000 per workshop per day (up to 10 pax)";
+  const showSelfSponsored = pricing ? pricing.selfSponsored !== undefined : true;
 
   return (
     <div className="lg:col-span-1">
