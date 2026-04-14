@@ -278,6 +278,11 @@ const AIStackPage = () => {
                     <span className="inline-block bg-[#C9A84C]/15 text-[#C9A84C] text-xs font-semibold px-3 py-1 rounded-full">
                       {course.categoryLabel}
                     </span>
+                    {hotCourses.has(course.title) && (
+                      <span className="inline-block bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse">
+                        🔥 Hot
+                      </span>
+                    )}
                     {logo ? (
                       <img src={logo} alt={course.vendor} className="w-10 h-10 object-contain rounded-lg" />
                     ) : (
