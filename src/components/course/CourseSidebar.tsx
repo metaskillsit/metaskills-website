@@ -6,6 +6,12 @@ interface CourseSidebarProps {
   course: Course;
 }
 
+const coursePricingOverrides: Record<string, { corporate: string; selfSponsored?: string }> = {
+  "ai-strategy-roadmap-leaders": {
+    corporate: "S$15,000 per workshop per day (up to 10 pax)",
+  },
+};
+
 const CourseSidebar = ({ course }: CourseSidebarProps) => {
   const { t } = useTranslation();
 
