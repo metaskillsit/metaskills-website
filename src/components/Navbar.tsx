@@ -130,20 +130,6 @@ const Navbar = () => {
             { label: t("courses.mccAiSecurity.title"), href: "/course/mcc-plus-ai-security-autonomous-defence" },
           ],
         },
-      ],
-    },
-    {
-      label: t("nav.admissions"),
-      items: [
-        { label: t("nav.howToApply"), href: "/admissions" },
-        { label: t("nav.courseFeesAndFunding"), href: "/admissions#fees" },
-      ],
-    },
-    {
-      label: t("nav.msiLiveLabs"),
-      items: [
-        { label: t("nav.agenticAIGovernance"), href: "/agentic-ai-governance" },
-      ],
         {
           label: t("nav.aiToolBox"),
           href: "/programmes",
