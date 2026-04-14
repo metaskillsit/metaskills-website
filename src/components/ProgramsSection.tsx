@@ -118,6 +118,14 @@ const ProgramsSection = () => {
         { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
       ],
     },
+    {
+      title: t("programmes.aiStackTitle"),
+      description: t("programmes.aiStackDesc"),
+      images: [aiStackImg],
+      courses: [
+        { name: t("programmes.aiStack1DayCourse"), slug: "ai-stack-masterclasses", isExternal: true },
+      ],
+    },
   ];
 
   return (
