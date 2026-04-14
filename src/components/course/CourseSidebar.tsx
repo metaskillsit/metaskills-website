@@ -30,21 +30,21 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
           </div>
           <div className="space-y-3">
             <div>
-              <p className="text-xs text-muted-foreground mb-0.5">Corporate Rates</p>
+              <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.corporateRates")}</p>
               <p className="font-bold text-foreground">{corporateRate}</p>
             </div>
             {showSelfSponsored && (
               <div className="border-t border-border pt-3">
-                <p className="text-xs text-muted-foreground mb-0.5">Self-Sponsored</p>
+                <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.selfSponsored")}</p>
                 <p className="font-bold text-foreground">S$750 per pax per day</p>
               </div>
             )}
             <div className="border-t border-border pt-3 text-xs text-muted-foreground italic space-y-1">
-              <p className="font-semibold not-italic text-foreground/80">Note:</p>
-              <p>1) Training fee is based on a maximum class size of up to 10 participants per session.</p>
-              <p>2) For cohorts exceeding 10 participants, pricing may be adjusted accordingly.</p>
-              <p>3) Customised training arrangements, including class size, course scope, and delivery format, can be discussed and tailored to organisational requirements.</p>
-              <p className="pt-2">All fees are exempt from GST.</p>
+              <p className="font-semibold not-italic text-foreground/80">{t("coursePage.feeNote")}</p>
+              <p>1) {t("coursePage.feeNote1")}</p>
+              <p>2) {t("coursePage.feeNote2")}</p>
+              <p>3) {t("coursePage.feeNote3")}</p>
+              <p className="pt-2">{t("coursePage.gstNote")}</p>
             </div>
           </div>
         </div>
@@ -55,13 +55,13 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-[#25D366] text-white font-semibold rounded-sm text-sm hover:bg-[#1da851] transition-all shadow-lg"
         >
-          <MessageCircle className="w-4 h-4" /> WhatsApp Consultant
+          <MessageCircle className="w-4 h-4" /> {t("coursePage.whatsappConsultant")}
         </a>
         <a
           href="mailto:admissions@metaskills.sg"
           className="flex items-center justify-center gap-2 w-full px-6 py-3 border border-border text-foreground font-semibold rounded-sm text-sm hover:bg-muted transition-all"
         >
-          <Mail className="w-4 h-4" /> Email Us
+          <Mail className="w-4 h-4" /> {t("coursePage.emailUs")}
         </a>
       </div>
     </div>
