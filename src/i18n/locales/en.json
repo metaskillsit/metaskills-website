@@ -6,7 +6,7 @@
     "admissions": "Admissions",
     "aboutMetaskills": "About Metaskills",
     "aboutUs": "About Us",
-    "ourFaculty": "My Teams",
+    "ourFaculty": "Our Teams",
     "partners": "Partners",
     "ourClients": "Our Clients",
     "learningSpaces": "Contact Us",
@@ -179,7 +179,7 @@
     "langDesc": "Our programmes are available in English, Chinese, and Vietnamese — reaching professionals and organisations across Singapore and the wider ASEAN region."
   },
   "facultyPage": {
-    "heroTitle": "My Teams",
+    "heroTitle": "Our Teams",
     "heroSubtitle": "Industry leaders and domain experts driving AI education, business transformation, and professional development across Asia.",
     "intro": "Our faculty have collectively trained more than 10,000 professionals and teach Data Science at renowned Universities. All our trainers are carefully selected and known for simplifying difficult concepts for learners.",
     "executiveTeam": "Executive Team",
