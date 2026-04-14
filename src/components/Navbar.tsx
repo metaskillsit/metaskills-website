@@ -278,6 +278,34 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+
+            {/* AI ToolBox dropdown */}
+            <div ref={toolboxRef} className="relative">
+              <button
+                onClick={() => setToolboxOpen(!toolboxOpen)}
+                className={`flex items-center gap-1 text-[13px] font-medium tracking-wide transition-colors ${
+                  location.pathname === "/ai-stack-masterclasses" ? "text-primary" : "text-foreground/70 hover:text-primary"
+                }`}
+              >
+                <span>{t("nav.aiToolBox")}</span>
+                <ChevronDown size={14} />
+              </button>
+              {toolboxOpen && (
+                <div className="absolute top-full left-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[260px] animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                  <Link
+                    to="/ai-stack-masterclasses"
+                    onClick={() => setToolboxOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/ai-stack-masterclasses"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    {t("nav.aiStackMasterclasses")}
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link
               to={contactItem.href}
               className={`text-[13px] font-medium tracking-wide transition-colors ${
