@@ -13,6 +13,7 @@ const coursePricingOverrides: Record<string, { corporate: string; selfSponsored?
 };
 
 const CourseSidebar = ({ course }: CourseSidebarProps) => {
+  const { t } = useTranslation();
   const pricing = coursePricingOverrides[course.slug];
   const corporateRate = pricing?.corporate || "S$6,000 per workshop per day (up to 10 pax)";
   const showSelfSponsored = pricing ? pricing.selfSponsored !== undefined : true;
@@ -30,12 +31,14 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
           <div className="space-y-3">
             <div>
               <p className="text-xs text-muted-foreground mb-0.5">Corporate Rates</p>
-              <p className="font-bold text-foreground">S$6,000 per workshop per day (up to 10 pax)</p>
+              <p className="font-bold text-foreground">{corporateRate}</p>
             </div>
-            <div className="border-t border-border pt-3">
-              <p className="text-xs text-muted-foreground mb-0.5">Self-Sponsored</p>
-              <p className="font-bold text-foreground">S$750 per pax per day</p>
-            </div>
+            {showSelfSponsored && (
+              <div className="border-t border-border pt-3">
+                <p className="text-xs text-muted-foreground mb-0.5">Self-Sponsored</p>
+                <p className="font-bold text-foreground">S$750 per pax per day</p>
+              </div>
+            )}
             <div className="border-t border-border pt-3 text-xs text-muted-foreground italic space-y-1">
               <p className="font-semibold not-italic text-foreground/80">Note:</p>
               <p>1) Training fee is based on a maximum class size of up to 10 participants per session.</p>
