@@ -97,6 +97,13 @@ const Navbar = () => {
           ],
         },
         {
+          label: t("nav.aiStackTraining"),
+          href: "/programmes",
+          subItems: [
+            { label: t("nav.aiStackTraining"), href: "/ai-stack-masterclasses" },
+          ],
+        },
+        {
           label: t("programmes.dataTitle"),
           href: "/programmes",
           subItems: [
@@ -130,13 +137,6 @@ const Navbar = () => {
             { label: t("courses.mccOffensiveCyber.title"), href: "/course/mcc-plus-offensive-cyber-fundamentals" },
             { label: t("courses.mccDigitalForensics.title"), href: "/course/mcc-plus-digital-forensics" },
             { label: t("courses.mccAiSecurity.title"), href: "/course/mcc-plus-ai-security-autonomous-defence" },
-          ],
-        },
-        {
-          label: t("nav.aiStackTraining"),
-          href: "/programmes",
-          subItems: [
-            { label: t("nav.aiStackTraining"), href: "/ai-stack-masterclasses" },
           ],
         },
       ],
