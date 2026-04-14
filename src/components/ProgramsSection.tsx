@@ -124,7 +124,7 @@ const ProgramsSection = () => {
       description: t("programmes.aiStackDesc"),
       images: [aiStackImg],
       courses: [
-        { name: t("programmes.aiStack1DayCourse"), slug: "ai-stack-masterclasses", isExternal: true },
+        { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
       ],
     },
   ];
@@ -177,7 +177,7 @@ const ProgramsSection = () => {
                 {cat.courses.map((course) => (
                   <li key={course.slug}>
                     <Link
-                      to={course.isExternal ? `/${course.slug}` : `/course/${course.slug}`}
+                      to={'isExternal' in course && course.isExternal ? course.slug : `/course/${course.slug}`}
                       className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
                     >
                       <span>{course.name}</span>
