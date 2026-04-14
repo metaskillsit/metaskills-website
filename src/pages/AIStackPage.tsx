@@ -93,7 +93,16 @@ interface Course {
   description: string;
 }
 
+const hotCourses = new Set([
+  "OpenClaw: Agentic AI / Personal AI Agent",
+  "Lovable: Build Web Apps with AI, No Code Needed",
+]);
+
 const courses: Course[] = [
+  // 🔥 Hot — pinned to top
+  { title: "OpenClaw: Agentic AI / Personal AI Agent", vendor: "OpenClaw", price: "S$588", category: "automation", categoryLabel: "Automation", description: "Deploy a local, open-source AI agent that connects any LLM to your apps, files, browser, and messaging channels — and works for you around the clock." },
+  { title: "Lovable: Build Web Apps with AI, No Code Needed", vendor: "Lovable", price: "S$788", category: "coding", categoryLabel: "Coding", description: "Ship production-ready web applications using AI-powered development." },
+
   // LLM & Foundation Models
   { title: "Mastering ChatGPT for Professional Productivity", vendor: "OpenAI", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Unlock advanced ChatGPT techniques for workplace efficiency and decision-making." },
   { title: "Claude AI for Enterprise Writing & Analysis", vendor: "Anthropic", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Leverage Claude's analytical capabilities for enterprise-grade writing and research." },
@@ -116,7 +125,6 @@ const courses: Course[] = [
   { title: "Cursor AI: Code Smarter, Ship Faster", vendor: "Cursor", price: "S$988", category: "coding", categoryLabel: "Coding", description: "Accelerate software development with Cursor's AI-first code editor." },
   { title: "GitHub Copilot: AI-Assisted Coding for Developers", vendor: "GitHub", price: "S$888", category: "coding", categoryLabel: "Coding", description: "Boost developer productivity with GitHub Copilot's contextual code suggestions." },
   { title: "Microsoft Copilot: AI for the Modern Workplace", vendor: "Microsoft", price: "S$888", category: "coding", categoryLabel: "Coding", description: "Transform workplace productivity with Microsoft 365 Copilot integration." },
-  { title: "Lovable: Build Web Apps with AI, No Code Needed", vendor: "Lovable", price: "S$788", category: "coding", categoryLabel: "Coding", description: "Ship production-ready web applications using AI-powered development." },
   { title: "Vercel AI SDK: Deploy AI-Powered Web Apps", vendor: "Vercel", price: "S$988", category: "coding", categoryLabel: "Coding", description: "Build and deploy AI-enhanced web applications with Vercel's AI SDK." },
 
   // AI Research
@@ -129,7 +137,6 @@ const courses: Course[] = [
   { title: "Veo 3: AI Video Generation for Creators & Marketers", vendor: "Google", price: "S$888", category: "video", categoryLabel: "Video", description: "Generate cinematic AI videos with Google's latest Veo 3 model." },
   { title: "Higgsfield AI: Cinematic Video Generation Workshop", vendor: "Higgsfield", price: "S$688", category: "video", categoryLabel: "Video", description: "Produce high-quality cinematic videos using Higgsfield's AI generation platform." },
   { title: "Seedance: AI Motion & Video Creation", vendor: "Seedance", price: "S$588", category: "video", categoryLabel: "Video", description: "Create dynamic motion graphics and videos with Seedance AI." },
-  { title: "OpenClaw: AI-Powered Visual Content Automation", vendor: "OpenClaw", price: "S$588", category: "video", categoryLabel: "Video", description: "Automate visual content production at scale with OpenClaw's AI pipeline." },
 
   // Cloud AI
   { title: "AWS AI Services: Build & Deploy Machine Learning Solutions", vendor: "AWS", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Design and deploy ML solutions using Amazon's comprehensive AI service suite." },
