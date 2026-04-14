@@ -13,6 +13,7 @@ import cyberDefenceImg from "@/assets/programmes-cyberdefence.jpg";
 import aiLeadershipImg from "@/assets/programmes-aileadership.jpg";
 import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
+import aiStackImg from "@/assets/programmes-aistack.jpg";
 
 const ProgrammesPage = () => {
   const { t } = useTranslation();
@@ -105,6 +106,14 @@ const ProgrammesPage = () => {
         { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
       ],
     },
+    {
+      title: t("programmes.aiStackTitle"),
+      description: t("programmes.aiStackDesc"),
+      image: aiStackImg,
+      courses: [
+        { name: t("programmes.aiStack1DayCourse"), slug: "ai-stack-masterclasses", isExternal: true },
+      ],
+    },
   ];
 
   return (
@@ -153,7 +162,7 @@ const ProgrammesPage = () => {
                   {cat.courses.map((course) => (
                     <li key={course.slug}>
                       <Link
-                        to={`/course/${course.slug}`}
+                        to={course.isExternal ? `/${course.slug}` : `/course/${course.slug}`}
                         className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
                       >
                         <span>{course.name}</span>
