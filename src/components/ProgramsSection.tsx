@@ -27,6 +27,7 @@ import aiLeadershipImg3 from "@/assets/programmes-aileadership-3.jpg";
 import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import cyberCertImg2 from "@/assets/programmes-cybercert-2.jpg";
 import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
+import aiStackImg from "@/assets/programmes-aistack.jpg";
 
 const ProgramsSection = () => {
   const { t } = useTranslation();
