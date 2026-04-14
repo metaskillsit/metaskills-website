@@ -67,7 +67,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                   <Flame className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="text-2xl md:text-3xl font-bold text-foreground">New</div>
+                  <div className="text-2xl md:text-3xl font-bold text-foreground">{t("coursePage.newCourse.badge")}</div>
                   <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("coursePage.firstCohortsOpen")}</div>
                 </div>
               </div>
