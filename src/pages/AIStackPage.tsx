@@ -1,10 +1,77 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { MessageCircle, ExternalLink, CheckCircle, ChevronDown, ChevronUp } from "lucide-react";
+import { MessageCircle, ChevronDown, ChevronUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
+// Logo imports
+import openaiLogo from "@/assets/techlogos/openai.svg";
+import anthropicLogo from "@/assets/techlogos/anthropic.svg";
+import geminiLogo from "@/assets/techlogos/gemini.svg";
+import deepseekLogo from "@/assets/techlogos/deepseek.png";
+import grokLogo from "@/assets/techlogos/grok.png";
+import ollamaLogo from "@/assets/techlogos/ollama.png";
+import groqLogo from "@/assets/techlogos/groq.png";
+import openrouterLogo from "@/assets/techlogos/openrouter.png";
+import glmLogo from "@/assets/techlogos/glm.png";
+import doubaoLogo from "@/assets/techlogos/doubao2.png";
+import kimiLogo from "@/assets/techlogos/kimi.png";
+import n8nLogo from "@/assets/techlogos/n8n.png";
+import zapierLogo from "@/assets/techlogos/zapier.svg";
+import makeLogo from "@/assets/techlogos/make2.png";
+import cursorLogo from "@/assets/techlogos/cursor.png";
+import githubLogo from "@/assets/techlogos/github.svg";
+import copilotLogo from "@/assets/techlogos/copilot.jpg";
+import lovableLogo from "@/assets/techlogos/lovable.png";
+import vercelLogo from "@/assets/techlogos/vercel.svg";
+import notebooklmLogo from "@/assets/techlogos/notebooklm.png";
+import perplexityLogo from "@/assets/techlogos/perplexity.svg";
+import huggingfaceLogo from "@/assets/techlogos/huggingface.svg";
+import capcutLogo from "@/assets/techlogos/capcut.png";
+import veo3Logo from "@/assets/techlogos/veo3.png";
+import higgsfieldLogo from "@/assets/techlogos/higgsfield.png";
+import seedanceLogo from "@/assets/techlogos/seedance.png";
+import openclawLogo from "@/assets/techlogos/openclaw.png";
+
 const WHATSAPP_URL = "https://wa.me/6589483482?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.";
+
+const vendorLogos: Record<string, string> = {
+  "OpenAI": openaiLogo,
+  "Anthropic": anthropicLogo,
+  "Google": geminiLogo,
+  "DeepSeek": deepseekLogo,
+  "xAI": grokLogo,
+  "Ollama": ollamaLogo,
+  "Groq": groqLogo,
+  "OpenRouter": openrouterLogo,
+  "Zhipu AI": glmLogo,
+  "ByteDance": doubaoLogo,
+  "Moonshot AI": kimiLogo,
+  "n8n": n8nLogo,
+  "Zapier": zapierLogo,
+  "Make": makeLogo,
+  "Cursor": cursorLogo,
+  "GitHub": githubLogo,
+  "Microsoft": copilotLogo,
+  "Lovable": lovableLogo,
+  "Vercel": vercelLogo,
+  "Perplexity": perplexityLogo,
+  "Hugging Face": huggingfaceLogo,
+  "CapCut": capcutLogo,
+  "Higgsfield": higgsfieldLogo,
+  "Seedance": seedanceLogo,
+  "OpenClaw": openclawLogo,
+  "AWS": undefined as unknown as string,
+  "Apple": undefined as unknown as string,
+};
+
+// Special handling for courses with Google as vendor but different logos
+const courseLogoOverrides: Record<string, string> = {
+  "Google Gemini: AI for the Google Workspace Professional": geminiLogo,
+  "NotebookLM: AI Research Assistant for Knowledge Workers": notebooklmLogo,
+  "Veo 3: AI Video Generation for Creators & Marketers": veo3Logo,
+  "Google Cloud AI: Vertex AI & Generative AI on GCP": geminiLogo,
+};
 
 const categories = [
   { id: "all", label: "All" },
@@ -14,7 +81,6 @@ const categories = [
   { id: "research", label: "AI Research Tools" },
   { id: "video", label: "AI Video & Content" },
   { id: "cloud", label: "Cloud AI" },
-  { id: "cyber", label: "Cybersecurity AI" },
 ];
 
 interface Course {
@@ -25,56 +91,51 @@ interface Course {
   category: string;
   categoryLabel: string;
   description: string;
-  skillsFuture: boolean;
 }
 
 const courses: Course[] = [
   // LLM & Foundation Models
-  { title: "Mastering ChatGPT for Professional Productivity", vendor: "OpenAI", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Unlock advanced ChatGPT techniques for workplace efficiency and decision-making.", skillsFuture: true },
-  { title: "Claude AI for Enterprise Writing & Analysis", vendor: "Anthropic", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Leverage Claude's analytical capabilities for enterprise-grade writing and research.", skillsFuture: true },
-  { title: "Google Gemini: AI for the Google Workspace Professional", vendor: "Google", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Integrate Gemini AI across Google Workspace for enhanced productivity.", skillsFuture: true },
-  { title: "DeepSeek AI: China's Open-Source LLM for Business", vendor: "DeepSeek", price: "S$588", category: "llm", categoryLabel: "LLM", description: "Explore DeepSeek's open-source capabilities for bilingual business applications.", skillsFuture: false },
-  { title: "Grok AI: Real-Time Intelligence & Reasoning", vendor: "xAI", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Harness Grok's real-time data access and advanced reasoning for strategic insights.", skillsFuture: false },
-  { title: "Run AI Locally: Private LLMs with Ollama", vendor: "Ollama", price: "S$888", category: "llm", categoryLabel: "LLM", description: "Deploy and run large language models locally for maximum privacy and control.", skillsFuture: true },
-  { title: "Blazing-Fast AI Inference with Groq", vendor: "Groq", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Experience ultra-fast AI inference using Groq's LPU-powered architecture.", skillsFuture: false },
-  { title: "OpenRouter: One API for All LLMs", vendor: "OpenRouter", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Access and compare multiple LLMs through a single unified API gateway.", skillsFuture: false },
-  { title: "GLM: China's Leading LLM for Bilingual AI Work", vendor: "Zhipu AI", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Master GLM for Chinese-English bilingual AI applications in enterprise settings.", skillsFuture: false },
-  { title: "Doubao AI: ByteDance's LLM for Content & Business", vendor: "ByteDance", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Leverage ByteDance's Doubao for content generation and business intelligence.", skillsFuture: false },
-  { title: "Kimi AI: Long-Context LLM for Research & Documents", vendor: "Moonshot AI", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Process lengthy documents and research papers with Kimi's extended context window.", skillsFuture: false },
+  { title: "Mastering ChatGPT for Professional Productivity", vendor: "OpenAI", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Unlock advanced ChatGPT techniques for workplace efficiency and decision-making." },
+  { title: "Claude AI for Enterprise Writing & Analysis", vendor: "Anthropic", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Leverage Claude's analytical capabilities for enterprise-grade writing and research." },
+  { title: "Google Gemini: AI for the Google Workspace Professional", vendor: "Google", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Integrate Gemini AI across Google Workspace for enhanced productivity." },
+  { title: "DeepSeek AI: China's Open-Source LLM for Business", vendor: "DeepSeek", price: "S$588", category: "llm", categoryLabel: "LLM", description: "Explore DeepSeek's open-source capabilities for bilingual business applications." },
+  { title: "Grok AI: Real-Time Intelligence & Reasoning", vendor: "xAI", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Harness Grok's real-time data access and advanced reasoning for strategic insights." },
+  { title: "Run AI Locally: Private LLMs with Ollama", vendor: "Ollama", price: "S$888", category: "llm", categoryLabel: "LLM", description: "Deploy and run large language models locally for maximum privacy and control." },
+  { title: "Blazing-Fast AI Inference with Groq", vendor: "Groq", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Experience ultra-fast AI inference using Groq's LPU-powered architecture." },
+  { title: "OpenRouter: One API for All LLMs", vendor: "OpenRouter", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Access and compare multiple LLMs through a single unified API gateway." },
+  { title: "GLM: China's Leading LLM for Bilingual AI Work", vendor: "Zhipu AI", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Master GLM for Chinese-English bilingual AI applications in enterprise settings." },
+  { title: "Doubao AI: ByteDance's LLM for Content & Business", vendor: "ByteDance", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Leverage ByteDance's Doubao for content generation and business intelligence." },
+  { title: "Kimi AI: Long-Context LLM for Research & Documents", vendor: "Moonshot AI", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Process lengthy documents and research papers with Kimi's extended context window." },
 
   // AI Automation
-  { title: "Build AI Workflows with n8n: No-Code Automation", vendor: "n8n", price: "S$988", category: "automation", categoryLabel: "Automation", description: "Create powerful AI-driven automations without writing a single line of code.", skillsFuture: true },
-  { title: "Zapier AI: Automate Your Entire Workflow in a Day", vendor: "Zapier", price: "S$788", category: "automation", categoryLabel: "Automation", description: "Connect and automate 6,000+ apps with Zapier's AI-enhanced workflow builder.", skillsFuture: true },
-  { title: "Make.com: Visual AI Automation for Business Teams", vendor: "Make", price: "S$788", category: "automation", categoryLabel: "Automation", description: "Design complex multi-step automations with Make's visual drag-and-drop builder.", skillsFuture: true },
+  { title: "Build AI Workflows with n8n: No-Code Automation", vendor: "n8n", price: "S$988", category: "automation", categoryLabel: "Automation", description: "Create powerful AI-driven automations without writing a single line of code." },
+  { title: "Zapier AI: Automate Your Entire Workflow in a Day", vendor: "Zapier", price: "S$788", category: "automation", categoryLabel: "Automation", description: "Connect and automate 6,000+ apps with Zapier's AI-enhanced workflow builder." },
+  { title: "Make.com: Visual AI Automation for Business Teams", vendor: "Make", price: "S$788", category: "automation", categoryLabel: "Automation", description: "Design complex multi-step automations with Make's visual drag-and-drop builder." },
 
   // AI Coding & Dev
-  { title: "Cursor AI: Code Smarter, Ship Faster", vendor: "Cursor", price: "S$988", category: "coding", categoryLabel: "Coding", description: "Accelerate software development with Cursor's AI-first code editor.", skillsFuture: true },
-  { title: "GitHub Copilot: AI-Assisted Coding for Developers", vendor: "GitHub", price: "S$888", category: "coding", categoryLabel: "Coding", description: "Boost developer productivity with GitHub Copilot's contextual code suggestions.", skillsFuture: true },
-  { title: "Microsoft Copilot: AI for the Modern Workplace", vendor: "Microsoft", price: "S$888", category: "coding", categoryLabel: "Coding", description: "Transform workplace productivity with Microsoft 365 Copilot integration.", skillsFuture: true },
-  { title: "Lovable: Build Web Apps with AI, No Code Needed", vendor: "Lovable", price: "S$788", category: "coding", categoryLabel: "Coding", description: "Ship production-ready web applications using AI-powered development.", skillsFuture: true },
-  { title: "Vercel AI SDK: Deploy AI-Powered Web Apps", vendor: "Vercel", price: "S$988", category: "coding", categoryLabel: "Coding", description: "Build and deploy AI-enhanced web applications with Vercel's AI SDK.", skillsFuture: true },
+  { title: "Cursor AI: Code Smarter, Ship Faster", vendor: "Cursor", price: "S$988", category: "coding", categoryLabel: "Coding", description: "Accelerate software development with Cursor's AI-first code editor." },
+  { title: "GitHub Copilot: AI-Assisted Coding for Developers", vendor: "GitHub", price: "S$888", category: "coding", categoryLabel: "Coding", description: "Boost developer productivity with GitHub Copilot's contextual code suggestions." },
+  { title: "Microsoft Copilot: AI for the Modern Workplace", vendor: "Microsoft", price: "S$888", category: "coding", categoryLabel: "Coding", description: "Transform workplace productivity with Microsoft 365 Copilot integration." },
+  { title: "Lovable: Build Web Apps with AI, No Code Needed", vendor: "Lovable", price: "S$788", category: "coding", categoryLabel: "Coding", description: "Ship production-ready web applications using AI-powered development." },
+  { title: "Vercel AI SDK: Deploy AI-Powered Web Apps", vendor: "Vercel", price: "S$988", category: "coding", categoryLabel: "Coding", description: "Build and deploy AI-enhanced web applications with Vercel's AI SDK." },
 
   // AI Research
-  { title: "NotebookLM: AI Research Assistant for Knowledge Workers", vendor: "Google", price: "S$588", category: "research", categoryLabel: "Research", description: "Transform your research workflow with Google's AI-powered notebook assistant.", skillsFuture: true },
-  { title: "Perplexity AI: AI-Powered Research for Professionals", vendor: "Perplexity", price: "S$588", category: "research", categoryLabel: "Research", description: "Conduct deep, cited research using Perplexity's conversational AI engine.", skillsFuture: true },
-  { title: "Hugging Face: Explore, Fine-Tune & Deploy Open AI Models", vendor: "Hugging Face", price: "S$1,088", category: "research", categoryLabel: "Research", description: "Navigate the open-source AI ecosystem and deploy custom models.", skillsFuture: true },
+  { title: "NotebookLM: AI Research Assistant for Knowledge Workers", vendor: "Google", price: "S$588", category: "research", categoryLabel: "Research", description: "Transform your research workflow with Google's AI-powered notebook assistant." },
+  { title: "Perplexity AI: AI-Powered Research for Professionals", vendor: "Perplexity", price: "S$588", category: "research", categoryLabel: "Research", description: "Conduct deep, cited research using Perplexity's conversational AI engine." },
+  { title: "Hugging Face: Explore, Fine-Tune & Deploy Open AI Models", vendor: "Hugging Face", price: "S$1,088", category: "research", categoryLabel: "Research", description: "Navigate the open-source AI ecosystem and deploy custom models." },
 
   // AI Video & Content
-  { title: "CapCut AI: Video Editing & Content Creation Masterclass", vendor: "CapCut", price: "S$488", category: "video", categoryLabel: "Video", description: "Create professional video content using CapCut's AI-powered editing tools.", skillsFuture: false },
-  { title: "Veo 3: AI Video Generation for Creators & Marketers", vendor: "Google", price: "S$888", category: "video", categoryLabel: "Video", description: "Generate cinematic AI videos with Google's latest Veo 3 model.", skillsFuture: true },
-  { title: "Higgsfield AI: Cinematic Video Generation Workshop", vendor: "Higgsfield", price: "S$688", category: "video", categoryLabel: "Video", description: "Produce high-quality cinematic videos using Higgsfield's AI generation platform.", skillsFuture: false },
-  { title: "Seedance: AI Motion & Video Creation", vendor: "Seedance", price: "S$588", category: "video", categoryLabel: "Video", description: "Create dynamic motion graphics and videos with Seedance AI.", skillsFuture: false },
-  { title: "OpenClaw: AI-Powered Visual Content Automation", vendor: "OpenClaw", price: "S$588", category: "video", categoryLabel: "Video", description: "Automate visual content production at scale with OpenClaw's AI pipeline.", skillsFuture: false },
+  { title: "CapCut AI: Video Editing & Content Creation Masterclass", vendor: "CapCut", price: "S$488", category: "video", categoryLabel: "Video", description: "Create professional video content using CapCut's AI-powered editing tools." },
+  { title: "Veo 3: AI Video Generation for Creators & Marketers", vendor: "Google", price: "S$888", category: "video", categoryLabel: "Video", description: "Generate cinematic AI videos with Google's latest Veo 3 model." },
+  { title: "Higgsfield AI: Cinematic Video Generation Workshop", vendor: "Higgsfield", price: "S$688", category: "video", categoryLabel: "Video", description: "Produce high-quality cinematic videos using Higgsfield's AI generation platform." },
+  { title: "Seedance: AI Motion & Video Creation", vendor: "Seedance", price: "S$588", category: "video", categoryLabel: "Video", description: "Create dynamic motion graphics and videos with Seedance AI." },
+  { title: "OpenClaw: AI-Powered Visual Content Automation", vendor: "OpenClaw", price: "S$588", category: "video", categoryLabel: "Video", description: "Automate visual content production at scale with OpenClaw's AI pipeline." },
 
   // Cloud AI
-  { title: "AWS AI Services: Build & Deploy Machine Learning Solutions", vendor: "AWS", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Design and deploy ML solutions using Amazon's comprehensive AI service suite.", skillsFuture: true },
-  { title: "Azure AI: Deploying AI Solutions on Microsoft Cloud", vendor: "Microsoft", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Build enterprise AI applications on Microsoft Azure's cloud platform.", skillsFuture: true },
-  { title: "Google Cloud AI: Vertex AI & Generative AI on GCP", vendor: "Google", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Leverage Vertex AI and generative AI capabilities on Google Cloud Platform.", skillsFuture: true },
-  { title: "Apple AI: On-Device Intelligence for iOS Developers", vendor: "Apple", price: "S$788", category: "cloud", categoryLabel: "Cloud", description: "Integrate on-device AI and Apple Intelligence into iOS applications.", skillsFuture: false },
-
-  // Cybersecurity AI
-  { title: "Ethical Hacking Fundamentals (CEH-Aligned, 1-Day Intro)", vendor: "EC-Council", price: "S$988", category: "cyber", categoryLabel: "Cyber", description: "Introduction to ethical hacking methodologies aligned with CEH certification.", skillsFuture: true },
-  { title: "CompTIA Security Essentials: A 1-Day Orientation", vendor: "CompTIA", price: "S$888", category: "cyber", categoryLabel: "Cyber", description: "Foundation-level cybersecurity orientation aligned with CompTIA Security+.", skillsFuture: true },
+  { title: "AWS AI Services: Build & Deploy Machine Learning Solutions", vendor: "AWS", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Design and deploy ML solutions using Amazon's comprehensive AI service suite." },
+  { title: "Azure AI: Deploying AI Solutions on Microsoft Cloud", vendor: "Microsoft", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Build enterprise AI applications on Microsoft Azure's cloud platform." },
+  { title: "Google Cloud AI: Vertex AI & Generative AI on GCP", vendor: "Google", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Leverage Vertex AI and generative AI capabilities on Google Cloud Platform." },
+  { title: "Apple AI: On-Device Intelligence for iOS Developers", vendor: "Apple", price: "S$788", category: "cloud", categoryLabel: "Cloud", description: "Integrate on-device AI and Apple Intelligence into iOS applications." },
 ];
 
 const bundles = [
@@ -101,19 +162,11 @@ const bundles = [
 const faqs = [
   {
     q: "Do I need prior AI experience to attend?",
-    a: "No prior AI experience is required. Our 1-day masterclasses are designed for professionals at all levels. Each course starts with foundational concepts before progressing to hands-on application.",
-  },
-  {
-    q: "Are courses available online or only in-person?",
-    a: "Most courses are available both in-person at our Singapore campus and online via live virtual classroom. Check individual course listings for delivery options.",
+    a: "No prior AI experience is required. Our 1-day courses are designed for professionals at all levels. Each course starts with foundational concepts before progressing to hands-on application.",
   },
   {
     q: "Will I receive a certificate upon completion?",
     a: "Yes, all participants receive a Certificate of Completion from Metaskills Institute upon finishing the course, which can be added to your LinkedIn profile.",
-  },
-  {
-    q: "How do I use my SkillsFuture Credit?",
-    a: "Eligible Singaporeans aged 25 and above can claim SkillsFuture Credit on supported courses. Simply select the course on the MySkillsFuture portal and submit your claim. We'll guide you through the process.",
   },
   {
     q: "Can I attend multiple courses in the same week?",
@@ -124,6 +177,11 @@ const faqs = [
     a: "Yes. Our curriculum is reviewed and updated before every cohort to reflect the latest features, updates, and best practices for each AI tool.",
   },
 ];
+
+const getCourseLogo = (course: Course): string | null => {
+  if (courseLogoOverrides[course.title]) return courseLogoOverrides[course.title];
+  return vendorLogos[course.vendor] || null;
+};
 
 const AIStackPage = () => {
   useTranslation();
@@ -144,7 +202,7 @@ const AIStackPage = () => {
       <section className="bg-[#0D1B2A] pt-28 md:pt-36 pb-16 md:pb-24 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            AI Stack Masterclasses
+            AI Stack Training
           </h1>
           <p className="text-lg md:text-xl font-medium text-[#C9A84C] mb-6">
             1-Day Intensive Courses — Learn Any AI Tool in a Single Day
@@ -202,83 +260,60 @@ const AIStackPage = () => {
             <p className="text-sm text-gray-500">{filteredCourses.length} courses found</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCourses.map((course, idx) => (
-              <div
-                key={idx}
-                className="bg-[#F4F4F2] rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <span className="inline-block bg-[#C9A84C]/15 text-[#C9A84C] text-xs font-semibold px-3 py-1 rounded-full">
-                    {course.categoryLabel}
-                  </span>
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-medium">
-                    {course.vendor}
+            {filteredCourses.map((course, idx) => {
+              const logo = getCourseLogo(course);
+              return (
+                <div
+                  key={idx}
+                  className="bg-[#F4F4F2] rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="inline-block bg-[#C9A84C]/15 text-[#C9A84C] text-xs font-semibold px-3 py-1 rounded-full">
+                      {course.categoryLabel}
+                    </span>
+                    {logo ? (
+                      <img src={logo} alt={course.vendor} className="w-10 h-10 object-contain rounded-lg" />
+                    ) : (
+                      <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-medium">
+                        {course.vendor}
+                      </div>
+                    )}
+                  </div>
+
+                  <h3 className="text-base font-bold text-[#1A1A1A] mb-2 leading-snug">
+                    {course.title}
+                  </h3>
+                  <p className="text-[13px] text-gray-500 mb-4 flex-grow">
+                    {course.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-white border border-gray-200 rounded-full px-3 py-1 text-gray-600">
+                      1 Day | 9am – 5pm
+                    </span>
+                    <span className="text-xs bg-white border border-gray-200 rounded-full px-3 py-1 text-gray-600">
+                      Classroom
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-xl font-bold text-[#C9A84C]">{course.price}</span>
+                  </div>
+
+                  <div className="mt-auto">
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-center px-4 py-2.5 bg-[#C9A84C] text-[#0D1B2A] text-sm font-semibold rounded-lg hover:bg-[#b8963f] transition-colors"
+                    >
+                      Enquire
+                    </a>
                   </div>
                 </div>
-
-                <h3 className="text-base font-bold text-[#1A1A1A] mb-2 leading-snug">
-                  {course.title}
-                </h3>
-                <p className="text-[13px] text-gray-500 mb-4 flex-grow">
-                  {course.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="text-xs bg-white border border-gray-200 rounded-full px-3 py-1 text-gray-600">
-                    1 Day | 9am – 5pm
-                  </span>
-                  <span className="text-xs bg-white border border-gray-200 rounded-full px-3 py-1 text-gray-600">
-                    Classroom | Online Available
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xl font-bold text-[#C9A84C]">{course.price}</span>
-                  {course.skillsFuture && (
-                    <span className="text-[11px] font-semibold bg-green-600 text-white px-2 py-0.5 rounded-full flex items-center gap-1">
-                      <CheckCircle size={12} /> SkillsFuture
-                    </span>
-                  )}
-                </div>
-
-                <div className="flex gap-2 mt-auto">
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center px-4 py-2.5 bg-[#C9A84C] text-[#0D1B2A] text-sm font-semibold rounded-lg hover:bg-[#b8963f] transition-colors"
-                  >
-                    Enquire
-                  </a>
-                  <button className="flex-1 text-center px-4 py-2.5 border-2 border-[#C9A84C] text-[#C9A84C] text-sm font-semibold rounded-lg hover:bg-[#C9A84C]/10 transition-colors">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
-        </div>
-      </section>
-
-      {/* SKILLSFUTURE BANNER */}
-      <section className="bg-[#C9A84C] py-12 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0D1B2A] mb-4">
-            SkillsFuture Credit Accepted
-          </h2>
-          <p className="text-[#0D1B2A]/80 mb-6 max-w-2xl mx-auto">
-            Singaporeans aged 25 and above can use their SkillsFuture Credit to offset course fees.
-            Eligible courses are marked with the SkillsFuture badge.
-          </p>
-          <a
-            href="https://www.myskillsfuture.gov.sg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#0D1B2A] text-white font-semibold rounded-lg hover:bg-[#1a2d42] transition-colors"
-          >
-            Check Your Credit Balance
-            <ExternalLink size={16} />
-          </a>
         </div>
       </section>
 
