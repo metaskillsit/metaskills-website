@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { MessageCircle, Mail, ExternalLink, CheckCircle, ChevronDown, ChevronUp } from "lucide-react";
-import { Link } from "react-router-dom";
+import { MessageCircle, ExternalLink, CheckCircle, ChevronDown, ChevronUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
@@ -127,7 +126,7 @@ const faqs = [
 ];
 
 const AIStackPage = () => {
-  const { t } = useTranslation();
+  useTranslation();
   const [activeFilter, setActiveFilter] = useState("all");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
