@@ -67,7 +67,9 @@
     "vibeCodingDesc": "Hands-on AI-powered web application development — from problem discovery to deployment using ChatGPT, Figma, and Lovable. Partnership with Tinkercademy.",
     "aiStackTitle": "AI Stack Training",
     "aiStackDesc": "Intensive 1-day hands-on training on today's most powerful AI tools — from coding agents and automation platforms to video generation and personal AI assistants.",
-    "aiStack1DayCourse": "1 Day AI Tech Stacks Training Courses"
+    "aiStack1DayCourse": "1 Day AI Tech Stacks Training Courses",
+    "cloudDevOpsTitle": "Cloud Solutions & DevOps",
+    "cloudDevOpsDesc": "End-to-end cloud architecture and DevOps engineering — from design thinking and prototyping to CI/CD pipelines, infrastructure as code, and capstone delivery."
   },
   "why": {
     "title": "Why Metaskills",
