@@ -16,6 +16,7 @@ import courseCyber3 from "@/assets/course-cyber-3.jpg";
 import courseLeadership1 from "@/assets/course-leadership-1.jpg";
 import courseLeadership2 from "@/assets/course-leadership-2.jpg";
 import courseLeadership3 from "@/assets/course-leadership-3.jpg";
+import courseCloudDevOps1 from "@/assets/course-clouddevops-1.jpg";
 
 const categoryImages: Record<string, string[]> = {
   "Agentic AI Workshop Series": [courseAgenticAi1, courseAgenticAi2, courseAgenticAi3],
@@ -26,6 +27,7 @@ const categoryImages: Record<string, string[]> = {
   "AI Leadership and Governance": [courseLeadership1, courseLeadership2, courseLeadership3],
   "MCC+ Cyber Defence Certification": [courseCyber1, courseCyber2, courseCyber3],
   "Vibe Coding": [courseAutomation1, courseAutomation2, courseAutomation3],
+  "Cloud Solutions & DevOps": [courseCloudDevOps1, courseCloudDevOps1, courseCloudDevOps1],
 };
 
 export const getCategoryImages = (category: string): string[] =>
