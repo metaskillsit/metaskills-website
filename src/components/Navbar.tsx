@@ -405,7 +405,7 @@ const Navbar = () => {
                                 onClick={() => toggleCategory(cat.label)}
                                 className="w-full flex items-center justify-between py-2.5 px-3 rounded-sm text-sm transition-colors text-foreground/80 hover:bg-muted hover:text-primary"
                               >
-                                <span className="font-medium">{cat.label}</span>
+                                <span className="font-medium text-left">{cat.label}</span>
                                 <motion.div animate={{ rotate: isExpanded ? 180 : 0 }} transition={{ duration: 0.2 }}>
                                   <ChevronDown className="w-4 h-4 text-muted-foreground" />
                                 </motion.div>
