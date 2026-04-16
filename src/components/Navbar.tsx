@@ -121,6 +121,13 @@ const Navbar = () => {
           ],
         },
         {
+          label: t("programmes.cloudDevOpsTitle"),
+          href: "/programmes",
+          subItems: [
+            { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
+          ],
+        },
+        {
           label: t("programmes.cyberTitle"),
           href: "/programmes",
           subItems: [
