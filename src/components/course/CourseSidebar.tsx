@@ -6,11 +6,12 @@ interface CourseSidebarProps {
   course: Course;
 }
 
-const coursePricingOverrides: Record<string, { corporate: string; selfSponsored?: string; customNotes?: boolean }> = {
+const coursePricingOverrides: Record<string, { corporate: string; corporateLabel?: string; selfSponsored?: string; customNotes?: boolean }> = {
   "ai-strategy-roadmap-leaders": {
     corporate: "S$15,000 per workshop per day (up to 10 pax)",
   },
   "aws-cloud-solutions-architecture-devops": {
+    corporateLabel: "Public/Corporate Rates",
     corporate: "S$9,000 per pax",
     customNotes: true,
   },
@@ -35,7 +36,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
           </div>
           <div className="space-y-3">
             <div>
-              <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.corporateRates")}</p>
+              <p className="text-xs text-muted-foreground mb-0.5">{pricing?.corporateLabel || t("coursePage.corporateRates")}</p>
               <p className="font-bold text-foreground">{corporateRate}</p>
             </div>
             {showSelfSponsored && (
