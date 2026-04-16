@@ -58,17 +58,6 @@ const CourseHero = ({ course, categoryImages, isNew }: CourseHeroProps) => {
             >
               {ct.category}
             </motion.p>
-            {isNew && (
-              <motion.span
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4, type: "spring", stiffness: 300 }}
-                className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-wider shadow-lg shadow-primary/30"
-              >
-                <Sparkles className="w-3 h-3" />
-                {t("coursePage.newBadge", { defaultValue: "New" })}
-              </motion.span>
-            )}
           </div>
           <h1 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight mb-1">
             {ct.title}
