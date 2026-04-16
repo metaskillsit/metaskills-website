@@ -36,7 +36,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
           </div>
           <div className="space-y-3">
             <div>
-              <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.corporateRates")}</p>
+              <p className="text-xs text-muted-foreground mb-0.5">{pricing?.corporateLabel || t("coursePage.corporateRates")}</p>
               <p className="font-bold text-foreground">{corporateRate}</p>
             </div>
             {showSelfSponsored && (
