@@ -100,6 +100,14 @@ const ProgramsSection = () => {
       ],
     },
     {
+      title: t("programmes.cloudDevOpsTitle"),
+      description: t("programmes.cloudDevOpsDesc"),
+      images: [cloudDevOpsImg],
+      courses: [
+        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
+      ],
+    },
+    {
       title: t("programmes.cyberTitle"),
       description: t("programmes.cyberDesc"),
       images: [cyberDefenceImg, cyberDefenceImg2, cyberDefenceImg3],
@@ -126,14 +134,6 @@ const ProgramsSection = () => {
       images: [aiStackImg],
       courses: [
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
-      ],
-    },
-    {
-      title: t("programmes.cloudDevOpsTitle"),
-      description: t("programmes.cloudDevOpsDesc"),
-      images: [cloudDevOpsImg],
-      courses: [
-        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
     },
   ];
