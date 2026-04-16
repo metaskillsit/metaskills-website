@@ -14,6 +14,7 @@ import aiLeadershipImg from "@/assets/programmes-aileadership.jpg";
 import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
 import aiStackImg from "@/assets/programmes-aistack.jpg";
+import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 
 const ProgrammesPage = () => {
   const { t } = useTranslation();
@@ -112,6 +113,14 @@ const ProgrammesPage = () => {
       image: aiStackImg,
       courses: [
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
+      ],
+    },
+    {
+      title: t("programmes.cloudDevOpsTitle"),
+      description: t("programmes.cloudDevOpsDesc"),
+      image: cloudDevOpsImg,
+      courses: [
+        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
     },
   ];

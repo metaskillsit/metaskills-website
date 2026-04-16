@@ -16,6 +16,7 @@ import courseCyber3 from "@/assets/course-cyber-3.jpg";
 import courseLeadership1 from "@/assets/course-leadership-1.jpg";
 import courseLeadership2 from "@/assets/course-leadership-2.jpg";
 import courseLeadership3 from "@/assets/course-leadership-3.jpg";
+import courseCloudDevOps1 from "@/assets/course-clouddevops-1.jpg";
 
 const categoryImages: Record<string, string[]> = {
   "Agentic AI Workshop Series": [courseAgenticAi1, courseAgenticAi2, courseAgenticAi3],
@@ -26,6 +27,7 @@ const categoryImages: Record<string, string[]> = {
   "AI Leadership and Governance": [courseLeadership1, courseLeadership2, courseLeadership3],
   "MCC+ Cyber Defence Certification": [courseCyber1, courseCyber2, courseCyber3],
   "Vibe Coding": [courseAutomation1, courseAutomation2, courseAutomation3],
+  "Cloud Solutions & DevOps": [courseCloudDevOps1, courseCloudDevOps1, courseCloudDevOps1],
 };
 
 export const getCategoryImages = (category: string): string[] =>
@@ -618,6 +620,39 @@ courses.push({
     corporateSmall: "7 or fewer participants: S$6,800 flat fee",
     corporateLarge: "Contact for group rates",
   },
+});
+
+// ── Cloud Solutions Architecture & DevOps Engineering ──
+courses.push({
+  slug: "aws-cloud-solutions-architecture-devops",
+  i18nKey: "awsCloudDevOps",
+  title: "Advanced Certificate in AWS Cloud Solutions Architecture and DevOps Engineering",
+  category: "Cloud Solutions & DevOps",
+  tagline: "Design resilient cloud architectures, implement automated testing, and establish robust DevOps pipelines.",
+  heroImage: "/src/assets/course-clouddevops-1.jpg",
+  duration: "6 Modules",
+  whyAttend:
+    "Cloud computing continues to reshape how organisations build, ship, and operate software at scale. This programme equips technology professionals with the end-to-end competencies needed to design resilient cloud architectures, implement automated testing strategies, and establish robust DevOps pipelines, all within a leading public cloud ecosystem.\n\nThrough six progressive modules, participants move from design thinking and prototyping through cloud service orchestration, test automation, CI/CD pipeline construction, and infrastructure-as-code practices, culminating in a team-based capstone that mirrors a real-world product delivery cycle. Every session combines instructor-led walkthroughs with hands-on lab exercises, ensuring participants leave with portfolio-ready artefacts and the confidence to architect production-grade solutions.\n\nWhether you are a software developer seeking to deepen your cloud fluency, a technical project manager aiming to streamline delivery workflows, or a business analyst bridging the gap between strategy and implementation, this programme provides an immersive, skills-first pathway guided by certified cloud practitioners and experienced technologists.",
+  objectives: [
+    "Apply design thinking frameworks and rapid prototyping techniques to translate business requirements into cloud application blueprints.",
+    "Architect cloud-based solutions by selecting, configuring, and integrating core infrastructure, compute, storage, and database services.",
+    "Implement test-driven development (TDD) practices, including unit, integration, and end-to-end testing, within cloud development environments.",
+    "Construct CI/CD pipelines that automate the build, test, release, and deployment stages of the software delivery lifecycle.",
+    "Operationalise DevOps principles by provisioning infrastructure as code, decomposing applications into microservices, and configuring real-time monitoring and alerting.",
+    "Synthesise skills from all prior modules in a collaborative capstone project that designs, builds, and delivers a cloud-hosted application through a fully automated DevOps workflow.",
+  ],
+  courseDesign:
+    "Six progressive modules combining instructor-led walkthroughs with hands-on lab exercises. Each module builds on the previous, progressing from design thinking through cloud architecture, test automation, CI/CD pipelines, DevOps engineering, and culminating in a team-based capstone project.",
+  schedule: [
+    { day: "Module 1: Design Thinking and Cloud Application Prototyping", items: ["Structured design thinking methodologies", "Stanford Design Thinking process (Empathise, Define, Ideate, Prototype, Test)", "UI wireframes and interactive prototypes", "Software diagramming and architecture blueprints", "Team presentation of design package"] },
+    { day: "Module 2: Core Cloud Services and Solution Architecture", items: ["Cloud computing vs on-premises infrastructure", "Identity and access management policies", "Core cloud services: storage, compute, databases, hosting", "Programmatic interaction via SDKs and CLI tools", "Professional cloud architecture diagrams"] },
+    { day: "Module 3: Automated Testing and Test-Driven Development", items: ["Unit tests with PyTest and Jest", "Agile user stories to Gherkin test scenarios", "BDD test suite auto-generation", "End-to-end testing with Cypress or Selenium", "Test-first development workflow integration"] },
+    { day: "Module 4: Building CI/CD Pipelines for Automated Software Delivery", items: ["CI/CD paradigm and automated pipelines", "Cloud-based code services configuration", "Multi-stage CI/CD pipeline assembly", "Logging and audit trail implementation", "Monitoring dashboards and alerting rules"] },
+    { day: "Module 5: DevOps Engineering, Microservices, and Infrastructure as Code", items: ["DevOps culture, practices, and tooling", "Microservices with container orchestration and serverless", "Infrastructure-as-code templates", "Real-time monitoring, log aggregation, and alerting"] },
+    { day: "Module 6: Capstone Project — Cloud Application Delivery", items: ["Software development lifecycle mapping", "Architect, build, and deploy cloud-hosted web application", "Complete CI/CD pipeline implementation", "Professional design documentation", "Team presentation and architecture review"] },
+  ],
+  nextRunDate: "Contact admissions@metaskills.sg for next run dates",
+  fees: { selfSponsored: "S$9,000 per pax", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
 });
 
 export const getCourseBySlug = (slug: string) =>
