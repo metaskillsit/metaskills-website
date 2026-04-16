@@ -28,6 +28,7 @@ import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import cyberCertImg2 from "@/assets/programmes-cybercert-2.jpg";
 import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
 import aiStackImg from "@/assets/programmes-aistack.jpg";
+import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 
 const ProgramsSection = () => {
   const { t } = useTranslation();
@@ -125,6 +126,14 @@ const ProgramsSection = () => {
       images: [aiStackImg],
       courses: [
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
+      ],
+    },
+    {
+      title: t("programmes.cloudDevOpsTitle"),
+      description: t("programmes.cloudDevOpsDesc"),
+      images: [cloudDevOpsImg],
+      courses: [
+        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
     },
   ];
