@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ImageSlideshowProps {
@@ -22,6 +22,23 @@ const kenBurnsVariants = [
   { scale: 1.1, x: "1%", y: "-2%" },
 ];
 
+/**
+ * Preload an array of image URLs and return a promise that resolves
+ * when all images have finished loading (or failed).
+ */
+const preloadImages = (srcs: string[]): Promise<void[]> =>
+  Promise.all(
+    srcs.map(
+      (src) =>
+        new Promise<void>((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve();
+          img.onerror = () => resolve(); // don't block on failure
+          img.src = src;
+        })
+    )
+  );
+
 const ImageSlideshow = ({
   images,
   alt,
@@ -35,18 +52,50 @@ const ImageSlideshow = ({
   kenBurns = false,
 }: ImageSlideshowProps) => {
   const [current, setCurrent] = useState(0);
+  const [ready, setReady] = useState(false);
+  const preloaded = useRef(false);
+
+  // Preload all images before showing the slideshow
+  useEffect(() => {
+    if (preloaded.current) return;
+    preloaded.current = true;
+
+    if (images.length === 0) {
+      setReady(true);
+      return;
+    }
+
+    // Load the first image eagerly, then the rest in the background
+    const first = new window.Image();
+    first.onload = () => setReady(true);
+    first.onerror = () => setReady(true);
+    first.src = images[0];
+
+    // Preload remaining images in background
+    if (images.length > 1) {
+      preloadImages(images.slice(1));
+    }
+  }, [images]);
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % images.length);
   }, [images.length]);
 
   useEffect(() => {
-    if (images.length <= 1) return;
+    if (!ready || images.length <= 1) return;
     const timer = setInterval(next, interval);
     return () => clearInterval(timer);
-  }, [next, interval, images.length]);
+  }, [next, interval, images.length, ready]);
 
   if (images.length === 0) return null;
+
+  // Show a placeholder shimmer while the first image loads
+  if (!ready) {
+    return (
+      <div className={`${className} bg-muted animate-pulse`} />
+    );
+  }
+
   if (images.length === 1) {
     return (
       <div className={className}>
@@ -57,6 +106,8 @@ const ImageSlideshow = ({
           width={width}
           height={height}
           loading={loading}
+          decoding="async"
+          fetchPriority={loading === "eager" ? "high" : "auto"}
         />
       </div>
     );
@@ -75,6 +126,8 @@ const ImageSlideshow = ({
           width={width}
           height={height}
           loading={loading}
+          decoding="async"
+          fetchPriority={current === 0 && loading === "eager" ? "high" : "auto"}
           initial={{ opacity: 0, scale: kenBurns ? 1 : 1 }}
           animate={{
             opacity: 1,
@@ -107,7 +160,6 @@ const ImageSlideshow = ({
           ))}
         </div>
       )}
-      {/* Progress bar for video-style feel */}
       {kenBurns && (
         <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/10 z-10">
           <motion.div
