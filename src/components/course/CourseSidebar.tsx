@@ -6,11 +6,12 @@ interface CourseSidebarProps {
   course: Course;
 }
 
-const coursePricingOverrides: Record<string, { corporate: string; selfSponsored?: string; customNotes?: boolean }> = {
+const coursePricingOverrides: Record<string, { corporate: string; corporateLabel?: string; selfSponsored?: string; customNotes?: boolean }> = {
   "ai-strategy-roadmap-leaders": {
     corporate: "S$15,000 per workshop per day (up to 10 pax)",
   },
   "aws-cloud-solutions-architecture-devops": {
+    corporateLabel: "Public/Corporate Rates",
     corporate: "S$9,000 per pax",
     customNotes: true,
   },
