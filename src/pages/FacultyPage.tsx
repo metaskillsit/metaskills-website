@@ -165,6 +165,16 @@ A Certified Lean Six Sigma Green Belt and Certified Scrum Master, Evelyn is high
     image: "/images/faculty/faculty-alena.jpg",
     bio: `Alena Lavrinenko is an AI expert with a dynamic blend of academic excellence and practical experience. A graduate with a Bachelor of Economics from Southern Federal University, Russia, and an MBA from Singapore Management University, she currently serves as the AI Solutions & Engineering Manager at Integrum Global in Singapore. In her role as an AI Trainer at JCube Institute, she is dedicated to nurturing future AI talent. With her extensive knowledge in AI applications and business transformation, Alena brings real-world insights and cutting-edge practices to her students.`,
   },
+  {
+    name: "Adrian Toh",
+    i18nKey: "adrianToh",
+    role: "AI Senior Consultant",
+    expertise: "AI in Finance | Investment Advisory | FX & Structured Products | Algorithmic Trading",
+    image: "/images/faculty/faculty-adriantoh.jpg",
+    bio: `Adrian Toh is an AI Senior Consultant who brings more than 13 years of frontline financial markets experience to the design and delivery of AI-powered solutions for the finance industry. Having held senior client-facing and advisory roles at leading institutions including UOB, ANZ, AG Investment Management LLP, and Citibank Singapore, he has advised private and high-net-worth clients across structured products, bonds, foreign exchange, dual-currency investments, equities, and commodities, with portfolios of up to S$100 million in assets under management. This deep practitioner background gives him a sharp instinct for where AI can create real value across wealth management, trading, and advisory workflows.
+At Metaskills Institute, Adrian focuses on applying generative and agentic AI to the financial services value chain, including AI-augmented client advisory, intelligent portfolio analytics, automated market research and report generation, robo-advisory design, regulatory and compliance copilots, and AI-driven risk and fraud monitoring. He works with banks, wealth managers, and investment firms to translate frontline use cases into production-ready AI workflows, drawing on his commercial track record of consistently exceeding sales targets and growing assets under management through disciplined client acquisition, referral programmes, and structured marketing initiatives at UOB, ANZ, and Citibank Singapore.
+Earlier in his career, Adrian served as a Director at AG Investment Management LLP, where he contributed to algorithmic trading system design, compliance, operations, and business development, and developed a 12-module foreign exchange trading model that achieved more than 23% per annum returns with drawdown below 8% over the period October 2009 to June 2010. This rare combination of frontline wealth advisory experience and quantitative trading system design positions Adrian to train and advise professionals at the intersection of financial markets, client advisory, and AI-augmented investment workflows — helping institutions move beyond pilots into measurable, governed AI deployment in finance.`,
+  },
 ];
 
 /* =========================
