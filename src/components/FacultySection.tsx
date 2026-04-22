@@ -42,6 +42,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-sriven.png",
   },
   {
+    name: "Adrian Toh",
+    role: "AI Senior Consultant",
+    expertise: "AI in Finance | Investment Advisory | FX & Structured Products | Algorithmic Trading",
+    image: "/images/faculty/faculty-adriantoh.jpg",
+  },
+  {
     name: "Phan Phi Long",
     role: "Senior Consultant and Trainer",
     expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
@@ -76,12 +82,6 @@ const allFaculty = [
     role: "Lead Consultant, Algo Trading",
     expertise: "Algorithmic Trading | Forex & Gold Markets | Machine Learning",
     image: "/images/faculty/faculty-victor.jpg",
-  },
-  {
-    name: "Adrian Toh",
-    role: "Consultant, Wealth Management & Financial Markets",
-    expertise: "Wealth Management | Investment Advisory | FX & Structured Products | Algorithmic Trading",
-    image: "/images/faculty/faculty-adriantoh.jpg",
   },
   {
     name: "Mr Steven Ong",
