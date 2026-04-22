@@ -78,6 +78,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-victor.jpg",
   },
   {
+    name: "Adrian Toh",
+    role: "Consultant, Wealth Management & Financial Markets",
+    expertise: "Wealth Management | Investment Advisory | FX & Structured Products | Algorithmic Trading",
+    image: "/images/faculty/faculty-adriantoh.jpg",
+  },
+  {
     name: "Mr Steven Ong",
     role: "Lead Consultant",
     expertise: "Cybersecurity Governance | ISO 27001 | NIST | Cloud Security",
