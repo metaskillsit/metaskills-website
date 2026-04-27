@@ -12,12 +12,6 @@ const allFaculty = [
     image: "/images/faculty/faculty-jinghao.png",
   },
   {
-    name: "Chris Tan",
-    role: "Chief Strategist and Consultant, Metaskills Institute",
-    expertise: "Data Science | Algorithmic Trading | Business Development",
-    image: "/images/faculty/faculty-chris.jpg",
-  },
-  {
     name: "Dr Jack Hong",
     role: "Lead Consultant",
     expertise: "Data Science | AI | Machine Learning | Deep Learning",
