@@ -37,122 +37,93 @@ import copilotLogo from "@/assets/techlogos/copilot.jpg";
 
 type Logo = { name: string; logo: string };
 
-const groups: { title: string; items: Logo[] }[] = [
-  {
-    title: "Industry Certifications",
-    items: [
-      { name: "EC-Council", logo: ecCouncilLogo },
-      { name: "CompTIA", logo: comptiaLogo },
-      { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
-      { name: "AWS", logo: awsLogo },
-      { name: "Apple", logo: appleLogo },
-      { name: "Google", logo: googleLogo },
-    ],
-  },
-  {
-    title: "Foundation AI Models",
-    items: [
-      { name: "OpenAI", logo: openaiLogo },
-      { name: "Claude", logo: anthropicLogo },
-      { name: "Gemini", logo: geminiLogo },
-      { name: "Grok", logo: grokLogo },
-      { name: "DeepSeek", logo: deepseekLogo },
-      { name: "GLM", logo: glmLogo },
-      { name: "Doubao", logo: doubaoLogo },
-      { name: "Kimi", logo: kimiLogo },
-    ],
-  },
-  {
-    title: "AI Infrastructure & Routing",
-    items: [
-      { name: "Ollama", logo: ollamaLogo },
-      { name: "Groq", logo: groqLogo },
-      { name: "OpenRouter", logo: openrouterLogo },
-      { name: "Hugging Face", logo: huggingfaceLogo },
-      { name: "Perplexity", logo: perplexityLogo },
-      { name: "NotebookLM", logo: notebooklmLogo },
-    ],
-  },
-  {
-    title: "Automation & Agentic Workflows",
-    items: [
-      { name: "n8n", logo: n8nLogo },
-      { name: "Zapier AI", logo: zapierLogo },
-      { name: "Make", logo: makeLogo },
-      { name: "OpenClaw", logo: openclawLogo },
-    ],
-  },
-  {
-    title: "Coding & Developer Tools",
-    items: [
-      { name: "Cursor", logo: cursorLogo },
-      { name: "GitHub Copilot", logo: githubLogo },
-      { name: "MS Copilot", logo: copilotLogo },
-      { name: "Lovable", logo: lovableLogo },
-      { name: "Vercel AI", logo: vercelLogo },
-    ],
-  },
-  {
-    title: "Creative & Generative Media",
-    items: [
-      { name: "CapCut", logo: capcutLogo },
-      { name: "Veo 3", logo: veo3Logo },
-      { name: "Higgsfield", logo: higgsfieldLogo },
-      { name: "Seedance", logo: seedanceLogo },
-    ],
-  },
+const allLogos: Logo[] = [
+  // Industry Certifications
+  { name: "EC-Council", logo: ecCouncilLogo },
+  { name: "CompTIA", logo: comptiaLogo },
+  { name: "Microsoft", logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" },
+  { name: "AWS", logo: awsLogo },
+  { name: "Apple", logo: appleLogo },
+  { name: "Google", logo: googleLogo },
+  // Foundation AI Models
+  { name: "OpenAI", logo: openaiLogo },
+  { name: "Claude", logo: anthropicLogo },
+  { name: "Gemini", logo: geminiLogo },
+  { name: "Grok", logo: grokLogo },
+  { name: "DeepSeek", logo: deepseekLogo },
+  { name: "GLM", logo: glmLogo },
+  { name: "Doubao", logo: doubaoLogo },
+  { name: "Kimi", logo: kimiLogo },
+  // AI Infrastructure & Routing
+  { name: "Ollama", logo: ollamaLogo },
+  { name: "Groq", logo: groqLogo },
+  { name: "OpenRouter", logo: openrouterLogo },
+  { name: "Hugging Face", logo: huggingfaceLogo },
+  { name: "Perplexity", logo: perplexityLogo },
+  { name: "NotebookLM", logo: notebooklmLogo },
+  // Automation & Agentic Workflows
+  { name: "n8n", logo: n8nLogo },
+  { name: "Zapier AI", logo: zapierLogo },
+  { name: "Make", logo: makeLogo },
+  { name: "OpenClaw", logo: openclawLogo },
+  // Coding & Developer Tools
+  { name: "Cursor", logo: cursorLogo },
+  { name: "GitHub Copilot", logo: githubLogo },
+  { name: "MS Copilot", logo: copilotLogo },
+  { name: "Lovable", logo: lovableLogo },
+  { name: "Vercel AI", logo: vercelLogo },
+  // Creative & Generative Media
+  { name: "CapCut", logo: capcutLogo },
+  { name: "Veo 3", logo: veo3Logo },
+  { name: "Higgsfield", logo: higgsfieldLogo },
+  { name: "Seedance", logo: seedanceLogo },
 ];
 
 const CertifiedInstructorsSection = () => {
   const { t } = useTranslation();
+  // Duplicate the list so the marquee loops seamlessly
+  const loop = [...allLogos, ...allLogos];
 
   return (
-    <section className="bg-card border-t border-border py-10 md:py-14">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="bg-card border-t border-border py-10 md:py-14 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-xs font-semibold uppercase tracking-widest text-primary mb-8 md:mb-12"
+          className="text-center text-xs font-semibold uppercase tracking-widest text-primary mb-8 md:mb-10"
         >
           {t("certified.heading")}
         </motion.p>
 
-        <div className="space-y-8 md:space-y-10">
-          {groups.map((group, gi) => (
-            <motion.div
-              key={group.title}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: gi * 0.05 }}
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <span className="h-px flex-1 bg-border" />
-                <h3 className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground whitespace-nowrap">
-                  {group.title}
-                </h3>
-                <span className="h-px flex-1 bg-border" />
+        <div
+          className="relative group"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+          }}
+        >
+          <div
+            className="flex animate-marquee whitespace-nowrap"
+            style={{ animationDuration: "60s" }}
+          >
+            {loop.map((cert, idx) => (
+              <div
+                key={`${cert.name}-${idx}`}
+                title={cert.name}
+                className="flex items-center justify-center h-[56px] md:h-[72px] mx-6 md:mx-10 flex-shrink-0"
+              >
+                <img
+                  src={cert.logo}
+                  alt={cert.name}
+                  className="h-full w-auto max-w-[160px] md:max-w-[200px] object-contain"
+                  loading="lazy"
+                />
               </div>
-
-              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5 md:gap-x-12 md:gap-y-6">
-                {group.items.map((cert) => (
-                  <div
-                    key={cert.name}
-                    title={cert.name}
-                    className="group flex items-center justify-center h-[32px] md:h-[40px] grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
-                  >
-                    <img
-                      src={cert.logo}
-                      alt={cert.name}
-                      className="h-full w-auto max-w-[100px] md:max-w-[130px] object-contain group-hover:scale-105 transition-transform"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
