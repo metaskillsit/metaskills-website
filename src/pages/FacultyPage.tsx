@@ -108,7 +108,7 @@ Earlier in his career, Adrian served as a Director at AG Investment Management L
   {
     name: "Phan Phi Long",
     i18nKey: "phanPhiLong",
-    role: "Senior Consultant and Trainer, AI Leadership",
+    role: "CTO, Metaskills Institute",
     expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
     image: "/images/faculty/faculty-philong.png",
     bio: `Mr. Long Phan is the Managing Director of Way4SME Pte Ltd and VASSS Pte Ltd, where he serves as a trusted IT partner to over 1,000 SMEs across Singapore. With deep expertise in IT service management and enterprise transformation, he has played a pivotal role in helping SMEs and startups redesign their IT infrastructure, streamline operational processes, and achieve scalable, sustainable growth.
