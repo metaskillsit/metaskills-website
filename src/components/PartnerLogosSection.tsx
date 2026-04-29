@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import aisgLogo from "@/assets/logo-aisg.png";
 import smuAcademyLogo from "@/assets/logo-smu-academy.png";
 import integrumLogo from "@/assets/partner-integrum.png";
-import jcubeLogo from "@/assets/partner-jcube.jpg";
+import ntucLhubLogo from "@/assets/logo-ntuc-learning-hub.png";
 import svbbLogo from "@/assets/partner-svbb.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import iscaLogo from "@/assets/logo-isca.png";
@@ -18,7 +18,7 @@ const partnerLogos = [
   { name: "NUS AIDF", logo: nusAidfLogo },
   { name: "ISCA", logo: iscaLogo },
   { name: "Integrum Global", logo: integrumLogo },
-  { name: "JCube Institute", logo: jcubeLogo },
+  { name: "NTUC LearningHub", logo: ntucLhubLogo },
   { name: "Tinkercademy", logo: tinkercademyLogo },
   { name: "Singapore Vietnam Business Bridge", logo: svbbLogo },
   { name: "LX Copilot", logo: lxCopilotLogo },
@@ -44,12 +44,12 @@ const PartnerLogosSection = () => {
           {partnerLogos.map((partner) => (
             <div
               key={partner.name}
-              className="flex-shrink-0 flex items-center justify-center h-[44px] md:h-[60px]"
+              className="flex-shrink-0 flex items-center justify-center h-[64px] md:h-[88px]"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-full w-auto max-w-[100px] md:max-w-[140px] object-contain"
+                className="h-full w-auto max-w-[150px] md:max-w-[200px] object-contain"
                 loading="lazy"
               />
             </div>
