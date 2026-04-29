@@ -13,11 +13,11 @@ import lxCopilotLogo from "@/assets/partner-lxcopilot.png";
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 
 const partnerLogos = [
-  { name: "AISG", logo: aisgLogo },
+  { name: "Integrum Global", logo: integrumLogo },
   { name: "SMU Academy", logo: smuAcademyLogo },
   { name: "NUS AIDF", logo: nusAidfLogo },
   { name: "ISCA", logo: iscaLogo },
-  { name: "Integrum Global", logo: integrumLogo },
+  { name: "AISG", logo: aisgLogo },
   { name: "NTUC LearningHub", logo: ntucLhubLogo },
   { name: "Tinkercademy", logo: tinkercademyLogo },
   { name: "Singapore Vietnam Business Bridge", logo: svbbLogo },
