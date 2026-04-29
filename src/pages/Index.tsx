@@ -12,6 +12,7 @@ import AdmissionsSection from "@/components/AdmissionsSection";
 import FooterSection from "@/components/FooterSection";
 import CertifiedInstructorsSection from "@/components/CertifiedInstructorsSection";
 import PartnerLogosSection from "@/components/PartnerLogosSection";
+import CurrentTrainingTicker from "@/components/CurrentTrainingTicker";
 
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
       <Navbar />
       <main className="pt-20 md:pt-[90px]">
         <HeroSection />
+        <CurrentTrainingTicker />
         <PartnerLogosSection />
         <CertifiedInstructorsSection />
         <MissionSection />
