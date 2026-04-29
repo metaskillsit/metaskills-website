@@ -12,6 +12,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-jinghao.png",
   },
   {
+    name: "Phan Phi Long",
+    role: "CTO, Metaskills Institute",
+    expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
+    image: "/images/faculty/faculty-philong.png",
+  },
+  {
     name: "Dr Jack Hong",
     role: "Lead Consultant",
     expertise: "Data Science | AI | Machine Learning | Deep Learning",
@@ -40,12 +46,6 @@ const allFaculty = [
     role: "AI Senior Consultant",
     expertise: "AI in Finance | Investment Advisory | FX & Structured Products | Algorithmic Trading",
     image: "/images/faculty/faculty-adriantoh.jpg",
-  },
-  {
-    name: "Phan Phi Long",
-    role: "CTO, Metaskills Institute",
-    expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
-    image: "/images/faculty/faculty-philong.png",
   },
   {
     name: "Jack Tee",
