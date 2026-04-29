@@ -10,7 +10,7 @@ const SPEED_PRESETS = [
 
 const CurrentTrainingTicker = () => {
   const { t } = useTranslation();
-  const [speedIdx, setSpeedIdx] = useState(1);
+  const [speedIdx, setSpeedIdx] = useState(2);
   const [paused, setPaused] = useState(false);
 
   const engagements = [
