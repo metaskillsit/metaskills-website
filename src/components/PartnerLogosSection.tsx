@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import aisgLogo from "@/assets/logo-aisg.png";
 import smuAcademyLogo from "@/assets/logo-smu-academy.png";
 import integrumLogo from "@/assets/partner-integrum.png";
-import ntucLhubLogo from "@/assets/logo-ntuc-learning-hub.png";
+import ntucLhubLogo from "@/assets/logo-ntuc-learning-hub.jpg";
 import svbbLogo from "@/assets/partner-svbb.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import iscaLogo from "@/assets/logo-isca.png";
