@@ -118,17 +118,6 @@ At Metaskills Institute, Adrian focuses on applying generative and agentic AI to
 Earlier in his career, Adrian served as a Director at AG Investment Management LLP, where he contributed to algorithmic trading system design, compliance, operations, and business development, and developed a 12-module foreign exchange trading model that achieved more than 23% per annum returns with drawdown below 8% over the period October 2009 to June 2010. This rare combination of frontline wealth advisory experience and quantitative trading system design positions Adrian to train and advise professionals at the intersection of financial markets, client advisory, and AI-augmented investment workflows — helping institutions move beyond pilots into measurable, governed AI deployment in finance.`,
   },
   {
-    name: "Phan Phi Long",
-    i18nKey: "phanPhiLong",
-    role: "CTO, Metaskills Institute",
-    expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
-    image: "/images/faculty/faculty-philong.png",
-    bio: `Mr. Long Phan is the Managing Director of Way4SME Pte Ltd and VASSS Pte Ltd, where he serves as a trusted IT partner to over 1,000 SMEs across Singapore. With deep expertise in IT service management and enterprise transformation, he has played a pivotal role in helping SMEs and startups redesign their IT infrastructure, streamline operational processes, and achieve scalable, sustainable growth.
-An accomplished professional holding certifications such as PMP, ITIL Expert, and CEH, Mr. Phan brings extensive experience in process engineering, operations management, and cybersecurity. In recent years, he has also developed strong practical capabilities across Generative AI and agentic technology stacks, enabling organisations to adopt AI-driven automation, intelligent workflows, and next-generation digital solutions. His work has empowered companies to enhance system stability, improve operational efficiency, and build future-ready, AI-enabled capabilities.
-Beyond his corporate leadership, Mr. Phan is actively engaged in the regional business community. He serves as President of the Vietnamese Association in Singapore, Vice-President of the Vietnam Chamber of Commerce in Singapore, and Director of Regulus Investment and Capital Holdings. Through these roles, he has supported more than 100 Vietnamese SMEs and startups in expanding into Singapore and leveraging it as a gateway to global markets.
-Mr. Phan holds a degree in Computer Engineering from Nanyang Technological University. He also studied at the Ho Chi Minh University of Banking, specialising in stock exchange and financial markets. With over 15 years of trading experience across equities, futures, options, and cryptocurrencies in Vietnam, Singapore, and the United States, he brings a practitioner's perspective to financial markets. His grounded, practical insights have helped many traders navigate real-world challenges across asset classes.`,
-  },
-  {
     name: "Dr Jonathan Khoo",
     i18nKey: "drJonathanKhoo",
     role: "AI Senior Consultant and Trainer",
