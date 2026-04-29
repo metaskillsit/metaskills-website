@@ -43,7 +43,7 @@ const allFaculty = [
   },
   {
     name: "Phan Phi Long",
-    role: "Senior Consultant and Trainer",
+    role: "CTO, Metaskills Institute",
     expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
     image: "/images/faculty/faculty-philong.png",
   },
