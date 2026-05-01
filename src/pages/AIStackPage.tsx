@@ -308,10 +308,17 @@ const AIStackPage = () => {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-xl font-bold text-[#C9A84C]">{course.price}</span>
-                    <span className="text-xs text-gray-400">per pax</span>
-                  </div>
+                  {course.vendor === "OpenClaw" && (
+                    <div className="mb-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl font-bold text-[#C9A84C]">S$588</span>
+                        <span className="text-xs text-gray-400">per pax</span>
+                      </div>
+                      <p className="text-xs text-[#C9A84C] mt-1 font-medium">
+                        Includes complimentary OpenClaw installation
+                      </p>
+                    </div>
+                  )}
 
                   <div className="mt-auto">
                     <a
