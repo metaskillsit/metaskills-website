@@ -39,7 +39,7 @@ What distinguishes Jinghao is his ability to operate simultaneously as scholar, 
     i18nKey: "phanPhiLong",
     role: "CTO, Metaskills Institute",
     expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
-    image: "/images/faculty/faculty-philong.png",
+    image: "/images/faculty/faculty-philong.jpg",
     bio: `As Chief Technology Officer of Metaskills Institute, Mr. Long Phan leads the Institute's technology strategy, AI engineering backbone, and digital learning infrastructure, ensuring its training platforms, agentic AI systems, and enterprise solutions remain at the forefront of innovation.
 Mr. Long Phan is the Managing Director of Way4SME Pte Ltd and VASSS Pte Ltd, where he serves as a trusted IT partner to over 1,000 SMEs across Singapore. With deep expertise in IT service management and enterprise transformation, he has played a pivotal role in helping SMEs and startups redesign their IT infrastructure, streamline operational processes, and achieve scalable, sustainable growth.
 An accomplished professional holding certifications such as PMP, ITIL Expert, and CEH, Mr. Phan brings extensive experience in process engineering, operations management, and cybersecurity. In recent years, he has also developed strong practical capabilities across Generative AI and agentic technology stacks, enabling organisations to adopt AI-driven automation, intelligent workflows, and next-generation digital solutions. His work has empowered companies to enhance system stability, improve operational efficiency, and build future-ready, AI-enabled capabilities.
