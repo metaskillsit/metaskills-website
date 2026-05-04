@@ -159,6 +159,7 @@ const Navbar = () => {
       label: t("nav.msiLiveLabs"),
       items: [
         { label: t("nav.agenticAIGovernance"), href: "/agentic-ai-governance" },
+        { label: "Live Video Studio", href: "/ai-video-studio" },
       ],
     },
   ];
@@ -278,6 +279,17 @@ const Navbar = () => {
                     }`}
                   >
                     {t("nav.agenticAIGovernance")}
+                  </Link>
+                  <Link
+                    to="/ai-video-studio"
+                    onClick={() => setLabsOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/ai-video-studio"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    Live Video Studio
                   </Link>
                 </div>
               )}
