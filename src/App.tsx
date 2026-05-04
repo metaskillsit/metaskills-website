@@ -17,6 +17,7 @@ import AdmissionsPage from "./pages/AdmissionsPage.tsx";
 import ClientsPage from "./pages/ClientsPage.tsx";
 import AgenticAIPage from "./pages/AgenticAIPage.tsx";
 import AIStackPage from "./pages/AIStackPage.tsx";
+import AIVideoStudioPage from "./pages/AIVideoStudioPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
@@ -42,6 +43,7 @@ const AppContent = () => {
         <Route path="/course/:slug" element={<CoursePage />} />
         <Route path="/agentic-ai-governance" element={<AgenticAIPage />} />
         <Route path="/ai-stack-masterclasses" element={<AIStackPage />} />
+        <Route path="/ai-video-studio" element={<AIVideoStudioPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
