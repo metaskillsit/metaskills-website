@@ -7,14 +7,8 @@ const AIVideoStudioPage = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Slide-down navbar overlay */}
-      <div
-        className={`fixed top-0 left-0 right-0 z-40 transition-transform duration-300 ${
-          navVisible ? "translate-y-0 pointer-events-auto" : "-translate-y-full pointer-events-none"
-        }`}
-      >
-        <Navbar />
-      </div>
+      {/* Navbar (mounted only when visible so its internal fixed positioning doesn't block the iframe) */}
+      {navVisible && <Navbar />}
 
       {/* Floating toggle tab */}
       <button
