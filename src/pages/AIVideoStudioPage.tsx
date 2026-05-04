@@ -38,9 +38,9 @@ const AIVideoStudioPage = () => {
         onClick={() => setNavVisible((v) => !v)}
         aria-label={navVisible ? "Hide navigation" : "Show navigation"}
         style={{ top: navVisible ? "92px" : "0px" }}
-        className="fixed left-1/2 -translate-x-1/2 z-[100] flex items-center justify-center w-12 h-7 rounded-b-xl bg-primary text-primary-foreground shadow-lg hover:brightness-110 transition-all"
+        className="fixed left-1/2 -translate-x-1/2 z-[100] flex items-center justify-center w-8 h-4 rounded-b-md bg-primary text-primary-foreground shadow-md hover:brightness-110 transition-all"
       >
-        {navVisible ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+        {navVisible ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
       </button>
 
       <main>
