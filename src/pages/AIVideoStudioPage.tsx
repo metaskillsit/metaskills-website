@@ -1,14 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import logo from "@/assets/metaskills-logo.png";
+
+const STORAGE_KEY = "ai-video-studio:nav-visible";
 
 const AIVideoStudioPage = () => {
-  const [navVisible, setNavVisible] = useState(false);
+  const [navVisible, setNavVisible] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    return window.localStorage.getItem(STORAGE_KEY) === "true";
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem(STORAGE_KEY, String(navVisible));
+  }, [navVisible]);
+
+  // Preload the logo so it appears instantly when the header opens
+  useEffect(() => {
+    const img = new Image();
+    img.src = logo;
+  }, []);
 
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Navbar (mounted only when visible so its internal fixed positioning doesn't block the iframe) */}
-      {navVisible && <Navbar />}
+      {/* Navbar always mounted (so logo stays cached); hidden via transform on its inner <nav> */}
+      <div
+        className={`transition-transform duration-300 [&>nav]:transition-transform [&>nav]:duration-300 ${
+          navVisible ? "" : "[&>nav]:-translate-y-full"
+        }`}
+      >
+        <Navbar />
+      </div>
 
       {/* Floating toggle tab */}
       <button
