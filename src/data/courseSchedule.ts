@@ -203,6 +203,9 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
     { intake: "IMDA Run 18", dates: "Completed", status: "full", client: "IMDA" },
     { intake: "Upcoming Run", dates: "Contact admissions@metaskills.sg", status: "upcoming" },
   ],
+  "aws-cloud-solutions-architecture-devops": [
+    { intake: "Jul 2026 Intake", dates: "13–28 Jul 2026", status: "filling" },
+  ],
 };
 
 export const getCourseSchedule = (slug: string): CourseRunDate[] =>
