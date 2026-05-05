@@ -204,7 +204,7 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
     { intake: "Upcoming Run", dates: "Contact admissions@metaskills.sg", status: "upcoming" },
   ],
   "aws-cloud-solutions-architecture-devops": [
-    { intake: "Jul 2026 Intake", dates: "13–28 Jul 2026", status: "filling" },
+    { intake: "Jul 2026 Intake", dates: "13–28 Jul 2026 (Weekdays only, no weekend classes)", status: "filling" },
   ],
 };
 
