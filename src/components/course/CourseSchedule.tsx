@@ -13,10 +13,10 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
   if (!schedule.length) return null;
 
   const pastRuns = schedule.filter((r) => r.status === "full");
-
-  // Hide entire section for new courses with 0 completed runs
-  if (pastRuns.length === 0) return null;
   const upcomingRuns = schedule.filter((r) => r.status === "upcoming" || r.status === "filling");
+
+  // Hide entire section only if there's nothing to show
+  if (pastRuns.length === 0 && upcomingRuns.length === 0) return null;
   const clientRuns = pastRuns.filter((r) => r.client);
   const uniqueClients = [...new Set(clientRuns.map((r) => r.client))];
   const hasCompletedRuns = pastRuns.length > 0;
@@ -31,15 +31,17 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
           className="mb-10"
         >
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-8">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <TrendingUp className="w-6 h-6 text-primary" />
+            {hasCompletedRuns && (
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-foreground">{pastRuns.length}</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("coursePage.runsCompleted")}</div>
+                </div>
               </div>
-              <div>
-                <div className="text-2xl md:text-3xl font-bold text-foreground">{pastRuns.length}</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("coursePage.runsCompleted")}</div>
-              </div>
-            </div>
+            )}
             {uniqueClients.length > 0 && (
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
