@@ -3,17 +3,8 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import logo from "@/assets/metaskills-logo.png";
 
-const STORAGE_KEY = "ai-video-studio:nav-visible";
-
 const AIVideoStudioPage = () => {
-  const [navVisible, setNavVisible] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false;
-    return window.localStorage.getItem(STORAGE_KEY) === "true";
-  });
-
-  useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, String(navVisible));
-  }, [navVisible]);
+  const [navVisible, setNavVisible] = useState(false);
 
   // Preload the logo so it appears instantly when the header opens
   useEffect(() => {
