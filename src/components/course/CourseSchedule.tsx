@@ -15,8 +15,8 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
   const pastRuns = schedule.filter((r) => r.status === "full");
   const upcomingRuns = schedule.filter((r) => r.status === "upcoming" || r.status === "filling");
 
-  // Hide entire section only if there's nothing to show
-  if (pastRuns.length === 0 && upcomingRuns.length === 0) return null;
+  // Upcoming runs are no longer rendered; hide section if no past runs
+  if (pastRuns.length === 0) return null;
   const clientRuns = pastRuns.filter((r) => r.client);
   const uniqueClients = [...new Set(clientRuns.map((r) => r.client))];
   const hasCompletedRuns = pastRuns.length > 0;
