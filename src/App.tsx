@@ -45,6 +45,7 @@ const AppContent = () => {
         <Route path="/agentic-ai-governance" element={<AgenticAIPage />} />
         <Route path="/ai-stack-masterclasses" element={<AIStackPage />} />
         <Route path="/ai-video-studio" element={<AIVideoStudioPage />} />
+        <Route path="/llm-playground" element={<LLMPlaygroundPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
