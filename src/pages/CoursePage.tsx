@@ -62,6 +62,8 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
       <main className="pt-20 md:pt-[90px]">
         <CourseHero course={course} categoryImages={categoryImages} isNew={isNew} />
 
+        <CoursePastClients slug={course.slug} />
+
         <section className="border-b border-border bg-muted">
           <div className="max-w-[1140px] mx-auto px-6 py-4 flex flex-wrap gap-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -80,7 +82,6 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
         </section>
 
         <CourseSchedule schedule={courseSchedule} courseTitle={ct.title} />
-        <CoursePastClients slug={course.slug} />
 
         <div className="max-w-[1140px] mx-auto px-6 py-14">
           <div className="grid lg:grid-cols-3 gap-14">
