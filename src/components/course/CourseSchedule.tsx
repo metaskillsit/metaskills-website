@@ -53,7 +53,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                 </div>
               </div>
             )}
-            {hasCompletedRuns ? (
+            {hasCompletedRuns && (
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Flame className="w-6 h-6 text-primary" />
@@ -61,16 +61,6 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-foreground">100%</div>
                   <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("coursePage.fullySubscribed")}</div>
-                </div>
-              </div>
-            ) : (
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Flame className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-foreground">{t("coursePage.newCourse.badge")}</div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("coursePage.firstCohortsOpen")}</div>
                 </div>
               </div>
             )}
