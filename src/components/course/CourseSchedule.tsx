@@ -68,45 +68,7 @@ const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
 
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {upcomingRuns.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4 flex items-center gap-2">
-                <Clock className="w-4 h-4 text-accent" />
-                {t("coursePage.upcomingRuns")}
-              </h3>
-              <div className="space-y-3">
-                {upcomingRuns.map((run, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between p-4 bg-card border-2 border-primary/20 rounded-xl hover:border-primary/40 transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <Calendar className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-foreground">{run.intake}</p>
-                        <p className="text-xs text-muted-foreground">{run.dates}</p>
-                      </div>
-                    </div>
-                    <span className={`inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full ${run.status === "filling" ? "bg-accent/10 text-accent border border-accent/20" : "bg-primary/10 text-primary border border-primary/20"}`}>
-                      {run.status === "filling" ? (
-                        <><Flame className="w-3 h-3" />{t("coursePage.fillingFast")}</>
-                      ) : (
-                        t("coursePage.upcomingLabel", { defaultValue: "Upcoming" })
-                      )}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
+        <div className="grid md:grid-cols-1 gap-8">
           {pastRuns.length > 0 && (
             <motion.div
               initial={{ opacity: 0, x: 20 }}
