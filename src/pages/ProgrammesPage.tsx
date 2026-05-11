@@ -23,6 +23,16 @@ const ProgrammesPage = () => {
 
   const programCategories = [
     {
+      title: t("programmes.dataTitle"),
+      description: t("programmes.dataDesc"),
+      image: datasciImg,
+      courses: [
+        { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
+        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
+        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
+      ],
+    },
+    {
       title: t("programmes.vibeCodingTitle"),
       description: t("programmes.vibeCodingDesc"),
       image: vibeCodingImg,
@@ -68,16 +78,6 @@ const ProgrammesPage = () => {
       ],
     },
     {
-      title: t("programmes.dataTitle"),
-      description: t("programmes.dataDesc"),
-      image: datasciImg,
-      courses: [
-        { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
-        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
-        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
-      ],
-    },
-    {
       title: t("programmes.fintechTitle"),
       description: t("programmes.fintechDesc"),
       image: fintechImg,
@@ -95,18 +95,11 @@ const ProgrammesPage = () => {
       ],
     },
     {
-      title: t("programmes.cyberTitle"),
-      description: t("programmes.cyberDesc"),
-      image: cyberDefenceImg,
-      courses: [
-        { name: ct("cyberRolesThreats"), slug: "cybersecurity-roles-threats-pathways" },
-      ],
-    },
-    {
       title: t("programmes.mccTitle"),
       description: t("programmes.mccDesc"),
       image: cyberCertImg,
       courses: [
+        { name: ct("cyberRolesThreats"), slug: "cybersecurity-roles-threats-pathways" },
         { name: ct("mccFoundation"), slug: "mcc-plus-cyber-defence-foundation" },
         { name: ct("mccSecurityOps"), slug: "mcc-plus-security-operations" },
         { name: ct("mccThreatHunting"), slug: "mcc-plus-threat-hunting-blue-team" },
