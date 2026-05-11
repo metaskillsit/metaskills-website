@@ -18,6 +18,7 @@ import ClientsPage from "./pages/ClientsPage.tsx";
 import AgenticAIPage from "./pages/AgenticAIPage.tsx";
 import AIStackPage from "./pages/AIStackPage.tsx";
 import AIVideoStudioPage from "./pages/AIVideoStudioPage.tsx";
+import LLMPlaygroundPage from "./pages/LLMPlaygroundPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
