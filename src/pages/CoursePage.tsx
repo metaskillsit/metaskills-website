@@ -16,6 +16,7 @@ import CourseRelated from "@/components/course/CourseRelated";
 import CourseGallery from "@/components/course/CourseGallery";
 import CoursePastRuns from "@/components/course/CoursePastRuns";
 import CourseSchedule from "@/components/course/CourseSchedule";
+import CoursePastClients from "@/components/course/CoursePastClients";
 
 
 const CoursePageContent = ({ slug }: { slug: string }) => {
@@ -79,6 +80,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
         </section>
 
         <CourseSchedule schedule={courseSchedule} courseTitle={ct.title} />
+        <CoursePastClients slug={course.slug} />
 
         <div className="max-w-[1140px] mx-auto px-6 py-14">
           <div className="grid lg:grid-cols-3 gap-14">
