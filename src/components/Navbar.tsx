@@ -159,7 +159,7 @@ const Navbar = () => {
       label: t("nav.msiLiveLabs"),
       items: [
         { label: t("nav.agenticAIGovernance"), href: "/agentic-ai-governance" },
-        { label: "Live Video Studio", href: "/ai-video-studio" },
+        { label: "AI Media Studio", href: "/ai-video-studio" },
         { label: "LLM Playground", href: "/llm-playground" },
       ],
     },
@@ -290,7 +290,7 @@ const Navbar = () => {
                         : "text-foreground/80 hover:bg-muted hover:text-primary"
                     }`}
                   >
-                    Live Video Studio
+                    AI Media Studio
                   </Link>
                   <Link
                     to="/llm-playground"
