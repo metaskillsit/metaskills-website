@@ -36,6 +36,16 @@ const ProgramsSection = () => {
 
   const programCategories = [
     {
+      title: t("programmes.dataTitle"),
+      description: t("programmes.dataDesc"),
+      images: [datasciImg, datasciImg2, datasciImg3],
+      courses: [
+        { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
+        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
+        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
+      ],
+    },
+    {
       title: t("programmes.vibeCodingTitle"),
       description: t("programmes.vibeCodingDesc"),
       images: [vibeCodingImg, vibeCodingImg2, vibeCodingImg3],
@@ -81,16 +91,6 @@ const ProgramsSection = () => {
       ],
     },
     {
-      title: t("programmes.dataTitle"),
-      description: t("programmes.dataDesc"),
-      images: [datasciImg, datasciImg2, datasciImg3],
-      courses: [
-        { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
-        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
-        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
-      ],
-    },
-    {
       title: t("programmes.fintechTitle"),
       description: t("programmes.fintechDesc"),
       images: [fintechImg, fintechImg2, fintechImg3],
@@ -108,18 +108,11 @@ const ProgramsSection = () => {
       ],
     },
     {
-      title: t("programmes.cyberTitle"),
-      description: t("programmes.cyberDesc"),
-      images: [cyberDefenceImg, cyberDefenceImg2, cyberDefenceImg3],
-      courses: [
-        { name: ct("cyberRolesThreats"), slug: "cybersecurity-roles-threats-pathways" },
-      ],
-    },
-    {
       title: t("programmes.mccTitle"),
       description: t("programmes.mccDesc"),
       images: [cyberCertImg, cyberCertImg2, cyberCertImg3],
       courses: [
+        { name: ct("cyberRolesThreats"), slug: "cybersecurity-roles-threats-pathways" },
         { name: ct("mccFoundation"), slug: "mcc-plus-cyber-defence-foundation" },
         { name: ct("mccSecurityOps"), slug: "mcc-plus-security-operations" },
         { name: ct("mccThreatHunting"), slug: "mcc-plus-threat-hunting-blue-team" },
