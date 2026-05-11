@@ -292,6 +292,17 @@ const Navbar = () => {
                   >
                     Live Video Studio
                   </Link>
+                  <Link
+                    to="/llm-playground"
+                    onClick={() => setLabsOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/llm-playground"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    LLM Playground
+                  </Link>
                 </div>
               )}
             </div>
