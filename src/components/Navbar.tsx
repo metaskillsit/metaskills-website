@@ -160,6 +160,7 @@ const Navbar = () => {
       items: [
         { label: t("nav.agenticAIGovernance"), href: "/agentic-ai-governance" },
         { label: "Live Video Studio", href: "/ai-video-studio" },
+        { label: "LLM Playground", href: "/llm-playground" },
       ],
     },
   ];
