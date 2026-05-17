@@ -33,36 +33,37 @@ import higgsfieldLogo from "@/assets/techlogos/higgsfield.png";
 import seedanceLogo from "@/assets/techlogos/seedance.png";
 import openclawLogo from "@/assets/techlogos/openclaw.png";
 
-const WHATSAPP_URL = "https://wa.me/6589483482?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.";
+const WHATSAPP_URL =
+  "https://wa.me/6589483482?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.";
 
 const vendorLogos: Record<string, string> = {
-  "OpenAI": openaiLogo,
-  "Anthropic": anthropicLogo,
-  "Google": geminiLogo,
-  "DeepSeek": deepseekLogo,
-  "xAI": grokLogo,
-  "Ollama": ollamaLogo,
-  "Groq": groqLogo,
-  "OpenRouter": openrouterLogo,
+  OpenAI: openaiLogo,
+  Anthropic: anthropicLogo,
+  Google: geminiLogo,
+  DeepSeek: deepseekLogo,
+  xAI: grokLogo,
+  Ollama: ollamaLogo,
+  Groq: groqLogo,
+  OpenRouter: openrouterLogo,
   "Zhipu AI": glmLogo,
-  "ByteDance": doubaoLogo,
+  ByteDance: doubaoLogo,
   "Moonshot AI": kimiLogo,
-  "n8n": n8nLogo,
-  "Zapier": zapierLogo,
-  "Make": makeLogo,
-  "Cursor": cursorLogo,
-  "GitHub": githubLogo,
-  "Microsoft": copilotLogo,
-  "Lovable": lovableLogo,
-  "Vercel": vercelLogo,
-  "Perplexity": perplexityLogo,
+  n8n: n8nLogo,
+  Zapier: zapierLogo,
+  Make: makeLogo,
+  Cursor: cursorLogo,
+  GitHub: githubLogo,
+  Microsoft: copilotLogo,
+  Lovable: lovableLogo,
+  Vercel: vercelLogo,
+  Perplexity: perplexityLogo,
   "Hugging Face": huggingfaceLogo,
-  "CapCut": capcutLogo,
-  "Higgsfield": higgsfieldLogo,
-  "Seedance": seedanceLogo,
-  "OpenClaw": openclawLogo,
-  "AWS": undefined as unknown as string,
-  "Apple": undefined as unknown as string,
+  CapCut: capcutLogo,
+  Higgsfield: higgsfieldLogo,
+  Seedance: seedanceLogo,
+  OpenClaw: openclawLogo,
+  AWS: undefined as unknown as string,
+  Apple: undefined as unknown as string,
 };
 
 // Special handling for courses with Google as vendor but different logos
@@ -100,49 +101,267 @@ const hotCourses = new Set([
 
 const courses: Course[] = [
   // 🔥 Hot — pinned to top
-  { title: "OpenClaw: Agentic AI / Personal AI Agent", vendor: "OpenClaw", price: "S$588", category: "automation", categoryLabel: "Automation", description: "Deploy a local, open-source AI agent that connects any LLM to your apps, files, browser, and messaging channels — and works for you around the clock." },
-  { title: "Lovable: Build Web Apps with AI, No Code Needed", vendor: "Lovable", price: "S$788", category: "coding", categoryLabel: "Coding", description: "Ship production-ready web applications using AI-powered development." },
+  {
+    title: "OpenClaw: Agentic AI / Personal AI Agent",
+    vendor: "OpenClaw",
+    price: "S$588",
+    category: "automation",
+    categoryLabel: "Automation",
+    description:
+      "Deploy a local, open-source AI agent that connects any LLM to your apps, files, browser, and messaging channels — and works for you around the clock.",
+  },
+  {
+    title: "Lovable: Build Web Apps with AI, No Code Needed",
+    vendor: "Lovable",
+    price: "S$788",
+    category: "coding",
+    categoryLabel: "Coding",
+    description: "Ship production-ready web applications using AI-powered development.",
+  },
 
   // LLM & Foundation Models
-  { title: "Mastering ChatGPT for Professional Productivity", vendor: "OpenAI", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Unlock advanced ChatGPT techniques for workplace efficiency and decision-making." },
-  { title: "Claude AI for Enterprise Writing & Analysis", vendor: "Anthropic", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Leverage Claude's analytical capabilities for enterprise-grade writing and research." },
-  { title: "Google Gemini: AI for the Google Workspace Professional", vendor: "Google", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Integrate Gemini AI across Google Workspace for enhanced productivity." },
-  { title: "DeepSeek AI: China's Open-Source LLM for Business", vendor: "DeepSeek", price: "S$588", category: "llm", categoryLabel: "LLM", description: "Explore DeepSeek's open-source capabilities for bilingual business applications." },
-  { title: "Grok AI: Real-Time Intelligence & Reasoning", vendor: "xAI", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Harness Grok's real-time data access and advanced reasoning for strategic insights." },
-  { title: "Run AI Locally: Private LLMs with Ollama", vendor: "Ollama", price: "S$888", category: "llm", categoryLabel: "LLM", description: "Deploy and run large language models locally for maximum privacy and control." },
-  { title: "Blazing-Fast AI Inference with Groq", vendor: "Groq", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Experience ultra-fast AI inference using Groq's LPU-powered architecture." },
-  { title: "OpenRouter: One API for All LLMs", vendor: "OpenRouter", price: "S$688", category: "llm", categoryLabel: "LLM", description: "Access and compare multiple LLMs through a single unified API gateway." },
-  { title: "GLM: China's Leading LLM for Bilingual AI Work", vendor: "Zhipu AI", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Master GLM for Chinese-English bilingual AI applications in enterprise settings." },
-  { title: "Doubao AI: ByteDance's LLM for Content & Business", vendor: "ByteDance", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Leverage ByteDance's Doubao for content generation and business intelligence." },
-  { title: "Kimi AI: Long-Context LLM for Research & Documents", vendor: "Moonshot AI", price: "S$488", category: "llm", categoryLabel: "LLM", description: "Process lengthy documents and research papers with Kimi's extended context window." },
+  {
+    title: "Mastering ChatGPT for Professional Productivity",
+    vendor: "OpenAI",
+    price: "S$688",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Unlock advanced ChatGPT techniques for workplace efficiency and decision-making.",
+  },
+  {
+    title: "Claude AI for Enterprise Writing & Analysis",
+    vendor: "Anthropic",
+    price: "S$688",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Leverage Claude's analytical capabilities for enterprise-grade writing and research.",
+  },
+  {
+    title: "Google Gemini: AI for the Google Workspace Professional",
+    vendor: "Google",
+    price: "S$688",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Integrate Gemini AI across Google Workspace for enhanced productivity.",
+  },
+  {
+    title: "DeepSeek AI: China's Open-Source LLM for Business",
+    vendor: "DeepSeek",
+    price: "S$588",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Explore DeepSeek's open-source capabilities for bilingual business applications.",
+  },
+  {
+    title: "Grok AI: Real-Time Intelligence & Reasoning",
+    vendor: "xAI",
+    price: "S$488",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Harness Grok's real-time data access and advanced reasoning for strategic insights.",
+  },
+  {
+    title: "Run AI Locally: Private LLMs with Ollama",
+    vendor: "Ollama",
+    price: "S$888",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Deploy and run large language models locally for maximum privacy and control.",
+  },
+  {
+    title: "Blazing-Fast AI Inference with Groq",
+    vendor: "Groq",
+    price: "S$688",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Experience ultra-fast AI inference using Groq's LPU-powered architecture.",
+  },
+  {
+    title: "OpenRouter: One API for All LLMs",
+    vendor: "OpenRouter",
+    price: "S$688",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Access and compare multiple LLMs through a single unified API gateway.",
+  },
+  {
+    title: "GLM: China's Leading LLM for Bilingual AI Work",
+    vendor: "Zhipu AI",
+    price: "S$488",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Master GLM for Chinese-English bilingual AI applications in enterprise settings.",
+  },
+  {
+    title: "Doubao AI: ByteDance's LLM for Content & Business",
+    vendor: "ByteDance",
+    price: "S$488",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Leverage ByteDance's Doubao for content generation and business intelligence.",
+  },
+  {
+    title: "Kimi AI: Long-Context LLM for Research & Documents",
+    vendor: "Moonshot AI",
+    price: "S$488",
+    category: "llm",
+    categoryLabel: "LLM",
+    description: "Process lengthy documents and research papers with Kimi's extended context window.",
+  },
 
   // AI Automation
-  { title: "Build AI Workflows with n8n: No-Code Automation", vendor: "n8n", price: "S$988", category: "automation", categoryLabel: "Automation", description: "Create powerful AI-driven automations without writing a single line of code." },
-  { title: "Zapier AI: Automate Your Entire Workflow in a Day", vendor: "Zapier", price: "S$788", category: "automation", categoryLabel: "Automation", description: "Connect and automate 6,000+ apps with Zapier's AI-enhanced workflow builder." },
-  { title: "Make.com: Visual AI Automation for Business Teams", vendor: "Make", price: "S$788", category: "automation", categoryLabel: "Automation", description: "Design complex multi-step automations with Make's visual drag-and-drop builder." },
+  {
+    title: "Build AI Workflows with n8n: No-Code Automation",
+    vendor: "n8n",
+    price: "S$988",
+    category: "automation",
+    categoryLabel: "Automation",
+    description: "Create powerful AI-driven automations without writing a single line of code.",
+  },
+  {
+    title: "Zapier AI: Automate Your Entire Workflow in a Day",
+    vendor: "Zapier",
+    price: "S$788",
+    category: "automation",
+    categoryLabel: "Automation",
+    description: "Connect and automate 6,000+ apps with Zapier's AI-enhanced workflow builder.",
+  },
+  {
+    title: "Make.com: Visual AI Automation for Business Teams",
+    vendor: "Make",
+    price: "S$788",
+    category: "automation",
+    categoryLabel: "Automation",
+    description: "Design complex multi-step automations with Make's visual drag-and-drop builder.",
+  },
 
   // AI Coding & Dev
-  { title: "Cursor AI: Code Smarter, Ship Faster", vendor: "Cursor", price: "S$988", category: "coding", categoryLabel: "Coding", description: "Accelerate software development with Cursor's AI-first code editor." },
-  { title: "GitHub Copilot: AI-Assisted Coding for Developers", vendor: "GitHub", price: "S$888", category: "coding", categoryLabel: "Coding", description: "Boost developer productivity with GitHub Copilot's contextual code suggestions." },
-  { title: "Microsoft Copilot: AI for the Modern Workplace", vendor: "Microsoft", price: "S$888", category: "coding", categoryLabel: "Coding", description: "Transform workplace productivity with Microsoft 365 Copilot integration." },
-  { title: "Vercel AI SDK: Deploy AI-Powered Web Apps", vendor: "Vercel", price: "S$988", category: "coding", categoryLabel: "Coding", description: "Build and deploy AI-enhanced web applications with Vercel's AI SDK." },
+  {
+    title: "Cursor AI: Code Smarter, Ship Faster",
+    vendor: "Cursor",
+    price: "S$988",
+    category: "coding",
+    categoryLabel: "Coding",
+    description: "Accelerate software development with Cursor's AI-first code editor.",
+  },
+  {
+    title: "GitHub Copilot: AI-Assisted Coding for Developers",
+    vendor: "GitHub",
+    price: "S$888",
+    category: "coding",
+    categoryLabel: "Coding",
+    description: "Boost developer productivity with GitHub Copilot's contextual code suggestions.",
+  },
+  {
+    title: "Microsoft Copilot: AI for the Modern Workplace",
+    vendor: "Microsoft",
+    price: "S$888",
+    category: "coding",
+    categoryLabel: "Coding",
+    description: "Transform workplace productivity with Microsoft 365 Copilot integration.",
+  },
+  {
+    title: "Vercel AI SDK: Deploy AI-Powered Web Apps",
+    vendor: "Vercel",
+    price: "S$988",
+    category: "coding",
+    categoryLabel: "Coding",
+    description: "Build and deploy AI-enhanced web applications with Vercel's AI SDK.",
+  },
 
   // AI Research
-  { title: "NotebookLM: AI Research Assistant for Knowledge Workers", vendor: "Google", price: "S$588", category: "research", categoryLabel: "Research", description: "Transform your research workflow with Google's AI-powered notebook assistant." },
-  { title: "Perplexity AI: AI-Powered Research for Professionals", vendor: "Perplexity", price: "S$588", category: "research", categoryLabel: "Research", description: "Conduct deep, cited research using Perplexity's conversational AI engine." },
-  { title: "Hugging Face: Explore, Fine-Tune & Deploy Open AI Models", vendor: "Hugging Face", price: "S$1,088", category: "research", categoryLabel: "Research", description: "Navigate the open-source AI ecosystem and deploy custom models." },
+  {
+    title: "NotebookLM: AI Research Assistant for Knowledge Workers",
+    vendor: "Google",
+    price: "S$588",
+    category: "research",
+    categoryLabel: "Research",
+    description: "Transform your research workflow with Google's AI-powered notebook assistant.",
+  },
+  {
+    title: "Perplexity AI: AI-Powered Research for Professionals",
+    vendor: "Perplexity",
+    price: "S$588",
+    category: "research",
+    categoryLabel: "Research",
+    description: "Conduct deep, cited research using Perplexity's conversational AI engine.",
+  },
+  {
+    title: "Hugging Face: Explore, Fine-Tune & Deploy Open AI Models",
+    vendor: "Hugging Face",
+    price: "S$1,088",
+    category: "research",
+    categoryLabel: "Research",
+    description: "Navigate the open-source AI ecosystem and deploy custom models.",
+  },
 
   // AI Video & Content
-  { title: "CapCut AI: Video Editing & Content Creation Masterclass", vendor: "CapCut", price: "S$488", category: "video", categoryLabel: "Video", description: "Create professional video content using CapCut's AI-powered editing tools." },
-  { title: "Veo 3: AI Video Generation for Creators & Marketers", vendor: "Google", price: "S$888", category: "video", categoryLabel: "Video", description: "Generate cinematic AI videos with Google's latest Veo 3 model." },
-  { title: "Higgsfield AI: Cinematic Video Generation Workshop", vendor: "Higgsfield", price: "S$688", category: "video", categoryLabel: "Video", description: "Produce high-quality cinematic videos using Higgsfield's AI generation platform." },
-  { title: "Seedance: AI Motion & Video Creation", vendor: "Seedance", price: "S$588", category: "video", categoryLabel: "Video", description: "Create dynamic motion graphics and videos with Seedance AI." },
+  {
+    title: "CapCut AI: Video Editing & Content Creation Masterclass",
+    vendor: "CapCut",
+    price: "S$488",
+    category: "video",
+    categoryLabel: "Video",
+    description: "Create professional video content using CapCut's AI-powered editing tools.",
+  },
+  {
+    title: "Veo 3: AI Video Generation for Creators & Marketers",
+    vendor: "Google",
+    price: "S$888",
+    category: "video",
+    categoryLabel: "Video",
+    description: "Generate cinematic AI videos with Google's latest Veo 3 model.",
+  },
+  {
+    title: "Higgsfield AI: Cinematic Video Generation Workshop",
+    vendor: "Higgsfield",
+    price: "S$688",
+    category: "video",
+    categoryLabel: "Video",
+    description: "Produce high-quality cinematic videos using Higgsfield's AI generation platform.",
+  },
+  {
+    title: "Seedance: AI Motion & Video Creation",
+    vendor: "Seedance",
+    price: "S$588",
+    category: "video",
+    categoryLabel: "Video",
+    description: "Create dynamic motion graphics and videos with Seedance AI.",
+  },
 
   // Cloud AI
-  { title: "AWS AI Services: Build & Deploy Machine Learning Solutions", vendor: "AWS", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Design and deploy ML solutions using Amazon's comprehensive AI service suite." },
-  { title: "Azure AI: Deploying AI Solutions on Microsoft Cloud", vendor: "Microsoft", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Build enterprise AI applications on Microsoft Azure's cloud platform." },
-  { title: "Google Cloud AI: Vertex AI & Generative AI on GCP", vendor: "Google", price: "S$1,088", category: "cloud", categoryLabel: "Cloud", description: "Leverage Vertex AI and generative AI capabilities on Google Cloud Platform." },
-  { title: "Apple AI: On-Device Intelligence for iOS Developers", vendor: "Apple", price: "S$788", category: "cloud", categoryLabel: "Cloud", description: "Integrate on-device AI and Apple Intelligence into iOS applications." },
+  {
+    title: "AWS AI Services: Build & Deploy Machine Learning Solutions",
+    vendor: "AWS",
+    price: "S$1,088",
+    category: "cloud",
+    categoryLabel: "Cloud",
+    description: "Design and deploy ML solutions using Amazon's comprehensive AI service suite.",
+  },
+  {
+    title: "Azure AI: Deploying AI Solutions on Microsoft Cloud",
+    vendor: "Microsoft",
+    price: "S$1,088",
+    category: "cloud",
+    categoryLabel: "Cloud",
+    description: "Build enterprise AI applications on Microsoft Azure's cloud platform.",
+  },
+  {
+    title: "Google Cloud AI: Vertex AI & Generative AI on GCP",
+    vendor: "Google",
+    price: "S$1,088",
+    category: "cloud",
+    categoryLabel: "Cloud",
+    description: "Leverage Vertex AI and generative AI capabilities on Google Cloud Platform.",
+  },
+  {
+    title: "Apple AI: On-Device Intelligence for iOS Developers",
+    vendor: "Apple",
+    price: "S$788",
+    category: "cloud",
+    categoryLabel: "Cloud",
+    description: "Integrate on-device AI and Apple Intelligence into iOS applications.",
+  },
 ];
 
 const bundles = [
@@ -208,16 +427,14 @@ const AIStackPage = () => {
       {/* HERO */}
       <section className="bg-[#0D1B2A] pt-28 md:pt-36 pb-16 md:pb-24 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            AI Stack Training
-          </h1>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">AI Stack Training</h1>
           <p className="text-lg md:text-xl font-medium text-[#C9A84C] mb-6">
             1-Day Intensive Courses — Learn Any AI Tool in a Single Day
           </p>
           <p className="text-sm md:text-base text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Metaskills Institute offers focused, hands-on 1-day workshops on every major AI tool and platform.
-            Each course is delivered by industry practitioners. Suitable for professionals, managers, and teams
-            looking to master specific AI stacks fast.
+            Metaskills Institute offers focused, hands-on 1-day workshops on every major AI tool and platform. Each
+            course is delivered by industry practitioners. Suitable for professionals, managers, and teams looking to
+            master specific AI stacks fast.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
@@ -292,12 +509,8 @@ const AIStackPage = () => {
                     )}
                   </div>
 
-                  <h3 className="text-base font-bold text-[#1A1A1A] mb-2 leading-snug">
-                    {course.title}
-                  </h3>
-                  <p className="text-[13px] text-gray-500 mb-4 flex-grow">
-                    {course.description}
-                  </p>
+                  <h3 className="text-base font-bold text-[#1A1A1A] mb-2 leading-snug">{course.title}</h3>
+                  <p className="text-[13px] text-gray-500 mb-4 flex-grow">{course.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className="text-xs bg-white border border-gray-200 rounded-full px-3 py-1 text-gray-600">
@@ -340,15 +553,10 @@ const AIStackPage = () => {
       {/* CORPORATE TRAINING */}
       <section className="bg-[#0D1B2A] py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Training Your Whole Team?
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Training Your Whole Team?</h2>
           <p className="text-gray-400 mb-4 max-w-2xl mx-auto">
-            We deliver any of these 1-day stack courses as private in-house workshops for your organisation.
-            Up to 20 participants per session. Fully customisable content and delivery format.
-          </p>
-          <p className="text-[#C9A84C] font-semibold text-lg mb-8">
-            From S$3,500 per day (group rate)
+            We deliver any of these 1-day stack courses as private in-house workshops for your organisation. Up to 20
+            participants per session. Fully customisable content and delivery format.
           </p>
           <a
             href={WHATSAPP_URL}
@@ -396,11 +604,10 @@ const AIStackPage = () => {
       {/* FOOTER CTA */}
       <section className="bg-[#0D1B2A] py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Not sure which course to start with?
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Not sure which course to start with?</h2>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-            Chat with our AI specialists on WhatsApp — we'll recommend the right stack course based on your role and goals.
+            Chat with our AI specialists on WhatsApp — we'll recommend the right stack course based on your role and
+            goals.
           </p>
           <a
             href={WHATSAPP_URL}
