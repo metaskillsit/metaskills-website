@@ -337,41 +337,6 @@ const AIStackPage = () => {
         </div>
       </section>
 
-      {/* BUNDLE DEALS */}
-      <section className="bg-white py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] text-center mb-3">
-            Stack Bundles — Save 15%
-          </h2>
-          <p className="text-gray-500 text-center mb-10">
-            Combine related courses and save on your upskilling investment.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {bundles.map((bundle, idx) => (
-              <div
-                key={idx}
-                className="bg-[#F4F4F2] rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow text-center"
-              >
-                <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">{bundle.name}</h3>
-                <p className="text-sm text-gray-500 mb-4">{bundle.tools}</p>
-                <div className="mb-6">
-                  <span className="text-sm text-gray-400 line-through mr-2">{bundle.original}</span>
-                  <span className="text-2xl font-bold text-[#C9A84C]">{bundle.bundle}</span>
-                </div>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block w-full px-6 py-3 bg-[#C9A84C] text-[#0D1B2A] font-semibold rounded-lg hover:bg-[#b8963f] transition-colors"
-                >
-                  Enquire About Bundle
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CORPORATE TRAINING */}
       <section className="bg-[#0D1B2A] py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
