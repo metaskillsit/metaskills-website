@@ -36,24 +36,6 @@ const ProgramsSection = () => {
 
   const programCategories = [
     {
-      title: t("programmes.dataTitle"),
-      description: t("programmes.dataDesc"),
-      images: [datasciImg, datasciImg2, datasciImg3],
-      courses: [
-        { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
-        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
-        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
-      ],
-    },
-    {
-      title: t("programmes.vibeCodingTitle"),
-      description: t("programmes.vibeCodingDesc"),
-      images: [vibeCodingImg, vibeCodingImg2, vibeCodingImg3],
-      courses: [
-        { name: ct("vibeCodingDigitalBuilders"), slug: "vibe-coding-for-digital-builders" },
-      ],
-    },
-    {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
       images: [aiLeadershipImg, aiLeadershipImg2, aiLeadershipImg3],
@@ -65,13 +47,14 @@ const ProgramsSection = () => {
       ],
     },
     {
-      title: t("programmes.agenticTitle"),
-      description: t("programmes.agenticDesc"),
+      title: t("programmes.agenticEngTitle"),
+      description: t("programmes.agenticEngDesc"),
       images: [agenticImg, agenticImg2, agenticImg3],
       courses: [
         { name: ct("agenticFoundations"), slug: "agentic-ai-foundations" },
         { name: ct("agenticUseCase"), slug: "agentic-ai-use-case" },
         { name: ct("agenticDeploy"), slug: "agentic-ai-deploy-secure-systems" },
+        { name: ct("secureAgenticInfra"), slug: "secure-agentic-ai-infrastructure" },
       ],
     },
     {
@@ -82,12 +65,57 @@ const ProgramsSection = () => {
         { name: ct("riseAiAgents"), slug: "rise-of-ai-agents-2026" },
         { name: ct("buildAiNoCode"), slug: "build-ai-workflows-no-code" },
         { name: ct("designAiPlainLang"), slug: "design-ai-automations-plain-language" },
-        { name: ct("buildOpTools"), slug: "build-operational-tools-ai-coding-agents" },
         { name: ct("buildAiAssistant"), slug: "build-your-own-ai-assistant" },
+      ],
+    },
+    {
+      title: t("programmes.vibeDevTitle"),
+      description: t("programmes.vibeDevDesc"),
+      images: [vibeCodingImg, vibeCodingImg2, vibeCodingImg3],
+      courses: [
+        { name: ct("vibeCodingDigitalBuilders"), slug: "vibe-coding-for-digital-builders" },
+        { name: ct("buildOpTools"), slug: "build-operational-tools-ai-coding-agents" },
         { name: ct("gptKnowledgeBase"), slug: "gpt-your-organisation-knowledge-base" },
-        { name: ct("secureAgenticInfra"), slug: "secure-agentic-ai-infrastructure" },
+      ],
+    },
+    {
+      title: t("programmes.aiEduTitle"),
+      description: t("programmes.aiEduDesc"),
+      images: [aiAutomationImg2, aiAutomationImg3, aiAutomationImg],
+      courses: [
         { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
         { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
+      ],
+    },
+    {
+      title: t("programmes.dataTitle"),
+      description: t("programmes.dataDesc"),
+      images: [datasciImg, datasciImg2, datasciImg3],
+      courses: [
+        { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
+        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
+        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
+      ],
+    },
+    {
+      title: t("programmes.mccFoundTitle"),
+      description: t("programmes.mccFoundDesc"),
+      images: [cyberCertImg, cyberCertImg2, cyberCertImg3],
+      courses: [
+        { name: ct("cyberRolesThreats"), slug: "cybersecurity-roles-threats-pathways" },
+        { name: ct("mccFoundation"), slug: "mcc-plus-cyber-defence-foundation" },
+        { name: ct("mccSecurityOps"), slug: "mcc-plus-security-operations" },
+        { name: ct("mccThreatHunting"), slug: "mcc-plus-threat-hunting-blue-team" },
+      ],
+    },
+    {
+      title: t("programmes.mccOffTitle"),
+      description: t("programmes.mccOffDesc"),
+      images: [cyberDefenceImg, cyberDefenceImg2, cyberDefenceImg3],
+      courses: [
+        { name: ct("mccOffensiveCyber"), slug: "mcc-plus-offensive-cyber-fundamentals" },
+        { name: ct("mccDigitalForensics"), slug: "mcc-plus-digital-forensics" },
+        { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
       ],
     },
     {
@@ -100,36 +128,16 @@ const ProgramsSection = () => {
       ],
     },
     {
-      title: t("programmes.cloudDevOpsTitle"),
-      description: t("programmes.cloudDevOpsDesc"),
-      images: [cloudDevOpsImg],
+      title: t("programmes.cloudAiStackTitle"),
+      description: t("programmes.cloudAiStackDesc"),
+      images: [cloudDevOpsImg, aiStackImg],
       courses: [
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
-      ],
-    },
-    {
-      title: t("programmes.mccTitle"),
-      description: t("programmes.mccDesc"),
-      images: [cyberCertImg, cyberCertImg2, cyberCertImg3],
-      courses: [
-        { name: ct("cyberRolesThreats"), slug: "cybersecurity-roles-threats-pathways" },
-        { name: ct("mccFoundation"), slug: "mcc-plus-cyber-defence-foundation" },
-        { name: ct("mccSecurityOps"), slug: "mcc-plus-security-operations" },
-        { name: ct("mccThreatHunting"), slug: "mcc-plus-threat-hunting-blue-team" },
-        { name: ct("mccOffensiveCyber"), slug: "mcc-plus-offensive-cyber-fundamentals" },
-        { name: ct("mccDigitalForensics"), slug: "mcc-plus-digital-forensics" },
-        { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
-      ],
-    },
-    {
-      title: t("programmes.aiStackTitle"),
-      description: t("programmes.aiStackDesc"),
-      images: [aiStackImg],
-      courses: [
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
       ],
     },
   ];
+
 
   return (
     <section id="courses" className="bg-background">
