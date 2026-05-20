@@ -29,12 +29,33 @@ import cyberCertImg2 from "@/assets/programmes-cybercert-2.jpg";
 import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
 import aiStackImg from "@/assets/programmes-aistack.jpg";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
+import aiEducationImg from "@/assets/programmes-aieducation.jpg";
+import aiEducationImg2 from "@/assets/programmes-aieducation-2.jpg";
+import aiEducationImg3 from "@/assets/programmes-aieducation-3.jpg";
 
 const ProgramsSection = () => {
   const { t } = useTranslation();
   const ct = (key: string) => t(`courses.${key}.title`);
 
   const programCategories = [
+    {
+      title: t("programmes.fintechTitle"),
+      description: t("programmes.fintechDesc"),
+      images: [fintechImg, fintechImg2, fintechImg3],
+      courses: [
+        { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
+        { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
+      ],
+    },
+    {
+      title: t("programmes.aiEduTitle"),
+      description: t("programmes.aiEduDesc"),
+      images: [aiEducationImg, aiEducationImg2, aiEducationImg3],
+      courses: [
+        { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
+        { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
+      ],
+    },
     {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
@@ -79,15 +100,6 @@ const ProgramsSection = () => {
       ],
     },
     {
-      title: t("programmes.aiEduTitle"),
-      description: t("programmes.aiEduDesc"),
-      images: [aiAutomationImg2, aiAutomationImg3, aiAutomationImg],
-      courses: [
-        { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
-        { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
-      ],
-    },
-    {
       title: t("programmes.dataTitle"),
       description: t("programmes.dataDesc"),
       images: [datasciImg, datasciImg2, datasciImg3],
@@ -116,15 +128,6 @@ const ProgramsSection = () => {
         { name: ct("mccOffensiveCyber"), slug: "mcc-plus-offensive-cyber-fundamentals" },
         { name: ct("mccDigitalForensics"), slug: "mcc-plus-digital-forensics" },
         { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
-      ],
-    },
-    {
-      title: t("programmes.fintechTitle"),
-      description: t("programmes.fintechDesc"),
-      images: [fintechImg, fintechImg2, fintechImg3],
-      courses: [
-        { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
-        { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
       ],
     },
     {
