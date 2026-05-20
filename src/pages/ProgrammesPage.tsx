@@ -15,6 +15,7 @@ import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
 import aiStackImg from "@/assets/programmes-aistack.jpg";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
+import aiEducationImg from "@/assets/programmes-aieducation.jpg";
 
 const ProgrammesPage = () => {
   const { t } = useTranslation();
@@ -22,6 +23,24 @@ const ProgrammesPage = () => {
   const ct = (key: string) => t(`courses.${key}.title`);
 
   const programCategories = [
+    {
+      title: t("programmes.fintechTitle"),
+      description: t("programmes.fintechDesc"),
+      image: fintechImg,
+      courses: [
+        { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
+        { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
+      ],
+    },
+    {
+      title: t("programmes.aiEduTitle"),
+      description: t("programmes.aiEduDesc"),
+      image: aiEducationImg,
+      courses: [
+        { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
+        { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
+      ],
+    },
     {
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
@@ -66,15 +85,6 @@ const ProgrammesPage = () => {
       ],
     },
     {
-      title: t("programmes.aiEduTitle"),
-      description: t("programmes.aiEduDesc"),
-      image: aiAutomationImg,
-      courses: [
-        { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
-        { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
-      ],
-    },
-    {
       title: t("programmes.dataTitle"),
       description: t("programmes.dataDesc"),
       image: datasciImg,
@@ -103,15 +113,6 @@ const ProgrammesPage = () => {
         { name: ct("mccOffensiveCyber"), slug: "mcc-plus-offensive-cyber-fundamentals" },
         { name: ct("mccDigitalForensics"), slug: "mcc-plus-digital-forensics" },
         { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
-      ],
-    },
-    {
-      title: t("programmes.fintechTitle"),
-      description: t("programmes.fintechDesc"),
-      image: fintechImg,
-      courses: [
-        { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
-        { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
       ],
     },
     {
