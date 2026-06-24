@@ -102,7 +102,12 @@ const courseImageMap: Record<string, string[]> = {
   "mcc-plus-digital-forensics": [courseCyber3, mccSecOps1, courseCyber1],
   "mcc-plus-ai-security-autonomous-defence": [secureInfra1, mccFoundation1, courseCyber2],
   "vibe-coding-for-digital-builders": [vibeCoding1, vibeCoding2, vibeCoding3],
+  // Winning Customers with AI for RM (3-part series) — reuse fintech imagery
+  "rm-client-engagement-strategies": [algoL1_1, algoL2_1, algoL1_2],
+  "rm-needs-analysis-portfolio-management": [algoL1_2, algoL2_2, algoL1_3],
+  "rm-client-experience-retention": [algoL1_3, algoL2_3, algoL2_1],
 };
+
 
 export const getCourseImages = (slug: string): string[] =>
   courseImageMap[slug] || [agenticFoundations1, agenticFoundations2, agenticFoundations3];
