@@ -148,7 +148,9 @@ const HeroSection = () => {
                 ref={videoRef}
                 src={HERO_VIDEO_SRC}
                 autoPlay
+                muted
                 playsInline
+                preload="auto"
                 onEnded={() => setPhase("photo2")}
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
