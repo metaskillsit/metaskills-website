@@ -48,10 +48,14 @@ const ProgrammesPage = () => {
         { name: ct("aiLiteracyFinance"), slug: "ai-literacy-for-finance-professionals" },
         { name: ct("aiFluencyFinance"), slug: "ai-fluency-for-finance-professionals" },
         { name: ct("aiStrategyGovernance"), slug: "ai-strategy-governance-ethical-leadership" },
+        { name: ct("rmEngagement"), slug: "rm-client-engagement-strategies" },
+        { name: ct("rmNeedsAnalysis"), slug: "rm-needs-analysis-portfolio-management" },
+        { name: ct("rmExperienceRetention"), slug: "rm-client-experience-retention" },
         { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
         { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
         { name: "The AI-Powered Investor Series", slug: "#", comingSoon: true },
       ],
+
     },
 
     {
