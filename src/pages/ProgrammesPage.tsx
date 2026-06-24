@@ -181,7 +181,7 @@ const ProgrammesPage = () => {
   const renderCourseLink = (course: Course, idx: number) => {
     const isAbsolute = course.isExternal && /^https?:\/\//.test(course.slug);
     const inner = (
-      <div className="group/link flex items-start gap-4 py-3 border-b border-border/70 last:border-b-0">
+      <div className="group/link flex items-start gap-3 py-2 border-b border-border/70 last:border-b-0">
         <span className="font-mono text-[10px] tracking-widest text-muted-foreground/70 pt-[5px] w-6 flex-shrink-0 group-hover/link:text-accent transition-colors">
           {String(idx + 1).padStart(2, "0")}
         </span>
