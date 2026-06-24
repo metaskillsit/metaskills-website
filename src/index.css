@@ -162,3 +162,62 @@
 .animate-scroll-right {
   animation: scroll-right 35s linear infinite;
 }
+
+/* ===== Programmes premium (Paper & Ink + Gold) ===== */
+:root {
+  --paper: #f5f3ee;
+  --paper-2: #ece8df;
+  --ink: #0d0d0d;
+  --ink-2: #1a1a1a;
+  --gold-prem: #c9a84c;
+  --gold-soft: #d9bf75;
+}
+.font-display { font-family: 'DM Serif Display', serif; font-weight: 400; letter-spacing: -0.01em; }
+.font-sans-prem { font-family: 'Fira Sans', sans-serif; }
+
+.prem-paper { background-color: var(--paper); color: var(--ink); }
+.prem-ink   { background-color: var(--ink);   color: var(--paper); }
+
+.prem-rule { display:inline-block; width:64px; height:1px; background: var(--gold-prem); }
+
+.prem-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+.prem-link::after {
+  content: '';
+  position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: currentColor;
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.prem-link:hover::after { transform: scaleX(1); }
+
+.prem-numeral {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(80px, 14vw, 220px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--gold-prem);
+  opacity: 0.95;
+}
+
+.prem-eyebrow {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.prem-trackbar {
+  background: rgba(245,243,238,0.92);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid rgba(13,13,13,0.08);
+}
+.prem-trackbar.ink {
+  background: rgba(13,13,13,0.92);
+  border-bottom-color: rgba(245,243,238,0.08);
+}
