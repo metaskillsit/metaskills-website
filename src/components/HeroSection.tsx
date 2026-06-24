@@ -9,9 +9,11 @@ const INTERVAL = 7000;
 const HeroSection = () => {
   const { t } = useTranslation();
   const [slide, setSlide] = useState<0 | 1>(0); // 0 = photo, 1 = video
+  const [hasCycled, setHasCycled] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => {
+      setHasCycled(true);
       setSlide((s) => (s === 0 ? 1 : 0));
     }, INTERVAL);
     return () => clearInterval(id);
@@ -34,24 +36,22 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
-      {/* Media area */}
+      {/* Always-mounted base photo — prevents flash and guarantees instant LCP */}
       <div className="relative aspect-[16/9] md:aspect-[1920/900]">
-        <AnimatePresence mode="sync">
-          {slide === 0 ? (
-            <motion.img
-              key="photo"
-              src={heroAsean}
-              alt="Professional AI training"
-              width={1920}
-              height={900}
-              loading="eager"
-              className="absolute inset-0 h-full w-full object-cover object-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
-            />
-          ) : (
+        <img
+          src={heroAsean}
+          alt="Professional AI training"
+          width={1920}
+          height={900}
+          loading="eager"
+          decoding="async"
+          // @ts-expect-error fetchpriority is a valid attribute
+          fetchpriority="high"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+
+        <AnimatePresence>
+          {hasCycled && slide === 1 && (
             <motion.div
               key="video"
               className="absolute inset-0 h-full w-full overflow-hidden pointer-events-none"
@@ -60,7 +60,6 @@ const HeroSection = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
             >
-              {/* Scale wrapper hides YouTube UI bleed and fills the frame */}
               <div className="absolute left-1/2 top-1/2 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2 md:h-[120%] md:w-[120%]">
                 <iframe
                   title="Hero background video"
@@ -69,11 +68,13 @@ const HeroSection = () => {
                   allowFullScreen={false}
                   frameBorder={0}
                   className="h-full w-full"
+                  loading="lazy"
                 />
               </div>
             </motion.div>
           )}
         </AnimatePresence>
+
 
         {/* Desktop overlay — text on media */}
         <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent z-10" />
