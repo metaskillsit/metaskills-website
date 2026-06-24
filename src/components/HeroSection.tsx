@@ -129,7 +129,10 @@ const HeroSection = () => {
   return (
     <section className="relative w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
       {/* Always-mounted base photo — prevents flash and guarantees instant LCP */}
-      <div className="relative aspect-[16/9] md:aspect-[1920/900]">
+      <div
+        className="relative aspect-[16/9] md:aspect-[1920/900] bg-cover bg-center"
+        style={{ backgroundImage: `url(${HERO_LQIP})` }}
+      >
         <img
           src={heroAsean}
           alt="Professional AI training"
