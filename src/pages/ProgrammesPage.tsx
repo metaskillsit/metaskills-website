@@ -330,9 +330,10 @@ const ProgrammesPage = () => {
                     </p>
 
                     <ul className="border-t border-border">
-                      {cat.courses.map((course) => (
-                        <li key={course.slug}>{renderCourseLink(course)}</li>
+                      {cat.courses.map((course, ci) => (
+                        <li key={course.slug}>{renderCourseLink(course, ci)}</li>
                       ))}
+
                     </ul>
                   </div>
                 </div>
