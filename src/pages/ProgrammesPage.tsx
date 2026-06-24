@@ -238,29 +238,31 @@ const ProgrammesPage = () => {
         {/* STICKY TRACK BAR */}
         <div className="sticky top-[64px] md:top-[80px] z-30 bg-background/95 backdrop-blur-md border-b border-border">
           <div className="max-w-[1140px] mx-auto px-4 md:px-6">
-            <div className="flex gap-1 overflow-x-auto scrollbar-hide py-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-2 gap-y-1 py-2.5">
               {programCategories.map((cat, idx) => {
                 const active = activeId === cat.id;
                 return (
                   <button
                     key={cat.id}
                     onClick={() => handleJump(cat.id)}
-                    className={`group flex-shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-sm transition-colors ${
+                    title={cat.title}
+                    className={`group flex items-center gap-1.5 px-2.5 py-1.5 rounded-sm text-left transition-colors min-w-0 ${
                       active
                         ? "text-foreground bg-secondary/60"
                         : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
-                    <span className={`font-mono text-[10px] tracking-widest ${active ? "text-accent" : ""}`}>
+                    <span className={`font-mono text-[10px] tracking-widest flex-shrink-0 ${active ? "text-accent" : ""}`}>
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-xs md:text-[13px] whitespace-nowrap">
+                    <span className="text-xs md:text-[13px] leading-tight truncate">
                       {cat.title}
                     </span>
                   </button>
                 );
               })}
             </div>
+
           </div>
         </div>
 
