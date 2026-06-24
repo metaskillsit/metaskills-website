@@ -22,7 +22,9 @@ type Course = {
   slug: string;
   isExternal?: boolean;
   partnerNote?: string;
+  comingSoon?: boolean;
 };
+
 
 type Category = {
   id: string;
@@ -43,13 +45,15 @@ const ProgrammesPage = () => {
       description: t("programmes.fintechDesc"),
       image: fintechImg,
       courses: [
+        { name: ct("aiLiteracyFinance"), slug: "ai-literacy-for-finance-professionals" },
+        { name: ct("aiFluencyFinance"), slug: "ai-fluency-for-finance-professionals" },
+        { name: ct("aiStrategyGovernance"), slug: "ai-strategy-governance-ethical-leadership" },
         { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
         { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
-        { name: ct("aiLiteracyFinance"), slug: "ai-literacy-for-finance-professionals" },
-        { name: ct("aiStrategyGovernance"), slug: "ai-strategy-governance-ethical-leadership" },
-        { name: ct("aiFluencyFinance"), slug: "ai-fluency-for-finance-professionals" },
+        { name: "The AI-Powered Investor Series", slug: "#", comingSoon: true },
       ],
     },
+
     {
       id: "ai-education",
       title: t("programmes.aiEduTitle"),
@@ -180,14 +184,26 @@ const ProgrammesPage = () => {
 
   const renderCourseLink = (course: Course, idx: number) => {
     const isAbsolute = course.isExternal && /^https?:\/\//.test(course.slug);
+    const isComing = course.comingSoon;
     const inner = (
       <div className="group/link flex items-start gap-3 py-2 border-b border-border/70 last:border-b-0">
-        <span className="font-mono text-[10px] tracking-widest text-accent pt-[5px] w-6 flex-shrink-0 transition-colors">
+        <span className={`font-mono text-[10px] tracking-widest pt-[5px] w-6 flex-shrink-0 transition-colors ${isComing ? "text-muted-foreground/60" : "text-accent"}`}>
           {String(idx + 1).padStart(2, "0")}
         </span>
         <div className="flex-1 min-w-0">
-          <span className="block text-[15px] md:text-base font-medium leading-snug text-foreground/85 underline decoration-accent/30 decoration-1 underline-offset-[6px] group-hover/link:text-accent group-hover/link:decoration-accent transition-colors">
+          <span
+            className={
+              isComing
+                ? "block text-[15px] md:text-base font-medium leading-snug text-muted-foreground"
+                : "block text-[15px] md:text-base font-medium leading-snug text-foreground/85 underline decoration-accent/30 decoration-1 underline-offset-[6px] group-hover/link:text-accent group-hover/link:decoration-accent transition-colors"
+            }
+          >
             {course.name}
+            {isComing && (
+              <span className="ml-2 align-middle inline-block font-mono text-[9px] tracking-widest uppercase text-accent border border-accent/40 rounded-sm px-1.5 py-[1px]">
+                Upcoming
+              </span>
+            )}
           </span>
           {course.partnerNote && (
             <span className="block text-xs mt-0.5 text-muted-foreground">
@@ -195,12 +211,16 @@ const ProgrammesPage = () => {
             </span>
           )}
         </div>
-        <span className="shrink-0 mt-1 text-accent transition-all duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-0.5">
-          {isAbsolute ? <ExternalLink className="w-4 h-4" /> : <ArrowUpRight className="w-4 h-4" />}
-        </span>
-
+        {!isComing && (
+          <span className="shrink-0 mt-1 text-accent transition-all duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-0.5">
+            {isAbsolute ? <ExternalLink className="w-4 h-4" /> : <ArrowUpRight className="w-4 h-4" />}
+          </span>
+        )}
       </div>
     );
+    if (isComing) {
+      return <div className="block cursor-default">{inner}</div>;
+    }
     if (isAbsolute) {
       return (
         <a href={course.slug} target="_blank" rel="noopener noreferrer" className="block">
@@ -214,6 +234,7 @@ const ProgrammesPage = () => {
       </Link>
     );
   };
+
 
 
   return (
