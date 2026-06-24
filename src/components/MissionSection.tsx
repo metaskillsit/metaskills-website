@@ -32,13 +32,28 @@ const MissionSection = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed font-body">
-            {t("mission.statement")}{" "}
-            {t("mission.highlight1")}{" "}
-            {t("mission.and")}{t("mission.and") ? " " : ""}
-            {t("mission.highlight2")}{" "}
-            {t("mission.tail")}
-          </p>
+          {(() => {
+            const full = `${t("mission.statement")} ${t("mission.highlight1")} ${t("mission.and") ? t("mission.and") + " " : ""}${t("mission.highlight2")} ${t("mission.tail")}`;
+            const highlights = [
+              "eight years of specialised training and consulting",
+              "over 10,000 professionals trained",
+              "tackles the AI challenges of tomorrow",
+              "Drive frontier‑level digital transformation",
+            ];
+            const pattern = new RegExp(`(${highlights.map(h => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
+            const parts = full.split(pattern);
+            return (
+              <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed font-body">
+                {parts.map((part, i) =>
+                  highlights.includes(part) ? (
+                    <span key={i} className="text-primary font-semibold">{part}</span>
+                  ) : (
+                    <span key={i}>{part}</span>
+                  )
+                )}
+              </p>
+            );
+          })()}
         </motion.div>
       </div>
 
