@@ -153,7 +153,7 @@ const HeroSection = () => {
               alt="AI training in action"
               width={1920}
               height={900}
-              loading="lazy"
+              loading="eager"
               decoding="async"
               className="absolute inset-0 h-full w-full object-cover object-center"
               initial={{ opacity: 0 }}
