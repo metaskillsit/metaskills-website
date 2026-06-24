@@ -14,6 +14,26 @@ const HeroSection = () => {
   const [phase, setPhase] = useState<Phase>("photo1");
   const [muted, setMuted] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const pointerStartX = useRef<number | null>(null);
+
+  const PHASE_ORDER: Phase[] = ["photo1", "video", "photo2"];
+  const goToPhase = (dir: 1 | -1) => {
+    setPhase((current) => {
+      const i = PHASE_ORDER.indexOf(current);
+      const next = (i + dir + PHASE_ORDER.length) % PHASE_ORDER.length;
+      return PHASE_ORDER[next];
+    });
+  };
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    pointerStartX.current = e.clientX;
+  };
+  const onPointerUp = (e: React.PointerEvent) => {
+    if (pointerStartX.current === null) return;
+    const dx = e.clientX - pointerStartX.current;
+    pointerStartX.current = null;
+    if (Math.abs(dx) > 40) goToPhase(dx < 0 ? 1 : -1);
+  };
 
   const sendCommand = (func: string, args: unknown[] = []) => {
     iframeRef.current?.contentWindow?.postMessage(
