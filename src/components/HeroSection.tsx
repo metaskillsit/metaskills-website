@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import heroAsean from "@/assets/hero-bg-asean.jpg";
-import heroSecondary from "@/assets/hero-bg.jpg";
+import heroAsean from "@/assets/hero-bg-asean.webp";
+import heroSecondary from "@/assets/hero-bg.webp";
 import { useTranslation } from "react-i18next";
 
 const YOUTUBE_ID = "jHTUoSXN5hA";
