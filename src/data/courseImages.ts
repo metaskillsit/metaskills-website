@@ -26,6 +26,9 @@ import algoL1_3 from "@/assets/courses/algo-trading-l1-3.jpg";
 import algoL2_1 from "@/assets/courses/algo-trading-l2-1.jpg";
 import algoL2_2 from "@/assets/courses/algo-trading-l2-2.jpg";
 import algoL2_3 from "@/assets/courses/algo-trading-l2-3.jpg";
+import aiLiteracyFinance1 from "@/assets/courses/ai-literacy-finance-1.jpg";
+import aiFluencyFinance1 from "@/assets/courses/ai-fluency-finance-1.jpg";
+import aiStrategyGovernance1 from "@/assets/courses/ai-strategy-governance-1.jpg";
 // AI Automation and Agents
 import riseAgents1 from "@/assets/courses/rise-ai-agents-1.jpg";
 import riseAgents2 from "@/assets/courses/rise-ai-agents-2.jpg";
@@ -106,6 +109,9 @@ const courseImageMap: Record<string, string[]> = {
   "rm-client-engagement-strategies": [algoL1_1, algoL2_1, algoL1_2],
   "rm-needs-analysis-portfolio-management": [algoL1_2, algoL2_2, algoL1_3],
   "rm-client-experience-retention": [algoL1_3, algoL2_3, algoL2_1],
+  "ai-literacy-for-finance-professionals": [aiLiteracyFinance1, algoL1_2, algoL2_3],
+  "ai-fluency-for-finance-professionals": [aiFluencyFinance1, algoL2_1, algoL1_3],
+  "ai-strategy-governance-ethical-leadership": [aiStrategyGovernance1, algoL2_2, algoL1_1],
 };
 
 
