@@ -22,7 +22,9 @@ type Course = {
   slug: string;
   isExternal?: boolean;
   partnerNote?: string;
+  comingSoon?: boolean;
 };
+
 
 type Category = {
   id: string;
