@@ -183,7 +183,7 @@ const ProgramsSection = () => {
                 images={cat.images}
                 alt={cat.title}
                 className="aspect-[4/3] overflow-hidden rounded-sm mb-5"
-                imgClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                imgClassName={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${cat.title.toLowerCase().includes("financial") ? "object-top" : ""}`}
                 interval={10000}
                 width={800}
                 height={600}
