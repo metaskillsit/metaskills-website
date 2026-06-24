@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroAsean from "@/assets/hero-bg-asean.jpg";
+import heroSecondary from "@/assets/hero-bg-2.jpg";
 import { useTranslation } from "react-i18next";
 
 const YOUTUBE_ID = "jHTUoSXN5hA";
-const PHOTO_DURATION = 7000; // photo shown for 7s, then video plays full length
+const PHOTO_DURATION = 7000; // each photo shown for 7s
+
+type Phase = "photo1" | "video" | "photo2";
 
 const HeroSection = () => {
   const { t } = useTranslation();
-  const [showVideo, setShowVideo] = useState(false);
+  const [phase, setPhase] = useState<Phase>("photo1");
   const [muted, setMuted] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
@@ -31,34 +34,36 @@ const HeroSection = () => {
     }
   };
 
-  // After the initial photo dwell, mount the video
+  // photo1 → video (after dwell); photo2 → photo1 (after dwell)
   useEffect(() => {
-    const id = setTimeout(() => setShowVideo(true), PHOTO_DURATION);
-    return () => clearTimeout(id);
-  }, []);
+    if (phase === "photo1") {
+      const id = setTimeout(() => setPhase("video"), PHOTO_DURATION);
+      return () => clearTimeout(id);
+    }
+    if (phase === "photo2") {
+      const id = setTimeout(() => setPhase("photo1"), PHOTO_DURATION);
+      return () => clearTimeout(id);
+    }
+  }, [phase]);
 
-  // Listen for YouTube postMessage "ended" event → return to photo, then loop
+  // Listen for YouTube "ended" → switch to photo2
   useEffect(() => {
-    if (!showVideo) return;
+    if (phase !== "video") return;
 
     const handleMessage = (event: MessageEvent) => {
       if (!event.origin.includes("youtube")) return;
       try {
         const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
-        // info.playerState === 0 means ended
         if (data?.event === "infoDelivery" && data?.info?.playerState === 0) {
-          setShowVideo(false);
-          // re-show after photo dwell
-          setTimeout(() => setShowVideo(true), PHOTO_DURATION);
+          setPhase("photo2");
         }
       } catch {
-        /* ignore non-JSON messages */
+        /* ignore */
       }
     };
 
     window.addEventListener("message", handleMessage);
 
-    // Tell the iframe to send us state events
     const send = () => {
       iframeRef.current?.contentWindow?.postMessage(
         JSON.stringify({ event: "listening", id: YOUTUBE_ID }),
@@ -70,8 +75,10 @@ const HeroSection = () => {
     return () => {
       window.removeEventListener("message", handleMessage);
       clearTimeout(t1);
+      // reset mute state when leaving video
+      setMuted(true);
     };
-  }, [showVideo]);
+  }, [phase]);
 
   const heroContent = (
     <motion.div
@@ -105,7 +112,24 @@ const HeroSection = () => {
         />
 
         <AnimatePresence>
-          {showVideo && (
+          {phase === "photo2" && (
+            <motion.img
+              key="photo2"
+              src={heroSecondary}
+              alt="AI training in action"
+              width={1920}
+              height={900}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            />
+          )}
+
+          {phase === "video" && (
             <motion.div
               key="video"
               className="absolute inset-0 h-full w-full overflow-hidden pointer-events-none"
@@ -130,7 +154,7 @@ const HeroSection = () => {
           )}
         </AnimatePresence>
 
-        {showVideo && (
+        {phase === "video" && (
           <button
             type="button"
             onClick={toggleMute}
@@ -144,8 +168,6 @@ const HeroSection = () => {
             )}
           </button>
         )}
-
-
 
         {/* Desktop overlay — text on media */}
         <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent z-10" />
