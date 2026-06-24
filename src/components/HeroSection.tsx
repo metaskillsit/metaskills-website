@@ -38,6 +38,14 @@ const HeroSection = () => {
     if (Math.abs(dx) > 40) goToPhase(dx < 0 ? 1 : -1);
   };
 
+  // Warm the secondary image and YouTube origin during idle so transitions are instant
+  useEffect(() => {
+    const img = new Image();
+    img.decoding = "async";
+    img.src = heroSecondary;
+  }, []);
+
+
   const sendCommand = (func: string, args: unknown[] = []) => {
     iframeRef.current?.contentWindow?.postMessage(
       JSON.stringify({ event: "command", func, args }),
