@@ -34,9 +34,9 @@ const MissionSection = () => {
         >
           <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed font-body">
             {t("mission.statement")}{" "}
-            <mark className="bg-primary/30 text-foreground px-1 rounded-sm font-semibold">{t("mission.highlight1")}</mark>{" "}
+            {t("mission.highlight1")}{" "}
             {t("mission.and")}{t("mission.and") ? " " : ""}
-            <mark className="bg-primary/30 text-foreground px-1 rounded-sm font-semibold">{t("mission.highlight2")}</mark>{" "}
+            {t("mission.highlight2")}{" "}
             {t("mission.tail")}
           </p>
         </motion.div>
