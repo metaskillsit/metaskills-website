@@ -174,6 +174,15 @@ const HeroSection = () => {
           )}
         </AnimatePresence>
 
+        {/* Invisible swipe/drag layer — manual navigation without visible controls */}
+        <div
+          className="absolute inset-0 z-10 cursor-grab touch-pan-y active:cursor-grabbing"
+          onPointerDown={onPointerDown}
+          onPointerUp={onPointerUp}
+          onPointerCancel={() => { pointerStartX.current = null; }}
+          aria-hidden="true"
+        />
+
         {phase === "video" && (
           <button
             type="button"
