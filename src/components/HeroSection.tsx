@@ -16,7 +16,7 @@ type Phase = "photo1" | "video" | "photo2";
 const HeroSection = () => {
   const { t } = useTranslation();
   const [phase, setPhase] = useState<Phase>("photo1");
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const pointerStartX = useRef<number | null>(null);
 
@@ -72,9 +72,21 @@ const HeroSection = () => {
     }
   }, [phase]);
 
-  // Reset mute on leaving video
+  // Try to autoplay with sound; fall back to muted if browser blocks it
   useEffect(() => {
-    if (phase !== "video") setMuted(true);
+    if (phase !== "video") return;
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.volume = 1;
+    const p = v.play();
+    if (p && typeof p.catch === "function") {
+      p.catch(() => {
+        v.muted = true;
+        setMuted(true);
+        void v.play();
+      });
+    }
   }, [phase]);
 
   const heroContent = (
@@ -142,7 +154,6 @@ const HeroSection = () => {
                 ref={videoRef}
                 src={HERO_VIDEO_SRC}
                 autoPlay
-                muted
                 playsInline
                 onEnded={() => setPhase("photo2")}
                 className="absolute inset-0 h-full w-full object-cover object-center"
