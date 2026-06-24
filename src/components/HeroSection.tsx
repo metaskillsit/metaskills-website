@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroAsean from "@/assets/hero-bg-asean.webp";
 import heroSecondary from "@/assets/hero-bg.webp";
+import heroVideoAsset from "@/assets/msi-amd-video.mp4.asset.json";
 import { useTranslation } from "react-i18next";
 
-const YOUTUBE_ID = "jHTUoSXN5hA";
+const HERO_VIDEO_SRC = heroVideoAsset.url;
 const PHOTO_DURATION = 7000; // each photo shown for 7s
 // Tiny inline LQIP — instant first paint while the LCP webp decodes
 const HERO_LQIP =
@@ -16,7 +17,7 @@ const HeroSection = () => {
   const { t } = useTranslation();
   const [phase, setPhase] = useState<Phase>("photo1");
   const [muted, setMuted] = useState(true);
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const pointerStartX = useRef<number | null>(null);
 
   const PHASE_ORDER: Phase[] = ["photo1", "video", "photo2"];
@@ -38,29 +39,23 @@ const HeroSection = () => {
     if (Math.abs(dx) > 40) goToPhase(dx < 0 ? 1 : -1);
   };
 
-  // Warm the secondary image and YouTube origin during idle so transitions are instant
+  // Warm the secondary image during idle so transitions are instant
   useEffect(() => {
     const img = new Image();
     img.decoding = "async";
     img.src = heroSecondary;
   }, []);
 
-
-  const sendCommand = (func: string, args: unknown[] = []) => {
-    iframeRef.current?.contentWindow?.postMessage(
-      JSON.stringify({ event: "command", func, args }),
-      "*"
-    );
-  };
-
   const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
     if (muted) {
-      sendCommand("unMute");
-      sendCommand("setVolume", [100]);
-      sendCommand("playVideo");
+      v.muted = false;
+      v.volume = 1;
+      void v.play();
       setMuted(false);
     } else {
-      sendCommand("mute");
+      v.muted = true;
       setMuted(true);
     }
   };
@@ -77,38 +72,9 @@ const HeroSection = () => {
     }
   }, [phase]);
 
-  // Listen for YouTube "ended" → switch to photo2
+  // Reset mute on leaving video
   useEffect(() => {
-    if (phase !== "video") return;
-
-    const handleMessage = (event: MessageEvent) => {
-      if (!event.origin.includes("youtube")) return;
-      try {
-        const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
-        if (data?.event === "infoDelivery" && data?.info?.playerState === 0) {
-          setPhase("photo2");
-        }
-      } catch {
-        /* ignore */
-      }
-    };
-
-    window.addEventListener("message", handleMessage);
-
-    const send = () => {
-      iframeRef.current?.contentWindow?.postMessage(
-        JSON.stringify({ event: "listening", id: YOUTUBE_ID }),
-        "*"
-      );
-    };
-    const t1 = setTimeout(send, 800);
-
-    return () => {
-      window.removeEventListener("message", handleMessage);
-      clearTimeout(t1);
-      // reset mute state when leaving video
-      setMuted(true);
-    };
+    if (phase !== "video") setMuted(true);
   }, [phase]);
 
   const heroContent = (
@@ -166,24 +132,21 @@ const HeroSection = () => {
           {phase === "video" && (
             <motion.div
               key="video"
-              className="absolute inset-0 h-full w-full overflow-hidden pointer-events-none"
+              className="absolute inset-0 h-full w-full overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
             >
-              <div className="absolute left-1/2 top-1/2 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2 md:h-[120%] md:w-[120%]">
-                <iframe
-                  ref={iframeRef}
-                  title="Hero background video"
-                  src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1`}
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen={false}
-                  frameBorder={0}
-                  className="h-full w-full"
-                  loading="lazy"
-                />
-              </div>
+              <video
+                ref={videoRef}
+                src={HERO_VIDEO_SRC}
+                autoPlay
+                muted
+                playsInline
+                onEnded={() => setPhase("photo2")}
+                className="absolute inset-0 h-full w-full object-cover object-center"
+              />
             </motion.div>
           )}
         </AnimatePresence>
