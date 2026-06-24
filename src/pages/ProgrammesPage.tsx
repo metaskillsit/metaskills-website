@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
@@ -164,7 +164,7 @@ const ProgrammesPage = () => {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible) setActiveId(visible.target.id);
       },
-      { rootMargin: "-35% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+      { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
     Object.values(sectionRefs.current).forEach((el) => el && observer.observe(el));
     return () => observer.disconnect();
@@ -173,190 +173,212 @@ const ProgrammesPage = () => {
   const handleJump = (id: string) => {
     const el = sectionRefs.current[id];
     if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 100;
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top, behavior: "smooth" });
     }
   };
 
-  const renderCourseLink = (course: Course) => {
+  const renderCourseLink = (course: Course, dark: boolean) => {
     const isAbsolute = course.isExternal && /^https?:\/\//.test(course.slug);
-    const className =
-      "flex items-start gap-2 text-sm md:text-base text-primary hover:text-accent transition-colors group/link py-1";
+    const baseColor = dark ? "text-[#f5f3ee]" : "text-[#0d0d0d]";
+    const subColor = dark ? "text-[#f5f3ee]/55" : "text-[#0d0d0d]/55";
     const inner = (
-      <>
-        <span className="flex-1">
-          {course.name}
+      <div className="group/link flex items-start justify-between gap-6 py-5 border-b border-current/15">
+        <div className="flex-1 min-w-0">
+          <span className={`font-display text-xl md:text-2xl leading-snug ${baseColor} prem-link`}>
+            {course.name}
+          </span>
           {course.partnerNote && (
-            <span className="block text-xs text-muted-foreground font-normal mt-0.5">
+            <span className={`block font-sans-prem text-xs mt-1 ${subColor}`}>
               {course.partnerNote}
             </span>
           )}
+        </div>
+        <span className="shrink-0 mt-2 text-[#c9a84c] transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1">
+          {isAbsolute ? <ExternalLink className="w-4 h-4" /> : <ArrowUpRight className="w-5 h-5" />}
         </span>
-        {isAbsolute ? (
-          <ExternalLink className="w-3.5 h-3.5 mt-1 opacity-60 group-hover/link:opacity-100 transition-opacity flex-shrink-0" />
-        ) : (
-          <ArrowRight className="w-3.5 h-3.5 mt-1 opacity-0 group-hover/link:opacity-100 transition-opacity flex-shrink-0" />
-        )}
-      </>
+      </div>
     );
     if (isAbsolute) {
       return (
-        <a href={course.slug} target="_blank" rel="noopener noreferrer" className={className}>
+        <a href={course.slug} target="_blank" rel="noopener noreferrer" className="block">
           {inner}
         </a>
       );
     }
     return (
-      <Link
-        to={course.isExternal ? course.slug : `/course/${course.slug}`}
-        className={className}
-      >
+      <Link to={course.isExternal ? course.slug : `/course/${course.slug}`} className="block">
         {inner}
       </Link>
     );
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen prem-paper font-sans-prem">
       <Navbar />
       <main className="pt-20 md:pt-[90px]">
-        {/* Hero */}
-        <section className="relative section-dark py-16 md:py-20 overflow-hidden">
-          <div className="max-w-[1280px] mx-auto px-6">
-            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+        {/* HERO */}
+        <section className="prem-paper relative overflow-hidden">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-16 md:pt-28 pb-16 md:pb-24">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="prem-rule" />
+              <span className="prem-eyebrow text-[#0d0d0d]/70">
+                {String(programCategories.length).padStart(2, "0")} Tracks · Metaskills Institute
+              </span>
+            </div>
+            <h1 className="font-display text-[44px] sm:text-6xl md:text-7xl lg:text-[104px] leading-[0.95] text-[#0d0d0d] max-w-5xl">
               {t("programmes.title")}
+              <span className="text-[#c9a84c]">.</span>
             </h1>
-            <p className="text-white/75 mt-4 text-lg max-w-xl">
+            <p className="mt-8 max-w-2xl text-lg md:text-xl text-[#0d0d0d]/70 leading-relaxed">
               {t("programmes.subtitle")}
             </p>
           </div>
+          {/* edge divider */}
+          <div className="h-px bg-[#0d0d0d]/10" />
         </section>
 
-        {/* Mobile sticky chips */}
-        <div className="lg:hidden sticky top-[64px] z-30 bg-background/95 backdrop-blur border-b border-border">
-          <div className="flex gap-2 overflow-x-auto px-4 py-3 scrollbar-hide">
-            {programCategories.map((cat, idx) => (
-              <button
-                key={cat.id}
-                onClick={() => handleJump(cat.id)}
-                className={`flex-shrink-0 text-xs px-3 py-1.5 rounded-full border transition-colors ${
-                  activeId === cat.id
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-background text-muted-foreground border-border hover:border-primary/40"
-                }`}
-              >
-                {String(idx + 1).padStart(2, "0")} · {cat.title}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Body: sticky rail + banners */}
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-[220px_1fr] gap-8 py-8 md:py-12">
-            {/* Sticky nav rail (desktop) */}
-            <aside className="hidden lg:block">
-              <div className="sticky top-[110px]">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4 font-semibold">
-                  {t("programmes.jumpToTrack")}
-                </p>
-                <ul className="space-y-1 border-l border-border">
-                  {programCategories.map((cat, idx) => {
-                    const active = activeId === cat.id;
-                    return (
-                      <li key={cat.id}>
-                        <button
-                          onClick={() => handleJump(cat.id)}
-                          className={`w-full text-left text-sm pl-4 py-2 -ml-px border-l-2 transition-all ${
-                            active
-                              ? "border-primary text-primary font-semibold"
-                              : "border-transparent text-muted-foreground hover:text-foreground hover:border-border"
-                          }`}
-                        >
-                          <span className="text-xs font-mono opacity-60 mr-2">
-                            {String(idx + 1).padStart(2, "0")}
-                          </span>
-                          {cat.title}
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </aside>
-
-            {/* Banner stack */}
-            <div className="space-y-8 md:space-y-12">
-              {programCategories.map((cat, i) => {
-                const reverse = i % 2 === 1;
+        {/* STICKY TRACK BAR */}
+        <div className="sticky top-[64px] md:top-[80px] z-30 prem-trackbar">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div className="flex gap-1 overflow-x-auto scrollbar-hide py-3">
+              {programCategories.map((cat, idx) => {
+                const active = activeId === cat.id;
                 return (
-                  <motion.section
+                  <button
                     key={cat.id}
-                    id={cat.id}
-                    ref={(el) => {
-                      sectionRefs.current[cat.id] = el;
-                    }}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.5 }}
-                    className="scroll-mt-28"
+                    onClick={() => handleJump(cat.id)}
+                    className={`group flex-shrink-0 flex items-center gap-2 px-3 py-2 transition-colors ${
+                      active ? "text-[#0d0d0d]" : "text-[#0d0d0d]/45 hover:text-[#0d0d0d]/80"
+                    }`}
                   >
-                    <div
-                      className={`grid md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-border bg-card shadow-sm ${
-                        reverse ? "md:[&>*:first-child]:order-2" : ""
-                      }`}
-                    >
-                      {/* Image side */}
-                      <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[440px] overflow-hidden group">
-                        <img
-                          src={cat.image}
-                          alt={cat.title}
-                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                          loading="lazy"
-                          width={1200}
-                          height={900}
-                        />
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-${
-                            reverse ? "l" : "r"
-                          } from-transparent via-transparent to-background/40 hidden md:block`}
-                        />
-                        <div className="absolute top-4 left-4 bg-background/90 backdrop-blur px-3 py-1 rounded-sm">
-                          <span className="text-xs font-mono text-primary font-semibold">
-                            {String(i + 1).padStart(2, "0")} / {String(programCategories.length).padStart(2, "0")}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Content side */}
-                      <div className="p-6 md:p-10 flex flex-col justify-center">
-                        <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-                          {cat.title}
-                        </h2>
-                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
-                          {cat.description}
-                        </p>
-                        <div className="border-t border-border pt-4">
-                          <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3 font-semibold">
-                            {t("programmes.viewCourses")} · {cat.courses.length}
-                          </p>
-                          <ul className="space-y-1">
-                            {cat.courses.map((course) => (
-                              <li key={course.slug}>{renderCourseLink(course)}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.section>
+                    <span className={`font-mono text-[10px] tracking-widest ${active ? "text-[#c9a84c]" : ""}`}>
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-sans-prem text-xs md:text-sm whitespace-nowrap">
+                      {cat.title}
+                    </span>
+                    {active && <span className="inline-block w-6 h-px bg-[#c9a84c]" />}
+                  </button>
                 );
               })}
             </div>
           </div>
         </div>
 
-        <PastClassesSection />
+        {/* FULL-WIDTH ALTERNATING SECTIONS */}
+        <div>
+          {programCategories.map((cat, i) => {
+            const reverse = i % 2 === 1;
+            const dark = i % 2 === 1; // alternate ink / paper for rhythm
+            return (
+              <motion.section
+                key={cat.id}
+                id={cat.id}
+                ref={(el) => {
+                  sectionRefs.current[cat.id] = el;
+                }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
+                className={`scroll-mt-32 ${dark ? "prem-ink" : "prem-paper"}`}
+              >
+                <div className="max-w-[1500px] mx-auto px-0 md:px-0">
+                  <div
+                    className={`grid lg:grid-cols-2 min-h-[80vh] ${
+                      reverse ? "lg:[&>*:first-child]:order-2" : ""
+                    }`}
+                  >
+                    {/* IMAGE SIDE — full-bleed */}
+                    <div className="relative overflow-hidden aspect-[4/3] lg:aspect-auto lg:min-h-[80vh] group">
+                      <motion.img
+                        src={cat.image}
+                        alt={cat.title}
+                        loading="lazy"
+                        width={1600}
+                        height={1200}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        initial={{ scale: 1.08 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.4, ease: [0.2, 0.7, 0.2, 1] }}
+                      />
+                      <div
+                        className={`absolute inset-0 ${
+                          dark
+                            ? "bg-gradient-to-t from-[#0d0d0d]/60 via-transparent to-transparent"
+                            : "bg-gradient-to-t from-[#f5f3ee]/40 via-transparent to-transparent"
+                        }`}
+                      />
+                      {/* Big numeral overlay */}
+                      <div className="absolute left-6 md:left-10 bottom-6 md:bottom-10 leading-none select-none mix-blend-luminosity opacity-90">
+                        <span className="prem-numeral block">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* CONTENT SIDE */}
+                    <div className="flex items-center px-6 sm:px-10 lg:px-16 py-14 md:py-20">
+                      <div className="w-full max-w-xl">
+                        <div className="flex items-center gap-3 mb-6">
+                          <span
+                            className="inline-block h-px w-12"
+                            style={{ background: "#c9a84c" }}
+                          />
+                          <span
+                            className={`prem-eyebrow ${
+                              dark ? "text-[#f5f3ee]/60" : "text-[#0d0d0d]/55"
+                            }`}
+                          >
+                            Track {String(i + 1).padStart(2, "0")} ·{" "}
+                            {cat.courses.length} Course{cat.courses.length > 1 ? "s" : ""}
+                          </span>
+                        </div>
+
+                        <h2
+                          className={`font-display text-4xl md:text-5xl lg:text-[56px] leading-[1.02] mb-6 ${
+                            dark ? "text-[#f5f3ee]" : "text-[#0d0d0d]"
+                          }`}
+                        >
+                          {cat.title}
+                        </h2>
+
+                        <p
+                          className={`text-base md:text-lg leading-relaxed mb-10 ${
+                            dark ? "text-[#f5f3ee]/75" : "text-[#0d0d0d]/70"
+                          }`}
+                        >
+                          {cat.description}
+                        </p>
+
+                        <div className={`pt-2 border-t ${dark ? "border-[#f5f3ee]/15" : "border-[#0d0d0d]/15"}`}>
+                          <p
+                            className={`prem-eyebrow pt-5 mb-1 ${
+                              dark ? "text-[#f5f3ee]/55" : "text-[#0d0d0d]/55"
+                            }`}
+                          >
+                            {t("programmes.viewCourses")}
+                          </p>
+                          <ul>
+                            {cat.courses.map((course) => (
+                              <li key={course.slug}>{renderCourseLink(course, dark)}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.section>
+            );
+          })}
+        </div>
+
+        <div className="prem-paper">
+          <PastClassesSection />
+        </div>
       </main>
       <FooterSection />
     </div>
