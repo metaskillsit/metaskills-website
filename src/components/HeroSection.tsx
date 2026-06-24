@@ -9,7 +9,27 @@ const PHOTO_DURATION = 7000; // photo shown for 7s, then video plays full length
 const HeroSection = () => {
   const { t } = useTranslation();
   const [showVideo, setShowVideo] = useState(false);
+  const [muted, setMuted] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  const sendCommand = (func: string, args: unknown[] = []) => {
+    iframeRef.current?.contentWindow?.postMessage(
+      JSON.stringify({ event: "command", func, args }),
+      "*"
+    );
+  };
+
+  const toggleMute = () => {
+    if (muted) {
+      sendCommand("unMute");
+      sendCommand("setVolume", [100]);
+      sendCommand("playVideo");
+      setMuted(false);
+    } else {
+      sendCommand("mute");
+      setMuted(true);
+    }
+  };
 
   // After the initial photo dwell, mount the video
   useEffect(() => {
