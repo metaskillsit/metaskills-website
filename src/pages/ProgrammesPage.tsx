@@ -45,13 +45,15 @@ const ProgrammesPage = () => {
       description: t("programmes.fintechDesc"),
       image: fintechImg,
       courses: [
+        { name: ct("aiLiteracyFinance"), slug: "ai-literacy-for-finance-professionals" },
+        { name: ct("aiFluencyFinance"), slug: "ai-fluency-for-finance-professionals" },
+        { name: ct("aiStrategyGovernance"), slug: "ai-strategy-governance-ethical-leadership" },
         { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
         { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
-        { name: ct("aiLiteracyFinance"), slug: "ai-literacy-for-finance-professionals" },
-        { name: ct("aiStrategyGovernance"), slug: "ai-strategy-governance-ethical-leadership" },
-        { name: ct("aiFluencyFinance"), slug: "ai-fluency-for-finance-professionals" },
+        { name: "The AI-Powered Investor Series", slug: "#", comingSoon: true },
       ],
     },
+
     {
       id: "ai-education",
       title: t("programmes.aiEduTitle"),
