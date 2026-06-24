@@ -56,10 +56,25 @@ const Navbar = () => {
       label: t("nav.programmes"),
       categories: [
         {
-          label: t("programmes.vibeCodingTitle"),
+          label: t("programmes.fintechTitle"),
           href: "/programmes",
           subItems: [
-            { label: t("courses.vibeCodingDigitalBuilders.title"), href: "/course/vibe-coding-for-digital-builders" },
+            { label: t("courses.aiLiteracyFinance.title"), href: "/course/ai-literacy-for-finance-professionals" },
+            { label: t("courses.aiFluencyFinance.title"), href: "/course/ai-fluency-for-finance-professionals" },
+            { label: t("courses.aiStrategyGovernance.title"), href: "/course/ai-strategy-governance-ethical-leadership" },
+            { label: t("courses.rmEngagement.title"), href: "/course/rm-client-engagement-strategies" },
+            { label: t("courses.rmNeedsAnalysis.title"), href: "/course/rm-needs-analysis-portfolio-management" },
+            { label: t("courses.rmExperienceRetention.title"), href: "/course/rm-client-experience-retention" },
+            { label: t("courses.algoTradingL1.title"), href: "/course/algorithmic-trading-level-1" },
+            { label: t("courses.algoTradingL2.title"), href: "/course/algorithmic-trading-level-2" },
+          ],
+        },
+        {
+          label: t("programmes.aiEduTitle"),
+          href: "/programmes",
+          subItems: [
+            { label: t("courses.aiTrainingDesign.title"), href: "/course/ai-training-design-curriculum" },
+            { label: t("courses.buildAiTutors.title"), href: "/course/build-ai-tutors-adaptive-learning" },
           ],
         },
         {
@@ -73,12 +88,13 @@ const Navbar = () => {
           ],
         },
         {
-          label: t("programmes.agenticTitle"),
+          label: t("programmes.agenticEngTitle"),
           href: "/programmes",
           subItems: [
             { label: t("courses.agenticFoundations.title"), href: "/course/agentic-ai-foundations" },
             { label: t("courses.agenticUseCase.title"), href: "/course/agentic-ai-use-case" },
             { label: t("courses.agenticDeploy.title"), href: "/course/agentic-ai-deploy-secure-systems" },
+            { label: t("courses.secureAgenticInfra.title"), href: "/course/secure-agentic-ai-infrastructure" },
           ],
         },
         {
@@ -88,19 +104,16 @@ const Navbar = () => {
             { label: t("courses.riseAiAgents.title"), href: "/course/rise-of-ai-agents-2026" },
             { label: t("courses.buildAiNoCode.title"), href: "/course/build-ai-workflows-no-code" },
             { label: t("courses.designAiPlainLang.title"), href: "/course/design-ai-automations-plain-language" },
-            { label: t("courses.buildOpTools.title"), href: "/course/build-operational-tools-ai-coding-agents" },
             { label: t("courses.buildAiAssistant.title"), href: "/course/build-your-own-ai-assistant" },
-            { label: t("courses.gptKnowledgeBase.title"), href: "/course/gpt-your-organisation-knowledge-base" },
-            { label: t("courses.secureAgenticInfra.title"), href: "/course/secure-agentic-ai-infrastructure" },
-            { label: t("courses.aiTrainingDesign.title"), href: "/course/ai-training-design-curriculum" },
-            { label: t("courses.buildAiTutors.title"), href: "/course/build-ai-tutors-adaptive-learning" },
           ],
         },
         {
-          label: t("nav.aiStackTraining"),
+          label: t("programmes.vibeDevTitle"),
           href: "/programmes",
           subItems: [
-            { label: t("nav.aiStackTraining"), href: "/ai-stack-masterclasses" },
+            { label: t("courses.vibeCodingDigitalBuilders.title"), href: "/course/vibe-coding-for-digital-builders" },
+            { label: t("courses.buildOpTools.title"), href: "/course/build-operational-tools-ai-coding-agents" },
+            { label: t("courses.gptKnowledgeBase.title"), href: "/course/gpt-your-organisation-knowledge-base" },
           ],
         },
         {
@@ -113,37 +126,30 @@ const Navbar = () => {
           ],
         },
         {
-          label: t("programmes.fintechTitle"),
-          href: "/programmes",
-          subItems: [
-            { label: t("courses.algoTradingL1.title"), href: "/course/algorithmic-trading-level-1" },
-            { label: t("courses.algoTradingL2.title"), href: "/course/algorithmic-trading-level-2" },
-          ],
-        },
-        {
-          label: t("programmes.cloudDevOpsTitle"),
-          href: "/programmes",
-          subItems: [
-            { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
-          ],
-        },
-        {
-          label: t("programmes.cyberTitle"),
+          label: t("programmes.mccFoundTitle"),
           href: "/programmes",
           subItems: [
             { label: t("courses.cyberRolesThreats.title"), href: "/course/cybersecurity-roles-threats-pathways" },
-          ],
-        },
-        {
-          label: t("programmes.mccTitle"),
-          href: "/programmes",
-          subItems: [
             { label: t("courses.mccFoundation.title"), href: "/course/mcc-plus-cyber-defence-foundation" },
             { label: t("courses.mccSecurityOps.title"), href: "/course/mcc-plus-security-operations" },
             { label: t("courses.mccThreatHunting.title"), href: "/course/mcc-plus-threat-hunting-blue-team" },
+          ],
+        },
+        {
+          label: t("programmes.mccOffTitle"),
+          href: "/programmes",
+          subItems: [
             { label: t("courses.mccOffensiveCyber.title"), href: "/course/mcc-plus-offensive-cyber-fundamentals" },
             { label: t("courses.mccDigitalForensics.title"), href: "/course/mcc-plus-digital-forensics" },
             { label: t("courses.mccAiSecurity.title"), href: "/course/mcc-plus-ai-security-autonomous-defence" },
+          ],
+        },
+        {
+          label: t("programmes.cloudAiStackTitle"),
+          href: "/programmes",
+          subItems: [
+            { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
+            { label: t("programmes.aiStack1DayCourse"), href: "/ai-stack-masterclasses" },
           ],
         },
       ],
