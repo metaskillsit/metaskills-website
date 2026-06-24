@@ -1042,6 +1042,24 @@
       "feesCorporateSmall": "7人或以下：S$6,800固定费用",
       "feesCorporateLarge": "请联系获取团体费率",
       "jointlyOfferedBy": "Tinkercademy & Metaskills Institute"
+    },
+    "rmEngagement": {
+      "title": "AI 助力客户经理赢得客户 — 第一部分：客户互动策略",
+      "category": "金融科技 / 算法交易",
+      "tagline": "用 AI 解读客户信号、调适沟通方式，并在合规前提下建立专业人脉。",
+      "duration": "1 天（7 小时）"
+    },
+    "rmNeedsAnalysis": {
+      "title": "AI 助力客户经理赢得客户 — 第二部分：客户行为需求分析与投资组合管理",
+      "category": "金融科技 / 算法交易",
+      "tagline": "在客户人生各阶段分析其需求并增长投资组合 — 由 AI 协助实现合规适配与公平呈现。",
+      "duration": "1 天（7 小时）"
+    },
+    "rmExperienceRetention": {
+      "title": "AI 助力客户经理赢得客户 — 第三部分：提升客户体验与建立客户留存策略",
+      "category": "金融科技 / 算法交易",
+      "tagline": "将互动转化为持久客户体验 — 维系、留存、修复关系并保护客户免遭数字欺诈。",
+      "duration": "1 天（7 小时）"
     }
   },
   "facultyProfiles": {

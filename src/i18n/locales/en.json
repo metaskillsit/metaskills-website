@@ -1085,6 +1085,24 @@
       "category": "Fintech / Algorithmic Trading",
       "tagline": "From AI users to AI architects — build production-grade Agents with Context Engineering and RAG.",
       "duration": "2 Days (16 hours)"
+    },
+    "rmEngagement": {
+      "title": "Winning Customers with AI for RM — Part 1: Client Engagement Strategies",
+      "category": "Fintech / Algorithmic Trading",
+      "tagline": "Engaging and connecting with clients — read signals, adapt communication, and build compliant networks with AI.",
+      "duration": "1 Day (7 hours)"
+    },
+    "rmNeedsAnalysis": {
+      "title": "Winning Customers with AI for RM — Part 2: Client Behaviour Needs Analysis and Portfolio Management",
+      "category": "Fintech / Algorithmic Trading",
+      "tagline": "Analyse client needs and grow their portfolio across life stages — with AI-assisted suitability and fair framing.",
+      "duration": "1 Day (7 hours)"
+    },
+    "rmExperienceRetention": {
+      "title": "Winning Customers with AI for RM — Part 3: Enhancing Client Experience and Building Retention Strategies",
+      "category": "Fintech / Algorithmic Trading",
+      "tagline": "Turn engagement into a lasting client experience — sustain, retain, recover, and protect clients from digital fraud.",
+      "duration": "1 Day (7 hours)"
     }
   },
   "facultyProfiles": {

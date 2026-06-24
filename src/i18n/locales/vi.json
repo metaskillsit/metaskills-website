@@ -1042,6 +1042,24 @@
       "feesCorporateSmall": "7 người hoặc ít hơn: S$6,800 phí cố định",
       "feesCorporateLarge": "Liên hệ để biết giá nhóm",
       "jointlyOfferedBy": "Tinkercademy & Metaskills Institute"
+    },
+    "rmEngagement": {
+      "title": "Chinh phục Khách hàng bằng AI cho RM — Phần 1: Chiến lược Tương tác Khách hàng",
+      "category": "Fintech / Giao dịch Thuật toán",
+      "tagline": "Đọc tín hiệu khách hàng, điều chỉnh giao tiếp và xây dựng mạng lưới tuân thủ bằng AI.",
+      "duration": "1 Ngày (7 giờ)"
+    },
+    "rmNeedsAnalysis": {
+      "title": "Chinh phục Khách hàng bằng AI cho RM — Phần 2: Phân tích Hành vi, Nhu cầu Khách hàng và Quản lý Danh mục",
+      "category": "Fintech / Giao dịch Thuật toán",
+      "tagline": "Phân tích nhu cầu và phát triển danh mục khách hàng qua các giai đoạn cuộc sống — với AI hỗ trợ phù hợp và trình bày công bằng.",
+      "duration": "1 Ngày (7 giờ)"
+    },
+    "rmExperienceRetention": {
+      "title": "Chinh phục Khách hàng bằng AI cho RM — Phần 3: Nâng cao Trải nghiệm và Xây dựng Chiến lược Giữ chân Khách hàng",
+      "category": "Fintech / Giao dịch Thuật toán",
+      "tagline": "Biến tương tác thành trải nghiệm bền vững — duy trì, giữ chân, khôi phục quan hệ và bảo vệ khách trước lừa đảo số.",
+      "duration": "1 Ngày (7 giờ)"
     }
   },
   "facultyProfiles": {
