@@ -291,7 +291,7 @@ const ProgrammesPage = () => {
                 <div className={`grid lg:grid-cols-12 gap-8 md:gap-12 items-start ${reverse ? "" : ""}`}>
                   {/* IMAGE */}
                   <div className={`lg:col-span-5 ${reverse ? "lg:order-2" : ""}`}>
-                    <div className="relative overflow-hidden rounded-sm aspect-[4/3] group">
+                    <div className="relative overflow-hidden rounded-2xl aspect-[4/3] group shadow-lg ring-1 ring-border/40">
                       <motion.img
                         src={cat.image}
                         alt={cat.title}
