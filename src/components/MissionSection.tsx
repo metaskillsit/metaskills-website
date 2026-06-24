@@ -32,10 +32,12 @@ const MissionSection = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed font-body">
+          <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed font-body">
             {t("mission.statement")}{" "}
-            <strong className="text-primary">{t("mission.highlight1")}</strong> {t("mission.and")}{" "}
-            <strong className="text-primary">{t("mission.highlight2")}</strong>
+            <mark className="bg-primary/30 text-foreground px-1 rounded-sm font-semibold">{t("mission.highlight1")}</mark>{" "}
+            {t("mission.and")}{t("mission.and") ? " " : ""}
+            <mark className="bg-primary/30 text-foreground px-1 rounded-sm font-semibold">{t("mission.highlight2")}</mark>{" "}
+            {t("mission.tail")}
           </p>
         </motion.div>
       </div>
