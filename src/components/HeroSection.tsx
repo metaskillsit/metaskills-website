@@ -1,23 +1,57 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroAsean from "@/assets/hero-bg-asean.jpg";
 import { useTranslation } from "react-i18next";
 
 const YOUTUBE_ID = "jHTUoSXN5hA";
-const INTERVAL = 7000;
+const PHOTO_DURATION = 7000; // photo shown for 7s, then video plays full length
 
 const HeroSection = () => {
   const { t } = useTranslation();
-  const [slide, setSlide] = useState<0 | 1>(0); // 0 = photo, 1 = video
-  const [hasCycled, setHasCycled] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
+  // After the initial photo dwell, mount the video
   useEffect(() => {
-    const id = setInterval(() => {
-      setHasCycled(true);
-      setSlide((s) => (s === 0 ? 1 : 0));
-    }, INTERVAL);
-    return () => clearInterval(id);
+    const id = setTimeout(() => setShowVideo(true), PHOTO_DURATION);
+    return () => clearTimeout(id);
   }, []);
+
+  // Listen for YouTube postMessage "ended" event → return to photo, then loop
+  useEffect(() => {
+    if (!showVideo) return;
+
+    const handleMessage = (event: MessageEvent) => {
+      if (!event.origin.includes("youtube")) return;
+      try {
+        const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
+        // info.playerState === 0 means ended
+        if (data?.event === "infoDelivery" && data?.info?.playerState === 0) {
+          setShowVideo(false);
+          // re-show after photo dwell
+          setTimeout(() => setShowVideo(true), PHOTO_DURATION);
+        }
+      } catch {
+        /* ignore non-JSON messages */
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+
+    // Tell the iframe to send us state events
+    const send = () => {
+      iframeRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: "listening", id: YOUTUBE_ID }),
+        "*"
+      );
+    };
+    const t1 = setTimeout(send, 800);
+
+    return () => {
+      window.removeEventListener("message", handleMessage);
+      clearTimeout(t1);
+    };
+  }, [showVideo]);
 
   const heroContent = (
     <motion.div
@@ -51,7 +85,7 @@ const HeroSection = () => {
         />
 
         <AnimatePresence>
-          {hasCycled && slide === 1 && (
+          {showVideo && (
             <motion.div
               key="video"
               className="absolute inset-0 h-full w-full overflow-hidden pointer-events-none"
@@ -62,8 +96,9 @@ const HeroSection = () => {
             >
               <div className="absolute left-1/2 top-1/2 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2 md:h-[120%] md:w-[120%]">
                 <iframe
+                  ref={iframeRef}
                   title="Hero background video"
-                  src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_ID}&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1`}
+                  src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1`}
                   allow="autoplay; encrypted-media; picture-in-picture"
                   allowFullScreen={false}
                   frameBorder={0}
@@ -74,6 +109,7 @@ const HeroSection = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
 
 
         {/* Desktop overlay — text on media */}
