@@ -193,10 +193,16 @@ const ProgramsSection = () => {
               <ul className="space-y-2 border-t border-border pt-4">
                 {cat.courses.map((course) => {
                   const isAbs = 'isExternal' in course && course.isExternal && /^https?:\/\//.test(course.slug);
+                  const isComing = 'comingSoon' in course && course.comingSoon;
                   const cls = "flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link";
                   return (
-                    <li key={course.slug}>
-                      {isAbs ? (
+                    <li key={course.slug + course.name}>
+                      {isComing ? (
+                        <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span>{course.name}</span>
+                          <span className="text-[10px] uppercase tracking-wider bg-muted px-1.5 py-0.5 rounded">Upcoming</span>
+                        </span>
+                      ) : isAbs ? (
                         <a href={course.slug} target="_blank" rel="noopener noreferrer" className={cls}>
                           <span>{course.name}</span>
                           <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
