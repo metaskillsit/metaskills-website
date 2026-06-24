@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import heroAsean from "@/assets/hero-bg-asean.jpg";
-import heroSecondary from "@/assets/hero-bg.jpg";
+import heroAsean from "@/assets/hero-bg-asean.webp";
+import heroSecondary from "@/assets/hero-bg.webp";
 import { useTranslation } from "react-i18next";
 
 const YOUTUBE_ID = "jHTUoSXN5hA";
 const PHOTO_DURATION = 7000; // each photo shown for 7s
+// Tiny inline LQIP — instant first paint while the LCP webp decodes
+const HERO_LQIP =
+  "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASogABIAPu1mqE2ppaOiMAgBMB2JYwCsM4DOACaG/httsodjQrvfYHcSzCgA/u+9TZJYwgdYAmeDE716XPvXfiQ6hdGzAhgJPAvxBeJmVvEWR1gFbysxYE3ivD24Nx5w32ldRyqnltSQKKDdIB2S3EixUffJtbH9oPwGL8NFqJOEqqUuiMyNtwiIurlhV/535rco+Y9qlN3xaj4KSLdHKjHPdTbo1QAA";
 
 type Phase = "photo1" | "video" | "photo2";
 
@@ -34,6 +37,14 @@ const HeroSection = () => {
     pointerStartX.current = null;
     if (Math.abs(dx) > 40) goToPhase(dx < 0 ? 1 : -1);
   };
+
+  // Warm the secondary image and YouTube origin during idle so transitions are instant
+  useEffect(() => {
+    const img = new Image();
+    img.decoding = "async";
+    img.src = heroSecondary;
+  }, []);
+
 
   const sendCommand = (func: string, args: unknown[] = []) => {
     iframeRef.current?.contentWindow?.postMessage(
@@ -118,7 +129,10 @@ const HeroSection = () => {
   return (
     <section className="relative w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
       {/* Always-mounted base photo — prevents flash and guarantees instant LCP */}
-      <div className="relative aspect-[16/9] md:aspect-[1920/900]">
+      <div
+        className="relative aspect-[16/9] md:aspect-[1920/900] bg-cover bg-center"
+        style={{ backgroundImage: `url(${HERO_LQIP})` }}
+      >
         <img
           src={heroAsean}
           alt="Professional AI training"
@@ -139,7 +153,7 @@ const HeroSection = () => {
               alt="AI training in action"
               width={1920}
               height={900}
-              loading="lazy"
+              loading="eager"
               decoding="async"
               className="absolute inset-0 h-full w-full object-cover object-center"
               initial={{ opacity: 0 }}
