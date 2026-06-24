@@ -655,5 +655,133 @@ courses.push({
   fees: { selfSponsored: "S$9,000 per pax", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
 });
 
+// ── Fintech / AI for Finance Professionals ──
+courses.push({
+  slug: "ai-literacy-for-finance-professionals",
+  i18nKey: "aiLiteracyFinance",
+  title: "AI Literacy for Finance Professionals",
+  category: "Fintech / Algorithmic Trading",
+  tagline: "Move from passive awareness to operational implementation of AI in regulated financial services.",
+  heroImage: "/src/assets/course-fintech-1.jpg",
+  duration: "1 Day (8 hours)",
+  whyAttend:
+    "This is a 1-day instructor-led workshop designed for financial services professionals who need to move from passive awareness to operational implementation of AI.\n\nUnlike general AI courses, this programme is contextualised for the unique constraints of the financial sector. The journey moves rapidly from Foundations (GenAI vs. ML) to Execution (CRAFT Prompting) to Optimisation (Workflow Mapping) and finally to Supervision (Critical Evaluation and Ethics).\n\nThe programme culminates in a practical assessment where learners demonstrate their ability to implement AI tools within a regulated business environment, applying VERIFY and FEAT frameworks aligned to MAS guidelines.",
+  whatYouLearn: [
+    "Demystify GenAI: understand the mechanics of LLMs and how they apply to banking, insurance and wealth management.",
+    "Master prompt engineering using the CRAFT framework for high-precision professional outputs.",
+    "Optimise workflows with the 3A framework (Automate / Augment / Amplify).",
+    "Govern outputs with the VERIFY and FEAT frameworks to manage hallucinations, bias and MAS compliance.",
+    "Identify red-flag tasks unsuitable for AI in regulated workflows.",
+    "Apply human-in-the-loop accountability and escalation protocols.",
+  ],
+  objectives: [
+    "Digital Transformation Executive",
+    "Business Process Improvement Executive",
+    "Account Operations Analyst, Transaction Banking Operations Analyst",
+    "Client Service Officer / Client Support Service Officer",
+    "Pre-requisites: Diploma or degree, WPL/WPN Level 4 English & numeracy proficiency.",
+  ],
+  courseDesign:
+    "1-day instructor-led physical workshop (8 hours, 9am–6pm). Trainer-to-trainee ratio 1:20. Written assessment on Day 1. Eligible for IBF-STS funding (up to 70% subsidy, cap S$3,000), SkillsFuture Credit and UTAP for NTUC members.",
+  schedule: [
+    { day: "Unit 1: GenAI Fundamentals & The Financial Landscape", items: ["The AI tech spectrum: AI, ML, GenAI", "Predictive vs Generative AI in finance", "How LLMs work — training vs generation", "Boundaries, limitations and confidentiality risks", "High-value use cases across risk, ops, CX and trading"] },
+    { day: "Unit 2: Precision Prompting via the CRAFT Framework", items: ["Anatomy of a prompt", "CRAFT: Context, Role, Action, Format, Tone", "Context & role engineering for banking personas", "Structural formats for professional outputs", "Prompt iteration and team reuse"] },
+    { day: "Unit 3: Workflow Analysis & AI Integration", items: ["The 3A framework — Automate, Augment, Amplify", "Task suitability checklist for quick wins", "Extracting inputs, outputs and constraints", "Measuring effectiveness (time saved, quality)", "Red flags: confidential data and ethical judgment"] },
+    { day: "Unit 4: Critical Evaluation & Responsible AI (FEAT)", items: ["AI failure modes: hallucinations, bias, cutoffs", "VERIFY framework — 6-step systematic review", "FEAT principles: Fairness, Explainability, Accountability, Transparency", "Human-in-the-loop accountability", "Escalation protocols for high-stakes decisions"] },
+  ],
+  nextRunDate: "Next run: 1 Jul 2026 — Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  fees: {
+    selfSponsored: "S$700 (Full fee, before subsidies & GST)",
+    corporateSmall: "S$210–S$350 (after IBF-STS subsidy, SC/PR eligible)",
+    corporateLarge: "Eligible for IBF-STS up to 70% subsidy, SkillsFuture Credit & UTAP",
+  },
+});
+
+courses.push({
+  slug: "ai-strategy-governance-ethical-leadership",
+  i18nKey: "aiStrategyGovernance",
+  title: "AI Strategy, Governance & Ethical Leadership",
+  category: "Fintech / Algorithmic Trading",
+  tagline: "Move beyond playing with AI to implementing it strategically — for financial services leaders.",
+  heroImage: "/src/assets/course-fintech-2.jpg",
+  duration: "1 Day (8 hours)",
+  whyAttend:
+    "This is a 1-day instructor-led workshop designed for financial services leaders who need to move beyond 'playing' with AI to 'implementing' it strategically.\n\nThe programme moves rapidly from Strategy (Value & Prioritisation) to Execution (Build vs Buy, Roadmap) to Governance (MAS Guidelines, Policy) and finally People (Capability Building & Change Management). It culminates in a practical assessment where learners apply these frameworks to real-world banking scenarios.",
+  whatYouLearn: [
+    "Identify high-value, feasible AI opportunities for your department.",
+    "Formulate a compliant AI adoption strategy aligned to business objectives.",
+    "Govern risks using MAS FEAT and TRM principles and the Three Lines of Defence.",
+    "Lead team role evolution required for an AI-augmented future.",
+    "Design Build vs Buy vs Partner decisions for financial institutions.",
+    "Build a 30-60-90 day change management plan.",
+  ],
+  objectives: [
+    "Head of Digital Transformation",
+    "Head of Innovation and Process Excellence",
+    "Head of Client Service / Client Support Services Director",
+    "Head of Sustainability",
+    "Pre-requisites: Diploma or degree, WPL/WPN Level 4 English & numeracy proficiency.",
+  ],
+  courseDesign:
+    "1-day instructor-led physical workshop (8 hours, 9am–6pm). Trainer-to-trainee ratio 1:20. Written assessment. Eligible for IBF-STS funding (up to 70% subsidy, cap S$3,000) and SkillsFuture Credit.",
+  schedule: [
+    { day: "Unit 1: AI Value Creation & Strategic Prioritisation", items: ["Predictive vs Generative vs Agentic AI", "Identifying efficiency, revenue and risk value drivers", "Impact-Feasibility matrix for portfolio prioritisation", "Task-Technique matrix for workflow mapping", "Systems thinking — ripple effects and dependencies"] },
+    { day: "Unit 2: Formulating AI Adoption Strategy", items: ["Strategic alignment to core business objectives", "Build vs Buy vs Partner decision framework", "3A framework — Automate, Augment, Amplify", "6-stage implementation roadmap: Pilot to Scale", "Reimagining roles: from execution to oversight"] },
+    { day: "Unit 3: AI Governance, Risk & Compliance", items: ["MAS TRM Guidelines and Three Lines of Defence", "Operationalising FEAT principles", "Drafting policy scopes and authority protocols", "PDPA compliance and preventing GenAI data leakage", "Managing model and vendor risk"] },
+    { day: "Unit 4: Building Team Capability & Leading Change", items: ["3A capability model — Awareness, Adaptability, Application", "Diagnosing skill gaps and designing interventions", "Managing resistance ('AI will take my job')", "Communicating value to stakeholders", "30-60-90 day action plan"] },
+  ],
+  nextRunDate: "Next run: 6 Jul 2026 — Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  fees: {
+    selfSponsored: "S$1,000 (Full fee, before subsidies & GST)",
+    corporateSmall: "S$300–S$500 (after IBF-STS subsidy, SC/PR eligible)",
+    corporateLarge: "Eligible for IBF-STS up to 70% subsidy & SkillsFuture Credit",
+  },
+});
+
+courses.push({
+  slug: "ai-fluency-for-finance-professionals",
+  i18nKey: "aiFluencyFinance",
+  title: "AI Fluency for Finance Professionals",
+  category: "Fintech / Algorithmic Trading",
+  tagline: "From AI users to AI architects — build production-grade Agents with Context Engineering and RAG.",
+  heroImage: "/src/assets/course-fintech-3.jpg",
+  duration: "2 Days (16 hours)",
+  whyAttend:
+    "This intensive hands-on workshop transforms participants from AI users into AI architects. While prompt engineering focuses on the 'ask,' Context Engineering focuses on the 'environment.'\n\nOver two days, participants master the 9 components of context, learn to structure financial data for RAG (Retrieval-Augmented Generation), and work in teams to build a fully functional AI Agent prototype on Microsoft Copilot Studio that solves a real-world business friction point — under strict banking compliance and risk standards.",
+  whatYouLearn: [
+    "Move beyond basic prompting to Context Engineering — designing data, memory and tools.",
+    "Architect, build and deploy functional AI Agents on Microsoft Copilot Studio.",
+    "Structure financial data for Retrieval-Augmented Generation (RAG).",
+    "Apply advanced prompt patterns including chain-of-thought and persona constraints.",
+    "Implement business rules, guardrails and compliance controls in agent design.",
+    "Conduct adversarial 'red team' testing on agent prototypes.",
+  ],
+  objectives: [
+    "Business Leaders",
+    "Digital Transformation Executive",
+    "Business Process Improvement Executive",
+    "Account / Transaction Banking Operations Analyst",
+    "Client Service Officer / Client Support Service Officer",
+    "Pre-requisites: Diploma or degree, WPL/WPN Level 4 English & numeracy proficiency.",
+  ],
+  courseDesign:
+    "2-day intensive hands-on physical workshop (16 hours over 2 weekdays, 9am–6pm with 1–2pm break). Trainer-to-trainee ratio 1:20. Team-based agent build on Microsoft Copilot Studio. Eligible for IBF-STS funding (up to 70% subsidy, cap S$3,000), SkillsFuture Credit and UTAP for NTUC members.",
+  schedule: [
+    { day: "Day 1 — Unit 1: Context Engineering Foundations", items: ["From prompts to systems — 9 components of context", "Agent architecture: Chatbot vs Copilot vs Agent", "Microsoft Copilot Studio platform intro", "Project scoping — defining the business problem"] },
+    { day: "Day 1 — Unit 2: Advanced System Instructions & Prompt Patterns", items: ["Designing system prompts ('God Mode' instructions)", "Chain-of-thought and advanced prompt patterns", "Role and constraint engineering — personas", "Building a reusable prompt library"] },
+    { day: "Day 1 — Unit 3: Knowledge Framework Design (RAG)", items: ["5-Step Context Method — Gather to Document", "Document structuring and chunking", "Knowledge auditing and data cleaning", "Designing for retrieval quality"] },
+    { day: "Day 1 — Unit 4: Stakeholder Analysis & Change Readiness", items: ["Stakeholder mapping", "Managing resistance and adoption curves", "Skill gap analysis"] },
+    { day: "Day 2 — Unit 5: Workflow Logic & Agent Construction", items: ["Configuring RAG in Copilot Studio", "Topic routing — the 'switchboard'", "Business rules and guardrails (If/Then logic)", "Error handling, fallbacks and multi-turn flows"] },
+    { day: "Day 2 — Unit 6: Integration, Testing & Deployment", items: ["Adversarial testing ('red teaming')", "Performance metrics: accuracy and latency", "Deployment controls — access and versioning", "Business continuity planning"] },
+  ],
+  nextRunDate: "Next run: 22–23 Jul 2026 — Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  fees: {
+    selfSponsored: "S$1,400 (Full fee, before subsidies & GST)",
+    corporateSmall: "S$420–S$700 (after IBF-STS subsidy, SC/PR eligible)",
+    corporateLarge: "Eligible for IBF-STS up to 70% subsidy, SkillsFuture Credit & UTAP",
+  },
+});
+
 export const getCourseBySlug = (slug: string) =>
   courses.find((c) => c.slug === slug);
+

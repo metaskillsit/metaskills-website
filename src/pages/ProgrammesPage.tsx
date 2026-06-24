@@ -45,24 +45,9 @@ const ProgrammesPage = () => {
       courses: [
         { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
         { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
-        {
-          name: t("programmes.lhubAiLiteracy"),
-          slug: "https://ntuclearninghub.com/web/guest/-/course/ai-literacy-for-finance-professionals",
-          isExternal: true,
-          partnerNote: t("programmes.viaLhub"),
-        },
-        {
-          name: t("programmes.lhubAiStrategy"),
-          slug: "https://ntuclearninghub.com/web/guest/-/course/ai-strategy-governance-and-ethical-leadership",
-          isExternal: true,
-          partnerNote: t("programmes.viaLhub"),
-        },
-        {
-          name: t("programmes.lhubAiFluency"),
-          slug: "https://ntuclearninghub.com/web/guest/-/course/ai-fluency-for-financial-professionals",
-          isExternal: true,
-          partnerNote: t("programmes.viaLhub"),
-        },
+        { name: ct("aiLiteracyFinance"), slug: "ai-literacy-for-finance-professionals" },
+        { name: ct("aiStrategyGovernance"), slug: "ai-strategy-governance-ethical-leadership" },
+        { name: ct("aiFluencyFinance"), slug: "ai-fluency-for-finance-professionals" },
       ],
     },
     {

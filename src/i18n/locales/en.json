@@ -1067,6 +1067,24 @@
       "feesSelfSponsored": "S$9,000 per pax",
       "feesCorporateSmall": "Contact for corporate rates",
       "feesCorporateLarge": "Contact for group rates"
+    },
+    "aiLiteracyFinance": {
+      "title": "AI Literacy for Finance Professionals",
+      "category": "Fintech / Algorithmic Trading",
+      "tagline": "Move from passive awareness to operational implementation of AI in regulated financial services.",
+      "duration": "1 Day (8 hours)"
+    },
+    "aiStrategyGovernance": {
+      "title": "AI Strategy, Governance & Ethical Leadership",
+      "category": "Fintech / Algorithmic Trading",
+      "tagline": "Move beyond playing with AI to implementing it strategically — for financial services leaders.",
+      "duration": "1 Day (8 hours)"
+    },
+    "aiFluencyFinance": {
+      "title": "AI Fluency for Finance Professionals",
+      "category": "Fintech / Algorithmic Trading",
+      "tagline": "From AI users to AI architects — build production-grade Agents with Context Engineering and RAG.",
+      "duration": "2 Days (16 hours)"
     }
   },
   "facultyProfiles": {
