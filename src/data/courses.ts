@@ -782,6 +782,137 @@ courses.push({
   },
 });
 
+// ── Winning Customers with AI for RM (3-part series) ──
+courses.push({
+  slug: "rm-client-engagement-strategies",
+  i18nKey: "rmEngagement",
+  title: "Winning Customers with AI for RM — Part 1: Client Engagement Strategies",
+  category: "Fintech / Algorithmic Trading",
+  tagline: "Engaging and connecting with clients — read signals, adapt communication, and build compliant networks with AI.",
+  heroImage: "/src/assets/course-fintech-1.jpg",
+  duration: "1 Day (7 hours)",
+  whyAttend:
+    "Client Engagement Strategies equips Relationship Managers and client-facing Financial Planners to strategically engage and win clients. Participants learn to read client cues and signals, adapt their communication and language to different client types and segments, and build and leverage professional networks and partnerships — all within compliance.\n\nThe course is hands-on with AI. Participants build a Client Engagement Assistant that captures effective engagement approaches, and use a Prospect and Segment Scout for compliant prospecting, with a Compliance Check agent keeping every client-facing output within the line. The engagement approaches captured here carry through the series and shape the client experience in Part 3. The embedded Future Enabled Skill of Data Fluency is developed as participants interpret market and client data.",
+  whatYouLearn: [
+    "Develop client engagement strategies that adapt communication to different client types and segments, using research-based listening and client cues.",
+    "Identify and engage prospects across retail and private / HNW segments using market and client data.",
+    "Build and leverage professional networks and partnerships to generate compliant business and referrals.",
+    "Engage and communicate within financial-promotion and data-protection requirements.",
+    "Use the Client Engagement Assistant and Prospect and Segment Scout agents to prepare and personalise client engagement.",
+    "Apply alternative growth levers where direct referrals are unlikely (HNWI reality).",
+  ],
+  objectives: [
+    "Retail Banking Relationship Managers responsible for engaging and acquiring clients.",
+    "Client-facing Financial Planners across retail and private / high-net-worth segments.",
+    "Pre-requisites: Working RM or Financial Planner, or equivalent client-facing experience.",
+    "Basic digital literacy required.",
+    "TSCs covered: Customer Acquisition Management (L4), Networking (L4), Partnership Management (L3).",
+  ],
+  courseDesign:
+    "1-day instructor-led, face-to-face workshop (approx. 7 training hours, 09:00–17:30 inclusive of breaks and assessment). Class size 12–20. Hands-on with AI tools inside the host's approved Microsoft 365 Copilot (Premium) and Copilot Agent Studio environment. IBF-STS accreditation proposed.",
+  schedule: [
+    { day: "09:00 – Welcome & Series Frame", items: ["The series and the client lifecycle", "The compliance-first frame", "Setup of the Copilot environment"] },
+    { day: "09:15 – Reading & Engaging the Client", items: ["Client cues and signals", "Research-based listening", "Adapting communication and language by client type and segment", "Build the engagement approach with the Client Engagement Assistant"] },
+    { day: "11:00 – Prospecting & Networks", items: ["Segment-aware prospecting", "Networking strategy", "The HNWI referral reality and alternative levers", "Prospect and Segment Scout; Networking Prep"] },
+    { day: "13:30 – Partnerships & Compliant Outreach", items: ["Partner and intermediary channels", "Professional credibility", "Financial-promotion guardrails", "Partner Outreach; Compliance Check agent"] },
+    { day: "15:15 – Build Your Engagement Plan", items: ["Build an engagement and pipeline plan", "Client engagement role-play", "Apply all tools end-to-end"] },
+    { day: "16:30 – Assessment", items: ["Part A: Engagement role-play (read the client, adapt communication)", "Part B: Engagement and pipeline plan", "Compliance checklist applied to both"] },
+  ],
+  nextRunDate: "Next run: Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  fees: {
+    selfSponsored: "S$700 (Full fee, before subsidies & GST)",
+    corporateSmall: "S$210–S$350 (after IBF-STS subsidy, SC/PR eligible)",
+    corporateLarge: "Eligible for IBF-STS up to 70% subsidy (cap S$3,000), SkillsFuture Credit & UTAP",
+  },
+});
+
+courses.push({
+  slug: "rm-needs-analysis-portfolio-management",
+  i18nKey: "rmNeedsAnalysis",
+  title: "Winning Customers with AI for RM — Part 2: Client Behaviour Needs Analysis and Portfolio Management",
+  category: "Fintech / Algorithmic Trading",
+  tagline: "Analyse client needs and grow their portfolio across life stages — with AI-assisted suitability and fair framing.",
+  heroImage: "/src/assets/course-fintech-2.jpg",
+  duration: "1 Day (7 hours)",
+  whyAttend:
+    "Client Behaviour Needs Analysis and Portfolio Management develops the analytical and growth core of the Relationship Manager role. Participants learn to analyse client behaviour, finances and needs, and to apply a portfolio-management mindset: growing a single client's holdings across their life stages — for example an HDB loan, then an executive condominium, then a private condominium upgrade — through suitable and well-timed next steps.\n\nParticipants use a Pitch Playbook agent to turn needs into two matched options, and a Portfolio Growth Planner agent to map each client's product journey and flag the next suitable opportunity, always within suitability and fair dealing. The embedded Future Enabled Skill of Data Fluency is developed as participants interpret client financial and portfolio data.",
+  whatYouLearn: [
+    "Analyse client behaviour, financial situation and needs to inform suitable solutions.",
+    "Apply a portfolio-management mindset to grow holdings across life stages through suitable, well-timed next steps.",
+    "Identify and develop cross-sell and upsell opportunities within existing relationships, within suitability.",
+    "Use the Pitch Playbook and Portfolio Growth Planner agents to prepare matched options and a client portfolio plan.",
+    "Present recommendations using fair, transparent framing aligned with suitability and fair-dealing duties.",
+    "Interpret client financial and portfolio data with Data Fluency.",
+  ],
+  objectives: [
+    "Retail Banking Relationship Managers advising and growing client holdings over time.",
+    "Client-facing Financial Planners responsible for portfolio expansion within suitability.",
+    "Pre-requisites: Working RM or Financial Planner, or equivalent client-facing experience.",
+    "Basic digital literacy required.",
+    "TSCs covered: Financial Analysis (L3), Account Management (L4), Business Opportunities Development (L4).",
+  ],
+  courseDesign:
+    "1-day instructor-led, face-to-face workshop (approx. 7 training hours, 09:00–17:30 inclusive of breaks and assessment). Class size 12–20. Hands-on with AI tools inside the host's approved Microsoft 365 Copilot (Premium) and Copilot Agent Studio environment. IBF-STS accreditation proposed.",
+  schedule: [
+    { day: "09:00 – Welcome", items: ["From engaging to growing the client", "Series recap and Part 2 frame"] },
+    { day: "09:15 – Client Behaviour & Needs Analysis", items: ["Analysing client behaviour, financial picture and needs", "Interpreting client financial data", "Financial Needs Analysis prompt library"] },
+    { day: "11:00 – The Portfolio-Management Mindset", items: ["Life-stage product journeys (HDB → EC → condo)", "Next-best suitable step", "Cross-sell and upsell within suitability", "Portfolio Growth Planner agent"] },
+    { day: "13:30 – Matched Options & Fair Recommendation", items: ["Building two suitable options", "Fair framing of gains and risks", "Pitch Playbook; Fair-Framing; Compliance Check"] },
+    { day: "15:15 – Build a Portfolio Plan", items: ["Build a client portfolio growth plan", "Recommendation role-play", "Apply all tools end-to-end"] },
+    { day: "16:30 – Assessment", items: ["Part A: Needs-analysis and recommendation role-play", "Part B: Multi-stage, suitability-gated client portfolio growth plan", "Compliance checklist applied to both"] },
+  ],
+  nextRunDate: "Next run: Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  fees: {
+    selfSponsored: "S$700 (Full fee, before subsidies & GST)",
+    corporateSmall: "S$210–S$350 (after IBF-STS subsidy, SC/PR eligible)",
+    corporateLarge: "Eligible for IBF-STS up to 70% subsidy (cap S$3,000), SkillsFuture Credit & UTAP",
+  },
+});
+
+courses.push({
+  slug: "rm-client-experience-retention",
+  i18nKey: "rmExperienceRetention",
+  title: "Winning Customers with AI for RM — Part 3: Enhancing Client Experience and Building Retention Strategies",
+  category: "Fintech / Algorithmic Trading",
+  tagline: "Turn engagement into a lasting client experience — sustain, retain, recover, and protect clients from digital fraud.",
+  heroImage: "/src/assets/course-fintech-3.jpg",
+  duration: "1 Day (7 hours)",
+  whyAttend:
+    "Enhancing Client Experience and Building Retention Strategies equips Relationship Managers and client-facing Financial Planners to turn strong engagement into a superior, lasting client experience and a retained book. Building on the engagement approaches captured by the AI in Part 1, participants learn to sustain relationships, deliver a consistent client experience, handle service challenges so they strengthen the relationship, and protect clients from digitally-enabled fraud.\n\nParticipants use a Client Experience and Retention agent to prepare reviews, nurture relationships and flag retention risks, supported by a Compliance Check agent. The embedded Future Enabled Skills are Data Fluency, as participants interpret portfolio and client-experience data, and Digitally-Enabled Fraud, as they learn to recognise and respond to scams that target clients.",
+  whatYouLearn: [
+    "Sustain long-term client relationships and deliver a consistent, high-quality client experience.",
+    "Design and apply client retention strategies for an existing portfolio.",
+    "Handle service challenges and complaints to recover and strengthen relationships.",
+    "Recognise and respond to digitally-enabled fraud and scams that target clients.",
+    "Use the Client Experience and Retention agent and prompt libraries to nurture and pressure-test for compliance.",
+    "Reuse Part 1 engagement profiles to tailor the client experience.",
+  ],
+  objectives: [
+    "Retail Banking Relationship Managers retaining, servicing and growing an existing client portfolio.",
+    "Client-facing Financial Planners responsible for long-term client relationships.",
+    "Pre-requisites: Working RM or Financial Planner, or equivalent client-facing experience.",
+    "Basic digital literacy required.",
+    "TSCs covered: Customer Relationship Management (L3), Service Challenges (L4). FES: Data Fluency, Digitally-Enabled Fraud.",
+  ],
+  courseDesign:
+    "1-day instructor-led, face-to-face workshop (approx. 7 training hours, 09:00–17:30 inclusive of breaks and assessment). Class size 12–20. Hands-on with AI tools inside the host's approved Microsoft 365 Copilot (Premium) and Copilot Agent Studio environment. IBF-STS accreditation proposed.",
+  schedule: [
+    { day: "09:00 – Welcome", items: ["From winning to keeping", "Why experience drives retention"] },
+    { day: "09:15 – Client Experience & Relationships", items: ["Experience standards", "Sustaining relationships", "Part 1 engagement profiles feed a tailored experience", "Client Experience and Retention agent"] },
+    { day: "11:00 – Retention Strategies", items: ["Retention planning", "Nurture cadence", "Identifying at-risk clients", "Relationship Nurture prompt library"] },
+    { day: "13:30 – Service Recovery & Client Protection", items: ["Handling complaints and service challenges", "Protecting clients from digitally-enabled fraud", "Service Recovery; Compliance Check"] },
+    { day: "15:15 – Build a Retention Plan", items: ["Build a client experience and retention plan", "Service-recovery role-play", "Apply all tools end-to-end"] },
+    { day: "16:30 – Assessment", items: ["Part A: Relationship-review and service-recovery role-play", "Part B: Client experience and retention plan", "Compliance checklist applied to both"] },
+  ],
+  nextRunDate: "Next run: Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  fees: {
+    selfSponsored: "S$700 (Full fee, before subsidies & GST)",
+    corporateSmall: "S$210–S$350 (after IBF-STS subsidy, SC/PR eligible)",
+    corporateLarge: "Eligible for IBF-STS up to 70% subsidy (cap S$3,000), SkillsFuture Credit & UTAP",
+  },
+});
+
 export const getCourseBySlug = (slug: string) =>
   courses.find((c) => c.slug === slug);
+
 
