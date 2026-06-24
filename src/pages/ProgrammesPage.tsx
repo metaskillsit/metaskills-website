@@ -182,11 +182,11 @@ const ProgrammesPage = () => {
     const isAbsolute = course.isExternal && /^https?:\/\//.test(course.slug);
     const inner = (
       <div className="group/link flex items-start gap-3 py-2 border-b border-border/70 last:border-b-0">
-        <span className="font-mono text-[10px] tracking-widest text-muted-foreground/70 pt-[5px] w-6 flex-shrink-0 group-hover/link:text-accent transition-colors">
+        <span className="font-mono text-[10px] tracking-widest text-accent pt-[5px] w-6 flex-shrink-0 transition-colors">
           {String(idx + 1).padStart(2, "0")}
         </span>
         <div className="flex-1 min-w-0">
-          <span className="block text-[15px] md:text-base font-medium leading-snug text-foreground group-hover/link:text-accent transition-colors">
+          <span className="block text-[15px] md:text-base font-medium leading-snug text-foreground/85 underline decoration-accent/30 decoration-1 underline-offset-[6px] group-hover/link:text-accent group-hover/link:decoration-accent transition-colors">
             {course.name}
           </span>
           {course.partnerNote && (
@@ -195,9 +195,10 @@ const ProgrammesPage = () => {
             </span>
           )}
         </div>
-        <span className="shrink-0 mt-1 text-accent/70 transition-all duration-300 group-hover/link:text-accent group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5">
+        <span className="shrink-0 mt-1 text-accent transition-all duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-0.5">
           {isAbsolute ? <ExternalLink className="w-4 h-4" /> : <ArrowUpRight className="w-4 h-4" />}
         </span>
+
       </div>
     );
     if (isAbsolute) {
