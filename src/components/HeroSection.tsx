@@ -6,7 +6,8 @@ import heroVideoAsset from "@/assets/msi-amd-video.mp4.asset.json";
 import { useTranslation } from "react-i18next";
 
 const HERO_VIDEO_SRC = heroVideoAsset.url;
-const PHOTO_DURATION = 7000; // each photo shown for 7s
+const PHOTO_DURATION = 4000; // first photo shown for 4s before video
+const PHOTO2_DURATION = 7000; // secondary photo dwell after video
 // Tiny inline LQIP — instant first paint while the LCP webp decodes
 const HERO_LQIP =
   "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASogABIAPu1mqE2ppaOiMAgBMB2JYwCsM4DOACaG/httsodjQrvfYHcSzCgA/u+9TZJYwgdYAmeDE716XPvXfiQ6hdGzAhgJPAvxBeJmVvEWR1gFbysxYE3ivD24Nx5w32ldRyqnltSQKKDdIB2S3EixUffJtbH9oPwGL8NFqJOEqqUuiMyNtwiIurlhV/535rco+Y9qlN3xaj4KSLdHKjHPdTbo1QAA";
@@ -67,7 +68,7 @@ const HeroSection = () => {
       return () => clearTimeout(id);
     }
     if (phase === "photo2") {
-      const id = setTimeout(() => setPhase("photo1"), PHOTO_DURATION);
+      const id = setTimeout(() => setPhase("photo1"), PHOTO2_DURATION);
       return () => clearTimeout(id);
     }
   }, [phase]);
@@ -147,7 +148,9 @@ const HeroSection = () => {
                 ref={videoRef}
                 src={HERO_VIDEO_SRC}
                 autoPlay
+                muted
                 playsInline
+                preload="auto"
                 onEnded={() => setPhase("photo2")}
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
