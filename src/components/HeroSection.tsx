@@ -6,6 +6,9 @@ import { useTranslation } from "react-i18next";
 
 const YOUTUBE_ID = "jHTUoSXN5hA";
 const PHOTO_DURATION = 7000; // each photo shown for 7s
+// Tiny inline LQIP — instant first paint while the LCP webp decodes
+const HERO_LQIP =
+  "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASogABIAPu1mqE2ppaOiMAgBMB2JYwCsM4DOACaG/httsodjQrvfYHcSzCgA/u+9TZJYwgdYAmeDE716XPvXfiQ6hdGzAhgJPAvxBeJmVvEWR1gFbysxYE3ivD24Nx5w32ldRyqnltSQKKDdIB2S3EixUffJtbH9oPwGL8NFqJOEqqUuiMyNtwiIurlhV/535rco+Y9qlN3xaj4KSLdHKjHPdTbo1QAA";
 
 type Phase = "photo1" | "video" | "photo2";
 
