@@ -45,6 +45,9 @@ const ProgramsSection = () => {
       courses: [
         { name: ct("algoTradingL1"), slug: "algorithmic-trading-level-1" },
         { name: ct("algoTradingL2"), slug: "algorithmic-trading-level-2" },
+        { name: t("programmes.lhubAiLiteracy"), slug: "https://ntuclearninghub.com/web/guest/-/course/ai-literacy-for-finance-professionals", isExternal: true },
+        { name: t("programmes.lhubAiStrategy"), slug: "https://ntuclearninghub.com/web/guest/-/course/ai-strategy-governance-and-ethical-leadership", isExternal: true },
+        { name: t("programmes.lhubAiFluency"), slug: "https://ntuclearninghub.com/web/guest/-/course/ai-fluency-for-financial-professionals", isExternal: true },
       ],
     },
     {
@@ -187,17 +190,28 @@ const ProgramsSection = () => {
                 {cat.description}
               </p>
               <ul className="space-y-2 border-t border-border pt-4">
-                {cat.courses.map((course) => (
-                  <li key={course.slug}>
-                    <Link
-                      to={'isExternal' in course && course.isExternal ? course.slug : `/course/${course.slug}`}
-                      className="flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link"
-                    >
-                      <span>{course.name}</span>
-                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                    </Link>
-                  </li>
-                ))}
+                {cat.courses.map((course) => {
+                  const isAbs = 'isExternal' in course && course.isExternal && /^https?:\/\//.test(course.slug);
+                  const cls = "flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link";
+                  return (
+                    <li key={course.slug}>
+                      {isAbs ? (
+                        <a href={course.slug} target="_blank" rel="noopener noreferrer" className={cls}>
+                          <span>{course.name}</span>
+                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                        </a>
+                      ) : (
+                        <Link
+                          to={'isExternal' in course && course.isExternal ? course.slug : `/course/${course.slug}`}
+                          className={cls}
+                        >
+                          <span>{course.name}</span>
+                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </motion.div>
           ))}

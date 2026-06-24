@@ -81,7 +81,14 @@
     "mccOffTitle": "Offensive & Advanced Cyber (MCC+)",
     "mccOffDesc": "Red-team offensive techniques, digital forensics and AI-powered autonomous defence.",
     "cloudAiStackTitle": "Cloud, DevOps & AI Stack",
-    "cloudAiStackDesc": "End-to-end cloud architecture, DevOps engineering and 1-day intensives on today's most powerful AI tools."
+    "cloudAiStackDesc": "End-to-end cloud architecture, DevOps engineering and 1-day intensives on today's most powerful AI tools.",
+    "lhubAiLiteracy": "AI Literacy for Finance Professionals",
+    "lhubAiStrategy": "AI Strategy, Governance & Ethical Leadership",
+    "lhubAiFluency": "AI Fluency for Finance Professionals",
+    "viaLhub": "Offered via NTUC LearningHub",
+    "exploreTrack": "Explore track",
+    "viewCourses": "View courses",
+    "jumpToTrack": "Jump to track"
   },
   "why": {
     "title": "Why Metaskills",
