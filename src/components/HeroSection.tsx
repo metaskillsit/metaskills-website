@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroAsean from "@/assets/hero-bg-asean.webp";
 import heroSecondary from "@/assets/hero-bg.webp";
-import heroVideoAsset from "@/assets/msi-amd-video.mp4.asset.json";
 import { useTranslation } from "react-i18next";
 
-const HERO_VIDEO_SRC = heroVideoAsset.url;
+const HERO_VIDEO_SRC = "/media/msi-amd-video.mp4";
 const PHOTO_DURATION = 4000; // first photo shown for 4s before video
 const PHOTO2_DURATION = 7000; // secondary photo dwell after video
 // Tiny inline LQIP — instant first paint while the LCP webp decodes
