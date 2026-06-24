@@ -68,7 +68,7 @@ const HeroSection = () => {
       return () => clearTimeout(id);
     }
     if (phase === "photo2") {
-      const id = setTimeout(() => setPhase("photo1"), PHOTO_DURATION);
+      const id = setTimeout(() => setPhase("photo1"), PHOTO2_DURATION);
       return () => clearTimeout(id);
     }
   }, [phase]);
