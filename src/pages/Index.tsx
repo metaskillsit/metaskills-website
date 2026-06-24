@@ -22,8 +22,8 @@ const Index = () => {
       <main className="pt-20 md:pt-[90px]">
         <HeroSection />
         <CurrentTrainingTicker />
-        <PartnerLogosSection />
         <MissionSection />
+        <PartnerLogosSection />
         <PastClassesSection />
         <ProgramsSection />
         <StatsSection />
