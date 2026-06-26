@@ -102,11 +102,34 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.02;
   }
+
+  /* Editorial selection */
+  ::selection {
+    background: hsl(var(--gold));
+    color: hsl(var(--hero-overlay));
+  }
+
+  /* Remove the SaaS-y rounded card look globally */
+  .rounded-lg, .rounded-xl, .rounded-2xl, .rounded-md {
+    border-radius: 0.125rem !important;
+  }
+
+  /* Soften photo library — INSEAD-style unified portrait tone */
+  img {
+    filter: saturate(0.92) contrast(1.03);
+  }
+
 }
 
 @layer components {
