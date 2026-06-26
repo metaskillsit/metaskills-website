@@ -29,7 +29,7 @@ const WhyMetaskillsSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.6)] to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <div className="max-w-[1140px] mx-auto">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-white">
               {t("why.title")}
             </h2>
           </div>
