@@ -347,11 +347,11 @@ const ProgrammesPage = () => {
                       </span>
                     </div>
 
-                    <h2 className="font-heading text-2xl md:text-3xl lg:text-[34px] font-bold text-foreground leading-tight mb-3">
+                    <h2 className="font-heading text-2xl md:text-3xl lg:text-[34px] font-bold text-foreground leading-tight tracking-tight mb-3">
                       {cat.title}
                     </h2>
 
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5 max-w-xl">
+                    <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed mb-5 max-w-xl">
                       {cat.description}
                     </p>
 
