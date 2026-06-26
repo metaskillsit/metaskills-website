@@ -14,7 +14,7 @@ const TestimonialsSection = () => {
     <section className="bg-primary">
       <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-20">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">{t("testimonials.title")}</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-primary-foreground">{t("testimonials.title")}</h2>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((item, i) => (

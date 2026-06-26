@@ -64,7 +64,7 @@ const StatsSection = () => {
               className="text-center"
             >
               <AnimatedNumber target={stat.value} suffix={stat.suffix} />
-              <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider font-body">
+              <p className="mt-1 font-body text-xs font-semibold text-muted-foreground uppercase tracking-widest">
                 {stat.label}
               </p>
             </motion.div>

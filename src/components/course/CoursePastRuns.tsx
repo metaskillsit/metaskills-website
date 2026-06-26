@@ -77,7 +77,7 @@ const CoursePastRuns = ({ pastRuns, courseTitle }: CoursePastRunsProps) => {
           className="text-center mb-12"
         >
           <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">{t("coursePage.provenTrackRecord")}</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-3">{t("coursePage.pastCourseRuns")}</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">{t("coursePage.pastCourseRuns")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             {t("coursePage.pastCourseRunsDesc")}
           </p>

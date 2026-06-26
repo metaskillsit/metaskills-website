@@ -155,7 +155,7 @@ const ProgramsSection = () => {
       <div className="relative h-[180px] md:h-[200px] bg-primary overflow-hidden flex items-center">
         <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-6 w-full">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-white">
             {t("programmes.title")}
           </h2>
           <p className="text-white/75 mt-2 text-base max-w-xl">

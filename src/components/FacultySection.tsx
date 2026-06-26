@@ -168,7 +168,7 @@ const FacultySection = () => {
           className="mb-6 flex items-end justify-between"
         >
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-foreground">
               {t("faculty.title")}
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl">
