@@ -6,35 +6,39 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 20% 10%;
+    /* Warm paper background — INSEAD-style off-white */
+    --background: 40 30% 97%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card: 40 30% 97%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover: 40 30% 97%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 43 96% 56%;
-    --primary-foreground: 220 20% 10%;
+    /* Gold demoted to accent only — primary is ink */
+    --primary: 0 0% 10%;
+    --primary-foreground: 40 30% 97%;
 
-    --secondary: 43 30% 95%;
-    --secondary-foreground: 220 20% 10%;
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 43 15% 95%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 0 0% 38%;
 
-    --accent: 43 96% 56%;
-    --accent-foreground: 220 20% 10%;
+    --accent: 43 60% 48%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 43 20% 88%;
-    --input: 43 20% 88%;
-    --ring: 43 96% 56%;
+    /* Hairline borders */
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 43 60% 48%;
 
-    --radius: 0.5rem;
+    /* Sharper, more editorial */
+    --radius: 0.125rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -45,19 +49,20 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Custom tokens */
-    --hero-overlay: 220 25% 12%;
-    --gold: 43 96% 56%;
-    --gold-light: 43 80% 70%;
-    --gold-dark: 40 90% 45%;
-    --navy: 215 50% 18%;
-    --warm: 35 30% 97%;
-    --teal-dark: 220 25% 12%;
-    --teal-light: 43 30% 95%;
+    /* Custom tokens — refined */
+    --hero-overlay: 220 18% 8%;        /* near-black with warm tint */
+    --gold: 43 60% 48%;                 /* muted editorial gold */
+    --gold-light: 43 50% 62%;
+    --gold-dark: 40 65% 38%;
+    --navy: 220 18% 8%;
+    --warm: 40 30% 97%;
+    --teal-dark: 220 18% 8%;
+    --teal-light: 40 20% 94%;
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
   }
+
 
   .dark {
     --background: 220 25% 6%;
@@ -97,11 +102,34 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.02;
   }
+
+  /* Editorial selection */
+  ::selection {
+    background: hsl(var(--gold));
+    color: hsl(var(--hero-overlay));
+  }
+
+  /* Remove the SaaS-y rounded card look globally */
+  .rounded-lg, .rounded-xl, .rounded-2xl, .rounded-md {
+    border-radius: 0.125rem !important;
+  }
+
+  /* Soften photo library — INSEAD-style unified portrait tone */
+  img {
+    filter: saturate(0.92) contrast(1.03);
+  }
+
 }
 
 @layer components {
