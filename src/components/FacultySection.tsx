@@ -168,10 +168,11 @@ const FacultySection = () => {
           className="mb-6 flex items-end justify-between"
         >
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+            <span className="section-eyebrow">Faculty</span>
+            <h2 className="section-h2">
               {t("faculty.title")}
             </h2>
-            <p className="text-muted-foreground mt-3 max-w-xl">
+            <p className="lead-p mt-3">
               {t("faculty.subtitle")}
             </p>
           </div>
@@ -208,9 +209,9 @@ const FacultySection = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="font-bold">{f.name}</h3>
-                <p className="text-primary">{f.role}</p>
-                <p className="text-sm">{f.expertise}</p>
+                <h3 className="font-heading text-base font-medium tracking-tight text-foreground">{f.name}</h3>
+                <p className="text-sm text-accent font-medium mt-0.5">{f.role}</p>
+                <p className="text-xs text-muted-foreground font-light leading-relaxed mt-1">{f.expertise}</p>
               </div>
             ))}
           </div>

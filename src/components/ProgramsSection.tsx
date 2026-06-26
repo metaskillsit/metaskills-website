@@ -155,17 +155,18 @@ const ProgramsSection = () => {
       <div className="relative h-[180px] md:h-[200px] bg-primary overflow-hidden flex items-center">
         <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-6 w-full">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-white">
+          <span className="section-eyebrow !text-accent/90 mb-3">Programmes</span>
+          <h2 className="section-h2 !text-white">
             {t("programmes.title")}
           </h2>
-          <p className="text-white/75 mt-2 text-base max-w-xl">
+          <p className="mt-3 text-base font-light text-white/75 max-w-xl leading-relaxed">
             {t("programmes.subtitle")}
           </p>
         </div>
       </div>
 
       <div className="max-w-[1140px] mx-auto px-6 py-8 md:py-10">
-        <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-8">
+        <h3 className="section-h3 mb-8">
           {t("programmes.glance")}
         </h3>
 
@@ -188,10 +189,10 @@ const ProgramsSection = () => {
                 width={800}
                 height={600}
               />
-              <h4 className="font-heading text-xl font-bold text-foreground mb-2">
+              <h4 className="font-heading text-xl font-medium tracking-tight text-foreground mb-2">
                 {cat.title}
               </h4>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              <p className="body-p mb-4">
                 {cat.description}
               </p>
               <ul className="space-y-2 border-t border-border pt-4">

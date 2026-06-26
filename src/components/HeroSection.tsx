@@ -88,10 +88,10 @@ const HeroSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <h1 className="font-heading text-4xl font-bold leading-none text-foreground md:text-5xl lg:text-6xl">
+      <h1 className="font-heading text-5xl font-medium leading-[1.02] tracking-tight text-foreground md:text-6xl lg:text-7xl">
         {t("hero.title")}
       </h1>
-      <p className="mt-2 text-sm text-muted-foreground md:text-lg lg:text-xl">
+      <p className="mt-3 text-base font-light leading-relaxed text-muted-foreground md:text-lg lg:text-xl">
         {t("hero.subtitle")}
       </p>
     </motion.div>

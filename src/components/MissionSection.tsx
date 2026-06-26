@@ -43,10 +43,10 @@ const MissionSection = () => {
             const pattern = new RegExp(`(${highlights.map(h => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
             const parts = full.split(pattern);
             return (
-              <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed font-body">
+              <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-[1.6] font-light font-body">
                 {parts.map((part, i) =>
                   highlights.includes(part) ? (
-                    <span key={i} className="text-primary font-semibold">{part}</span>
+                    <span key={i} className="text-foreground font-medium border-b border-accent">{part}</span>
                   ) : (
                     <span key={i}>{part}</span>
                   )
@@ -73,10 +73,10 @@ const MissionSection = () => {
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <pillar.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-heading text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="font-heading text-lg font-medium tracking-tight text-foreground mb-2 group-hover:text-accent transition-colors">
                   {pillar.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="body-p text-sm">
                   {pillar.description}
                 </p>
               </motion.a>

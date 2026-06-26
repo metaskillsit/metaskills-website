@@ -197,9 +197,9 @@ const PastClassesSection = () => {
     <section className="py-16 md:py-24 bg-muted/30 overflow-hidden">
       <div className="max-w-[1140px] mx-auto px-6 mb-12">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">{t("pastClasses.label")}</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">{t("pastClasses.title")}</h2>
-          <p className="text-muted-foreground max-w-2xl leading-relaxed">{t("pastClasses.subtitle")}</p>
+          <span className="section-eyebrow">{t("pastClasses.label")}</span>
+          <h2 className="section-h2 mb-4">{t("pastClasses.title")}</h2>
+          <p className="lead-p">{t("pastClasses.subtitle")}</p>
         </motion.div>
       </div>
 

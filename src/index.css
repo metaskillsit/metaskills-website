@@ -171,6 +171,63 @@
     content: '';
     @apply absolute bottom-0 left-0 w-full h-0.5 bg-accent;
   }
+
+  /* ===== Unified editorial typography (INSEAD-style) ===== */
+  /* Section H2 — single source of truth for every landing-page section */
+  .section-h2 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.02;
+    @apply text-4xl md:text-5xl text-foreground;
+  }
+
+  /* Section eyebrow — gold rule + small uppercase Inter label */
+  .section-eyebrow {
+    @apply inline-flex items-center gap-3 mb-4 text-accent;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: hsl(var(--accent));
+  }
+
+  /* Sub-heading H3 */
+  .section-h3 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    @apply text-xl md:text-2xl text-foreground;
+  }
+
+  /* Lead paragraph — sits directly under a section H2 */
+  .lead-p {
+    @apply text-lg md:text-xl text-muted-foreground;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 62ch;
+  }
+
+  /* Body paragraph */
+  .body-p {
+    @apply text-base text-muted-foreground;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* Meta / caption */
+  .meta-label {
+    @apply text-xs text-muted-foreground;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
 }
 
 @keyframes scroll-left {

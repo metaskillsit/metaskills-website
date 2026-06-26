@@ -34,7 +34,7 @@ const AnimatedNumber = ({ target, suffix }: { target: number; suffix: string }) 
   }, [target]);
 
   return (
-    <div ref={ref} className="font-heading text-3xl md:text-4xl font-bold text-primary">
+    <div ref={ref} className="font-heading text-5xl md:text-6xl font-medium tracking-tight text-foreground leading-none">
       {count.toLocaleString()}{suffix}
     </div>
   );
@@ -63,8 +63,9 @@ const StatsSection = () => {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
+              <div className="w-8 h-px bg-accent mx-auto mb-4" />
               <AnimatedNumber target={stat.value} suffix={stat.suffix} />
-              <p className="mt-1 font-body text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+              <p className="mt-3 font-body text-[11px] font-medium text-muted-foreground uppercase tracking-[0.28em]">
                 {stat.label}
               </p>
             </motion.div>

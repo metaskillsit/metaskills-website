@@ -25,10 +25,11 @@ const LocationsSection = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          <span className="section-eyebrow">Locations</span>
+          <h2 className="section-h2">
             {t("locations.title")}
           </h2>
-          <p className="text-muted-foreground mt-3 max-w-xl">
+          <p className="lead-p mt-3">
             {t("locations.subtitle")}
           </p>
         </motion.div>
@@ -55,11 +56,11 @@ const LocationsSection = () => {
               </div>
               <div className="flex items-center gap-2 mb-1">
                 <MapPin className="w-4 h-4 text-primary" />
-                <h3 className="font-heading text-lg font-bold text-foreground">
+                <h3 className="font-heading text-lg font-medium tracking-tight text-foreground">
                   {loc.name}
                 </h3>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="body-p text-sm">
                 {loc.description}
               </p>
             </motion.div>
