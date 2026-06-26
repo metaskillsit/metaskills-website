@@ -282,10 +282,10 @@ const ProgrammesPage = () => {
                         : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
-                    <span className={`font-mono text-[10px] tracking-widest flex-shrink-0 ${active ? "text-accent" : ""}`}>
+                    <span className={`font-mono text-[10px] tracking-widest flex-shrink-0 ${active ? "text-accent" : "text-muted-foreground/70"}`}>
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-xs md:text-[13px] leading-tight truncate">
+                    <span className="font-body text-xs md:text-[13px] font-medium leading-tight truncate">
                       {cat.title}
                     </span>
                   </button>
