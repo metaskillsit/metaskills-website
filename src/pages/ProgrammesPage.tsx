@@ -259,7 +259,7 @@ const ProgrammesPage = () => {
               {t("programmes.title")}
               <span className="text-accent">.</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-base md:text-lg text-white/75 leading-relaxed">
+            <p className="mt-5 max-w-2xl font-body text-base md:text-lg text-white/75 leading-relaxed">
               {t("programmes.subtitle")}
             </p>
           </div>
