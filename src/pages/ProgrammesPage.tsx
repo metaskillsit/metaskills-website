@@ -198,8 +198,8 @@ const ProgrammesPage = () => {
           <span
             className={
               isComing
-                ? "block text-[15px] md:text-base font-medium leading-snug text-muted-foreground"
-                : "block text-[15px] md:text-base font-medium leading-snug text-foreground/85 underline decoration-accent/30 decoration-1 underline-offset-[6px] group-hover/link:text-accent group-hover/link:decoration-accent transition-colors"
+                ? "block font-body text-[15px] md:text-base font-medium leading-snug text-muted-foreground"
+                : "block font-body text-[15px] md:text-base font-medium leading-snug text-foreground/85 underline decoration-accent/30 decoration-1 underline-offset-[6px] group-hover/link:text-accent group-hover/link:decoration-accent transition-colors"
             }
           >
             {course.name}
@@ -251,15 +251,15 @@ const ProgrammesPage = () => {
           <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-16 md:py-20">
             <div className="flex items-center gap-3 mb-5">
               <span className="inline-block h-px w-10 bg-accent" />
-              <span className="text-[11px] tracking-[0.28em] uppercase text-white/70 font-medium">
+              <span className="font-body text-[11px] tracking-[0.28em] uppercase text-white/70 font-medium">
                 {String(programCategories.length).padStart(2, "0")} Tracks · Metaskills Institute
               </span>
             </div>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight tracking-tight">
               {t("programmes.title")}
               <span className="text-accent">.</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-base md:text-lg text-white/75 leading-relaxed">
+            <p className="mt-5 max-w-2xl font-body text-base md:text-lg text-white/75 leading-relaxed">
               {t("programmes.subtitle")}
             </p>
           </div>
@@ -282,10 +282,10 @@ const ProgrammesPage = () => {
                         : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
-                    <span className={`font-mono text-[10px] tracking-widest flex-shrink-0 ${active ? "text-accent" : ""}`}>
+                    <span className={`font-mono text-[10px] tracking-widest flex-shrink-0 ${active ? "text-accent" : "text-muted-foreground/70"}`}>
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-xs md:text-[13px] leading-tight truncate">
+                    <span className="font-body text-xs md:text-[13px] font-medium leading-tight truncate">
                       {cat.title}
                     </span>
                   </button>
@@ -342,16 +342,16 @@ const ProgrammesPage = () => {
                   <div className={`lg:col-span-7 ${reverse ? "lg:order-1" : ""}`}>
                     <div className="flex items-center gap-3 mb-3">
                       <span className="inline-block h-px w-8 bg-accent" />
-                      <span className="text-[11px] tracking-[0.24em] uppercase text-muted-foreground font-medium">
-                        {cat.courses.length} Course{cat.courses.length > 1 ? "s" : ""}
+                      <span className="font-body text-[11px] tracking-[0.28em] uppercase text-muted-foreground font-medium">
+                        {String(cat.courses.length).padStart(2, "0")} Course{cat.courses.length > 1 ? "s" : ""}
                       </span>
                     </div>
 
-                    <h2 className="font-heading text-2xl md:text-3xl lg:text-[34px] font-bold text-foreground leading-tight mb-3">
+                    <h2 className="font-heading text-2xl md:text-3xl lg:text-[34px] font-bold text-foreground leading-tight tracking-tight mb-3">
                       {cat.title}
                     </h2>
 
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5 max-w-xl">
+                    <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed mb-5 max-w-xl">
                       {cat.description}
                     </p>
 
