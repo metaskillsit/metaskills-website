@@ -29,7 +29,8 @@ const WhyMetaskillsSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.6)] to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <div className="max-w-[1140px] mx-auto">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-white">
+            <span className="section-eyebrow !text-accent">Why Metaskills</span>
+            <h2 className="section-h2 !text-white">
               {t("why.title")}
             </h2>
           </div>
@@ -37,7 +38,7 @@ const WhyMetaskillsSection = () => {
       </div>
 
       <div className="max-w-[1140px] mx-auto px-6 py-16">
-        <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-14">
+        <p className="lead-p mb-14">
           {t("why.intro")}
         </p>
 
@@ -55,10 +56,10 @@ const WhyMetaskillsSection = () => {
                 <f.icon className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-heading text-lg font-bold text-foreground mb-1">
+                <h3 className="font-heading text-lg font-medium tracking-tight text-foreground mb-1">
                   {f.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="body-p text-sm">
                   {f.description}
                 </p>
               </div>
