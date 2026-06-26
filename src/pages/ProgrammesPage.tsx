@@ -342,8 +342,8 @@ const ProgrammesPage = () => {
                   <div className={`lg:col-span-7 ${reverse ? "lg:order-1" : ""}`}>
                     <div className="flex items-center gap-3 mb-3">
                       <span className="inline-block h-px w-8 bg-accent" />
-                      <span className="text-[11px] tracking-[0.24em] uppercase text-muted-foreground font-medium">
-                        {cat.courses.length} Course{cat.courses.length > 1 ? "s" : ""}
+                      <span className="font-body text-[11px] tracking-[0.28em] uppercase text-muted-foreground font-medium">
+                        {String(cat.courses.length).padStart(2, "0")} Course{cat.courses.length > 1 ? "s" : ""}
                       </span>
                     </div>
 
