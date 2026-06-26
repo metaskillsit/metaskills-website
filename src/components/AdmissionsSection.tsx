@@ -23,7 +23,7 @@ const AdmissionsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
               {t("admissions.title")}
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed text-lg">

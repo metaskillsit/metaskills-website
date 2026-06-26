@@ -25,7 +25,7 @@ const LocationsSection = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             {t("locations.title")}
           </h2>
           <p className="text-muted-foreground mt-3 max-w-xl">
