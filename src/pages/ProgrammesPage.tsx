@@ -251,11 +251,11 @@ const ProgrammesPage = () => {
           <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-16 md:py-20">
             <div className="flex items-center gap-3 mb-5">
               <span className="inline-block h-px w-10 bg-accent" />
-              <span className="text-[11px] tracking-[0.28em] uppercase text-white/70 font-medium">
+              <span className="font-body text-[11px] tracking-[0.28em] uppercase text-white/70 font-medium">
                 {String(programCategories.length).padStart(2, "0")} Tracks · Metaskills Institute
               </span>
             </div>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight tracking-tight">
               {t("programmes.title")}
               <span className="text-accent">.</span>
             </h1>
