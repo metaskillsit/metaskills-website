@@ -55,7 +55,7 @@ const WhyMetaskillsSection = () => {
                 <f.icon className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-heading text-base font-bold text-foreground mb-1">
+                <h3 className="font-heading text-lg font-bold text-foreground mb-1">
                   {f.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
