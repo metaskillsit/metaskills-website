@@ -198,8 +198,8 @@ const ProgrammesPage = () => {
           <span
             className={
               isComing
-                ? "block text-[15px] md:text-base font-medium leading-snug text-muted-foreground"
-                : "block text-[15px] md:text-base font-medium leading-snug text-foreground/85 underline decoration-accent/30 decoration-1 underline-offset-[6px] group-hover/link:text-accent group-hover/link:decoration-accent transition-colors"
+                ? "block font-body text-[15px] md:text-base font-medium leading-snug text-muted-foreground"
+                : "block font-body text-[15px] md:text-base font-medium leading-snug text-foreground/85 underline decoration-accent/30 decoration-1 underline-offset-[6px] group-hover/link:text-accent group-hover/link:decoration-accent transition-colors"
             }
           >
             {course.name}
