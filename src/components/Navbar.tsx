@@ -167,6 +167,7 @@ const Navbar = () => {
         { label: t("nav.agenticAIGovernance"), href: "/agentic-ai-governance" },
         { label: "AI Media Studio", href: "/ai-video-studio" },
         { label: "LLM Playground", href: "/llm-playground" },
+        { label: "AI Song Generation Studio", href: "/ai-song-studio" },
       ],
     },
   ];
@@ -308,6 +309,17 @@ const Navbar = () => {
                     }`}
                   >
                     LLM Playground
+                  </Link>
+                  <Link
+                    to="/ai-song-studio"
+                    onClick={() => setLabsOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/ai-song-studio"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    AI Song Generation Studio
                   </Link>
                 </div>
               )}

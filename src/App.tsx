@@ -19,6 +19,7 @@ import AgenticAIPage from "./pages/AgenticAIPage.tsx";
 import AIStackPage from "./pages/AIStackPage.tsx";
 import AIVideoStudioPage from "./pages/AIVideoStudioPage.tsx";
 import LLMPlaygroundPage from "./pages/LLMPlaygroundPage.tsx";
+import AISongStudioPage from "./pages/AISongStudioPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
@@ -46,6 +47,7 @@ const AppContent = () => {
         <Route path="/ai-stack-masterclasses" element={<AIStackPage />} />
         <Route path="/ai-video-studio" element={<AIVideoStudioPage />} />
         <Route path="/llm-playground" element={<LLMPlaygroundPage />} />
+        <Route path="/ai-song-studio" element={<AISongStudioPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
