@@ -42,16 +42,16 @@ const PartnerLogosSection = () => {
         </motion.p>
       </div>
       <div className="max-w-[1140px] mx-auto px-6">
-        <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 md:gap-6">
+        <div className="grid grid-cols-3 sm:grid-cols-5 gap-x-6 gap-y-6 md:gap-x-10 md:gap-y-8 items-center justify-items-center">
           {partnerLogos.map((partner) => (
             <div
               key={partner.name}
-              className="flex-shrink-0 flex items-center justify-center h-[64px] md:h-[88px]"
+              className="flex items-center justify-center h-12 md:h-14 w-full"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-full w-auto max-w-[150px] md:max-w-[200px] object-contain"
+                className="max-h-full w-auto max-w-[130px] md:max-w-[150px] object-contain"
                 loading="lazy"
               />
             </div>
