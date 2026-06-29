@@ -44,7 +44,7 @@ const CurrentTrainingTicker = () => {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-foreground"></span>
           </span>
           <Radio className="w-3.5 h-3.5" aria-hidden="true" />
-          {t("ticker.label", "Now Training")}
+          {t("ticker.label", "Ongoing 2026")}
         </div>
 
         {/* Marquee */}
