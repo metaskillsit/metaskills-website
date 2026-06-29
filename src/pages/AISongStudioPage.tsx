@@ -36,7 +36,7 @@ const AISongStudioPage = () => {
       <main>
         <div className="w-full" style={{ height: "100vh" }}>
           <iframe
-            src="https://www.kieuling.com/studio"
+            src="https://www.kieuling.com/free-studio/kl-x9q2m7p4t6w8"
             title="AI Song Generation Studio"
             className="w-full h-full border-0"
             allow="camera; microphone; clipboard-read; clipboard-write; fullscreen; autoplay"
