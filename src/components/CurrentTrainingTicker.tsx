@@ -14,10 +14,15 @@ const CurrentTrainingTicker = () => {
   const [paused, setPaused] = useState(false);
 
   const engagements = [
-    "Vibe Coding for Whole of IMDA — with TinkerTanker",
-    "AI For Good: Train the Trainers — Daughters of Tomorrow & United Women's Group, with AISG",
-    "AI Literacy for Financial Institutions — OCBC, Maybank, DBS & AIA, with NTUC LearningHub",
-    "MINDEF Agentic AI Training",
+    "IMDA Vibe Coding (~30 runs)",
+    "OCBC (16 runs)",
+    "MayBank (19 runs)",
+    "AIA (8 runs)",
+    "MINDEF - AWS Certification and SMU PCML",
+    "AISG-Daughters of Tomorrow (3 runs)",
+    "AISG-United Women's Group (3 runs)",
+    "Logistics (4 runs)",
+    "NUS AIDF-Zhejiang University CEO/Executive Training (multiple runs)",
   ];
 
   const items = [...engagements, ...engagements];
