@@ -6,7 +6,7 @@ interface CourseSidebarProps {
   course: Course;
 }
 
-const coursePricingOverrides: Record<string, { corporate: string; corporateLabel?: string; selfSponsored?: string; customNotes?: boolean }> = {
+const coursePricingOverrides: Record<string, { corporate: string; corporateLabel?: string; selfSponsored?: string; customNotes?: boolean; hideNotes?: boolean; fundingNote?: string }> = {
   "ai-strategy-roadmap-leaders": {
     corporate: "S$15,000 per workshop per day (up to 10 pax)",
   },
@@ -14,6 +14,12 @@ const coursePricingOverrides: Record<string, { corporate: string; corporateLabel
     corporateLabel: "Public/Corporate Rates",
     corporate: "S$9,000 per pax",
     customNotes: true,
+  },
+  "ai-literacy-for-finance-professionals": {
+    corporateLabel: "Course Fee",
+    corporate: "S$700 per pax",
+    hideNotes: true,
+    fundingNote: "Government funding available (IBF-STS, SkillsFuture Credit & UTAP)",
   },
 };
 
