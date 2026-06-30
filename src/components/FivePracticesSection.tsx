@@ -80,7 +80,7 @@ const FivePracticesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group borderRadius border-b border-border"
+              className="group relative border-b border-border"
             >
               <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-accent/0 group-hover:bg-accent/50 transition-colors duration-500" />
               <div className="grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 pl-3 md:pl-5">
