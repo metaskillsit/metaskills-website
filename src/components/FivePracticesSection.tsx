@@ -60,11 +60,11 @@ const FivePracticesSection = () => {
   return (
     <section aria-label="Our five practices" className="bg-background border-t border-border">
       <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-24">
-        <div className="mb-12 md:mb-16 max-w-3xl">
+        <div className="mb-12 md:mb-16">
           <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-medium mb-4">
             {t("practices.eyebrow", "Our five practices")}
           </p>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-foreground leading-[1.1]">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-foreground leading-[1.1]">
             {t("practices.heading", "Where we work.")}{" "}
             <span className="italic text-muted-foreground font-light">
               {t("practices.headingItalic", "Five practices, one applied AI institute.")}
@@ -72,7 +72,7 @@ const FivePracticesSection = () => {
           </h2>
         </div>
 
-        <ul className="divide-y divide-border border-y border-border">
+        <ul className="border-t border-border">
           {practices.map((p, i) => (
             <motion.li
               key={p.num}
@@ -80,30 +80,31 @@ const FivePracticesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10"
+              className="group borderRadius border-b border-border"
             >
-              <div className="col-span-2 md:col-span-1">
-                <span className="font-heading text-xl md:text-2xl text-muted-foreground/70 font-light tabular-nums">
-                  {p.num}
-                </span>
-              </div>
-
-              <div className="col-span-10 md:col-span-3">
-                <div className="font-heading italic text-2xl md:text-3xl text-accent font-medium leading-none mb-2">
-                  {p.zh}
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-accent/0 group-hover:bg-accent/50 transition-colors duration-500" />
+              <div className="grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 pl-3 md:pl-5">
+                <div className="col-span-2 md:col-span-1">
+                  <span className="font-heading text-sm md:text-base text-muted-foreground/40 font-light tabular-nums tracking-widest">
+                    {p.num}
+                  </span>
                 </div>
-                <h3 className="font-heading text-lg md:text-xl font-medium tracking-tight text-foreground leading-snug">
-                  {p.name}
-                </h3>
-              </div>
 
-              <div className="col-span-12 md:col-span-8 md:pl-4">
-                <p className="font-heading italic text-base md:text-lg text-foreground/90 font-normal mb-2 leading-snug">
-                  {p.tagline}
-                </p>
-                <p className="body-p text-sm md:text-[15px] leading-relaxed">
-                  {p.desc}
-                </p>
+                <div className="col-span-10 md:col-span-4">
+                  <h3 className="font-heading text-lg md:text-xl font-medium tracking-tight text-foreground leading-snug">
+                    <span className="text-accent not-italic mr-2">{p.zh}</span>
+                    {p.name}
+                  </h3>
+                  <p className="mt-1 text-sm md:text-[15px] text-foreground/70 font-light leading-snug">
+                    {p.tagline}
+                  </p>
+                </div>
+
+                <div className="col-span-12 md:col-span-7 md:pl-4">
+                  <p className="body-p text-sm md:text-[15px] leading-relaxed">
+                    {p.desc}
+                  </p>
+                </div>
               </div>
             </motion.li>
           ))}
