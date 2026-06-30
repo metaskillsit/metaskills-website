@@ -29,6 +29,8 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
   const corporateRate = pricing?.corporate || "S$6,000 per workshop per day (up to 10 pax)";
   const showSelfSponsored = pricing ? pricing.selfSponsored !== undefined : true;
   const useCustomNotes = pricing?.customNotes || false;
+  const hideNotes = pricing?.hideNotes || false;
+  const fundingNote = pricing?.fundingNote;
 
   return (
     <div className="lg:col-span-1">
