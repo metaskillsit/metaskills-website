@@ -53,23 +53,30 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
                 <p className="font-bold text-foreground">S$750 per pax per day</p>
               </div>
             )}
-            <div className="border-t border-border pt-3 text-xs text-muted-foreground italic space-y-1">
-              {useCustomNotes ? (
-                <>
-                  <p className="font-semibold not-italic text-foreground/80">{t("coursePage.feeNote")}</p>
-                  <p>Customised training arrangements, including class size, course scope, and delivery format, can be discussed and tailored to organisational requirements.</p>
-                  <p className="pt-2">All fees are exempt from GST.</p>
-                </>
-              ) : (
-                <>
-                  <p className="font-semibold not-italic text-foreground/80">{t("coursePage.feeNote")}</p>
-                  <p>1) {t("coursePage.feeNote1")}</p>
-                  <p>2) {t("coursePage.feeNote2")}</p>
-                  <p>3) {t("coursePage.feeNote3")}</p>
-                  <p className="pt-2">{t("coursePage.gstNote")}</p>
-                </>
-              )}
-            </div>
+            {fundingNote && (
+              <div className="border-t border-border pt-3">
+                <p className="text-xs text-emerald-700 dark:text-emerald-400 font-medium">{fundingNote}</p>
+              </div>
+            )}
+            {!hideNotes && (
+              <div className="border-t border-border pt-3 text-xs text-muted-foreground italic space-y-1">
+                {useCustomNotes ? (
+                  <>
+                    <p className="font-semibold not-italic text-foreground/80">{t("coursePage.feeNote")}</p>
+                    <p>Customised training arrangements, including class size, course scope, and delivery format, can be discussed and tailored to organisational requirements.</p>
+                    <p className="pt-2">All fees are exempt from GST.</p>
+                  </>
+                ) : (
+                  <>
+                    <p className="font-semibold not-italic text-foreground/80">{t("coursePage.feeNote")}</p>
+                    <p>1) {t("coursePage.feeNote1")}</p>
+                    <p>2) {t("coursePage.feeNote2")}</p>
+                    <p>3) {t("coursePage.feeNote3")}</p>
+                    <p className="pt-2">{t("coursePage.gstNote")}</p>
+                  </>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
