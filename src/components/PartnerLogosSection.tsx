@@ -31,7 +31,7 @@ const PartnerLogosSection = () => {
 
   return (
     <section className="bg-card border-t border-border py-4 md:py-6">
-      <div className="max-w-[1140px] mx-auto px-6 mb-3 md:mb-4 text-center">
+      <div className="max-w-[1140px] mx-auto px-6 mb-3 md:mb-4">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
