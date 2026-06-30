@@ -27,6 +27,12 @@ const coursePricingOverrides: Record<string, { corporate: string; corporateLabel
     hideNotes: true,
     fundingNote: "Government funding available (IBF-STS, SkillsFuture Credit & UTAP)",
   },
+  "ai-strategy-governance-ethical-leadership": {
+    corporateLabel: "Course Fee",
+    corporate: "S$1,000 per pax",
+    hideNotes: true,
+    fundingNote: "Government funding available (IBF-STS, SkillsFuture Credit & UTAP)",
+  },
 };
 
 const CourseSidebar = ({ course }: CourseSidebarProps) => {
