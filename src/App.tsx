@@ -20,6 +20,7 @@ import AIStackPage from "./pages/AIStackPage.tsx";
 import AIVideoStudioPage from "./pages/AIVideoStudioPage.tsx";
 import LLMPlaygroundPage from "./pages/LLMPlaygroundPage.tsx";
 import AISongStudioPage from "./pages/AISongStudioPage.tsx";
+import ConsultingPage from "./pages/ConsultingPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
@@ -48,6 +49,7 @@ const AppContent = () => {
         <Route path="/ai-video-studio" element={<AIVideoStudioPage />} />
         <Route path="/llm-playground" element={<LLMPlaygroundPage />} />
         <Route path="/ai-song-studio" element={<AISongStudioPage />} />
+        <Route path="/consulting" element={<ConsultingPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
