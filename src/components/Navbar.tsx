@@ -175,8 +175,8 @@ const Navbar = () => {
   const topNavItems = [
     { label: t("nav.about"), href: "/about" },
     { label: t("nav.programmes"), href: "/programmes" },
+    { label: t("nav.consulting"), href: "/consulting" },
     { label: t("nav.faculty"), href: "/faculty" },
-    { label: t("nav.admissions"), href: "/admissions" },
   ];
 
   const contactItem = { label: t("nav.contact", "Contact Us"), href: "/locations" };
