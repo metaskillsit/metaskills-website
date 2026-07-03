@@ -335,6 +335,15 @@ const Navbar = () => {
               {contactItem.label}
             </Link>
 
+            <Link
+              to="/admissions"
+              className={`text-[13px] font-medium tracking-wide transition-colors ${
+                location.pathname === "/admissions" ? "text-primary" : "text-foreground/70 hover:text-primary"
+              }`}
+            >
+              {t("nav.admissions")}
+            </Link>
+
             {/* Language selector - desktop */}
             <div ref={langRef} className="relative ml-1">
               <button
