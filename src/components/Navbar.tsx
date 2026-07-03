@@ -155,6 +155,12 @@ const Navbar = () => {
       ],
     },
     {
+      label: t("nav.consulting"),
+      items: [
+        { label: t("nav.consulting"), href: "/consulting" },
+      ],
+    },
+    {
       label: t("nav.admissions"),
       items: [
         { label: t("nav.howToApply"), href: "/admissions" },
@@ -175,8 +181,8 @@ const Navbar = () => {
   const topNavItems = [
     { label: t("nav.about"), href: "/about" },
     { label: t("nav.programmes"), href: "/programmes" },
+    { label: t("nav.consulting"), href: "/consulting" },
     { label: t("nav.faculty"), href: "/faculty" },
-    { label: t("nav.admissions"), href: "/admissions" },
   ];
 
   const contactItem = { label: t("nav.contact", "Contact Us"), href: "/locations" };
@@ -333,6 +339,15 @@ const Navbar = () => {
               }`}
             >
               {contactItem.label}
+            </Link>
+
+            <Link
+              to="/admissions"
+              className={`text-[13px] font-medium tracking-wide transition-colors ${
+                location.pathname === "/admissions" ? "text-primary" : "text-foreground/70 hover:text-primary"
+              }`}
+            >
+              {t("nav.admissions")}
             </Link>
 
             {/* Language selector - desktop */}
