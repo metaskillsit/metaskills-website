@@ -155,6 +155,12 @@ const Navbar = () => {
       ],
     },
     {
+      label: t("nav.consulting"),
+      items: [
+        { label: t("nav.consulting"), href: "/consulting" },
+      ],
+    },
+    {
       label: t("nav.admissions"),
       items: [
         { label: t("nav.howToApply"), href: "/admissions" },
