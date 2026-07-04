@@ -34,23 +34,13 @@ const Navbar = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [langOpen, setLangOpen] = useState(false);
   const [labsOpen, setLabsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  
 
   const labsRef = useRef<HTMLDivElement>(null);
   
   const langRef = useRef<HTMLDivElement>(null);
   const langRefMobile = useRef<HTMLDivElement>(null);
   const location = useLocation();
-
-  // Transparent-over-hero navbar only on the landing page
-  const isHome = location.pathname === "/";
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  const transparent = isHome && !scrolled && !menuOpen;
 
   const navGroups: NavGroup[] = [
     {
@@ -223,7 +213,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${transparent ? "bg-transparent border-b border-white/10" : "bg-card/95 backdrop-blur-md border-b border-border"}`} data-transparent={transparent}>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border transition-colors duration-500">
         <div className="max-w-[1140px] mx-auto px-6 flex items-center justify-between h-20 md:h-[90px]">
           <div className="flex items-center gap-4">
             <button

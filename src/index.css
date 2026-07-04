@@ -240,21 +240,6 @@
   100% { transform: translateX(0); }
 }
 
-/* Transparent navbar over hero — invert child text/icon colors */
-nav[data-transparent="true"] {
-  color: #f5f3ee;
-}
-nav[data-transparent="true"] a,
-nav[data-transparent="true"] button {
-  color: #f5f3ee;
-}
-nav[data-transparent="true"] a:hover,
-nav[data-transparent="true"] button:hover {
-  color: hsl(var(--accent));
-}
-nav[data-transparent="true"] img {
-  filter: brightness(0) invert(1);
-}
 
 .animate-scroll-left {
   animation: scroll-left 30s linear infinite;
