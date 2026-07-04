@@ -307,3 +307,80 @@
   background: rgba(13,13,13,0.92);
   border-bottom-color: rgba(245,243,238,0.08);
 }
+
+.hero-tech-card {
+  position: relative;
+  overflow: hidden;
+  color: hsl(var(--primary-foreground));
+  background:
+    linear-gradient(135deg, hsl(var(--hero-overlay) / 0.94), hsl(var(--hero-overlay) / 0.78)),
+    radial-gradient(circle at 12% 0%, hsl(var(--gold) / 0.22), transparent 34%),
+    radial-gradient(circle at 100% 100%, hsl(var(--teal-light) / 0.11), transparent 32%);
+  border: 1px solid hsl(var(--gold) / 0.34);
+  box-shadow:
+    0 26px 70px hsl(var(--hero-overlay) / 0.5),
+    inset 0 1px 0 hsl(var(--primary-foreground) / 0.11),
+    inset 0 -1px 0 hsl(var(--gold) / 0.12);
+  backdrop-filter: blur(18px) saturate(130%);
+}
+
+.hero-tech-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.22), transparent);
+  height: 1px;
+}
+
+.hero-tech-card::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  pointer-events: none;
+  border: 1px solid hsl(var(--primary-foreground) / 0.055);
+}
+
+.hero-tech-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary-foreground)) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.hero-tech-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: hsl(var(--gold-light));
+  font-size: 10px;
+  letter-spacing: 0.3em;
+}
+
+.hero-tech-title {
+  letter-spacing: -0.01em;
+  text-shadow: 0 18px 42px hsl(var(--hero-overlay) / 0.55);
+}
+
+.hero-tech-status {
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: hsl(var(--gold));
+  box-shadow: 0 0 18px hsl(var(--gold) / 0.85);
+}
+
+.hero-tech-status::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid hsl(var(--gold) / 0.36);
+}
+
+.hero-tech-subtitle {
+  color: hsl(var(--primary-foreground) / 0.82);
+  font-weight: 300;
+  letter-spacing: 0;
+}

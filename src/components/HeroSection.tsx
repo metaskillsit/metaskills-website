@@ -53,16 +53,16 @@ const HeroSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="flex items-center gap-3 mb-4">
-        <span className="inline-block h-px w-8 bg-accent" />
-        <span className="text-[10px] md:text-[11px] font-sans-prem font-medium uppercase text-accent" style={{ letterSpacing: "0.28em" }}>
+      <div className="hero-tech-eyebrow mb-4">
+        <span className="hero-tech-status" aria-hidden="true" />
+        <span className="font-sans-prem font-medium uppercase">
           Metaskills Institute
         </span>
       </div>
-      <h1 className="font-heading text-[44px] md:text-[56px] lg:text-[64px] font-semibold leading-[1.02] tracking-tight text-foreground">
+      <h1 className="hero-tech-title font-sans-prem text-[42px] md:text-[54px] lg:text-[62px] font-semibold leading-[1.02] text-primary-foreground">
         {t("hero.title")}
       </h1>
-      <p className="mt-5 text-[17px] md:text-[22px] lg:text-[26px] font-display italic leading-[1.5] text-muted-foreground max-w-[720px]">
+      <p className="hero-tech-subtitle mt-5 max-w-[720px] font-body text-[16px] md:text-[20px] lg:text-[23px] leading-[1.55]">
         {t("hero.subtitle")}
       </p>
     </motion.div>
@@ -121,7 +121,8 @@ const HeroSection = () => {
         {/* Desktop overlay — text on media */}
         <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent z-10" />
         <div className="hidden md:block absolute inset-x-0 bottom-0 z-20 mx-auto w-full max-w-[1140px] px-6 pb-6">
-          <div className="inline-flex items-center gap-6 border border-border/60 bg-background/85 px-6 py-4 shadow-xl backdrop-blur-sm">
+          <div className="hero-tech-card inline-flex items-center gap-6 px-7 py-5">
+            <span className="hero-tech-grid" aria-hidden="true" />
             {heroContent}
           </div>
         </div>
