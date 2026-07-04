@@ -223,7 +223,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${transparent ? "bg-transparent border-b border-white/10" : "bg-card/95 backdrop-blur-md border-b border-border"}`} data-transparent={transparent}>
         <div className="max-w-[1140px] mx-auto px-6 flex items-center justify-between h-20 md:h-[90px]">
           <div className="flex items-center gap-4">
             <button
