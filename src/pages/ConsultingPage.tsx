@@ -142,15 +142,6 @@ const ConsultingPage = () => {
                   <MessageCircle className="w-4 h-4" />
                   Book a Scoping Call
                 </a>
-                <a
-                  href={WA_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-border bg-background text-foreground px-6 py-3 text-sm font-semibold tracking-wide hover:bg-muted transition-colors"
-                >
-                  <Download className="w-4 h-4" />
-                  Download Consulting Deck
-                </a>
               </div>
             </motion.div>
           </div>
