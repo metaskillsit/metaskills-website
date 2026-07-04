@@ -24,18 +24,19 @@ const Index = () => {
         <HeroSection />
         <CurrentTrainingTicker />
         <MissionSection />
+        <StatsSection />
         <WhyMetaskillsSection />
         <FivePracticesSection />
-        <PartnerLogosSection />
         <PastClassesSection />
         <ProgramsSection />
-        <StatsSection />
         <CertifiedInstructorsSection />
+        <PartnerLogosSection />
         <FacultySection />
         <TestimonialsSection />
         
         <LocationsSection />
         <AdmissionsSection />
+
       </main>
       <FooterSection />
       
