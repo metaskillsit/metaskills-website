@@ -8,12 +8,12 @@ const ENQUIRE_URL = "https://academy.smu.edu.sg/programme-enquiry?course=Profess
 const WHATSAPP_URL = "https://wa.me/6589483482?text=Hi%2C%20I%27m%20interested%20in%20the%20Metaskills%20Institute%20Professional%20Certificate%20in%20Applied%20AI.";
 
 const modules = [
-  { n: 1, title: "Machine Learning Data Pipelines and Visualisation Mastery with Python", dates: "7, 8 & 11 Jul 2026", status: "Registration Closed", url: "https://academy.smu.edu.sg/courses/module-1-machine-learning-data-pipelines-and-visualisation-mastery-python" },
-  { n: 2, title: "Statistical Mastery for Machine Learning and AI Success", dates: "28, 29 Jul & 1 Aug 2026", status: "Open for Registration", url: "https://academy.smu.edu.sg/courses/professional-certificate-machine-learning-python-module-2-statistical-mastery-machine" },
-  { n: 3, title: "Supervised Machine Learning for Building and Deploying Models", dates: "18, 19 & 22 Aug 2026", status: "Open for Registration", url: "https://academy.smu.edu.sg/courses/professional-certificate-machine-learning-python-module-3-supervised-machine-learning" },
-  { n: 4, title: "Unsupervised Machine Learning and Advanced Techniques for Insights", dates: "8, 9 & 12 Sep 2026", status: "Open for Registration", url: "https://academy.smu.edu.sg/courses/professional-certificate-machine-learning-python-module-4-unsupervised-machine-learning-and" },
-  { n: 5, title: "Deep Learning and Machine Learning Mastery in Vision and Transfer Learning", dates: "29, 30 Sep & 3 Oct 2026", status: "Open for Registration", url: "https://academy.smu.edu.sg/courses/professional-certificate-machine-learning-python-module-5-deep-learning-and-machine" },
-  { n: 6, title: "Machine Learning with Language Models and Agentic Workflows for Organisational Transformation", dates: "20, 21 & 24 Oct 2026", status: "Open for Registration", url: "https://academy.smu.edu.sg/courses/professional-certificate-machine-learning-python-module-6-machine-learning-language-models" },
+  { n: 1, title: "Machine Learning Data Pipelines and Visualisation Mastery with Python", dates: "7, 8 & 11 Jul 2026", status: "Registration Closed" },
+  { n: 2, title: "Statistical Mastery for Machine Learning and AI Success", dates: "28, 29 Jul & 1 Aug 2026", status: "Open for Registration" },
+  { n: 3, title: "Supervised Machine Learning for Building and Deploying Models", dates: "18, 19 & 22 Aug 2026", status: "Open for Registration" },
+  { n: 4, title: "Unsupervised Machine Learning and Advanced Techniques for Insights", dates: "8, 9 & 12 Sep 2026", status: "Open for Registration" },
+  { n: 5, title: "Deep Learning and Machine Learning Mastery in Vision and Transfer Learning", dates: "29, 30 Sep & 3 Oct 2026", status: "Open for Registration" },
+  { n: 6, title: "Machine Learning with Language Models and Agentic Workflows for Organisational Transformation", dates: "20, 21 & 24 Oct 2026", status: "Open for Registration" },
 ];
 
 const audience = [
@@ -144,12 +144,12 @@ const SMUPCMLPage = () => {
               </p>
               <div className="space-y-3">
                 {modules.map((m) => (
-                  <a key={m.n} href={m.url} target="_blank" rel="noopener noreferrer"
-                    className="group block p-5 border border-border rounded-lg bg-card hover:border-primary transition">
+                  <div key={m.n}
+                    className="p-5 border border-border rounded-lg bg-card">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <p className="text-xs uppercase tracking-widest text-primary mb-1">Module {m.n}</p>
-                        <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition">
+                        <h3 className="font-serif text-lg text-foreground">
                           {m.title}
                         </h3>
                         <p className="text-sm text-muted-foreground mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -161,9 +161,8 @@ const SMUPCMLPage = () => {
                           </span>
                         </p>
                       </div>
-                      <ExternalLink className="w-4 h-4 text-muted-foreground shrink-0 mt-1 group-hover:text-primary" />
                     </div>
-                  </a>
+                  </div>
                 ))}
               </div>
               <p className="text-xs text-muted-foreground mt-4">
