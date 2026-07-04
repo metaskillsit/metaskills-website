@@ -6,31 +6,11 @@ const MissionSection = () => {
   const { t } = useTranslation();
 
   const practices = [
-    {
-      icon: Landmark,
-      name: "AI for Financial Services",
-      tagline: "AI and financial services for modern markets.",
-    },
-    {
-      icon: GraduationCap,
-      name: "AI for Education & Training",
-      tagline: "AI-powered curriculum, assessment and adaptive tutors.",
-    },
-    {
-      icon: Shield,
-      name: "AI for Government & Public Sector",
-      tagline: "Responsible AI for public service and national readiness.",
-    },
-    {
-      icon: Briefcase,
-      name: "AI for SMEs & Enterprises",
-      tagline: "From pilots to deployed AI in your business.",
-    },
-    {
-      icon: HeartHandshake,
-      name: "AI for Wellness & Social Good",
-      tagline: "Human-centric AI for communities, care and inclusion.",
-    },
+    { icon: Landmark, name: t("practices.p1Name"), tagline: t("practices.p1Tagline") },
+    { icon: GraduationCap, name: t("practices.p2Name"), tagline: t("practices.p2Tagline") },
+    { icon: Shield, name: t("practices.p3Name"), tagline: t("practices.p3Tagline") },
+    { icon: Briefcase, name: t("practices.p4Name"), tagline: t("practices.p4Tagline") },
+    { icon: HeartHandshake, name: t("practices.p5Name"), tagline: t("practices.p5Tagline") },
   ];
 
   return (
