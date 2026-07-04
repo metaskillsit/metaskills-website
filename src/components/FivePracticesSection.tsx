@@ -58,57 +58,59 @@ const FivePracticesSection = () => {
   ];
 
   return (
-    <section aria-label="Our five practices" className="bg-background border-t border-border">
-      <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-24">
-        <div className="mb-12 md:mb-16">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-medium mb-4">
-            {t("practices.eyebrow", "Our five practices")}
-          </p>
-          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-foreground leading-[1.1]">
-            {t("practices.heading", "Where we work.")}{" "}
-            <span className="italic text-muted-foreground font-light">
+    <section aria-label="Our five practices" className="bg-background border-t border-border/30">
+      <div className="max-w-[1240px] mx-auto px-6 py-24 md:py-32">
+        <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-12 md:gap-20">
+          {/* Left column — sticky editorial header */}
+          <div className="md:sticky md:top-32 h-fit">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="inline-block h-px w-8 bg-accent" />
+              <span className="text-[11px] font-medium uppercase text-accent" style={{ letterSpacing: "0.28em" }}>
+                {t("practices.eyebrow", "Our five practices")}
+              </span>
+            </div>
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.02]">
+              {t("practices.heading", "Where we work.")}
+            </h2>
+            <p className="mt-6 text-lg md:text-xl font-light text-muted-foreground italic leading-relaxed max-w-sm">
               {t("practices.headingItalic", "Five practices, one applied AI institute.")}
-            </span>
-          </h2>
-        </div>
+            </p>
+          </div>
 
-        <ul className="border-t border-border">
-          {practices.map((p, i) => (
-            <motion.li
-              key={p.num}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group relative border-b border-border"
-            >
-              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-accent/0 group-hover:bg-accent/50 transition-colors duration-500" />
-              <div className="grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 pl-3 md:pl-5">
-                <div className="col-span-2 md:col-span-1">
-                  <span className="font-heading text-sm md:text-base text-muted-foreground/40 font-light tabular-nums tracking-widest">
-                    {p.num}
-                  </span>
-                </div>
-
-                <div className="col-span-10 md:col-span-4">
-                  <h3 className="font-heading text-lg md:text-xl font-medium tracking-tight text-foreground leading-snug">
-                    <span className="text-accent not-italic mr-2">{p.zh}</span>
+          {/* Right column — editorial list */}
+          <ul className="border-t border-border/30">
+            {practices.map((p, i) => (
+              <motion.li
+                key={p.num}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: i * 0.05 }}
+                className="group border-b border-border/30"
+              >
+                <div className="py-10 md:py-12">
+                  <div className="flex items-baseline justify-between mb-4">
+                    <span className="font-heading text-sm text-muted-foreground/50 tabular-nums" style={{ letterSpacing: "0.2em" }}>
+                      {p.num}
+                    </span>
+                    <span className="text-[10px] uppercase text-muted-foreground/50" style={{ letterSpacing: "0.28em" }}>
+                      {p.zh}
+                    </span>
+                  </div>
+                  <h3 className="font-heading text-2xl md:text-3xl font-medium tracking-tight text-foreground leading-[1.1] group-hover:text-accent transition-colors">
                     {p.name}
                   </h3>
-                  <p className="mt-1 text-sm md:text-[15px] text-foreground/70 font-light leading-snug">
+                  <p className="mt-3 text-[15px] md:text-base text-foreground/70 font-light italic leading-relaxed">
                     {p.tagline}
                   </p>
-                </div>
-
-                <div className="col-span-12 md:col-span-7 md:pl-4">
-                  <p className="body-p text-sm md:text-[15px] leading-relaxed">
+                  <p className="mt-4 body-p text-[15px] leading-[1.7] max-w-[52ch]">
                     {p.desc}
                   </p>
                 </div>
-              </div>
-            </motion.li>
-          ))}
-        </ul>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

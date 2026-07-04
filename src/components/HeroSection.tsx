@@ -88,10 +88,16 @@ const HeroSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <h1 className="font-heading text-5xl font-medium leading-[1.02] tracking-tight text-foreground md:text-6xl lg:text-7xl">
+      <div className="flex items-center gap-3 mb-4">
+        <span className="inline-block h-px w-8 bg-accent" />
+        <span className="text-[10px] md:text-[11px] font-medium uppercase text-accent" style={{ letterSpacing: "0.28em" }}>
+          Metaskills Institute
+        </span>
+      </div>
+      <h1 className="font-heading text-[44px] md:text-[56px] lg:text-[64px] font-semibold leading-[1.02] tracking-tight text-foreground">
         {t("hero.title")}
       </h1>
-      <p className="mt-3 text-base font-light leading-relaxed text-muted-foreground md:text-lg lg:text-xl">
+      <p className="mt-5 text-[17px] md:text-[22px] lg:text-[26px] font-light leading-[1.5] text-muted-foreground max-w-[720px]">
         {t("hero.subtitle")}
       </p>
     </motion.div>
