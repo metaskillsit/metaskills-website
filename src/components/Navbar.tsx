@@ -339,23 +339,57 @@ const Navbar = () => {
             </div>
 
             
-            <Link
-              to={contactItem.href}
-              className={`text-[13px] font-medium tracking-wide transition-colors ${
-                location.pathname === contactItem.href ? "text-primary" : "text-foreground/70 hover:text-primary"
-              }`}
-            >
-              {contactItem.label}
-            </Link>
-
-            <Link
-              to="/admissions"
-              className={`text-[13px] font-medium tracking-wide transition-colors ${
-                location.pathname === "/admissions" ? "text-primary" : "text-foreground/70 hover:text-primary"
-              }`}
-            >
-              {t("nav.admissions")}
-            </Link>
+            {/* Contact Us dropdown */}
+            <div ref={contactRef} className="relative">
+              <button
+                onClick={() => setContactOpen(!contactOpen)}
+                className={`flex items-center gap-1 text-[13px] font-medium tracking-wide transition-colors ${
+                  location.pathname === "/locations" || location.pathname === "/admissions"
+                    ? "text-primary"
+                    : "text-foreground/70 hover:text-primary"
+                }`}
+              >
+                <span>{t("nav.contact", "Contact Us")}</span>
+                <ChevronDown size={14} />
+              </button>
+              {contactOpen && (
+                <div className="absolute top-full left-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[260px] animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                  <Link
+                    to="/locations"
+                    onClick={() => setContactOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/locations"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    {t("nav.contact", "Contact Us")}
+                  </Link>
+                  <Link
+                    to="/admissions"
+                    onClick={() => setContactOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/admissions"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    {t("nav.howToApply")}
+                  </Link>
+                  <Link
+                    to="/admissions#fees"
+                    onClick={() => setContactOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/admissions"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    {t("nav.courseFeesAndFunding")}
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {/* Language selector - desktop */}
             <div ref={langRef} className="relative ml-1">
