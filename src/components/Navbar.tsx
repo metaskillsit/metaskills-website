@@ -53,7 +53,6 @@ const Navbar = () => {
         { label: t("nav.ourFaculty"), href: "/faculty" },
         { label: t("nav.partners"), href: "/partners" },
         { label: t("nav.ourClients"), href: "/clients" },
-        { label: t("nav.learningSpaces"), href: "/locations" },
       ],
     },
     {
