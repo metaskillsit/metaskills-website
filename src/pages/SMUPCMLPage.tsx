@@ -2,10 +2,10 @@ import { ExternalLink, Calendar, MapPin, Award, CheckCircle2, MessageCircle, Gra
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
-const SMU_URL = "https://academy.smu.edu.sg/courses/professional-certificate-machine-learning";
-const SMU_APPLY = "https://smu.eteams.com.sg/registration#/Login?coursecode=PC-MLIGD";
-const SMU_ENQUIRE = "https://academy.smu.edu.sg/programme-enquiry?course=Professional%20Certificate%20in%20Machine%20Learning&nid=81306";
-const WHATSAPP_URL = "https://wa.me/6589483482?text=Hi%2C%20I%27m%20interested%20in%20the%20SMU%20Professional%20Certificate%20in%20Machine%20Learning.";
+const COURSE_URL = "https://academy.smu.edu.sg/courses/professional-certificate-machine-learning";
+const APPLY_URL = "https://smu.eteams.com.sg/registration#/Login?coursecode=PC-MLIGD";
+const ENQUIRE_URL = "https://academy.smu.edu.sg/programme-enquiry?course=Professional%20Certificate%20in%20Machine%20Learning&nid=81306";
+const WHATSAPP_URL = "https://wa.me/6589483482?text=Hi%2C%20I%27m%20interested%20in%20the%20Metaskills%20Institute%20Professional%20Certificate%20in%20Applied%20AI.";
 
 const modules = [
   { n: 1, title: "Machine Learning Data Pipelines and Visualisation Mastery with Python", dates: "7, 8 & 11 Jul 2026", status: "Registration Closed", url: "https://academy.smu.edu.sg/courses/module-1-machine-learning-data-pipelines-and-visualisation-mastery-python" },
@@ -37,12 +37,6 @@ const trainers = [
   { name: "Evelyn Wong", role: "Certified Lean Six Sigma Green Belt & Certified Scrum Master", org: "—" },
 ];
 
-const feeRows = [
-  { profile: "Singapore Citizen < 40 · PR · LTVP+", self: "S$4,708.80 (After SSG 70%)", sme: "S$1,828.80 (After SSG 70% + ETSS 20%)", nonSme: "S$4,708.80 (After SSG 70%)" },
-  { profile: "Singapore Citizen ≥ 40", self: "S$1,828.80 (After SSG 70% + MCES 20%)", sme: "S$1,828.80 (After SSG 70% + ETSS 20%)", nonSme: "S$1,828.80 (After SSG 70% + MCES 20%)" },
-  { profile: "International Participant", self: "S$15,696 (No Funding)", sme: "S$15,696 (No Funding)", nonSme: "S$15,696 (No Funding)" },
-];
-
 const SMUPCMLPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -58,38 +52,35 @@ const SMUPCMLPage = () => {
               </span>
             ))}
           </div>
-          <p className="text-xs uppercase tracking-widest text-primary mb-3">Partner Programme · SMU Academy</p>
+          <p className="text-xs uppercase tracking-widest text-primary mb-3">Metaskills Institute</p>
           <h1 className="font-serif text-4xl md:text-6xl leading-tight max-w-4xl">
-            Professional Certificate in Machine Learning
+            Professional Certificate in Applied AI
           </h1>
           <p className="mt-5 text-lg text-white/80 max-w-3xl">
-            A six-module, hands-on programme from SMU Academy that equips working professionals to design, build,
-            and deploy machine-learning and AI solutions in real-world scenarios. Metaskills Institute is a
-            curriculum partner.
+            A six-module, hands-on programme by Metaskills Institute that equips working professionals to design, build,
+            and deploy machine-learning and AI solutions in real-world scenarios.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
             <Stat icon={<Calendar className="w-5 h-5" />} label="Next Intake" value="28 Jul 2026" />
             <Stat icon={<GraduationCap className="w-5 h-5" />} label="Level" value="Intermediate" />
-            <Stat icon={<MapPin className="w-5 h-5" />} label="Venue" value="SMU Campus" />
-            <Stat icon={<Award className="w-5 h-5" />} label="Fee (from)" value="S$1,828.80*" />
+            <Stat icon={<MapPin className="w-5 h-5" />} label="Venue" value="CT Hub 2, Singapore" />
           </div>
 
           <div className="flex flex-wrap gap-3 mt-10">
-            <a href={SMU_APPLY} target="_blank" rel="noopener noreferrer"
+            <a href={APPLY_URL} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition">
-              Apply on SMU Academy <ExternalLink className="w-4 h-4" />
+              Apply Now <ExternalLink className="w-4 h-4" />
             </a>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/30 text-white font-medium hover:bg-white/20 transition">
               <MessageCircle className="w-4 h-4" /> Chat with Specialist
             </a>
-            <a href={SMU_ENQUIRE} target="_blank" rel="noopener noreferrer"
+            <a href={ENQUIRE_URL} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/30 text-white font-medium hover:bg-white/10 transition">
-              Enquire on SMU
+              Enquire Now
             </a>
           </div>
-          <p className="text-xs text-white/50 mt-4">*After maximum funding. Full fee S$15,696 (incl. 9% GST).</p>
         </div>
       </section>
 
@@ -148,7 +139,7 @@ const SMUPCMLPage = () => {
 
             <Section title="Programme Structure">
               <p className="mb-6">
-                To achieve the Professional Certificate in Machine Learning (Python), participants complete the
+                To achieve the <strong>Professional Certificate in Applied AI</strong>, participants complete the
                 following six modules in <strong>sequential order</strong>:
               </p>
               <div className="space-y-3">
@@ -189,38 +180,8 @@ const SMUPCMLPage = () => {
               </ul>
               <InfoCard title="Certification">
                 Upon completion of all 6 modules within a maximum duration of 3 years, participants will be
-                awarded a digital <strong>Professional Certificate in Machine Learning (Python)</strong> by SMU
-                Academy.
+                awarded a digital <strong>Professional Certificate in Applied AI</strong> by Metaskills Institute.
               </InfoCard>
-            </Section>
-
-            <Section title="Fee Table">
-              <div className="overflow-x-auto rounded-lg border border-border">
-                <table className="w-full text-sm">
-                  <thead className="bg-muted text-muted-foreground">
-                    <tr>
-                      <th className="text-left p-4 font-medium">Participant Profile</th>
-                      <th className="text-left p-4 font-medium">Self-Sponsored</th>
-                      <th className="text-left p-4 font-medium">Employer (SME)</th>
-                      <th className="text-left p-4 font-medium">Employer (Non-SME)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {feeRows.map((r) => (
-                      <tr key={r.profile} className="border-t border-border">
-                        <td className="p-4 font-medium text-foreground">{r.profile}</td>
-                        <td className="p-4 text-muted-foreground">{r.self}</td>
-                        <td className="p-4 text-muted-foreground">{r.sme}</td>
-                        <td className="p-4 text-muted-foreground">{r.nonSme}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-xs text-muted-foreground mt-3">
-                All prices include 9% GST. Programme fees are subject to change without prior notice.
-                SkillsFuture Credit and PSEA may be applied for eligible self-sponsored Singapore Citizens.
-              </p>
             </Section>
 
             <Section title="Trainers">
@@ -243,35 +204,19 @@ const SMUPCMLPage = () => {
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">Next Intake</p>
                 <p className="font-serif text-2xl text-foreground mt-1">28 Jul 2026</p>
                 <div className="mt-5 space-y-2 text-sm text-muted-foreground">
-                  <p><strong className="text-foreground">Format:</strong> On-campus, SMU</p>
+                  <p><strong className="text-foreground">Format:</strong> On-campus, Metaskills Institute</p>
                   <p><strong className="text-foreground">Modules:</strong> 6 sequential modules</p>
-                  <p><strong className="text-foreground">Certification:</strong> SMU Academy digital certificate</p>
-                  <p><strong className="text-foreground">Fee from:</strong> S$1,828.80 after funding</p>
+                  <p><strong className="text-foreground">Certification:</strong> Metaskills Institute digital certificate</p>
                 </div>
-                <a href={SMU_APPLY} target="_blank" rel="noopener noreferrer"
+                <a href={APPLY_URL} target="_blank" rel="noopener noreferrer"
                   className="mt-6 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition">
-                  Apply on SMU <ExternalLink className="w-4 h-4" />
+                  Apply Now <ExternalLink className="w-4 h-4" />
                 </a>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                   className="mt-3 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-border text-foreground hover:bg-muted transition">
                   <MessageCircle className="w-4 h-4" /> Chat with Specialist
                 </a>
               </div>
-              <div className="p-6 rounded-lg border border-border bg-muted/30">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Part of</p>
-                <a href="https://academy.smu.edu.sg/courses/industry-graduate-diploma-python-programming-and-machine-learning"
-                  target="_blank" rel="noopener noreferrer"
-                  className="text-sm font-medium text-foreground hover:text-primary inline-flex items-start gap-1">
-                  Industry Graduate Diploma in Python Programming and Machine Learning
-                  <ExternalLink className="w-3.5 h-3.5 mt-0.5 shrink-0" />
-                </a>
-              </div>
-              <p className="text-xs text-muted-foreground px-2">
-                Official course page:{" "}
-                <a href={SMU_URL} target="_blank" rel="noopener noreferrer" className="underline">
-                  academy.smu.edu.sg
-                </a>
-              </p>
             </div>
           </aside>
         </div>
