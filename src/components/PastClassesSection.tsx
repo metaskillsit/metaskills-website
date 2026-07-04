@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Volume2, VolumeX } from "lucide-react";
+
+const FEATURED_VIDEO_SRC = "/media/msi-amd-video.mp4";
 
 import GalleryLightbox from "@/components/GalleryLightbox";
 import pastClass1 from "@/assets/past-class-1.jpg";
@@ -182,6 +184,20 @@ const ScrollingRow = ({
 const PastClassesSection = () => {
   const { t } = useTranslation();
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const next = !muted;
+    v.muted = next;
+    if (!next) {
+      v.volume = 1;
+      void v.play();
+    }
+    setMuted(next);
+  };
 
   const closeLightbox = () => setSelectedPhotoIndex(null);
   const nextLightboxPhoto = () => {
@@ -195,12 +211,53 @@ const PastClassesSection = () => {
 
   return (
     <section className="py-12 md:py-16 bg-muted/30 overflow-hidden">
-      <div className="max-w-[1140px] mx-auto px-6 mb-12">
+      <div className="max-w-[1140px] mx-auto px-6 mb-10 md:mb-12">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="section-eyebrow">{t("pastClasses.label")}</span>
           <h2 className="section-h2 mb-4">{t("pastClasses.title")}</h2>
           <p className="lead-p">{t("pastClasses.subtitle")}</p>
         </motion.div>
+      </div>
+
+      {/* Featured film — AMD × Metaskills */}
+      <div className="max-w-[1140px] mx-auto px-6 mb-12 md:mb-16">
+        <motion.figure
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="relative"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <span className="inline-block h-px w-8 bg-accent" />
+            <span className="text-[10px] md:text-[11px] font-medium uppercase text-accent" style={{ letterSpacing: "0.28em" }}>
+              Featured Film — AMD × Metaskills
+            </span>
+          </div>
+          <div className="relative overflow-hidden rounded-sm border border-border/60 shadow-xl bg-black aspect-[21/9]">
+            <video
+              ref={videoRef}
+              src={FEATURED_VIDEO_SRC}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+            <button
+              type="button"
+              onClick={toggleMute}
+              aria-label={muted ? "Unmute video" : "Mute video"}
+              className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/70 md:right-6 md:top-6"
+            >
+              {muted ? <VolumeX className="w-[18px] h-[18px]" /> : <Volume2 className="w-[18px] h-[18px]" />}
+            </button>
+          </div>
+          <figcaption className="mt-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            On location — enterprise AI training with AMD
+          </figcaption>
+        </motion.figure>
       </div>
 
       <div className="space-y-3 md:space-y-4">
