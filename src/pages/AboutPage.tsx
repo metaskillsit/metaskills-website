@@ -3,6 +3,7 @@ import { Brain, ShieldCheck, TrendingUp, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import FivePracticesSection from "@/components/FivePracticesSection";
 
 const pillarIcons = [Brain, TrendingUp, ShieldCheck, Users];
 
@@ -70,6 +71,8 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
+        <FivePracticesSection />
 
         <section className="max-w-[1140px] mx-auto px-6 py-16">
           <h2 className="font-heading text-2xl font-bold text-foreground mb-6">{t("aboutPage.langTitle")}</h2>
