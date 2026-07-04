@@ -121,7 +121,7 @@ const HeroSection = () => {
         {/* Desktop overlay — text on media */}
         <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent z-10" />
         <div className="hidden md:block absolute inset-x-0 bottom-0 z-20 mx-auto w-full max-w-[1140px] px-6 pb-6">
-          <div className="inline-flex items-center gap-6 rounded-sm border border-border/60 bg-background/85 px-6 py-4 shadow-xl backdrop-blur-sm">
+          <div className="inline-flex items-center gap-6 border border-border/60 bg-background/85 px-6 py-4 shadow-xl backdrop-blur-sm" style={{ borderRadius: '16px' }}>
             {heroContent}
           </div>
         </div>
