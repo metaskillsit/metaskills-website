@@ -359,6 +359,11 @@
   letter-spacing: 0.3em;
 }
 
+.hero-tech-title {
+  letter-spacing: -0.01em;
+  text-shadow: 0 18px 42px hsl(var(--hero-overlay) / 0.55);
+}
+
 .hero-tech-status {
   position: relative;
   width: 0.5rem;
