@@ -189,7 +189,7 @@ const Navbar = () => {
     { label: t("nav.faculty"), href: "/faculty" },
   ];
 
-  const contactItem = { label: t("nav.contact", "Contact Us"), href: "/locations" };
+  
 
   const toggleCategory = (label: string) => {
     setExpandedCategory((prev) => (prev === label ? null : label));
