@@ -70,6 +70,16 @@ const ProgrammesPage = () => {
       ],
     },
     {
+      id: "certifications",
+      title: t("programmes.certificationsTitle"),
+      description: t("programmes.certificationsDesc"),
+      image: certificationsImg,
+      courses: [
+        { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
+        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
+      ],
+    },
+    {
       id: "ai-leadership",
       title: t("programmes.aiLeadTitle"),
       description: t("programmes.aiLeadDesc"),
@@ -125,7 +135,6 @@ const ProgrammesPage = () => {
         { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
         { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
         { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
-        { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
       ],
     },
     {
