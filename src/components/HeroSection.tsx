@@ -187,6 +187,9 @@ const HeroSection = () => {
           </button>
         )}
 
+        {/* Top scrim — keeps transparent navbar legible over bright hero photos */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 z-10 bg-gradient-to-b from-black/55 via-black/20 to-transparent" />
+
         {/* Desktop overlay — text on media */}
         <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent z-10" />
         <div className="hidden md:block absolute inset-x-0 bottom-0 z-20 mx-auto w-full max-w-[1140px] px-6 pb-6">
