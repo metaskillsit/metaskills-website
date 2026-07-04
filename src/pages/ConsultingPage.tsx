@@ -51,6 +51,37 @@ const themes = [
     desc: "Design human-centric AI initiatives for NGOs, CSR teams and social enterprises focused on wellbeing and inclusion.",
   },
 ];
+const clientLogos: { name: string; domain: string }[] = [
+  { name: "NEC Asia Pacific", domain: "nec.com" },
+  { name: "BCA Academy", domain: "bcaa.edu.sg" },
+  { name: "Certis Cisco", domain: "certisgroup.com" },
+  { name: "National Environment Agency", domain: "nea.gov.sg" },
+  { name: "Singapore Customs", domain: "customs.gov.sg" },
+  { name: "MINDEF", domain: "mindef.gov.sg" },
+  { name: "DSTA", domain: "dsta.gov.sg" },
+  { name: "Golden Equator", domain: "goldenequator.com" },
+  { name: "Urbanzoom", domain: "urbanzoom.com" },
+  { name: "Goldhill", domain: "goldhill.com.sg" },
+  { name: "Monetary Authority of Singapore", domain: "mas.gov.sg" },
+  { name: "MCI", domain: "mddi.gov.sg" },
+  { name: "Ministry of Health", domain: "moh.gov.sg" },
+  { name: "Nanyang Optical", domain: "nanyangoptical.com" },
+  { name: "People's Association", domain: "pa.gov.sg" },
+  { name: "Panasonic Asia Pacific", domain: "panasonic.com" },
+  { name: "Penang State", domain: "penang.gov.my" },
+  { name: "SAFRA", domain: "safra.sg" },
+  { name: "SMRT", domain: "smrt.com.sg" },
+  { name: "Singapore Management University", domain: "smu.edu.sg" },
+  { name: "Red House Seafood", domain: "redhouseseafood.com" },
+  { name: "Tiong Seng Contractors", domain: "tiongseng.com.sg" },
+  { name: "AgFunder", domain: "agfunder.com" },
+  { name: "Ernst & Young", domain: "ey.com" },
+  { name: "Ministry of Manpower", domain: "mom.gov.sg" },
+  { name: "Google", domain: "google.com" },
+  { name: "KK Women's and Children's Hospital", domain: "kkh.com.sg" },
+  { name: "UOB", domain: "uob.com.sg" },
+];
+
 
 type Row = {
   practice: string;
@@ -182,8 +213,55 @@ const ConsultingPage = () => {
           </div>
         </section>
 
+        {/* Clients marquee */}
+        <section className="border-b border-border bg-background">
+          <div className="max-w-[1240px] mx-auto px-6 py-16 md:py-20">
+            <div className="mb-8 max-w-3xl">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-medium mb-4">
+                Clients
+              </p>
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-foreground leading-[1.1]">
+                Trusted by leading organisations across Asia.
+              </h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                From ministries and regulators to enterprises and universities — a selection of
+                organisations we've supported through consulting, product development, research and
+                training. Many others remain under NDA.
+              </p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden py-4">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+            <div className="flex w-max animate-scroll-left gap-14 items-center">
+              {[...clientLogos, ...clientLogos].map((c, i) => (
+                <div
+                  key={`${c.name}-${i}`}
+                  title={c.name}
+                  className="shrink-0 flex items-center justify-center h-16 w-40 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition"
+                >
+                  <img
+                    src={`https://logo.clearbit.com/${c.domain}`}
+                    alt={c.name}
+                    className="max-h-14 max-w-full object-contain"
+                    loading="lazy"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      const parent = img.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span class="text-xs font-medium text-foreground/70 text-center leading-tight">${c.name}</span>`;
+                      }
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Packages table */}
         <section className="border-b border-border bg-muted/20">
+
           <div className="max-w-[1240px] mx-auto px-6 py-16 md:py-24">
             <div className="mb-10 max-w-3xl">
               <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-medium mb-4">
