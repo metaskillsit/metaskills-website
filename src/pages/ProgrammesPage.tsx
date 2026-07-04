@@ -166,7 +166,6 @@ const ProgrammesPage = () => {
       description: t("programmes.cloudAiStackDesc"),
       image: cloudDevOpsImg,
       courses: [
-        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
       ],
     },
