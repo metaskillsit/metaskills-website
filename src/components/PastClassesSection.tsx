@@ -49,6 +49,13 @@ import pastClass40 from "@/assets/past-class-40.jpg";
 import pastClass41 from "@/assets/past-class-41.jpg";
 import pastClass42 from "@/assets/past-class-42.jpg";
 import pastClass43 from "@/assets/past-class-43.jpg";
+import pastClass44 from "@/assets/past-class-44.jpg";
+import pastClass45 from "@/assets/past-class-45.jpg";
+import pastClass46 from "@/assets/past-class-46.jpg";
+import pastClass47 from "@/assets/past-class-47.jpg";
+import pastClass48 from "@/assets/past-class-48.jpg";
+import pastClass49 from "@/assets/past-class-49.jpg";
+import pastClass50 from "@/assets/past-class-50.jpg";
 
 const photos = [
   { src: pastClass38, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 1" },
@@ -94,6 +101,13 @@ const photos = [
   { src: pastClass40, caption: "Algorithmic Trading Mastery — Level 1, Run 5 Classroom" },
   { src: pastClass41, caption: "CDA Stream A — Virtual Class, June 2020 Cohort" },
   { src: pastClass42, caption: "Online Workshop — Zoom Live Session" },
+  { src: pastClass44, caption: "Enterprise AI Workshop — Interactive Classroom Session" },
+  { src: pastClass45, caption: "Data Analytics Training — Full Classroom Cohort" },
+  { src: pastClass46, caption: "AI Literacy for Financial Professionals — NTUC LearningHub" },
+  { src: pastClass47, caption: "Applied Cryptography Workshop — Hands-On Lab Session" },
+  { src: pastClass48, caption: "Technical Deep-Dive — Multi-Screen Coding Lab" },
+  { src: pastClass49, caption: "AI for Good — Train-the-Trainers Small-Group Session" },
+  { src: pastClass50, caption: "Enterprise AI Briefing — Lecture Theatre Session" },
 ];
 
 const third = Math.ceil(photos.length / 3);
