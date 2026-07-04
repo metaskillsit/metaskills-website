@@ -50,15 +50,15 @@ const AdmissionsPage = () => {
                 ))}
               </ul>
 
-              <div id="fees" className="mt-12 pt-8 border-t border-border">
+              <div className="mt-12 pt-8 border-t border-border">
                 <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
-                  {t("admissions.feesTitle")}
+                  {t("admissions.customizeTitle")}
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  {t("admissions.feesDesc")}
+                  {t("admissions.customizeDesc")}
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  <strong>{t("admissions.cancellation")}</strong>
+                  <strong>{t("admissions.subsidyNote")}</strong>
                 </p>
               </div>
             </motion.div>
