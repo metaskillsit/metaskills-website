@@ -59,7 +59,7 @@ const HeroSection = () => {
           Metaskills Institute
         </span>
       </div>
-      <h1 className="font-heading text-[44px] md:text-[56px] lg:text-[64px] font-semibold leading-[1.02] tracking-tight text-primary-foreground">
+      <h1 className="hero-tech-title font-sans-prem text-[42px] md:text-[54px] lg:text-[62px] font-semibold leading-[1.02] text-primary-foreground">
         {t("hero.title")}
       </h1>
       <p className="hero-tech-subtitle mt-5 max-w-[720px] font-body text-[16px] md:text-[20px] lg:text-[23px] leading-[1.55]">
