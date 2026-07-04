@@ -49,6 +49,13 @@ import pastClass40 from "@/assets/past-class-40.jpg";
 import pastClass41 from "@/assets/past-class-41.jpg";
 import pastClass42 from "@/assets/past-class-42.jpg";
 import pastClass43 from "@/assets/past-class-43.jpg";
+import pastClass44 from "@/assets/past-class-44.jpg";
+import pastClass45 from "@/assets/past-class-45.jpg";
+import pastClass46 from "@/assets/past-class-46.jpg";
+import pastClass47 from "@/assets/past-class-47.jpg";
+import pastClass48 from "@/assets/past-class-48.jpg";
+import pastClass49 from "@/assets/past-class-49.jpg";
+import pastClass50 from "@/assets/past-class-50.jpg";
 
 const photos = [
   { src: pastClass38, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 1" },
