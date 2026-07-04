@@ -164,8 +164,9 @@ const Navbar = () => {
       ],
     },
     {
-      label: t("nav.admissions"),
+      label: t("nav.contact", "Contact Us"),
       items: [
+        { label: t("nav.learningSpaces"), href: "/locations" },
         { label: t("nav.howToApply"), href: "/admissions" },
         { label: t("nav.courseFeesAndFunding"), href: "/admissions#fees" },
       ],
