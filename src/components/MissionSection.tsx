@@ -45,33 +45,6 @@ const MissionSection = () => {
         </motion.div>
       </div>
 
-      <div className="border-t border-border/30">
-        <div className="max-w-[1140px] mx-auto px-6 py-20 md:py-24">
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
-            {pillars.map((pillar, i) => (
-              <motion.a
-                key={pillar.title}
-                href="#courses"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="flex flex-col items-start text-left group cursor-pointer"
-              >
-                <div className="w-12 h-12 flex items-center justify-center mb-6 border border-accent/40 group-hover:border-accent transition-colors">
-                  <pillar.icon className="w-5 h-5 text-accent" />
-                </div>
-                <h3 className="font-heading text-xl font-medium tracking-tight text-foreground mb-3 group-hover:text-accent transition-colors">
-                  {pillar.title}
-                </h3>
-                <p className="body-p text-[15px]">
-                  {pillar.description}
-                </p>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
