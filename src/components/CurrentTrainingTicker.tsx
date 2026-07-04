@@ -23,6 +23,8 @@ const CurrentTrainingTicker = () => {
     "AISG-Daughters of Tomorrow (3 runs)",
     "AISG-United Women's Group (3 runs)",
     "AISG-Micron (1 run)",
+    "Synpulse (1 run)",
+    "ICICI Bank (Upcoming)",
     "Smarter Supply Chain Workflows (4 runs)",
     "NUS AIDF-Zhejiang University CEO/Executive Training (multiple runs)",
   ];
