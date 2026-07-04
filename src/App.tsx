@@ -21,6 +21,7 @@ import AIVideoStudioPage from "./pages/AIVideoStudioPage.tsx";
 import LLMPlaygroundPage from "./pages/LLMPlaygroundPage.tsx";
 import AISongStudioPage from "./pages/AISongStudioPage.tsx";
 import ConsultingPage from "./pages/ConsultingPage.tsx";
+import SMUPCMLPage from "./pages/SMUPCMLPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
@@ -50,6 +51,7 @@ const AppContent = () => {
         <Route path="/llm-playground" element={<LLMPlaygroundPage />} />
         <Route path="/ai-song-studio" element={<AISongStudioPage />} />
         <Route path="/consulting" element={<ConsultingPage />} />
+        <Route path="/smu-professional-cert-machine-learning" element={<SMUPCMLPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

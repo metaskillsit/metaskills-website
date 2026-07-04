@@ -124,6 +124,7 @@ const ProgrammesPage = () => {
         { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
         { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
         { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
+        { name: "Professional Certificate in Machine Learning — SMU", slug: "/smu-professional-cert-machine-learning", isExternal: true },
       ],
     },
     {
