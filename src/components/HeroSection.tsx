@@ -1,32 +1,26 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import heroAsean from "@/assets/hero-bg-asean.webp";
 import heroSecondary from "@/assets/hero-bg.webp";
 import { useTranslation } from "react-i18next";
 
-const HERO_VIDEO_SRC = "/media/msi-amd-video.mp4";
-const PHOTO_DURATION = 4000; // first photo shown for 4s before video
-const PHOTO2_DURATION = 7000; // secondary photo dwell after video
+const PHOTO1_DURATION = 6000;
+const PHOTO2_DURATION = 6000;
 // Tiny inline LQIP — instant first paint while the LCP webp decodes
 const HERO_LQIP =
   "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASogABIAPu1mqE2ppaOiMAgBMB2JYwCsM4DOACaG/httsodjQrvfYHcSzCgA/u+9TZJYwgdYAmeDE716XPvXfiQ6hdGzAhgJPAvxBeJmVvEWR1gFbysxYE3ivD24Nx5w32ldRyqnltSQKKDdIB2S3EixUffJtbH9oPwGL8NFqJOEqqUuiMyNtwiIurlhV/535rco+Y9qlN3xaj4KSLdHKjHPdTbo1QAA";
 
-type Phase = "photo1" | "video" | "photo2";
+type Phase = "photo1" | "photo2";
 
 const HeroSection = () => {
   const { t } = useTranslation();
   const [phase, setPhase] = useState<Phase>("photo1");
-  const [muted, setMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const pointerStartX = useRef<number | null>(null);
 
-  const PHASE_ORDER: Phase[] = ["photo1", "video", "photo2"];
   const goToPhase = (dir: 1 | -1) => {
-    setPhase((current) => {
-      const i = PHASE_ORDER.indexOf(current);
-      const next = (i + dir + PHASE_ORDER.length) % PHASE_ORDER.length;
-      return PHASE_ORDER[next];
-    });
+    setPhase((current) => (current === "photo1" ? "photo2" : "photo1"));
+    void dir;
   };
 
   const onPointerDown = (e: React.PointerEvent) => {
@@ -46,40 +40,11 @@ const HeroSection = () => {
     img.src = heroSecondary;
   }, []);
 
-  const toggleMute = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (muted) {
-      v.muted = false;
-      v.volume = 1;
-      void v.play();
-      setMuted(false);
-    } else {
-      v.muted = true;
-      setMuted(true);
-    }
-  };
-
-  // photo1 → video (after dwell); photo2 → photo1 (after dwell)
+  // Cross-fade between the two hero photos
   useEffect(() => {
-    if (phase === "photo1") {
-      const id = setTimeout(() => setPhase("video"), PHOTO_DURATION);
-      return () => clearTimeout(id);
-    }
-    if (phase === "photo2") {
-      const id = setTimeout(() => setPhase("photo1"), PHOTO2_DURATION);
-      return () => clearTimeout(id);
-    }
-  }, [phase]);
-
-  // Autoplay muted by default
-  useEffect(() => {
-    if (phase !== "video") return;
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = true;
-    setMuted(true);
-    void v.play();
+    const duration = phase === "photo1" ? PHOTO1_DURATION : PHOTO2_DURATION;
+    const id = setTimeout(() => setPhase((p) => (p === "photo1" ? "photo2" : "photo1")), duration);
+    return () => clearTimeout(id);
   }, [phase]);
 
   const heroContent = (
@@ -139,28 +104,6 @@ const HeroSection = () => {
               transition={{ duration: 1.2, ease: "easeInOut" }}
             />
           )}
-
-          {phase === "video" && (
-            <motion.div
-              key="video"
-              className="absolute inset-0 h-full w-full overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
-            >
-              <video
-                ref={videoRef}
-                src={HERO_VIDEO_SRC}
-                autoPlay
-                muted
-                playsInline
-                preload="auto"
-                onEnded={() => setPhase("photo2")}
-                className="absolute inset-0 h-full w-full object-cover object-center"
-              />
-            </motion.div>
-          )}
         </AnimatePresence>
 
         {/* Invisible swipe/drag layer — manual navigation without visible controls */}
@@ -171,21 +114,6 @@ const HeroSection = () => {
           onPointerCancel={() => { pointerStartX.current = null; }}
           aria-hidden="true"
         />
-
-        {phase === "video" && (
-          <button
-            type="button"
-            onClick={toggleMute}
-            aria-label={muted ? "Unmute video" : "Mute video"}
-            className="absolute right-4 top-4 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/70 md:right-6 md:top-6"
-          >
-            {muted ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-            )}
-          </button>
-        )}
 
         {/* Top scrim — keeps transparent navbar legible over bright hero photos */}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-40 z-10 bg-gradient-to-b from-black/55 via-black/20 to-transparent" />
