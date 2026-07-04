@@ -206,6 +206,9 @@ const Navbar = () => {
       if (labsRef.current && !labsRef.current.contains(e.target as Node)) {
         setLabsOpen(false);
       }
+      if (contactRef.current && !contactRef.current.contains(e.target as Node)) {
+        setContactOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
