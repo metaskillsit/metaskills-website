@@ -25,13 +25,20 @@ const MissionSection = () => {
 
   return (
     <section id="about" className="bg-background">
-      <div className="max-w-[1140px] mx-auto px-6 py-6 md:py-16">
+      <div className="max-w-[1140px] mx-auto px-6 py-20 md:py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
+          transition={{ duration: 0.6 }}
+          className="max-w-[760px] mx-auto"
         >
+          <div className="flex items-center gap-3 mb-8 justify-center">
+            <span className="inline-block h-px w-8 bg-accent" />
+            <span className="text-[11px] font-medium uppercase text-accent" style={{ letterSpacing: "0.28em" }}>
+              The Institute
+            </span>
+          </div>
           {(() => {
             const full = `${t("mission.statement")} ${t("mission.highlight1")} ${t("mission.and") ? t("mission.and") + " " : ""}${t("mission.highlight2")} ${t("mission.tail")}`;
             const highlights = [
@@ -43,7 +50,7 @@ const MissionSection = () => {
             const pattern = new RegExp(`(${highlights.map(h => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
             const parts = full.split(pattern);
             return (
-              <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-[1.6] font-light font-body">
+              <p className="text-[22px] md:text-[26px] lg:text-[28px] text-foreground leading-[1.55] font-light font-heading text-center">
                 {parts.map((part, i) =>
                   highlights.includes(part) ? (
                     <span key={i} className="text-foreground font-medium border-b border-accent">{part}</span>
@@ -57,9 +64,9 @@ const MissionSection = () => {
         </motion.div>
       </div>
 
-      <div className="border-t border-border">
-        <div className="max-w-[1140px] mx-auto px-6 py-14">
-          <div className="grid md:grid-cols-3 gap-10">
+      <div className="border-t border-border/30">
+        <div className="max-w-[1140px] mx-auto px-6 py-20 md:py-24">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             {pillars.map((pillar, i) => (
               <motion.a
                 key={pillar.title}
@@ -67,16 +74,16 @@ const MissionSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex flex-col items-center text-center group cursor-pointer"
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="flex flex-col items-start text-left group cursor-pointer"
               >
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <pillar.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 flex items-center justify-center mb-6 border border-accent/40 group-hover:border-accent transition-colors">
+                  <pillar.icon className="w-5 h-5 text-accent" />
                 </div>
-                <h3 className="font-heading text-lg font-medium tracking-tight text-foreground mb-2 group-hover:text-accent transition-colors">
+                <h3 className="font-heading text-xl font-medium tracking-tight text-foreground mb-3 group-hover:text-accent transition-colors">
                   {pillar.title}
                 </h3>
-                <p className="body-p text-sm">
+                <p className="body-p text-[15px]">
                   {pillar.description}
                 </p>
               </motion.a>
