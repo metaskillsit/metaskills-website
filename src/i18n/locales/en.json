@@ -1317,5 +1317,25 @@
     "jcubeDesc": "A partner institute co-founded by Dr Ke Jinghao, offering certified Data Analyst and Data Scientist programmes with hands-on, project-based curriculum.",
     "jcubeSubtitle": "by j3Cube Pte Ltd",
     "svbbDesc": "Facilitating cross-border collaboration between Singapore and Vietnam, enabling knowledge exchange and business networking across ASEAN."
+  },
+  "practices": {
+    "eyebrow": "Our five practices",
+    "heading": "Where we work.",
+    "headingItalic": "Five practices, one applied AI institute.",
+    "p1Name": "AI for Financial Services",
+    "p1Tagline": "AI and financial services for modern markets.",
+    "p1Desc": "We help banks, insurers and investment firms build practical AI literacy, algorithmic trading capability, and risk-aware automation across their teams.",
+    "p2Name": "AI for Education & Training",
+    "p2Tagline": "AI-powered curriculum, assessment and adaptive tutors.",
+    "p2Desc": "We work with educators, universities and training providers to use AI to improve curriculum development and delivery, design AI-enhanced curriculum, build AI tutors, and equip trainers for the next generation of learners.",
+    "p3Name": "AI for Government & Public Sector",
+    "p3Tagline": "Responsible AI for public service and national readiness.",
+    "p3Desc": "We support ministries, public agencies and defence organisations with AI literacy, governance frameworks, and agentic AI readiness programmes.",
+    "p4Name": "AI for SMEs & Enterprises",
+    "p4Tagline": "From pilots to deployed AI in your business.",
+    "p4Desc": "We help SMEs and enterprises identify high-impact use cases, build AI workflows and assistants, and guide teams from pilot projects to production deployment.",
+    "p5Name": "AI for Wellness & Social Good",
+    "p5Tagline": "Human-centric AI for communities, care and inclusion.",
+    "p5Desc": "We partner with social enterprises, NGOs and corporate CSR teams to apply AI in ways that support wellbeing, inclusion and community impact."
   }
 }
