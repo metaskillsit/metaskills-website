@@ -101,6 +101,13 @@ const photos = [
   { src: pastClass40, caption: "Algorithmic Trading Mastery — Level 1, Run 5 Classroom" },
   { src: pastClass41, caption: "CDA Stream A — Virtual Class, June 2020 Cohort" },
   { src: pastClass42, caption: "Online Workshop — Zoom Live Session" },
+  { src: pastClass44, caption: "Enterprise AI Workshop — Interactive Classroom Session" },
+  { src: pastClass45, caption: "Data Analytics Training — Full Classroom Cohort" },
+  { src: pastClass46, caption: "AI Literacy for Financial Professionals — NTUC LearningHub" },
+  { src: pastClass47, caption: "Applied Cryptography Workshop — Hands-On Lab Session" },
+  { src: pastClass48, caption: "Technical Deep-Dive — Multi-Screen Coding Lab" },
+  { src: pastClass49, caption: "AI for Good — Train-the-Trainers Small-Group Session" },
+  { src: pastClass50, caption: "Enterprise AI Briefing — Lecture Theatre Session" },
 ];
 
 const third = Math.ceil(photos.length / 3);
