@@ -51,6 +51,37 @@ const themes = [
     desc: "Design human-centric AI initiatives for NGOs, CSR teams and social enterprises focused on wellbeing and inclusion.",
   },
 ];
+const clientLogos: { name: string; domain: string }[] = [
+  { name: "NEC Asia Pacific", domain: "nec.com" },
+  { name: "BCA Academy", domain: "bcaa.edu.sg" },
+  { name: "Certis Cisco", domain: "certisgroup.com" },
+  { name: "National Environment Agency", domain: "nea.gov.sg" },
+  { name: "Singapore Customs", domain: "customs.gov.sg" },
+  { name: "MINDEF", domain: "mindef.gov.sg" },
+  { name: "DSTA", domain: "dsta.gov.sg" },
+  { name: "Golden Equator", domain: "goldenequator.com" },
+  { name: "Urbanzoom", domain: "urbanzoom.com" },
+  { name: "Goldhill", domain: "goldhill.com.sg" },
+  { name: "Monetary Authority of Singapore", domain: "mas.gov.sg" },
+  { name: "MCI", domain: "mddi.gov.sg" },
+  { name: "Ministry of Health", domain: "moh.gov.sg" },
+  { name: "Nanyang Optical", domain: "nanyangoptical.com" },
+  { name: "People's Association", domain: "pa.gov.sg" },
+  { name: "Panasonic Asia Pacific", domain: "panasonic.com" },
+  { name: "Penang State", domain: "penang.gov.my" },
+  { name: "SAFRA", domain: "safra.sg" },
+  { name: "SMRT", domain: "smrt.com.sg" },
+  { name: "Singapore Management University", domain: "smu.edu.sg" },
+  { name: "Red House Seafood", domain: "redhouseseafood.com" },
+  { name: "Tiong Seng Contractors", domain: "tiongseng.com.sg" },
+  { name: "AgFunder", domain: "agfunder.com" },
+  { name: "Ernst & Young", domain: "ey.com" },
+  { name: "Ministry of Manpower", domain: "mom.gov.sg" },
+  { name: "Google", domain: "google.com" },
+  { name: "KK Women's and Children's Hospital", domain: "kkh.com.sg" },
+  { name: "UOB", domain: "uob.com.sg" },
+];
+
 
 type Row = {
   practice: string;
