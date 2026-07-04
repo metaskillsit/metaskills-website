@@ -16,6 +16,7 @@ import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
+import certificationsImg from "@/assets/programmes-certifications.jpg";
 
 type Course = {
   name: string;
