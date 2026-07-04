@@ -13,7 +13,7 @@ import FooterSection from "@/components/FooterSection";
 import CertifiedInstructorsSection from "@/components/CertifiedInstructorsSection";
 import PartnerLogosSection from "@/components/PartnerLogosSection";
 import CurrentTrainingTicker from "@/components/CurrentTrainingTicker";
-import FivePracticesSection from "@/components/FivePracticesSection";
+
 
 
 const Index = () => {
@@ -26,7 +26,7 @@ const Index = () => {
         <MissionSection />
         <StatsSection />
         <WhyMetaskillsSection />
-        <FivePracticesSection />
+        
         <PastClassesSection />
         <ProgramsSection />
         <CertifiedInstructorsSection />
