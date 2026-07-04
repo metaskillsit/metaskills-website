@@ -26,7 +26,7 @@ const Index = () => {
         <MissionSection />
         <StatsSection />
         <WhyMetaskillsSection />
-        <FivePracticesSection />
+        
         <PastClassesSection />
         <ProgramsSection />
         <CertifiedInstructorsSection />
