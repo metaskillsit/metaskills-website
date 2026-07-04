@@ -42,16 +42,6 @@ const Navbar = () => {
   const langRefMobile = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  // Transparent-over-hero navbar only on the landing page
-  const isHome = location.pathname === "/";
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  const transparent = isHome && !scrolled && !menuOpen;
-
   const navGroups: NavGroup[] = [
     {
       label: t("nav.aboutMetaskills"),
