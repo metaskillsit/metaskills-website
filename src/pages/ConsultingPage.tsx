@@ -182,8 +182,55 @@ const ConsultingPage = () => {
           </div>
         </section>
 
+        {/* Clients marquee */}
+        <section className="border-b border-border bg-background">
+          <div className="max-w-[1240px] mx-auto px-6 py-16 md:py-20">
+            <div className="mb-8 max-w-3xl">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-medium mb-4">
+                Clients
+              </p>
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-foreground leading-[1.1]">
+                Trusted by leading organisations across Asia.
+              </h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                From ministries and regulators to enterprises and universities — a selection of
+                organisations we've supported through consulting, product development, research and
+                training. Many others remain under NDA.
+              </p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden py-4">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+            <div className="flex w-max animate-scroll-left gap-14 items-center">
+              {[...clientLogos, ...clientLogos].map((c, i) => (
+                <div
+                  key={`${c.name}-${i}`}
+                  title={c.name}
+                  className="shrink-0 flex items-center justify-center h-16 w-40 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition"
+                >
+                  <img
+                    src={`https://logo.clearbit.com/${c.domain}`}
+                    alt={c.name}
+                    className="max-h-14 max-w-full object-contain"
+                    loading="lazy"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      const parent = img.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span class="text-xs font-medium text-foreground/70 text-center leading-tight">${c.name}</span>`;
+                      }
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Packages table */}
         <section className="border-b border-border bg-muted/20">
+
           <div className="max-w-[1240px] mx-auto px-6 py-16 md:py-24">
             <div className="mb-10 max-w-3xl">
               <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-medium mb-4">
