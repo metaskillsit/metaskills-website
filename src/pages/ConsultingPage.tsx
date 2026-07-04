@@ -13,6 +13,25 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import bcaAcademyLogo from "@/assets/clients/bca-academy.png";
+import certisLogo from "@/assets/clients/certis.png";
+import dstaLogo from "@/assets/clients/dsta.png";
+import eyLogo from "@/assets/clients/ey.png";
+import googleLogo from "@/assets/clients/google.png";
+import kkhLogo from "@/assets/clients/kkh.png";
+import masLogo from "@/assets/clients/mas.png";
+import mddiLogo from "@/assets/clients/mddi.png";
+import mindefLogo from "@/assets/clients/mindef.png";
+import mohLogo from "@/assets/clients/moh.png";
+import momLogo from "@/assets/clients/mom.png";
+import neaLogo from "@/assets/clients/nea.png";
+import necLogo from "@/assets/clients/nec.png";
+import panasonicLogo from "@/assets/clients/panasonic.png";
+import paLogo from "@/assets/clients/peoples-association.png";
+import singaporeCustomsLogo from "@/assets/clients/singapore-customs.png";
+import smrtLogo from "@/assets/clients/smrt.png";
+import smuLogo from "@/assets/clients/smu.png";
+import uobLogo from "@/assets/clients/uob.png";
 import jcubeLogo from "@/assets/consulting-jcube.png";
 import rrLogo from "@/assets/consulting-rr.png";
 
@@ -51,35 +70,26 @@ const themes = [
     desc: "Design human-centric AI initiatives for NGOs, CSR teams and social enterprises focused on wellbeing and inclusion.",
   },
 ];
-const clientLogos: { name: string; domain: string }[] = [
-  { name: "NEC Asia Pacific", domain: "nec.com" },
-  { name: "BCA Academy", domain: "bcaa.edu.sg" },
-  { name: "Certis Cisco", domain: "certisgroup.com" },
-  { name: "National Environment Agency", domain: "nea.gov.sg" },
-  { name: "Singapore Customs", domain: "customs.gov.sg" },
-  { name: "MINDEF", domain: "mindef.gov.sg" },
-  { name: "DSTA", domain: "dsta.gov.sg" },
-  { name: "Golden Equator", domain: "goldenequator.com" },
-  { name: "Urbanzoom", domain: "urbanzoom.com" },
-  { name: "Goldhill", domain: "goldhill.com.sg" },
-  { name: "Monetary Authority of Singapore", domain: "mas.gov.sg" },
-  { name: "MCI", domain: "mddi.gov.sg" },
-  { name: "Ministry of Health", domain: "moh.gov.sg" },
-  { name: "Nanyang Optical", domain: "nanyangoptical.com" },
-  { name: "People's Association", domain: "pa.gov.sg" },
-  { name: "Panasonic Asia Pacific", domain: "panasonic.com" },
-  { name: "Penang State", domain: "penang.gov.my" },
-  { name: "SAFRA", domain: "safra.sg" },
-  { name: "SMRT", domain: "smrt.com.sg" },
-  { name: "Singapore Management University", domain: "smu.edu.sg" },
-  { name: "Red House Seafood", domain: "redhouseseafood.com" },
-  { name: "Tiong Seng Contractors", domain: "tiongseng.com.sg" },
-  { name: "AgFunder", domain: "agfunder.com" },
-  { name: "Ernst & Young", domain: "ey.com" },
-  { name: "Ministry of Manpower", domain: "mom.gov.sg" },
-  { name: "Google", domain: "google.com" },
-  { name: "KK Women's and Children's Hospital", domain: "kkh.com.sg" },
-  { name: "UOB", domain: "uob.com.sg" },
+const clientLogos: { name: string; logo: string }[] = [
+  { name: "NEC Asia Pacific", logo: necLogo },
+  { name: "BCA Academy", logo: bcaAcademyLogo },
+  { name: "Certis Cisco", logo: certisLogo },
+  { name: "National Environment Agency", logo: neaLogo },
+  { name: "Singapore Customs", logo: singaporeCustomsLogo },
+  { name: "MINDEF", logo: mindefLogo },
+  { name: "DSTA", logo: dstaLogo },
+  { name: "Monetary Authority of Singapore", logo: masLogo },
+  { name: "MCI", logo: mddiLogo },
+  { name: "Ministry of Health", logo: mohLogo },
+  { name: "People's Association", logo: paLogo },
+  { name: "Panasonic Asia Pacific", logo: panasonicLogo },
+  { name: "SMRT", logo: smrtLogo },
+  { name: "Singapore Management University", logo: smuLogo },
+  { name: "Ernst & Young", logo: eyLogo },
+  { name: "Ministry of Manpower", logo: momLogo },
+  { name: "Google", logo: googleLogo },
+  { name: "KK Women's and Children's Hospital", logo: kkhLogo },
+  { name: "UOB", logo: uobLogo },
 ];
 
 
@@ -241,10 +251,10 @@ const ConsultingPage = () => {
                 <div
                   key={`${c.name}-${i}`}
                   title={c.name}
-                  className="shrink-0 flex items-center justify-center h-16 w-40 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition"
+                  className="shrink-0 flex items-center justify-center h-16 w-44 opacity-90 hover:opacity-100 transition"
                 >
                   <img
-                    src={`https://www.google.com/s2/favicons?domain=${c.domain}&sz=128`}
+                    src={c.logo}
                     alt={c.name}
                     className="max-h-14 max-w-full object-contain"
                     loading="lazy"
