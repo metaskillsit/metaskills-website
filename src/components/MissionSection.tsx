@@ -64,7 +64,7 @@ const MissionSection = () => {
             const pattern = new RegExp(`(${highlights.map(h => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
             const parts = full.split(pattern);
             return (
-              <p className="text-[22px] md:text-[26px] lg:text-[28px] text-foreground leading-[1.55] font-light font-heading text-center">
+              <p className="text-[17px] md:text-[19px] lg:text-[20px] text-foreground leading-[1.5] font-light font-heading text-justify">
                 {parts.map((part, i) =>
                   highlights.includes(part) ? (
                     <span key={i} className="text-foreground font-medium border-b border-accent">{part}</span>
@@ -82,7 +82,7 @@ const MissionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-16 md:mt-20"
+          className="mt-10 md:mt-12"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {practices.map((p, i) => (
