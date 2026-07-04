@@ -37,7 +37,7 @@ const WhyMetaskillsSection = () => {
         </div>
       </div>
 
-      <div className="max-w-[1140px] mx-auto px-6 py-16">
+      <div className="max-w-[1140px] mx-auto px-6 py-12 md:py-14">
         <p className="lead-p mb-14">
           {t("why.intro")}
         </p>

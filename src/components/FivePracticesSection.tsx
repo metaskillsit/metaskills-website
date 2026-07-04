@@ -59,7 +59,7 @@ const FivePracticesSection = () => {
 
   return (
     <section aria-label="Our five practices" className="bg-background border-t border-border/30">
-      <div className="max-w-[1240px] mx-auto px-6 py-24 md:py-32">
+      <div className="max-w-[1240px] mx-auto px-6 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-12 md:gap-20">
           {/* Left column — sticky editorial header */}
           <div className="md:sticky md:top-32 h-fit">
