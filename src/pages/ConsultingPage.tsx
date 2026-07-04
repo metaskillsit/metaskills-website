@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import jcubeLogo from "@/assets/consulting-jcube.png";
+import rrLogo from "@/assets/consulting-rr.png";
 
 const WA_LINK =
   "https://wa.me/6589483482?text=Hi%2C%20I%27d%20like%20to%20book%20a%20scoping%20call%20with%20the%20Metaskills%20consulting%20team.";
@@ -278,6 +280,47 @@ const ConsultingPage = () => {
                   ))}
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Consulting Member Groups */}
+        <section className="border-b border-border bg-muted/20">
+          <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-20">
+            <div className="mb-10 max-w-3xl">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-medium mb-4">
+                Consulting Member Groups
+              </p>
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-foreground leading-[1.1]">
+                Delivered with our consulting member groups.
+              </h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Our consulting practice is powered in collaboration with these member groups —
+                bringing deeper bench strength across strategy, capability building and
+                implementation.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                { name: "JCube Institute", logo: jcubeLogo, url: "http://www.jcube-institute.com/" },
+                { name: "rR", logo: rrLogo, url: "#" },
+              ].map((m) => (
+                <a
+                  key={m.name}
+                  href={m.url}
+                  target={m.url.startsWith("http") ? "_blank" : undefined}
+                  rel={m.url.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="group flex items-center justify-center gap-6 border border-border bg-background px-8 py-10 hover:border-accent/60 transition-colors"
+                >
+                  <img
+                    src={m.logo}
+                    alt={`${m.name} logo`}
+                    className="h-20 md:h-24 w-auto object-contain"
+                    loading="lazy"
+                  />
+                  <span className="sr-only">{m.name}</span>
+                </a>
+              ))}
             </div>
           </div>
         </section>
