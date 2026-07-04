@@ -4,24 +4,6 @@ import { useTranslation } from "react-i18next";
 const MissionSection = () => {
   const { t } = useTranslation();
 
-  const pillars = [
-    {
-      icon: Brain,
-      title: t("mission.pillar1Title"),
-      description: t("mission.pillar1Desc"),
-    },
-    {
-      icon: TrendingUp,
-      title: t("mission.pillar2Title"),
-      description: t("mission.pillar2Desc"),
-    },
-    {
-      icon: ShieldCheck,
-      title: t("mission.pillar3Title"),
-      description: t("mission.pillar3Desc"),
-    },
-  ];
-
   return (
     <section id="about" className="bg-background">
       <div className="max-w-[1140px] mx-auto px-6 py-20 md:py-32">
