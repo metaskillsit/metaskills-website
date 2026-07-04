@@ -129,8 +129,11 @@ const HeroSection = () => {
       </div>
 
       {/* Mobile — text below media */}
-      <div className="md:hidden bg-background px-6 py-5">
-        {heroContent}
+      <div className="md:hidden bg-[hsl(var(--hero-overlay))] px-6 py-5">
+        <div className="hero-tech-card relative overflow-hidden px-5 py-5">
+          <span className="hero-tech-grid" aria-hidden="true" />
+          {heroContent}
+        </div>
       </div>
     </section>
   );
