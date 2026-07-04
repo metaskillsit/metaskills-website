@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   HeartHandshake,
   MessageCircle,
-  Download,
   CheckCircle2,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
