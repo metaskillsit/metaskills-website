@@ -35,15 +35,14 @@ const MissionSection = () => {
 
   return (
     <section id="about" className="bg-background">
-      <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-24">
+      <div className="max-w-[1140px] mx-auto px-6 py-12 md:py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-[760px] mx-auto"
         >
-          <div className="flex items-center gap-3 mb-8 justify-center">
+          <div className="flex items-center gap-3 mb-6 justify-center">
             <span className="inline-block h-px w-8 bg-accent" />
             <span className="text-[11px] font-medium uppercase text-accent" style={{ letterSpacing: "0.28em" }}>
               The Institute
