@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Brain, ShieldCheck, TrendingUp } from "lucide-react";
 
 const MissionSection = () => {
   const { t } = useTranslation();
