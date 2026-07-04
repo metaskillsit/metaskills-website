@@ -233,7 +233,10 @@ const ConsultingPage = () => {
           <div className="relative overflow-hidden py-4">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
-            <div className="flex w-max animate-scroll-left gap-14 items-center">
+            <div
+              className="flex w-max animate-scroll-left gap-14 items-center"
+              style={{ animationDuration: "60s" }}
+            >
               {[...clientLogos, ...clientLogos].map((c, i) => (
                 <div
                   key={`${c.name}-${i}`}
@@ -241,7 +244,7 @@ const ConsultingPage = () => {
                   className="shrink-0 flex items-center justify-center h-16 w-40 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition"
                 >
                   <img
-                    src={`https://logo.clearbit.com/${c.domain}`}
+                    src={`https://www.google.com/s2/favicons?domain=${c.domain}&sz=128`}
                     alt={c.name}
                     className="max-h-14 max-w-full object-contain"
                     loading="lazy"
