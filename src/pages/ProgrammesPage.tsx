@@ -16,6 +16,7 @@ import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
+import certificationsImg from "@/assets/programmes-certifications.jpg";
 
 type Course = {
   name: string;
@@ -66,6 +67,16 @@ const ProgrammesPage = () => {
       courses: [
         { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
         { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
+      ],
+    },
+    {
+      id: "certifications",
+      title: t("programmes.certificationsTitle"),
+      description: t("programmes.certificationsDesc"),
+      image: certificationsImg,
+      courses: [
+        { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
+        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
     },
     {
@@ -124,7 +135,6 @@ const ProgrammesPage = () => {
         { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
         { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
         { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
-        { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
       ],
     },
     {
@@ -156,7 +166,6 @@ const ProgrammesPage = () => {
       description: t("programmes.cloudAiStackDesc"),
       image: cloudDevOpsImg,
       courses: [
-        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
       ],
     },
