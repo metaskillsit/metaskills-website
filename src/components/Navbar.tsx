@@ -34,12 +34,23 @@ const Navbar = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [langOpen, setLangOpen] = useState(false);
   const [labsOpen, setLabsOpen] = useState(false);
-  
+  const [scrolled, setScrolled] = useState(false);
+
   const labsRef = useRef<HTMLDivElement>(null);
   
   const langRef = useRef<HTMLDivElement>(null);
   const langRefMobile = useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  // Transparent-over-hero navbar only on the landing page
+  const isHome = location.pathname === "/";
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const transparent = isHome && !scrolled && !menuOpen;
 
   const navGroups: NavGroup[] = [
     {
