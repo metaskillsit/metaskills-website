@@ -21,6 +21,7 @@ import AIVideoStudioPage from "./pages/AIVideoStudioPage.tsx";
 import LLMPlaygroundPage from "./pages/LLMPlaygroundPage.tsx";
 import AISongStudioPage from "./pages/AISongStudioPage.tsx";
 import ConsultingPage from "./pages/ConsultingPage.tsx";
+import SMUPCMLPage from "./pages/SMUPCMLPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
