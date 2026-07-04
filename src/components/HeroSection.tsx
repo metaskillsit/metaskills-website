@@ -55,7 +55,7 @@ const HeroSection = () => {
     >
       <div className="flex items-center gap-3 mb-4">
         <span className="inline-block h-px w-8 bg-accent" />
-        <span className="text-[10px] md:text-[11px] font-medium uppercase text-accent" style={{ letterSpacing: "0.28em" }}>
+        <span className="text-[10px] md:text-[11px] font-sans-prem font-medium uppercase text-accent" style={{ letterSpacing: "0.28em" }}>
           Metaskills Institute
         </span>
       </div>
