@@ -25,6 +25,11 @@ const MissionSection = () => {
             const highlights = [
               "eight years of specialised training and consulting",
               "over 10,000 professionals trained",
+              "Financial Services",
+              "Education & Training",
+              "Government & Public Sector",
+              "SMEs & Enterprises",
+              "Wellness & Social Good",
               "tackles the AI challenges of tomorrow",
               "Drive frontier‑level digital transformation",
             ];
