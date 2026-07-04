@@ -62,7 +62,7 @@ const HeroSection = () => {
       <h1 className="font-heading text-[44px] md:text-[56px] lg:text-[64px] font-semibold leading-[1.02] tracking-tight text-foreground">
         {t("hero.title")}
       </h1>
-      <p className="mt-5 text-[17px] md:text-[22px] lg:text-[26px] font-light leading-[1.5] text-muted-foreground max-w-[720px]">
+      <p className="mt-5 text-[17px] md:text-[22px] lg:text-[26px] font-display italic leading-[1.5] text-muted-foreground max-w-[720px]">
         {t("hero.subtitle")}
       </p>
     </motion.div>
