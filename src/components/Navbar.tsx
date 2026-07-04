@@ -34,6 +34,8 @@ const Navbar = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [langOpen, setLangOpen] = useState(false);
   const [labsOpen, setLabsOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  
   
 
   const labsRef = useRef<HTMLDivElement>(null);
