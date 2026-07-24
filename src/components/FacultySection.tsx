@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState, useCallback, useRef, TouchEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
+import brendanGraetzImg from "@/assets/brendan-graetz.jpg.asset.json";
 
 const allFaculty = [
   {
@@ -94,6 +95,12 @@ const allFaculty = [
     role: "Adjunct Trainer",
     expertise: "Programming Education | EdTech | Partnerships & Strategy",
     image: "/images/faculty/faculty-yinjie.jpg",
+  },
+  {
+    name: "Brendan Graetz",
+    role: "AI Senior Consultant and Trainer",
+    expertise: "Generative AI | AI Engineering | Developer Education | DevRel Strategy | Backend Engineering",
+    image: brendanGraetzImg.url,
   },
 ];
 

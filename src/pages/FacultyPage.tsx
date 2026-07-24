@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
+import brendanGraetzImg from "@/assets/brendan-graetz.jpg.asset.json";
 
 interface FacultyMember {
   name: string;
@@ -142,6 +143,15 @@ Earlier in his career, Adrian served as a Director at AG Investment Management L
     bio: `Yinjie (YJ) is co-founder at Tinkertanker, a technology and education company in Singapore, building software, electronics, curriculum — and the next generation of coders, makers, and creators. YJ handles partnerships, strategy, and business development, while always making time to teach a few of his favourite programming classes. 
 YJ received his Bachelor's and Master's degrees in Electrical Engineering from Stanford University in the USA, and a Post-Graduate Diploma in Secondary Education from the National Institute of Education in Singapore. Before Tinkertanker, YJ taught computing at Raffles Institution as Curriculum Head for Infocomm Technology, and served as a Senior Head for Policy & Planning at the Higher Education Division in MOE. For fun, he draws, collects programming memes, and tries to stop spending money on AI subscriptions.
 YJ Soon is a full-stack software engineer and educator specializing in machine learning, Python development, and cloud-native workflows. He has extensive experience in web and mobile application development, as well as immersive technologies such as VR. YJ conducts technical training that merges hands-on coding with best practices in AI/ML deployment, making complex implementations approachable for learners from both technical and non-technical backgrounds.`,
+  },
+  {
+    name: "Brendan Graetz",
+    i18nKey: "brendanGraetz",
+    role: "AI Senior Consultant and Trainer",
+    expertise: "Generative AI | AI Engineering | Developer Education | DevRel Strategy | Backend Engineering",
+    image: brendanGraetzImg.url,
+    bio: `Brendan helps working professionals upskill by building practical confidence with generative AI and AI-assisted development. His background combines backend engineering, developer education, and DevRel strategy, with 10 years of software engineering and 7 years of experience creating courses, delivering workshops, and teaching technical concepts to learners who are new to software and AI.
+He has built APIs that scaled past 1 million users for the Rio Olympics, built multi-tenant role-based authentication systems for Autopilot, and built crewing and rostering systems for Qantas. He has designed syllabi for developer courses at Rootstock, Hedera, and Injective, and has guest lectured at Singapore Management University. He founded DApps Dev Club, and has conducted workshops and spoken at many conferences and hackathons.`,
   },
   {
     name: "Evelyn Wong",
