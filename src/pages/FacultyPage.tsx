@@ -145,6 +145,15 @@ YJ received his Bachelor's and Master's degrees in Electrical Engineering from S
 YJ Soon is a full-stack software engineer and educator specializing in machine learning, Python development, and cloud-native workflows. He has extensive experience in web and mobile application development, as well as immersive technologies such as VR. YJ conducts technical training that merges hands-on coding with best practices in AI/ML deployment, making complex implementations approachable for learners from both technical and non-technical backgrounds.`,
   },
   {
+    name: "Brendan Graetz",
+    i18nKey: "brendanGraetz",
+    role: "AI Senior Consultant and Trainer",
+    expertise: "Generative AI | AI Engineering | Developer Education | DevRel Strategy | Backend Engineering",
+    image: brendanGraetzImg.url,
+    bio: `Brendan helps working professionals upskill by building practical confidence with generative AI and AI-assisted development. His background combines backend engineering, developer education, and DevRel strategy, with 10 years of software engineering and 7 years of experience creating courses, delivering workshops, and teaching technical concepts to learners who are new to software and AI.
+He has built APIs that scaled past 1 million users for the Rio Olympics, built multi-tenant role-based authentication systems for Autopilot, and built crewing and rostering systems for Qantas. He has designed syllabi for developer courses at Rootstock, Hedera, and Injective, and has guest lectured at Singapore Management University. He founded DApps Dev Club, and has conducted workshops and spoken at many conferences and hackathons.`,
+  },
+  {
     name: "Evelyn Wong",
     i18nKey: "evelynWong",
     role: "AI Senior Consultant and Trainer",
