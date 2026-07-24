@@ -100,7 +100,7 @@ const allFaculty = [
     name: "Brendan Graetz",
     role: "AI Senior Consultant and Trainer",
     expertise: "Generative AI | AI Engineering | Developer Education | DevRel Strategy | Backend Engineering",
-    image: brendanGraetzImg.url,
+    image: "/images/faculty/faculty-brendan.jpg",
   },
 ];
 
