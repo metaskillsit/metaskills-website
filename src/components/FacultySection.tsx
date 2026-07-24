@@ -96,6 +96,12 @@ const allFaculty = [
     expertise: "Programming Education | EdTech | Partnerships & Strategy",
     image: "/images/faculty/faculty-yinjie.jpg",
   },
+  {
+    name: "Brendan Graetz",
+    role: "AI Senior Consultant and Trainer",
+    expertise: "Generative AI | AI Engineering | Developer Education | DevRel Strategy | Backend Engineering",
+    image: brendanGraetzImg.url,
+  },
 ];
 
 const AUTO_INTERVAL = 4000;
