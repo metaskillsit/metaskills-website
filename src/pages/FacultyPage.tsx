@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
-import brendanGraetzImg from "@/assets/brendan-graetz.jpg.asset.json";
+
 
 interface FacultyMember {
   name: string;
