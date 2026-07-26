@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import HeroConstellation from "@/components/HeroConstellation";
+
 
 const AnimatedNumber = ({ target, suffix }: { target: number; suffix: string }) => {
   const [count, setCount] = useState(0);
