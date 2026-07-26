@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import AIEcosystemStrip from "@/components/AIEcosystemStrip";
 import MissionSection from "@/components/MissionSection";
 import StatsSection from "@/components/StatsSection";
 import ProgramsSection from "@/components/ProgramsSection";
