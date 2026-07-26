@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import MissionSection from "@/components/MissionSection";
 import StatsSection from "@/components/StatsSection";
 import ProgramsSection from "@/components/ProgramsSection";
-import WhyMetaskillsSection from "@/components/WhyMetaskillsSection";
 import FacultySection from "@/components/FacultySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PastClassesSection from "@/components/PastClassesSection";
@@ -27,7 +26,6 @@ const Index = () => {
         <CurrentTrainingTicker />
         <MissionSection />
         <StatsSection />
-        <WhyMetaskillsSection />
         <TrustAuthoritySection />
         <AseanNetworkSection />
         
