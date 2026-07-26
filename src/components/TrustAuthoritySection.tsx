@@ -1,5 +1,26 @@
-import { Award, BadgeCheck, Building2, ShieldCheck } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import {
+  Award,
+  BadgeCheck,
+  Briefcase,
+  Building2,
+  GraduationCap,
+  Lightbulb,
+  Network,
+  ShieldCheck,
+  Target,
+} from "lucide-react";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
+import facilityImg from "@/assets/facility.jpg";
+
+const valueProps = [
+  { icon: Briefcase, key: "feat1" },
+  { icon: GraduationCap, key: "feat2" },
+  { icon: Award, key: "feat3" },
+  { icon: Lightbulb, key: "feat4" },
+  { icon: Target, key: "feat5" },
+  { icon: Network, key: "feat6" },
+];
 
 const credentials = [
   {
@@ -29,9 +50,19 @@ const credentials = [
 ];
 
 const TrustAuthoritySection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative overflow-hidden border-y border-border bg-card">
-      <div className="mx-auto max-w-[1140px] px-6 py-16 md:py-20">
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `url(${facilityImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div className="relative mx-auto max-w-[1140px] px-6 py-16 md:py-20">
         <Reveal>
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">
             Trust &amp; Authority
@@ -41,7 +72,34 @@ const TrustAuthoritySection = () => {
           </h2>
         </Reveal>
 
-        <RevealGroup className="mt-10 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal>
+          <p className="lead-p mt-6 max-w-[760px]">
+            {t("why.intro")}
+          </p>
+        </Reveal>
+
+        <RevealGroup className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {valueProps.map((item, i) => (
+            <RevealItem
+              key={item.key}
+              className="group flex gap-4 rounded-sm border border-border bg-background p-6 transition-colors duration-300 hover:bg-muted"
+            >
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+                <item.icon className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-heading text-lg font-medium tracking-tight text-foreground mb-1">
+                  {t(`why.${item.key}Title`)}
+                </h3>
+                <p className="body-p text-sm text-muted-foreground">
+                  {t(`why.${item.key}Desc`)}
+                </p>
+              </div>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+
+        <RevealGroup className="mt-6 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {credentials.map((item) => (
             <RevealItem key={item.title} className="group bg-background">
               <div className="h-full p-7 transition-colors duration-300 group-hover:bg-muted">
