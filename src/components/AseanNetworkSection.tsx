@@ -133,39 +133,41 @@ const AseanNetworkSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-eyebrow text-primary">
+          <span className="section-eyebrow text-accent">
             {t("asean.eyebrow", "Regional Reach")}
           </span>
-          <h2 className="section-h2 text-white mt-2">
+          <h2 className="section-h2 text-white mt-2 text-[28px] sm:text-[34px] leading-[1.15]">
             {t("asean.title", "One institute, an ASEAN-wide network")}
           </h2>
-          <p className="mt-4 text-white/70 text-[17px] leading-relaxed max-w-[46ch]">
+          <p className="mt-3 md:mt-4 text-white/70 text-[15px] md:text-[17px] leading-relaxed max-w-[46ch]">
             {t(
               "asean.subtitle",
               "From our Singapore headquarters we deliver AI, cloud and cyber capability programmes to enterprises, government agencies and universities across Southeast Asia."
             )}
           </p>
 
-          <div className="mt-8 grid grid-cols-3 gap-6 max-w-md">
+          <div className="mt-6 md:mt-8 grid grid-cols-3 gap-3 sm:gap-6 max-w-md">
             {[
               { k: "11", v: t("asean.stat1", "Capital hubs") },
               { k: "40+", v: t("asean.stat2", "Organisations served") },
               { k: "3", v: t("asean.stat3", "Delivery languages") },
             ].map((s) => (
               <div key={s.v}>
-                <div className="font-heading text-3xl text-primary">{s.k}</div>
-                <div className="text-white/60 text-xs uppercase tracking-wider mt-1">{s.v}</div>
+                <div className="font-heading text-2xl sm:text-3xl text-accent">{s.k}</div>
+                <div className="text-white/60 text-[10px] sm:text-xs uppercase tracking-wider mt-1 leading-tight">
+                  {s.v}
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-2">
+          <div className="mt-6 md:mt-8 flex flex-wrap gap-1.5 sm:gap-2">
             {CITIES.map((c) => (
               <span
                 key={c.name}
-                className={`text-xs px-3 py-1 rounded-full border ${
+                className={`text-[11px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-full border ${
                   c.hub
-                    ? "border-primary/70 text-primary bg-primary/10"
+                    ? "border-accent/70 text-accent bg-accent/10"
                     : "border-white/15 text-white/60"
                 }`}
               >
@@ -180,9 +182,10 @@ const AseanNetworkSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative h-[340px] sm:h-[440px] lg:h-[520px]"
+          className="relative h-[260px] sm:h-[400px] lg:h-[520px] -mt-2 lg:mt-0"
         >
-          <div className="absolute inset-0 rounded-full blur-3xl bg-primary/10" aria-hidden />
+          <div className="absolute inset-0 rounded-full blur-3xl bg-accent/10" aria-hidden />
+
           {!failed && (
             <Canvas
               camera={{ position: [0, 0, 5], fov: 45 }}
