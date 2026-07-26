@@ -416,25 +416,3 @@
   font-weight: 300;
   letter-spacing: 0;
 }
-
-/* ===== Header logo — subtle 3D depth ===== */
-.logo-3d {
-  transform-style: preserve-3d;
-  transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(0);
-  filter:
-    drop-shadow(0 1px 0 hsl(var(--hero-overlay) / 0.28))
-    drop-shadow(0 6px 10px hsl(var(--hero-overlay) / 0.22))
-    drop-shadow(0 0 14px hsl(var(--gold) / 0.18));
-  transition: transform .5s cubic-bezier(.2,.7,.2,1), filter .5s ease;
-  will-change: transform;
-}
-.logo-3d:hover {
-  transform: perspective(600px) rotateY(-14deg) rotateX(6deg) translateZ(14px) scale(1.03);
-  filter:
-    drop-shadow(0 2px 0 hsl(var(--hero-overlay) / 0.32))
-    drop-shadow(0 14px 22px hsl(var(--hero-overlay) / 0.3))
-    drop-shadow(0 0 22px hsl(var(--gold) / 0.4));
-}
-@media (prefers-reduced-motion: reduce) {
-  .logo-3d, .logo-3d:hover { transition: none; transform: none; }
-}
