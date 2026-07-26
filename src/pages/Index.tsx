@@ -14,6 +14,7 @@ import CertifiedInstructorsSection from "@/components/CertifiedInstructorsSectio
 import PartnerLogosSection from "@/components/PartnerLogosSection";
 import CurrentTrainingTicker from "@/components/CurrentTrainingTicker";
 import TrustAuthoritySection from "@/components/TrustAuthoritySection";
+import AseanNetworkSection from "@/components/AseanNetworkSection";
 
 
 
@@ -27,6 +28,7 @@ const Index = () => {
         <MissionSection />
         <StatsSection />
         <TrustAuthoritySection />
+        <AseanNetworkSection />
         <WhyMetaskillsSection />
         
         <PastClassesSection />
