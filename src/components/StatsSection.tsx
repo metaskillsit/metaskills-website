@@ -12,19 +12,16 @@ const AnimatedNumber = ({ target, suffix }: { target: number; suffix: string }) 
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
-          const duration = 2000;
-          const steps = 60;
-          const increment = target / steps;
-          let current = 0;
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(current));
-            }
-          }, duration / steps);
+          const duration = 1800;
+          const start = performance.now();
+          const tick = (now: number) => {
+            const p = Math.min((now - start) / duration, 1);
+            // easeOutExpo — fast start, premium settle
+            const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+            setCount(Math.round(target * eased));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
         }
       },
       { threshold: 0.5 }
@@ -60,7 +57,7 @@ const StatsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-center"
             >
               <div className="w-8 h-px bg-accent mx-auto mb-4" />
