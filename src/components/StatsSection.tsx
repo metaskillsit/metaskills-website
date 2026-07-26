@@ -52,12 +52,13 @@ const StatsSection = () => {
   return (
     <section className="relative overflow-hidden border-y border-border bg-muted">
       {/* AI constellation — low opacity watermark behind the stats */}
-      <div className="pointer-events-none absolute inset-0 z-0 opacity-25" aria-hidden="true">
-        <HeroConstellation />
+      <div className="pointer-events-none absolute inset-0 z-0 opacity-35" aria-hidden="true">
+        <HeroConstellation variant="muted" />
       </div>
-      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-muted via-muted/90 to-muted" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-muted/70 via-muted/30 to-muted/70" aria-hidden="true" />
 
       <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-12">
+
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
             <motion.div
