@@ -108,26 +108,30 @@ function Constellation({ variant = "dark" }: { variant?: "dark" | "muted" }) {
   );
 }
 
-const HeroConstellation = ({ variant = "dark" }: { variant?: "dark" | "muted" }) => (
-  <div
-    className={`pointer-events-none absolute inset-0 z-[5] ${variant === "dark" ? "opacity-70" : "opacity-100"}`}
-    aria-hidden="true"
-  >
-    <Canvas
-      camera={{ position: [0, 0, 7], fov: 45 }}
-      dpr={[1, 1.75]}
-      gl={{ antialias: true, alpha: true }}
-      onCreated={({ gl }) => gl.setClearAlpha(0)}
+const HeroConstellation = ({ variant = "dark" }: { variant?: "dark" | "muted" }) => {
+  const isDark = variant === "dark";
+  return (
+    <div
+      className={`pointer-events-none absolute inset-0 z-[5] ${isDark ? "opacity-70" : "opacity-100"}`}
+      aria-hidden="true"
     >
-      <ambientLight intensity={isDark ? 0.7 : 1.2} />
-      <directionalLight position={[4, 3, 5]} intensity={isDark ? 1.2 : 1.5} color="#ffd98a" />
-      <pointLight position={[-5, -2, -3]} intensity={isDark ? 2.2 : 1.0} color="#2a6bd6" />
-      <Suspense fallback={null}>
-        <Constellation variant={variant} />
-      </Suspense>
-    </Canvas>
-  </div>
-);
+      <Canvas
+        camera={{ position: [0, 0, 7], fov: 45 }}
+        dpr={[1, 1.75]}
+        gl={{ antialias: true, alpha: true }}
+        onCreated={({ gl }) => gl.setClearAlpha(0)}
+      >
+        <ambientLight intensity={isDark ? 0.7 : 1.2} />
+        <directionalLight position={[4, 3, 5]} intensity={isDark ? 1.2 : 1.5} color="#ffd98a" />
+        <pointLight position={[-5, -2, -3]} intensity={isDark ? 2.2 : 1.0} color="#2a6bd6" />
+        <Suspense fallback={null}>
+          <Constellation variant={variant} />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+};
+
 
 export default HeroConstellation;
 
