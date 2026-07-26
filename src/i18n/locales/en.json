@@ -109,7 +109,15 @@
     "feat5Title": "10,000+ Professionals Trained",
     "feat5Desc": "Our faculty have collectively trained more than 10,000 professionals across Singapore and ASEAN.",
     "feat6Title": "Career Networking",
-    "feat6Desc": "Connect to Singapore's growing AI and digital innovation ecosystem through alumni events and industry partnerships."
+    "feat6Desc": "Connect to Singapore's growing AI and digital innovation ecosystem through alumni events and industry partnerships.",
+    "pillar1Title": "Expert Faculty",
+    "pillar1Desc": "Our instructors are active AI consultants and deployment specialists with over a decade of university-level teaching and corporate training experience. Faculty hold credentials from AWS, EC-Council, CompTIA, Microsoft, Apple and Google.",
+    "pillar2Title": "Recognised Credentials & Partners",
+    "pillar2Desc": "Certifications designed in partnership with industry and government — recognised across Singapore and ASEAN. Delivered with SMU Academy, NTUC LearningHub, AISG and NUS Asian Institute of Digital Finance, with selected programmes government-subsidised.",
+    "pillar3Title": "Applied Learning, Proven Scale",
+    "pillar3Desc": "We simplify complex AI concepts into practical steps for learners at all levels. Our faculty have trained more than 10,000 professionals across Singapore and ASEAN, and we run trusted in-house cohorts for public agencies, banks and technology enterprises.",
+    "pillar4Title": "Career Network",
+    "pillar4Desc": "Connect to Singapore's growing AI and digital innovation ecosystem through alumni events and industry partnerships."
   },
   "faculty": {
     "title": "Our Core Faculty",
