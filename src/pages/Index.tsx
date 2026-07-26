@@ -27,9 +27,9 @@ const Index = () => {
         <CurrentTrainingTicker />
         <MissionSection />
         <StatsSection />
+        <WhyMetaskillsSection />
         <TrustAuthoritySection />
         <AseanNetworkSection />
-        <WhyMetaskillsSection />
         
         <PastClassesSection />
         <ProgramsSection />
