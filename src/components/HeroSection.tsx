@@ -4,6 +4,7 @@ import { useState } from "react";
 import heroAsean from "@/assets/hero-bg-asean.webp";
 import heroSecondary from "@/assets/hero-bg.webp";
 import { useTranslation } from "react-i18next";
+import HeroConstellation from "@/components/HeroConstellation";
 
 const PHOTO1_DURATION = 6000;
 const PHOTO2_DURATION = 6000;
@@ -114,6 +115,9 @@ const HeroSection = () => {
           onPointerCancel={() => { pointerStartX.current = null; }}
           aria-hidden="true"
         />
+
+        {/* 3D AI stack constellation — sits behind hero text */}
+        <HeroConstellation />
 
         {/* Top scrim — keeps transparent navbar legible over bright hero photos */}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-40 z-10 bg-gradient-to-b from-black/55 via-black/20 to-transparent" />
