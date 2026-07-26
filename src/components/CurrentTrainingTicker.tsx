@@ -52,7 +52,7 @@ const CurrentTrainingTicker = () => {
           <div
             className="flex animate-marquee whitespace-nowrap"
             style={{
-              animationDuration: `${current.duration}s`,
+              animationDuration: `${MARQUEE_DURATION}s`,
               animationPlayState: paused ? "paused" : "running",
             }}
           >
@@ -65,38 +65,6 @@ const CurrentTrainingTicker = () => {
           </div>
         </div>
 
-        {/* Speed controls */}
-        <div className="hidden md:flex items-center gap-1 px-3 border-l border-background/10 shrink-0">
-          <button
-            type="button"
-            onClick={slower}
-            disabled={speedIdx === 0}
-            aria-label="Slower"
-            className="p-1.5 rounded hover:bg-background/10 disabled:opacity-30 disabled:cursor-not-allowed transition"
-          >
-            <Minus className="w-3.5 h-3.5" />
-          </button>
-          <span className="text-[10px] uppercase tracking-wider text-background/70 w-12 text-center">
-            {current.label}
-          </span>
-          <button
-            type="button"
-            onClick={faster}
-            disabled={speedIdx === SPEED_PRESETS.length - 1}
-            aria-label="Faster"
-            className="p-1.5 rounded hover:bg-background/10 disabled:opacity-30 disabled:cursor-not-allowed transition"
-          >
-            <Plus className="w-3.5 h-3.5" />
-          </button>
-          <button
-            type="button"
-            onClick={() => setPaused((p) => !p)}
-            aria-label={paused ? "Play" : "Pause"}
-            className="p-1.5 rounded hover:bg-background/10 transition ml-1"
-          >
-            {paused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
-          </button>
-        </div>
       </div>
     </section>
   );
