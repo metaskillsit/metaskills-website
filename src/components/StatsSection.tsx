@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import HeroConstellation from "@/components/HeroConstellation";
+
 
 const AnimatedNumber = ({ target, suffix }: { target: number; suffix: string }) => {
   const [count, setCount] = useState(0);
@@ -48,8 +50,15 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="border-y border-border bg-muted">
-      <div className="max-w-[1140px] mx-auto px-6 py-12">
+    <section className="relative overflow-hidden border-y border-border bg-muted">
+      {/* AI constellation — low opacity watermark behind the stats */}
+      <div className="pointer-events-none absolute inset-0 z-0 opacity-35" aria-hidden="true">
+        <HeroConstellation variant="muted" />
+      </div>
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-muted/70 via-muted/30 to-muted/70" aria-hidden="true" />
+
+      <div className="relative z-10 max-w-[1140px] mx-auto px-6 py-12">
+
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
             <motion.div
@@ -72,5 +81,6 @@ const StatsSection = () => {
     </section>
   );
 };
+
 
 export default StatsSection;

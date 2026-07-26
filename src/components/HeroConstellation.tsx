@@ -5,6 +5,9 @@ import * as THREE from "three";
 
 const GOLD = "#ffb81c";
 
+const LIGHT_NODE = "#f0e6cf";
+const DARK_NODE = "#123055";
+
 type NodeDef = {
   kind: "chip" | "shield" | "cloud" | "core";
   pos: [number, number, number];
@@ -34,8 +37,9 @@ function Geometry({ kind }: { kind: NodeDef["kind"] }) {
   }
 }
 
-function Constellation() {
+function Constellation({ variant = "dark" }: { variant?: "dark" | "muted" }) {
   const group = useRef<THREE.Group>(null);
+  const isDark = variant === "dark";
 
   const links = useMemo(() => {
     const origin = new THREE.Vector3(...NODES[0].pos);
@@ -57,7 +61,17 @@ function Constellation() {
   return (
     <group ref={group}>
       {links.map((geo, i) => (
-        <primitive key={i} object={new THREE.Line(geo, new THREE.LineBasicMaterial({ color: GOLD, transparent: true, opacity: 0.22 }))} />
+        <primitive
+          key={i}
+          object={new THREE.Line(
+            geo,
+            new THREE.LineBasicMaterial({
+              color: GOLD,
+              transparent: true,
+              opacity: isDark ? 0.22 : 0.45,
+            })
+          )}
+        />
       ))}
 
       {NODES.map((n, i) => (
@@ -66,19 +80,26 @@ function Constellation() {
             <mesh>
               <Geometry kind={n.kind} />
               <meshPhysicalMaterial
-                color={n.kind === "core" ? GOLD : "#123055"}
+                color={n.kind === "core" ? GOLD : isDark ? DARK_NODE : LIGHT_NODE}
                 transparent
-                opacity={0.55}
+                opacity={isDark ? 0.55 : 0.75}
                 roughness={0.12}
                 metalness={0.35}
                 transmission={0.7}
                 thickness={1.1}
                 clearcoat={1}
+                emissive={n.kind === "core" ? GOLD : isDark ? DARK_NODE : GOLD}
+                emissiveIntensity={isDark ? 0.1 : 0.35}
               />
             </mesh>
             <mesh scale={1.35}>
               <Geometry kind={n.kind} />
-              <meshBasicMaterial color={GOLD} transparent opacity={0.06} side={THREE.BackSide} />
+              <meshBasicMaterial
+                color={GOLD}
+                transparent
+                opacity={isDark ? 0.06 : 0.12}
+                side={THREE.BackSide}
+              />
             </mesh>
           </group>
         </Float>
@@ -87,22 +108,30 @@ function Constellation() {
   );
 }
 
-const HeroConstellation = () => (
-  <div className="pointer-events-none absolute inset-0 z-[5] opacity-70" aria-hidden="true">
-    <Canvas
-      camera={{ position: [0, 0, 7], fov: 45 }}
-      dpr={[1, 1.75]}
-      gl={{ antialias: true, alpha: true }}
-      onCreated={({ gl }) => gl.setClearAlpha(0)}
+const HeroConstellation = ({ variant = "dark" }: { variant?: "dark" | "muted" }) => {
+  const isDark = variant === "dark";
+  return (
+    <div
+      className={`pointer-events-none absolute inset-0 z-[5] ${isDark ? "opacity-70" : "opacity-100"}`}
+      aria-hidden="true"
     >
-      <ambientLight intensity={0.7} />
-      <directionalLight position={[4, 3, 5]} intensity={1.2} color="#ffd98a" />
-      <pointLight position={[-5, -2, -3]} intensity={2.2} color="#2a6bd6" />
-      <Suspense fallback={null}>
-        <Constellation />
-      </Suspense>
-    </Canvas>
-  </div>
-);
+      <Canvas
+        camera={{ position: [0, 0, 7], fov: 45 }}
+        dpr={[1, 1.75]}
+        gl={{ antialias: true, alpha: true }}
+        onCreated={({ gl }) => gl.setClearAlpha(0)}
+      >
+        <ambientLight intensity={isDark ? 0.7 : 1.2} />
+        <directionalLight position={[4, 3, 5]} intensity={isDark ? 1.2 : 1.5} color="#ffd98a" />
+        <pointLight position={[-5, -2, -3]} intensity={isDark ? 2.2 : 1.0} color="#2a6bd6" />
+        <Suspense fallback={null}>
+          <Constellation variant={variant} />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+};
+
 
 export default HeroConstellation;
+

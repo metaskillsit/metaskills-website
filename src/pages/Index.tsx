@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AIEcosystemStrip from "@/components/AIEcosystemStrip";
 import MissionSection from "@/components/MissionSection";
+
 import StatsSection from "@/components/StatsSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import FacultySection from "@/components/FacultySection";
@@ -24,9 +24,9 @@ const Index = () => {
       <Navbar />
       <main className="pt-20 md:pt-[90px]">
         <HeroSection />
-        <AIEcosystemStrip />
         <CurrentTrainingTicker />
         <MissionSection />
+
         <StatsSection />
         <TrustAuthoritySection />
         <AseanNetworkSection />
