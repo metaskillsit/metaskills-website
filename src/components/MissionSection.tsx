@@ -44,7 +44,7 @@ const MissionSection = () => {
             const pattern = new RegExp(`(${highlights.map(h => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
             const parts = full.split(pattern);
             return (
-              <p className="text-[17px] md:text-[19px] lg:text-[20px] text-foreground leading-[1.5] font-light font-heading text-justify">
+              <p className="text-[16px] md:text-[19px] lg:text-[20px] text-foreground leading-[1.6] md:leading-[1.5] font-light font-heading text-left md:text-justify">
                 {parts.map((part, i) =>
                   highlights.includes(part) ? (
                     <span key={i} className="text-foreground font-medium border-b border-accent">{part}</span>
