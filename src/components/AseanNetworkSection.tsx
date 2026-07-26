@@ -125,7 +125,8 @@ const AseanNetworkSection = () => {
 
   return (
     <section className="section-dark relative overflow-hidden bg-[hsl(215_60%_8%)]">
-      <div className="max-w-[1140px] mx-auto px-6 py-20 md:py-28 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-[1140px] mx-auto px-6 py-14 md:py-24 lg:py-28 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
