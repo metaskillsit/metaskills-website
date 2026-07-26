@@ -116,6 +116,9 @@ const HeroSection = () => {
           aria-hidden="true"
         />
 
+        {/* 3D AI stack constellation — sits behind hero text */}
+        <HeroConstellation />
+
         {/* Top scrim — keeps transparent navbar legible over bright hero photos */}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-40 z-10 bg-gradient-to-b from-black/55 via-black/20 to-transparent" />
 
