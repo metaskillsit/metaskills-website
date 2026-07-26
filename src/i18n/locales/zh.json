@@ -109,7 +109,15 @@
     "feat5Title": "10,000+ 已培训专业人士",
     "feat5Desc": "我们的师资已在新加坡和东盟培训了超过10,000名专业人士。",
     "feat6Title": "职业网络",
-    "feat6Desc": "通过校友活动和行业合作连接新加坡不断增长的AI和数字创新生态系统。"
+    "feat6Desc": "通过校友活动和行业合作连接新加坡不断增长的AI和数字创新生态系统。",
+    "pillar1Title": "专家师资",
+    "pillar1Desc": "我们的讲师是活跃的AI顾问和部署专家，拥有超过十年大学级别教学和企业培训经验。师资持有AWS、EC-Council、CompTIA、Microsoft、Apple和Google等行业认证。",
+    "pillar2Title": "行业认可认证与合作伙伴",
+    "pillar2Desc": "与行业和政府合作设计的认证——在新加坡和东盟得到认可。与SMU Academy、NTUC LearningHub、AISG和NUS Asian Institute of Digital Finance合作提供，部分课程可获政府补贴。",
+    "pillar3Title": "应用学习，规模化验证",
+    "pillar3Desc": "我们将复杂的AI概念简化为各级学习者都能理解的实际步骤。我们的师资已在新加坡和东盟培训超过10,000名专业人士，并为公共机构、银行和技术企业提供可信赖的内部培训。",
+    "pillar4Title": "职业网络",
+    "pillar4Desc": "通过校友活动和行业合作连接新加坡不断增长的AI和数字创新生态系统。"
   },
   "faculty": {
     "title": "我们的核心师资",
