@@ -230,7 +230,7 @@ const Navbar = () => {
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Metaskills Institute" className="h-12 md:h-[58px] w-auto object-contain" />
+              <img src={logo} alt="Metaskills Institute" className="h-12 md:h-[58px] w-auto object-contain logo-3d" />
             </Link>
           </div>
 
