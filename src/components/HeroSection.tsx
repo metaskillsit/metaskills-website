@@ -122,6 +122,7 @@ const HeroSection = () => {
         <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent z-10" />
         <div className="hidden md:block absolute inset-x-0 bottom-0 z-20 mx-auto w-full max-w-[1140px] px-6 pb-6">
           <div className="hero-tech-card inline-flex items-center gap-6 px-7 py-5">
+            <span className="hero-tech-glow" aria-hidden="true" />
             <span className="hero-tech-grid" aria-hidden="true" />
             {heroContent}
           </div>
@@ -131,6 +132,7 @@ const HeroSection = () => {
       {/* Mobile — text below media */}
       <div className="md:hidden bg-[hsl(var(--hero-overlay))] px-6 py-5">
         <div className="hero-tech-card relative overflow-hidden px-5 py-5">
+          <span className="hero-tech-glow" aria-hidden="true" />
           <span className="hero-tech-grid" aria-hidden="true" />
           {heroContent}
         </div>
