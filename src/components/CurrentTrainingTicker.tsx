@@ -1,25 +1,20 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Radio, Minus, Plus, Pause, Play } from "lucide-react";
 
-const SPEED_PRESETS = [
-  { label: "Slow", duration: 75 },
-  { label: "Normal", duration: 45 },
-  { label: "Fast", duration: 25 },
-];
+const MARQUEE_DURATION = 45;
 
 const CurrentTrainingTicker = () => {
   const { t } = useTranslation();
-  const [speedIdx, setSpeedIdx] = useState(2);
   const [paused, setPaused] = useState(false);
 
   const engagements = [
     "IMDA Vibe Coding (~30 runs)",
-    "OCBC (16 runs)",
-    "MayBank (19 runs)",
-    "AIA (8 runs)",
+    "NTUC LHub - OCBC (16 runs)",
+    "NTUC LHub - MayBank (19 runs)",
+    "NTUC LHub - AIA (8 runs)",
+    "NTUC LHub - ICICI (6 runs)",
     "MINDEF DIS - Strategic AI Compute and Optimisation",
-    "TinkerTanker-DSTA Intermediate Agentic Engineering",
+    "TinkerTanker - DSTA Intermediate Agentic Engineering",
     "AMD Regional Sales - Agentic Setups on Ryzen AI Laptops",
     "MINDEF - AWS Certification",
     "SMU - Professional Cert in Machine Learning",
@@ -27,16 +22,11 @@ const CurrentTrainingTicker = () => {
     "AISG-United Women's Group (3 runs)",
     "AISG-Micron (1 run)",
     "Synpulse (1 run)",
-    "ICICI Bank (Upcoming)",
     "Smarter Supply Chain Workflows (4 runs)",
     "NUS AIDF-Zhejiang University CEO/Executive Training (multiple runs)",
   ];
 
   const items = [...engagements, ...engagements];
-  const current = SPEED_PRESETS[speedIdx];
-
-  const slower = () => setSpeedIdx((i) => Math.max(0, i - 1));
-  const faster = () => setSpeedIdx((i) => Math.min(SPEED_PRESETS.length - 1, i + 1));
 
   return (
     <section
@@ -46,12 +36,11 @@ const CurrentTrainingTicker = () => {
       <div className="flex items-stretch">
         {/* Label badge */}
         <div className="hidden sm:flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 font-semibold text-xs uppercase tracking-widest whitespace-nowrap shrink-0">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-foreground opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-foreground"></span>
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[hsl(142_76%_42%)] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[hsl(142_76%_42%)] ring-1 ring-[hsl(142_76%_25%)]"></span>
           </span>
-          <Radio className="w-3.5 h-3.5" aria-hidden="true" />
-          {t("ticker.label", "Ongoing 2026")}
+          {t("ticker.label", "Live Training 2026")}
         </div>
 
         {/* Marquee */}
@@ -63,7 +52,7 @@ const CurrentTrainingTicker = () => {
           <div
             className="flex animate-marquee whitespace-nowrap"
             style={{
-              animationDuration: `${current.duration}s`,
+              animationDuration: `${MARQUEE_DURATION}s`,
               animationPlayState: paused ? "paused" : "running",
             }}
           >
@@ -76,38 +65,6 @@ const CurrentTrainingTicker = () => {
           </div>
         </div>
 
-        {/* Speed controls */}
-        <div className="hidden md:flex items-center gap-1 px-3 border-l border-background/10 shrink-0">
-          <button
-            type="button"
-            onClick={slower}
-            disabled={speedIdx === 0}
-            aria-label="Slower"
-            className="p-1.5 rounded hover:bg-background/10 disabled:opacity-30 disabled:cursor-not-allowed transition"
-          >
-            <Minus className="w-3.5 h-3.5" />
-          </button>
-          <span className="text-[10px] uppercase tracking-wider text-background/70 w-12 text-center">
-            {current.label}
-          </span>
-          <button
-            type="button"
-            onClick={faster}
-            disabled={speedIdx === SPEED_PRESETS.length - 1}
-            aria-label="Faster"
-            className="p-1.5 rounded hover:bg-background/10 disabled:opacity-30 disabled:cursor-not-allowed transition"
-          >
-            <Plus className="w-3.5 h-3.5" />
-          </button>
-          <button
-            type="button"
-            onClick={() => setPaused((p) => !p)}
-            aria-label={paused ? "Play" : "Pause"}
-            className="p-1.5 rounded hover:bg-background/10 transition ml-1"
-          >
-            {paused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
-          </button>
-        </div>
       </div>
     </section>
   );
