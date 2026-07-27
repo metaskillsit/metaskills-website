@@ -507,13 +507,6 @@ const IntroToAIPage = () => {
 
                 <div className="mt-5 pt-5 border-t border-border space-y-3 text-sm">
                   <div className="flex items-start gap-2">
-                    <Layers className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-foreground font-medium">Corporate Class</p>
-                      <p className="text-muted-foreground">SGD 6,000 (in-house)</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
                     <Users className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="text-foreground font-medium">Class Size</p>
