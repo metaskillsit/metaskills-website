@@ -521,7 +521,7 @@ const IntroToAIPage = () => {
                     <Users className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="text-foreground font-medium">Class Size</p>
-                      <p className="text-muted-foreground">Min. 12 participants</p>
+                      <p className="text-muted-foreground">Max. 12 participants</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
