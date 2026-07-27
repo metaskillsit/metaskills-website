@@ -280,7 +280,7 @@ const IntroToAIPage = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
             <Stat icon={<Clock className="w-5 h-5" />} label="Duration" value="1 Day · 8 Hours" />
-            <Stat icon={<Users className="w-5 h-5" />} label="Class Size" value="Min. 12 pax" />
+            <Stat icon={<Users className="w-5 h-5" />} label="Class Size" value="Max. 12 pax" />
             <Stat icon={<MapPin className="w-5 h-5" />} label="Mode" value="Classroom · Virtual · On-site" />
             <Stat icon={<GraduationCap className="w-5 h-5" />} label="Level" value="Beginner" />
           </div>
