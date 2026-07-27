@@ -164,17 +164,28 @@ const activities = [
   "Team AI Adoption Workshop",
 ];
 
-const tools = [
-  "ChatGPT",
-  "Claude",
-  "Gemini",
-  "Microsoft Copilot",
-  "Perplexity",
-  "NotebookLM",
-  "Gamma",
-  "Napkin AI",
-  "Canva AI",
-  "Lovable",
+import chatgptLogo from "@/assets/techlogos/openai.svg";
+import claudeLogo from "@/assets/techlogos/anthropic.svg";
+import geminiLogo from "@/assets/techlogos/gemini.svg";
+import copilotLogo from "@/assets/techlogos/copilot.jpg";
+import perplexityLogo from "@/assets/techlogos/perplexity.svg";
+import notebooklmLogo from "@/assets/techlogos/notebooklm.png";
+import gammaLogo from "@/assets/techlogos/gamma.png";
+import napkinLogo from "@/assets/techlogos/napkin.png";
+import canvaLogo from "@/assets/techlogos/canva.png";
+import lovableLogo from "@/assets/techlogos/lovable.png";
+
+const tools: { name: string; logo: string }[] = [
+  { name: "ChatGPT", logo: chatgptLogo },
+  { name: "Claude", logo: claudeLogo },
+  { name: "Gemini", logo: geminiLogo },
+  { name: "Microsoft Copilot", logo: copilotLogo },
+  { name: "Perplexity", logo: perplexityLogo },
+  { name: "NotebookLM", logo: notebooklmLogo },
+  { name: "Gamma", logo: gammaLogo },
+  { name: "Napkin AI", logo: napkinLogo },
+  { name: "Canva AI", logo: canvaLogo },
+  { name: "Lovable", logo: lovableLogo },
 ];
 
 const deliverables = [
