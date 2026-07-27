@@ -170,7 +170,7 @@ import geminiLogo from "@/assets/techlogos/gemini.svg";
 import copilotLogo from "@/assets/techlogos/copilot.jpg";
 import perplexityLogo from "@/assets/techlogos/perplexity.svg";
 import notebooklmLogo from "@/assets/techlogos/notebooklm.png";
-import gammaLogo from "@/assets/techlogos/gamma.png";
+import grokLogo from "@/assets/techlogos/grok.png";
 import napkinLogo from "@/assets/techlogos/napkin.png";
 import canvaLogo from "@/assets/techlogos/canva.png";
 import lovableLogo from "@/assets/techlogos/lovable.png";
@@ -182,7 +182,7 @@ const tools: { name: string; logo: string }[] = [
   { name: "Microsoft Copilot", logo: copilotLogo },
   { name: "Perplexity", logo: perplexityLogo },
   { name: "NotebookLM", logo: notebooklmLogo },
-  { name: "Gamma", logo: gammaLogo },
+  { name: "Grok", logo: grokLogo },
   { name: "Napkin AI", logo: napkinLogo },
   { name: "Canva AI", logo: canvaLogo },
   { name: "Lovable", logo: lovableLogo },
