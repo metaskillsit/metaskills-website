@@ -60,6 +60,7 @@ const ProgramsSection = () => {
       description: t("programmes.aiEduDesc"),
       images: [aiEducationImg, aiEducationImg2, aiEducationImg3],
       courses: [
+        { name: "Introduction to Artificial Intelligence | AI Literacy Foundation Programme", slug: "introduction-to-artificial-intelligence" },
         { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
         { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
       ],
