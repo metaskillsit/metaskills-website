@@ -65,6 +65,7 @@ const ProgrammesPage = () => {
       description: t("programmes.aiEduDesc"),
       image: aiEducationImg,
       courses: [
+        { name: "Introduction to Artificial Intelligence — AI Literacy Foundation", slug: "/introduction-to-artificial-intelligence", isExternal: true },
         { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
         { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
       ],
@@ -75,7 +76,6 @@ const ProgrammesPage = () => {
       description: t("programmes.certificationsDesc"),
       image: certificationsImg,
       courses: [
-        { name: "Introduction to Artificial Intelligence — AI Literacy Foundation", slug: "/introduction-to-artificial-intelligence", isExternal: true },
         { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
