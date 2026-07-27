@@ -86,7 +86,7 @@ const allFaculty = [
   },
   {
     name: "Jimmy Leong",
-    role: "Adjunct Trainer",
+    role: "Senior Cyber Security Advisor",
     expertise: "Adult Education | AI & Cybersecurity Training | Instructor Development",
     image: "/images/faculty/faculty-jimmy.png",
   },
