@@ -449,13 +449,13 @@ const IntroToAIPage = () => {
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
                 {tools.map((tool) => (
                   <div
-                    key={tool}
+                    key={tool.name}
                     className="p-4 rounded-lg border border-border bg-card text-center hover:border-primary/40 hover:shadow-sm transition"
                   >
-                    <div className="w-8 h-8 rounded-md bg-primary/10 text-primary flex items-center justify-center mx-auto mb-2">
-                      <Bot className="w-4 h-4" />
+                    <div className="w-10 h-10 rounded-md bg-white border border-border flex items-center justify-center mx-auto mb-2 overflow-hidden">
+                      <img src={tool.logo} alt={`${tool.name} logo`} className="w-7 h-7 object-contain" loading="lazy" />
                     </div>
-                    <p className="text-sm font-medium text-foreground">{tool}</p>
+                    <p className="text-sm font-medium text-foreground">{tool.name}</p>
                   </div>
                 ))}
               </div>
