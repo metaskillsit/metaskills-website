@@ -164,17 +164,28 @@ const activities = [
   "Team AI Adoption Workshop",
 ];
 
-const tools = [
-  "ChatGPT",
-  "Claude",
-  "Gemini",
-  "Microsoft Copilot",
-  "Perplexity",
-  "NotebookLM",
-  "Gamma",
-  "Napkin AI",
-  "Canva AI",
-  "Lovable",
+import chatgptLogo from "@/assets/techlogos/openai.svg";
+import claudeLogo from "@/assets/techlogos/anthropic.svg";
+import geminiLogo from "@/assets/techlogos/gemini.svg";
+import copilotLogo from "@/assets/techlogos/copilot.jpg";
+import perplexityLogo from "@/assets/techlogos/perplexity.svg";
+import notebooklmLogo from "@/assets/techlogos/notebooklm.png";
+import gammaLogo from "@/assets/techlogos/gamma.png";
+import napkinLogo from "@/assets/techlogos/napkin.png";
+import canvaLogo from "@/assets/techlogos/canva.png";
+import lovableLogo from "@/assets/techlogos/lovable.png";
+
+const tools: { name: string; logo: string }[] = [
+  { name: "ChatGPT", logo: chatgptLogo },
+  { name: "Claude", logo: claudeLogo },
+  { name: "Gemini", logo: geminiLogo },
+  { name: "Microsoft Copilot", logo: copilotLogo },
+  { name: "Perplexity", logo: perplexityLogo },
+  { name: "NotebookLM", logo: notebooklmLogo },
+  { name: "Gamma", logo: gammaLogo },
+  { name: "Napkin AI", logo: napkinLogo },
+  { name: "Canva AI", logo: canvaLogo },
+  { name: "Lovable", logo: lovableLogo },
 ];
 
 const deliverables = [
@@ -269,7 +280,7 @@ const IntroToAIPage = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
             <Stat icon={<Clock className="w-5 h-5" />} label="Duration" value="1 Day · 8 Hours" />
-            <Stat icon={<Users className="w-5 h-5" />} label="Class Size" value="Min. 12 pax" />
+            <Stat icon={<Users className="w-5 h-5" />} label="Class Size" value="Max. 12 pax" />
             <Stat icon={<MapPin className="w-5 h-5" />} label="Mode" value="Classroom · Virtual · On-site" />
             <Stat icon={<GraduationCap className="w-5 h-5" />} label="Level" value="Beginner" />
           </div>
@@ -438,13 +449,13 @@ const IntroToAIPage = () => {
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
                 {tools.map((tool) => (
                   <div
-                    key={tool}
+                    key={tool.name}
                     className="p-4 rounded-lg border border-border bg-card text-center hover:border-primary/40 hover:shadow-sm transition"
                   >
-                    <div className="w-8 h-8 rounded-md bg-primary/10 text-primary flex items-center justify-center mx-auto mb-2">
-                      <Bot className="w-4 h-4" />
+                    <div className="w-10 h-10 rounded-md bg-white border border-border flex items-center justify-center mx-auto mb-2 overflow-hidden">
+                      <img src={tool.logo} alt={`${tool.name} logo`} className="w-7 h-7 object-contain" loading="lazy" />
                     </div>
-                    <p className="text-sm font-medium text-foreground">{tool}</p>
+                    <p className="text-sm font-medium text-foreground">{tool.name}</p>
                   </div>
                 ))}
               </div>
@@ -510,7 +521,7 @@ const IntroToAIPage = () => {
                     <Users className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="text-foreground font-medium">Class Size</p>
-                      <p className="text-muted-foreground">Min. 12 participants</p>
+                      <p className="text-muted-foreground">Max. 12 participants</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
