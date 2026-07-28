@@ -56,7 +56,6 @@ const AppContent = () => {
         <Route path="/professional-certificate-in-Applied-AI" element={<SMUPCMLPage />} />
         <Route path="/introduction-to-artificial-intelligence" element={<IntroToAIPage />} />
         <Route path="/live-labs" element={<LiveLabsPage />} />
-        <Route path="/huggingface-spaces" element={<HuggingFaceSpacesPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
