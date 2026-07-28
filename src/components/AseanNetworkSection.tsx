@@ -135,7 +135,7 @@ const AseanNetworkSection = () => {
           <p className="mt-3 md:mt-4 text-white/70 text-[15px] md:text-[17px] leading-relaxed max-w-[46ch]">
             {t(
               "asean.subtitle",
-              "From our Singapore headquarters we deliver AI, cloud and cyber capability programmes to enterprises, government agencies and universities across Southeast Asia."
+              "From our Singapore headquarters we deliver AI, cloud and cyber capability programmes to enterprises, government agencies and universities across Asia."
             )}
           </p>
 
