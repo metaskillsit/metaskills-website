@@ -141,7 +141,7 @@ const AseanNetworkSection = () => {
 
           <div className="mt-6 md:mt-8 grid grid-cols-3 gap-3 sm:gap-6 max-w-md">
             {[
-              { k: "11", v: t("asean.stat1", "Capital hubs") },
+              { k: "4", v: t("asean.stat1", "Markets served") },
               { k: "40+", v: t("asean.stat2", "Organisations served") },
               { k: "3", v: t("asean.stat3", "Delivery languages") },
             ].map((s) => (
