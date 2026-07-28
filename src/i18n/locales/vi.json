@@ -1308,11 +1308,6 @@
     "agenticGovernance": {
       "title": "Hệ thống Quản trị AI Tự chủ",
       "desc": "Lớp quản trị cấp doanh nghiệp để triển khai các tác nhân AI tự chủ với sự tin cậy, truy xuất nguồn gốc và kiểm soát."
-    },
-    "modelHub": "Trung tâm mô hình",
-    "huggingFaceSpaces": {
-      "title": "Hugging Face Spaces",
-      "desc": "Khám phá hàng nghìn bản demo và mô hình AI do cộng đồng xây dựng trên Hugging Face Spaces."
     }
   }
 }

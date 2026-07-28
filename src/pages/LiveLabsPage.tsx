@@ -9,7 +9,6 @@ import {
   Shield,
   ArrowRight,
   FlaskConical,
-  Boxes,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
@@ -58,18 +57,6 @@ const LiveLabsPage = () => {
           desc: t("liveLabs.aiSongStudio.desc"),
           href: "/ai-song-studio",
           icon: Music,
-        },
-      ],
-    },
-    {
-      category: t("liveLabs.modelHub"),
-      icon: Boxes,
-      items: [
-        {
-          title: t("liveLabs.huggingFaceSpaces.title"),
-          desc: t("liveLabs.huggingFaceSpaces.desc"),
-          href: "/huggingface-spaces",
-          icon: Boxes,
         },
       ],
     },
