@@ -174,10 +174,25 @@ const Navbar = () => {
     {
       label: t("nav.msiLiveLabs"),
       items: [
+        { label: t("liveLabs.overview"), href: "/live-labs" },
         { label: t("nav.agenticAIGovernance"), href: "/agentic-ai-governance" },
-        { label: "AI Media Studio", href: "/ai-video-studio" },
-        { label: "LLM Playground", href: "/llm-playground" },
-        { label: "AI Song Generation Studio", href: "/ai-song-studio" },
+      ],
+      categories: [
+        {
+          label: t("liveLabs.textCodeLab"),
+          href: "/live-labs",
+          subItems: [
+            { label: "LLM Playground", href: "/llm-playground" },
+          ],
+        },
+        {
+          label: t("liveLabs.mediaLab"),
+          href: "/live-labs",
+          subItems: [
+            { label: "AI Media Studio", href: "/ai-video-studio" },
+            { label: "AI Song Generation Studio", href: "/ai-song-studio" },
+          ],
+        },
       ],
     },
   ];
