@@ -1,5 +1,13 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { List } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const MARQUEE_DURATION = 45;
 
