@@ -73,6 +73,35 @@ const CurrentTrainingTicker = () => {
           </div>
         </div>
 
+        {/* View all */}
+        <Dialog>
+          <DialogTrigger asChild>
+            <button
+              type="button"
+              className="flex items-center gap-1.5 px-3 sm:px-4 shrink-0 border-l border-primary/30 text-[11px] sm:text-xs uppercase tracking-widest font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              aria-label={t("ticker.viewAll", "View all training")}
+            >
+              <List className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">{t("ticker.viewAll", "View all")}</span>
+              <span className="sm:hidden">{engagements.length}</span>
+            </button>
+          </DialogTrigger>
+          <DialogContent className="max-w-lg">
+            <DialogHeader>
+              <DialogTitle className="font-heading text-2xl">
+                {t("ticker.dialogTitle", "Currently Training")}
+              </DialogTitle>
+            </DialogHeader>
+            <ul className="mt-2 max-h-[60vh] overflow-y-auto divide-y divide-border">
+              {engagements.map((item) => (
+                <li key={item} className="flex items-start gap-3 py-2.5 text-sm text-foreground">
+                  <span className="text-primary mt-0.5" aria-hidden="true">◆</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
