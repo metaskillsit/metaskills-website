@@ -193,6 +193,13 @@ const Navbar = () => {
             { label: "AI Song Generation Studio", href: "/ai-song-studio" },
           ],
         },
+        {
+          label: t("liveLabs.modelHub"),
+          href: "/live-labs",
+          subItems: [
+            { label: "Hugging Face Spaces", href: "/huggingface-spaces" },
+          ],
+        },
       ],
     },
   ];
@@ -370,9 +377,25 @@ const Navbar = () => {
                   >
                     AI Song Generation Studio
                   </Link>
+
+                  <div className="border-t border-border px-4 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    {t("liveLabs.modelHub")}
+                  </div>
+                  <Link
+                    to="/huggingface-spaces"
+                    onClick={() => setLabsOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/huggingface-spaces"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    Hugging Face Spaces
+                  </Link>
                 </div>
               )}
             </div>
+
 
             
             {/* Contact Us dropdown */}

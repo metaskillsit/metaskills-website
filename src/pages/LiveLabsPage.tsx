@@ -9,6 +9,7 @@ import {
   Shield,
   ArrowRight,
   FlaskConical,
+  Boxes,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
@@ -60,7 +61,20 @@ const LiveLabsPage = () => {
         },
       ],
     },
+    {
+      category: t("liveLabs.modelHub"),
+      icon: Boxes,
+      items: [
+        {
+          title: t("liveLabs.huggingFaceSpaces.title"),
+          desc: t("liveLabs.huggingFaceSpaces.desc"),
+          href: "/huggingface-spaces",
+          icon: Boxes,
+        },
+      ],
+    },
   ];
+
 
   const governance = {
     title: t("liveLabs.agenticGovernance.title"),

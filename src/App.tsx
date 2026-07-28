@@ -24,6 +24,7 @@ import ConsultingPage from "./pages/ConsultingPage.tsx";
 import SMUPCMLPage from "./pages/SMUPCMLPage.tsx";
 import IntroToAIPage from "./pages/IntroToAIPage.tsx";
 import LiveLabsPage from "./pages/LiveLabsPage.tsx";
+import HuggingFaceSpacesPage from "./pages/HuggingFaceSpacesPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
@@ -56,6 +57,7 @@ const AppContent = () => {
         <Route path="/professional-certificate-in-Applied-AI" element={<SMUPCMLPage />} />
         <Route path="/introduction-to-artificial-intelligence" element={<IntroToAIPage />} />
         <Route path="/live-labs" element={<LiveLabsPage />} />
+        <Route path="/huggingface-spaces" element={<HuggingFaceSpacesPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

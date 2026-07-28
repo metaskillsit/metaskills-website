@@ -1308,6 +1308,11 @@
     "agenticGovernance": {
       "title": "智能代理AI治理系统",
       "desc": "以信任、可追溯性与可控性部署自主AI代理的企业级治理层。"
+    },
+    "modelHub": "模型中心",
+    "huggingFaceSpaces": {
+      "title": "Hugging Face Spaces",
+      "desc": "探索 Hugging Face Spaces 上数千个社区构建的 AI 演示与模型。"
     }
   }
 }
