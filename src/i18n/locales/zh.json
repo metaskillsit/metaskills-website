@@ -1282,5 +1282,32 @@
     "p5Name": "健康与社会公益人工智能",
     "p5Tagline": "以人为本的人工智能，服务社区、关怀与包容。",
     "p5Desc": "我们与社会企业、非政府组织及企业社会责任团队合作，运用人工智能促进健康、包容与社区影响力。"
+  },
+  "liveLabs": {
+    "title": "MSI Live Labs",
+    "subtitle": "专为实验、学习及真实概念验证而打造的交互式AI原型环境。",
+    "badge": "原型环境",
+    "overview": "概览",
+    "textCodeLab": "文本与代码实验室",
+    "mediaLab": "媒体实验室",
+    "governance": "治理系统",
+    "liveLab": "实时实验室",
+    "openLab": "进入实验室",
+    "llmPlayground": {
+      "title": "LLM Playground",
+      "desc": "在安全的沙盒中并排比较、测试并提示主流大语言模型。"
+    },
+    "aiMediaStudio": {
+      "title": "AI Media Studio",
+      "desc": "通过统一工作流生成、编辑并发布AI驱动的视频与多媒体内容。"
+    },
+    "aiSongStudio": {
+      "title": "AI Song Generation Studio",
+      "desc": "将歌词与创意转化为完整制作的AI生成音乐曲目。"
+    },
+    "agenticGovernance": {
+      "title": "智能代理AI治理系统",
+      "desc": "以信任、可追溯性与可控性部署自主AI代理的企业级治理层。"
+    }
   }
 }
