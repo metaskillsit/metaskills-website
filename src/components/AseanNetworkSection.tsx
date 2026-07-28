@@ -9,16 +9,9 @@ type City = { name: string; lat: number; lon: number; hub?: boolean };
 
 const CITIES: City[] = [
   { name: "Singapore", lat: 1.35, lon: 103.82, hub: true },
-  { name: "Kuala Lumpur", lat: 3.14, lon: 101.69 },
-  { name: "Jakarta", lat: -6.21, lon: 106.85 },
-  { name: "Bangkok", lat: 13.76, lon: 100.5 },
-  { name: "Ho Chi Minh City", lat: 10.82, lon: 106.63 },
-  { name: "Hanoi", lat: 21.03, lon: 105.85 },
-  { name: "Manila", lat: 14.6, lon: 120.98 },
-  { name: "Phnom Penh", lat: 11.56, lon: 104.92 },
-  { name: "Yangon", lat: 16.87, lon: 96.2 },
-  { name: "Bandar Seri Begawan", lat: 4.9, lon: 114.94 },
-  { name: "Vientiane", lat: 17.97, lon: 102.6 },
+  { name: "Vietnam", lat: 16.05, lon: 106.0 },
+  { name: "China", lat: 31.23, lon: 121.47 },
+  { name: "Hong Kong", lat: 22.32, lon: 114.17 },
 ];
 
 const R = 1.6;
