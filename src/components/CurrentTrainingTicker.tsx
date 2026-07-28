@@ -20,6 +20,7 @@ const CurrentTrainingTicker = () => {
     "NTUC LHub - OCBC (16 runs)",
     "MINDEF DIS - Strategic AI Compute and Optimisation",
     "NTUC LHub - MayBank (19 runs)",
+    "BOC Senior Management - Leveraging Generative AI for Executive Decision-Making",
     "TinkerTanker - DSTA Intermediate Agentic Engineering",
     "NTUC LHub - AIA (8 runs)",
     "AMD Regional Sales - Agentic Setups on Ryzen AI Laptops",
