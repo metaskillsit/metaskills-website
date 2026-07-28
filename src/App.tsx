@@ -24,7 +24,6 @@ import ConsultingPage from "./pages/ConsultingPage.tsx";
 import SMUPCMLPage from "./pages/SMUPCMLPage.tsx";
 import IntroToAIPage from "./pages/IntroToAIPage.tsx";
 import LiveLabsPage from "./pages/LiveLabsPage.tsx";
-import HuggingFaceSpacesPage from "./pages/HuggingFaceSpacesPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
