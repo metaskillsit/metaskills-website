@@ -9,7 +9,6 @@ import {
   Shield,
   ArrowRight,
   FlaskConical,
-  Boxes,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
