@@ -193,13 +193,6 @@ const Navbar = () => {
             { label: "AI Song Generation Studio", href: "/ai-song-studio" },
           ],
         },
-        {
-          label: t("liveLabs.modelHub"),
-          href: "/live-labs",
-          subItems: [
-            { label: "Hugging Face Spaces", href: "/huggingface-spaces" },
-          ],
-        },
       ],
     },
   ];
