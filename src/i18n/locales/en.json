@@ -1350,5 +1350,32 @@
     "p5Name": "AI for Wellness & Social Good",
     "p5Tagline": "Human-centric AI for communities, care and inclusion.",
     "p5Desc": "We partner with social enterprises, NGOs and corporate CSR teams to apply AI in ways that support wellbeing, inclusion and community impact."
+  },
+  "liveLabs": {
+    "title": "MSI Live Labs",
+    "subtitle": "Interactive AI prototypes built for experimentation, learning, and real-world proof of concept.",
+    "badge": "Prototype Environment",
+    "overview": "Overview",
+    "textCodeLab": "Text & Code Lab",
+    "mediaLab": "Media Lab",
+    "governance": "Governance",
+    "liveLab": "Live Lab",
+    "openLab": "Open Lab",
+    "llmPlayground": {
+      "title": "LLM Playground",
+      "desc": "Compare, test, and prompt leading large language models side-by-side in a secure sandbox."
+    },
+    "aiMediaStudio": {
+      "title": "AI Media Studio",
+      "desc": "Generate, edit, and publish AI-powered video and multimedia content from a single workflow."
+    },
+    "aiSongStudio": {
+      "title": "AI Song Generation Studio",
+      "desc": "Turn lyrics and ideas into fully produced AI-generated music tracks."
+    },
+    "agenticGovernance": {
+      "title": "Agentic AI Governance System",
+      "desc": "Enterprise-grade governance layer for deploying autonomous AI agents with trust, traceability, and control."
+    }
   }
 }
