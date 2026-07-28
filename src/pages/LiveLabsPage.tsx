@@ -60,18 +60,6 @@ const LiveLabsPage = () => {
         },
       ],
     },
-    {
-      category: t("liveLabs.modelHub"),
-      icon: Boxes,
-      items: [
-        {
-          title: t("liveLabs.huggingFaceSpaces.title"),
-          desc: t("liveLabs.huggingFaceSpaces.desc"),
-          href: "/huggingface-spaces",
-          icon: Boxes,
-        },
-      ],
-    },
   ];
 
 
