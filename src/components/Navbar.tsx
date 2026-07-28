@@ -174,10 +174,25 @@ const Navbar = () => {
     {
       label: t("nav.msiLiveLabs"),
       items: [
+        { label: t("liveLabs.overview"), href: "/live-labs" },
         { label: t("nav.agenticAIGovernance"), href: "/agentic-ai-governance" },
-        { label: "AI Media Studio", href: "/ai-video-studio" },
-        { label: "LLM Playground", href: "/llm-playground" },
-        { label: "AI Song Generation Studio", href: "/ai-song-studio" },
+      ],
+      categories: [
+        {
+          label: t("liveLabs.textCodeLab"),
+          href: "/live-labs",
+          subItems: [
+            { label: "LLM Playground", href: "/llm-playground" },
+          ],
+        },
+        {
+          label: t("liveLabs.mediaLab"),
+          href: "/live-labs",
+          subItems: [
+            { label: "AI Media Studio", href: "/ai-video-studio" },
+            { label: "AI Song Generation Studio", href: "/ai-song-studio" },
+          ],
+        },
       ],
     },
   ];
@@ -282,14 +297,27 @@ const Navbar = () => {
               <button
                 onClick={() => setLabsOpen(!labsOpen)}
                 className={`flex items-center gap-1 text-[13px] font-medium tracking-wide transition-colors ${
-                  location.pathname === "/agentic-ai-governance" ? "text-primary" : "text-foreground/70 hover:text-primary"
+                  ["/live-labs", "/agentic-ai-governance", "/ai-video-studio", "/llm-playground", "/ai-song-studio"].includes(location.pathname)
+                    ? "text-primary"
+                    : "text-foreground/70 hover:text-primary"
                 }`}
               >
                 <span>{t("nav.msiLiveLabs")}</span>
                 <ChevronDown size={14} />
               </button>
               {labsOpen && (
-                <div className="absolute top-full left-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[260px] animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                <div className="absolute top-full left-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[280px] animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                  <Link
+                    to="/live-labs"
+                    onClick={() => setLabsOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/live-labs"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    {t("liveLabs.overview")}
+                  </Link>
                   <Link
                     to="/agentic-ai-governance"
                     onClick={() => setLabsOpen(false)}
@@ -301,17 +329,10 @@ const Navbar = () => {
                   >
                     {t("nav.agenticAIGovernance")}
                   </Link>
-                  <Link
-                    to="/ai-video-studio"
-                    onClick={() => setLabsOpen(false)}
-                    className={`block px-4 py-2.5 text-sm transition-colors ${
-                      location.pathname === "/ai-video-studio"
-                        ? "bg-primary/10 text-primary font-medium"
-                        : "text-foreground/80 hover:bg-muted hover:text-primary"
-                    }`}
-                  >
-                    AI Media Studio
-                  </Link>
+
+                  <div className="border-t border-border px-4 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    {t("liveLabs.textCodeLab")}
+                  </div>
                   <Link
                     to="/llm-playground"
                     onClick={() => setLabsOpen(false)}
@@ -322,6 +343,21 @@ const Navbar = () => {
                     }`}
                   >
                     LLM Playground
+                  </Link>
+
+                  <div className="border-t border-border px-4 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    {t("liveLabs.mediaLab")}
+                  </div>
+                  <Link
+                    to="/ai-video-studio"
+                    onClick={() => setLabsOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/ai-video-studio"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    AI Media Studio
                   </Link>
                   <Link
                     to="/ai-song-studio"

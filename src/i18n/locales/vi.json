@@ -1282,5 +1282,32 @@
     "p5Name": "AI cho Sức khỏe & Lợi ích Xã hội",
     "p5Tagline": "AI lấy con người làm trung tâm cho cộng đồng, chăm sóc và hòa nhập.",
     "p5Desc": "Chúng tôi hợp tác với doanh nghiệp xã hội, NGO và đội ngũ CSR doanh nghiệp để ứng dụng AI theo cách hỗ trợ sức khỏe, hòa nhập và tác động cộng đồng."
+  },
+  "liveLabs": {
+    "title": "MSI Live Labs",
+    "subtitle": "Môi trường nguyên mẫu AI tương tác dành cho thử nghiệm, học tập và chứng minh khái niệm thực tế.",
+    "badge": "Môi trường nguyên mẫu",
+    "overview": "Tổng quan",
+    "textCodeLab": "Phòng thí nghiệm Văn bản & Mã",
+    "mediaLab": "Phòng thí nghiệm Đa phương tiện",
+    "governance": "Quản trị",
+    "liveLab": "Live Lab",
+    "openLab": "Mở phòng thí nghiệm",
+    "llmPlayground": {
+      "title": "LLM Playground",
+      "desc": "So sánh, thử nghiệm và gợi ý các mô hình ngôn ngữ lớn hàng đầu trong một sandbox an toàn."
+    },
+    "aiMediaStudio": {
+      "title": "AI Media Studio",
+      "desc": "Tạo, chỉnh sửa và xuất bản nội dung video và đa phương tiện do AI hỗ trợ từ một quy trình duy nhất."
+    },
+    "aiSongStudio": {
+      "title": "AI Song Generation Studio",
+      "desc": "Biến lời bài hát và ý tưởng thành các bản nhạc do AI tạo ra, hoàn thiện đầy đủ."
+    },
+    "agenticGovernance": {
+      "title": "Hệ thống Quản trị AI Tự chủ",
+      "desc": "Lớp quản trị cấp doanh nghiệp để triển khai các tác nhân AI tự chủ với sự tin cậy, truy xuất nguồn gốc và kiểm soát."
+    }
   }
 }
