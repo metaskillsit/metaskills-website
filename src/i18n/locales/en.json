@@ -1376,6 +1376,11 @@
     "agenticGovernance": {
       "title": "Agentic AI Governance System",
       "desc": "Enterprise-grade governance layer for deploying autonomous AI agents with trust, traceability, and control."
+    },
+    "modelHub": "Model Hub",
+    "huggingFaceSpaces": {
+      "title": "Hugging Face Spaces",
+      "desc": "Explore thousands of community-built AI demos and models hosted on Hugging Face Spaces."
     }
   }
 }
