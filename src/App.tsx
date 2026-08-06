@@ -8,6 +8,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 import Index from "./pages/Index.tsx";
 import CoursePage from "./pages/CoursePage.tsx";
+import CourseCategoryPage from "./pages/CourseCategoryPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import ProgrammesPage from "./pages/ProgrammesPage.tsx";
 import FacultyPage from "./pages/FacultyPage.tsx";
@@ -47,6 +48,7 @@ const AppContent = () => {
         <Route path="/admissions" element={<AdmissionsPage />} />
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/course/:slug" element={<CoursePage />} />
+        <Route path="/course-category/:slug" element={<CourseCategoryPage />} />
         <Route path="/agentic-ai-governance" element={<AgenticAIPage />} />
         <Route path="/ai-stack-masterclasses" element={<AIStackPage />} />
         <Route path="/ai-video-studio" element={<AIVideoStudioPage />} />

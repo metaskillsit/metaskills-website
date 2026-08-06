@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { Clock, Users, Award, ArrowLeft } from "lucide-react";
+import { Clock, Users, Award, ArrowLeft, Presentation, Wallet } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { getPastRuns } from "@/data/pastRuns";
 import { getCourseSchedule } from "@/data/courseSchedule";
@@ -51,10 +52,28 @@ const CoursePageContent = ({ slug }: { slug: string }) => {
   return <CoursePageInner course={course} categoryImages={categoryImages} pastRuns={pastRuns} courseSchedule={courseSchedule} relatedCourses={relatedCourses} />;
 };
 
+const categorySlugs: Record<string, string> = {
+  "Cloud, DevOps & AI Stack": "cloud-devops-ai-stack",
+};
+
 const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, relatedCourses }: any) => {
   const { t } = useTranslation();
   const ct = useCourseTranslation(course);
   const isNew = pastRuns.length === 0;
+  const categorySlug = categorySlugs[course.category];
+
+  useEffect(() => {
+    if (!course.seoTitle && !course.seoDescription) return;
+    const prevTitle = document.title;
+    if (course.seoTitle) document.title = course.seoTitle;
+    const meta = document.querySelector('meta[name="description"]');
+    const prevDesc = meta?.getAttribute("content") || "";
+    if (course.seoDescription && meta) meta.setAttribute("content", course.seoDescription);
+    return () => {
+      document.title = prevTitle;
+      if (meta) meta.setAttribute("content", prevDesc);
+    };
+  }, [course.seoTitle, course.seoDescription]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -63,6 +82,27 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
         <CourseHero course={course} categoryImages={categoryImages} isNew={isNew} />
 
         <CoursePastClients slug={course.slug} />
+
+        {/* BREADCRUMB */}
+        <nav aria-label="Breadcrumb" className="border-b border-border bg-background">
+          <ol className="max-w-[1140px] mx-auto px-6 py-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+            <li><Link to="/" className="hover:text-accent transition-colors">Home</Link></li>
+            <li aria-hidden="true">/</li>
+            <li><Link to="/programmes" className="hover:text-accent transition-colors">Programmes</Link></li>
+            {categorySlug && (
+              <>
+                <li aria-hidden="true">/</li>
+                <li>
+                  <Link to={`/course-category/${categorySlug}`} className="hover:text-accent transition-colors">
+                    {ct.category}
+                  </Link>
+                </li>
+              </>
+            )}
+            <li aria-hidden="true">/</li>
+            <li className="text-foreground/80 font-medium">{ct.title}</li>
+          </ol>
+        </nav>
 
         <section className="border-b border-border bg-muted">
           <div className="max-w-[1140px] mx-auto px-6 py-4 flex flex-wrap gap-8 text-sm text-muted-foreground">
@@ -76,8 +116,20 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
             </div>
             <div className="flex items-center gap-2">
               <Award className="w-4 h-4 text-primary" />
-              <span>{t("coursePage.keyInfoCertification")}</span>
+              <span>{course.certificationStatus || t("coursePage.keyInfoCertification")}</span>
             </div>
+            {course.deliveryMode && (
+              <div className="flex items-center gap-2">
+                <Presentation className="w-4 h-4 text-primary" />
+                <span>{course.deliveryMode}</span>
+              </div>
+            )}
+            {course.fundingStatus && (
+              <div className="flex items-center gap-2">
+                <Wallet className="w-4 h-4 text-primary" />
+                <span>{course.fundingStatus}</span>
+              </div>
+            )}
           </div>
         </section>
 

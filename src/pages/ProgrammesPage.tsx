@@ -33,6 +33,7 @@ type Category = {
   description: string;
   image: string;
   courses: Course[];
+  categoryHref?: string;
 };
 
 const ProgrammesPage = () => {
@@ -167,8 +168,12 @@ const ProgrammesPage = () => {
       description: t("programmes.cloudAiStackDesc"),
       image: cloudDevOpsImg,
       courses: [
+        { name: "Red Hat Enterprise Linux Administration – RHCSA Preparation", slug: "red-hat-enterprise-linux-rhcsa-preparation" },
+        { name: "AWS Solutions Architect – Associate Preparation", slug: "aws-solutions-architect-associate-preparation" },
+        { name: "Certified Kubernetes Administrator Preparation", slug: "certified-kubernetes-administrator-preparation" },
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
       ],
+      categoryHref: "/course-category/cloud-devops-ai-stack",
     },
   ];
 
@@ -372,6 +377,15 @@ const ProgrammesPage = () => {
                       ))}
 
                     </ul>
+
+                    {cat.categoryHref && (
+                      <Link
+                        to={cat.categoryHref}
+                        className="mt-5 inline-flex items-center gap-2 font-body text-sm font-semibold text-accent hover:gap-3 transition-all"
+                      >
+                        Explore {cat.title} <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </motion.section>
