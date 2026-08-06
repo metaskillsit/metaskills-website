@@ -208,7 +208,7 @@ const AIComputeEconomicsPage = () => {
                 </a>
                 <a href="#curriculum"
                   className="inline-flex items-center gap-2 rounded-sm border border-white/30 px-7 py-3.5 text-sm font-semibold text-white hover:border-accent hover:text-accent transition-all">
-                  <Download className="h-4 w-4" /> Download syllabus
+                  View curriculum
                 </a>
               </div>
             </motion.div>
