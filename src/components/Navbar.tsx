@@ -149,8 +149,11 @@ const Navbar = () => {
         },
         {
           label: t("programmes.cloudAiStackTitle"),
-          href: "/programmes",
+          href: "/course-category/cloud-devops-ai-stack",
           subItems: [
+            { label: "Red Hat Enterprise Linux Administration – RHCSA Preparation", href: "/course/red-hat-enterprise-linux-rhcsa-preparation" },
+            { label: "AWS Solutions Architect – Associate Preparation", href: "/course/aws-solutions-architect-associate-preparation" },
+            { label: "Certified Kubernetes Administrator Preparation", href: "/course/certified-kubernetes-administrator-preparation" },
             { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
             { label: t("programmes.aiStack1DayCourse"), href: "/ai-stack-masterclasses" },
           ],
