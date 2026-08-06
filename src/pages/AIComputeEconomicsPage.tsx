@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight, Building2, Cpu, Gauge, Layers, LineChart, Server, Shield,
-  ShieldCheck, Users, Landmark, Wrench, FileText, Award, Clock, Zap, Download,
+  ShieldCheck, Users, Landmark, Wrench, FileText, Award, Clock, Zap,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
