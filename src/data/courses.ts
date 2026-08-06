@@ -54,6 +54,21 @@ export interface Course {
   whatYouLearn?: string[];
   afterCompleting?: string[];
   i18nKey?: string;
+  // Optional structured fields used by certification-preparation programmes
+  whoShouldAttend?: string[];
+  prerequisites?: string[];
+  prerequisitesNote?: string;
+  practicalActivities?: string[];
+  certificationNote?: string[];
+  feeNotes?: string[];
+  whatsappMessage?: string;
+  courseDateStatus?: string;
+  deliveryMode?: string;
+  fundingStatus?: string;
+  certificationStatus?: string;
+  level?: string;
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 export const courses: Course[] = [
