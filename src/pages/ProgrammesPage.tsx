@@ -33,6 +33,7 @@ type Category = {
   description: string;
   image: string;
   courses: Course[];
+  categoryHref?: string;
 };
 
 const ProgrammesPage = () => {
