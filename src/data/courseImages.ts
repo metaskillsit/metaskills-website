@@ -1,5 +1,9 @@
 // Per-course image imports — each course gets its own unique photo set
 // Agentic AI Workshop Series
+import awsSaa1 from "@/assets/courses/aws-saa-1.jpg";
+import cka1 from "@/assets/courses/cka-1.jpg";
+import rhcsa1 from "@/assets/courses/rhcsa-1.jpg";
+import cloudDevOpsGeneric from "@/assets/course-clouddevops-1.jpg";
 import agenticFoundations1 from "@/assets/courses/agentic-foundations-1.jpg";
 import agenticFoundations2 from "@/assets/courses/agentic-foundations-2.jpg";
 import agenticFoundations3 from "@/assets/courses/agentic-foundations-3.jpg";
@@ -112,6 +116,10 @@ const courseImageMap: Record<string, string[]> = {
   "ai-literacy-for-finance-professionals": [aiLiteracyFinance1, algoL1_2, algoL2_3],
   "ai-fluency-for-finance-professionals": [aiFluencyFinance1, algoL2_1, algoL1_3],
   "ai-strategy-governance-ethical-leadership": [aiStrategyGovernance1, algoL2_2, algoL1_1],
+  // Cloud, DevOps & AI Stack — certification preparation
+  "aws-solutions-architect-associate-preparation": [awsSaa1, cloudDevOpsGeneric, cka1],
+  "certified-kubernetes-administrator-preparation": [cka1, cloudDevOpsGeneric, rhcsa1],
+  "red-hat-enterprise-linux-rhcsa-preparation": [rhcsa1, cloudDevOpsGeneric, awsSaa1],
 };
 
 

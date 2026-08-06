@@ -927,6 +927,9 @@ courses.push({
   },
 });
 
+import { cloudCertCourses } from "./coursesCloudCert";
+courses.push(...cloudCertCourses);
+
 export const getCourseBySlug = (slug: string) =>
   courses.find((c) => c.slug === slug);
 
