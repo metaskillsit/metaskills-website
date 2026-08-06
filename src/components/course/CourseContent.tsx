@@ -65,6 +65,47 @@ const CourseContent = ({ course }: CourseContentProps) => {
         </div>
       </motion.div>
 
+      {course.whoShouldAttend && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-6">Who Should Attend</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">This programme is suitable for:</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {course.whoShouldAttend.map((item, i) => (
+              <div key={i} className="flex gap-3 text-sm text-foreground/80 leading-relaxed">
+                <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
+
+      {course.prerequisites && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-6">Recommended Prerequisites</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">Participants should preferably have:</p>
+          <ul className="space-y-3 mb-4">
+            {course.prerequisites.map((item, i) => (
+              <li key={i} className="flex gap-3 text-sm text-foreground/80 leading-relaxed">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          {course.prerequisitesNote && (
+            <p className="text-sm text-muted-foreground italic leading-relaxed">{course.prerequisitesNote}</p>
+          )}
+        </motion.div>
+      )}
+
       {ct.afterCompleting && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
