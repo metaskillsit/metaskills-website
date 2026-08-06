@@ -30,6 +30,7 @@ import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
 import aiStackImg from "@/assets/programmes-aistack.jpg";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
+import certificationsImg from "@/assets/programmes-certifications.jpg";
 import aiEducationImg2 from "@/assets/programmes-aieducation-2.jpg";
 import aiEducationImg3 from "@/assets/programmes-aieducation-3.jpg";
 
@@ -60,9 +61,18 @@ const ProgramsSection = () => {
       description: t("programmes.aiEduDesc"),
       images: [aiEducationImg, aiEducationImg2, aiEducationImg3],
       courses: [
-        { name: "Introduction to Artificial Intelligence | AI Literacy Foundation Programme", slug: "introduction-to-artificial-intelligence" },
+        { name: "Introduction to Artificial Intelligence | AI Literacy Foundation Programme", slug: "/introduction-to-artificial-intelligence", isExternal: true },
         { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
         { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
+      ],
+    },
+    {
+      title: t("programmes.certificationsTitle"),
+      description: t("programmes.certificationsDesc"),
+      images: [certificationsImg],
+      courses: [
+        { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
+        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
     },
     {
@@ -144,6 +154,9 @@ const ProgramsSection = () => {
       description: t("programmes.cloudAiStackDesc"),
       images: [cloudDevOpsImg, aiStackImg],
       courses: [
+        { name: "Red Hat Enterprise Linux Administration – RHCSA Preparation", slug: "red-hat-enterprise-linux-rhcsa-preparation" },
+        { name: "AWS Solutions Architect – Associate Preparation", slug: "aws-solutions-architect-associate-preparation" },
+        { name: "Certified Kubernetes Administrator Preparation", slug: "certified-kubernetes-administrator-preparation" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
       ],
