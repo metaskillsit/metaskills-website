@@ -377,6 +377,15 @@ const ProgrammesPage = () => {
                       ))}
 
                     </ul>
+
+                    {cat.categoryHref && (
+                      <Link
+                        to={cat.categoryHref}
+                        className="mt-5 inline-flex items-center gap-2 font-body text-sm font-semibold text-accent hover:gap-3 transition-all"
+                      >
+                        Explore {cat.title} <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </motion.section>
