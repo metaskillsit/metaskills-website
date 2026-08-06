@@ -1,4 +1,4 @@
-import { DollarSign, MessageCircle, Mail } from "lucide-react";
+import { DollarSign, MessageCircle, Mail, CalendarDays } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 
@@ -38,15 +38,42 @@ const coursePricingOverrides: Record<string, { corporate: string; corporateLabel
 const CourseSidebar = ({ course }: CourseSidebarProps) => {
   const { t } = useTranslation();
   const pricing = coursePricingOverrides[course.slug];
-  const corporateRate = pricing?.corporate || "S$6,000 per workshop per day (up to 10 pax)";
-  const showSelfSponsored = pricing ? pricing.selfSponsored !== undefined : true;
+  const hasStructuredFees = Boolean(course.feeNotes);
+  const corporateRate = hasStructuredFees
+    ? course.fees.corporateSmall
+    : pricing?.corporate || "S$6,000 per workshop per day (up to 10 pax)";
+  const showSelfSponsored = hasStructuredFees ? true : pricing ? pricing.selfSponsored !== undefined : true;
   const useCustomNotes = pricing?.customNotes || false;
-  const hideNotes = pricing?.hideNotes || false;
+  const hideNotes = hasStructuredFees ? true : pricing?.hideNotes || false;
   const fundingNote = pricing?.fundingNote;
+  const whatsappHref = `https://wa.me/6589483482?text=${encodeURIComponent(
+    course.whatsappMessage || "Hi I'm interested in your AI training and solutions."
+  )}`;
 
   return (
     <div className="lg:col-span-1">
       <div className="sticky top-24 space-y-6">
+        {course.courseDateStatus && (
+          <div className="bg-muted rounded-sm p-6 border border-border">
+            <div className="flex items-center gap-2 mb-3">
+              <CalendarDays className="w-4 h-4 text-primary" />
+              <h3 className="font-heading text-sm font-bold text-foreground uppercase tracking-wider">
+                Course Schedule
+              </h3>
+            </div>
+            <p className="text-xs text-muted-foreground mb-0.5">Next Run Date</p>
+            <p className="font-bold text-foreground mb-4">{course.courseDateStatus}</p>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#25D366] text-white font-semibold rounded-sm text-sm hover:bg-[#1da851] transition-all shadow-lg"
+            >
+              <MessageCircle className="w-4 h-4" /> WhatsApp Us to Check Course Dates
+            </a>
+          </div>
+        )}
+
         <div className="bg-muted rounded-sm p-6 border border-border">
           <div className="flex items-center gap-2 mb-4">
             <DollarSign className="w-4 h-4 text-primary" />
