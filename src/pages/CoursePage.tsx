@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { Clock, Users, Award, ArrowLeft } from "lucide-react";
+import { Clock, Users, Award, ArrowLeft, Presentation, Wallet } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { getPastRuns } from "@/data/pastRuns";
 import { getCourseSchedule } from "@/data/courseSchedule";
