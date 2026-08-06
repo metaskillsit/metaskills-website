@@ -174,6 +174,42 @@ const CourseContent = ({ course }: CourseContentProps) => {
           ))}
         </div>
       </motion.div>
+
+      {course.practicalActivities && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Practical Activities</h2>
+          <p className="text-muted-foreground leading-relaxed mb-5">Participants may complete activities involving:</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {course.practicalActivities.map((item, i) => (
+              <div key={i} className="flex gap-3 p-4 bg-muted rounded-sm border border-border text-sm text-foreground/80 leading-relaxed">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
+
+      {course.certificationNote && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
+            Certification and Examination Information
+          </h2>
+          <div className="space-y-3 p-5 bg-muted rounded-sm border border-border">
+            {course.certificationNote.map((item, i) => (
+              <p key={i} className="text-sm text-foreground/80 leading-relaxed">{item}</p>
+            ))}
+          </div>
+        </motion.div>
+      )}
     </>
   );
 };
