@@ -91,6 +91,7 @@ const ProgrammesPage = () => {
         { name: ct("aiAccountability"), slug: "ai-accountability-when-ai-decides" },
         { name: ct("governingAiAgents"), slug: "governing-ai-agents-trust-boundaries" },
         { name: ct("aiWargaming"), slug: "ai-wargaming-test-decisions" },
+        { name: "AI-Native Prototyping — Building Under Compute Constraints", slug: "/ai-native-prototyping-compute-constraints", isExternal: true },
       ],
     },
     {
