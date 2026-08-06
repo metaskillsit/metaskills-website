@@ -167,8 +167,12 @@ const ProgrammesPage = () => {
       description: t("programmes.cloudAiStackDesc"),
       image: cloudDevOpsImg,
       courses: [
+        { name: "Red Hat Enterprise Linux Administration – RHCSA Preparation", slug: "red-hat-enterprise-linux-rhcsa-preparation" },
+        { name: "AWS Solutions Architect – Associate Preparation", slug: "aws-solutions-architect-associate-preparation" },
+        { name: "Certified Kubernetes Administrator Preparation", slug: "certified-kubernetes-administrator-preparation" },
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
       ],
+      categoryHref: "/course-category/cloud-devops-ai-stack",
     },
   ];
 
