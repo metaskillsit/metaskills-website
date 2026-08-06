@@ -55,7 +55,21 @@ const EnquiryForm = () => {
     }
     setErrors({});
     setStatus("sending");
-    const { error } = await supabase.from("enquiries").insert([{ ...parsed.data }]);
+    const d = parsed.data;
+    const { error } = await supabase.from("enquiries").insert([
+      {
+        name: d.name!,
+        email: d.email!,
+        company: d.company!,
+        role: d.role,
+        team_size: d.team_size,
+        audience: d.audience,
+        format: d.format,
+        timeframe: d.timeframe,
+        message: d.message,
+        consent: true,
+      },
+    ]);
     setStatus(error ? "error" : "done");
   };
 
