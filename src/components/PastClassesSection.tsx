@@ -56,8 +56,28 @@ import pastClass47 from "@/assets/past-class-47.jpg";
 import pastClass48 from "@/assets/past-class-48.jpg";
 import pastClass49 from "@/assets/past-class-49.jpg";
 import pastClass50 from "@/assets/past-class-50.jpg";
+import pastClass75 from "@/assets/past-class-75.jpg.asset.json";
+import pastClass74 from "@/assets/past-class-74.jpg.asset.json";
+import pastClass73 from "@/assets/past-class-73.jpg.asset.json";
+import pastClass72 from "@/assets/past-class-72.jpg.asset.json";
+import pastClass64 from "@/assets/past-class-64.jpg.asset.json";
+import pastClass63 from "@/assets/past-class-63.jpg.asset.json";
+import pastClass61 from "@/assets/past-class-61.jpg.asset.json";
+import pastClass59 from "@/assets/past-class-59.jpg.asset.json";
+import pastClass56 from "@/assets/past-class-56.jpg.asset.json";
+import pastClass53 from "@/assets/past-class-53.jpg.asset.json";
 
 const photos = [
+  { src: pastClass75.url, caption: "Corporate AI Training — Classroom Session 2026" },
+  { src: pastClass74.url, caption: "AI Compute Economics — Studio Lab Session" },
+  { src: pastClass73.url, caption: "AI-Native Prototyping — Developer Workshop" },
+  { src: pastClass72.url, caption: "Tech Conference Singapore — Keynote Audience" },
+  { src: pastClass64.url, caption: "Bank of China Singapore — Enterprise AI Briefing" },
+  { src: pastClass63.url, caption: "AI Literacy for Financial Professionals — NTUC LearningHub" },
+  { src: pastClass61.url, caption: "AI Literacy for Financial Professionals — Full Classroom" },
+  { src: pastClass59.url, caption: "Data & AI Workshop — Hands-On Lab Session" },
+  { src: pastClass56.url, caption: "Enterprise AI Workshop — Lecture Theatre Session" },
+  { src: pastClass53.url, caption: "Generative AI Workshop — Large Cohort Session" },
   { src: pastClass38, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 1" },
   { src: pastClass43, caption: "AI for Good — AI Singapore x Micron Train-the-Trainers Batch 2" },
   { src: pastClass1, caption: "Algorithmic Trading Mastery — Level 1, Run 8" },
