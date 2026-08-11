@@ -1362,11 +1362,11 @@
     "liveLab": "Live Lab",
     "openLab": "Open Lab",
     "llmPlayground": {
-      "title": "LLM Playground",
+      "title": "LLM Playground (OpenWeights)",
       "desc": "Compare, test, and prompt leading large language models side-by-side in a secure sandbox."
     },
     "aiMediaStudio": {
-      "title": "AI Media Studio",
+      "title": "AI Media Studio (OpenWeights)",
       "desc": "Generate, edit, and publish AI-powered video and multimedia content from a single workflow."
     },
     "aiSongStudio": {

@@ -1294,11 +1294,11 @@
     "liveLab": "Live Lab",
     "openLab": "Mở phòng thí nghiệm",
     "llmPlayground": {
-      "title": "LLM Playground",
+      "title": "LLM Playground (OpenWeights)",
       "desc": "So sánh, thử nghiệm và gợi ý các mô hình ngôn ngữ lớn hàng đầu trong một sandbox an toàn."
     },
     "aiMediaStudio": {
-      "title": "AI Media Studio",
+      "title": "AI Media Studio (OpenWeights)",
       "desc": "Tạo, chỉnh sửa và xuất bản nội dung video và đa phương tiện do AI hỗ trợ từ một quy trình duy nhất."
     },
     "aiSongStudio": {

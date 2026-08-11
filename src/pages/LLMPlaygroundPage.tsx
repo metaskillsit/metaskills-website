@@ -37,7 +37,7 @@ const LLMPlaygroundPage = () => {
         <div className="w-full" style={{ height: "100vh" }}>
           <iframe
             src="https://www.appvenger.com/llm-playground"
-            title="LLM Playground"
+            title="LLM Playground (OpenWeights)"
             className="w-full h-full border-0"
             allow="camera; microphone; clipboard-read; clipboard-write; fullscreen"
           />
