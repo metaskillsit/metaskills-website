@@ -185,14 +185,14 @@ const Navbar = () => {
           label: t("liveLabs.textCodeLab"),
           href: "/live-labs",
           subItems: [
-            { label: "LLM Playground", href: "/llm-playground" },
+            { label: "LLM Playground (OpenWeights)", href: "/llm-playground" },
           ],
         },
         {
           label: t("liveLabs.mediaLab"),
           href: "/live-labs",
           subItems: [
-            { label: "AI Media Studio", href: "/ai-video-studio" },
+            { label: "AI Media Studio (OpenWeights)", href: "/ai-video-studio" },
             { label: "AI Song Generation Studio", href: "/ai-song-studio" },
           ],
         },
@@ -345,7 +345,7 @@ const Navbar = () => {
                         : "text-foreground/80 hover:bg-muted hover:text-primary"
                     }`}
                   >
-                    LLM Playground
+                    LLM Playground (OpenWeights)
                   </Link>
 
                   <div className="border-t border-border px-4 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -360,7 +360,7 @@ const Navbar = () => {
                         : "text-foreground/80 hover:bg-muted hover:text-primary"
                     }`}
                   >
-                    AI Media Studio
+                    AI Media Studio (OpenWeights)
                   </Link>
                   <Link
                     to="/ai-song-studio"

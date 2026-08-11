@@ -1294,11 +1294,11 @@
     "liveLab": "实时实验室",
     "openLab": "进入实验室",
     "llmPlayground": {
-      "title": "LLM Playground",
+      "title": "LLM Playground (OpenWeights)",
       "desc": "在安全的沙盒中并排比较、测试并提示主流大语言模型。"
     },
     "aiMediaStudio": {
-      "title": "AI Media Studio",
+      "title": "AI Media Studio (OpenWeights)",
       "desc": "通过统一工作流生成、编辑并发布AI驱动的视频与多媒体内容。"
     },
     "aiSongStudio": {

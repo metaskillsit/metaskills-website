@@ -40,7 +40,7 @@ const AIVideoStudioPage = () => {
         <div className="w-full" style={{ height: "100vh" }}>
           <iframe
             src="https://appvenger.com/dashboard"
-            title="AI Video Studio"
+            title="AI Media Studio (OpenWeights)"
             className="w-full h-full border-0"
             allow="camera; microphone; clipboard-read; clipboard-write; fullscreen"
           />
