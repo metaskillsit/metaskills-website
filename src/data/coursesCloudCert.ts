@@ -119,7 +119,7 @@ export const cloudCertCourses: Course[] = [
     ),
     certificationNote: certificationNote("AWS Certified Solutions Architect – Associate", "AWS"),
     optionalAddOns: [
-      { label: "AWS SAA-C03 Exam", price: "S$245 per participant" },
+      { label: "AWS Solutions Architect – Associate Exam Voucher", price: "S$245 per participant" },
     ],
     nextRunDate: "WhatsApp Us to Check",
     fees: {
@@ -229,7 +229,7 @@ export const cloudCertCourses: Course[] = [
     ),
     certificationNote: certificationNote("Certified Kubernetes Administrator", "the certifying body"),
     optionalAddOns: [
-      { label: "CKA Exam", price: "S$720 per participant" },
+      { label: "Certified Kubernetes Administrator Exam Voucher", price: "S$720 per participant" },
     ],
     nextRunDate: "WhatsApp Us to Check",
     fees: {
