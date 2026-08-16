@@ -1,4 +1,4 @@
-import { DollarSign, MessageCircle, Mail, CalendarDays } from "lucide-react";
+import { DollarSign, MessageCircle, Mail, CalendarDays, PlusCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 
@@ -99,6 +99,24 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
                   ))}
                   <p className="pt-2">{t("coursePage.gstNote")}</p>
                 </div>
+                {course.optionalAddOns && course.optionalAddOns.length > 0 && (
+                  <div className="border-t border-border pt-3">
+                    <div className="flex items-center gap-2 mb-2">
+                      <PlusCircle className="w-3.5 h-3.5 text-primary" />
+                      <p className="text-xs font-semibold text-foreground/80 uppercase tracking-wider">
+                        {t("coursePage.optionalAddOns")}
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      {course.optionalAddOns.map((addOn, i) => (
+                        <div key={i} className="flex justify-between items-start gap-3 text-sm">
+                          <span className="text-foreground/80 leading-snug">{addOn.label}</span>
+                          <span className="font-bold text-foreground whitespace-nowrap">{addOn.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </>
             ) : (
               <>
