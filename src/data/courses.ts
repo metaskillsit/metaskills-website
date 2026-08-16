@@ -61,6 +61,7 @@ export interface Course {
   practicalActivities?: string[];
   certificationNote?: string[];
   feeNotes?: string[];
+  optionalAddOns?: { label: string; price: string }[];
   whatsappMessage?: string;
   courseDateStatus?: string;
   deliveryMode?: string;

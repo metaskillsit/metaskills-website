@@ -1,4 +1,4 @@
-import { DollarSign, MessageCircle, Mail, CalendarDays } from "lucide-react";
+import { DollarSign, MessageCircle, Mail, CalendarDays, PlusCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 

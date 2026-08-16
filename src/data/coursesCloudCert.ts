@@ -332,6 +332,10 @@ export const cloudCertCourses: Course[] = [
       "Any external laboratory or software-licensing cost will be communicated before the programme."
     ),
     certificationNote: certificationNote("Red Hat Certified System Administrator", "Red Hat"),
+    optionalAddOns: [
+      { label: "RH199LS 1-year learning subscription plan", price: "S$8,450" },
+      { label: "EX200K exam", price: "S$745" },
+    ],
     nextRunDate: "WhatsApp Us to Check",
     fees: {
       selfSponsored: CLOUD_CERT_SHARED.fee,
