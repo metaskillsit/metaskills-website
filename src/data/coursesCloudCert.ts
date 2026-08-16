@@ -118,6 +118,9 @@ export const cloudCertCourses: Course[] = [
       "Additional cloud-consumption costs, if required, will be communicated before the programme."
     ),
     certificationNote: certificationNote("AWS Certified Solutions Architect – Associate", "AWS"),
+    optionalAddOns: [
+      { label: "AWS SAA-C03 Exam", price: "S$245 per participant" },
+    ],
     nextRunDate: "WhatsApp Us to Check",
     fees: {
       selfSponsored: CLOUD_CERT_SHARED.fee,
@@ -225,6 +228,9 @@ export const cloudCertCourses: Course[] = [
       "Any external cloud, laboratory or software cost will be communicated before the programme."
     ),
     certificationNote: certificationNote("Certified Kubernetes Administrator", "the certifying body"),
+    optionalAddOns: [
+      { label: "CKA Exam", price: "S$720 per participant" },
+    ],
     nextRunDate: "WhatsApp Us to Check",
     fees: {
       selfSponsored: CLOUD_CERT_SHARED.fee,
