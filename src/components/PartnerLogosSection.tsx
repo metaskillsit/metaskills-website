@@ -2,26 +2,26 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Separator } from "@/components/ui/separator";
 
-import aisgLogo from "@/assets/logo-aisg.png";
-import smuAcademyLogo from "@/assets/logo-smu-academy.png";
+import aisgLogo from "@/assets/logo-aisg-t.png";
+import smuAcademyLogo from "@/assets/logo-smu-academy-t.png";
 import integrumLogo from "@/assets/partner-integrum.png";
-import ntucLhubLogo from "@/assets/logo-ntuc-learning-hub.jpg";
+import ntucLhubLogo from "@/assets/logo-ntuc-learning-hub-t.png";
 import svbbLogo from "@/assets/partner-svbb.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import iscaLogo from "@/assets/logo-isca.png";
-import nusAidfLogo from "@/assets/logo-nus-aidf.png";
+import nusAidfLogo from "@/assets/logo-nus-aidf-t.png";
 import amdLogo from "@/assets/logo-amd.svg";
 import comptiaLogo from "@/assets/logo-comptia.jpg";
 
-const partnerLogos: { name: string; logo: string; size: 1 | 2 | 3 }[] = [
+const partnerLogos: { name: string; logo: string; size: 1 | 2 | 3 | 4 }[] = [
   { name: "Integrum Global", logo: integrumLogo, size: 3 },
   { name: "SMU Academy", logo: smuAcademyLogo, size: 3 },
-  { name: "NUS AIDF", logo: nusAidfLogo, size: 3 },
+  { name: "NUS AIDF", logo: nusAidfLogo, size: 4 },
   { name: "AMD", logo: amdLogo, size: 1 },
   { name: "CompTIA Authorized Partner", logo: comptiaLogo, size: 3 },
   { name: "ISCA", logo: iscaLogo, size: 3 },
   { name: "AISG", logo: aisgLogo, size: 3 },
-  { name: "NTUC LearningHub", logo: ntucLhubLogo, size: 2 },
+  { name: "NTUC LearningHub", logo: ntucLhubLogo, size: 3 },
   { name: "Tinkercademy", logo: tinkercademyLogo, size: 2 },
   { name: "Singapore Vietnam Business Bridge", logo: svbbLogo, size: 3 },
 ];
@@ -30,13 +30,16 @@ const cellClasses: Record<number, string> = {
   1: "min-h-[104px] md:min-h-[120px]",
   2: "min-h-[140px] md:min-h-[180px]",
   3: "min-h-[200px] md:min-h-[260px]",
+  4: "min-h-[200px] md:min-h-[260px]",
 };
 
 const logoClasses: Record<number, string> = {
   1: "h-10 md:h-12 max-w-[140px]",
   2: "h-20 md:h-24 max-w-[280px]",
   3: "h-[120px] md:h-[144px] max-w-[420px]",
+  4: "h-[120px] md:h-[144px] max-w-[420px] scale-125",
 };
+
 
 
 const PartnerLogosSection = () => {
