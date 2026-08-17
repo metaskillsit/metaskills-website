@@ -209,15 +209,28 @@ const EnquiryForm = ({
 
       {status === "error" && (
         <p role="alert" className="text-sm text-destructive">
-          Something went wrong sending your enquiry. Please try again, or WhatsApp us at +65 8948 3482.
+          Something went wrong sending your enquiry. Please email us directly at{" "}
+          <a href="mailto:admissions@metaskills.sg" className="underline hover:text-destructive/80">
+            admissions@metaskills.sg
+          </a>
+          {" "}or WhatsApp us at +65 8948 3482.
         </p>
       )}
 
-      <button type="submit" disabled={status === "sending"}
-        className="inline-flex items-center gap-2 rounded-sm bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:brightness-110 disabled:opacity-60">
-        {status === "sending" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
-        {submitLabel}
-      </button>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+        <button type="submit" disabled={status === "sending"}
+          className="inline-flex items-center gap-2 rounded-sm bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:brightness-110 disabled:opacity-60">
+          {status === "sending" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
+          {submitLabel}
+        </button>
+        <a
+          href="mailto:admissions@metaskills.sg"
+          className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-accent transition-colors"
+        >
+          <Mail className="w-4 h-4" />
+          admissions@metaskills.sg
+        </a>
+      </div>
     </form>
   );
 };
