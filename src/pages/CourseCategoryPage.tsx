@@ -191,7 +191,7 @@ const CourseCategoryPage = () => {
           <div className="flex items-center gap-3 mb-3">
             <span className="inline-block h-px w-8 bg-accent" />
             <span className="font-body text-[11px] tracking-[0.28em] uppercase text-muted-foreground font-medium">
-              {String(categoryCourses.length).padStart(2, "0")} Programmes
+              {String(categoryCourses.length + (category.slug === "cloud-devops-ai-stack" ? 1 : 0)).padStart(2, "0")} Programmes
             </span>
           </div>
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-8 tracking-tight">
