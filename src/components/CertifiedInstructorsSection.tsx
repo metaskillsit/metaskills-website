@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import comptiaLogo from "@/assets/logo-comptia.png";
-import ecCouncilLogo from "@/assets/logo-ec-council.png";
-import awsLogo from "@/assets/logo-aws.png";
+import comptiaLogo from "@/assets/logo-comptia-t.png";
+import ecCouncilLogo from "@/assets/logo-ec-council-t.png";
+import awsLogo from "@/assets/logo-aws-t.png";
 import appleLogo from "@/assets/logo-apple.png";
-import googleLogo from "@/assets/logo-google.png";
+import googleLogo from "@/assets/logo-google-t.png";
 
 // Tech stack logos (local)
 import openaiLogo from "@/assets/techlogos/openai.svg";
@@ -12,7 +12,7 @@ import anthropicLogo from "@/assets/techlogos/anthropic.svg";
 import geminiLogo from "@/assets/techlogos/gemini.svg";
 import deepseekLogo from "@/assets/techlogos/deepseek.png";
 import ollamaLogo from "@/assets/techlogos/ollama.png";
-import groqLogo from "@/assets/techlogos/groq.png";
+import groqLogo from "@/assets/techlogos/groq-t.png";
 import huggingfaceLogo from "@/assets/techlogos/huggingface.svg";
 import perplexityLogo from "@/assets/techlogos/perplexity.svg";
 import githubLogo from "@/assets/techlogos/github.svg";
@@ -20,20 +20,20 @@ import vercelLogo from "@/assets/techlogos/vercel.svg";
 import zapierLogo from "@/assets/techlogos/zapier.svg";
 import n8nLogo from "@/assets/techlogos/n8n.png";
 import cursorLogo from "@/assets/techlogos/cursor.png";
-import makeLogo from "@/assets/techlogos/make.png";
+import makeLogo from "@/assets/techlogos/make-t.png";
 import grokLogo from "@/assets/techlogos/grok.png";
 import openrouterLogo from "@/assets/techlogos/openrouter.png";
-import glmLogo from "@/assets/techlogos/glm.png";
-import doubaoLogo from "@/assets/techlogos/doubao.png";
+import glmLogo from "@/assets/techlogos/glm-t.png";
+import doubaoLogo from "@/assets/techlogos/doubao-t.png";
 import kimiLogo from "@/assets/techlogos/kimi.png";
-import notebooklmLogo from "@/assets/techlogos/notebooklm.png";
+import notebooklmLogo from "@/assets/techlogos/notebooklm-t.png";
 import lovableLogo from "@/assets/techlogos/lovable.png";
 import capcutLogo from "@/assets/techlogos/capcut.png";
 import veo3Logo from "@/assets/techlogos/veo3.png";
-import higgsfieldLogo from "@/assets/techlogos/higgsfield.png";
-import seedanceLogo from "@/assets/techlogos/seedance.png";
+import higgsfieldLogo from "@/assets/techlogos/higgsfield-t.png";
+import seedanceLogo from "@/assets/techlogos/seedance-t.png";
 import openclawLogo from "@/assets/techlogos/openclaw.png";
-import copilotLogo from "@/assets/techlogos/copilot.jpg";
+import copilotLogo from "@/assets/techlogos/copilot-t.png";
 
 type Logo = { name: string; logo: string };
 
