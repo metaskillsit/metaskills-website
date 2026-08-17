@@ -61,6 +61,7 @@ const AppContent = () => {
         <Route path="/introduction-to-artificial-intelligence" element={<IntroToAIPage />} />
         <Route path="/live-labs" element={<LiveLabsPage />} />
         <Route path="/ai-native-prototyping-compute-constraints" element={<AIComputeEconomicsPage />} />
+        <Route path="/programmes/cloud-devops-ai/red-hat-learning-subscription" element={<RedHatSubscriptionPage />} />
         <Route path="/admin" element={<AdminEnquiriesPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
