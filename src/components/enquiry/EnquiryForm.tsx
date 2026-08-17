@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { z } from "zod";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -18,27 +18,72 @@ const schema = z.object({
   }),
 });
 
-const initial = {
-  name: "",
-  email: "",
-  company: "",
-  role: "",
-  team_size: "",
-  audience: "Enterprise governance",
-  format: "In-house (at your office)",
-  timeframe: "",
-  message: "",
-  consent: false,
-};
-
 const fieldClass =
   "w-full rounded-sm border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent";
 const labelClass = "block text-xs font-semibold uppercase tracking-wider text-white/70 mb-2";
 
-const EnquiryForm = () => {
-  const [values, setValues] = useState(initial);
+const DEFAULT_AUDIENCE = ["Enterprise governance", "Public sector & sovereign"];
+const DEFAULT_FORMAT = [
+  "In-house (at your office)",
+  "Private cohort (our venue)",
+  "Custom / sector-specific",
+];
+
+type Props = {
+  audienceLabel?: string;
+  audienceOptions?: string[];
+  presetAudience?: string;
+  showFormat?: boolean;
+  formatOptions?: string[];
+  roleLabel?: string;
+  rolePlaceholder?: string;
+  roleType?: string;
+  teamSizeLabel?: string;
+  teamSizePlaceholder?: string;
+  timeframeLabel?: string;
+  timeframePlaceholder?: string;
+  messageLabel?: string;
+  messagePlaceholder?: string;
+  submitLabel?: string;
+  successText?: string;
+};
+
+const EnquiryForm = ({
+  audienceLabel = "Audience",
+  audienceOptions = DEFAULT_AUDIENCE,
+  presetAudience,
+  showFormat = true,
+  formatOptions = DEFAULT_FORMAT,
+  roleLabel = "Role",
+  rolePlaceholder,
+  roleType = "text",
+  teamSizeLabel = "Team size",
+  teamSizePlaceholder = "e.g. 10",
+  timeframeLabel = "Preferred timeframe",
+  timeframePlaceholder = "e.g. Q3 2026",
+  messageLabel = "Message",
+  messagePlaceholder = "Tell us about your team, current AI workloads and what you want them to leave with.",
+  submitLabel = "Request in-house training",
+  successText = "Thank you. A Metaskills programme specialist will be in touch within one working day to scope the workshop for your team.",
+}: Props) => {
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    company: "",
+    role: "",
+    team_size: "",
+    audience: presetAudience ?? audienceOptions[0],
+    format: showFormat ? formatOptions[0] : "",
+    timeframe: "",
+    message: "",
+    consent: false,
+  });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+
+  useEffect(() => {
+    if (presetAudience) setValues((v) => ({ ...v, audience: presetAudience }));
+  }, [presetAudience]);
 
   const set = (key: string, value: string | boolean) =>
     setValues((v) => ({ ...v, [key]: value }));
@@ -78,10 +123,7 @@ const EnquiryForm = () => {
       <div className="rounded-sm border border-accent/40 bg-white/5 p-10 text-center">
         <CheckCircle2 className="mx-auto mb-4 h-10 w-10 text-accent" aria-hidden="true" />
         <h3 className="font-heading text-2xl font-bold text-white mb-2">Enquiry received</h3>
-        <p className="text-white/70 text-sm max-w-md mx-auto">
-          Thank you. A Metaskills programme specialist will be in touch within one working day to
-          scope the workshop for your team.
-        </p>
+        <p className="text-white/70 text-sm max-w-md mx-auto">{successText}</p>
       </div>
     );
   }
@@ -111,44 +153,48 @@ const EnquiryForm = () => {
           {errors.company && <p className="mt-1 text-xs text-destructive">{errors.company}</p>}
         </div>
         <div>
-          <label className={labelClass} htmlFor="eq-role">Role</label>
-          <input id="eq-role" className={fieldClass} value={values.role}
+          <label className={labelClass} htmlFor="eq-role">{roleLabel}</label>
+          <input id="eq-role" type={roleType} className={fieldClass} value={values.role}
+            placeholder={rolePlaceholder}
             onChange={(e) => set("role", e.target.value)} />
         </div>
         <div>
-          <label className={labelClass} htmlFor="eq-team">Team size</label>
+          <label className={labelClass} htmlFor="eq-team">{teamSizeLabel}</label>
           <input id="eq-team" className={fieldClass} value={values.team_size}
-            onChange={(e) => set("team_size", e.target.value)} placeholder="e.g. 10" />
+            onChange={(e) => set("team_size", e.target.value)} placeholder={teamSizePlaceholder} />
         </div>
         <div>
-          <label className={labelClass} htmlFor="eq-audience">Audience</label>
+          <label className={labelClass} htmlFor="eq-audience">{audienceLabel}</label>
           <select id="eq-audience" className={fieldClass} value={values.audience}
             onChange={(e) => set("audience", e.target.value)}>
-            <option>Enterprise governance</option>
-            <option>Public sector &amp; sovereign</option>
+            {audienceOptions.map((o) => (
+              <option key={o}>{o}</option>
+            ))}
           </select>
         </div>
+        {showFormat && (
+          <div>
+            <label className={labelClass} htmlFor="eq-format">Preferred format</label>
+            <select id="eq-format" className={fieldClass} value={values.format}
+              onChange={(e) => set("format", e.target.value)}>
+              {formatOptions.map((o) => (
+                <option key={o}>{o}</option>
+              ))}
+            </select>
+          </div>
+        )}
         <div>
-          <label className={labelClass} htmlFor="eq-format">Preferred format</label>
-          <select id="eq-format" className={fieldClass} value={values.format}
-            onChange={(e) => set("format", e.target.value)}>
-            <option>In-house (at your office)</option>
-            <option>Private cohort (our venue)</option>
-            <option>Custom / sector-specific</option>
-          </select>
-        </div>
-        <div>
-          <label className={labelClass} htmlFor="eq-time">Preferred timeframe</label>
+          <label className={labelClass} htmlFor="eq-time">{timeframeLabel}</label>
           <input id="eq-time" className={fieldClass} value={values.timeframe}
-            onChange={(e) => set("timeframe", e.target.value)} placeholder="e.g. Q3 2026" />
+            onChange={(e) => set("timeframe", e.target.value)} placeholder={timeframePlaceholder} />
         </div>
       </div>
 
       <div>
-        <label className={labelClass} htmlFor="eq-msg">Message</label>
+        <label className={labelClass} htmlFor="eq-msg">{messageLabel}</label>
         <textarea id="eq-msg" rows={4} className={fieldClass} value={values.message}
           onChange={(e) => set("message", e.target.value)}
-          placeholder="Tell us about your team, current AI workloads and what you want them to leave with." />
+          placeholder={messagePlaceholder} />
       </div>
 
       <div className="flex items-start gap-3">
@@ -170,7 +216,7 @@ const EnquiryForm = () => {
       <button type="submit" disabled={status === "sending"}
         className="inline-flex items-center gap-2 rounded-sm bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:brightness-110 disabled:opacity-60">
         {status === "sending" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
-        Request in-house training
+        {submitLabel}
       </button>
     </form>
   );
