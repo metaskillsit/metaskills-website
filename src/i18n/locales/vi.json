@@ -138,6 +138,16 @@
   "partners": {
     "title": "Các Tổ chức Đối tác"
   },
+  "contact": {
+    "reachUs": "Liên hệ",
+    "andrewPhone": "+65 8986 6146",
+    "admissionsEmail": "admissions@metaskills.sg",
+    "getInTouch": "Liên hệ",
+    "speakToAdmissions": "Liên hệ đội ngũ tuyển sinh của chúng tôi",
+    "admissionsDesc": "Có câu hỏi về chương trình học, lịch khai giảng hoặc đào tạo doanh nghiệp? Đội ngũ tuyển sinh của chúng tôi sẵn sàng hỗ trợ bạn.",
+    "phone": "Điện thoại",
+    "email": "Email"
+  },
   "locations": {
     "title": "Liên hệ",
     "subtitle": "Cơ sở vật chất đẳng cấp thế giới được thiết kế cho trải nghiệm học tập thực hành, nhập vai.",
