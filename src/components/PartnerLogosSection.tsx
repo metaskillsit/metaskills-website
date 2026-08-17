@@ -9,23 +9,21 @@ import ntucLhubLogo from "@/assets/logo-ntuc-learning-hub.jpg";
 import svbbLogo from "@/assets/partner-svbb.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import iscaLogo from "@/assets/logo-isca.png";
-import lxCopilotLogo from "@/assets/partner-lxcopilot.png";
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 import amdLogo from "@/assets/logo-amd.svg";
 import comptiaAsset from "@/assets/logo-comptia.jpg.asset.json";
 
-const partnerLogos: { name: string; logo: string; contain?: "tall" }[] = [
+const partnerLogos: { name: string; logo: string }[] = [
   { name: "Integrum Global", logo: integrumLogo },
   { name: "SMU Academy", logo: smuAcademyLogo },
   { name: "NUS AIDF", logo: nusAidfLogo },
   { name: "AMD", logo: amdLogo },
-  { name: "CompTIA Authorized Partner", logo: comptiaAsset.url, contain: "tall" },
+  { name: "CompTIA Authorized Partner", logo: comptiaAsset.url },
   { name: "ISCA", logo: iscaLogo },
   { name: "AISG", logo: aisgLogo },
   { name: "NTUC LearningHub", logo: ntucLhubLogo },
   { name: "Tinkercademy", logo: tinkercademyLogo },
   { name: "Singapore Vietnam Business Bridge", logo: svbbLogo },
-  { name: "LX Copilot", logo: lxCopilotLogo },
 ];
 
 
@@ -50,16 +48,12 @@ const PartnerLogosSection = () => {
             <div
               key={partner.name}
               title={partner.name}
-              className="group flex items-center justify-center bg-card px-5 py-6 md:px-6 md:py-7 transition-colors duration-300 hover:bg-muted/40"
+              className="group flex items-center justify-center bg-card h-[104px] md:h-[120px] px-5 md:px-6 transition-colors duration-300 hover:bg-muted/40"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className={`w-auto object-contain opacity-80 grayscale-[35%] transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 ${
-                  partner.contain === "tall"
-                    ? "max-h-14 md:max-h-16 max-w-[80px]"
-                    : "max-h-9 md:max-h-11 max-w-full"
-                }`}
+                className="h-10 md:h-12 w-full max-w-[140px] object-contain opacity-80 grayscale-[35%] transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
                 loading="lazy"
               />
             </div>

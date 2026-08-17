@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import logo from "@/assets/metaskills-logo.png";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 interface NavItem {
   label: string;
@@ -439,8 +440,8 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                       className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors mb-1.5"
                     >
-                      <span className="text-base">💬</span>
-                      <span>WhatsApp Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
+                      <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                      <span>WhatsApp Andrew</span>
                     </a>
                     <a
                       href="mailto:admissions@metaskills.sg"
@@ -620,8 +621,8 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
                   >
-                    <span>💬</span>
-                    <span>WhatsApp Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
+                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                    <span>WhatsApp Andrew</span>
                   </a>
                   <a
                     href="mailto:admissions@metaskills.sg"
