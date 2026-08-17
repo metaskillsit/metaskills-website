@@ -101,7 +101,7 @@ const RedHatSubscriptionPage = () => {
     };
   }, []);
 
-  const requestQuote = (selected: string) => {
+  const scrollToEnquiry = (selected: string) => {
     setPlan(selected);
     const el = document.getElementById("enquiry");
     if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: "smooth" });
@@ -208,8 +208,6 @@ const RedHatSubscriptionPage = () => {
                 price: "S$11,615",
                 label: "Best for self-directed learners",
                 includes: standardIncludes,
-                cta: "Request Standard Quotation",
-                planValue: PLAN_STANDARD,
                 featured: false,
               },
               {
@@ -218,8 +216,6 @@ const RedHatSubscriptionPage = () => {
                 price: "S$14,260",
                 label: "Best for instructor-supported learning",
                 includes: premiumIncludes,
-                cta: "Request Premium Quotation",
-                planValue: PLAN_PREMIUM,
                 featured: true,
               },
             ].map((p, i) => (
