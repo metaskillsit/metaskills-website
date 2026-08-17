@@ -7,6 +7,7 @@ import FooterSection from "@/components/FooterSection";
 import { courses } from "@/data/courses";
 import { getCourseImages } from "@/data/courseImages";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
+import redHatImg from "@/assets/redhat-subscription.jpg";
 
 type CategoryDef = {
   slug: string;
