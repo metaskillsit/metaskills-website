@@ -378,14 +378,14 @@ const RedHatSubscriptionPage = () => {
         <section id="enquiry" className="bg-[hsl(var(--hero-overlay))] text-white scroll-mt-28">
           <div className="max-w-[900px] mx-auto px-6 py-16 md:py-20">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">
-              Request a Quotation
+              Enquiry
             </p>
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">
               Red Hat Learning Subscription enquiry
             </h2>
             <p className="text-white/70 text-sm mb-8 max-w-2xl">
               Tell us which plan you are considering and how many participants you need. A Metaskills
-              specialist will prepare a formal quotation. No payment is taken on this page.
+              specialist will follow up to confirm enrolment. No payment is taken on this page.
             </p>
             <EnquiryForm
               audienceLabel="Subscription plan"
@@ -401,8 +401,8 @@ const RedHatSubscriptionPage = () => {
               timeframePlaceholder="e.g. October 2026"
               messageLabel="Additional requirements"
               messagePlaceholder="Tell us about certification goals, preferred courses or procurement requirements."
-              submitLabel="Request a Quotation"
-              successText="Thank you. A Metaskills specialist will follow up within one working day with a formal quotation for your selected subscription plan."
+              submitLabel="Send Enquiry"
+              successText="Thank you. A Metaskills specialist will follow up within one working day about your selected subscription plan."
             />
           </div>
         </section>
