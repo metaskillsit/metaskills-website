@@ -65,7 +65,7 @@ const audienceList = [
 
 const whyMetaskills = [
   "Assistance selecting the appropriate subscription tier",
-  "Support with corporate quotations and participant enrolment",
+  "Support with corporate procurement and participant enrolment",
   "Guidance on aligning training with certification objectives",
   "A single contact point for purchase coordination",
   "Support for individual and organisational training requirements",
@@ -266,7 +266,7 @@ const RedHatSubscriptionPage = () => {
           <p className="mt-6 text-xs text-muted-foreground leading-relaxed max-w-4xl">
             Prices are stated in Singapore dollars per participant. Final pricing, applicable taxes,
             availability and subscription entitlements are subject to confirmation at the time of
-            quotation. Product features and certification policies may be updated by the training
+            enrolment. Product features and certification policies may be updated by the training
             and certification provider.
           </p>
         </section>
@@ -411,7 +411,7 @@ const RedHatSubscriptionPage = () => {
         <section className="max-w-[1140px] mx-auto px-6 py-10">
           <p className="text-[11px] leading-relaxed text-muted-foreground/80">
             Red Hat and associated product names are trademarks or registered trademarks of Red Hat,
-            Inc. Metaskills Institute is responsible for its own programme information and quotation
+            Inc. Metaskills Institute is responsible for its own programme information and enrolment
             services.
           </p>
         </section>
