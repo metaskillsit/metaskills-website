@@ -152,10 +152,10 @@ const RedHatSubscriptionPage = () => {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <button
-                onClick={() => requestQuote(PLAN_UNSURE)}
+                onClick={() => scrollToEnquiry(PLAN_UNSURE)}
                 className="inline-flex items-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition-all"
               >
-                Request a Quotation <ArrowRight className="w-4 h-4" />
+                Enquire Now <ArrowRight className="w-4 h-4" />
               </button>
               <Link
                 to="/admissions"
