@@ -26,6 +26,7 @@ import SMUPCMLPage from "./pages/SMUPCMLPage.tsx";
 import IntroToAIPage from "./pages/IntroToAIPage.tsx";
 import LiveLabsPage from "./pages/LiveLabsPage.tsx";
 import AIComputeEconomicsPage from "./pages/AIComputeEconomicsPage.tsx";
+import RedHatSubscriptionPage from "./pages/RedHatSubscriptionPage.tsx";
 import AdminEnquiriesPage from "./pages/AdminEnquiriesPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -61,6 +62,7 @@ const AppContent = () => {
         <Route path="/introduction-to-artificial-intelligence" element={<IntroToAIPage />} />
         <Route path="/live-labs" element={<LiveLabsPage />} />
         <Route path="/ai-native-prototyping-compute-constraints" element={<AIComputeEconomicsPage />} />
+        <Route path="/programmes/cloud-devops-ai/red-hat-learning-subscription" element={<RedHatSubscriptionPage />} />
         <Route path="/admin" element={<AdminEnquiriesPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

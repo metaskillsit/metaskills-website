@@ -191,7 +191,7 @@ const CourseCategoryPage = () => {
           <div className="flex items-center gap-3 mb-3">
             <span className="inline-block h-px w-8 bg-accent" />
             <span className="font-body text-[11px] tracking-[0.28em] uppercase text-muted-foreground font-medium">
-              {String(categoryCourses.length).padStart(2, "0")} Programmes
+              {String(categoryCourses.length + (category.slug === "cloud-devops-ai-stack" ? 1 : 0)).padStart(2, "0")} Programmes
             </span>
           </div>
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-8 tracking-tight">
@@ -235,6 +235,58 @@ const CourseCategoryPage = () => {
                 </div>
               </motion.div>
             ))}
+
+            {category.slug === "cloud-devops-ai-stack" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="group flex flex-col border border-accent rounded-sm overflow-hidden bg-background"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={cloudDevOpsImg}
+                    alt="Red Hat Learning Subscription – Standard & Premium"
+                    loading="lazy"
+                    width={1200}
+                    height={900}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="flex flex-col flex-1 p-5">
+                  <h3 className="font-heading text-lg font-bold text-foreground leading-snug mb-2">
+                    Red Hat Learning Subscription – Standard &amp; Premium
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    Get 365-day access to Red Hat’s training catalogue, hands-on labs, certification
+                    preparation and certification exam opportunities. Choose Standard for
+                    self-directed learning or Premium for live virtual instructor-led classes.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {["Red Hat", "Linux", "Cloud", "DevOps", "Certification"].map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-sm border border-border px-2 py-0.5 text-[10px] uppercase tracking-widest text-muted-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <ul className="space-y-2 text-xs text-muted-foreground mb-5 mt-auto">
+                    <li className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-primary" />365 days</li>
+                    <li className="flex items-center gap-2"><DollarSign className="w-3.5 h-3.5 text-primary" />Standard (LS220): S$11,615 per participant</li>
+                    <li className="flex items-center gap-2"><DollarSign className="w-3.5 h-3.5 text-primary" />Premium (LS520): S$14,260 per participant</li>
+                    <li className="flex items-center gap-2"><Award className="w-3.5 h-3.5 text-primary" />Certification Preparation &amp; Exams</li>
+                  </ul>
+                  <Link
+                    to="/programmes/cloud-devops-ai/red-hat-learning-subscription"
+                    className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-primary text-primary-foreground font-semibold rounded-sm text-sm hover:brightness-110 transition-all"
+                  >
+                    View Programme <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.div>
+            )}
           </div>
         </section>
       </main>
