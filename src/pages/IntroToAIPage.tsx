@@ -25,7 +25,7 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
 const WHATSAPP_URL =
-  "https://wa.me/6589483482?text=Hi%2C%20I%27m%20interested%20in%20the%20Metaskills%20Introduction%20to%20Artificial%20Intelligence%20programme.";
+  "https://wa.me/6589866146?text=Hi%2C%20I%27m%20interested%20in%20the%20Metaskills%20Introduction%20to%20Artificial%20Intelligence%20programme.";
 const ENQUIRE_URL = WHATSAPP_URL;
 
 const modules = [

@@ -81,7 +81,7 @@ const AdmissionsPage = () => {
                 {t("admissions.whatsappDesc", "Get direct guidance on our AI programmes, enterprise solutions, and implementation pathways. Speak to a real consultant — no bots.")}
               </p>
               <a
-                href="https://wa.me/6589483482?text=Hi%20I'm%20interested%20in%20your%20AI%20training%20and%20solutions.%20Can%20you%20advise"
+                href="https://wa.me/6589866146?text=Hi%20I'm%20interested%20in%20your%20AI%20training%20and%20solutions.%20Can%20you%20advise"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white font-semibold rounded-sm text-base uppercase tracking-wider hover:bg-[#1da851] transition-all"

@@ -705,7 +705,7 @@ courses.push({
     { day: "Unit 3: Workflow Analysis & AI Integration", items: ["The 3A framework — Automate, Augment, Amplify", "Task suitability checklist for quick wins", "Extracting inputs, outputs and constraints", "Measuring effectiveness (time saved, quality)", "Red flags: confidential data and ethical judgment"] },
     { day: "Unit 4: Critical Evaluation & Responsible AI (FEAT)", items: ["AI failure modes: hallucinations, bias, cutoffs", "VERIFY framework — 6-step systematic review", "FEAT principles: Fairness, Explainability, Accountability, Transparency", "Human-in-the-loop accountability", "Escalation protocols for high-stakes decisions"] },
   ],
-  nextRunDate: "Next run: 1 Jul 2026 — Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  nextRunDate: "Next run: 1 Jul 2026 — Contact admissions@metaskills.sg or WhatsApp +65 8986 6146 to enrol",
   fees: {
     selfSponsored: "S$700 (Full fee, before subsidies & GST)",
     corporateSmall: "S$210–S$350 (after IBF-STS subsidy, SC/PR eligible)",
@@ -746,7 +746,7 @@ courses.push({
     { day: "Unit 3: AI Governance, Risk & Compliance", items: ["MAS TRM Guidelines and Three Lines of Defence", "Operationalising FEAT principles", "Drafting policy scopes and authority protocols", "PDPA compliance and preventing GenAI data leakage", "Managing model and vendor risk"] },
     { day: "Unit 4: Building Team Capability & Leading Change", items: ["3A capability model — Awareness, Adaptability, Application", "Diagnosing skill gaps and designing interventions", "Managing resistance ('AI will take my job')", "Communicating value to stakeholders", "30-60-90 day action plan"] },
   ],
-  nextRunDate: "Next run: 6 Jul 2026 — Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  nextRunDate: "Next run: 6 Jul 2026 — Contact admissions@metaskills.sg or WhatsApp +65 8986 6146 to enrol",
   fees: {
     selfSponsored: "S$1,000 (Full fee, before subsidies & GST)",
     corporateSmall: "S$300–S$500 (after IBF-STS subsidy, SC/PR eligible)",
@@ -790,7 +790,7 @@ courses.push({
     { day: "Day 2 — Unit 5: Workflow Logic & Agent Construction", items: ["Configuring RAG in Copilot Studio", "Topic routing — the 'switchboard'", "Business rules and guardrails (If/Then logic)", "Error handling, fallbacks and multi-turn flows"] },
     { day: "Day 2 — Unit 6: Integration, Testing & Deployment", items: ["Adversarial testing ('red teaming')", "Performance metrics: accuracy and latency", "Deployment controls — access and versioning", "Business continuity planning"] },
   ],
-  nextRunDate: "Next run: 22–23 Jul 2026 — Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  nextRunDate: "Next run: 22–23 Jul 2026 — Contact admissions@metaskills.sg or WhatsApp +65 8986 6146 to enrol",
   fees: {
     selfSponsored: "S$1,400 (Full fee, before subsidies & GST)",
     corporateSmall: "S$420–S$700 (after IBF-STS subsidy, SC/PR eligible)",
@@ -834,7 +834,7 @@ courses.push({
     { day: "15:15 – Build Your Engagement Plan", items: ["Build an engagement and pipeline plan", "Client engagement role-play", "Apply all tools end-to-end"] },
     { day: "16:30 – Assessment", items: ["Part A: Engagement role-play (read the client, adapt communication)", "Part B: Engagement and pipeline plan", "Compliance checklist applied to both"] },
   ],
-  nextRunDate: "Next run: Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  nextRunDate: "Next run: Contact admissions@metaskills.sg or WhatsApp +65 8986 6146 to enrol",
   fees: {
     selfSponsored: "S$700 (Full fee, before subsidies & GST)",
     corporateSmall: "S$210–S$350 (after IBF-STS subsidy, SC/PR eligible)",
@@ -877,7 +877,7 @@ courses.push({
     { day: "15:15 – Build a Portfolio Plan", items: ["Build a client portfolio growth plan", "Recommendation role-play", "Apply all tools end-to-end"] },
     { day: "16:30 – Assessment", items: ["Part A: Needs-analysis and recommendation role-play", "Part B: Multi-stage, suitability-gated client portfolio growth plan", "Compliance checklist applied to both"] },
   ],
-  nextRunDate: "Next run: Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  nextRunDate: "Next run: Contact admissions@metaskills.sg or WhatsApp +65 8986 6146 to enrol",
   fees: {
     selfSponsored: "S$700 (Full fee, before subsidies & GST)",
     corporateSmall: "S$210–S$350 (after IBF-STS subsidy, SC/PR eligible)",
@@ -920,7 +920,7 @@ courses.push({
     { day: "15:15 – Build a Retention Plan", items: ["Build a client experience and retention plan", "Service-recovery role-play", "Apply all tools end-to-end"] },
     { day: "16:30 – Assessment", items: ["Part A: Relationship-review and service-recovery role-play", "Part B: Client experience and retention plan", "Compliance checklist applied to both"] },
   ],
-  nextRunDate: "Next run: Contact admissions@metaskills.sg or WhatsApp +65 8948 3482 to enrol",
+  nextRunDate: "Next run: Contact admissions@metaskills.sg or WhatsApp +65 8986 6146 to enrol",
   fees: {
     selfSponsored: "S$700 (Full fee, before subsidies & GST)",
     corporateSmall: "S$210–S$350 (after IBF-STS subsidy, SC/PR eligible)",

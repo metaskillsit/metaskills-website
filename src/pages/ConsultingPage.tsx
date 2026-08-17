@@ -36,7 +36,7 @@ import jcubeLogo from "@/assets/consulting-jcube.png";
 import rrLogo from "@/assets/consulting-rr.png";
 
 const WA_LINK =
-  "https://wa.me/6589483482?text=Hi%2C%20I%27d%20like%20to%20book%20a%20scoping%20call%20with%20the%20Metaskills%20consulting%20team.";
+  "https://wa.me/6589866146?text=Hi%2C%20I%27d%20like%20to%20book%20a%20scoping%20call%20with%20the%20Metaskills%20consulting%20team.";
 
 const themes = [
   {
