@@ -11,20 +11,32 @@ import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
 import iscaLogo from "@/assets/logo-isca.png";
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 import amdLogo from "@/assets/logo-amd.svg";
-import comptiaAsset from "@/assets/logo-comptia.jpg.asset.json";
+import comptiaLogo from "@/assets/logo-comptia.jpg";
 
-const partnerLogos: { name: string; logo: string }[] = [
-  { name: "Integrum Global", logo: integrumLogo },
-  { name: "SMU Academy", logo: smuAcademyLogo },
-  { name: "NUS AIDF", logo: nusAidfLogo },
-  { name: "AMD", logo: amdLogo },
-  { name: "CompTIA Authorized Partner", logo: comptiaAsset.url },
-  { name: "ISCA", logo: iscaLogo },
-  { name: "AISG", logo: aisgLogo },
-  { name: "NTUC LearningHub", logo: ntucLhubLogo },
-  { name: "Tinkercademy", logo: tinkercademyLogo },
-  { name: "Singapore Vietnam Business Bridge", logo: svbbLogo },
+const partnerLogos: { name: string; logo: string; size: 1 | 2 | 3 }[] = [
+  { name: "Integrum Global", logo: integrumLogo, size: 3 },
+  { name: "SMU Academy", logo: smuAcademyLogo, size: 3 },
+  { name: "NUS AIDF", logo: nusAidfLogo, size: 3 },
+  { name: "AMD", logo: amdLogo, size: 1 },
+  { name: "CompTIA Authorized Partner", logo: comptiaLogo, size: 3 },
+  { name: "ISCA", logo: iscaLogo, size: 3 },
+  { name: "AISG", logo: aisgLogo, size: 3 },
+  { name: "NTUC LearningHub", logo: ntucLhubLogo, size: 2 },
+  { name: "Tinkercademy", logo: tinkercademyLogo, size: 2 },
+  { name: "Singapore Vietnam Business Bridge", logo: svbbLogo, size: 3 },
 ];
+
+const cellClasses: Record<number, string> = {
+  1: "min-h-[104px] md:min-h-[120px]",
+  2: "min-h-[140px] md:min-h-[180px]",
+  3: "min-h-[200px] md:min-h-[260px]",
+};
+
+const logoClasses: Record<number, string> = {
+  1: "h-10 md:h-12 max-w-[140px]",
+  2: "h-20 md:h-24 max-w-[280px]",
+  3: "h-[120px] md:h-[144px] max-w-[420px]",
+};
 
 
 const PartnerLogosSection = () => {
@@ -48,12 +60,12 @@ const PartnerLogosSection = () => {
             <div
               key={partner.name}
               title={partner.name}
-              className="group flex items-center justify-center bg-card h-[104px] md:h-[120px] px-5 md:px-6 transition-colors duration-300 hover:bg-muted/40"
+              className={`group flex items-center justify-center bg-card px-5 md:px-6 transition-colors duration-300 hover:bg-muted/40 ${cellClasses[partner.size]}`}
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-10 md:h-12 w-full max-w-[140px] object-contain opacity-80 grayscale-[35%] transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                className={`w-full object-contain opacity-80 grayscale-[35%] transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 ${logoClasses[partner.size]}`}
                 loading="lazy"
               />
             </div>
