@@ -607,7 +607,26 @@ const Navbar = () => {
                 ))}
               </div>
 
-              <div className="px-6 py-6 border-t border-border">
+              <div className="px-6 py-6 border-t border-border space-y-4">
+                <div className="space-y-2">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    {t("contact.reachUs", "Reach us")}
+                  </p>
+                  <a
+                    href="tel:+6589866146"
+                    className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
+                  >
+                    <span>📞</span>
+                    <span>Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
+                  </a>
+                  <a
+                    href="mailto:admissions@metaskills.sg"
+                    className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
+                  >
+                    <span>✉️</span>
+                    <span>{t("contact.admissionsEmail", "admissions@metaskills.sg")}</span>
+                  </a>
+                </div>
                 <Link
                   to="/admissions"
                   onClick={() => setMenuOpen(false)}
