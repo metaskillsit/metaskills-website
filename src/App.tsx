@@ -26,6 +26,7 @@ import SMUPCMLPage from "./pages/SMUPCMLPage.tsx";
 import IntroToAIPage from "./pages/IntroToAIPage.tsx";
 import LiveLabsPage from "./pages/LiveLabsPage.tsx";
 import AIComputeEconomicsPage from "./pages/AIComputeEconomicsPage.tsx";
+import RedHatSubscriptionPage from "./pages/RedHatSubscriptionPage.tsx";
 import AdminEnquiriesPage from "./pages/AdminEnquiriesPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
