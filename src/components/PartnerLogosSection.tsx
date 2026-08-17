@@ -45,21 +45,27 @@ const PartnerLogosSection = () => {
         </motion.p>
       </div>
       <div className="max-w-[1140px] mx-auto px-6">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-6 md:gap-x-12 md:gap-y-8 items-center justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px bg-border/60 rounded-lg overflow-hidden border border-border/60">
           {partnerLogos.map((partner) => (
             <div
               key={partner.name}
-              className="flex items-center justify-center w-36 h-14 md:w-44 md:h-16"
+              title={partner.name}
+              className="group flex items-center justify-center bg-card px-5 py-6 md:px-6 md:py-7 transition-colors duration-300 hover:bg-muted/40"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="w-full h-full object-contain"
+                className={`w-auto object-contain opacity-80 grayscale-[35%] transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 ${
+                  partner.contain === "tall"
+                    ? "max-h-14 md:max-h-16 max-w-[80px]"
+                    : "max-h-9 md:max-h-11 max-w-full"
+                }`}
                 loading="lazy"
               />
             </div>
           ))}
         </div>
+
       </div>
       <div className="max-w-[1140px] mx-auto px-6 mt-4 md:mt-6">
         <Separator />
