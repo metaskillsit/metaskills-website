@@ -12,12 +12,14 @@ import iscaLogo from "@/assets/logo-isca.png";
 import lxCopilotLogo from "@/assets/partner-lxcopilot.png";
 import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 import amdLogo from "@/assets/logo-amd.svg";
+import comptiaAsset from "@/assets/logo-comptia.jpg.asset.json";
 
 const partnerLogos = [
   { name: "Integrum Global", logo: integrumLogo },
   { name: "SMU Academy", logo: smuAcademyLogo },
   { name: "NUS AIDF", logo: nusAidfLogo },
   { name: "AMD", logo: amdLogo },
+  { name: "CompTIA Authorized Partner", logo: comptiaAsset.url, contain: "tall" },
   { name: "ISCA", logo: iscaLogo },
   { name: "AISG", logo: aisgLogo },
   { name: "NTUC LearningHub", logo: ntucLhubLogo },
@@ -25,6 +27,7 @@ const partnerLogos = [
   { name: "Singapore Vietnam Business Bridge", logo: svbbLogo },
   { name: "LX Copilot", logo: lxCopilotLogo },
 ];
+
 
 const PartnerLogosSection = () => {
   const { t } = useTranslation();
