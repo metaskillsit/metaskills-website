@@ -138,6 +138,16 @@
   "partners": {
     "title": "Partnering Institutions"
   },
+  "contact": {
+    "reachUs": "Reach us",
+    "andrewPhone": "+65 8986 6146",
+    "admissionsEmail": "admissions@metaskills.sg",
+    "getInTouch": "Get in touch",
+    "speakToAdmissions": "Speak to our admissions team",
+    "admissionsDesc": "Have questions about programmes, scheduling, or corporate training? Our admissions team is ready to help.",
+    "phone": "Phone",
+    "email": "Email"
+  },
   "locations": {
     "title": "Contact Us",
     "subtitle": "World-class facilities designed for hands-on, immersive learning experiences.",

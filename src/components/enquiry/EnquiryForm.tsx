@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { z } from "zod";
-import { CheckCircle2, Loader2 } from "lucide-react";
+import { CheckCircle2, Loader2, Mail } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
@@ -64,7 +64,7 @@ const EnquiryForm = ({
   messageLabel = "Message",
   messagePlaceholder = "Tell us about your team, current AI workloads and what you want them to leave with.",
   submitLabel = "Request in-house training",
-  successText = "Thank you. A Metaskills programme specialist will be in touch within one working day to scope the workshop for your team.",
+  successText = "Thank you. A Metaskills programme specialist will follow up within one working day. A copy has also been sent to admissions@metaskills.sg.",
 }: Props) => {
   const [values, setValues] = useState({
     name: "",
@@ -209,15 +209,28 @@ const EnquiryForm = ({
 
       {status === "error" && (
         <p role="alert" className="text-sm text-destructive">
-          Something went wrong sending your enquiry. Please try again, or WhatsApp us at +65 8948 3482.
+          Something went wrong sending your enquiry. Please email us directly at{" "}
+          <a href="mailto:admissions@metaskills.sg" className="underline hover:text-destructive/80">
+            admissions@metaskills.sg
+          </a>
+          {" "}or WhatsApp us at +65 8948 3482.
         </p>
       )}
 
-      <button type="submit" disabled={status === "sending"}
-        className="inline-flex items-center gap-2 rounded-sm bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:brightness-110 disabled:opacity-60">
-        {status === "sending" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
-        {submitLabel}
-      </button>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+        <button type="submit" disabled={status === "sending"}
+          className="inline-flex items-center gap-2 rounded-sm bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:brightness-110 disabled:opacity-60">
+          {status === "sending" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
+          {submitLabel}
+        </button>
+        <a
+          href="mailto:admissions@metaskills.sg"
+          className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-accent transition-colors"
+        >
+          <Mail className="w-4 h-4" />
+          admissions@metaskills.sg
+        </a>
+      </div>
     </form>
   );
 };

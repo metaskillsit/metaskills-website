@@ -138,6 +138,16 @@
   "partners": {
     "title": "合作机构"
   },
+  "contact": {
+    "reachUs": "联系我们",
+    "andrewPhone": "+65 8986 6146",
+    "admissionsEmail": "admissions@metaskills.sg",
+    "getInTouch": "取得联系",
+    "speakToAdmissions": "联系我们的招生团队",
+    "admissionsDesc": "对课程、时间安排或企业培训有疑问？我们的招生团队随时为您提供帮助。",
+    "phone": "电话",
+    "email": "电子邮件"
+  },
   "locations": {
     "title": "联系我们",
     "subtitle": "为沉浸式动手学习体验而设计的世界级设施。",

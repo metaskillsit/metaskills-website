@@ -386,6 +386,11 @@ const RedHatSubscriptionPage = () => {
             <p className="text-white/70 text-sm mb-8 max-w-2xl">
               Tell us which plan you are considering and how many participants you need. A Metaskills
               specialist will follow up to confirm enrolment. No payment is taken on this page.
+              You can also email us directly at{" "}
+              <a href="mailto:admissions@metaskills.sg" className="text-accent hover:underline">
+                admissions@metaskills.sg
+              </a>
+              .
             </p>
             <EnquiryForm
               audienceLabel="Subscription plan"

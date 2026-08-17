@@ -395,7 +395,7 @@ const Navbar = () => {
                 <ChevronDown size={14} />
               </button>
               {contactOpen && (
-                <div className="absolute top-full left-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[260px] animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                <div className="absolute top-full left-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[280px] animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                   <Link
                     to="/locations"
                     onClick={() => setContactOpen(false)}
@@ -429,6 +429,25 @@ const Navbar = () => {
                   >
                     {t("nav.courseFeesAndFunding")}
                   </Link>
+                  <div className="border-t border-border px-4 py-3 bg-muted/30">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                      {t("contact.reachUs", "Reach us")}
+                    </p>
+                    <a
+                      href="tel:+6589866146"
+                      className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors mb-1.5"
+                    >
+                      <span className="text-base">📞</span>
+                      <span>Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
+                    </a>
+                    <a
+                      href="mailto:admissions@metaskills.sg"
+                      className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
+                    >
+                      <span className="text-base">✉️</span>
+                      <span>{t("contact.admissionsEmail", "admissions@metaskills.sg")}</span>
+                    </a>
+                  </div>
                 </div>
               )}
             </div>
@@ -588,7 +607,26 @@ const Navbar = () => {
                 ))}
               </div>
 
-              <div className="px-6 py-6 border-t border-border">
+              <div className="px-6 py-6 border-t border-border space-y-4">
+                <div className="space-y-2">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    {t("contact.reachUs", "Reach us")}
+                  </p>
+                  <a
+                    href="tel:+6589866146"
+                    className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
+                  >
+                    <span>📞</span>
+                    <span>Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
+                  </a>
+                  <a
+                    href="mailto:admissions@metaskills.sg"
+                    className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
+                  >
+                    <span>✉️</span>
+                    <span>{t("contact.admissionsEmail", "admissions@metaskills.sg")}</span>
+                  </a>
+                </div>
                 <Link
                   to="/admissions"
                   onClick={() => setMenuOpen(false)}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
@@ -58,6 +58,46 @@ const LocationsPage = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </section>
+
+        <section className="max-w-[1140px] mx-auto px-6 py-16 border-t border-border">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div>
+              <span className="section-eyebrow">{t("contact.getInTouch", "Get in touch")}</span>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+                {t("contact.speakToAdmissions", "Speak to our admissions team")}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                {t("contact.admissionsDesc", "Have questions about programmes, scheduling, or corporate training? Our admissions team is ready to help.")}
+              </p>
+            </div>
+            <div className="space-y-4">
+              <a
+                href="tel:+6589866146"
+                className="flex items-center gap-4 p-4 rounded-sm border border-border bg-muted hover:border-primary/50 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Phone className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("contact.phone", "Phone")}</p>
+                  <p className="text-foreground font-medium">Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</p>
+                </div>
+              </a>
+              <a
+                href="mailto:admissions@metaskills.sg"
+                className="flex items-center gap-4 p-4 rounded-sm border border-border bg-muted hover:border-primary/50 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Mail className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("contact.email", "Email")}</p>
+                  <p className="text-foreground font-medium">{t("contact.admissionsEmail", "admissions@metaskills.sg")}</p>
+                </div>
+              </a>
+            </div>
           </div>
         </section>
       </main>

@@ -578,6 +578,10 @@ const AIComputeEconomicsPage = () => {
                 <a href="https://wa.me/6589483482" className="text-accent hover:underline">
                   +65 8948 3482
                 </a>
+                {" "}or email{" "}
+                <a href="mailto:admissions@metaskills.sg" className="text-accent hover:underline">
+                  admissions@metaskills.sg
+                </a>
                 .
               </p>
             </div>
