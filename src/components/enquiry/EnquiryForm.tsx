@@ -64,7 +64,7 @@ const EnquiryForm = ({
   messageLabel = "Message",
   messagePlaceholder = "Tell us about your team, current AI workloads and what you want them to leave with.",
   submitLabel = "Request in-house training",
-  successText = "Thank you. A Metaskills programme specialist will be in touch within one working day to scope the workshop for your team.",
+  successText = "Thank you. A Metaskills programme specialist will follow up within one working day. A copy has also been sent to admissions@metaskills.sg.",
 }: Props) => {
   const [values, setValues] = useState({
     name: "",
