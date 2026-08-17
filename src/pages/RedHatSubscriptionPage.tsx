@@ -65,7 +65,7 @@ const audienceList = [
 
 const whyMetaskills = [
   "Assistance selecting the appropriate subscription tier",
-  "Support with corporate quotations and participant enrolment",
+  "Support with corporate procurement and participant enrolment",
   "Guidance on aligning training with certification objectives",
   "A single contact point for purchase coordination",
   "Support for individual and organisational training requirements",
@@ -101,7 +101,7 @@ const RedHatSubscriptionPage = () => {
     };
   }, []);
 
-  const requestQuote = (selected: string) => {
+  const scrollToEnquiry = (selected: string) => {
     setPlan(selected);
     const el = document.getElementById("enquiry");
     if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: "smooth" });
@@ -152,10 +152,10 @@ const RedHatSubscriptionPage = () => {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <button
-                onClick={() => requestQuote(PLAN_UNSURE)}
+                onClick={() => scrollToEnquiry(PLAN_UNSURE)}
                 className="inline-flex items-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition-all"
               >
-                Request a Quotation <ArrowRight className="w-4 h-4" />
+                Enquire Now <ArrowRight className="w-4 h-4" />
               </button>
               <Link
                 to="/admissions"
@@ -208,8 +208,6 @@ const RedHatSubscriptionPage = () => {
                 price: "S$11,615",
                 label: "Best for self-directed learners",
                 includes: standardIncludes,
-                cta: "Request Standard Quotation",
-                planValue: PLAN_STANDARD,
                 featured: false,
               },
               {
@@ -218,8 +216,6 @@ const RedHatSubscriptionPage = () => {
                 price: "S$14,260",
                 label: "Best for instructor-supported learning",
                 includes: premiumIncludes,
-                cta: "Request Premium Quotation",
-                planValue: PLAN_PREMIUM,
                 featured: true,
               },
             ].map((p, i) => (
@@ -255,7 +251,7 @@ const RedHatSubscriptionPage = () => {
                   <span className="inline-flex items-center gap-2"><Users className="w-3.5 h-3.5 text-primary" />{p.label}</span>
                 </div>
 
-                <ul className="mt-6 space-y-2.5 mb-8">
+                <ul className="mt-6 space-y-2.5">
                   {p.includes.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
                       <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" aria-hidden="true" />
@@ -263,17 +259,6 @@ const RedHatSubscriptionPage = () => {
                     </li>
                   ))}
                 </ul>
-
-                <button
-                  onClick={() => requestQuote(p.planValue)}
-                  className={`mt-auto inline-flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-sm text-sm font-semibold transition-all hover:brightness-110 ${
-                    p.featured
-                      ? "bg-accent text-accent-foreground"
-                      : "bg-primary text-primary-foreground"
-                  }`}
-                >
-                  {p.cta} <ArrowRight className="w-4 h-4" />
-                </button>
               </motion.div>
             ))}
           </div>
@@ -281,7 +266,7 @@ const RedHatSubscriptionPage = () => {
           <p className="mt-6 text-xs text-muted-foreground leading-relaxed max-w-4xl">
             Prices are stated in Singapore dollars per participant. Final pricing, applicable taxes,
             availability and subscription entitlements are subject to confirmation at the time of
-            quotation. Product features and certification policies may be updated by the training
+            enrolment. Product features and certification policies may be updated by the training
             and certification provider.
           </p>
         </section>
@@ -393,14 +378,14 @@ const RedHatSubscriptionPage = () => {
         <section id="enquiry" className="bg-[hsl(var(--hero-overlay))] text-white scroll-mt-28">
           <div className="max-w-[900px] mx-auto px-6 py-16 md:py-20">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">
-              Request a Quotation
+              Enquiry
             </p>
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">
               Red Hat Learning Subscription enquiry
             </h2>
             <p className="text-white/70 text-sm mb-8 max-w-2xl">
               Tell us which plan you are considering and how many participants you need. A Metaskills
-              specialist will prepare a formal quotation. No payment is taken on this page.
+              specialist will follow up to confirm enrolment. No payment is taken on this page.
             </p>
             <EnquiryForm
               audienceLabel="Subscription plan"
@@ -416,8 +401,8 @@ const RedHatSubscriptionPage = () => {
               timeframePlaceholder="e.g. October 2026"
               messageLabel="Additional requirements"
               messagePlaceholder="Tell us about certification goals, preferred courses or procurement requirements."
-              submitLabel="Request a Quotation"
-              successText="Thank you. A Metaskills specialist will follow up within one working day with a formal quotation for your selected subscription plan."
+              submitLabel="Send Enquiry"
+              successText="Thank you. A Metaskills specialist will follow up within one working day about your selected subscription plan."
             />
           </div>
         </section>
@@ -426,7 +411,7 @@ const RedHatSubscriptionPage = () => {
         <section className="max-w-[1140px] mx-auto px-6 py-10">
           <p className="text-[11px] leading-relaxed text-muted-foreground/80">
             Red Hat and associated product names are trademarks or registered trademarks of Red Hat,
-            Inc. Metaskills Institute is responsible for its own programme information and quotation
+            Inc. Metaskills Institute is responsible for its own programme information and enrolment
             services.
           </p>
         </section>

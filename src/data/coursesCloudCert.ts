@@ -339,7 +339,6 @@ export const cloudCertCourses: Course[] = [
     ),
     certificationNote: certificationNote("Red Hat Certified System Administrator", "Red Hat"),
     optionalAddOns: [
-      { label: "RH199LS 1-year learning subscription plan", price: "S$8,450 per participant" },
       { label: "EX200K exam", price: "S$745 per participant" },
     ],
     nextRunDate: "WhatsApp Us to Check",
