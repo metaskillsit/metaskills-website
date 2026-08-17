@@ -251,7 +251,7 @@ const RedHatSubscriptionPage = () => {
                   <span className="inline-flex items-center gap-2"><Users className="w-3.5 h-3.5 text-primary" />{p.label}</span>
                 </div>
 
-                <ul className="mt-6 space-y-2.5 mb-8">
+                <ul className="mt-6 space-y-2.5">
                   {p.includes.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
                       <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" aria-hidden="true" />
@@ -259,17 +259,6 @@ const RedHatSubscriptionPage = () => {
                     </li>
                   ))}
                 </ul>
-
-                <button
-                  onClick={() => requestQuote(p.planValue)}
-                  className={`mt-auto inline-flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-sm text-sm font-semibold transition-all hover:brightness-110 ${
-                    p.featured
-                      ? "bg-accent text-accent-foreground"
-                      : "bg-primary text-primary-foreground"
-                  }`}
-                >
-                  {p.cta} <ArrowRight className="w-4 h-4" />
-                </button>
               </motion.div>
             ))}
           </div>
