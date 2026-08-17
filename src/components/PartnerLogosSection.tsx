@@ -14,7 +14,7 @@ import nusAidfLogo from "@/assets/logo-nus-aidf.png";
 import amdLogo from "@/assets/logo-amd.svg";
 import comptiaAsset from "@/assets/logo-comptia.jpg.asset.json";
 
-const partnerLogos = [
+const partnerLogos: { name: string; logo: string; contain?: "tall" }[] = [
   { name: "Integrum Global", logo: integrumLogo },
   { name: "SMU Academy", logo: smuAcademyLogo },
   { name: "NUS AIDF", logo: nusAidfLogo },
