@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import comptiaLogo from "@/assets/logo-comptia-t.png";
 import ecCouncilLogo from "@/assets/logo-ec-council-t.png";
 import awsLogo from "@/assets/logo-aws-t.png";
-import appleLogo from "@/assets/logo-apple.png";
+import appleLogo from "@/assets/logo-apple-t.png";
 import googleLogo from "@/assets/logo-google-t.png";
 
 // Tech stack logos (local)
