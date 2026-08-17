@@ -439,8 +439,8 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                       className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors mb-1.5"
                     >
-                      <span className="text-base">📞</span>
-                      <span>Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
+                      <span className="text-base">💬</span>
+                      <span>WhatsApp Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
                     </a>
                     <a
                       href="mailto:admissions@metaskills.sg"
@@ -620,8 +620,8 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
                   >
-                    <span>📞</span>
-                    <span>Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
+                    <span>💬</span>
+                    <span>WhatsApp Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
                   </a>
                   <a
                     href="mailto:admissions@metaskills.sg"

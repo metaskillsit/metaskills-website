@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail } , MessageCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
@@ -80,10 +80,10 @@ const LocationsPage = () => {
                 className="flex items-center gap-4 p-4 rounded-sm border border-border bg-muted hover:border-primary/50 transition-colors"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Phone className="w-4 h-4 text-primary" />
+                  <MessageCircle className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("contact.phone", "Phone")}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("contact.whatsapp", "WhatsApp")}</p>
                   <p className="text-foreground font-medium">Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</p>
                 </div>
               </a>
