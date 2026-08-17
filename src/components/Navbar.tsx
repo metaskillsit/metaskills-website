@@ -434,11 +434,13 @@ const Navbar = () => {
                       {t("contact.reachUs", "Reach us")}
                     </p>
                     <a
-                      href="tel:+6589866146"
+                      href="https://wa.me/6589866146?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.%20Can%20you%20advise"
+                target="_blank"
+                rel="noopener noreferrer"
                       className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors mb-1.5"
                     >
-                      <span className="text-base">📞</span>
-                      <span>Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
+                      <span className="text-base">💬</span>
+                      <span>WhatsApp Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
                     </a>
                     <a
                       href="mailto:admissions@metaskills.sg"
@@ -613,11 +615,13 @@ const Navbar = () => {
                     {t("contact.reachUs", "Reach us")}
                   </p>
                   <a
-                    href="tel:+6589866146"
+                    href="https://wa.me/6589866146?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.%20Can%20you%20advise"
+                target="_blank"
+                rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
                   >
-                    <span>📞</span>
-                    <span>Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
+                    <span>💬</span>
+                    <span>WhatsApp Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</span>
                   </a>
                   <a
                     href="mailto:admissions@metaskills.sg"

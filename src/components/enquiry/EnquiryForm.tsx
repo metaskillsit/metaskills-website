@@ -213,7 +213,7 @@ const EnquiryForm = ({
           <a href="mailto:admissions@metaskills.sg" className="underline hover:text-destructive/80">
             admissions@metaskills.sg
           </a>
-          {" "}or WhatsApp us at +65 8986 6146.
+          {" "}or <a href="https://wa.me/6589866146" target="_blank" rel="noopener noreferrer" className="underline hover:text-destructive/80">WhatsApp us at +65 8986 6146</a>.
         </p>
       )}
 
