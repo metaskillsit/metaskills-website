@@ -441,7 +441,7 @@ const Navbar = () => {
                       className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors mb-1.5"
                     >
                       <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                      <span>WhatsApp Andrew</span>
+                      <span>{t("contact.whatsappUs", "WhatsApp Us")}</span>
                     </a>
                     <a
                       href="mailto:admissions@metaskills.sg"
@@ -622,7 +622,7 @@ const Navbar = () => {
                     className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors"
                   >
                     <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                    <span>WhatsApp Andrew</span>
+                    <span>{t("contact.whatsappUs", "WhatsApp Us")}</span>
                   </a>
                   <a
                     href="mailto:admissions@metaskills.sg"

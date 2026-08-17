@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { MapPin, Mail, MessageCircle } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import FooterSection from "@/components/FooterSection";
 import cthub2Img from "@/assets/cthub2-building.jpg";
 import trainingCenterImg from "@/assets/training-center-real.png";
@@ -79,12 +80,12 @@ const LocationsPage = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-sm border border-border bg-muted hover:border-primary/50 transition-colors"
               >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <MessageCircle className="w-4 h-4 text-primary" />
+                <div className="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center">
+                  <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("contact.whatsapp", "WhatsApp")}</p>
-                  <p className="text-foreground font-medium">Andrew — {t("contact.andrewPhone", "+65 8986 6146")}</p>
+                  <p className="text-foreground font-medium">{t("contact.whatsappUs", "WhatsApp Us")} — {t("contact.andrewPhone", "+65 8986 6146")}</p>
                 </div>
               </a>
               <a
