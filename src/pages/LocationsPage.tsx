@@ -74,7 +74,9 @@ const LocationsPage = () => {
             </div>
             <div className="space-y-4">
               <a
-                href="tel:+6589866146"
+                href="https://wa.me/6589866146?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.%20Can%20you%20advise"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-sm border border-border bg-muted hover:border-primary/50 transition-colors"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
