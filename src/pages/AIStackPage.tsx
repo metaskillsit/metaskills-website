@@ -34,7 +34,7 @@ import seedanceLogo from "@/assets/techlogos/seedance.png";
 import openclawLogo from "@/assets/techlogos/openclaw.png";
 
 const WHATSAPP_URL =
-  "https://wa.me/6589483482?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.";
+  "https://wa.me/6589866146?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.";
 
 const vendorLogos: Record<string, string> = {
   OpenAI: openaiLogo,

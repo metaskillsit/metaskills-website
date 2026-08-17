@@ -46,7 +46,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
   const useCustomNotes = pricing?.customNotes || false;
   const hideNotes = hasStructuredFees ? true : pricing?.hideNotes || false;
   const fundingNote = pricing?.fundingNote;
-  const whatsappHref = `https://wa.me/6589483482?text=${encodeURIComponent(
+  const whatsappHref = `https://wa.me/6589866146?text=${encodeURIComponent(
     course.whatsappMessage || "Hi I'm interested in your AI training and solutions."
   )}`;
 

@@ -5,7 +5,7 @@ import FooterSection from "@/components/FooterSection";
 const COURSE_URL = "https://academy.smu.edu.sg/courses/professional-certificate-machine-learning";
 const APPLY_URL = "https://smu.eteams.com.sg/registration#/Login?coursecode=PC-MLIGD";
 const ENQUIRE_URL = "https://academy.smu.edu.sg/programme-enquiry?course=Professional%20Certificate%20in%20Machine%20Learning&nid=81306";
-const WHATSAPP_URL = "https://wa.me/6589483482?text=Hi%2C%20I%27m%20interested%20in%20the%20Metaskills%20Institute%20Professional%20Certificate%20in%20Applied%20AI.";
+const WHATSAPP_URL = "https://wa.me/6589866146?text=Hi%2C%20I%27m%20interested%20in%20the%20Metaskills%20Institute%20Professional%20Certificate%20in%20Applied%20AI.";
 
 const modules = [
   { n: 1, title: "Machine Learning Data Pipelines and Visualisation Mastery with Python", dates: "7, 8 & 11 Jul 2026", status: "Registration Closed" },

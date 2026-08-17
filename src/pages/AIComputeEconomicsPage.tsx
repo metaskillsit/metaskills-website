@@ -575,8 +575,8 @@ const AIComputeEconomicsPage = () => {
               </p>
               <p className="mt-6 text-sm text-white/50">
                 Prefer to talk first? WhatsApp{" "}
-                <a href="https://wa.me/6589483482" className="text-accent hover:underline">
-                  +65 8948 3482
+                <a href="https://wa.me/6589866146" className="text-accent hover:underline">
+                  +65 8986 6146
                 </a>
                 {" "}or email{" "}
                 <a href="mailto:admissions@metaskills.sg" className="text-accent hover:underline">

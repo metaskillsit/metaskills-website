@@ -13,7 +13,7 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
 const WA_LINK =
-  "https://wa.me/6589483482?text=Hi%20I'm%20interested%20in%20your%20Agentic%20AI%20Governance%20solutions.%20Can%20we%20schedule%20a%20strategy%20session%3F";
+  "https://wa.me/6589866146?text=Hi%20I'm%20interested%20in%20your%20Agentic%20AI%20Governance%20solutions.%20Can%20we%20schedule%20a%20strategy%20session%3F";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
