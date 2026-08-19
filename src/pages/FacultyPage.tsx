@@ -165,6 +165,17 @@ Evelyn is also an accomplished trainer in business and data analytics, with hand
 A Certified Lean Six Sigma Green Belt and Certified Scrum Master, Evelyn is highly skilled in applying Lean Six Sigma, Agile, and Scrum methodologies to improve organizational performance and drive continuous improvement. Her professional education also includes certifications in IT service management, enterprise architecture, and algorithmic trading, reflecting her strong commitment to lifelong learning and excellence.`,
   },
   {
+    name: "Chris Tan Seok King",
+    i18nKey: "chrisTan",
+    role: "Senior Consultant and Trainer",
+    expertise: "Financial Services | Sales Coaching | Client Advisory",
+    image: "/images/faculty/faculty-christan.jpg",
+    bio: `Chris Tan is a seasoned sales trainer and former banking practitioner with hands-on experience in retail banking, financial advisory, frontline sales management and performance coaching. A former Personal Banker at UOB and Financial Protection Specialist at OCBC, she brings practical credibility from regulated bank environments together with years of experience designing and delivering sales coaching programmes for financial advisory and corporate sales teams across Singapore and Malaysia.
+She specialises in helping young and mid-career individuals strengthen the daily habits and client-facing behaviours that drive commercial performance. Her programmes focus on prospecting discipline, first-meeting confidence, needs-based conversations, objection handling, follow-up consistency and closing effectiveness through structured role-plays, practical frameworks and accountability tools that translate training into action.
+As Director and Sales Coach at Westrategos, she led coaching programmes for financial advisory agencies and corporate sales teams, achieving measured productivity improvements of 20% to 120% across teams. Earlier roles include Retail Sales Manager at Fame Partners, where she coached teams of 10 to 15 staff against monthly targets of S$60,000 to S$200,000, and Recruitment Consultant and Trainer at Prudential Assurance Malaysia, where she trained more than 30 financial planners. She holds a Bachelor of Economics and Finance and a Diploma in Financial Planning from the Singapore Institute of Management / RMIT University.`,
+  },
+
+  {
     name: "Alena Lavrinenko",
     i18nKey: "alenaLavrinenko",
     role: "AI Consultant and Trainer",
