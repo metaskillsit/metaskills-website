@@ -269,19 +269,51 @@ const useFacultyTranslation = (f: FacultyMember) => {
    COMPONENTS
 ========================= */
 
+const COLLAPSED_LINES = 7;
+
 const BioText = ({ bio }: { bio: string }) => {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
   const paragraphs = bio.trim().split("\n").filter(Boolean);
-  const preview = paragraphs.slice(0, 1).join("\n");
-  const hasMore = paragraphs.length > 1;
+
+  useEffect(() => {
+    const el = contentRef.current;
+    if (!el) return;
+    const check = () => {
+      const lineHeight = parseFloat(getComputedStyle(el).lineHeight || "0") || 22;
+      setHasMore(el.scrollHeight > lineHeight * COLLAPSED_LINES + 2);
+    };
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [bio]);
 
   return (
     <div>
-      <div className="text-sm text-muted-foreground leading-relaxed">
-        {(expanded ? bio.trim().split("\n").filter(Boolean) : preview.split("\n").filter(Boolean)).map((p, idx) => (
-          <p key={idx} className="text-justify mb-3 last:mb-0">{p}</p>
-        ))}
+      <div className="relative">
+        <div
+          ref={contentRef}
+          className="text-sm text-muted-foreground leading-relaxed"
+          style={
+            expanded
+              ? undefined
+              : {
+                  display: "-webkit-box",
+                  WebkitLineClamp: COLLAPSED_LINES,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                }
+          }
+        >
+          {paragraphs.map((p, idx) => (
+            <p key={idx} className="text-justify mb-3 last:mb-0">{p}</p>
+          ))}
+        </div>
+        {!expanded && hasMore && (
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-background to-transparent" />
+        )}
       </div>
       {hasMore && (
         <button
@@ -298,6 +330,7 @@ const BioText = ({ bio }: { bio: string }) => {
     </div>
   );
 };
+
 
 const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
   const ft = useFacultyTranslation(f);
