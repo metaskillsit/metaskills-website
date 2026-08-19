@@ -21,6 +21,7 @@ const CurrentTrainingTicker = () => {
     "MINDEF DIS - Strategic AI Compute and Optimisation",
     "NTUC LHub - MayBank (19 runs)",
     "NTUC LHub - UOB (6 runs)",
+    "NTUC LHub - Sumitomo Mitsui Trust Bank (12 runs)",
     "BOC Senior Management - Leveraging Generative AI for Executive Decision-Making",
     "TinkerTanker - DSTA Intermediate Agentic Engineering",
     "NTUC LHub - AIA (8 runs)",
