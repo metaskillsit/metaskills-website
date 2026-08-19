@@ -51,7 +51,7 @@ const allFaculty = [
   {
     name: "Matthew Wu",
     role: "Senior Strategist, Cross-Border Capital | Real Estate & Agricultural Investment | AI Digital Strategy",
-    expertise: "Cross-Border Deal Facilitation & Structuring | Capital Raising Across Real Estate & Agricultural Sectors | Investor Relations & Stakeholder Management | Asia-Pacific Market Access & Relationship Development | Multi-Jurisdictional Transaction Management | American Developer Entry into Asian Markets | End-to-End Launch Strategy & Execution Support",
+    expertise: "Cross-Border Capital Raising & Deal Structuring | Real Estate & Agriculture | Asia-Pacific Investor Relations & Market Entry | AI for Market Research & Investment Intelligence",
     image: "/images/faculty/faculty-matthewwu.jpg",
   },
   {
