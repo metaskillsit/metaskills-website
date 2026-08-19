@@ -49,6 +49,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-adriantoh.jpg",
   },
   {
+    name: "Matthew Wu",
+    role: "Senior Strategist, Cross-Border Capital | Real Estate & Agricultural Investment | AI Digital Strategy",
+    expertise: "Cross-Border Deal Facilitation & Structuring | Capital Raising Across Real Estate & Agricultural Sectors | Investor Relations & Stakeholder Management | Asia-Pacific Market Access & Relationship Development | Multi-Jurisdictional Transaction Management | American Developer Entry into Asian Markets | End-to-End Launch Strategy & Execution Support",
+    image: "/images/faculty/faculty-matthewwu.jpg",
+  },
+  {
     name: "Jack Tee",
     role: "Consultant",
     expertise: "Data Science | AI | Machine Learning | NLP | Computer Vision",
