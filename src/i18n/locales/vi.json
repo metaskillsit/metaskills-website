@@ -1310,6 +1310,8 @@
     "badge": "Môi trường nguyên mẫu",
     "overview": "Tổng quan",
     "textCodeLab": "Phòng thí nghiệm Văn bản & Mã",
+    "activityStudio": "Xưởng Hoạt Động",
+    "financeLiteracy": {"title": "Metaskills Activity Studio Finance Literacy Level 1", "desc": "Các hoạt động và mô phỏng kiến thức tài chính tương tác cho kỹ năng tiền bạc nền tảng."},
     "mediaLab": "Phòng thí nghiệm Đa phương tiện",
     "governance": "Quản trị",
     "liveLab": "Live Lab",

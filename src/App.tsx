@@ -24,6 +24,7 @@ import AISongStudioPage from "./pages/AISongStudioPage.tsx";
 import ConsultingPage from "./pages/ConsultingPage.tsx";
 import SMUPCMLPage from "./pages/SMUPCMLPage.tsx";
 import IntroToAIPage from "./pages/IntroToAIPage.tsx";
+import FinanceLiteracyPage from "./pages/FinanceLiteracyPage.tsx";
 import LiveLabsPage from "./pages/LiveLabsPage.tsx";
 import AIComputeEconomicsPage from "./pages/AIComputeEconomicsPage.tsx";
 import RedHatSubscriptionPage from "./pages/RedHatSubscriptionPage.tsx";
@@ -60,6 +61,7 @@ const AppContent = () => {
         <Route path="/consulting" element={<ConsultingPage />} />
         <Route path="/professional-certificate-in-Applied-AI" element={<SMUPCMLPage />} />
         <Route path="/introduction-to-artificial-intelligence" element={<IntroToAIPage />} />
+        <Route path="/finance-literacy-level-1" element={<FinanceLiteracyPage />} />
         <Route path="/live-labs" element={<LiveLabsPage />} />
         <Route path="/ai-native-prototyping-compute-constraints" element={<AIComputeEconomicsPage />} />
         <Route path="/programmes/cloud-devops-ai/red-hat-learning-subscription" element={<RedHatSubscriptionPage />} />

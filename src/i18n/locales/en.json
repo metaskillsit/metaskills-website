@@ -1379,6 +1379,8 @@
     "badge": "Prototype Environment",
     "overview": "Overview",
     "textCodeLab": "Text & Code Lab",
+    "activityStudio": "Activity Studio",
+    "financeLiteracy": {"title": "Metaskills Activity Studio Finance Literacy Level 1", "desc": "Interactive financial literacy activities and simulations for foundational money skills."},
     "mediaLab": "Media Lab",
     "governance": "Governance",
     "liveLab": "Live Lab",
