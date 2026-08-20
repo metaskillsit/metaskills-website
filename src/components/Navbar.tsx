@@ -198,6 +198,13 @@ const Navbar = () => {
             { label: "AI Song Generation Studio", href: "/ai-song-studio" },
           ],
         },
+        {
+          label: t("liveLabs.activityStudio"),
+          href: "/live-labs",
+          subItems: [
+            { label: "Metaskills Activity Studio Finance Literacy Level 1", href: "/finance-literacy-level-1" },
+          ],
+        },
       ],
     },
   ];
@@ -302,7 +309,7 @@ const Navbar = () => {
               <button
                 onClick={() => setLabsOpen(!labsOpen)}
                 className={`flex items-center gap-1 text-[13px] font-medium tracking-wide transition-colors ${
-                  ["/live-labs", "/agentic-ai-governance", "/ai-video-studio", "/llm-playground", "/ai-song-studio"].includes(location.pathname)
+                  ["/live-labs", "/agentic-ai-governance", "/ai-video-studio", "/llm-playground", "/ai-song-studio", "/finance-literacy-level-1"].includes(location.pathname)
                     ? "text-primary"
                     : "text-foreground/70 hover:text-primary"
                 }`}
@@ -374,6 +381,21 @@ const Navbar = () => {
                     }`}
                   >
                     AI Song Generation Studio
+                  </Link>
+
+                  <div className="border-t border-border px-4 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    {t("liveLabs.activityStudio")}
+                  </div>
+                  <Link
+                    to="/finance-literacy-level-1"
+                    onClick={() => setLabsOpen(false)}
+                    className={`block px-4 py-2.5 text-sm transition-colors ${
+                      location.pathname === "/finance-literacy-level-1"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground/80 hover:bg-muted hover:text-primary"
+                    }`}
+                  >
+                    Metaskills Activity Studio Finance Literacy Level 1
                   </Link>
 
                 </div>
