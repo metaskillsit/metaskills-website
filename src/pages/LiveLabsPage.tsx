@@ -6,6 +6,7 @@ import {
   MessageSquare,
   Video,
   Music,
+  Wallet,
   Shield,
   ArrowRight,
   FlaskConical,
@@ -57,6 +58,18 @@ const LiveLabsPage = () => {
           desc: t("liveLabs.aiSongStudio.desc"),
           href: "/ai-song-studio",
           icon: Music,
+        },
+      ],
+    },
+    {
+      category: t("liveLabs.activityStudio"),
+      icon: Wallet,
+      items: [
+        {
+          title: t("liveLabs.financeLiteracy.title"),
+          desc: t("liveLabs.financeLiteracy.desc"),
+          href: "/finance-literacy-level-1",
+          icon: Wallet,
         },
       ],
     },
