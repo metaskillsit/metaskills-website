@@ -8,13 +8,13 @@ import EnquiryForm from "@/components/enquiry/EnquiryForm";
 
 const SEO_TITLE = "Red Hat Learning Subscription Singapore | LS220 & LS520 | Metaskills";
 const SEO_DESC =
-  "Compare Red Hat Learning Subscription Standard LS220 at S$11,615 and Premium LS520 at S$14,260 per participant. Get 365-day training access, labs and certification opportunities through Metaskills.";
+  "Compare Red Hat Learning Subscription Standard LS220 at S$11,600 and Premium LS520 at S$14,200 per participant. Get 365-day training access, labs and certification opportunities through Metaskills.";
 const OG_TITLE = "Red Hat Learning Subscription – Standard & Premium";
 const OG_DESC =
-  "Choose Standard LS220 at S$11,615 or Premium LS520 at S$14,260 per participant for 365-day Red Hat training access.";
+  "Choose Standard LS220 at S$11,600 or Premium LS520 at S$14,200 per participant for 365-day Red Hat training access.";
 
-export const PLAN_STANDARD = "Standard LS220 — S$11,615 per participant";
-export const PLAN_PREMIUM = "Premium LS520 — S$14,260 per participant";
+export const PLAN_STANDARD = "Standard LS220 — S$11,600 per participant";
+export const PLAN_PREMIUM = "Premium LS520 — S$14,200 per participant";
 const PLAN_UNSURE = "Not sure — request a recommendation";
 
 const standardIncludes = [
@@ -38,7 +38,7 @@ const premiumIncludes = [
 
 const comparison: { feature: string; standard: string; premium: string }[] = [
   { feature: "Subscription duration", standard: "365 days", premium: "365 days" },
-  { feature: "Price per participant", standard: "S$11,615", premium: "S$14,260" },
+  { feature: "Price per participant", standard: "S$11,600", premium: "S$14,200" },
   { feature: "Full Red Hat training catalogue", standard: "Included", premium: "Included" },
   { feature: "Self-paced courses", standard: "Included", premium: "Included" },
   { feature: "Hands-on labs", standard: "Up to 400 hours", premium: "Up to 400 hours" },
@@ -137,8 +137,8 @@ const RedHatSubscriptionPage = () => {
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4 max-w-3xl">
               {[
-                { name: "Standard", code: "LS220", price: "S$11,615" },
-                { name: "Premium", code: "LS520", price: "S$14,260" },
+                { name: "Standard", code: "LS220", price: "S$11,600" },
+                { name: "Premium", code: "LS520", price: "S$14,200" },
               ].map((p) => (
                 <div key={p.code} className="rounded-sm border border-white/20 bg-white/5 px-5 py-4">
                   <p className="font-body text-[11px] uppercase tracking-[0.2em] text-accent font-semibold">
@@ -205,7 +205,7 @@ const RedHatSubscriptionPage = () => {
               {
                 plan: "Standard",
                 code: "LS220",
-                price: "S$11,615",
+                price: "S$11,600",
                 label: "Best for self-directed learners",
                 includes: standardIncludes,
                 featured: false,
@@ -213,7 +213,7 @@ const RedHatSubscriptionPage = () => {
               {
                 plan: "Premium",
                 code: "LS520",
-                price: "S$14,260",
+                price: "S$14,200",
                 label: "Best for instructor-supported learning",
                 includes: premiumIncludes,
                 featured: true,
