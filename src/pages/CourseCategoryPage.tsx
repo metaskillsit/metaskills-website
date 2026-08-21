@@ -275,8 +275,8 @@ const CourseCategoryPage = () => {
                   </div>
                   <ul className="space-y-2 text-xs text-muted-foreground mb-5 mt-auto">
                     <li className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-primary" />365 days</li>
-                    <li className="flex items-center gap-2"><DollarSign className="w-3.5 h-3.5 text-primary" />Standard (LS220): S$11,615 per participant</li>
-                    <li className="flex items-center gap-2"><DollarSign className="w-3.5 h-3.5 text-primary" />Premium (LS520): S$14,260 per participant</li>
+                    <li className="flex items-center gap-2"><DollarSign className="w-3.5 h-3.5 text-primary" />Standard (LS220): S$11,600 per participant</li>
+                    <li className="flex items-center gap-2"><DollarSign className="w-3.5 h-3.5 text-primary" />Premium (LS520): S$14,200 per participant</li>
                     <li className="flex items-center gap-2"><Award className="w-3.5 h-3.5 text-primary" />Certification Preparation &amp; Exams</li>
                   </ul>
                   <Link
