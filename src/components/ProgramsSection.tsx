@@ -31,6 +31,7 @@ import aiStackImg from "@/assets/programmes-aistack.jpg";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
 import certificationsImg from "@/assets/programmes-certifications.jpg";
+import finopsImg from "@/assets/programmes-finops.jpg";
 import aiEducationImg2 from "@/assets/programmes-aieducation-2.jpg";
 import aiEducationImg3 from "@/assets/programmes-aieducation-3.jpg";
 
@@ -61,7 +62,7 @@ const ProgramsSection = () => {
       description: t("programmes.aiEduDesc"),
       images: [aiEducationImg, aiEducationImg2, aiEducationImg3],
       courses: [
-        { name: "Introduction to Artificial Intelligence | AI Literacy Foundation Programme", slug: "/introduction-to-artificial-intelligence", isExternal: true },
+        { name: "Introduction to Artificial Intelligence — AI Literacy Foundation", slug: "/introduction-to-artificial-intelligence", isExternal: true },
         { name: ct("aiTrainingDesign"), slug: "ai-training-design-curriculum" },
         { name: ct("buildAiTutors"), slug: "build-ai-tutors-adaptive-learning" },
       ],
@@ -84,6 +85,7 @@ const ProgramsSection = () => {
         { name: ct("aiAccountability"), slug: "ai-accountability-when-ai-decides" },
         { name: ct("governingAiAgents"), slug: "governing-ai-agents-trust-boundaries" },
         { name: ct("aiWargaming"), slug: "ai-wargaming-test-decisions" },
+        { name: "AI-Native Prototyping — Building Under Compute Constraints", slug: "/ai-native-prototyping-compute-constraints", isExternal: true },
       ],
     },
     {
@@ -155,10 +157,20 @@ const ProgramsSection = () => {
       images: [cloudDevOpsImg, aiStackImg],
       courses: [
         { name: "Red Hat Enterprise Linux Administration – RHCSA Preparation", slug: "red-hat-enterprise-linux-rhcsa-preparation" },
+        { name: "Red Hat Learning Subscription – Standard & Premium", slug: "/programmes/cloud-devops-ai/red-hat-learning-subscription", isExternal: true },
         { name: "AWS Solutions Architect – Associate Preparation", slug: "aws-solutions-architect-associate-preparation" },
         { name: "Certified Kubernetes Administrator Preparation", slug: "certified-kubernetes-administrator-preparation" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
+      ],
+    },
+    {
+      title: "FinOps",
+      description:
+        "Cloud financial management, technology value and cost optimisation capabilities for professionals managing modern cloud and technology environments.",
+      images: [finopsImg],
+      courses: [
+        { name: "FinOps Foundation™ Full Catalog Access", slug: "finops-foundation-full-catalog" },
       ],
     },
   ];
