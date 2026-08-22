@@ -53,6 +53,7 @@ const AppContent = () => {
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/course/:slug" element={<CoursePage />} />
         <Route path="/course-category/:slug" element={<CourseCategoryPage />} />
+        <Route path="/programmes/finops" element={<CourseCategoryPage />} />
         <Route path="/agentic-ai-governance" element={<AgenticAIPage />} />
         <Route path="/ai-stack-masterclasses" element={<AIStackPage />} />
         <Route path="/ai-video-studio" element={<AIVideoStudioPage />} />

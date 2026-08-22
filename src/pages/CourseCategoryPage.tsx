@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Clock, DollarSign, Award, Wallet, Layers } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -8,6 +8,7 @@ import { courses } from "@/data/courses";
 import { getCourseImages } from "@/data/courseImages";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import redHatImg from "@/assets/redhat-subscription.jpg";
+import finopsImg from "@/assets/programmes-finops.jpg";
 
 type CategoryDef = {
   slug: string;
@@ -16,6 +17,8 @@ type CategoryDef = {
   pathway: { title: string; text: string }[];
   pathwayNote: string;
   image: string;
+  tagline?: string;
+  pathwayHeading?: string;
   seoTitle: string;
   seoDescription: string;
 };
@@ -50,11 +53,44 @@ const categories: Record<string, CategoryDef> = {
     seoDescription:
       "Explore practical AWS, Kubernetes and Red Hat Linux training programmes covering cloud architecture, DevOps, systems administration and modern infrastructure operations.",
   },
+  finops: {
+    slug: "finops",
+    name: "FinOps",
+    tagline: "Manage technology cost. Maximise business value.",
+    intro: [
+      "Develop the skills to connect technology investment with measurable business value across cloud, AI, SaaS, data platforms and modern infrastructure.",
+      "FinOps brings engineering, finance, procurement and business teams together around a shared understanding of technology cost, usage and value.",
+      "These programmes build cloud financial management, technology value and cost optimisation capabilities for professionals managing modern cloud and technology environments.",
+    ],
+    pathwayHeading: "Three connected capability layers",
+    pathway: [
+      {
+        title: "FinOps Practice",
+        text: "Understand FinOps principles, capabilities, personas and the collaboration model between engineering, finance and business teams.",
+      },
+      {
+        title: "Engineering & Optimisation",
+        text: "Apply cost visibility, allocation and optimisation practices across cloud, containers and AI workloads.",
+      },
+      {
+        title: "Technology Value",
+        text: "Extend FinOps beyond public cloud to SaaS, licensing, data platforms and data centres using standardised cost and usage data.",
+      },
+    ],
+    pathwayNote:
+      "Programmes may be taken according to role and existing experience. The Full Catalog provides access to multiple pathways within a single package.",
+    image: finopsImg,
+    seoTitle: "FinOps Training Singapore | Metaskills Institute",
+    seoDescription:
+      "FinOps programmes covering cloud financial management, technology value and cost optimisation across cloud, AI, SaaS, data platforms and containers.",
+  },
 };
 
 const CourseCategoryPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const category = slug ? categories[slug] : undefined;
+  const { pathname } = useLocation();
+  const resolvedSlug = slug || (pathname === "/programmes/finops" ? "finops" : undefined);
+  const category = resolvedSlug ? categories[resolvedSlug] : undefined;
 
   useEffect(() => {
     if (!category) return;
@@ -107,7 +143,7 @@ const CourseCategoryPage = () => {
               <span className="text-accent">.</span>
             </h1>
             <p className="mt-5 max-w-2xl font-body text-base md:text-lg text-white/75 leading-relaxed">
-              {category.intro[0]}
+              {category.tagline || category.intro[0]}
             </p>
           </div>
         </section>
@@ -139,7 +175,7 @@ const CourseCategoryPage = () => {
               </div>
             </div>
             <div className="lg:col-span-7 space-y-4">
-              {category.intro.slice(1).map((p, i) => (
+              {(category.tagline ? category.intro : category.intro.slice(1)).map((p, i) => (
                 <p key={i} className="font-body text-sm md:text-base text-muted-foreground leading-relaxed">
                   {p}
                 </p>
@@ -158,7 +194,7 @@ const CourseCategoryPage = () => {
               </span>
             </div>
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-8 tracking-tight">
-              Three connected capability layers
+              {category.pathwayHeading || "Three connected capability layers"}
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {category.pathway.map((layer, i) => (

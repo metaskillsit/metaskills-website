@@ -70,6 +70,17 @@ export interface Course {
   level?: string;
   seoTitle?: string;
   seoDescription?: string;
+  // Optional structured fields used by self-paced / access-based programmes
+  learningFormat?: {
+    mode: string;
+    body: string[];
+    accessPeriod?: string;
+    accessNote?: string;
+  };
+  registrationAdmin?: { intro: string[]; items: string[] };
+  importantInfo?: string[];
+  externalReference?: { label: string; href: string };
+  structureHeading?: string;
 }
 
 export const courses: Course[] = [
@@ -930,6 +941,9 @@ courses.push({
 
 import { cloudCertCourses } from "./coursesCloudCert";
 courses.push(...cloudCertCourses);
+
+import { finOpsCourses } from "./coursesFinOps";
+courses.push(...finOpsCourses);
 
 export const getCourseBySlug = (slug: string) =>
   courses.find((c) => c.slug === slug);

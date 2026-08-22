@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle, Clock, BookOpen } from "lucide-react";
+import { CheckCircle, Clock, BookOpen, ExternalLink, Info, ClipboardCheck, MonitorPlay } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 import { useCourseTranslation } from "@/hooks/useCourseTranslation";
@@ -142,7 +142,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
         viewport={{ once: true }}
       >
         <h2 className="font-heading text-2xl font-bold text-foreground mb-2">
-          {t("coursePage.courseStructure")}
+          {course.structureHeading || t("coursePage.courseStructure")}
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-8">
           {ct.courseDesign}
@@ -190,6 +190,91 @@ const CourseContent = ({ course }: CourseContentProps) => {
                 <span>{item}</span>
               </div>
             ))}
+          </div>
+        </motion.div>
+      )}
+
+      {course.learningFormat && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Learning Experience</h2>
+          <div className="flex items-center gap-2 text-sm text-primary font-medium mb-4">
+            <MonitorPlay className="w-4 h-4" />
+            {course.learningFormat.mode}
+          </div>
+          <div className="space-y-3 mb-6">
+            {course.learningFormat.body.map((p, i) => (
+              <p key={i} className="text-muted-foreground leading-relaxed">{p}</p>
+            ))}
+          </div>
+          {course.learningFormat.accessPeriod && (
+            <div className="p-5 bg-muted rounded-sm border border-border">
+              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Access Period</p>
+              <p className="font-bold text-foreground mb-2">{course.learningFormat.accessPeriod}</p>
+              {course.learningFormat.accessNote && (
+                <p className="text-xs text-muted-foreground leading-relaxed">{course.learningFormat.accessNote}</p>
+              )}
+            </div>
+          )}
+        </motion.div>
+      )}
+
+      {course.registrationAdmin && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
+            Registration &amp; Programme Administration
+          </h2>
+          <div className="space-y-3 mb-5">
+            {course.registrationAdmin.intro.map((p, i) => (
+              <p key={i} className="text-muted-foreground leading-relaxed">{p}</p>
+            ))}
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {course.registrationAdmin.items.map((item, i) => (
+              <div key={i} className="flex gap-3 p-4 bg-muted rounded-sm border border-border text-sm text-foreground/80 leading-relaxed">
+                <ClipboardCheck className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
+
+      {course.importantInfo && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="p-6 bg-muted/60 rounded-sm border border-border">
+            <div className="flex items-center gap-2 mb-4">
+              <Info className="w-4 h-4 text-muted-foreground" />
+              <h2 className="font-heading text-sm font-bold text-foreground uppercase tracking-wider">
+                Important Information
+              </h2>
+            </div>
+            <div className="space-y-2.5">
+              {course.importantInfo.map((p, i) => (
+                <p key={i} className="text-xs text-muted-foreground leading-relaxed">{p}</p>
+              ))}
+            </div>
+            {course.externalReference && (
+              <a
+                href={course.externalReference.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-3 transition-all"
+              >
+                {course.externalReference.label} <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
         </motion.div>
       )}
