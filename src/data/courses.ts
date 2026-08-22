@@ -70,6 +70,16 @@ export interface Course {
   level?: string;
   seoTitle?: string;
   seoDescription?: string;
+  // Optional structured fields used by self-paced / access-based programmes
+  learningFormat?: {
+    mode: string;
+    body: string[];
+    accessPeriod?: string;
+    accessNote?: string;
+  };
+  registrationAdmin?: { intro: string[]; items: string[] };
+  importantInfo?: string[];
+  externalReference?: { label: string; href: string };
 }
 
 export const courses: Course[] = [
