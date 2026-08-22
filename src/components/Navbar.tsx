@@ -267,7 +267,7 @@ const Navbar = () => {
         <div className="max-w-[1140px] mx-auto px-6 flex items-center justify-between h-20 md:h-[90px]">
           <div className="flex items-center gap-4">
             <button
-              className="text-foreground hover:text-primary transition-colors"
+              className="lg:hidden text-foreground hover:text-primary transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
