@@ -77,8 +77,17 @@ const Navbar = () => {
           label: t("programmes.aiEduTitle"),
           href: "/programmes",
           subItems: [
+            { label: "Introduction to Artificial Intelligence — AI Literacy Foundation", href: "/introduction-to-artificial-intelligence" },
             { label: t("courses.aiTrainingDesign.title"), href: "/course/ai-training-design-curriculum" },
             { label: t("courses.buildAiTutors.title"), href: "/course/build-ai-tutors-adaptive-learning" },
+          ],
+        },
+        {
+          label: t("programmes.certificationsTitle"),
+          href: "/programmes",
+          subItems: [
+            { label: "Professional Certificate in Applied AI", href: "/professional-certificate-in-Applied-AI" },
+            { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
           ],
         },
         {
@@ -89,6 +98,7 @@ const Navbar = () => {
             { label: t("courses.aiAccountability.title"), href: "/course/ai-accountability-when-ai-decides" },
             { label: t("courses.governingAiAgents.title"), href: "/course/governing-ai-agents-trust-boundaries" },
             { label: t("courses.aiWargaming.title"), href: "/course/ai-wargaming-test-decisions" },
+            { label: "AI-Native Prototyping — Building Under Compute Constraints", href: "/ai-native-prototyping-compute-constraints" },
           ],
         },
         {
