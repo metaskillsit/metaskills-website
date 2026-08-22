@@ -80,6 +80,7 @@ export interface Course {
   registrationAdmin?: { intro: string[]; items: string[] };
   importantInfo?: string[];
   externalReference?: { label: string; href: string };
+  structureHeading?: string;
 }
 
 export const courses: Course[] = [
@@ -940,6 +941,9 @@ courses.push({
 
 import { cloudCertCourses } from "./coursesCloudCert";
 courses.push(...cloudCertCourses);
+
+import { finOpsCourses } from "./coursesFinOps";
+courses.push(...finOpsCourses);
 
 export const getCourseBySlug = (slug: string) =>
   courses.find((c) => c.slug === slug);

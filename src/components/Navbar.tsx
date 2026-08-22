@@ -160,6 +160,13 @@ const Navbar = () => {
             { label: t("programmes.aiStack1DayCourse"), href: "/ai-stack-masterclasses" },
           ],
         },
+        {
+          label: "FinOps",
+          href: "/programmes/finops",
+          subItems: [
+            { label: "FinOps Foundation™ Full Catalog Access", href: "/course/finops-foundation-full-catalog" },
+          ],
+        },
       ],
     },
     {

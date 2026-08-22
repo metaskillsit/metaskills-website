@@ -17,6 +17,7 @@ import vibeCodingImg from "@/assets/programmes-vibecoding.jpg";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
 import certificationsImg from "@/assets/programmes-certifications.jpg";
+import finopsImg from "@/assets/programmes-finops.jpg";
 
 type Course = {
   name: string;
@@ -177,6 +178,17 @@ const ProgrammesPage = () => {
         { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
       ],
       categoryHref: "/course-category/cloud-devops-ai-stack",
+    },
+    {
+      id: "finops",
+      title: "FinOps",
+      description:
+        "Cloud financial management, technology value and cost optimisation capabilities for professionals managing modern cloud and technology environments.",
+      image: finopsImg,
+      courses: [
+        { name: "FinOps Foundation™ Full Catalog Access", slug: "finops-foundation-full-catalog" },
+      ],
+      categoryHref: "/programmes/finops",
     },
   ];
 

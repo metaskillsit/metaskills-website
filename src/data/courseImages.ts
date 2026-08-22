@@ -71,6 +71,7 @@ import vibeCoding1 from "@/assets/past-class-44.jpg";
 import vibeCoding2 from "@/assets/past-class-45.jpg";
 import vibeCoding3 from "@/assets/past-class-46.jpg";
 // Reuse some category-level images for variety (2nd and 3rd slides)
+import finopsImg from "@/assets/programmes-finops.jpg";
 import courseCyber1 from "@/assets/course-cyber-1.jpg";
 import courseCyber2 from "@/assets/course-cyber-2.jpg";
 import courseCyber3 from "@/assets/course-cyber-3.jpg";
@@ -120,6 +121,8 @@ const courseImageMap: Record<string, string[]> = {
   "aws-solutions-architect-associate-preparation": [awsSaa1, cloudDevOpsGeneric, cka1],
   "certified-kubernetes-administrator-preparation": [cka1, cloudDevOpsGeneric, rhcsa1],
   "red-hat-enterprise-linux-rhcsa-preparation": [rhcsa1, cloudDevOpsGeneric, awsSaa1],
+  // FinOps
+  "finops-foundation-full-catalog": [finopsImg, cloudDevOpsGeneric, awsSaa1],
 };
 
 

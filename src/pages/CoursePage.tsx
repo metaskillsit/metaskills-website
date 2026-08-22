@@ -54,6 +54,7 @@ const CoursePageContent = ({ slug }: { slug: string }) => {
 
 const categorySlugs: Record<string, string> = {
   "Cloud, DevOps & AI Stack": "cloud-devops-ai-stack",
+  "FinOps": "finops",
 };
 
 const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, relatedCourses }: any) => {
@@ -93,7 +94,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
               <>
                 <li aria-hidden="true">/</li>
                 <li>
-                  <Link to={`/course-category/${categorySlug}`} className="hover:text-accent transition-colors">
+                  <Link to={categorySlug === "finops" ? "/programmes/finops" : `/course-category/${categorySlug}`} className="hover:text-accent transition-colors">
                     {ct.category}
                   </Link>
                 </li>

@@ -53,6 +53,7 @@ export const finOpsCourses: Course[] = [
       "Technology Governance",
       "Organisations developing FinOps capabilities across multidisciplinary teams",
     ],
+    structureHeading: "Full Catalog Learning Pathways",
     courseDesign:
       "The Full Catalog is accessed through the FinOps Foundation learning environment. Participants complete the applicable modules, learning pathways and certification requirements through the online platform. No classroom attendance at Metaskills Institute is required for this programme.",
     schedule: [
