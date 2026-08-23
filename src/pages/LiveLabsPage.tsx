@@ -68,7 +68,7 @@ const LiveLabsPage = () => {
         {
           title: t("liveLabs.financeLiteracy.title"),
           desc: t("liveLabs.financeLiteracy.desc"),
-          href: "/finance-literacy-level-1",
+          href: "/metaskills-activity-studio",
           icon: Wallet,
         },
       ],

@@ -62,7 +62,7 @@ const AppContent = () => {
         <Route path="/consulting" element={<ConsultingPage />} />
         <Route path="/professional-certificate-in-Applied-AI" element={<SMUPCMLPage />} />
         <Route path="/introduction-to-artificial-intelligence" element={<IntroToAIPage />} />
-        <Route path="/finance-literacy-level-1" element={<FinanceLiteracyPage />} />
+        <Route path="/metaskills-activity-studio" element={<FinanceLiteracyPage />} />
         <Route path="/live-labs" element={<LiveLabsPage />} />
         <Route path="/ai-native-prototyping-compute-constraints" element={<AIComputeEconomicsPage />} />
         <Route path="/programmes/cloud-devops-ai/red-hat-learning-subscription" element={<RedHatSubscriptionPage />} />
