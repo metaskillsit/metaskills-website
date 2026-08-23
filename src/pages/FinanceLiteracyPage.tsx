@@ -37,7 +37,7 @@ const FinanceLiteracyPage = () => {
         <div className="w-full" style={{ height: "100vh" }}>
           <iframe
             src="https://meta-financialliteracy.lovable.app/"
-            title="Metaskills Activity Studio Finance Literacy Level 1"
+            title="Metaskills Activity Studio"
             className="w-full h-full border-0"
             allow="camera; microphone; clipboard-read; clipboard-write; fullscreen; autoplay"
           />

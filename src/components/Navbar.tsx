@@ -219,7 +219,7 @@ const Navbar = () => {
           label: t("liveLabs.activityStudio"),
           href: "/live-labs",
           subItems: [
-            { label: "Metaskills Activity Studio Finance Literacy Level 1", href: "/finance-literacy-level-1" },
+            { label: "Metaskills Activity Studio", href: "/finance-literacy-level-1" },
           ],
         },
       ],
@@ -412,7 +412,7 @@ const Navbar = () => {
                         : "text-foreground/80 hover:bg-muted hover:text-primary"
                     }`}
                   >
-                    Metaskills Activity Studio Finance Literacy Level 1
+                    Metaskills Activity Studio
                   </Link>
 
                 </div>
