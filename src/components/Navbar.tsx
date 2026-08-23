@@ -219,7 +219,7 @@ const Navbar = () => {
           label: t("liveLabs.activityStudio"),
           href: "/live-labs",
           subItems: [
-            { label: "Metaskills Activity Studio", href: "/finance-literacy-level-1" },
+            { label: "Metaskills Activity Studio", href: "/metaskills-activity-studio" },
           ],
         },
       ],
@@ -326,7 +326,7 @@ const Navbar = () => {
               <button
                 onClick={() => setLabsOpen(!labsOpen)}
                 className={`flex items-center gap-1 text-[13px] font-medium tracking-wide transition-colors ${
-                  ["/live-labs", "/agentic-ai-governance", "/ai-video-studio", "/llm-playground", "/ai-song-studio", "/finance-literacy-level-1"].includes(location.pathname)
+                  ["/live-labs", "/agentic-ai-governance", "/ai-video-studio", "/llm-playground", "/ai-song-studio", "/metaskills-activity-studio"].includes(location.pathname)
                     ? "text-primary"
                     : "text-foreground/70 hover:text-primary"
                 }`}
@@ -404,10 +404,10 @@ const Navbar = () => {
                     {t("liveLabs.activityStudio")}
                   </div>
                   <Link
-                    to="/finance-literacy-level-1"
+                    to="/metaskills-activity-studio"
                     onClick={() => setLabsOpen(false)}
                     className={`block px-4 py-2.5 text-sm transition-colors ${
-                      location.pathname === "/finance-literacy-level-1"
+                      location.pathname === "/metaskills-activity-studio"
                         ? "bg-primary/10 text-primary font-medium"
                         : "text-foreground/80 hover:bg-muted hover:text-primary"
                     }`}
