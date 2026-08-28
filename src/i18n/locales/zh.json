@@ -16,7 +16,7 @@
     "howToApply": "如何申请",
     "courseFeesAndFunding": "学费与资助",
     "enquireNow": "立即咨询",
-    "msiLiveLabs": "MSI Live Labs",
+    "msiLiveLabs": "Live Labs",
     "agenticAIGovernance": "智能代理AI治理系统",
     "aiStackTraining": "AI技术栈培训"
   },
@@ -1305,7 +1305,7 @@
     "p5Desc": "我们与社会企业、非政府组织及企业社会责任团队合作，运用人工智能促进健康、包容与社区影响力。"
   },
   "liveLabs": {
-    "title": "MSI Live Labs",
+    "title": "Live Labs",
     "subtitle": "专为实验、学习及真实概念验证而打造的交互式AI原型环境。",
     "badge": "原型环境",
     "overview": "概览",

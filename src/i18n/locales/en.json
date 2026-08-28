@@ -16,7 +16,7 @@
     "howToApply": "How to Apply",
     "courseFeesAndFunding": "Course Fees & Funding",
     "enquireNow": "Enquire Now",
-    "msiLiveLabs": "MSI Live Labs",
+    "msiLiveLabs": "Live Labs",
     "agenticAIGovernance": "Agentic AI Governance System",
     "aiStackTraining": "AI Stack Training"
   },
@@ -1374,7 +1374,7 @@
     "p5Desc": "We partner with social enterprises, NGOs and corporate CSR teams to apply AI in ways that support wellbeing, inclusion and community impact."
   },
   "liveLabs": {
-    "title": "MSI Live Labs",
+    "title": "Live Labs",
     "subtitle": "Interactive AI prototypes built for experimentation, learning, and real-world proof of concept.",
     "badge": "Prototype Environment",
     "overview": "Overview",

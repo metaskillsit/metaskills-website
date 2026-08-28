@@ -321,7 +321,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* MSI Live Labs dropdown */}
+            {/* Live Labs dropdown */}
             <div ref={labsRef} className="relative">
               <button
                 onClick={() => setLabsOpen(!labsOpen)}
