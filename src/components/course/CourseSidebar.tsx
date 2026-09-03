@@ -7,9 +7,6 @@ interface CourseSidebarProps {
 }
 
 const coursePricingOverrides: Record<string, { corporate: string; corporateLabel?: string; selfSponsored?: string; customNotes?: boolean; hideNotes?: boolean; fundingNote?: string }> = {
-  "aws-cloud-solutions-architecture-devops-placeholder": {
-    corporate: "",
-  },
 
   "aws-cloud-solutions-architecture-devops": {
     corporateLabel: "Public/Corporate Rates",
