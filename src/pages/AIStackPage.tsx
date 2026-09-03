@@ -32,6 +32,7 @@ import veo3Logo from "@/assets/techlogos/veo3.png";
 import higgsfieldLogo from "@/assets/techlogos/higgsfield.png";
 import seedanceLogo from "@/assets/techlogos/seedance.png";
 import openclawLogo from "@/assets/techlogos/openclaw.png";
+import hermesLogo from "@/assets/techlogos/hermes.png";
 
 const WHATSAPP_URL =
   "https://wa.me/6589866146?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.";
