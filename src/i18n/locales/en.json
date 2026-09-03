@@ -592,9 +592,9 @@
       "scheduleDay1Item4": "Learning path planning",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiNoCode": {
       "title": "Build AI Workflows with No Code (2026 Edition)",
@@ -614,9 +614,9 @@
       "scheduleDay1Item4": "Testing, debugging, and deployment",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "designAiPlainLang": {
       "title": "Design AI Automations Using Plain Language (2026 Edition)",
@@ -636,9 +636,9 @@
       "scheduleDay1Item4": "Production deployment",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildOpTools": {
       "title": "Build Operational Tools with AI Coding Agents (2026 Edition)",
@@ -658,9 +658,9 @@
       "scheduleDay1Item4": "Quality assurance and deployment",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiAssistant": {
       "title": "Build Your Own AI Assistant/Agent To Work For You (2026 Edition)",
@@ -680,9 +680,9 @@
       "scheduleDay1Item4": "Security and risk management",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "gptKnowledgeBase": {
       "title": "How To GPT Your Organisation's Knowledge Base (2026 Edition)",
@@ -702,9 +702,9 @@
       "scheduleDay1Item4": "Knowledge retrieval and testing",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "secureAgenticInfra": {
       "title": "Secure Your Agentic AI Infrastructure: Threats, Defences, and Governance (2026 Edition)",
@@ -724,9 +724,9 @@
       "scheduleDay1Item4": "Governance policy drafting",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiTrainingDesign": {
       "title": "Using AI for Training Design and Curriculum Development (2026 Edition)",
@@ -746,9 +746,9 @@
       "scheduleDay1Item4": "Content synthesis and review",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "buildAiTutors": {
       "title": "Build Powerful AI Tutors That Adapt To Students' Learning Paths (2026 Edition)",
@@ -768,9 +768,9 @@
       "scheduleDay1Item4": "Scaling strategies and review",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "cyberRolesThreats": {
       "title": "Cybersecurity: Roles, Threats, and Certification Pathways",
@@ -790,9 +790,9 @@
       "scheduleDay1Item4": "Certification roadmap planning",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$6,000 per workshop (up to 15 pax)",
+      "feesCorporateSmall": "S$6,000/run",
+      "feesCorporateLarge": "S$6,000/run"
     },
     "aiStrategyLeaders": {
       "title": "AI Strategy and Roadmap for Leaders",
