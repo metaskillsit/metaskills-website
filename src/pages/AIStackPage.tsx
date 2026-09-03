@@ -534,7 +534,7 @@ const AIStackPage = () => {
                         <span className="text-xs text-gray-400">per pax</span>
                       </div>
                       <p className="text-xs text-[#C9A84C] mt-1 font-medium">
-                        Includes complimentary OpenClaw installation
+                        Training includes Hermes Full Installation
                       </p>
                     </div>
                   )}
