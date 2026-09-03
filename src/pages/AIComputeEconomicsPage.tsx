@@ -177,7 +177,7 @@ const AIComputeEconomicsPage = () => {
 
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "AI Compute Economics & Sovereign AI — 2-Day Workshop | Metaskills Institute";
+    document.title = "Strategic AI Compute and Optimisation — 2-Day Workshop | Metaskills Institute";
     const meta = document.querySelector('meta[name="description"]');
     const prevDesc = meta?.getAttribute("content") || "";
     meta?.setAttribute(
@@ -216,6 +216,9 @@ const AIComputeEconomicsPage = () => {
               <h1 className="font-heading text-3xl md:text-5xl font-bold text-white leading-tight max-w-4xl">
                 {TITLE}
               </h1>
+              <p className="mt-2 text-lg md:text-xl text-accent font-medium max-w-4xl">
+                {SUBHEADER}
+              </p>
               <p className="mt-5 text-white/75 text-base md:text-lg leading-relaxed max-w-3xl">
                 {SUBTITLE}
               </p>
