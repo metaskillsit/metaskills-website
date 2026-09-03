@@ -94,23 +94,25 @@ interface Course {
   category: string;
   categoryLabel: string;
   description: string;
+  image?: string;
 }
 
 const hotCourses = new Set([
-  "Hermes in OpenClaw: Agentic AI / Personal AI Agent",
+  "Hermes/Openclaw: Agentic AI / Personal AI Agent",
   "Lovable: Build Web Apps with AI, No Code Needed",
 ]);
 
 const courses: Course[] = [
   // 🔥 Hot — pinned to top
   {
-    title: "Hermes in OpenClaw: Agentic AI / Personal AI Agent",
+    title: "Hermes/Openclaw: Agentic AI / Personal AI Agent",
     vendor: "OpenClaw",
     price: "S$588",
     category: "agentic",
     categoryLabel: "Agentic AI",
     description:
       "Deploy a local, open-source AI agent that connects any LLM to your apps, files, browser, and messaging channels — and works for you around the clock.",
+    image: hermesLogo,
   },
   {
     title: "Lovable: Build Web Apps with AI, No Code Needed",
