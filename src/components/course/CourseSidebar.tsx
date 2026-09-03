@@ -125,7 +125,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
                 {showSelfSponsored && (
                   <div className="border-t border-border pt-3">
                     <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.selfSponsored")}</p>
-                    <p className="font-bold text-foreground">S$750 per pax per day</p>
+                    <p className="font-bold text-foreground">{pricing?.selfSponsored || course.fees.selfSponsored}</p>
                   </div>
                 )}
                 {fundingNote && (
