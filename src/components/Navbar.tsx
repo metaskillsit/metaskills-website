@@ -98,7 +98,7 @@ const Navbar = () => {
             { label: t("courses.aiAccountability.title"), href: "/course/ai-accountability-when-ai-decides" },
             { label: t("courses.governingAiAgents.title"), href: "/course/governing-ai-agents-trust-boundaries" },
             { label: t("courses.aiWargaming.title"), href: "/course/ai-wargaming-test-decisions" },
-            { label: "AI-Native Prototyping — Building Under Compute Constraints", href: "/ai-native-prototyping-compute-constraints" },
+            { label: "Strategic AI Compute and Optimisation", href: "/ai-native-prototyping-compute-constraints" },
           ],
         },
         {
