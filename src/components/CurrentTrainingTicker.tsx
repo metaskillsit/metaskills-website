@@ -29,13 +29,13 @@ const CurrentTrainingTicker = () => {
     "NTUC LHub - ICICI (6 runs)",
     "MINDEF - AWS Certification",
     "NTUC LHub - GE (3 runs)",
-    "SMU - Professional Cert in Machine Learning",
+    "SMU Academy - Professional Cert in Machine Learning",
     "AISG-Daughters of Tomorrow (3 runs)",
     "AISG-United Women's Group (3 runs)",
     "AISG-Micron (1 run)",
     "Synpulse (1 run)",
     "Smarter Supply Chain Workflows (4 runs)",
-    "NUS AIDF-Zhejiang University CEO/Executive Training (multiple runs)",
+    
   ];
 
   const items = [...engagements, ...engagements];
