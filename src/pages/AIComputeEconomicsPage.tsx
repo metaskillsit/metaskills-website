@@ -335,8 +335,8 @@ const AIComputeEconomicsPage = () => {
             ))}
           </div>
           <p className="border-l-2 border-accent pl-5 text-sm text-muted-foreground italic leading-relaxed max-w-2xl">
-            You can already code — we don't test raw coding ability. We assess how well you direct AI
-            under constraint.
+            There's no exam and no gotcha questions. If you already build or lead people who build,
+            you have exactly the right mindset — we simply put that judgement under a real budget.
           </p>
         </Section>
 
@@ -586,7 +586,7 @@ const AIComputeEconomicsPage = () => {
             <div className="lg:col-span-2">
               <Eyebrow dark>Enquiry</Eyebrow>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
-                Request in-house training
+                Tell us about your team
               </h2>
               <p className="text-white/65 text-sm leading-relaxed">
                 Tell us about your team and we will return a scoped proposal — cohort size, sector
