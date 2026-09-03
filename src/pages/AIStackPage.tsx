@@ -32,6 +32,7 @@ import veo3Logo from "@/assets/techlogos/veo3.png";
 import higgsfieldLogo from "@/assets/techlogos/higgsfield.png";
 import seedanceLogo from "@/assets/techlogos/seedance.png";
 import openclawLogo from "@/assets/techlogos/openclaw.png";
+import hermesLogo from "@/assets/techlogos/hermes.png";
 
 const WHATSAPP_URL =
   "https://wa.me/6589866146?text=Hi%20I%27m%20interested%20in%20your%20AI%20training%20and%20solutions.";
@@ -93,23 +94,25 @@ interface Course {
   category: string;
   categoryLabel: string;
   description: string;
+  image?: string;
 }
 
 const hotCourses = new Set([
-  "Hermes in OpenClaw: Agentic AI / Personal AI Agent",
+  "Hermes/Openclaw: Agentic AI / Personal AI Agent",
   "Lovable: Build Web Apps with AI, No Code Needed",
 ]);
 
 const courses: Course[] = [
   // 🔥 Hot — pinned to top
   {
-    title: "Hermes in OpenClaw: Agentic AI / Personal AI Agent",
+    title: "Hermes/Openclaw: Agentic AI / Personal AI Agent",
     vendor: "OpenClaw",
     price: "S$588",
     category: "agentic",
     categoryLabel: "Agentic AI",
     description:
       "Deploy a local, open-source AI agent that connects any LLM to your apps, files, browser, and messaging channels — and works for you around the clock.",
+    image: hermesLogo,
   },
   {
     title: "Lovable: Build Web Apps with AI, No Code Needed",
