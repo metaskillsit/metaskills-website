@@ -9,6 +9,7 @@ import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 interface NavItem {
   label: string;
   href: string;
+  isSubItem?: boolean;
 }
 
 interface NavCategory {
@@ -88,12 +89,12 @@ const Navbar = () => {
           subItems: [
             { label: "Professional Certificate in Applied AI", href: "/professional-certificate-in-Applied-AI" },
             { label: "Advanced Certificate in AI-Powered Business Analytics", href: "/advanced-certificate-ai-powered-business-analytics" },
-            { label: t("courses.aiBizAnalyticsModule1.title"), href: "/course/foundations-business-analytics-ai-concepts-frameworks" },
-            { label: t("courses.aiBizAnalyticsModule2.title"), href: "/course/data-preparation-cleaning-power-query-ai-copilots" },
-            { label: t("courses.aiBizAnalyticsModule3.title"), href: "/course/business-analytics-models-dax-chatgpt" },
-            { label: t("courses.aiBizAnalyticsModule4.title"), href: "/course/data-storytelling-dashboards-power-bi-ai-copilots" },
-            { label: t("courses.aiBizAnalyticsModule5.title"), href: "/course/business-dashboard-decision-support-power-bi-ai-copilots" },
-            { label: t("courses.aiBizAnalyticsModule6.title"), href: "/course/task-automation-macros-vba-ai-copilots" },
+            { isSubItem: true, label: t("courses.aiBizAnalyticsModule1.title"), href: "/course/foundations-business-analytics-ai-concepts-frameworks" },
+            { isSubItem: true, label: t("courses.aiBizAnalyticsModule2.title"), href: "/course/data-preparation-cleaning-power-query-ai-copilots" },
+            { isSubItem: true, label: t("courses.aiBizAnalyticsModule3.title"), href: "/course/business-analytics-models-dax-chatgpt" },
+            { isSubItem: true, label: t("courses.aiBizAnalyticsModule4.title"), href: "/course/data-storytelling-dashboards-power-bi-ai-copilots" },
+            { isSubItem: true, label: t("courses.aiBizAnalyticsModule5.title"), href: "/course/business-dashboard-decision-support-power-bi-ai-copilots" },
+            { isSubItem: true, label: t("courses.aiBizAnalyticsModule6.title"), href: "/course/task-automation-macros-vba-ai-copilots" },
             { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
           ],
         },
@@ -628,22 +629,29 @@ const Navbar = () => {
                                     transition={{ duration: 0.2 }}
                                     className="overflow-hidden"
                                   >
-                                    {cat.subItems.map((sub) => (
+                                    {(() => { let m = 0; let sn = 0; return cat.subItems.map((sub) => {
+                                      let numLabel: string;
+                                      if (sub.isSubItem) { sn += 1; numLabel = `${String(m).padStart(2, "0")}.${String(sn).padStart(2, "0")}`; }
+                                      else { m += 1; sn = 0; numLabel = String(m).padStart(2, "0"); }
+                                      return (
                                       <li key={sub.href}>
                                         <Link
                                           to={sub.href}
                                           onClick={() => setMenuOpen(false)}
-                                          className={`flex items-center gap-2 py-2 pl-7 pr-3 text-[13px] transition-colors group ${
+                                          className={`flex items-start gap-2 py-2 pr-3 text-[13px] transition-colors group ${
+                                            sub.isSubItem ? "pl-12" : "pl-7"
+                                          } ${
                                             location.pathname === sub.href
                                               ? "text-primary font-medium"
                                               : "text-muted-foreground hover:text-primary"
                                           }`}
                                         >
-                                          <span className="w-1 h-1 rounded-full bg-border shrink-0" />
+                                          <span className="font-mono text-[10px] tracking-widest shrink-0 pt-[3px] opacity-70">{numLabel}</span>
                                           <span>{sub.label}</span>
                                         </Link>
                                       </li>
-                                    ))}
+                                      );
+                                    }); })()}
                                   </motion.ul>
                                 )}
                               </AnimatePresence>
