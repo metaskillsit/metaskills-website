@@ -410,42 +410,44 @@ const AIComputeEconomicsPage = () => {
           </div>
         </Section>
 
-        {/* 8. SCHEDULE */}
-        <Section>
-          <Eyebrow>Schedule</Eyebrow>
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-10">
-            Two days, end to end
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { title: "Day 1 — Build & Burn", rows: day1 },
-              { title: "Day 2 — Optimise & Justify", rows: day2 },
-            ].map((d) => (
-              <div key={d.title} className="border border-border rounded-sm overflow-hidden">
-                <div className="bg-primary px-6 py-3 flex items-center gap-3">
-                  <Clock className="h-4 w-4 text-accent" aria-hidden="true" />
-                  <h3 className="text-sm font-bold text-primary-foreground">{d.title}</h3>
+        {/* 8. SCHEDULE — hidden by request; toggle `false` to `true` to restore */}
+        {false && (
+          <Section>
+            <Eyebrow>Schedule</Eyebrow>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-10">
+              Two days, end to end
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                { title: "Day 1 — Build & Burn", rows: day1 },
+                { title: "Day 2 — Optimise & Justify", rows: day2 },
+              ].map((d) => (
+                <div key={d.title} className="border border-border rounded-sm overflow-hidden">
+                  <div className="bg-primary px-6 py-3 flex items-center gap-3">
+                    <Clock className="h-4 w-4 text-accent" aria-hidden="true" />
+                    <h3 className="text-sm font-bold text-primary-foreground">{d.title}</h3>
+                  </div>
+                  <ul className="divide-y divide-border">
+                    {d.rows.map(([time, item]) => (
+                      <li key={time + item} className="flex gap-4 px-6 py-3">
+                        <span className="w-24 flex-shrink-0 text-xs font-semibold text-accent tabular-nums pt-0.5">
+                          {time}
+                        </span>
+                        <span className="text-sm text-foreground/85 leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="divide-y divide-border">
-                  {d.rows.map(([time, item]) => (
-                    <li key={time + item} className="flex gap-4 px-6 py-3">
-                      <span className="w-24 flex-shrink-0 text-xs font-semibold text-accent tabular-nums pt-0.5">
-                        {time}
-                      </span>
-                      <span className="text-sm text-foreground/85 leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 rounded-sm border-l-2 border-accent bg-accent/10 p-5">
-            <p className="text-sm text-foreground/85 leading-relaxed">
-              <span className="font-semibold">Compute checkpoint</span> — if credits are fully used,
-              accounts freeze until a revised budget plan is submitted (mirrors real governance).
-            </p>
-          </div>
-        </Section>
+              ))}
+            </div>
+            <div className="mt-8 rounded-sm border-l-2 border-accent bg-accent/10 p-5">
+              <p className="text-sm text-foreground/85 leading-relaxed">
+                <span className="font-semibold">Compute checkpoint</span> — if credits are fully used,
+                accounts freeze until a revised budget plan is submitted (mirrors real governance).
+              </p>
+            </div>
+          </Section>
+        )}
 
         {/* 9. ASSESSMENT */}
         <Section dark>
