@@ -263,8 +263,7 @@ const AIComputeEconomicsPage = () => {
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 They leave with a working prototype, a documented architecture and a compute log —
-                the artefacts needed to defend a technical decision in front of a board, a panel or a
-                procurement committee.
+                real outputs they can walk into a board, panel or procurement meeting with.
               </p>
             </div>
             <blockquote className="border-l-2 border-accent pl-6 self-center">
