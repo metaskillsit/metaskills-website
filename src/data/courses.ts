@@ -945,6 +945,9 @@ courses.push(...cloudCertCourses);
 import { finOpsCourses } from "./coursesFinOps";
 courses.push(...finOpsCourses);
 
+import { aiPoweredBusinessAnalyticsCourses } from "./coursesAIPoweredBusinessAnalytics";
+courses.push(...aiPoweredBusinessAnalyticsCourses);
+
 export const getCourseBySlug = (slug: string) =>
   courses.find((c) => c.slug === slug);
 

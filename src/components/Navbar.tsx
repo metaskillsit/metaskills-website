@@ -87,6 +87,13 @@ const Navbar = () => {
           href: "/programmes",
           subItems: [
             { label: "Professional Certificate in Applied AI", href: "/professional-certificate-in-Applied-AI" },
+            { label: "Advanced Certificate in AI-Powered Business Analytics", href: "/advanced-certificate-ai-powered-business-analytics" },
+            { label: t("courses.aiBizAnalyticsModule1.title"), href: "/course/foundations-business-analytics-ai-concepts-frameworks" },
+            { label: t("courses.aiBizAnalyticsModule2.title"), href: "/course/data-preparation-cleaning-power-query-ai-copilots" },
+            { label: t("courses.aiBizAnalyticsModule3.title"), href: "/course/business-analytics-models-dax-chatgpt" },
+            { label: t("courses.aiBizAnalyticsModule4.title"), href: "/course/data-storytelling-dashboards-power-bi-ai-copilots" },
+            { label: t("courses.aiBizAnalyticsModule5.title"), href: "/course/business-dashboard-decision-support-power-bi-ai-copilots" },
+            { label: t("courses.aiBizAnalyticsModule6.title"), href: "/course/task-automation-macros-vba-ai-copilots" },
             { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
           ],
         },
