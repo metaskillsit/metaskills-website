@@ -18,6 +18,7 @@ import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
 import certificationsImg from "@/assets/programmes-certifications.jpg";
 import finopsImg from "@/assets/programmes-finops.jpg";
+import aiStackImg from "@/assets/programmes-aistack.jpg";
 
 type Course = {
   name: string;
