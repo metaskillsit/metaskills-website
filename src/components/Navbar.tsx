@@ -61,6 +61,17 @@ const Navbar = () => {
       label: t("nav.programmes"),
       categories: [
         {
+          label: "AI Stack Masterclasses",
+          href: "/ai-stack-masterclasses",
+          subItems: [
+            { label: "Hermes/Openclaw: Agentic AI / Personal AI Agent", href: "/ai-stack-masterclasses" },
+            { label: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", href: "/ai-stack-masterclasses" },
+            { label: "AI Automation (n8n, Zapier, Make.com)", href: "/ai-stack-masterclasses" },
+            { label: "AI Coding (Lovable, Cursor, GitHub Copilot)", href: "/ai-stack-masterclasses" },
+            { label: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", href: "/ai-stack-masterclasses" },
+          ],
+        },
+        {
           label: t("programmes.fintechTitle"),
           href: "/programmes",
           subItems: [
@@ -175,7 +186,6 @@ const Navbar = () => {
             { label: "AWS Solutions Architect – Associate Preparation", href: "/course/aws-solutions-architect-associate-preparation" },
             { label: "Certified Kubernetes Administrator Preparation", href: "/course/certified-kubernetes-administrator-preparation" },
             { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
-            { label: t("programmes.aiStack1DayCourse"), href: "/ai-stack-masterclasses" },
           ],
         },
         {

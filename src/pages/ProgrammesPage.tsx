@@ -18,6 +18,7 @@ import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
 import certificationsImg from "@/assets/programmes-certifications.jpg";
 import finopsImg from "@/assets/programmes-finops.jpg";
+import aiStackImg from "@/assets/programmes-aistack.jpg";
 
 type Course = {
   name: string;
@@ -43,6 +44,21 @@ const ProgrammesPage = () => {
   const ct = (key: string) => t(`courses.${key}.title`);
 
   const programCategories: Category[] = [
+    {
+      id: "ai-stack-masterclasses",
+      title: "AI Stack Masterclasses",
+      description:
+        "One-day, hands-on masterclasses across the modern AI stack — agentic AI, frontier LLMs, automation, AI coding, research and media tools.",
+      image: aiStackImg,
+      courses: [
+        { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "AI Automation (n8n, Zapier, Make.com)", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "AI Coding (Lovable, Cursor, GitHub Copilot)", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", slug: "/ai-stack-masterclasses", isExternal: true },
+      ],
+      categoryHref: "/ai-stack-masterclasses",
+    },
     {
       id: "fintech",
       title: t("programmes.fintechTitle"),
@@ -183,7 +199,6 @@ const ProgrammesPage = () => {
         { name: "AWS Solutions Architect – Associate Preparation", slug: "aws-solutions-architect-associate-preparation" },
         { name: "Certified Kubernetes Administrator Preparation", slug: "certified-kubernetes-administrator-preparation" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
-        { name: t("programmes.aiStack1DayCourse"), slug: "/ai-stack-masterclasses", isExternal: true },
       ],
       categoryHref: "/course-category/cloud-devops-ai-stack",
     },
