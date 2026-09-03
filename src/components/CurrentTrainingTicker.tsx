@@ -22,7 +22,7 @@ const CurrentTrainingTicker = () => {
     "NTUC LHub - MayBank (19 runs)",
     "NTUC LHub - UOB (6 runs)",
     "NTUC LHub - Sumitomo Mitsui Trust Bank (12 runs)",
-    "BOC Senior Management - Leveraging Generative AI for Executive Decision-Making",
+    "Leveraging Generative AI for Executive Decision-Making - BOC, NUS AIDF - Zhejiang University",
     "TinkerTanker - DSTA Intermediate Agentic Engineering",
     "NTUC LHub - AIA (8 runs)",
     "AMD Regional Sales - Agentic Setups on Ryzen AI Laptops",
