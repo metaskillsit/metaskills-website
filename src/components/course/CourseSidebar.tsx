@@ -7,9 +7,7 @@ interface CourseSidebarProps {
 }
 
 const coursePricingOverrides: Record<string, { corporate: string; corporateLabel?: string; selfSponsored?: string; customNotes?: boolean; hideNotes?: boolean; fundingNote?: string }> = {
-  "ai-strategy-roadmap-leaders": {
-    corporate: "S$15,000 per workshop per day (up to 10 pax)",
-  },
+
   "aws-cloud-solutions-architecture-devops": {
     corporateLabel: "Public/Corporate Rates",
     corporate: "S$9,000 per pax",
@@ -41,7 +39,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
   const hasStructuredFees = Boolean(course.feeNotes);
   const corporateRate = hasStructuredFees
     ? course.fees.corporateSmall
-    : pricing?.corporate || "S$6,000 per workshop per day (up to 10 pax)";
+    : pricing?.corporate || course.fees.corporateSmall;
   const showSelfSponsored = hasStructuredFees ? true : pricing ? pricing.selfSponsored !== undefined : true;
   const useCustomNotes = pricing?.customNotes || false;
   const hideNotes = hasStructuredFees ? true : pricing?.hideNotes || false;
@@ -127,7 +125,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
                 {showSelfSponsored && (
                   <div className="border-t border-border pt-3">
                     <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.selfSponsored")}</p>
-                    <p className="font-bold text-foreground">S$750 per pax per day</p>
+                    <p className="font-bold text-foreground">{pricing?.selfSponsored || course.fees.selfSponsored}</p>
                   </div>
                 )}
                 {fundingNote && (
