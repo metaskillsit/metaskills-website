@@ -118,7 +118,7 @@ const RedHatSubscriptionPage = () => {
             <div className="flex items-center gap-3 mb-5">
               <span className="inline-block h-px w-10 bg-accent" />
               <span className="font-body text-[11px] tracking-[0.28em] uppercase text-white/70 font-medium">
-                Cloud, DevOps &amp; AI Stack
+                Cloud and DevOps
               </span>
             </div>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight tracking-tight">
@@ -180,7 +180,7 @@ const RedHatSubscriptionPage = () => {
             <li aria-hidden="true">/</li>
             <li>
               <Link to="/course-category/cloud-devops-ai-stack" className="hover:text-accent transition-colors">
-                Cloud, DevOps &amp; AI Stack
+                Cloud and DevOps
               </Link>
             </li>
             <li aria-hidden="true">/</li>

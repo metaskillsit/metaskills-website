@@ -26,7 +26,7 @@ type CategoryDef = {
 const categories: Record<string, CategoryDef> = {
   "cloud-devops-ai-stack": {
     slug: "cloud-devops-ai-stack",
-    name: "Cloud, DevOps & AI Stack",
+    name: "Cloud and DevOps",
     intro: [
       "Build practical capabilities across enterprise Linux, cloud architecture, Kubernetes, DevOps and the infrastructure supporting modern applications and AI systems.",
       "These programmes combine instructor-led technical instruction, guided hands-on laboratories, troubleshooting exercises and certification-aligned preparation.",
@@ -49,7 +49,7 @@ const categories: Record<string, CategoryDef> = {
     pathwayNote:
       "Participants do not need to complete the programmes in this order. The recommended starting point depends on their existing technical experience and role requirements.",
     image: cloudDevOpsImg,
-    seoTitle: "Cloud, DevOps & AI Stack Courses Singapore | Metaskills",
+    seoTitle: "Cloud and DevOps Courses Singapore | Metaskills",
     seoDescription:
       "Explore practical AWS, Kubernetes and Red Hat Linux training programmes covering cloud architecture, DevOps, systems administration and modern infrastructure operations.",
   },
