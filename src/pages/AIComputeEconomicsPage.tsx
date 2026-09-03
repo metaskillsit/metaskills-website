@@ -12,7 +12,8 @@ import {
 } from "@/components/ui/accordion";
 import heroBg from "@/assets/compute-economics-hero.jpg";
 
-const TITLE = "AI-Native Prototyping — Building Under Compute Constraints";
+const TITLE = "Strategic AI Compute and Optimisation";
+const SUBHEADER = "AI-Native Prototyping — Building Under Compute Constraints";
 const SUBTITLE =
   "A 2-day build workshop for leaders and engineers who need to say yes or no to AI spend — and be able to defend the decision.";
 
