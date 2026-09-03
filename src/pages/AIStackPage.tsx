@@ -410,6 +410,7 @@ const faqs = [
 ];
 
 const getCourseLogo = (course: Course): string | null => {
+  if (course.image) return course.image;
   if (courseLogoOverrides[course.title]) return courseLogoOverrides[course.title];
   return vendorLogos[course.vendor] || null;
 };
