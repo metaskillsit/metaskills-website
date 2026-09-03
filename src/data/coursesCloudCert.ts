@@ -1,6 +1,6 @@
 import type { Course } from "./courses";
 
-// ── Cloud, DevOps & AI Stack — certification-preparation programmes ──
+// ── Cloud and DevOps — certification-preparation programmes ──
 // All three programmes follow one house standard: same fee model, same section
 // depth (6 objectives, 6 audience lines, 4 prerequisites, 5 module-level topics
 // per day, 5 practical activities) so the pages read consistently.
@@ -32,7 +32,7 @@ export const cloudCertCourses: Course[] = [
   {
     slug: "aws-solutions-architect-associate-preparation",
     title: "AWS Solutions Architect – Associate Preparation",
-    category: "Cloud, DevOps & AI Stack",
+    category: "Cloud and DevOps",
     tagline: "Design secure, resilient, high-performing and cost-conscious solutions using Amazon Web Services.",
     heroImage: "/src/assets/courses/aws-saa-1.jpg",
     duration: "3 Days",
@@ -131,7 +131,7 @@ export const cloudCertCourses: Course[] = [
   {
     slug: "certified-kubernetes-administrator-preparation",
     title: "Certified Kubernetes Administrator Preparation",
-    category: "Cloud, DevOps & AI Stack",
+    category: "Cloud and DevOps",
     tagline:
       "Develop the practical command-line, cluster-management and troubleshooting skills required to administer Kubernetes environments.",
     heroImage: "/src/assets/courses/cka-1.jpg",
@@ -241,7 +241,7 @@ export const cloudCertCourses: Course[] = [
   {
     slug: "red-hat-enterprise-linux-rhcsa-preparation",
     title: "Red Hat Enterprise Linux Administration – RHCSA Preparation",
-    category: "Cloud, DevOps & AI Stack",
+    category: "Cloud and DevOps",
     tagline:
       "Build practical enterprise Linux administration capabilities across command-line operations, users, services, storage, networking and security.",
     heroImage: "/src/assets/courses/rhcsa-1.jpg",

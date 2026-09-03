@@ -10,6 +10,7 @@ interface NavItem {
   label: string;
   href: string;
   isSubItem?: boolean;
+  unclickable?: boolean;
 }
 
 interface NavCategory {
@@ -64,11 +65,11 @@ const Navbar = () => {
           label: "AI Stack Masterclasses",
           href: "/ai-stack-masterclasses",
           subItems: [
-            { label: "Hermes/Openclaw: Agentic AI / Personal AI Agent", href: "/ai-stack-masterclasses" },
-            { label: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", href: "/ai-stack-masterclasses" },
-            { label: "AI Automation (n8n, Zapier, Make.com)", href: "/ai-stack-masterclasses" },
-            { label: "AI Coding (Lovable, Cursor, GitHub Copilot)", href: "/ai-stack-masterclasses" },
-            { label: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", href: "/ai-stack-masterclasses" },
+            { label: "Hermes/Openclaw: Agentic AI / Personal AI Agent", href: "/ai-stack-masterclasses", unclickable: true },
+            { label: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", href: "/ai-stack-masterclasses", unclickable: true },
+            { label: "AI Automation (n8n, Zapier, Make.com)", href: "/ai-stack-masterclasses", unclickable: true },
+            { label: "AI Coding (Lovable, Cursor, GitHub Copilot)", href: "/ai-stack-masterclasses", unclickable: true },
+            { label: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", href: "/ai-stack-masterclasses", unclickable: true },
           ],
         },
         {
@@ -645,20 +646,27 @@ const Navbar = () => {
                                       else { m += 1; sn = 0; numLabel = String(m).padStart(2, "0"); }
                                       return (
                                       <li key={sub.href}>
-                                        <Link
-                                          to={sub.href}
-                                          onClick={() => setMenuOpen(false)}
-                                          className={`flex items-start gap-2 py-2 pr-3 text-[13px] transition-colors group ${
-                                            sub.isSubItem ? "pl-12" : "pl-7"
-                                          } ${
-                                            location.pathname === sub.href
-                                              ? "text-primary font-medium"
-                                              : "text-muted-foreground hover:text-primary"
-                                          }`}
-                                        >
-                                          <span className="font-mono text-[10px] tracking-widest shrink-0 pt-[3px] opacity-70">{numLabel}</span>
-                                          <span>{sub.label}</span>
-                                        </Link>
+                                        {sub.unclickable ? (
+                                          <span className={`flex items-start gap-2 py-2 pr-3 text-[13px] text-muted-foreground ${sub.isSubItem ? "pl-12" : "pl-7"}`}>
+                                            <span className="font-mono text-[10px] tracking-widest shrink-0 pt-[3px] opacity-70">{numLabel}</span>
+                                            <span>{sub.label}</span>
+                                          </span>
+                                        ) : (
+                                          <Link
+                                            to={sub.href}
+                                            onClick={() => setMenuOpen(false)}
+                                            className={`flex items-start gap-2 py-2 pr-3 text-[13px] transition-colors group ${
+                                              sub.isSubItem ? "pl-12" : "pl-7"
+                                            } ${
+                                              location.pathname === sub.href
+                                                ? "text-primary font-medium"
+                                                : "text-muted-foreground hover:text-primary"
+                                            }`}
+                                          >
+                                            <span className="font-mono text-[10px] tracking-widest shrink-0 pt-[3px] opacity-70">{numLabel}</span>
+                                            <span>{sub.label}</span>
+                                          </Link>
+                                        )}
                                       </li>
                                       );
                                     }); })()}

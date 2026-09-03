@@ -53,7 +53,7 @@ const CoursePageContent = ({ slug }: { slug: string }) => {
 };
 
 const categorySlugs: Record<string, string> = {
-  "Cloud, DevOps & AI Stack": "cloud-devops-ai-stack",
+  "Cloud and DevOps": "cloud-devops-ai-stack",
   "FinOps": "finops",
 };
 

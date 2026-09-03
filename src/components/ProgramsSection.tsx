@@ -46,11 +46,11 @@ const ProgramsSection = () => {
         "One-day, hands-on masterclasses across the modern AI stack — agentic AI, frontier LLMs, automation, AI coding, research and media tools.",
       images: [aiStackImg],
       courses: [
-        { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "AI Automation (n8n, Zapier, Make.com)", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "AI Coding (Lovable, Cursor, GitHub Copilot)", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "AI Automation (n8n, Zapier, Make.com)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "AI Coding (Lovable, Cursor, GitHub Copilot)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
       ],
     },
     {
@@ -248,10 +248,16 @@ const ProgramsSection = () => {
                   else { m += 1; s = 0; numLabel = String(m).padStart(2, "0"); }
                   const isAbs = 'isExternal' in course && course.isExternal && /^https?:\/\//.test(course.slug);
                   const isComing = 'comingSoon' in course && course.comingSoon;
+                  const isUnclickable = 'unclickable' in course && course.unclickable;
                   const cls = "flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link";
                   return (
                     <li key={course.slug + course.name} className={isSub ? "pl-6" : ""}>
-                      {isComing ? (
+                      {isUnclickable ? (
+                        <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span className="font-mono text-[10px] tracking-widest text-muted-foreground/70">{numLabel}</span>
+                          <span>{course.name}</span>
+                        </span>
+                      ) : isComing ? (
                         <span className="flex items-center gap-2 text-sm text-muted-foreground">
                           <span className="font-mono text-[10px] tracking-widest text-muted-foreground/70">{numLabel}</span>
                           <span>{course.name}</span>

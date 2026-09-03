@@ -117,7 +117,7 @@ const courseImageMap: Record<string, string[]> = {
   "ai-literacy-for-finance-professionals": [aiLiteracyFinance1, algoL1_2, algoL2_3],
   "ai-fluency-for-finance-professionals": [aiFluencyFinance1, algoL2_1, algoL1_3],
   "ai-strategy-governance-ethical-leadership": [aiStrategyGovernance1, algoL2_2, algoL1_1],
-  // Cloud, DevOps & AI Stack — certification preparation
+  // Cloud and DevOps — certification preparation
   "aws-solutions-architect-associate-preparation": [awsSaa1, cloudDevOpsGeneric, cka1],
   "certified-kubernetes-administrator-preparation": [cka1, cloudDevOpsGeneric, rhcsa1],
   "red-hat-enterprise-linux-rhcsa-preparation": [rhcsa1, cloudDevOpsGeneric, awsSaa1],
