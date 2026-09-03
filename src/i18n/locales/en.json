@@ -1043,6 +1043,60 @@
       "feesCorporateLarge": "Contact for group rates",
       "jointlyOfferedBy": "Tinkercademy & Metaskills Institute"
     },
+    "aiBizAnalyticsModule1": {
+      "title": "Foundations of Business Analytics and Artificial Intelligence (AI): Concepts and Frameworks",
+      "category": "Certifications",
+      "tagline": "Build the analytical mindset and AI literacy that underpin every modern business-decision workflow.",
+      "duration": "2 Days",
+      "feesSelfSponsored": "S$750 per pax",
+      "feesCorporateSmall": "S$6,000 per class",
+      "feesCorporateLarge": "S$6,000 per class"
+    },
+    "aiBizAnalyticsModule2": {
+      "title": "Data Preparation and Data Cleaning with Power Query and Artificial Intelligence (AI) Co-Pilots",
+      "category": "Certifications",
+      "tagline": "Transform messy, disconnected data into clean, analysis-ready datasets using Power Query and AI assistance.",
+      "duration": "2 Days",
+      "feesSelfSponsored": "S$750 per pax",
+      "feesCorporateSmall": "S$6,000 per class",
+      "feesCorporateLarge": "S$6,000 per class"
+    },
+    "aiBizAnalyticsModule3": {
+      "title": "Creating Business Analytics Models and Measures with Data Analysis Expressions (DAX) and ChatGPT",
+      "category": "Certifications",
+      "tagline": "Move beyond flat tables by building relational models and writing DAX measures that answer real business questions.",
+      "duration": "2 Days",
+      "feesSelfSponsored": "S$750 per pax",
+      "feesCorporateSmall": "S$6,000 per class",
+      "feesCorporateLarge": "S$6,000 per class"
+    },
+    "aiBizAnalyticsModule4": {
+      "title": "Data Storytelling and Business Dashboard Visualisations with Power BI and Artificial Intelligence (AI) Co-Pilots",
+      "category": "Certifications",
+      "tagline": "Design compelling visuals and narratives that turn analysis into action.",
+      "duration": "2 Days",
+      "feesSelfSponsored": "S$750 per pax",
+      "feesCorporateSmall": "S$6,000 per class",
+      "feesCorporateLarge": "S$6,000 per class"
+    },
+    "aiBizAnalyticsModule5": {
+      "title": "Creating and Using Business Dashboard Visualisations for Decision Support using Power BI and Artificial Intelligence (AI) Co-Pilots",
+      "category": "Certifications",
+      "tagline": "Build operational dashboards that support monitoring, diagnosis, and faster decisions.",
+      "duration": "2 Days",
+      "feesSelfSponsored": "S$750 per pax",
+      "feesCorporateSmall": "S$6,000 per class",
+      "feesCorporateLarge": "S$6,000 per class"
+    },
+    "aiBizAnalyticsModule6": {
+      "title": "Task Automation with Macros, VBA and Artificial Intelligence (AI) Co-Pilots",
+      "category": "Certifications",
+      "tagline": "Automate repetitive Excel workflows with macros, VBA, and AI-assisted coding.",
+      "duration": "2 Days",
+      "feesSelfSponsored": "S$750 per pax",
+      "feesCorporateSmall": "S$6,000 per class",
+      "feesCorporateLarge": "S$6,000 per class"
+    },
     "awsCloudDevOps": {
       "title": "Advanced Certificate in AWS Cloud Solutions Architecture and DevOps Engineering",
       "category": "Cloud Solutions & DevOps",
