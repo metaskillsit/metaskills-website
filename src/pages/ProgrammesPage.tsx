@@ -45,6 +45,21 @@ const ProgrammesPage = () => {
 
   const programCategories: Category[] = [
     {
+      id: "ai-stack-masterclasses",
+      title: "AI Stack Masterclasses",
+      description:
+        "One-day, hands-on masterclasses across the modern AI stack — agentic AI, frontier LLMs, automation, AI coding, research and media tools.",
+      image: aiStackImg,
+      courses: [
+        { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "AI Automation (n8n, Zapier, Make.com)", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "AI Coding (Lovable, Cursor, GitHub Copilot)", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", slug: "/ai-stack-masterclasses", isExternal: true },
+      ],
+      categoryHref: "/ai-stack-masterclasses",
+    },
+    {
       id: "fintech",
       title: t("programmes.fintechTitle"),
       description: t("programmes.fintechDesc"),
