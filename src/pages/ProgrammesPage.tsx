@@ -25,6 +25,7 @@ type Course = {
   isExternal?: boolean;
   partnerNote?: string;
   comingSoon?: boolean;
+  isSubItem?: boolean;
 };
 
 
@@ -80,12 +81,12 @@ const ProgrammesPage = () => {
       courses: [
         { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
         { name: "Advanced Certificate in AI-Powered Business Analytics", slug: "/advanced-certificate-ai-powered-business-analytics", isExternal: true },
-        { name: ct("aiBizAnalyticsModule1"), slug: "foundations-business-analytics-ai-concepts-frameworks" },
-        { name: ct("aiBizAnalyticsModule2"), slug: "data-preparation-cleaning-power-query-ai-copilots" },
-        { name: ct("aiBizAnalyticsModule3"), slug: "business-analytics-models-dax-chatgpt" },
-        { name: ct("aiBizAnalyticsModule4"), slug: "data-storytelling-dashboards-power-bi-ai-copilots" },
-        { name: ct("aiBizAnalyticsModule5"), slug: "business-dashboard-decision-support-power-bi-ai-copilots" },
-        { name: ct("aiBizAnalyticsModule6"), slug: "task-automation-macros-vba-ai-copilots" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule1"), slug: "foundations-business-analytics-ai-concepts-frameworks" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule2"), slug: "data-preparation-cleaning-power-query-ai-copilots" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule3"), slug: "business-analytics-models-dax-chatgpt" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule4"), slug: "data-storytelling-dashboards-power-bi-ai-copilots" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule5"), slug: "business-dashboard-decision-support-power-bi-ai-copilots" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule6"), slug: "task-automation-macros-vba-ai-copilots" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
     },
@@ -224,13 +225,27 @@ const ProgrammesPage = () => {
     }
   };
 
-  const renderCourseLink = (course: Course, idx: number) => {
+  const numberCourses = (courses: Course[]) => {
+    let main = 0;
+    let sub = 0;
+    return courses.map((course) => {
+      if (course.isSubItem) {
+        sub += 1;
+        return { course, label: `${String(main).padStart(2, "0")}.${String(sub).padStart(2, "0")}` };
+      }
+      main += 1;
+      sub = 0;
+      return { course, label: String(main).padStart(2, "0") };
+    });
+  };
+
+  const renderCourseLink = (course: Course, numberLabel: string) => {
     const isAbsolute = course.isExternal && /^https?:\/\//.test(course.slug);
     const isComing = course.comingSoon;
     const inner = (
-      <div className="group/link flex items-start gap-3 py-2 border-b border-border/70 last:border-b-0">
-        <span className={`font-mono text-[10px] tracking-widest pt-[5px] w-6 flex-shrink-0 transition-colors ${isComing ? "text-muted-foreground/60" : "text-accent"}`}>
-          {String(idx + 1).padStart(2, "0")}
+      <div className={`group/link flex items-start gap-3 py-2 border-b border-border/70 last:border-b-0 ${course.isSubItem ? "pl-8 md:pl-12" : ""}`}>
+        <span className={`font-mono text-[10px] tracking-widest pt-[5px] flex-shrink-0 transition-colors ${course.isSubItem ? "w-10" : "w-6"} ${isComing ? "text-muted-foreground/60" : "text-accent"}`}>
+          {numberLabel}
         </span>
         <div className="flex-1 min-w-0">
           <span
@@ -394,8 +409,8 @@ const ProgrammesPage = () => {
                     </p>
 
                     <ul className="border-t border-border">
-                      {cat.courses.map((course, ci) => (
-                        <li key={course.slug}>{renderCourseLink(course, ci)}</li>
+                      {numberCourses(cat.courses).map(({ course, label }) => (
+                        <li key={course.slug}>{renderCourseLink(course, label)}</li>
                       ))}
 
                     </ul>

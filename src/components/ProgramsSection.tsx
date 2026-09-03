@@ -74,12 +74,12 @@ const ProgramsSection = () => {
       courses: [
         { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
         { name: "Advanced Certificate in AI-Powered Business Analytics", slug: "/advanced-certificate-ai-powered-business-analytics", isExternal: true },
-        { name: ct("aiBizAnalyticsModule1"), slug: "foundations-business-analytics-ai-concepts-frameworks" },
-        { name: ct("aiBizAnalyticsModule2"), slug: "data-preparation-cleaning-power-query-ai-copilots" },
-        { name: ct("aiBizAnalyticsModule3"), slug: "business-analytics-models-dax-chatgpt" },
-        { name: ct("aiBizAnalyticsModule4"), slug: "data-storytelling-dashboards-power-bi-ai-copilots" },
-        { name: ct("aiBizAnalyticsModule5"), slug: "business-dashboard-decision-support-power-bi-ai-copilots" },
-        { name: ct("aiBizAnalyticsModule6"), slug: "task-automation-macros-vba-ai-copilots" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule1"), slug: "foundations-business-analytics-ai-concepts-frameworks" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule2"), slug: "data-preparation-cleaning-power-query-ai-copilots" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule3"), slug: "business-analytics-models-dax-chatgpt" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule4"), slug: "data-storytelling-dashboards-power-bi-ai-copilots" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule5"), slug: "business-dashboard-decision-support-power-bi-ai-copilots" },
+        { isSubItem: true, name: ct("aiBizAnalyticsModule6"), slug: "task-automation-macros-vba-ai-copilots" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
     },
@@ -229,19 +229,25 @@ const ProgramsSection = () => {
                 {cat.description}
               </p>
               <ul className="space-y-2 border-t border-border pt-4">
-                {cat.courses.map((course) => {
+                {(() => { let m = 0; let s = 0; return cat.courses.map((course) => {
+                  const isSub = 'isSubItem' in course && course.isSubItem;
+                  let numLabel: string;
+                  if (isSub) { s += 1; numLabel = `${String(m).padStart(2, "0")}.${String(s).padStart(2, "0")}`; }
+                  else { m += 1; s = 0; numLabel = String(m).padStart(2, "0"); }
                   const isAbs = 'isExternal' in course && course.isExternal && /^https?:\/\//.test(course.slug);
                   const isComing = 'comingSoon' in course && course.comingSoon;
                   const cls = "flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link";
                   return (
-                    <li key={course.slug + course.name}>
+                    <li key={course.slug + course.name} className={isSub ? "pl-6" : ""}>
                       {isComing ? (
                         <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span className="font-mono text-[10px] tracking-widest text-muted-foreground/70">{numLabel}</span>
                           <span>{course.name}</span>
                           <span className="text-[10px] uppercase tracking-wider bg-muted px-1.5 py-0.5 rounded">Upcoming</span>
                         </span>
                       ) : isAbs ? (
                         <a href={course.slug} target="_blank" rel="noopener noreferrer" className={cls}>
+                          <span className="font-mono text-[10px] tracking-widest text-accent">{numLabel}</span>
                           <span>{course.name}</span>
                           <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
                         </a>
@@ -250,13 +256,14 @@ const ProgramsSection = () => {
                           to={'isExternal' in course && course.isExternal ? course.slug : `/course/${course.slug}`}
                           className={cls}
                         >
+                          <span className="font-mono text-[10px] tracking-widest text-accent">{numLabel}</span>
                           <span>{course.name}</span>
                           <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
                         </Link>
                       )}
                     </li>
                   );
-                })}
+                }); })()}
               </ul>
             </motion.div>
           ))}
