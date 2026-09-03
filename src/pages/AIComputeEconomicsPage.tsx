@@ -509,6 +509,33 @@ const AIComputeEconomicsPage = () => {
           </div>
         </Section>
 
+        {/* 10b. PARTICIPANT FEEDBACK */}
+        <Section>
+          <Eyebrow>What participants say</Eyebrow>
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            In their own words
+          </h2>
+          <p className="text-muted-foreground mb-10 max-w-2xl leading-relaxed">
+            Reflections shared by participants after a recent cohort — on what they learned and what
+            they took back to their teams.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {testimonials.map((tm, i) => (
+              <motion.figure key={tm.name} initial="hidden" whileInView="visible" viewport={{ once: true }}
+                variants={fadeUp} transition={{ delay: (i % 3) * 0.08 }}
+                className="flex flex-col rounded-sm border border-border bg-card p-6">
+                <blockquote className="flex-1">
+                  <p className="text-sm text-foreground/85 leading-relaxed">“{tm.text}”</p>
+                </blockquote>
+                <figcaption className="mt-5 border-t border-border pt-4">
+                  <p className="text-sm font-semibold text-foreground">{tm.name}</p>
+                  <p className="text-xs text-muted-foreground">{tm.role}</p>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </div>
+        </Section>
+
         {/* 11. CREDIBILITY */}
         <Section dark>
           <Eyebrow dark>Why Metaskills</Eyebrow>
