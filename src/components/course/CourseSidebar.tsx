@@ -7,9 +7,10 @@ interface CourseSidebarProps {
 }
 
 const coursePricingOverrides: Record<string, { corporate: string; corporateLabel?: string; selfSponsored?: string; customNotes?: boolean; hideNotes?: boolean; fundingNote?: string }> = {
-  "ai-strategy-roadmap-leaders": {
-    corporate: "S$15,000 per workshop per day (up to 10 pax)",
+  "aws-cloud-solutions-architecture-devops-placeholder": {
+    corporate: "",
   },
+
   "aws-cloud-solutions-architecture-devops": {
     corporateLabel: "Public/Corporate Rates",
     corporate: "S$9,000 per pax",
