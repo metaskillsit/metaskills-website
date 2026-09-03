@@ -18,7 +18,7 @@ import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
 import certificationsImg from "@/assets/programmes-certifications.jpg";
 import finopsImg from "@/assets/programmes-finops.jpg";
-import aiStackImg from "@/assets/programmes-aistack.jpg.asset.json";
+import aiStackImg from "@/assets/programmes-aistack.jpg";
 
 type Course = {
   name: string;
@@ -50,7 +50,7 @@ const ProgrammesPage = () => {
       title: "AI Stack Masterclasses",
       description:
         "One-day, hands-on masterclasses across the modern AI stack — agentic AI, frontier LLMs, automation, AI coding, research and media tools.",
-      image: aiStackImg.url,
+      image: aiStackImg,
       courses: [
         { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
         { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },

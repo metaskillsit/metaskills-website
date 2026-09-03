@@ -27,7 +27,7 @@ import aiLeadershipImg3 from "@/assets/programmes-aileadership-3.jpg";
 import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import cyberCertImg2 from "@/assets/programmes-cybercert-2.jpg";
 import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
-import aiStackImg from "@/assets/programmes-aistack.jpg.asset.json";
+import aiStackImg from "@/assets/programmes-aistack.jpg";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
 import certificationsImg from "@/assets/programmes-certifications.jpg";
@@ -44,7 +44,7 @@ const ProgramsSection = () => {
       title: "AI Stack Masterclasses",
       description:
         "One-day, hands-on masterclasses across the modern AI stack — agentic AI, frontier LLMs, automation, AI coding, research and media tools.",
-      images: [aiStackImg.url],
+      images: [aiStackImg],
       courses: [
         { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
         { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
@@ -174,7 +174,7 @@ const ProgramsSection = () => {
     {
       title: t("programmes.cloudAiStackTitle"),
       description: t("programmes.cloudAiStackDesc"),
-      images: [cloudDevOpsImg, aiStackImg.url],
+      images: [cloudDevOpsImg, aiStackImg],
       courses: [
         { name: "Red Hat Enterprise Linux Administration – RHCSA Preparation", slug: "red-hat-enterprise-linux-rhcsa-preparation" },
         { name: "Red Hat Learning Subscription – Standard & Premium", slug: "/programmes/cloud-devops-ai/red-hat-learning-subscription", isExternal: true },
