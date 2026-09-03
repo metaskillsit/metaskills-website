@@ -77,6 +77,7 @@ const courseLogoOverrides: Record<string, string> = {
 const categories = [
   { id: "all", label: "All" },
   { id: "llm", label: "LLM & Foundation Models" },
+  { id: "agentic", label: "Agentic AI" },
   { id: "automation", label: "AI Automation" },
   { id: "coding", label: "AI Coding & Dev" },
   { id: "research", label: "AI Research Tools" },
@@ -95,18 +96,18 @@ interface Course {
 }
 
 const hotCourses = new Set([
-  "OpenClaw: Agentic AI / Personal AI Agent",
+  "Hermes in OpenClaw: Agentic AI / Personal AI Agent",
   "Lovable: Build Web Apps with AI, No Code Needed",
 ]);
 
 const courses: Course[] = [
   // 🔥 Hot — pinned to top
   {
-    title: "OpenClaw: Agentic AI / Personal AI Agent",
+    title: "Hermes in OpenClaw: Agentic AI / Personal AI Agent",
     vendor: "OpenClaw",
     price: "S$588",
-    category: "automation",
-    categoryLabel: "Automation",
+    category: "agentic",
+    categoryLabel: "Agentic AI",
     description:
       "Deploy a local, open-source AI agent that connects any LLM to your apps, files, browser, and messaging channels — and works for you around the clock.",
   },
