@@ -14,7 +14,24 @@ import heroBg from "@/assets/compute-economics-hero.jpg";
 
 const TITLE = "AI-Native Prototyping — Building Under Compute Constraints";
 const SUBTITLE =
-  "A 2-day, hands-on build workshop on strategic AI compute economics, sovereign infrastructure and shipping a defensible prototype.";
+  "A 2-day build workshop for leaders and engineers who need to say yes or no to AI spend — and be able to defend the decision.";
+
+const testimonials = [
+  { name: "Jeffrey", role: "Workshop participant",
+    text: "Vibe-coding genuinely sped up my prototyping — but this course showed me what productionising really takes. Planning first with a PRD and validating with Gherkin tests has changed how I start every build." },
+  { name: "Anthony", role: "Workshop participant",
+    text: "The seven layers of AI cost consideration were a revelation. I now plan MVPs in phases around token budgets, and use PRDs alongside routing tools to keep utilisation lean." },
+  { name: "Calvin", role: "Workshop participant",
+    text: "Using PRDs as prompts — and even using one LLM to sharpen prompts for another — improved my results immediately. The token optimisation techniques alone were worth the two days." },
+  { name: "Melvin", role: "Workshop participant",
+    text: "Prompting effectively turned out to be real cost optimisation. The course made data sovereignty concrete for our context and showed how a good PRD makes building dramatically more efficient." },
+  { name: "Keith", role: "Workshop participant",
+    text: "Iterating look and feel with vibe tooling while cherry-picking purpose-fit models taught me real prudency with AI spend. I left asking sharper questions about value beyond the AI pitch." },
+  { name: "Ryan", role: "Workshop participant",
+    text: "Learning to prompt an LLM until it reaches a degree of certainty — plus MSI's approach to governing enterprise agentic development — gave me a framework I can apply at work straight away." },
+  { name: "Ravi", role: "Workshop participant",
+    text: "Clear pros and cons of on-prem AI compute, a practical approach to AI cost optimisation, and straight answers on when to choose cloud versus on-prem — exactly the strategic grounding I needed." },
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -204,7 +221,7 @@ const AIComputeEconomicsPage = () => {
               <div className="mt-8 flex flex-wrap gap-4">
                 <a href="#enquiry"
                   className="inline-flex items-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition-all">
-                  Request in-house training <ArrowRight className="h-4 w-4" />
+                  Tell us about your team <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href="#curriculum"
                   className="inline-flex items-center gap-2 rounded-sm border border-white/30 px-7 py-3.5 text-sm font-semibold text-white hover:border-accent hover:text-accent transition-all">
