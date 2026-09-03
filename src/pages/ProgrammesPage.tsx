@@ -18,7 +18,7 @@ import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
 import certificationsImg from "@/assets/programmes-certifications.jpg";
 import finopsImg from "@/assets/programmes-finops.jpg";
-import aiStackImg from "@/assets/programmes-aistack.jpg";
+import aiStackImg from "@/assets/programmes-aistack.jpg.asset.json";
 
 type Course = {
   name: string;
@@ -27,6 +27,7 @@ type Course = {
   partnerNote?: string;
   comingSoon?: boolean;
   isSubItem?: boolean;
+  unclickable?: boolean;
 };
 
 
@@ -49,13 +50,13 @@ const ProgrammesPage = () => {
       title: "AI Stack Masterclasses",
       description:
         "One-day, hands-on masterclasses across the modern AI stack — agentic AI, frontier LLMs, automation, AI coding, research and media tools.",
-      image: aiStackImg,
+      image: aiStackImg.url,
       courses: [
-        { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "AI Automation (n8n, Zapier, Make.com)", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "AI Coding (Lovable, Cursor, GitHub Copilot)", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "AI Automation (n8n, Zapier, Make.com)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "AI Coding (Lovable, Cursor, GitHub Copilot)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
       ],
       categoryHref: "/ai-stack-masterclasses",
     },
@@ -257,6 +258,18 @@ const ProgrammesPage = () => {
   const renderCourseLink = (course: Course, numberLabel: string) => {
     const isAbsolute = course.isExternal && /^https?:\/\//.test(course.slug);
     const isComing = course.comingSoon;
+    if (course.unclickable) {
+      return (
+        <div className={`flex items-start gap-3 py-2 border-b border-border/70 last:border-b-0 ${course.isSubItem ? "pl-8 md:pl-12" : ""}`}>
+          <span className={`font-mono text-[10px] tracking-widest pt-[5px] flex-shrink-0 text-muted-foreground/60 ${course.isSubItem ? "w-10" : "w-6"}`}>
+            {numberLabel}
+          </span>
+          <span className="block font-body text-[15px] md:text-base font-medium leading-snug text-muted-foreground">
+            {course.name}
+          </span>
+        </div>
+      );
+    }
     const inner = (
       <div className={`group/link flex items-start gap-3 py-2 border-b border-border/70 last:border-b-0 ${course.isSubItem ? "pl-8 md:pl-12" : ""}`}>
         <span className={`font-mono text-[10px] tracking-widest pt-[5px] flex-shrink-0 transition-colors ${course.isSubItem ? "w-10" : "w-6"} ${isComing ? "text-muted-foreground/60" : "text-accent"}`}>

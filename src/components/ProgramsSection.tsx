@@ -27,7 +27,7 @@ import aiLeadershipImg3 from "@/assets/programmes-aileadership-3.jpg";
 import cyberCertImg from "@/assets/programmes-cybercert.jpg";
 import cyberCertImg2 from "@/assets/programmes-cybercert-2.jpg";
 import cyberCertImg3 from "@/assets/programmes-cybercert-3.jpg";
-import aiStackImg from "@/assets/programmes-aistack.jpg";
+import aiStackImg from "@/assets/programmes-aistack.jpg.asset.json";
 import cloudDevOpsImg from "@/assets/programmes-clouddevops.jpg";
 import aiEducationImg from "@/assets/programmes-aieducation.jpg";
 import certificationsImg from "@/assets/programmes-certifications.jpg";
@@ -44,13 +44,13 @@ const ProgramsSection = () => {
       title: "AI Stack Masterclasses",
       description:
         "One-day, hands-on masterclasses across the modern AI stack — agentic AI, frontier LLMs, automation, AI coding, research and media tools.",
-      images: [aiStackImg],
+      images: [aiStackImg.url],
       courses: [
-        { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "AI Automation (n8n, Zapier, Make.com)", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "AI Coding (Lovable, Cursor, GitHub Copilot)", slug: "/ai-stack-masterclasses", isExternal: true },
-        { name: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", slug: "/ai-stack-masterclasses", isExternal: true },
+        { name: "Hermes/Openclaw: Agentic AI / Personal AI Agent", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "Frontier LLM Masterclasses (ChatGPT, Claude, Gemini, Grok & more)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "AI Automation (n8n, Zapier, Make.com)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "AI Coding (Lovable, Cursor, GitHub Copilot)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
+        { name: "AI Research & Media (NotebookLM, Perplexity, Veo 3, CapCut)", slug: "/ai-stack-masterclasses", isExternal: true, unclickable: true },
       ],
     },
     {
@@ -174,7 +174,7 @@ const ProgramsSection = () => {
     {
       title: t("programmes.cloudAiStackTitle"),
       description: t("programmes.cloudAiStackDesc"),
-      images: [cloudDevOpsImg, aiStackImg],
+      images: [cloudDevOpsImg, aiStackImg.url],
       courses: [
         { name: "Red Hat Enterprise Linux Administration – RHCSA Preparation", slug: "red-hat-enterprise-linux-rhcsa-preparation" },
         { name: "Red Hat Learning Subscription – Standard & Premium", slug: "/programmes/cloud-devops-ai/red-hat-learning-subscription", isExternal: true },
@@ -248,10 +248,16 @@ const ProgramsSection = () => {
                   else { m += 1; s = 0; numLabel = String(m).padStart(2, "0"); }
                   const isAbs = 'isExternal' in course && course.isExternal && /^https?:\/\//.test(course.slug);
                   const isComing = 'comingSoon' in course && course.comingSoon;
+                  const isUnclickable = 'unclickable' in course && course.unclickable;
                   const cls = "flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors group/link";
                   return (
                     <li key={course.slug + course.name} className={isSub ? "pl-6" : ""}>
-                      {isComing ? (
+                      {isUnclickable ? (
+                        <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span className="font-mono text-[10px] tracking-widest text-muted-foreground/70">{numLabel}</span>
+                          <span>{course.name}</span>
+                        </span>
+                      ) : isComing ? (
                         <span className="flex items-center gap-2 text-sm text-muted-foreground">
                           <span className="font-mono text-[10px] tracking-widest text-muted-foreground/70">{numLabel}</span>
                           <span>{course.name}</span>
