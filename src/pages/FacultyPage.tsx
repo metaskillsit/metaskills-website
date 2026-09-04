@@ -3,7 +3,8 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Link2, Check } from "lucide-react";
+import { toast } from "sonner";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 
 
@@ -32,7 +33,7 @@ Dr. Jinghao Ke is a Singapore-based AI and finance leader whose career bridges r
 Over 15 years, Jinghao has trained more than 1,000 professionals across ASEAN and led hundreds of data science and AI projects spanning financial services, supply chain optimization, public sector transformation, and enterprise knowledge management. As Director of JCube Institute and Chief Research Officer at Integrum Global, he has designed and delivered flagship AI training programmes for major institutions including OCBC Bank, Great Eastern, and Changi General Hospital, while developing ISO 42001 compliance frameworks and agentic AI workflows that integrate large language models with operational automation tools. His consulting approach emphasizes implementable solutions over theoretical elegance, with particular attention to building internal capability within client organizations rather than creating dependency.
 Jinghao's academic portfolio is equally substantial. As Adjunct Faculty at Singapore Management University since 2016, he has taught corporate finance, business analytics, and empirical finance to undergraduate, MBA, and executive audiences, while designing SMU Academy's Professional Certificate in Machine Learning programme that has trained over 500 professionals. His affiliate faculty appointments span the National University of Singapore's Asian Institute of Digital Finance, AI Singapore, Hong Kong University SPACE, and NTUC LearningHub, where he develops curriculum and delivers specialized training in AI applications for capital markets, supply chain, and aviation sectors. During his doctoral research, Jinghao created the Singapore Corporate Governance Index, bringing data-driven rigor to corporate governance assessment and demonstrating his capacity to pioneer analytical frameworks with lasting institutional impact.
 His entrepreneurial ventures reflect a strategic vision for scaling expertise across borders. As Director of Singapore-Vietnam Business Bridge and co-founder of Research Room Pte Ltd, Jinghao facilitates cross-border investment, market entry strategies, and regional expansion for Singapore and ASEAN firms, with particular focus on property, sustainability technology, and SME digital transformation. His prior role as Chief Investment Officer at JCube Capital Partners, managing a MAS-licensed AI-augmented investment fund, combined his finance training with machine learning and deep learning techniques to optimize portfolio risk-return profiles. This fusion of quantitative rigor, regional market knowledge, and operational AI deployment defines his distinctive value proposition.
-Technically, Jinghao operates at the intersection of traditional finance theory and cutting-edge AI implementation. His expertise spans classical machine learning, deep learning, generative AI, and agentic workflows, with hands-on proficiency in Python, Power BI, n8n automation, enterprise knowledge management architectures using RAG and MCP protocols, and cloud-based AI platforms. He approaches problems with precision in problem definition, attention to data realities and organizational constraints, and an unwavering commitment to solutions that organizations can maintain and scale independently. His teaching philosophy emphasizes real cases over textbook abstractions, framework-based thinking, and tying every analytical model back to a concrete decision and measurable outcome.
+Technically, Jinghao works where traditional finance theory meets cutting-edge AI implementation. His expertise spans classical machine learning, deep learning, generative AI, and agentic workflows, with hands-on proficiency in Python, Power BI, n8n automation, enterprise knowledge management architectures using RAG and MCP protocols, and cloud-based AI platforms. He approaches problems with precision in problem definition, attention to data realities and organizational constraints, and an unwavering commitment to solutions that organizations can maintain and scale independently. His teaching philosophy emphasizes real cases over textbook abstractions, framework-based thinking, and tying every analytical model back to a concrete decision and measurable outcome.
 What distinguishes Jinghao is his ability to operate simultaneously as scholar, practitioner, and institution-builder. Whether designing multi-tier AI training pathways aligned with SkillsFuture priorities, advising C-suite executives on data strategy and model governance, mentoring student consulting teams on live corporate projects, or structuring cross-border business platforms, he brings intellectual depth, operational pragmatism, and a collaborative leadership style that values evidence, clear communication, and disciplined execution. Based in Singapore with strong professional networks across Vietnam and the broader ASEAN region, Jinghao continues to architect scalable AI capabilities for organizations while advancing the field through research, teaching, and thought leadership that bridges academic rigor with commercial impact.`,
   },
   {
@@ -94,7 +95,7 @@ An ardent educator, Dr. Hong has been imparting his vast knowledge in digital tr
     image: "/images/faculty/faculty-sriven.png",
     bio: `Sriven is an executive educator, leadership advisor, and AI-focused consultant with more than 20 years of experience across management education, leadership development, executive training, mindfulness practice, and facilitation in Asia, Europe, and North America. He is currently Executive-in-Residence at IMD, the Swiss business school that ranked #1 worldwide for custom programs in the Financial Times Executive Education Rankings 2025.
 
-His advisory work sits at the intersection of human development, high performance, and disruptive technology. Drawing on a cross-sector career spanning public policy, strategy, sport, law, executive education, and leadership development, Sriven helps leaders, institutions, and families respond wisely to the opportunities and risks created by AI, social media, and other emerging technologies.
+His advisory work draws human development, high performance, and disruptive technology together. Drawing on a cross-sector career spanning public policy, strategy, sport, law, executive education, and leadership development, Sriven helps leaders, institutions, and families respond wisely to the opportunities and risks created by AI, social media, and other emerging technologies.
 
 A core area of his work is helping organizations and communities understand how new technologies are reshaping wellbeing, education, cognitive development, and creativity. He speaks and advises on the human costs of tech overexposure, including diminished attention, weakened reflection, fragmented learning, and the erosion of deep creativity, while offering practical safeguards for leaders, parents, educators, and children.
 
@@ -116,7 +117,7 @@ Sriven is adept in psychometric assessment, strengths-based development, and lea
     image: "/images/faculty/faculty-adriantoh.jpg",
     bio: `Adrian Toh is an AI Senior Consultant who brings more than 13 years of frontline financial markets experience to the design and delivery of AI-powered solutions for the finance industry. Having held senior client-facing and advisory roles at leading institutions including UOB, ANZ, AG Investment Management LLP, and Citibank Singapore, he has advised private and high-net-worth clients across structured products, bonds, foreign exchange, dual-currency investments, equities, and commodities, with portfolios of up to S$100 million in assets under management. This deep practitioner background gives him a sharp instinct for where AI can create real value across wealth management, trading, and advisory workflows.
 At Metaskills Institute, Adrian focuses on applying generative and agentic AI to the financial services value chain, including AI-augmented client advisory, intelligent portfolio analytics, automated market research and report generation, robo-advisory design, regulatory and compliance copilots, and AI-driven risk and fraud monitoring. He works with banks, wealth managers, and investment firms to translate frontline use cases into production-ready AI workflows, drawing on his commercial track record of consistently exceeding sales targets and growing assets under management through disciplined client acquisition, referral programmes, and structured marketing initiatives at UOB, ANZ, and Citibank Singapore.
-Earlier in his career, Adrian served as a Director at AG Investment Management LLP, where he contributed to algorithmic trading system design, compliance, operations, and business development, and developed a 12-module foreign exchange trading model that achieved more than 23% per annum returns with drawdown below 8% over the period October 2009 to June 2010. This rare combination of frontline wealth advisory experience and quantitative trading system design positions Adrian to train and advise professionals at the intersection of financial markets, client advisory, and AI-augmented investment workflows — helping institutions move beyond pilots into measurable, governed AI deployment in finance.`,
+Earlier in his career, Adrian served as a Director at AG Investment Management LLP, where he contributed to algorithmic trading system design, compliance, operations, and business development, and developed a 12-module foreign exchange trading model that achieved more than 23% per annum returns with drawdown below 8% over the period October 2009 to June 2010. This rare combination of frontline wealth advisory experience and quantitative trading system design positions Adrian to train and advise professionals working across financial markets, client advisory, and AI-augmented investment workflows — helping institutions move beyond pilots into measurable, governed AI deployment in finance.`,
   },
   {
     name: "Matthew Wu",
@@ -132,7 +133,7 @@ Matthew's work in agricultural capital raising in Indonesia is another body of w
 
 Beyond these flagship engagements, Matthew has assembled a broad regional deal portfolio. In Las Vegas, he worked with a US-based housing developer to open the Asian investor market for their residential portfolio. American developers entering Asia for the first time often underestimate how different the buyer mindset is, and Matthew understood both sides of that equation well enough to bridge them — giving the developer meaningful traction in a market they would not have been able to access on their own. In Sri Lanka, his agricultural work has continued in a market that demands patience and a solid grasp of local land ownership frameworks, where structuring transactions that work for all parties across different legal systems and stakeholder expectations is something he has done consistently. In the Philippines, where the property market moves on relationships as much as on numbers, he has facilitated land transactions with a careful read of both the foreign investment constraints that define what is possible and the personal trust that ultimately determines whether a deal closes.
 
-Matthew's areas of expertise span cross-border deal facilitation and structuring, capital raising across real estate and agricultural sectors, investor relations and stakeholder management, Asia-Pacific market access and relationship development, multi-jurisdictional transaction management, American developer entry into Asian markets, end-to-end launch strategy and execution support, and the practical use of AI for market research, investor targeting, and transaction intelligence. Taken together, his career sits at the intersection of relationships, capital, and cross-border opportunity — helping connect investors, developers, landowners, and strategic partners across multiple markets. From Hawaiʻi to Las Vegas, Indonesia to Sri Lanka and the Philippines, the markets have differed each time; the approach, however, has remained consistent: understand the opportunity, align the right stakeholders, and help guide transactions from concept through execution. Based in Singapore, Matthew remains active across Asia-Pacific real estate, agricultural investment, strategic land development, and international capital partnerships.`,
+Matthew's areas of expertise span cross-border deal facilitation and structuring, capital raising across real estate and agricultural sectors, investor relations and stakeholder management, Asia-Pacific market access and relationship development, multi-jurisdictional transaction management, American developer entry into Asian markets, end-to-end launch strategy and execution support, and the practical use of AI for market research, investor targeting, and transaction intelligence. Taken together, his career brings together relationships, capital, and cross-border opportunity — helping connect investors, developers, landowners, and strategic partners across multiple markets. From Hawaiʻi to Las Vegas, Indonesia to Sri Lanka and the Philippines, the markets have differed each time; the approach, however, has remained consistent: understand the opportunity, align the right stakeholders, and help guide transactions from concept through execution. Based in Singapore, Matthew remains active across Asia-Pacific real estate, agricultural investment, strategic land development, and international capital partnerships.`,
   },
   {
     name: "Dr Jonathan Khoo",
@@ -186,7 +187,7 @@ A Certified Lean Six Sigma Green Belt and Certified Scrum Master, Evelyn is high
     role: "Senior Consultant and Trainer",
     expertise: "Financial Services | AI-Augmented Client Advisory | Sales Coaching",
     image: "/images/faculty/faculty-christan.jpg",
-    bio: `Chris Tan is a seasoned sales trainer and former banking practitioner whose practice now sits at the intersection of financial services, client advisory, and AI-augmented selling. A former Personal Banker at UOB and Financial Protection Specialist at OCBC, she brings frontline credibility from regulated bank environments together with years of experience designing and delivering sales coaching programmes for financial advisory and corporate sales teams across Singapore and Malaysia.
+    bio: `Chris Tan is a seasoned sales trainer and former banking practitioner whose practice now brings financial services, client advisory, and AI-augmented selling together. A former Personal Banker at UOB and Financial Protection Specialist at OCBC, she brings frontline credibility from regulated bank environments together with years of experience designing and delivering sales coaching programmes for financial advisory and corporate sales teams across Singapore and Malaysia.
 Her current focus is AI-augmented client advisory: helping advisers and relationship managers use generative AI tools to enrich client research, personalise outreach, prepare needs-based conversations, anticipate objections, and maintain disciplined follow-up — without losing the human trust that underpins advisory relationships. She trains teams to combine AI-generated insights with structured questioning, ethical disclosure, and compliant workflows so that technology amplifies rapport rather than replacing it.
 She also specialises in building the daily habits and client-facing behaviours that drive commercial performance. Her programmes cover prospecting discipline, first-meeting confidence, needs-based dialogue, objection handling, follow-up consistency and closing effectiveness through structured role-plays, practical frameworks and accountability tools that translate training into action.
 As Director and Sales Coach at Westrategos, she led coaching programmes for financial advisory agencies and corporate sales teams, achieving measured productivity improvements of 20% to 120% across teams. Earlier roles include Retail Sales Manager at Fame Partners, where she coached teams of 10 to 15 staff against monthly targets of S$60,000 to S$200,000, and Recruitment Consultant and Trainer at Prudential Assurance Malaysia, where she trained more than 30 financial planners. She holds a Bachelor of Economics and Finance and a Diploma in Financial Planning from the Singapore Institute of Management / RMIT University.`,
@@ -250,7 +251,7 @@ As a Senior Lecturer, he designed industry-aligned cybersecurity curricula, supe
     role: "Lead Consultant, AI Security & DevOps",
     expertise: "Agentic AI Security | DevSecOps | Air-Gapped AI Infrastructure | VAPT | Cloud & MLOps",
     image: "/images/faculty/faculty-johnson.jpg",
-    bio: `Johnson Ang is a cybersecurity and DevOps leader with over 15 years of experience across banking, national infrastructure, and higher education. His work sits at the intersection of secure engineering and applied AI — building systems that are not only intelligent, but defensible.
+    bio: `Johnson Ang is a cybersecurity and DevOps leader with over 15 years of experience across banking, national infrastructure, and higher education. His work brings secure engineering and applied AI together — building systems that are not only intelligent, but defensible.
 At ST Engineering, Johnson led the design and delivery of a unified Agentic AI platform, consolidating fragmented tooling into a governed, enterprise-grade environment and delivering more than S$700k in annual savings. He architected secure, air-gapped GPU and LLMOps infrastructure for national security workloads, enabling sensitive AI development in fully isolated environments — a domain where very few practitioners have hands-on depth.
 Earlier, at DBS Bank, he drove revenue-generating digital platforms and large-scale automation programmes, embedding DevSecOps practices into delivery pipelines and reducing manual toil across engineering teams. His technical range spans vulnerability assessment and penetration testing, Zero Trust architecture, cloud security across AWS and Azure, container and Kubernetes hardening, and CI/CD security automation.
 Johnson is equally at home in the classroom. He has taught and developed programmes at NUS and SUTD, mentoring engineers and postgraduate students in secure cloud, DevOps, and AI operations. He holds industry cybersecurity credentials alongside cloud and AI certifications, and brings accredited adult-education experience to every engagement.
@@ -283,10 +284,21 @@ const useFacultyTranslation = (f: FacultyMember) => {
 
 const COLLAPSED_LINES = 7;
 
-const BioText = ({ bio }: { bio: string }) => {
+const facultySlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/[.'"]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const BioText = ({ bio, forceExpanded = false }: { bio: string; forceExpanded?: boolean }) => {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const [hasMore, setHasMore] = useState(false);
+
+  useEffect(() => {
+    if (forceExpanded) setExpanded(true);
+  }, [forceExpanded]);
   const contentRef = useRef<HTMLDivElement>(null);
   const paragraphs = bio.trim().split("\n").filter(Boolean);
 
@@ -346,15 +358,62 @@ const BioText = ({ bio }: { bio: string }) => {
 
 const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
   const ft = useFacultyTranslation(f);
+  const { t } = useTranslation();
+  const slug = facultySlug(f.name);
+  const [highlighted, setHighlighted] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handle = () => {
+      const hash = decodeURIComponent(window.location.hash.replace("#", ""));
+      if (hash !== slug) return;
+      setHighlighted(true);
+      window.setTimeout(() => {
+        const el = cardRef.current;
+        if (!el) return;
+        const offset = window.innerWidth >= 768 ? 110 : 90;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+      }, 250);
+      window.setTimeout(() => setHighlighted(false), 2600);
+    };
+    handle();
+    window.addEventListener("hashchange", handle);
+    return () => window.removeEventListener("hashchange", handle);
+  }, [slug]);
+
+  const copyLink = async () => {
+    const url = `${window.location.origin}${window.location.pathname}#${slug}`;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      const input = document.createElement("input");
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+    }
+    setCopied(true);
+    toast.success(t("facultyPage.linkCopied", { defaultValue: "Link copied" }), {
+      description: url,
+    });
+    window.setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <motion.div
       key={f.name}
+      id={slug}
+      ref={cardRef}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: i * 0.08 }}
-      className="grid md:grid-cols-[240px_1fr] gap-8 py-10 border-b border-border last:border-b-0"
+      className={`group scroll-mt-32 grid md:grid-cols-[240px_1fr] gap-8 py-10 border-b border-border last:border-b-0 rounded-lg transition-all duration-700 ${
+        highlighted ? "ring-2 ring-primary/70 ring-offset-4 ring-offset-background bg-primary/[0.04]" : "ring-0"
+      }`}
     >
       <div>
         <div className="aspect-square overflow-hidden rounded-lg shadow-md">
@@ -363,12 +422,23 @@ const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
       </div>
       <div className="flex flex-col gap-2">
         <div>
-          <h3 className="text-xl font-bold text-foreground">{f.name}</h3>
+          <div className="flex items-start gap-2">
+            <h3 className="text-xl font-bold text-foreground">{f.name}</h3>
+            <button
+              type="button"
+              onClick={copyLink}
+              aria-label={`Copy link to ${f.name}`}
+              title={t("facultyPage.copyLink", { defaultValue: "Copy link to this profile" })}
+              className="mt-1 shrink-0 rounded-full p-1.5 text-muted-foreground opacity-100 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 hover:text-primary hover:bg-primary/10 transition-all"
+            >
+              {copied ? <Check className="w-4 h-4 text-primary" /> : <Link2 className="w-4 h-4" />}
+            </button>
+          </div>
           <p className="text-sm font-medium text-primary mt-0.5">{ft.role}</p>
           <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">{ft.expertise}</p>
         </div>
         <div className="mt-2">
-          <BioText bio={ft.bio} />
+          <BioText bio={ft.bio} forceExpanded={highlighted} />
         </div>
       </div>
     </motion.div>
