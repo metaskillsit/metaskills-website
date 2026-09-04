@@ -244,6 +244,18 @@ As a Senior Lecturer, he designed industry-aligned cybersecurity curricula, supe
     image: "/images/faculty/faculty-jimmy.png",
     bio: `Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He specialises in the design and delivery of instructor development programmes, competency-based curricula, and hands-on technical training, with a focus on AI and cybersecurity domains. Throughout his career, he has supported organisations such as MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation), and the Institute for Adult Learning Singapore, delivering capability development initiatives for both public and private sector audiences. Jimmy adopts an evidence-based approach to adult learning, integrating practical methodologies such as simulated labs, tabletop exercises, and structured assessment frameworks to ensure effective knowledge transfer and measurable training outcomes.`,
   },
+  {
+    name: "Johnson Ang",
+    i18nKey: "johnsonAng",
+    role: "Lead Consultant, AI Security & DevOps",
+    expertise: "Agentic AI Security | DevSecOps | Air-Gapped AI Infrastructure | VAPT | Cloud & MLOps",
+    image: "/images/faculty/faculty-johnson.jpg",
+    bio: `Johnson Ang is a cybersecurity and DevOps leader with over 15 years of experience across banking, national infrastructure, and higher education. His work sits at the intersection of secure engineering and applied AI — building systems that are not only intelligent, but defensible.
+At ST Engineering, Johnson led the design and delivery of a unified Agentic AI platform, consolidating fragmented tooling into a governed, enterprise-grade environment and delivering more than S$700k in annual savings. He architected secure, air-gapped GPU and LLMOps infrastructure for national security workloads, enabling sensitive AI development in fully isolated environments — a domain where very few practitioners have hands-on depth.
+Earlier, at DBS Bank, he drove revenue-generating digital platforms and large-scale automation programmes, embedding DevSecOps practices into delivery pipelines and reducing manual toil across engineering teams. His technical range spans vulnerability assessment and penetration testing, Zero Trust architecture, cloud security across AWS and Azure, container and Kubernetes hardening, and CI/CD security automation.
+Johnson is equally at home in the classroom. He has taught and developed programmes at NUS and SUTD, mentoring engineers and postgraduate students in secure cloud, DevOps, and AI operations. He holds industry cybersecurity credentials alongside cloud and AI certifications, and brings accredited adult-education experience to every engagement.
+At Metaskills Institute, Johnson leads the AI Security and DevOps practice — helping organisations deploy agentic AI safely, secure their AI supply chain, and build engineering teams that can ship fast without breaking trust.`,
+  },
 ];
 
 /* =========================

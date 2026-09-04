@@ -237,8 +237,8 @@
     "aiDesc": "Chuyên gia về trí tuệ nhân tạo, học máy, quản trị dữ liệu và chuyển đổi số.",
     "algoTeam": "Đội ngũ Giao dịch Thuật toán",
     "algoDesc": "Chuyên gia về tài chính định lượng, hệ thống giao dịch tự động và học máy cho thị trường.",
-    "cyberTeam": "Đội ngũ An ninh Mạng",
-    "cyberDesc": "Các nhà lãnh đạo trong quản trị bảo mật doanh nghiệp, tuân thủ và giáo dục an ninh mạng.",
+    "cyberTeam": "Đội ngũ An ninh Mạng và DevOps",
+    "cyberDesc": "Các chuyên gia thực hành tại giao điểm của an ninh mạng, DevOps và hạ tầng AI an toàn — từ quản trị và tuân thủ đến red-team, cloud và vận hành AI tác tử.",
     "readFullBio": "Đọc Tiểu sử Đầy đủ",
     "showLess": "Thu gọn"
   },
@@ -1166,6 +1166,11 @@
       "role": "Chuyên gia Tư vấn An ninh Mạng Cao cấp",
       "expertise": "Học tập Người lớn | Đào tạo AI & An ninh Mạng",
       "bio": "Jimmy Leong (AFHEA) là một giảng viên cấp cao và chuyên gia giáo dục người lớn có trụ sở tại Singapore với hơn 20 năm kinh nghiệm trong học tập người lớn và công nghệ thông tin. Ông chuyên về thiết kế và cung cấp các chương trình phát triển giảng viên, chương trình giảng dạy dựa trên năng lực và đào tạo kỹ thuật thực hành, tập trung vào các lĩnh vực AI và an ninh mạng. Trong suốt sự nghiệp, ông đã hỗ trợ các tổ chức như MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation) và Viện Học tập Người lớn Singapore, cung cấp các sáng kiến phát triển năng lực cho đối tượng khu vực công và tư nhân. Jimmy áp dụng phương pháp học tập người lớn dựa trên bằng chứng, tích hợp các phương pháp luận thực tiễn như phòng thí nghiệm mô phỏng, bài tập tabletop và khung đánh giá có cấu trúc để đảm bảo chuyển giao kiến thức hiệu quả và kết quả đào tạo đo lường được."
+    },
+    "johnsonAng": {
+      "role": "Trưởng Chuyên gia, An ninh AI & DevOps",
+      "expertise": "An ninh AI tác tử | DevSecOps | Hạ tầng AI cách ly mạng | VAPT | Cloud & MLOps",
+      "bio": "Johnson Ang là một nhà lãnh đạo trong lĩnh vực an ninh mạng và DevOps với hơn 15 năm kinh nghiệm trong ngành ngân hàng, hạ tầng quốc gia và giáo dục đại học. Công việc của ông nằm ở giao điểm giữa kỹ thuật an toàn và AI ứng dụng — xây dựng những hệ thống không chỉ thông minh mà còn có thể bảo vệ được.\nTại ST Engineering, Johnson dẫn dắt việc thiết kế và triển khai một nền tảng AI tác tử hợp nhất, gom các công cụ phân tán thành một môi trường doanh nghiệp được quản trị chặt chẽ, tiết kiệm hơn 700 nghìn SGD mỗi năm. Ông thiết kế hạ tầng GPU và LLMOps cách ly mạng an toàn cho các tác vụ an ninh quốc gia, cho phép phát triển AI với dữ liệu nhạy cảm trong môi trường hoàn toàn tách biệt — một lĩnh vực rất ít chuyên gia có chiều sâu thực chiến.\nTrước đó, tại DBS Bank, ông triển khai các nền tảng số tạo doanh thu và các chương trình tự động hóa quy mô lớn, đưa DevSecOps vào các quy trình phát hành và giảm đáng kể công việc thủ công của đội ngũ kỹ thuật. Năng lực kỹ thuật của ông bao trùm đánh giá lỗ hổng và kiểm thử xâm nhập, kiến trúc Zero Trust, an ninh cloud trên AWS và Azure, gia cố container và Kubernetes, cùng tự động hóa an ninh CI/CD.\nJohnson cũng rất vững vàng trên bục giảng. Ông đã giảng dạy và phát triển chương trình tại NUS và SUTD, hướng dẫn các kỹ sư và học viên cao học về cloud an toàn, DevOps và vận hành AI. Ông sở hữu các chứng chỉ an ninh mạng cùng chứng chỉ cloud và AI, và có kinh nghiệm giáo dục người trưởng thành được công nhận.\nTại Metaskills Institute, Johnson dẫn dắt mảng An ninh AI & DevOps — giúp các tổ chức triển khai AI tác tử một cách an toàn, bảo vệ chuỗi cung ứng AI và xây dựng đội ngũ kỹ thuật vừa nhanh vừa đáng tin cậy."
     },
     "soonYinjie": {
       "role": "Chuyên gia Tư vấn và Đào tạo AI Cao cấp",
