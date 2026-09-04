@@ -61,7 +61,7 @@
     "fintechTitle": "面向金融市场的人工智能",
     "fintechDesc": "由自动化和分析驱动的数据化交易策略。",
     "cyberTitle": "网络防御",
-    "cyberDesc": "全面的网络安全概述——基础知识、威胁格局、关键角色和认证路线图规划。",
+    "cyberDesc": "专注于网络安全、DevOps 与安全 AI 基础设施交汇领域的实战专家——涵盖治理与合规，以及红队演练、云端与代理式 AI 运维。",
     "aiLeadTitle": "AI领导力与治理",
     "aiLeadDesc": "面向高层领导者的战略工作坊——AI采用路线图、问责框架、智能体治理和AI兵棋推演。",
     "mccTitle": "MCC+ 网络防御认证",
@@ -237,7 +237,7 @@
     "aiDesc": "人工智能、机器学习、数据治理和数字化转型方面的专家。",
     "algoTeam": "算法交易团队",
     "algoDesc": "量化金融、自动化交易系统和市场机器学习方面的专家。",
-    "cyberTeam": "网络安全团队",
+    "cyberTeam": "网络安全与 DevOps 团队",
     "cyberDesc": "企业安全治理、合规和网络安全教育领域的领导者。",
     "readFullBio": "阅读完整简历",
     "showLess": "收起"
