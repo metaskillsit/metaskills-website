@@ -3,7 +3,8 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Link2, Check } from "lucide-react";
+import { toast } from "sonner";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 
 
@@ -283,10 +284,21 @@ const useFacultyTranslation = (f: FacultyMember) => {
 
 const COLLAPSED_LINES = 7;
 
-const BioText = ({ bio }: { bio: string }) => {
+const facultySlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/[.'"]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const BioText = ({ bio, forceExpanded = false }: { bio: string; forceExpanded?: boolean }) => {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const [hasMore, setHasMore] = useState(false);
+
+  useEffect(() => {
+    if (forceExpanded) setExpanded(true);
+  }, [forceExpanded]);
   const contentRef = useRef<HTMLDivElement>(null);
   const paragraphs = bio.trim().split("\n").filter(Boolean);
 
@@ -346,15 +358,62 @@ const BioText = ({ bio }: { bio: string }) => {
 
 const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
   const ft = useFacultyTranslation(f);
+  const { t } = useTranslation();
+  const slug = facultySlug(f.name);
+  const [highlighted, setHighlighted] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handle = () => {
+      const hash = decodeURIComponent(window.location.hash.replace("#", ""));
+      if (hash !== slug) return;
+      setHighlighted(true);
+      window.setTimeout(() => {
+        const el = cardRef.current;
+        if (!el) return;
+        const offset = window.innerWidth >= 768 ? 110 : 90;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+      }, 250);
+      window.setTimeout(() => setHighlighted(false), 2600);
+    };
+    handle();
+    window.addEventListener("hashchange", handle);
+    return () => window.removeEventListener("hashchange", handle);
+  }, [slug]);
+
+  const copyLink = async () => {
+    const url = `${window.location.origin}${window.location.pathname}#${slug}`;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      const input = document.createElement("input");
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+    }
+    setCopied(true);
+    toast.success(t("facultyPage.linkCopied", { defaultValue: "Link copied" }), {
+      description: url,
+    });
+    window.setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <motion.div
       key={f.name}
+      id={slug}
+      ref={cardRef}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: i * 0.08 }}
-      className="grid md:grid-cols-[240px_1fr] gap-8 py-10 border-b border-border last:border-b-0"
+      className={`group scroll-mt-32 grid md:grid-cols-[240px_1fr] gap-8 py-10 border-b border-border last:border-b-0 rounded-lg transition-all duration-700 ${
+        highlighted ? "ring-2 ring-primary/70 ring-offset-4 ring-offset-background bg-primary/[0.04]" : "ring-0"
+      }`}
     >
       <div>
         <div className="aspect-square overflow-hidden rounded-lg shadow-md">
@@ -363,12 +422,23 @@ const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
       </div>
       <div className="flex flex-col gap-2">
         <div>
-          <h3 className="text-xl font-bold text-foreground">{f.name}</h3>
+          <div className="flex items-start gap-2">
+            <h3 className="text-xl font-bold text-foreground">{f.name}</h3>
+            <button
+              type="button"
+              onClick={copyLink}
+              aria-label={`Copy link to ${f.name}`}
+              title={t("facultyPage.copyLink", { defaultValue: "Copy link to this profile" })}
+              className="mt-1 shrink-0 rounded-full p-1.5 text-muted-foreground opacity-100 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 hover:text-primary hover:bg-primary/10 transition-all"
+            >
+              {copied ? <Check className="w-4 h-4 text-primary" /> : <Link2 className="w-4 h-4" />}
+            </button>
+          </div>
           <p className="text-sm font-medium text-primary mt-0.5">{ft.role}</p>
           <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">{ft.expertise}</p>
         </div>
         <div className="mt-2">
-          <BioText bio={ft.bio} />
+          <BioText bio={ft.bio} forceExpanded={highlighted} />
         </div>
       </div>
     </motion.div>
