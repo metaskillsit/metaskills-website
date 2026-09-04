@@ -61,7 +61,7 @@
     "fintechTitle": "AI For Financial Markets",
     "fintechDesc": "Data-driven trading strategies powered by automation and analytics for financial markets.",
     "cyberTitle": "Cyber Defence",
-    "cyberDesc": "Practitioners at the intersection of cybersecurity, DevOps, and secure AI infrastructure — from governance and compliance to hands-on red-team, cloud, and agentic AI operations.",
+    "cyberDesc": "Comprehensive cybersecurity overview — fundamentals, threat landscape, key roles, and certification roadmap planning.",
     "aiLeadTitle": "AI Leadership and Governance",
     "aiLeadDesc": "Strategy workshops for senior leaders — AI adoption roadmaps, accountability frameworks, agent governance, and AI wargaming.",
     "mccTitle": "MCC+ Cyber Defence Certification",
@@ -238,7 +238,7 @@
     "algoTeam": "Algorithmic Trading Team",
     "algoDesc": "Experts in quantitative finance, automated trading systems, and machine learning for markets.",
     "cyberTeam": "Cybersecurity and DevOps Team",
-    "cyberDesc": "Leaders in enterprise security governance, compliance, and cybersecurity education.",
+    "cyberDesc": "Practitioners at the intersection of cybersecurity, DevOps, and secure AI infrastructure — from governance and compliance to hands-on red-team, cloud, and agentic AI operations.",
     "readFullBio": "Read Full Bio",
     "showLess": "Show Less"
   },
