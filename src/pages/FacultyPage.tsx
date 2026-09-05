@@ -253,6 +253,14 @@ Offensive Security & Enterprise Cyber: Applied coursework and intensive lab trai
 DevSecOps, MLOps & Cloud: DevOps/DataOps/MLOps (Duke University); AI for Cybersecurity (Johns Hopkins); Kubernetes Architecture (GCP Skill Badge); Containerization via Jenkins/Docker (KodeKloud).`,
   },
   {
+    name: "Jimmy Leong",
+    i18nKey: "jimmyLeong",
+    role: "Senior Cyber Security Advisor",
+    expertise: "Adult Learning | Cyber, DevOps & AI Training | ACLP",
+    image: "/images/faculty/faculty-jimmy.png",
+    bio: `Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He specialises in the design and delivery of instructor development programmes, competency-based curricula, and hands-on technical training, with a focus on AI and cybersecurity domains. Throughout his career, he has supported organisations such as MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation), and the Institute for Adult Learning Singapore, delivering capability development initiatives for both public and private sector audiences. Jimmy adopts an evidence-based approach to adult learning, integrating practical methodologies such as simulated labs, tabletop exercises, and structured assessment frameworks to ensure effective knowledge transfer and measurable training outcomes.`,
+  },
+  {
     name: "Lenz Yu",
     i18nKey: "lenzYu",
     role: "Principal Cyber Security Consultant",
@@ -262,14 +270,6 @@ DevSecOps, MLOps & Cloud: DevOps/DataOps/MLOps (Duke University); AI for Cyberse
 Lenz is one of the most active cybersecurity educators in Singapore's adult learning ecosystem. Over the past six years, he has delivered hands-on red-team and blue-team training as an adjunct lecturer at Kaplan Singapore (partnering with the University of Portsmouth and Murdoch University), Temasek Polytechnic, Singapore Polytechnic, and Republic Polytechnic. His teaching spans Ethical Hacking, Digital Forensics & Incident Response, Malware Reverse Engineering, and Securing Microsoft Windows — covering the full five phases of ethical hacking, the cyber kill chain, MITRE ATT&CK TTP analysis, and hands-on labs with tools such as Metasploit, Nmap, Nessus, Mimikatz, Wireshark, Splunk, IDA, and Volatility.
 His technical foundation was forged at the Defence Science Technology Agency (DSTA), where he administered and hardened enterprise server infrastructure across Sun Solaris, Windows Server, Red Hat Enterprise Linux, and IBM AIX, followed by a decade at F5 Networks spanning field engineering, enterprise networking, and senior security engineering roles in Singapore and Shanghai. Lenz is a two-time recipient of the F5 Five Stars Award — the company's highest individual honour.
 Lenz holds an elite portfolio of security certifications including CISSP, CCSP, CISA, GIAC GCIH, GMOB, GREM and GCSA, EC-Council CEH, and Certified Kubernetes Security Specialist, alongside a WSQ Advanced Certificate in Learning and Performance (ACLP).`,
-  },
-  {
-    name: "Jimmy Leong",
-    i18nKey: "jimmyLeong",
-    role: "Senior Cyber Security Advisor",
-    expertise: "Adult Learning | Cyber, DevOps & AI Training | ACLP",
-    image: "/images/faculty/faculty-jimmy.png",
-    bio: `Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He specialises in the design and delivery of instructor development programmes, competency-based curricula, and hands-on technical training, with a focus on AI and cybersecurity domains. Throughout his career, he has supported organisations such as MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation), and the Institute for Adult Learning Singapore, delivering capability development initiatives for both public and private sector audiences. Jimmy adopts an evidence-based approach to adult learning, integrating practical methodologies such as simulated labs, tabletop exercises, and structured assessment frameworks to ensure effective knowledge transfer and measurable training outcomes.`,
   },
 ];
 
