@@ -183,13 +183,13 @@ const FacultySection = () => {
 
   const isDragging = useRef(false);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleMouseDown = (e: ReactMouseEvent) => {
     isDragging.current = true;
     touchStartX.current = e.clientX;
     touchEndX.current = e.clientX;
   };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMouseMove = (e: ReactMouseEvent) => {
     if (!isDragging.current) return;
     touchEndX.current = e.clientX;
   };
