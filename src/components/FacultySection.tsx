@@ -117,7 +117,7 @@ const allFaculty = [
   {
     name: "Jimmy Leong",
     role: "Senior Cyber Security Advisor",
-    expertise: "Adult Learning | AI & Cyber Training",
+    expertise: "Adult Learning | Cyber, DevOps & AI Training",
     image: "/images/faculty/faculty-jimmy.png",
   },
 ];
