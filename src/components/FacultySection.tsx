@@ -181,6 +181,25 @@ const FacultySection = () => {
     }
   };
 
+  const isDragging = useRef(false);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    touchStartX.current = e.clientX;
+    touchEndX.current = e.clientX;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    touchEndX.current = e.clientX;
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    handleTouchEnd();
+  };
+
   const translateX = currentIdx * (cardWidth + GAP);
 
   return (
