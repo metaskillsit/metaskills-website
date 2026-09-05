@@ -255,6 +255,11 @@ const FacultySection = () => {
                     src={withFacultyImageVersion(f.image)}
                     alt={f.name}
                     className="w-full h-full object-cover"
+                    style={
+                      f.image.includes("brendan") || f.image.includes("adriantoh")
+                        ? { objectPosition: "center top" }
+                        : undefined
+                    }
                   />
                 </div>
                 <h3 className="font-heading text-base font-medium tracking-tight text-foreground">{f.name}</h3>
