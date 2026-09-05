@@ -509,14 +509,14 @@ const FacultyPage = () => {
               members={aiTeam}
             />
             <TeamSection
-              title={t("facultyPage.algoTeam")}
-              description={t("facultyPage.algoDesc")}
-              members={algoTradingTeam}
-            />
-            <TeamSection
               title={t("facultyPage.cyberTeam")}
               description={t("facultyPage.cyberDesc")}
               members={cyberTeam}
+            />
+            <TeamSection
+              title={t("facultyPage.algoTeam")}
+              description={t("facultyPage.algoDesc")}
+              members={algoTradingTeam}
             />
           </div>
         </section>
