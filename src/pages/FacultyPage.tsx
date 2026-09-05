@@ -25,7 +25,7 @@ const executiveTeam: FacultyMember[] = [
     name: "Dr. Jinghao Ke",
     i18nKey: "drKeJinghao",
     role: "CEO, Metaskills Institute | Chief Corporate Officer, Integrum Global",
-    expertise: "Business Consulting | Data Analytics | Data Science | Agentic AI | AI | Machine Learning",
+    expertise: "Business Consulting | Data Analytics | Data Science | Agentic AI | AI | Machine Learning | ACLP",
     image: "/images/faculty/faculty-jinghao.png",
     bio: `Dr. Jinghao Ke is C.E.O of Metaskills Institute and Chief Corporate Officer at Integrum Global. He oversees corporate AI and analytics training, focusing on AI in finance, machine learning, data strategy, and digital transformation programs for enterprise and government clients.
 Dr. Ke holds a PhD in Finance and has designed and delivered training for functions including corporate finance, marketing analytics, and operations optimization. He is recognized for creating curricula that integrate business relevance with technical rigor, bridging strategic priorities with hands-on application.
@@ -40,7 +40,7 @@ What distinguishes Jinghao is his ability to operate simultaneously as scholar, 
     name: "Phan Phi Long",
     i18nKey: "phanPhiLong",
     role: "CTO, Metaskills Institute",
-    expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
+    expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation | ACLP",
     image: "/images/faculty/faculty-philong.jpg",
     bio: `As Chief Technology Officer of Metaskills Institute, Mr. Long Phan leads the Institute's technology strategy, AI engineering backbone, and digital learning infrastructure, ensuring its training platforms, agentic AI systems, and enterprise solutions remain at the forefront of innovation.
 Mr. Long Phan is the Managing Director of Way4SME Pte Ltd and VASSS Pte Ltd, where he serves as a trusted IT partner to over 1,000 SMEs across Singapore. With deep expertise in IT service management and enterprise transformation, he has played a pivotal role in helping SMEs and startups redesign their IT infrastructure, streamline operational processes, and achieve scalable, sustainable growth.
@@ -76,7 +76,7 @@ const aiTeam: FacultyMember[] = [
     name: "Dr. Jack Hong",
     i18nKey: "drJackHong",
     role: "Lead Senior Consultant",
-    expertise: "AI Transformation | Data Science | Digital Strategy",
+    expertise: "AI Transformation | Data Science | Digital Strategy | ACLP",
     image: "/images/faculty/faculty-jackhong.jpg",
     bio: `Dr. Jack Hong stands at the forefront of the Business Transformation landscape, harnessing the power of digital tools, data analytics, and cutting-edge Artificial Intelligence (AI) applications. As a visionary in the realm of Transformation-as-a-Service (XaaS), Dr. Hong is renowned for revolutionizing enterprises by reimagining their business models. His innovative approach involves a unique blend of proprietary frameworks, strategic team restructuring for optimal value delivery, mastery of data utilization, and the development of tailored AI solutions. 
 Throughout his illustrious career, Dr. Hong has played a pivotal role in steering numerous enterprises, government entities, and systems integrators toward outcome-based transformations. His expertise spans diverse sectors, including real estate, healthcare, transportation, finance, education, and security, making him a highly sought-after figure in digital transformation.
@@ -113,7 +113,7 @@ Sriven is adept in psychometric assessment, strengths-based development, and lea
     name: "Adrian Toh",
     i18nKey: "adrianToh",
     role: "AI Senior Consultant",
-    expertise: "AI in Finance | Investment Advisory | FX & Structured Products | Algorithmic Trading",
+    expertise: "AI in Finance | Investment Advisory | FX & Structured Products | Algorithmic Trading | ACLP",
     image: "/images/faculty/faculty-adriantoh.jpg",
     bio: `Adrian Toh is an AI Senior Consultant who brings more than 13 years of frontline financial markets experience to the design and delivery of AI-powered solutions for the finance industry. Having held senior client-facing and advisory roles at leading institutions including UOB, ANZ, AG Investment Management LLP, and Citibank Singapore, he has advised private and high-net-worth clients across structured products, bonds, foreign exchange, dual-currency investments, equities, and commodities, with portfolios of up to S$100 million in assets under management. This deep practitioner background gives him a sharp instinct for where AI can create real value across wealth management, trading, and advisory workflows.
 At Metaskills Institute, Adrian focuses on applying generative and agentic AI to the financial services value chain, including AI-augmented client advisory, intelligent portfolio analytics, automated market research and report generation, robo-advisory design, regulatory and compliance copilots, and AI-driven risk and fraud monitoring. He works with banks, wealth managers, and investment firms to translate frontline use cases into production-ready AI workflows, drawing on his commercial track record of consistently exceeding sales targets and growing assets under management through disciplined client acquisition, referral programmes, and structured marketing initiatives at UOB, ANZ, and Citibank Singapore.
@@ -123,7 +123,7 @@ Earlier in his career, Adrian served as a Director at AG Investment Management L
     name: "Matthew Wu",
     i18nKey: "matthewWu",
     role: "Senior Strategist, Cross-Border Capital | Real Estate & Agricultural Investment | AI Digital Strategy",
-    expertise: "Cross-Border Capital Raising & Deal Structuring | Real Estate & Agriculture | Asia-Pacific Investor Relations & Market Entry | AI for Market Research & Investment Intelligence",
+    expertise: "Cross-Border Capital Raising & Deal Structuring | Real Estate & Agriculture | Asia-Pacific Investor Relations & Market Entry | AI for Market Research & Investment Intelligence | ACLP",
     image: "/images/faculty/faculty-matthewwu.jpg",
     bio: `Matthew Wu is a Senior Strategist focused on cross-border capital, real estate and agricultural investment, and AI digital strategy. He applies AI-driven market research, investor intelligence, and deal-screening tools to sharpen due diligence, identify cross-border opportunities, and accelerate capital-raising workflows across Asia-Pacific. He began his career in private equity, and that grounding continues to shape the way he approaches transactions today. From understanding deal structures and investor expectations, to managing risk and nurturing long-term stakeholder relationships, his work is built on an analytical foundation refined over years of regional practice. Over time, his focus has extended across multiple markets and sectors, including real estate transactions in Hawaiʻi and Las Vegas, agricultural investment initiatives in Indonesia and Sri Lanka, and land transactions in the Philippines. The common thread throughout has been his ability to connect the right parties, navigate complex cross-border dynamics, and help move opportunities from discussion into execution. To date, he has contributed to and facilitated transactions collectively representing billions of dollars in project and investment value across Asia-Pacific, consistently centred on relationship development, market access, investor engagement, and cross-jurisdictional deal coordination.
 
@@ -147,7 +147,7 @@ Matthew's areas of expertise span cross-border deal facilitation and structuring
     name: "Jack Tee",
     i18nKey: "jackTee",
     role: "AI Senior Consultant and Trainer",
-    expertise: "AI Engineering | NLP | Computer Vision",
+    expertise: "AI Engineering | NLP | Computer Vision | ACLP",
     image: "/images/faculty/faculty-jacktee.png",
     bio: `As the business-minded AI Engineering Head at Integrum Global, Jack Tee leverages his MBA from SMU and Mechanical Engineering background to craft high impact AI solutions across diverse fields. He has spearheaded projects such as identifying competitors for startups through financial news analysis using Natural Language Processing, enhancing train safety with speed estimation and search-and-rescue drones using Computer Vision, and developing a mobile app and web portal for real-time fleet management through route optimization. Jack is also advanced in large language model commercialization research and development, combining technical expertise with a strong focus on achieving business objectives.`,
   },
@@ -155,7 +155,7 @@ Matthew's areas of expertise span cross-border deal facilitation and structuring
     name: "Soon Yinjie",
     i18nKey: "soonYinjie",
     role: "AI Senior Consultant and Trainer",
-    expertise: "Programming | EdTech | AI Systems",
+    expertise: "Programming | EdTech | AI Systems | ACLP",
     image: "/images/faculty/faculty-yinjie.jpg",
     bio: `Yinjie (YJ) is co-founder at Tinkertanker, a technology and education company in Singapore, building software, electronics, curriculum — and the next generation of coders, makers, and creators. YJ handles partnerships, strategy, and business development, while always making time to teach a few of his favourite programming classes. 
 YJ received his Bachelor's and Master's degrees in Electrical Engineering from Stanford University in the USA, and a Post-Graduate Diploma in Secondary Education from the National Institute of Education in Singapore. Before Tinkertanker, YJ taught computing at Raffles Institution as Curriculum Head for Infocomm Technology, and served as a Senior Head for Policy & Planning at the Higher Education Division in MOE. For fun, he draws, collects programming memes, and tries to stop spending money on AI subscriptions.
@@ -174,7 +174,7 @@ He has built APIs that scaled past 1 million users for the Rio Olympics, built m
     name: "Evelyn Wong",
     i18nKey: "evelynWong",
     role: "AI Senior Consultant and Trainer",
-    expertise: "Data Governance | Analytics | Compliance",
+    expertise: "Data Governance | Analytics | Compliance | ACLP",
     image: "/images/faculty/faculty-evelyn.png",
     bio: `Evelyn Wong is a Data Governance Specialist currently leading data governance initiatives at Infinuem. She plays a pivotal role in developing and implementing data governance frameworks, policies, standards, and roles that strengthen data quality, security, and regulatory compliance, including alignment with PDPAand GDPR requirements. Working across finance, IT, risk, marketing, and AI teams, she helps harmonize data ownership and enable integrated analytics that support business decision-making.
 In addition to her expertise in data governance, Evelyn brings strong capabilities in software development, data analysis, machine learning, and natural language applications. Her broad corporate background spans Compliance, Business Development, Sales & Marketing, and Project Management at global organizations such as 3M and Agilent Technologies, giving her a well-rounded perspective on business and technology transformation.
@@ -185,7 +185,7 @@ A Certified Lean Six Sigma Green Belt and Certified Scrum Master, Evelyn is high
     name: "Chris Tan Seok King",
     i18nKey: "chrisTan",
     role: "Senior Consultant and Trainer",
-    expertise: "Financial Services | AI-Augmented Client Advisory | Sales Coaching",
+    expertise: "Financial Services | AI-Augmented Client Advisory | Sales Coaching | ACLP",
     image: "/images/faculty/faculty-christan.jpg",
     bio: `Chris Tan is a seasoned sales trainer and former banking practitioner whose practice now brings financial services, client advisory, and AI-augmented selling together. A former Personal Banker at UOB and Financial Protection Specialist at OCBC, she brings frontline credibility from regulated bank environments together with years of experience designing and delivering sales coaching programmes for financial advisory and corporate sales teams across Singapore and Malaysia.
 Her current focus is AI-augmented client advisory: helping advisers and relationship managers use generative AI tools to enrich client research, personalise outreach, prepare needs-based conversations, anticipate objections, and maintain disciplined follow-up — without losing the human trust that underpins advisory relationships. She trains teams to combine AI-generated insights with structured questioning, ethical disclosure, and compliant workflows so that technology amplifies rapport rather than replacing it.
@@ -231,7 +231,7 @@ const cyberTeam: FacultyMember[] = [
     name: "Steven Ong",
     i18nKey: "stevenOng",
     role: "Lead Cyber Security Consultant",
-    expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs",
+    expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs | ACLP",
     image: "/images/faculty/faculty-steven.jpg",
     bio: `Steven Ong is a distinguished cybersecurity leader and academic with over 25 years of experience spanning enterprise security governance, regulatory compliance, digital transformation, and higher education leadership. As Chief Information Security Officer at the institutional level, he transformed cybersecurity from a reactive function into a structured, risk-based governance model aligned with ISO 27001 and the NIST Cybersecurity Framework. 
 He established a comprehensive Information Security Program covering data protection, incident response, third-party risk, and policy governance, while forming a cross-functional Cybersecurity Steering Committee to embed security into executive decision-making. Steven strengthened compliance across IM8, PDPA, and GDPR requirements, conducted enterprise-wide risk assessments, and formalized a risk register to enhance oversight and reduce regulatory exposure. He built a centralized Security Operations capability with 24/7 monitoring, deployed SIEM and EDR solutions, and implemented a tested Incident Response Plan, successfully containing phishing and ransomware threats without operational disruption. He enhanced research security through Zero Trust architecture and network segmentation, implemented institution-wide MFA and RBAC, automated identity lifecycle management, and reduced phishing click rates from 35% to 12% through targeted awareness programs. He also led cloud security governance, introduced CASB monitoring, optimized cybersecurity budgets, and secured increased funding through risk-based business cases. 
@@ -239,10 +239,10 @@ A defining professional milestone for Steven was a corporate attachment with a g
 As a Senior Lecturer, he designed industry-aligned cybersecurity curricula, supervised over 100 undergraduate projects and 30+ Master's dissertations, trained corporate clients from leading organizations, developed advanced cybersecurity laboratories, and served in academic leadership roles. His career reflects a powerful integration of executive strategy, operational excellence, academic leadership, and national cybersecurity contribution.`,
   },
   {
-    name: "Johnson Ang (AFHEA, ACTA/ACLP)",
+    name: "Johnson Ang",
     i18nKey: "johnsonAng",
     role: "Lead Instructor, Cyber Security & Applied AI",
-    expertise: "Adult Learning | Offensive Security | AI Infrastructure",
+    expertise: "Adult Learning | Offensive Security | AI Infrastructure | AFHEA, ACTA/ACLP",
     image: "/images/faculty/faculty-johnson.jpg",
     bio: `Johnson Ang is an accomplished adult education specialist, technical strategist, and founder with over 15 years of experience driving capability development across cybersecurity and artificial intelligence. Transitioning from a robust career as a Principal Data Scientist and Lead Infrastructure Engineer for national-level projects, Johnson brings direct, founder-level authenticity to the classroom. His technical foundation spans managing Operational Risk for Tier-1 banks, governing air-gapped data ecosystems, and engineering autonomous AI systems.
 In the cybersecurity domain, Johnson translates complex theoretical security concepts into commercial applications. He is the founder and primary architect behind a novel, unified Agentic SOC, VAPT (incl. a Mythos variant), and SIEM platform (soc.aiagentfolio.com), and authored the foundational paper establishing its multi-agent security architecture. By bringing real-world telemetry, automated penetration testing scripts, and AI-driven SIEM workflows from his own platform into the classroom, he offers adult learners an unparalleled hands-on learning experience grounded in active, real-world engineering.
@@ -256,7 +256,7 @@ DevSecOps, MLOps & Cloud: DevOps/DataOps/MLOps (Duke University); AI for Cyberse
     name: "Jimmy Leong",
     i18nKey: "jimmyLeong",
     role: "Senior Cyber Security Advisor",
-    expertise: "Adult Learning | Cyber, DevOps & AI Training",
+    expertise: "Adult Learning | Cyber, DevOps & AI Training | ACLP",
     image: "/images/faculty/faculty-jimmy.png",
     bio: `Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He specialises in the design and delivery of instructor development programmes, competency-based curricula, and hands-on technical training, with a focus on AI and cybersecurity domains. Throughout his career, he has supported organisations such as MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation), and the Institute for Adult Learning Singapore, delivering capability development initiatives for both public and private sector audiences. Jimmy adopts an evidence-based approach to adult learning, integrating practical methodologies such as simulated labs, tabletop exercises, and structured assessment frameworks to ensure effective knowledge transfer and measurable training outcomes.`,
   },

@@ -9,13 +9,13 @@ const allFaculty = [
   {
     name: "Dr. Jinghao Ke",
     role: "CEO, Metaskills Institute | Chief Corporate Officer, Integrum Global",
-    expertise: "Business Consulting | Data Analytics | Data Science | Agentic AI | Machine Learning",
+    expertise: "Business Consulting | Data Analytics | Data Science | Agentic AI | Machine Learning | ACLP",
     image: "/images/faculty/faculty-jinghao.png",
   },
   {
     name: "Phan Phi Long",
     role: "CTO, Metaskills Institute",
-    expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation",
+    expertise: "IT Transformation | Generative AI | Agentic AI | SME Digitalisation | ACLP",
     image: "/images/faculty/faculty-philong.jpg",
   },
   {
@@ -33,7 +33,7 @@ const allFaculty = [
   {
     name: "Dr. Jack Hong",
     role: "Lead Senior Consultant",
-    expertise: "AI Transformation | Data Science | Digital Strategy",
+    expertise: "AI Transformation | Data Science | Digital Strategy | ACLP",
     image: "/images/faculty/faculty-jackhong.jpg",
   },
   {
@@ -45,13 +45,13 @@ const allFaculty = [
   {
     name: "Adrian Toh",
     role: "AI Senior Consultant",
-    expertise: "AI in Finance | Investment Advisory | FX & Structured Products | Algorithmic Trading",
+    expertise: "AI in Finance | Investment Advisory | FX & Structured Products | Algorithmic Trading | ACLP",
     image: "/images/faculty/faculty-adriantoh.jpg",
   },
   {
     name: "Matthew Wu",
     role: "Senior Strategist, Cross-Border Capital | Real Estate & Agricultural Investment | AI Digital Strategy",
-    expertise: "Cross-Border Capital Raising & Deal Structuring | Asia-Pacific Investor Relations | AI for Market Research & Investment Intelligence",
+    expertise: "Cross-Border Capital Raising & Deal Structuring | Asia-Pacific Investor Relations | AI for Market Research & Investment Intelligence | ACLP",
     image: "/images/faculty/faculty-matthewwu.jpg",
   },
   {
@@ -63,13 +63,13 @@ const allFaculty = [
   {
     name: "Jack Tee",
     role: "AI Senior Consultant and Trainer",
-    expertise: "AI Engineering | NLP | Computer Vision",
+    expertise: "AI Engineering | NLP | Computer Vision | ACLP",
     image: "/images/faculty/faculty-jacktee.png",
   },
   {
     name: "Soon Yinjie",
     role: "AI Senior Consultant and Trainer",
-    expertise: "Programming | EdTech | AI Systems",
+    expertise: "Programming | EdTech | AI Systems | ACLP",
     image: "/images/faculty/faculty-yinjie.jpg",
   },
   {
@@ -81,13 +81,13 @@ const allFaculty = [
   {
     name: "Evelyn Wong",
     role: "AI Senior Consultant and Trainer",
-    expertise: "Data Governance | Analytics | Compliance",
+    expertise: "Data Governance | Analytics | Compliance | ACLP",
     image: "/images/faculty/faculty-evelyn.png",
   },
   {
     name: "Chris Tan Seok King",
     role: "Senior Consultant and Trainer",
-    expertise: "Financial Services | AI-Augmented Client Advisory | Sales Coaching",
+    expertise: "Financial Services | AI-Augmented Client Advisory | Sales Coaching | ACLP",
     image: "/images/faculty/faculty-christan.jpg",
   },
   {
@@ -105,19 +105,19 @@ const allFaculty = [
   {
     name: "Steven Ong",
     role: "Lead Cyber Security Consultant",
-    expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs",
+    expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs | ACLP",
     image: "/images/faculty/faculty-steven.jpg",
   },
   {
-    name: "Johnson Ang (AFHEA, ACTA/ACLP)",
+    name: "Johnson Ang",
     role: "Lead Instructor, Cyber Security & Applied AI",
-    expertise: "Adult Learning | Offensive Security | AI Infrastructure",
+    expertise: "Adult Learning | Offensive Security | AI Infrastructure | AFHEA, ACTA/ACLP",
     image: "/images/faculty/faculty-johnson.jpg",
   },
   {
     name: "Jimmy Leong",
     role: "Senior Cyber Security Advisor",
-    expertise: "Adult Learning | Cyber, DevOps & AI Training",
+    expertise: "Adult Learning | Cyber, DevOps & AI Training | ACLP",
     image: "/images/faculty/faculty-jimmy.png",
   },
 ];
