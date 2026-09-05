@@ -239,10 +239,10 @@ A defining professional milestone for Steven was a corporate attachment with a g
 As a Senior Lecturer, he designed industry-aligned cybersecurity curricula, supervised over 100 undergraduate projects and 30+ Master's dissertations, trained corporate clients from leading organizations, developed advanced cybersecurity laboratories, and served in academic leadership roles. His career reflects a powerful integration of executive strategy, operational excellence, academic leadership, and national cybersecurity contribution.`,
   },
   {
-    name: "Johnson Ang (AFHEA, ACTA/ACLP)",
+    name: "Johnson Ang",
     i18nKey: "johnsonAng",
     role: "Lead Instructor, Cyber Security & Applied AI",
-    expertise: "Adult Learning | Offensive Security | AI Infrastructure",
+    expertise: "Adult Learning | Offensive Security | AI Infrastructure | AFHEA, ACTA/ACLP",
     image: "/images/faculty/faculty-johnson.jpg",
     bio: `Johnson Ang is an accomplished adult education specialist, technical strategist, and founder with over 15 years of experience driving capability development across cybersecurity and artificial intelligence. Transitioning from a robust career as a Principal Data Scientist and Lead Infrastructure Engineer for national-level projects, Johnson brings direct, founder-level authenticity to the classroom. His technical foundation spans managing Operational Risk for Tier-1 banks, governing air-gapped data ecosystems, and engineering autonomous AI systems.
 In the cybersecurity domain, Johnson translates complex theoretical security concepts into commercial applications. He is the founder and primary architect behind a novel, unified Agentic SOC, VAPT (incl. a Mythos variant), and SIEM platform (soc.aiagentfolio.com), and authored the foundational paper establishing its multi-agent security architecture. By bringing real-world telemetry, automated penetration testing scripts, and AI-driven SIEM workflows from his own platform into the classroom, he offers adult learners an unparalleled hands-on learning experience grounded in active, real-world engineering.

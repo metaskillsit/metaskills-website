@@ -109,9 +109,9 @@ const allFaculty = [
     image: "/images/faculty/faculty-steven.jpg",
   },
   {
-    name: "Johnson Ang (AFHEA, ACTA/ACLP)",
+    name: "Johnson Ang",
     role: "Lead Instructor, Cyber Security & Applied AI",
-    expertise: "Adult Learning | Offensive Security | AI Infrastructure",
+    expertise: "Adult Learning | Offensive Security | AI Infrastructure | AFHEA, ACTA/ACLP",
     image: "/images/faculty/faculty-johnson.jpg",
   },
   {
