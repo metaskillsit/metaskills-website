@@ -1171,7 +1171,7 @@
     },
     "johnsonAng": {
       "role": "首席讲师，网络安全与应用AI",
-      "expertise": "成人学习 | 进攻性安全 | AI基础设施 | ACLP",
+      "expertise": "成人学习 | 进攻性安全 | AI基础设施 | AFHEA、ACTA/ACLP",
       "bio": "洪强生（Johnson Ang，AFHEA、ACTA/ACLP）是一位资深的成人教育专家、技术战略师和创始人，在网络安全与人工智能领域拥有超过15年推动能力发展的经验。从担任国家级项目的首席数据科学家和首席基础设施工程师的扎实职业经历转型而来，Johnson为课堂带来了直接的创始人级真实感。他的技术基础涵盖管理一级银行的操作风险、治理隔离网数据生态系统以及工程化自主AI系统。\n在网络安全领域，Johnson将复杂的理论安全概念转化为商业应用。他是一款新型统一代理式SOC、VAPT（含Mythos变体）和SIEM平台（soc.aiagentfolio.com）的创始人兼首席架构师，并撰写了确立其多代理安全架构的基础论文。通过将自己平台上的真实遥测数据、自动化渗透测试脚本和AI驱动SIEM工作流程带入课堂，他为成人学习者提供了无与伦比的实践学习体验，扎根于积极的现实工程。\n作为一名有志于学术领导者，Johnson在领先大学拥有丰富的机构能力建设记录，独自培养了超过1,000名成人学习者，其中包括新加坡国立大学和AI Singapore的高级技术人员。通过将他在Python、DevSecOps和代理式AI方面的领域专长与结构化成人学习框架（ACTA、AFHEA）相结合，Johnson始终如一地提供可衡量的培训成果，赋能下一代工程师和安全专业人员在高度受监管的环境中蓬勃发展。\n专业资质与应用技术课程\n教学认证：英国高等教育副研究员（AFHEA）；新加坡成人学习学院培训与评估高级证书（ACTA）。\n进攻性安全与企业网络：OSCP、RHCSA和CISSP范式中的应用课程和强化实验室培训；约翰霍普金斯大学高级恶意软件分析；淡马锡理工学院项目经理专门网络安全培训。\nDevSecOps、MLOps与云：杜克大学DevOps/DataOps/MLOps；约翰霍普金斯大学AI for Cybersecurity；GCP技能徽章Kubernetes架构；KodeKloud通过Jenkins/Docker实现容器化。"
     },
     "soonYinjie": {
