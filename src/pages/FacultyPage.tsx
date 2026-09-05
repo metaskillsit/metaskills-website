@@ -253,6 +253,17 @@ Offensive Security & Enterprise Cyber: Applied coursework and intensive lab trai
 DevSecOps, MLOps & Cloud: DevOps/DataOps/MLOps (Duke University); AI for Cybersecurity (Johns Hopkins); Kubernetes Architecture (GCP Skill Badge); Containerization via Jenkins/Docker (KodeKloud).`,
   },
   {
+    name: "Lenz Yu",
+    i18nKey: "lenzYu",
+    role: "Principal Cyber Security Consultant",
+    expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
+    image: "/images/faculty/faculty-lenz.jpg",
+    bio: `Lenz Yu is a seasoned cybersecurity professional with 19 years of industry experience and a Master's in Cyber Security and Management (Merit) from the University of Warwick. As Principal Escalation Engineer at F5 Inc., he serves as the Security Subject Matter Expert for the APAC support organisation, leading vulnerability management and mitigating sophisticated network and application-layer attacks — from OWASP Top 10 exploits to large-scale DDoS and brute-force campaigns — across fraud protection, web application firewall, and network firewall solutions. He is a core member of F5's global Security Incident Response Team (SIRT), mentoring engineers on live security incidents and guiding customers through complex deployments and security design.
+Lenz is one of the most active cybersecurity educators in Singapore's adult learning ecosystem. Over the past six years, he has delivered hands-on red-team and blue-team training as an adjunct lecturer at Kaplan Singapore (partnering with the University of Portsmouth and Murdoch University), Temasek Polytechnic, Singapore Polytechnic, and Republic Polytechnic. His teaching spans Ethical Hacking, Digital Forensics & Incident Response, Malware Reverse Engineering, and Securing Microsoft Windows — covering the full five phases of ethical hacking, the cyber kill chain, MITRE ATT&CK TTP analysis, and hands-on labs with tools such as Metasploit, Nmap, Nessus, Mimikatz, Wireshark, Splunk, IDA, and Volatility.
+His technical foundation was forged at the Defence Science Technology Agency (DSTA), where he administered and hardened enterprise server infrastructure across Sun Solaris, Windows Server, Red Hat Enterprise Linux, and IBM AIX, followed by a decade at F5 Networks spanning field engineering, enterprise networking, and senior security engineering roles in Singapore and Shanghai. Lenz is a two-time recipient of the F5 Five Stars Award — the company's highest individual honour.
+Lenz holds an elite portfolio of security certifications including CISSP, CCSP, CISA, GIAC GCIH, GMOB, GREM and GCSA, EC-Council CEH, and Certified Kubernetes Security Specialist, alongside a WSQ Advanced Certificate in Learning and Performance (ACLP).`,
+  },
+  {
     name: "Jimmy Leong",
     i18nKey: "jimmyLeong",
     role: "Senior Cyber Security Advisor",

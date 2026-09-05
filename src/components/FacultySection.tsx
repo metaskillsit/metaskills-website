@@ -115,6 +115,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-johnson.jpg",
   },
   {
+    name: "Lenz Yu",
+    role: "Principal Cyber Security Consultant",
+    expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
+    image: "/images/faculty/faculty-lenz.jpg",
+  },
+  {
     name: "Jimmy Leong",
     role: "Senior Cyber Security Advisor",
     expertise: "Adult Learning | Cyber, DevOps & AI Training | ACLP",
