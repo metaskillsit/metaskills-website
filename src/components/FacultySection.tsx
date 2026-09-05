@@ -109,16 +109,16 @@ const allFaculty = [
     image: "/images/faculty/faculty-steven.jpg",
   },
   {
-    name: "Jimmy Leong",
-    role: "Senior Cyber Security Advisor",
-    expertise: "Adult Learning | AI & Cyber Training",
-    image: "/images/faculty/faculty-jimmy.png",
-  },
-  {
     name: "Johnson Ang (AFHEA, ACTA/ACLP)",
     role: "Lead Instructor, Cyber Security & Applied AI",
     expertise: "Adult Learning | Offensive Security | AI Infrastructure",
     image: "/images/faculty/faculty-johnson.jpg",
+  },
+  {
+    name: "Jimmy Leong",
+    role: "Senior Cyber Security Advisor",
+    expertise: "Adult Learning | AI & Cyber Training",
+    image: "/images/faculty/faculty-jimmy.png",
   },
 ];
 

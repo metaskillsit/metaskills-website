@@ -239,14 +239,6 @@ A defining professional milestone for Steven was a corporate attachment with a g
 As a Senior Lecturer, he designed industry-aligned cybersecurity curricula, supervised over 100 undergraduate projects and 30+ Master's dissertations, trained corporate clients from leading organizations, developed advanced cybersecurity laboratories, and served in academic leadership roles. His career reflects a powerful integration of executive strategy, operational excellence, academic leadership, and national cybersecurity contribution.`,
   },
   {
-    name: "Jimmy Leong",
-    i18nKey: "jimmyLeong",
-    role: "Senior Cyber Security Advisor",
-    expertise: "Adult Learning | AI & Cyber Training",
-    image: "/images/faculty/faculty-jimmy.png",
-    bio: `Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He specialises in the design and delivery of instructor development programmes, competency-based curricula, and hands-on technical training, with a focus on AI and cybersecurity domains. Throughout his career, he has supported organisations such as MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation), and the Institute for Adult Learning Singapore, delivering capability development initiatives for both public and private sector audiences. Jimmy adopts an evidence-based approach to adult learning, integrating practical methodologies such as simulated labs, tabletop exercises, and structured assessment frameworks to ensure effective knowledge transfer and measurable training outcomes.`,
-  },
-  {
     name: "Johnson Ang (AFHEA, ACTA/ACLP)",
     i18nKey: "johnsonAng",
     role: "Lead Instructor, Cyber Security & Applied AI",
@@ -259,6 +251,14 @@ Professional Credentials & Applied Technical Coursework
 Pedagogical Accreditations: Associate Fellow (AFHEA, UK); Advanced Certificate in Training and Assessment (ACTA, IAL Singapore).
 Offensive Security & Enterprise Cyber: Applied coursework and intensive lab training in OSCP, RHCSA, and CISSP paradigms; Advanced Malware Analysis (Johns Hopkins); specialized cyber training for PMs (Temasek Polytechnic).
 DevSecOps, MLOps & Cloud: DevOps/DataOps/MLOps (Duke University); AI for Cybersecurity (Johns Hopkins); Kubernetes Architecture (GCP Skill Badge); Containerization via Jenkins/Docker (KodeKloud).`,
+  },
+  {
+    name: "Jimmy Leong",
+    i18nKey: "jimmyLeong",
+    role: "Senior Cyber Security Advisor",
+    expertise: "Adult Learning | AI & Cyber Training",
+    image: "/images/faculty/faculty-jimmy.png",
+    bio: `Jimmy Leong (AFHEA) is a Singapore-based master trainer and adult education specialist with over 20 years of experience in adult learning and information technology. He specialises in the design and delivery of instructor development programmes, competency-based curricula, and hands-on technical training, with a focus on AI and cybersecurity domains. Throughout his career, he has supported organisations such as MINDEF, Amazon Web Services (AWS), Grab, McKinsey & Company (Generation), and the Institute for Adult Learning Singapore, delivering capability development initiatives for both public and private sector audiences. Jimmy adopts an evidence-based approach to adult learning, integrating practical methodologies such as simulated labs, tabletop exercises, and structured assessment frameworks to ensure effective knowledge transfer and measurable training outcomes.`,
   },
 ];
 
