@@ -91,7 +91,7 @@ An ardent educator, Dr. Hong has been imparting his vast knowledge in digital tr
     name: "Sriven Naidu | Sound Mind, Sound Body",
     i18nKey: "srivenNaidu",
     role: "Lead Senior Consultant, AI Leadership",
-    expertise: "AI Governance | Leadership | Human-Centric AI | ACLP",
+    expertise: "AI Governance | Leadership | Human-Centric AI",
     image: "/images/faculty/faculty-sriven.png",
     bio: `Sriven is an executive educator, leadership advisor, and AI-focused consultant with more than 20 years of experience across management education, leadership development, executive training, mindfulness practice, and facilitation in Asia, Europe, and North America. He is currently Executive-in-Residence at IMD, the Swiss business school that ranked #1 worldwide for custom programs in the Financial Times Executive Education Rankings 2025.
 
