@@ -105,7 +105,7 @@ const allFaculty = [
   {
     name: "Steven Ong",
     role: "Lead Cyber Security Consultant",
-    expertise: "ISO 27001 | NIST | Enterprise Security",
+    expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs",
     image: "/images/faculty/faculty-steven.jpg",
   },
   {
