@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState, useCallback, useRef, TouchEvent } from "react";
+import { useEffect, useState, useCallback, useRef, TouchEvent, MouseEvent as ReactMouseEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 
@@ -236,6 +236,10 @@ const FacultySection = () => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
         >
           <div
             className="flex gap-8"
