@@ -362,6 +362,12 @@
   filter: saturate(1.04) contrast(1.02);
 }
 
+.hero-cinematic-photo-secondary {
+  opacity: 0.72;
+  mix-blend-mode: normal;
+  filter: saturate(1.02) contrast(1.01);
+}
+
 @media (max-width: 767px) {
   .hero-cinematic-photo {
     opacity: 0.72;
@@ -372,6 +378,11 @@
 
   .hero-cinematic-photo-primary {
     opacity: 0.82;
+    mix-blend-mode: normal;
+  }
+
+  .hero-cinematic-photo-secondary {
+    opacity: 0.78;
     mix-blend-mode: normal;
   }
 }
