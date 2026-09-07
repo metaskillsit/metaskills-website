@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState, useCallback, useRef, TouchEvent, MouseEvent as ReactMouseEvent } from "react";
+import { useEffect, useState, useCallback, useRef, PointerEvent as ReactPointerEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
+import { Button } from "@/components/ui/button";
 
 
 const allFaculty = [
@@ -129,95 +130,78 @@ const allFaculty = [
 ];
 
 const AUTO_INTERVAL = 4000;
-const GAP = 32;
-const SWIPE_THRESHOLD = 50;
+const SWIPE_THRESHOLD = 44;
+const VISIBLE_OFFSETS = [-3, -2, -1, 0, 1, 2, 3];
+
+const wrapIndex = (index: number) => (index + allFaculty.length) % allFaculty.length;
 
 const FacultySection = () => {
   const { t } = useTranslation();
   const [currentIdx, setCurrentIdx] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [cardWidth, setCardWidth] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(4);
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
-
-  const updateCardWidth = useCallback(() => {
-    if (trackRef.current) {
-      const containerWidth = trackRef.current.parentElement?.clientWidth || 0;
-      const cols = containerWidth < 640 ? 2 : containerWidth < 1024 ? 3 : 4;
-      setVisibleCards(cols);
-      setCardWidth((containerWidth - GAP * (cols - 1)) / cols);
-    }
-  }, []);
-
-  const maxIdx = Math.max(0, allFaculty.length - visibleCards);
-
-  useEffect(() => {
-    updateCardWidth();
-    window.addEventListener("resize", updateCardWidth);
-    return () => window.removeEventListener("resize", updateCardWidth);
-  }, [updateCardWidth]);
+  const [dragX, setDragX] = useState(0);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const pointerStartX = useRef(0);
+  const pointerId = useRef<number | null>(null);
 
   const next = useCallback(() => {
-    setCurrentIdx((prev) => (prev >= maxIdx ? 0 : prev + 1));
-  }, [maxIdx]);
+    setCurrentIdx((prev) => wrapIndex(prev + 1));
+  }, []);
 
   const prev = useCallback(() => {
-    setCurrentIdx((prev) => (prev <= 0 ? maxIdx : prev - 1));
-  }, [maxIdx]);
+    setCurrentIdx((prev) => wrapIndex(prev - 1));
+  }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, AUTO_INTERVAL);
+    if (isInteracting) return;
+    const timer = window.setInterval(next, AUTO_INTERVAL);
     return () => clearInterval(timer);
-  }, [next]);
+  }, [isInteracting, next]);
 
-  const handleTouchStart = (e: TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    pointerId.current = event.pointerId;
+    pointerStartX.current = event.clientX;
+    setDragX(0);
+    setIsInteracting(true);
+    event.currentTarget.setPointerCapture(event.pointerId);
   };
 
-  const handleTouchMove = (e: TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
+  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (pointerId.current !== event.pointerId) return;
+    setDragX(Math.max(-150, Math.min(150, event.clientX - pointerStartX.current)));
   };
 
-  const handleTouchEnd = () => {
-    const diff = touchStartX.current - touchEndX.current;
-    if (Math.abs(diff) > SWIPE_THRESHOLD) {
-      if (diff > 0) next();
-      else prev();
+  const handlePointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (pointerId.current !== event.pointerId) return;
+    if (dragX <= -SWIPE_THRESHOLD) next();
+    if (dragX >= SWIPE_THRESHOLD) prev();
+    pointerId.current = null;
+    setDragX(0);
+    setIsInteracting(false);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      prev();
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      next();
     }
   };
 
-  const isDragging = useRef(false);
-
-  const handleMouseDown = (e: ReactMouseEvent) => {
-    isDragging.current = true;
-    touchStartX.current = e.clientX;
-    touchEndX.current = e.clientX;
-  };
-
-  const handleMouseMove = (e: ReactMouseEvent) => {
-    if (!isDragging.current) return;
-    touchEndX.current = e.clientX;
-  };
-
-  const handleMouseUp = () => {
-    if (!isDragging.current) return;
-    isDragging.current = false;
-    handleTouchEnd();
-  };
-
-  const translateX = currentIdx * (cardWidth + GAP);
+  const activeFaculty = allFaculty[currentIdx];
 
   return (
-    <section id="faculty" className="bg-muted">
-      <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-20">
+    <section id="faculty" className="bg-background overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-16 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-6 flex items-end justify-between"
+          className="mb-10 md:mb-14 text-center"
         >
-          <div>
+          <div className="mx-auto max-w-3xl">
             <span className="section-eyebrow">Faculty</span>
             <h2 className="section-h2">
               {t("faculty.title")}
@@ -226,54 +210,96 @@ const FacultySection = () => {
               {t("faculty.subtitle")}
             </p>
           </div>
-          <div className="hidden md:flex gap-2">
-            <button onClick={prev} className="p-2 border hover:bg-accent">
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button onClick={next} className="p-2 border hover:bg-accent">
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
         </motion.div>
 
         <div
-          className="overflow-hidden"
-          ref={trackRef}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
+          className="relative h-[390px] sm:h-[470px] md:h-[520px] cursor-grab touch-pan-y select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 active:cursor-grabbing"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Core faculty"
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerEnd}
+          onPointerCancel={handlePointerEnd}
+          onMouseEnter={() => setIsInteracting(true)}
+          onMouseLeave={() => {
+            if (pointerId.current === null) setIsInteracting(false);
+          }}
         >
-          <div
-            className="flex gap-8"
-            style={{
-              transform: `translateX(-${translateX}px)`,
-              transition: "transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)",
-            }}
-          >
-            {allFaculty.map((f) => (
-              <div key={f.name} className="flex-shrink-0" style={{ width: cardWidth }}>
-                <div className="aspect-square overflow-hidden mb-4">
+          <div className="absolute inset-x-0 bottom-5 h-px bg-border/70" aria-hidden="true" />
+          {VISIBLE_OFFSETS.map((offset) => {
+            const index = wrapIndex(currentIdx + offset);
+            const faculty = allFaculty[index];
+            const distance = Math.abs(offset);
+            const translatePercent = offset * 72;
+            const translateY = distance === 0 ? 0 : distance === 1 ? 38 : distance === 2 ? 82 : 126;
+            const scale = distance === 0 ? 1 : distance === 1 ? 0.84 : distance === 2 ? 0.7 : 0.58;
+            const rotateY = offset * -8;
+            const opacity = distance === 0 ? 1 : distance === 1 ? 0.78 : distance === 2 ? 0.46 : 0.2;
+
+            return (
+              <article
+                key={`${faculty.name}-${offset}`}
+                className="absolute left-1/2 top-0 w-[62vw] max-w-[270px] sm:w-[250px] md:w-[280px] transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                style={{
+                  transform: `translateX(calc(-50% + ${translatePercent}% + ${dragX * (1 - distance * 0.12)}px)) translateY(${translateY}px) scale(${scale}) perspective(1400px) rotateY(${rotateY}deg)`,
+                  opacity,
+                  zIndex: 10 - distance,
+                  filter: distance === 0 ? "none" : `grayscale(${Math.min(80, distance * 28)}%)`,
+                }}
+                aria-hidden={offset !== 0}
+                aria-label={`${faculty.name}, ${faculty.role}`}
+              >
+                <div className="group relative aspect-[3/4] overflow-hidden rounded-sm border border-border/80 bg-card shadow-[0_24px_60px_hsl(var(--foreground)/0.12)]">
                   <img
-                    src={withFacultyImageVersion(f.image)}
-                    alt={f.name}
-                    className="w-full h-full object-cover"
+                    src={withFacultyImageVersion(faculty.image)}
+                    alt={offset === 0 ? faculty.name : ""}
+                    draggable={false}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                     style={
-                      f.image.includes("brendan") || f.image.includes("adriantoh")
+                      faculty.image.includes("brendan") || faculty.image.includes("adriantoh")
                         ? { objectPosition: "center top" }
                         : undefined
                     }
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-75" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-primary-foreground md:p-6">
+                    <p className="mb-2 text-[10px] font-medium uppercase text-primary-foreground/70">{faculty.role}</p>
+                    <h3 className="font-heading text-2xl font-medium leading-tight md:text-3xl">{faculty.name}</h3>
+                  </div>
                 </div>
-                <h3 className="font-heading text-base font-medium tracking-tight text-foreground">{f.name}</h3>
-                <p className="text-sm text-accent font-medium mt-0.5">{f.role}</p>
-                <p className="text-xs text-muted-foreground font-light leading-relaxed mt-1">{f.expertise}</p>
-              </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mx-auto mt-7 max-w-2xl text-center" aria-live="polite" aria-atomic="true">
+          <p className="text-[10px] font-medium uppercase text-accent">{activeFaculty.role}</p>
+          <h3 className="mt-2 font-heading text-3xl font-medium text-foreground md:text-4xl">{activeFaculty.name}</h3>
+          <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground md:text-base">{activeFaculty.expertise}</p>
+        </div>
+
+        <div className="mt-8 flex items-center justify-center gap-5 sm:gap-8">
+          <Button variant="ghost" size="icon" onClick={prev} aria-label="Previous faculty member" className="rounded-full border border-border bg-background">
+            <ChevronLeft />
+          </Button>
+          <div className="flex max-w-[70vw] items-center justify-center gap-2" aria-label={`Faculty member ${currentIdx + 1} of ${allFaculty.length}`}>
+            {allFaculty.map((faculty, index) => (
+              <button
+                key={faculty.name}
+                type="button"
+                onClick={() => setCurrentIdx(index)}
+                className={`h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${index === currentIdx ? "w-6 bg-foreground" : "w-2 bg-border hover:bg-muted-foreground"}`}
+                aria-label={`Show ${faculty.name}`}
+                aria-current={index === currentIdx ? "true" : undefined}
+              />
             ))}
           </div>
+          <Button variant="ghost" size="icon" onClick={next} aria-label="Next faculty member" className="rounded-full border border-border bg-background">
+            <ChevronRight />
+          </Button>
         </div>
       </div>
     </section>
