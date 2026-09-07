@@ -142,6 +142,9 @@ const FacultySection = () => {
   const pointerStartX = useRef(0);
   const pointerId = useRef<number | null>(null);
   const dragFrame = useRef<number | null>(null);
+  const lastX = useRef(0);
+  const lastT = useRef(0);
+  const velocity = useRef(0);
 
   useEffect(() => {
     const preloadedImages = allFaculty.map(({ image }) => {
@@ -170,6 +173,9 @@ const FacultySection = () => {
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     pointerId.current = event.pointerId;
     pointerStartX.current = event.clientX;
+    lastX.current = event.clientX;
+    lastT.current = event.timeStamp;
+    velocity.current = 0;
     setDragX(0);
     setIsDragging(true);
     event.currentTarget.setPointerCapture(event.pointerId);
@@ -178,6 +184,13 @@ const FacultySection = () => {
   const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (pointerId.current !== event.pointerId) return;
     const nextDragX = Math.max(-120, Math.min(120, event.clientX - pointerStartX.current));
+    const dt = event.timeStamp - lastT.current;
+    if (dt > 0) {
+      const v = (event.clientX - lastX.current) / dt;
+      velocity.current = velocity.current * 0.7 + v * 0.3;
+    }
+    lastX.current = event.clientX;
+    lastT.current = event.timeStamp;
     if (dragFrame.current !== null) cancelAnimationFrame(dragFrame.current);
     dragFrame.current = requestAnimationFrame(() => {
       setDragX(nextDragX);
@@ -187,8 +200,9 @@ const FacultySection = () => {
 
   const handlePointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (pointerId.current !== event.pointerId) return;
-    if (dragX <= -SWIPE_THRESHOLD) next();
-    if (dragX >= SWIPE_THRESHOLD) prev();
+    const flick = Math.abs(velocity.current) > 0.35;
+    if (dragX <= -SWIPE_THRESHOLD || (flick && velocity.current < 0)) next();
+    else if (dragX >= SWIPE_THRESHOLD || (flick && velocity.current > 0)) prev();
     pointerId.current = null;
     setDragX(0);
     setIsDragging(false);
@@ -257,7 +271,7 @@ const FacultySection = () => {
             return (
               <article
                 key={`${faculty.name}-${offset}`}
-                className={`absolute left-1/2 top-0 w-[52vw] max-w-[210px] sm:w-[195px] md:w-[220px] will-change-transform ${isDragging ? "transition-none" : "transition-[transform,opacity,filter] duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)]"}`}
+                className={`absolute left-1/2 top-0 w-[52vw] max-w-[210px] sm:w-[195px] md:w-[220px] will-change-transform ${isDragging ? "transition-none" : "transition-[transform,opacity] duration-[950ms] ease-[cubic-bezier(0.22,1,0.36,1)]"}`}
                 style={{
                   transform: `translateX(calc(-50% + ${translatePercent}% + ${dragX * (1 - distance * 0.12)}px)) translateY(${translateY}px) scale(${scale}) perspective(1400px) rotateY(${rotateY}deg)`,
                   opacity,
