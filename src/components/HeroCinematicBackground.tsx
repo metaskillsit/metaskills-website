@@ -152,7 +152,7 @@ function CinematicScene({ reducedMotion }: { reducedMotion: boolean }) {
       <pointLight position={[-4, 2, 3]} intensity={14} color="#8468c7" distance={12} />
       <pointLight position={[4, -1, 4]} intensity={11} color="#d5ad53" distance={12} />
 
-      <points ref={pointsRef} frustumCulled={false}>
+      <points ref={pointsRef} frustumCulled={false} position={[2.35, 1.25, -0.35]}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[particles.positions, 3]} />
           <bufferAttribute attach="attributes-color" args={[particles.colors, 3]} />
@@ -169,7 +169,7 @@ function CinematicScene({ reducedMotion }: { reducedMotion: boolean }) {
         />
       </points>
 
-      <mesh ref={starRef} geometry={starGeometry} position={[3.25, 0.15, 0]} scale={0.72} rotation={[0.15, -0.25, 0]}>
+      <mesh ref={starRef} geometry={starGeometry} position={[3.55, 1.2, 0]} scale={0.72} rotation={[0.15, -0.25, 0]}>
         <meshPhysicalMaterial
           color="#dddce0"
           metalness={1}

@@ -110,6 +110,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-steven.jpg",
   },
   {
+    name: "Lenz Yu",
+    role: "Principal Cyber Security Consultant",
+    expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
+    image: "/images/faculty/faculty-lenz.jpg",
+  },
+  {
     name: "Johnson Ang",
     role: "Lead Instructor, Cyber Security & Applied AI",
     expertise: "Adult Learning | Offensive Security | AI Infrastructure | AFHEA, ACTA/ACLP",
@@ -121,15 +127,8 @@ const allFaculty = [
     expertise: "Adult Learning | Cyber, DevOps & AI Training | ACLP",
     image: "/images/faculty/faculty-jimmy.png",
   },
-  {
-    name: "Lenz Yu",
-    role: "Principal Cyber Security Consultant",
-    expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
-    image: "/images/faculty/faculty-lenz.jpg",
-  },
 ];
 
-const AUTO_INTERVAL = 4000;
 const SWIPE_THRESHOLD = 44;
 const VISIBLE_OFFSETS = [-3, -2, -1, 0, 1, 2, 3];
 
@@ -139,7 +138,6 @@ const FacultySection = () => {
   const { t } = useTranslation();
   const [currentIdx, setCurrentIdx] = useState(0);
   const [dragX, setDragX] = useState(0);
-  const [isInteracting, setIsInteracting] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const pointerStartX = useRef(0);
   const pointerId = useRef<number | null>(null);
@@ -169,17 +167,10 @@ const FacultySection = () => {
     setCurrentIdx((prev) => wrapIndex(prev - 1));
   }, []);
 
-  useEffect(() => {
-    if (isInteracting) return;
-    const timer = window.setInterval(next, AUTO_INTERVAL);
-    return () => clearInterval(timer);
-  }, [isInteracting, next]);
-
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     pointerId.current = event.pointerId;
     pointerStartX.current = event.clientX;
     setDragX(0);
-    setIsInteracting(true);
     setIsDragging(true);
     event.currentTarget.setPointerCapture(event.pointerId);
   };
@@ -201,7 +192,6 @@ const FacultySection = () => {
     pointerId.current = null;
     setDragX(0);
     setIsDragging(false);
-    setIsInteracting(false);
   };
 
   useEffect(() => () => {
@@ -252,10 +242,6 @@ const FacultySection = () => {
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerEnd}
           onPointerCancel={handlePointerEnd}
-          onMouseEnter={() => setIsInteracting(true)}
-          onMouseLeave={() => {
-            if (pointerId.current === null) setIsInteracting(false);
-          }}
         >
           <div className="absolute inset-x-0 bottom-5 h-px bg-border/70" aria-hidden="true" />
           {VISIBLE_OFFSETS.map((offset) => {

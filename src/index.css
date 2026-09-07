@@ -356,12 +356,23 @@
   mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.66), black 34%, black 100%);
 }
 
+.hero-cinematic-photo-primary {
+  opacity: 0.76;
+  mix-blend-mode: normal;
+  filter: saturate(1.04) contrast(1.02);
+}
+
 @media (max-width: 767px) {
   .hero-cinematic-photo {
     opacity: 0.72;
     mix-blend-mode: soft-light;
     -webkit-mask-image: linear-gradient(to bottom, black 55%, rgba(0, 0, 0, 0.78));
     mask-image: linear-gradient(to bottom, black 55%, rgba(0, 0, 0, 0.78));
+  }
+
+  .hero-cinematic-photo-primary {
+    opacity: 0.82;
+    mix-blend-mode: normal;
   }
 }
 

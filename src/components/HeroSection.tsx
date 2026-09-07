@@ -86,7 +86,7 @@ const HeroSection = () => {
           decoding="async"
           // @ts-expect-error fetchpriority is a valid attribute
           fetchpriority="high"
-          className="hero-cinematic-photo absolute inset-0 h-full w-full object-cover object-center"
+          className="hero-cinematic-photo hero-cinematic-photo-primary absolute inset-0 h-full w-full object-cover object-center"
         />
 
         <AnimatePresence>
