@@ -325,14 +325,9 @@
   -webkit-backdrop-filter: blur(26px) saturate(135%);
 }
 
-.hero-cinematic-stage {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
+.hero-cinematic-shell {
   contain: paint;
-  pointer-events: none;
-  background: #040711;
+  background: hsl(var(--hero-overlay));
 }
 
 .hero-cinematic-canvas {
@@ -355,6 +350,7 @@
 .hero-cinematic-photo {
   opacity: 0.58;
   mix-blend-mode: luminosity;
+  z-index: 5;
   -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.66), black 34%, black 100%);
   mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.66), black 34%, black 100%);
 }

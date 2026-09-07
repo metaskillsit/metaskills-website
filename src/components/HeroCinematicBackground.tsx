@@ -208,7 +208,7 @@ export default function HeroCinematicBackground() {
   }, []);
 
   return (
-    <div className="hero-cinematic-stage" aria-hidden="true">
+    <>
       <div className="hero-cinematic-canvas">
         <Canvas
           camera={{ position: [0, 0, 8.1], fov: 52, near: 0.1, far: 60 }}
@@ -219,6 +219,6 @@ export default function HeroCinematicBackground() {
         </Canvas>
       </div>
       <div className="hero-cinematic-vignette" />
-    </div>
+    </>
   );
 }
