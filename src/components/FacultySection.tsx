@@ -184,6 +184,13 @@ const FacultySection = () => {
   const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (pointerId.current !== event.pointerId) return;
     const nextDragX = Math.max(-120, Math.min(120, event.clientX - pointerStartX.current));
+    const dt = event.timeStamp - lastT.current;
+    if (dt > 0) {
+      const v = (event.clientX - lastX.current) / dt;
+      velocity.current = velocity.current * 0.7 + v * 0.3;
+    }
+    lastX.current = event.clientX;
+    lastT.current = event.timeStamp;
     if (dragFrame.current !== null) cancelAnimationFrame(dragFrame.current);
     dragFrame.current = requestAnimationFrame(() => {
       setDragX(nextDragX);
@@ -193,8 +200,9 @@ const FacultySection = () => {
 
   const handlePointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (pointerId.current !== event.pointerId) return;
-    if (dragX <= -SWIPE_THRESHOLD) next();
-    if (dragX >= SWIPE_THRESHOLD) prev();
+    const flick = Math.abs(velocity.current) > 0.35;
+    if (dragX <= -SWIPE_THRESHOLD || (flick && velocity.current < 0)) next();
+    else if (dragX >= SWIPE_THRESHOLD || (flick && velocity.current > 0)) prev();
     pointerId.current = null;
     setDragX(0);
     setIsDragging(false);
