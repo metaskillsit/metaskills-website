@@ -129,7 +129,7 @@ const allFaculty = [
   },
 ];
 
-const SWIPE_THRESHOLD = 44;
+const SWIPE_THRESHOLD = 34;
 const VISIBLE_OFFSETS = [-3, -2, -1, 0, 1, 2, 3];
 
 const wrapIndex = (index: number) => (index + allFaculty.length) % allFaculty.length;
@@ -177,7 +177,7 @@ const FacultySection = () => {
 
   const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (pointerId.current !== event.pointerId) return;
-    const nextDragX = Math.max(-150, Math.min(150, event.clientX - pointerStartX.current));
+    const nextDragX = Math.max(-120, Math.min(120, event.clientX - pointerStartX.current));
     if (dragFrame.current !== null) cancelAnimationFrame(dragFrame.current);
     dragFrame.current = requestAnimationFrame(() => {
       setDragX(nextDragX);
