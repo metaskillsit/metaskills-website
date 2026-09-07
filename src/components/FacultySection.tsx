@@ -279,8 +279,8 @@ const FacultySection = () => {
                         : undefined
                     }
                   />
-                  <div className="absolute inset-0 bg-foreground/40" />
-                  <div className="absolute inset-0 flex items-center justify-center p-5 text-primary-foreground md:p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-75" />
+                  <div className="absolute inset-x-0 bottom-0 flex justify-center p-5 text-primary-foreground md:p-6">
                     <h3 className="font-heading text-2xl font-medium leading-tight text-center md:text-3xl">{faculty.name}</h3>
                   </div>
                 </div>
