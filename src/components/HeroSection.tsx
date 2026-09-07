@@ -99,7 +99,7 @@ const HeroSection = () => {
               height={900}
               loading="eager"
               decoding="async"
-              className="hero-cinematic-photo absolute inset-0 h-full w-full object-cover object-center"
+              className="hero-cinematic-photo hero-cinematic-photo-secondary absolute inset-0 h-full w-full object-cover object-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
