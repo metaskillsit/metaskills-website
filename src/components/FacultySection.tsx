@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState, useCallback, useRef, PointerEvent as ReactPointerEvent } from "react";
+import { useEffect, useState, useCallback, useRef, PointerEvent as ReactPointerEvent, KeyboardEvent as ReactKeyboardEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 import { Button } from "@/components/ui/button";
@@ -179,7 +179,7 @@ const FacultySection = () => {
     setIsInteracting(false);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
     if (event.key === "ArrowLeft") {
       event.preventDefault();
       prev();
