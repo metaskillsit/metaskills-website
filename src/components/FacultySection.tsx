@@ -26,12 +26,6 @@ const allFaculty = [
     image: "/images/faculty/faculty-andrew.png",
   },
   {
-    name: "Gary Ye",
-    role: "Country Head, China, Metaskills Institute",
-    expertise: "Business Development | China Market Expansion | Strategic Partnerships",
-    image: "/images/faculty/faculty-gary.jpg",
-  },
-  {
     name: "Dr. Jack Hong",
     role: "Lead Senior Consultant",
     expertise: "AI Transformation | Data Science | Digital Strategy | ACLP",
@@ -92,6 +86,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-christan.jpg",
   },
   {
+    name: "Gary Ye",
+    role: "Country Head, China, Metaskills Institute",
+    expertise: "Business Development | China Market Expansion | Strategic Partnerships",
+    image: "/images/faculty/faculty-gary.jpg",
+  },
+  {
     name: "Alena Lavrinenko",
     role: "AI Consultant and Trainer",
     expertise: "AI Solutions | Business Transformation",
@@ -104,18 +104,6 @@ const allFaculty = [
     image: "/images/faculty/faculty-victor.jpg",
   },
   {
-    name: "Steven Ong",
-    role: "Lead Cyber Security Consultant",
-    expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs | ACLP",
-    image: "/images/faculty/faculty-steven.jpg",
-  },
-  {
-    name: "Lenz Yu",
-    role: "Principal Cyber Security Consultant",
-    expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
-    image: "/images/faculty/faculty-lenz.jpg",
-  },
-  {
     name: "Johnson Ang",
     role: "Lead Instructor, Cyber Security & Applied AI",
     expertise: "Adult Learning | Offensive Security | AI Infrastructure | AFHEA, ACTA/ACLP",
@@ -126,6 +114,18 @@ const allFaculty = [
     role: "Senior Cyber Security Advisor",
     expertise: "Adult Learning | Cyber, DevOps & AI Training | ACLP",
     image: "/images/faculty/faculty-jimmy.png",
+  },
+  {
+    name: "Steven Ong",
+    role: "Lead Cyber Security Consultant",
+    expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs | ACLP",
+    image: "/images/faculty/faculty-steven.jpg",
+  },
+  {
+    name: "Lenz Yu",
+    role: "Principal Cyber Security Consultant",
+    expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
+    image: "/images/faculty/faculty-lenz.jpg",
   },
 ];
 
@@ -221,7 +221,7 @@ const FacultySection = () => {
           className="mb-10 md:mb-14 text-center"
         >
           <div className="mx-auto max-w-3xl">
-            <span className="section-eyebrow">Faculty</span>
+            <span className="section-eyebrow">Team</span>
             <h2 className="section-h2">
               {t("faculty.title")}
             </h2>
