@@ -296,7 +296,7 @@ const FacultySection = () => {
           <p className="mt-2 text-sm font-light leading-relaxed text-muted-foreground md:text-base">{activeFaculty.expertise}</p>
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-5 sm:gap-8">
+        <div className="mt-5 flex items-center justify-center gap-5 sm:gap-8">
           <Button variant="ghost" size="icon" onClick={prev} aria-label="Previous faculty member" className="rounded-full border border-border bg-background">
             <ChevronLeft />
           </Button>
