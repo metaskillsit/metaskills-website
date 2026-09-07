@@ -104,6 +104,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-victor.jpg",
   },
   {
+    name: "Lenz Yu",
+    role: "Principal Cyber Security Consultant",
+    expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
+    image: "/images/faculty/faculty-lenz.jpg",
+  },
+  {
     name: "Johnson Ang",
     role: "Lead Instructor, Cyber Security & Applied AI",
     expertise: "Adult Learning | Offensive Security | AI Infrastructure | AFHEA, ACTA/ACLP",
@@ -120,12 +126,6 @@ const allFaculty = [
     role: "Lead Cyber Security Consultant",
     expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs | ACLP",
     image: "/images/faculty/faculty-steven.jpg",
-  },
-  {
-    name: "Lenz Yu",
-    role: "Principal Cyber Security Consultant",
-    expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
-    image: "/images/faculty/faculty-lenz.jpg",
   },
 ];
 
