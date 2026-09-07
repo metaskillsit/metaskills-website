@@ -142,6 +142,9 @@ const FacultySection = () => {
   const pointerStartX = useRef(0);
   const pointerId = useRef<number | null>(null);
   const dragFrame = useRef<number | null>(null);
+  const lastX = useRef(0);
+  const lastT = useRef(0);
+  const velocity = useRef(0);
 
   useEffect(() => {
     const preloadedImages = allFaculty.map(({ image }) => {
@@ -170,6 +173,9 @@ const FacultySection = () => {
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     pointerId.current = event.pointerId;
     pointerStartX.current = event.clientX;
+    lastX.current = event.clientX;
+    lastT.current = event.timeStamp;
+    velocity.current = 0;
     setDragX(0);
     setIsDragging(true);
     event.currentTarget.setPointerCapture(event.pointerId);
