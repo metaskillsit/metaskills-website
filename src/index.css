@@ -313,16 +313,56 @@
   overflow: hidden;
   color: hsl(var(--primary-foreground));
   background:
-    linear-gradient(135deg, hsl(var(--hero-overlay) / 0.38), hsl(var(--hero-overlay) / 0.18)),
+    linear-gradient(135deg, hsl(var(--hero-overlay) / 0.66), hsl(var(--hero-overlay) / 0.48)),
     radial-gradient(circle at 12% 0%, hsl(var(--gold) / 0.28), transparent 50%),
     radial-gradient(circle at 100% 100%, hsl(var(--teal-light) / 0.18), transparent 48%);
-  border: 1px solid hsl(var(--gold) / 0.34);
+  border: 1px solid hsl(var(--primary-foreground) / 0.14);
   box-shadow:
     0 26px 70px hsl(var(--hero-overlay) / 0.35),
     inset 0 1px 0 hsl(var(--primary-foreground) / 0.14),
     inset 0 -1px 0 hsl(var(--gold) / 0.12);
-  backdrop-filter: blur(22px) saturate(145%);
-  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(26px) saturate(135%);
+  -webkit-backdrop-filter: blur(26px) saturate(135%);
+}
+
+.hero-cinematic-shell {
+  contain: paint;
+  background: hsl(var(--hero-overlay));
+}
+
+.hero-cinematic-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.hero-cinematic-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 43%, transparent 20%, hsl(var(--hero-overlay) / 0.2) 58%, hsl(var(--hero-overlay) / 0.72) 100%),
+    linear-gradient(90deg, hsl(var(--hero-overlay) / 0.36), transparent 42%, hsl(var(--hero-overlay) / 0.2));
+}
+
+.hero-cinematic-photo {
+  opacity: 0.58;
+  mix-blend-mode: luminosity;
+  z-index: 5;
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.66), black 34%, black 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.66), black 34%, black 100%);
+}
+
+@media (max-width: 767px) {
+  .hero-cinematic-photo {
+    opacity: 0.72;
+    mix-blend-mode: soft-light;
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, rgba(0, 0, 0, 0.78));
+    mask-image: linear-gradient(to bottom, black 55%, rgba(0, 0, 0, 0.78));
+  }
 }
 
 .hero-tech-card::before {
