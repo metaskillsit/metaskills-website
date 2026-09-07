@@ -140,8 +140,26 @@ const FacultySection = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [dragX, setDragX] = useState(0);
   const [isInteracting, setIsInteracting] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const pointerStartX = useRef(0);
   const pointerId = useRef<number | null>(null);
+  const dragFrame = useRef<number | null>(null);
+
+  useEffect(() => {
+    const preloadedImages = allFaculty.map(({ image }) => {
+      const preload = new Image();
+      preload.decoding = "async";
+      preload.src = withFacultyImageVersion(image);
+      void preload.decode().catch(() => undefined);
+      return preload;
+    });
+
+    return () => {
+      preloadedImages.forEach((image) => {
+        image.src = "";
+      });
+    };
+  }, []);
 
   const next = useCallback(() => {
     setCurrentIdx((prev) => wrapIndex(prev + 1));
@@ -162,12 +180,18 @@ const FacultySection = () => {
     pointerStartX.current = event.clientX;
     setDragX(0);
     setIsInteracting(true);
+    setIsDragging(true);
     event.currentTarget.setPointerCapture(event.pointerId);
   };
 
   const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (pointerId.current !== event.pointerId) return;
-    setDragX(Math.max(-150, Math.min(150, event.clientX - pointerStartX.current)));
+    const nextDragX = Math.max(-150, Math.min(150, event.clientX - pointerStartX.current));
+    if (dragFrame.current !== null) cancelAnimationFrame(dragFrame.current);
+    dragFrame.current = requestAnimationFrame(() => {
+      setDragX(nextDragX);
+      dragFrame.current = null;
+    });
   };
 
   const handlePointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
@@ -176,8 +200,13 @@ const FacultySection = () => {
     if (dragX >= SWIPE_THRESHOLD) prev();
     pointerId.current = null;
     setDragX(0);
+    setIsDragging(false);
     setIsInteracting(false);
   };
+
+  useEffect(() => () => {
+    if (dragFrame.current !== null) cancelAnimationFrame(dragFrame.current);
+  }, []);
 
   const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
     if (event.key === "ArrowLeft") {
@@ -242,7 +271,7 @@ const FacultySection = () => {
             return (
               <article
                 key={`${faculty.name}-${offset}`}
-                className="absolute left-1/2 top-0 w-[62vw] max-w-[270px] sm:w-[250px] md:w-[280px] transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                className={`absolute left-1/2 top-0 w-[62vw] max-w-[270px] sm:w-[250px] md:w-[280px] will-change-transform ${isDragging ? "transition-none" : "transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"}`}
                 style={{
                   transform: `translateX(calc(-50% + ${translatePercent}% + ${dragX * (1 - distance * 0.12)}px)) translateY(${translateY}px) scale(${scale}) perspective(1400px) rotateY(${rotateY}deg)`,
                   opacity,
