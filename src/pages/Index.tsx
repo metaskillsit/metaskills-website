@@ -29,13 +29,13 @@ const Index = () => {
 
         <StatsSection />
         <TrustAuthoritySection />
+        <FacultySection />
         <AseanNetworkSection />
         
         <PastClassesSection />
         <ProgramsSection />
         <CertifiedInstructorsSection />
         <PartnerLogosSection />
-        <FacultySection />
         <TestimonialsSection />
         
         <LocationsSection />
