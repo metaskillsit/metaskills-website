@@ -129,7 +129,7 @@ const allFaculty = [
   },
 ];
 
-const SWIPE_THRESHOLD = 44;
+const SWIPE_THRESHOLD = 34;
 const VISIBLE_OFFSETS = [-3, -2, -1, 0, 1, 2, 3];
 
 const wrapIndex = (index: number) => (index + allFaculty.length) % allFaculty.length;
@@ -177,7 +177,7 @@ const FacultySection = () => {
 
   const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (pointerId.current !== event.pointerId) return;
-    const nextDragX = Math.max(-150, Math.min(150, event.clientX - pointerStartX.current));
+    const nextDragX = Math.max(-120, Math.min(120, event.clientX - pointerStartX.current));
     if (dragFrame.current !== null) cancelAnimationFrame(dragFrame.current);
     dragFrame.current = requestAnimationFrame(() => {
       setDragX(nextDragX);
@@ -232,7 +232,7 @@ const FacultySection = () => {
         </motion.div>
 
         <div
-          className="relative h-[390px] sm:h-[470px] md:h-[520px] cursor-grab touch-pan-y select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 active:cursor-grabbing"
+          className="relative h-[330px] sm:h-[400px] md:h-[440px] cursor-grab touch-pan-y select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 active:cursor-grabbing"
           role="region"
           aria-roledescription="carousel"
           aria-label="Core faculty"
@@ -248,16 +248,16 @@ const FacultySection = () => {
             const index = wrapIndex(currentIdx + offset);
             const faculty = allFaculty[index];
             const distance = Math.abs(offset);
-            const translatePercent = offset * 72;
-            const translateY = distance === 0 ? 0 : distance === 1 ? 38 : distance === 2 ? 82 : 126;
-            const scale = distance === 0 ? 1 : distance === 1 ? 0.84 : distance === 2 ? 0.7 : 0.58;
+            const translatePercent = offset * 66;
+            const translateY = distance === 0 ? 0 : distance === 1 ? 30 : distance === 2 ? 66 : 104;
+            const scale = distance === 0 ? 1 : distance === 1 ? 0.85 : distance === 2 ? 0.72 : 0.6;
             const rotateY = offset * -8;
             const opacity = distance === 0 ? 1 : distance === 1 ? 0.78 : distance === 2 ? 0.46 : 0.2;
 
             return (
               <article
                 key={`${faculty.name}-${offset}`}
-                className={`absolute left-1/2 top-0 w-[62vw] max-w-[270px] sm:w-[250px] md:w-[280px] will-change-transform ${isDragging ? "transition-none" : "transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"}`}
+                className={`absolute left-1/2 top-0 w-[52vw] max-w-[210px] sm:w-[195px] md:w-[220px] will-change-transform ${isDragging ? "transition-none" : "transition-[transform,opacity,filter] duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)]"}`}
                 style={{
                   transform: `translateX(calc(-50% + ${translatePercent}% + ${dragX * (1 - distance * 0.12)}px)) translateY(${translateY}px) scale(${scale}) perspective(1400px) rotateY(${rotateY}deg)`,
                   opacity,
