@@ -271,7 +271,7 @@ const FacultySection = () => {
             return (
               <article
                 key={`${faculty.name}-${offset}`}
-                className={`absolute left-1/2 top-0 w-[52vw] max-w-[210px] sm:w-[195px] md:w-[220px] will-change-transform ${isDragging ? "transition-none" : "transition-[transform,opacity,filter] duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)]"}`}
+                className={`absolute left-1/2 top-0 w-[52vw] max-w-[210px] sm:w-[195px] md:w-[220px] will-change-transform ${isDragging ? "transition-none" : "transition-[transform,opacity] duration-[950ms] ease-[cubic-bezier(0.22,1,0.36,1)]"}`}
                 style={{
                   transform: `translateX(calc(-50% + ${translatePercent}% + ${dragX * (1 - distance * 0.12)}px)) translateY(${translateY}px) scale(${scale}) perspective(1400px) rotateY(${rotateY}deg)`,
                   opacity,
