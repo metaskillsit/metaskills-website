@@ -232,7 +232,7 @@ const FacultySection = () => {
         </motion.div>
 
         <div
-          className="relative h-[390px] sm:h-[470px] md:h-[520px] cursor-grab touch-pan-y select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 active:cursor-grabbing"
+          className="relative h-[330px] sm:h-[400px] md:h-[440px] cursor-grab touch-pan-y select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 active:cursor-grabbing"
           role="region"
           aria-roledescription="carousel"
           aria-label="Core faculty"
