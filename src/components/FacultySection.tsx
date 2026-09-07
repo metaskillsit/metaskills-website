@@ -287,11 +287,13 @@ const FacultySection = () => {
           </Button>
           <div className="flex max-w-[70vw] items-center justify-center gap-2" aria-label={`Faculty member ${currentIdx + 1} of ${allFaculty.length}`}>
             {allFaculty.map((faculty, index) => (
-              <button
+              <Button
                 key={faculty.name}
                 type="button"
+                variant="ghost"
+                size="icon"
                 onClick={() => setCurrentIdx(index)}
-                className={`h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${index === currentIdx ? "w-6 bg-foreground" : "w-2 bg-border hover:bg-muted-foreground"}`}
+                className={`h-2 min-w-0 rounded-full p-0 transition-all duration-300 ${index === currentIdx ? "w-6 bg-foreground hover:bg-foreground" : "w-2 bg-border hover:bg-muted-foreground"}`}
                 aria-label={`Show ${faculty.name}`}
                 aria-current={index === currentIdx ? "true" : undefined}
               />
