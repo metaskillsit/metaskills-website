@@ -4,6 +4,7 @@ import { useState } from "react";
 import heroAsean from "@/assets/hero-bg-asean.webp";
 import heroSecondary from "@/assets/hero-bg.webp";
 import { useTranslation } from "react-i18next";
+import HeroCinematicBackground from "@/components/HeroCinematicBackground";
 
 const PHOTO1_DURATION = 6000;
 const PHOTO2_DURATION = 6000;
@@ -70,9 +71,10 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
+      <HeroCinematicBackground />
       {/* Always-mounted base photo — prevents flash and guarantees instant LCP */}
       <div
-        className="relative aspect-[16/9] md:aspect-[1920/900] bg-cover bg-center"
+        className="relative z-20 aspect-[16/9] md:aspect-[1920/900] bg-cover bg-center"
         style={{ backgroundImage: `url(${HERO_LQIP})` }}
       >
         <img
@@ -84,7 +86,7 @@ const HeroSection = () => {
           decoding="async"
           // @ts-expect-error fetchpriority is a valid attribute
           fetchpriority="high"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="hero-cinematic-photo absolute inset-0 h-full w-full object-cover object-center"
         />
 
         <AnimatePresence>
@@ -97,7 +99,7 @@ const HeroSection = () => {
               height={900}
               loading="eager"
               decoding="async"
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="hero-cinematic-photo absolute inset-0 h-full w-full object-cover object-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -108,7 +110,7 @@ const HeroSection = () => {
 
         {/* Invisible swipe/drag layer — manual navigation without visible controls */}
         <div
-          className="absolute inset-0 z-10 cursor-grab touch-pan-y active:cursor-grabbing"
+          className="absolute inset-0 z-30 cursor-grab touch-pan-y active:cursor-grabbing"
           onPointerDown={onPointerDown}
           onPointerUp={onPointerUp}
           onPointerCancel={() => { pointerStartX.current = null; }}
@@ -116,11 +118,11 @@ const HeroSection = () => {
         />
 
         {/* Top scrim — keeps transparent navbar legible over bright hero photos */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 z-10 bg-gradient-to-b from-black/55 via-black/20 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 z-20 bg-gradient-to-b from-[hsl(var(--hero-overlay)/0.68)] via-[hsl(var(--hero-overlay)/0.24)] to-transparent" />
 
         {/* Desktop overlay — text on media */}
-        <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent z-10" />
-        <div className="hidden md:block absolute inset-x-0 bottom-0 z-20 mx-auto w-full max-w-[1140px] px-6 pb-6">
+        <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent z-20" />
+        <div className="hidden md:block absolute inset-x-0 bottom-0 z-40 mx-auto w-full max-w-[1140px] px-6 pb-6">
           <div className="hero-tech-card inline-flex items-center gap-6 px-7 py-5">
             <span className="hero-tech-glow" aria-hidden="true" />
             <span className="hero-tech-grid" aria-hidden="true" />
@@ -130,7 +132,7 @@ const HeroSection = () => {
       </div>
 
       {/* Mobile — text below media */}
-      <div className="md:hidden bg-[hsl(var(--hero-overlay))] px-6 py-5">
+      <div className="relative z-20 md:hidden bg-[hsl(var(--hero-overlay))] px-6 py-5">
         <div className="hero-tech-card relative overflow-hidden px-5 py-5">
           <span className="hero-tech-glow" aria-hidden="true" />
           <span className="hero-tech-grid" aria-hidden="true" />
