@@ -290,10 +290,10 @@ const FacultySection = () => {
           })}
         </div>
 
-        <div className="mx-auto mt-7 max-w-2xl text-center" aria-live="polite" aria-atomic="true">
+        <div className="mx-auto mt-2 max-w-2xl text-center" aria-live="polite" aria-atomic="true">
           <p className="text-[10px] font-medium uppercase text-accent">{activeFaculty.role}</p>
-          <h3 className="mt-2 font-heading text-3xl font-medium text-foreground md:text-4xl">{activeFaculty.name}</h3>
-          <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground md:text-base">{activeFaculty.expertise}</p>
+          <h3 className="mt-1 font-heading text-3xl font-medium text-foreground md:text-4xl">{activeFaculty.name}</h3>
+          <p className="mt-2 text-sm font-light leading-relaxed text-muted-foreground md:text-base">{activeFaculty.expertise}</p>
         </div>
 
         <div className="mt-8 flex items-center justify-center gap-5 sm:gap-8">
