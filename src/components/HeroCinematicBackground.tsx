@@ -147,7 +147,6 @@ function CinematicScene({ reducedMotion }: { reducedMotion: boolean }) {
 
   return (
     <>
-      <color attach="background" args={[MIDNIGHT]} />
       <fogExp2 attach="fog" args={[MIDNIGHT, 0.035]} />
       <ambientLight intensity={0.45} color="#d8d0eb" />
       <pointLight position={[-4, 2, 3]} intensity={14} color="#8468c7" distance={12} />
@@ -170,7 +169,7 @@ function CinematicScene({ reducedMotion }: { reducedMotion: boolean }) {
         />
       </points>
 
-      <mesh ref={starRef} geometry={starGeometry} scale={0.72} rotation={[0.15, -0.25, 0]}>
+      <mesh ref={starRef} geometry={starGeometry} position={[3.25, 0.15, 0]} scale={0.72} rotation={[0.15, -0.25, 0]}>
         <meshPhysicalMaterial
           color="#dddce0"
           metalness={1}
@@ -213,7 +212,8 @@ export default function HeroCinematicBackground() {
         <Canvas
           camera={{ position: [0, 0, 8.1], fov: 52, near: 0.1, far: 60 }}
           dpr={[1, 1.5]}
-          gl={{ antialias: false, alpha: false, powerPreference: "high-performance" }}
+          gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
+          onCreated={({ gl }) => gl.setClearColor(MIDNIGHT, 0)}
         >
           <CinematicScene reducedMotion={reducedMotion} />
         </Canvas>
