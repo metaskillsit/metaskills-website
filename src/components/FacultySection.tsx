@@ -279,6 +279,10 @@ const FacultySection = () => {
                         : undefined
                     }
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-75" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-primary-foreground md:p-6">
+                    <h3 className="font-heading text-2xl font-medium leading-tight md:text-3xl">{faculty.name}</h3>
+                  </div>
                 </div>
               </article>
             );
@@ -287,7 +291,6 @@ const FacultySection = () => {
 
         <div className="mx-auto mt-2 max-w-2xl text-center" aria-live="polite" aria-atomic="true">
           <p className="text-[10px] font-medium uppercase text-accent">{activeFaculty.role}</p>
-          <h3 className="mt-1 font-heading text-3xl font-medium text-foreground md:text-4xl">{activeFaculty.name}</h3>
           <p className="mt-2 text-sm font-light leading-relaxed text-muted-foreground md:text-base">{activeFaculty.expertise}</p>
         </div>
 
