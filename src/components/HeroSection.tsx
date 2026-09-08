@@ -69,8 +69,7 @@ const HeroSection = () => {
   );
 
   return (
-    <section className="hero-cinematic-shell relative isolate w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
-      <HeroCinematicBackground />
+    <section className="relative isolate w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
       {/* Always-mounted base photo — prevents flash and guarantees instant LCP */}
       <div
         className="relative aspect-[16/9] md:aspect-[1920/900] bg-cover bg-center"
