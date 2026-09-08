@@ -393,7 +393,7 @@ const ConsultingPage = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { name: "JCube Institute", logo: jcubeLogo, url: "http://www.jcube-institute.com/" },
+                { name: "Integrum Global", logo: integrumLogo, url: "https://integrum.global/" },
                 { name: "rR", logo: rrLogo, url: "#" },
               ].map((m) => (
                 <a
