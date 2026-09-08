@@ -32,7 +32,7 @@ import singaporeCustomsLogo from "@/assets/clients/singapore-customs.png";
 import smrtLogo from "@/assets/clients/smrt.png";
 import smuLogo from "@/assets/clients/smu.png";
 import uobLogo from "@/assets/clients/uob.png";
-import jcubeLogo from "@/assets/consulting-jcube.png";
+import integrumLogo from "@/assets/partner-integrum.png";
 import rrLogo from "@/assets/consulting-rr.png";
 
 const WA_LINK =
@@ -393,7 +393,7 @@ const ConsultingPage = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { name: "JCube Institute", logo: jcubeLogo, url: "http://www.jcube-institute.com/" },
+                { name: "Integrum Global", logo: integrumLogo, url: "https://integrum.global/" },
                 { name: "rR", logo: rrLogo, url: "#" },
               ].map((m) => (
                 <a
