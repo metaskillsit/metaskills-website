@@ -4,7 +4,6 @@ import { useState } from "react";
 import heroAsean from "@/assets/hero-bg-asean.webp";
 import heroSecondary from "@/assets/hero-bg.webp";
 import { useTranslation } from "react-i18next";
-import HeroCinematicBackground from "@/components/HeroCinematicBackground";
 
 const PHOTO1_DURATION = 6000;
 const PHOTO2_DURATION = 6000;
@@ -70,8 +69,7 @@ const HeroSection = () => {
   );
 
   return (
-    <section className="hero-cinematic-shell relative isolate w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
-      <HeroCinematicBackground />
+    <section className="relative isolate w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
       {/* Always-mounted base photo — prevents flash and guarantees instant LCP */}
       <div
         className="relative aspect-[16/9] md:aspect-[1920/900] bg-cover bg-center"
