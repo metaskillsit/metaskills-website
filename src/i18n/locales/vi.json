@@ -22,7 +22,14 @@
   },
   "hero": {
     "title": "Viện AI cho Châu Á",
-    "subtitle": "Trao quyền cho các chuyên gia và tổ chức châu Á dẫn đầu bằng AI và tự tin bảo vệ."
+    "subtitle": "Trao quyền cho các chuyên gia và tổ chức châu Á dẫn đầu bằng AI và tự tin bảo vệ.",
+    "eyebrow": "Đào tạo AI chuyên nghiệp",
+    "brandLabel": "METASKILLS INSTITUTE",
+    "ctaPrimary": "Khám phá chương trình",
+    "ctaSecondary": "Nói chuyện với tuyển sinh",
+    "trustTrained": "Chuyên gia được đào tạo",
+    "trustSector": "Khách hàng chính phủ & MNC",
+    "trustReach": "Phân phối khu vực"
   },
   "certified": {
     "heading": "Chương trình được thiết kế và giảng dạy bởi chuyên gia ngành và giảng viên được chứng nhận",
