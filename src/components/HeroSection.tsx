@@ -153,7 +153,7 @@ const HeroSection = () => {
 
             {/* Trust signals — desktop side stack */}
             <motion.div
-              className="hidden lg:block lg:col-span-5 xl:col-span-6"
+              className="hidden lg:flex lg:col-span-4 xl:col-span-5 lg:justify-end"
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
