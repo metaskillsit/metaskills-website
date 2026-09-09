@@ -100,10 +100,10 @@ const HeroSection = () => {
       {/* Content zone */}
       <div className="relative z-40 flex min-h-[calc(100svh-90px)] flex-col justify-end px-6 pb-8 md:min-h-[calc(100svh-90px)] md:px-12 lg:px-20">
         <div className="mx-auto w-full max-w-[1320px]">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end lg:gap-10">
             {/* Main content panel */}
             <motion.div
-              className="hero-premium-panel lg:col-span-7 xl:col-span-6"
+              className="hero-premium-panel lg:col-span-8 xl:col-span-7"
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
