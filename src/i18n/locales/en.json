@@ -22,7 +22,14 @@
   },
   "hero": {
     "title": "The AI Institute for Asia",
-    "subtitle": "Empowering Asia's professionals and organisations to lead with AI and defend with confidence."
+    "subtitle": "Empowering Asia's professionals and organisations to lead with AI and defend with confidence.",
+    "eyebrow": "Professional AI training",
+    "brandLabel": "METASKILLS INSTITUTE",
+    "ctaPrimary": "Explore Programmes",
+    "ctaSecondary": "Speak to Admissions",
+    "trustTrained": "Professionals trained",
+    "trustSector": "Government & MNC clients",
+    "trustReach": "Regional delivery"
   },
   "certified": {
     "heading": "Curriculum designed and delivered by industry practitioners and certified instructors",
