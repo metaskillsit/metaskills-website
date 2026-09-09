@@ -23,7 +23,6 @@ const Index = () => {
       <Navbar />
       <main className="pt-20 md:pt-[90px]">
         <HeroSection />
-        <CurrentTrainingTicker />
         <MissionSection />
 
         <StatsSection />
