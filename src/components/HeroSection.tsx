@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import heroAsean from "@/assets/hero-bg-asean.webp";
 import heroSecondary from "@/assets/hero-bg.webp";
 import { useTranslation } from "react-i18next";
+import CurrentTrainingTicker from "./CurrentTrainingTicker";
 
 const PHOTO1_DURATION = 6000;
 const PHOTO2_DURATION = 6000;
@@ -18,9 +19,8 @@ const HeroSection = () => {
   const [phase, setPhase] = useState<Phase>("photo1");
   const pointerStartX = useRef<number | null>(null);
 
-  const goToPhase = (dir: 1 | -1) => {
+  const goToPhase = () => {
     setPhase((current) => (current === "photo1" ? "photo2" : "photo1"));
-    void dir;
   };
 
   const onPointerDown = (e: React.PointerEvent) => {
@@ -30,7 +30,7 @@ const HeroSection = () => {
     if (pointerStartX.current === null) return;
     const dx = e.clientX - pointerStartX.current;
     pointerStartX.current = null;
-    if (Math.abs(dx) > 40) goToPhase(dx < 0 ? 1 : -1);
+    if (Math.abs(dx) > 40) goToPhase();
   };
 
   // Warm the secondary image during idle so transitions are instant
@@ -47,95 +47,146 @@ const HeroSection = () => {
     return () => clearTimeout(id);
   }, [phase]);
 
-  const heroContent = (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-    >
-      <div className="hero-tech-eyebrow mb-4">
-        <span className="hero-tech-status" aria-hidden="true" />
-        <span className="font-body font-medium uppercase">
-          Metaskills Institute
-        </span>
-      </div>
-      <h1 className="hero-tech-title font-heading text-[42px] md:text-[54px] lg:text-[62px] font-semibold leading-[1.02] text-primary-foreground">
-        {t("hero.title")}
-      </h1>
-      <p className="hero-tech-subtitle mt-5 max-w-[720px] font-body text-[16px] md:text-[20px] lg:text-[23px] leading-[1.55]">
-        {t("hero.subtitle")}
-      </p>
-    </motion.div>
-  );
-
   return (
-    <section className="relative isolate w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
-      {/* Always-mounted base photo — prevents flash and guarantees instant LCP */}
+    <section className="hero-premium-section relative isolate w-full overflow-hidden bg-[hsl(var(--hero-overlay))]">
+      {/* Background foundation — always-mounted base photo prevents flash */}
       <div
-        className="relative aspect-[16/9] md:aspect-[1920/900] bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${HERO_LQIP})` }}
       >
         <img
           src={heroAsean}
-          alt="Professional AI training"
+          alt="Singapore skyline"
           width={1920}
           height={900}
           loading="eager"
           decoding="async"
           // @ts-expect-error fetchpriority is a valid attribute
           fetchpriority="high"
-          className="hero-cinematic-photo hero-cinematic-photo-primary absolute inset-0 h-full w-full object-cover object-center"
+          className="hero-premium-photo hero-premium-photo-primary absolute inset-0 h-full w-full object-cover object-center"
         />
-
-        <AnimatePresence>
-          {phase === "photo2" && (
-            <motion.img
-              key="photo2"
-              src={heroSecondary}
-              alt="AI training in action"
-              width={1920}
-              height={900}
-              loading="eager"
-              decoding="async"
-              className="hero-cinematic-photo hero-cinematic-photo-secondary absolute inset-0 h-full w-full object-cover object-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
-            />
-          )}
-        </AnimatePresence>
-
-        {/* Invisible swipe/drag layer — manual navigation without visible controls */}
-        <div
-          className="absolute inset-0 z-30 cursor-grab touch-pan-y active:cursor-grabbing"
-          onPointerDown={onPointerDown}
-          onPointerUp={onPointerUp}
-          onPointerCancel={() => { pointerStartX.current = null; }}
-          aria-hidden="true"
+        <motion.img
+          key="photo2"
+          src={heroSecondary}
+          alt="AI training in action"
+          width={1920}
+          height={900}
+          loading="eager"
+          decoding="async"
+          className="hero-premium-photo hero-premium-photo-secondary absolute inset-0 h-full w-full object-cover object-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: phase === "photo2" ? 1 : 0 }}
+          transition={{ duration: 1.4, ease: [0.4, 0, 0.2, 1] }}
         />
-
-        {/* Top scrim — keeps transparent navbar legible over bright hero photos */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 z-20 bg-gradient-to-b from-[hsl(var(--hero-overlay)/0.68)] via-[hsl(var(--hero-overlay)/0.24)] to-transparent" />
-
-        {/* Desktop overlay — text on media */}
-        <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent z-20" />
-        <div className="hidden md:block absolute inset-x-0 bottom-0 z-40 mx-auto w-full max-w-[1140px] px-6 pb-6">
-          <div className="hero-tech-card inline-flex items-center gap-6 px-7 py-5">
-            <span className="hero-tech-glow" aria-hidden="true" />
-            <span className="hero-tech-grid" aria-hidden="true" />
-            {heroContent}
-          </div>
-        </div>
       </div>
 
-      {/* Mobile — text below media */}
-      <div className="relative z-20 md:hidden bg-[hsl(var(--hero-overlay))] px-6 py-5">
-        <div className="hero-tech-card relative overflow-hidden px-5 py-5">
-          <span className="hero-tech-glow" aria-hidden="true" />
-          <span className="hero-tech-grid" aria-hidden="true" />
-          {heroContent}
+      {/* Layered overlays */}
+      <div className="hero-premium-overlay absolute inset-0 z-10 pointer-events-none" />
+      <div className="hero-premium-spotlight absolute inset-0 z-10 pointer-events-none" />
+      <div className="hero-premium-grid absolute inset-0 z-10 pointer-events-none" />
+
+      {/* Top scrim for navbar legibility */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 z-20 bg-gradient-to-b from-[hsl(var(--hero-overlay)/0.72)] via-[hsl(var(--hero-overlay)/0.28)] to-transparent" />
+
+      {/* Invisible swipe/drag layer */}
+      <div
+        className="absolute inset-0 z-30 cursor-grab touch-pan-y active:cursor-grabbing"
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
+        onPointerCancel={() => { pointerStartX.current = null; }}
+        aria-hidden="true"
+      />
+
+      {/* Content zone */}
+      <div className="relative z-40 flex min-h-[calc(100svh-90px)] flex-col justify-end px-6 pb-8 md:min-h-[calc(100svh-90px)] md:px-12 lg:px-20">
+        <div className="mx-auto w-full max-w-[1320px]">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">
+            {/* Main content panel */}
+            <motion.div
+              className="hero-premium-panel lg:col-span-7 xl:col-span-6"
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="hero-premium-panel-inner">
+                {/* Eyebrow */}
+                <div className="hero-premium-eyebrow">
+                  <span className="hero-premium-status" aria-hidden="true" />
+                  <span>{t("hero.eyebrow", "Professional AI training")}</span>
+                </div>
+
+                {/* Brand label */}
+                <div className="hero-premium-brand">
+                  {t("hero.brandLabel", "METASKILLS INSTITUTE")}
+                </div>
+
+                {/* Headline */}
+                <h1 className="hero-premium-title">
+                  {t("hero.title")}
+                </h1>
+
+                {/* Subheadline */}
+                <p className="hero-premium-subtitle">
+                  {t("hero.subtitle")}
+                </p>
+
+                {/* CTA group */}
+                <div className="hero-premium-ctas">
+                  <a
+                    href="/programmes"
+                    className="hero-premium-cta-primary"
+                  >
+                    <span>{t("hero.ctaPrimary", "Explore Programmes")}</span>
+                    <span className="hero-premium-cta-shine" aria-hidden="true" />
+                  </a>
+                  <a
+                    href="https://wa.me/6589866146?text=Hi%20I'm%20interested%20in%20your%20AI%20training%20and%20solutions.%20Can%20you%20advise"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hero-premium-cta-secondary"
+                  >
+                    {t("hero.ctaSecondary", "Speak to Admissions")}
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Trust signals — desktop side stack */}
+            <motion.div
+              className="hidden lg:block lg:col-span-5 xl:col-span-6"
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="hero-premium-trust-stack">
+                <div className="hero-premium-trust-item">
+                  <span className="hero-premium-trust-value">10,000+</span>
+                  <span className="hero-premium-trust-label">{t("hero.trustTrained", "Professionals trained")}</span>
+                </div>
+                <div className="hero-premium-trust-divider" aria-hidden="true" />
+                <div className="hero-premium-trust-item">
+                  <span className="hero-premium-trust-value">Enterprise</span>
+                  <span className="hero-premium-trust-label">{t("hero.trustSector", "Government & MNC clients")}</span>
+                </div>
+                <div className="hero-premium-trust-divider" aria-hidden="true" />
+                <div className="hero-premium-trust-item">
+                  <span className="hero-premium-trust-value">ASEAN</span>
+                  <span className="hero-premium-trust-label">{t("hero.trustReach", "Regional delivery")}</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
+
+        {/* Proof rail — anchored lower in hero */}
+        <motion.div
+          className="mx-auto mt-8 w-full max-w-[1320px]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <CurrentTrainingTicker />
+        </motion.div>
       </div>
     </section>
   );
