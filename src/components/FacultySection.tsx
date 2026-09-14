@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useRef, PointerEvent as ReactPointerE
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 import { Button } from "@/components/ui/button";
+import lenzYuPortrait from "@/assets/faculty/lenz-yu-professional.jpg.asset.json";
 
 
 const allFaculty = [
@@ -105,9 +106,9 @@ const allFaculty = [
   },
   {
     name: "Lenz Yu",
-    role: "Principal Cyber Security Consultant",
+    role: "Instructor, Cyber Security",
     expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
-    image: "/images/faculty/faculty-lenz.jpg",
+    image: lenzYuPortrait.url,
   },
   {
     name: "Johnson Ang",
