@@ -3,8 +3,8 @@ import { Menu, X, ChevronRight, ChevronDown, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import logo from "@/assets/metaskills-logo.png";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import ThreeDLogo from "@/components/ThreeDLogo";
 
 interface NavItem {
   label: string;
@@ -292,8 +292,8 @@ const Navbar = () => {
             >
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
-            <Link to="/" className="flex items-center">
-              <img src={logo} alt="Metaskills Institute" className="h-12 md:h-[58px] w-auto object-contain" />
+            <Link to="/" className="flex items-center" aria-label="Metaskills Institute home">
+              <ThreeDLogo />
             </Link>
           </div>
 
