@@ -41,7 +41,6 @@ const ThreeDLogo = () => (
     role="img"
     aria-label="Metaskills Institute"
   >
-    <span className="absolute inset-[18%] bg-accent/20" aria-hidden="true" />
     <Canvas
       camera={{ position: [0, 0, 5], fov: 32 }}
       dpr={[1, 1.5]}
