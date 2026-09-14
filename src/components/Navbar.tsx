@@ -564,8 +564,8 @@ const Navbar = () => {
               className="fixed top-0 left-0 bottom-0 z-50 w-full max-w-md bg-card shadow-2xl overflow-y-auto"
             >
               <div className="flex items-center justify-between px-6 h-20 md:h-[90px] border-b border-border">
-                <Link to="/" onClick={() => setMenuOpen(false)}>
-                  <img src={logo} alt="Metaskills Institute" className="h-12 w-auto object-contain" />
+                <Link to="/" onClick={() => setMenuOpen(false)} aria-label="Metaskills Institute home">
+                  <ThreeDLogo />
                 </Link>
                 <button onClick={() => setMenuOpen(false)} className="text-foreground hover:text-primary transition-colors">
                   <X size={22} />

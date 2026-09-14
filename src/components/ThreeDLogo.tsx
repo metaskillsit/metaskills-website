@@ -43,8 +43,7 @@ const ThreeDLogo = () => (
   >
     <span className="absolute inset-[18%] bg-accent/20" aria-hidden="true" />
     <Canvas
-      orthographic
-      camera={{ position: [0, 0, 5], zoom: 36 }}
+      camera={{ position: [0, 0, 5], fov: 32 }}
       dpr={[1, 1.5]}
       gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}
       style={{ position: "absolute", inset: 0 }}
