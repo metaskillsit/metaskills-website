@@ -1170,9 +1170,9 @@
       "bio": "梁杰米（AFHEA）是一位常驻新加坡的资深培训师和成人教育专家，在成人学习和信息技术方面拥有超过20年的经验。他专注于讲师发展项目、基于能力的课程和实践技术培训的设计和交付，重点关注AI和网络安全领域。在其整个职业生涯中，他为国防部（MINDEF）、亚马逊网络服务（AWS）、Grab、麦肯锡公司（Generation）和新加坡成人学习研究所等组织提供支持，为公共和私营部门受众提供能力发展计划。杰米采用基于证据的成人学习方法，整合模拟实验室、桌面演练和结构化评估框架等实用方法论，以确保有效的知识传递和可衡量的培训成果。"
     },
     "lenzYu": {
-      "role": "首席网络安全顾问",
+      "role": "网络安全讲师",
       "expertise": "道德黑客 | 恶意软件逆向工程 | Web与网络安全 | ACLP",
-      "bio": "Lenz Yu是一位资深的网络安全专业人士，拥有19年的行业经验，并获得英国华威大学网络安全与管理硕士学位（Merit）。作为F5 Inc.的首席升级工程师，他担任亚太区支持组织的安全领域专家（SME），领导漏洞管理并缓解复杂的网络和应用层攻击——从OWASP十大漏洞到大规模DDoS和暴力破解攻击——涵盖欺诈防护、Web应用防火墙和网络防火墙解决方案。他是F5全球安全事件响应团队（SIRT）的核心成员，指导工程师处理真实安全事件，并协助客户完成复杂部署和安全设计。\nLenz是新加坡成人学习生态中最活跃的网络安全教育者之一。过去六年，他在Kaplan新加坡（与朴茨茅斯大学和莫道克大学合作）、淡马锡理工学院、新加坡理工学院和共和理工学院担任兼职讲师，提供红队和蓝队的实践培训。他的教学涵盖道德黑客、数字取证与事件响应、恶意软件逆向工程和Windows安全加固——覆盖道德黑客的五个阶段、网络杀伤链、MITRE ATT&CK TTP分析，以及使用Metasploit、Nmap、Nessus、Mimikatz、Wireshark、Splunk、IDA和Volatility等工具的实践实验室。\n他的技术基础奠基于国防科技局（DSTA），在那里他管理并加固了跨Sun Solaris、Windows Server、Red Hat Enterprise Linux和IBM AIX的企业服务器基础设施，随后在F5 Networks任职十年，跨越新加坡和上海的现场工程、企业网络和高级安全工程岗位。Lenz曾两度荣获F5五星奖——公司最高个人荣誉。\nLenz拥有CISSP、CCSP、CISA、GIAC GCIH、GMOB、GREM、GCSA、EC-Council CEH和Kubernetes安全专家认证（CKS）等顶级安全认证，并持有WSQ学习与绩效高级证书（ACLP）。"
+      "bio": "Lenz Yu是一位资深的网络安全专业人士，拥有19年的行业经验，并获得英国华威大学网络安全与管理硕士学位（Merit）。他专长于网络安全工程、漏洞管理、网络与应用安全，以及缓解从OWASP十大漏洞到大规模DDoS和暴力破解等复杂网络攻击。其经验涵盖欺诈防护、Web应用安全、网络安全、安全事件响应和复杂企业安全部署。\nLenz也是一位经验丰富的网络安全教育工作者，在新加坡成人学习生态中拥有超过六年的经验。他曾在Kaplan新加坡（与朴茨茅斯大学及莫道克大学合作）、淡马锡理工学院、新加坡理工学院和共和理工学院担任兼职讲师，提供红队和蓝队实践培训。他的教学涵盖道德黑客、数字取证与事件响应、恶意软件逆向工程和Microsoft Windows安全，并结合道德黑客五个阶段、网络杀伤链、MITRE ATT&CK技术与战术，以及Metasploit、Nmap、Nessus、Mimikatz、Wireshark、Splunk、IDA和Volatility等工具的实操分析。\n他的技术基础来自企业基础设施和安全工程岗位，曾管理并加固Sun Solaris、Windows Server、Red Hat Enterprise Linux和IBM AIX服务器环境。此后，他在新加坡和上海积累了丰富的企业网络与网络安全工程经验，协助客户设计、部署、排除故障并保护复杂的网络和应用环境。\n他持有多项国际认可的安全认证，包括CISSP、CCSP、CISA、GIAC GCIH、GMOB、GREM和GCSA、EC-Council CEH及Certified Kubernetes Security Specialist（CKS），并持有WSQ学习与绩效高级证书（ACLP）。"
     },
     "johnsonAng": {
       "role": "首席讲师，网络安全与应用AI",

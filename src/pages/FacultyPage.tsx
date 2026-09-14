@@ -6,6 +6,7 @@ import FooterSection from "@/components/FooterSection";
 import { ChevronDown, ChevronUp, Link2, Check } from "lucide-react";
 import { toast } from "sonner";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
+import lenzYuPortrait from "@/assets/faculty/lenz-yu-professional.jpg.asset.json";
 
 
 interface FacultyMember {
@@ -263,13 +264,13 @@ DevSecOps, MLOps & Cloud: DevOps/DataOps/MLOps (Duke University); AI for Cyberse
   {
     name: "Lenz Yu",
     i18nKey: "lenzYu",
-    role: "Principal Cyber Security Consultant",
+    role: "Instructor, Cyber Security",
     expertise: "Ethical Hacking | Malware Reverse Engineering | Web & Network Security | ACLP",
-    image: "/images/faculty/faculty-lenz.jpg",
-    bio: `Lenz Yu is a seasoned cybersecurity professional with 19 years of industry experience and a Master's in Cyber Security and Management (Merit) from the University of Warwick. As Principal Escalation Engineer at F5 Inc., he serves as the Security Subject Matter Expert for the APAC support organisation, leading vulnerability management and mitigating sophisticated network and application-layer attacks — from OWASP Top 10 exploits to large-scale DDoS and brute-force campaigns — across fraud protection, web application firewall, and network firewall solutions. He is a core member of F5's global Security Incident Response Team (SIRT), mentoring engineers on live security incidents and guiding customers through complex deployments and security design.
-Lenz is one of the most active cybersecurity educators in Singapore's adult learning ecosystem. Over the past six years, he has delivered hands-on red-team and blue-team training as an adjunct lecturer at Kaplan Singapore (partnering with the University of Portsmouth and Murdoch University), Temasek Polytechnic, Singapore Polytechnic, and Republic Polytechnic. His teaching spans Ethical Hacking, Digital Forensics & Incident Response, Malware Reverse Engineering, and Securing Microsoft Windows — covering the full five phases of ethical hacking, the cyber kill chain, MITRE ATT&CK TTP analysis, and hands-on labs with tools such as Metasploit, Nmap, Nessus, Mimikatz, Wireshark, Splunk, IDA, and Volatility.
-His technical foundation was forged at the Defence Science Technology Agency (DSTA), where he administered and hardened enterprise server infrastructure across Sun Solaris, Windows Server, Red Hat Enterprise Linux, and IBM AIX, followed by a decade at F5 Networks spanning field engineering, enterprise networking, and senior security engineering roles in Singapore and Shanghai. Lenz is a two-time recipient of the F5 Five Stars Award — the company's highest individual honour.
-Lenz holds an elite portfolio of security certifications including CISSP, CCSP, CISA, GIAC GCIH, GMOB, GREM and GCSA, EC-Council CEH, and Certified Kubernetes Security Specialist, alongside a WSQ Advanced Certificate in Learning and Performance (ACLP).`,
+    image: lenzYuPortrait.url,
+    bio: `Lenz Yu is a seasoned cybersecurity professional with 19 years of industry experience and a Master's in Cyber Security and Management (Merit) from the University of Warwick. He specialises in cybersecurity engineering, vulnerability management, network and application security, and the mitigation of sophisticated cyber attacks — ranging from OWASP Top 10 exploits to large-scale DDoS and brute-force campaigns. His experience spans fraud protection, web application security, network security, security incident response, and complex enterprise security deployments.
+Lenz is also an experienced cybersecurity educator with more than six years of experience in Singapore's adult learning ecosystem. He has delivered hands-on red-team and blue-team training as an adjunct lecturer at Kaplan Singapore, in partnership with the University of Portsmouth and Murdoch University, as well as Temasek Polytechnic, Singapore Polytechnic, and Republic Polytechnic. His teaching covers Ethical Hacking, Digital Forensics and Incident Response, Malware Reverse Engineering, and Microsoft Windows Security. His training incorporates practical exercises covering the five phases of ethical hacking, the cyber kill chain, MITRE ATT&CK techniques and tactics, and hands-on security analysis using tools such as Metasploit, Nmap, Nessus, Mimikatz, Wireshark, Splunk, IDA, and Volatility.
+His technical foundation was established through enterprise infrastructure and security engineering roles, where he administered and hardened server environments across Sun Solaris, Windows Server, Red Hat Enterprise Linux, and IBM AIX. This was followed by extensive experience in enterprise networking and cybersecurity engineering across Singapore and Shanghai, supporting customers in designing, deploying, troubleshooting, and securing complex network and application environments.
+He holds a broad portfolio of industry-recognised security certifications, including CISSP, CCSP, CISA, GIAC GCIH, GMOB, GREM and GCSA, EC-Council CEH, and Certified Kubernetes Security Specialist (CKS), alongside a WSQ Advanced Certificate in Learning and Performance (ACLP).`,
   },
 ];
 
