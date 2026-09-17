@@ -1,0 +1,11 @@
+{
+  "style": "altitude-style",
+  "surfaces": {
+    "homepageHero": {
+      "asset": "opalesce",
+      "mode": "photographic-overlay",
+      "palette": "corporate-navy-gold",
+      "notes": "Low-opacity soft-light treatment preserving the existing rotating hero photography."
+    }
+  }
+}
