@@ -62,13 +62,13 @@ void main() {
   float stars = step(0.984, starSeed) * pow(hash(floor(starGrid) + 7.3), 6.0);
   stars *= 0.55 + 0.45 * sin(uTime * 0.45 + starSeed * 28.0);
 
-  vec3 navy = vec3(0.025, 0.035, 0.065);
-  vec3 darkGold = vec3(0.48, 0.34, 0.10);
-  vec3 editorialGold = vec3(0.79, 0.60, 0.20);
-  vec3 colour = mix(navy, darkGold, veil * 0.72);
-  colour = mix(colour, editorialGold, galaxy * 0.62 + stars * 0.7);
+  vec3 navy = vec3(0.012, 0.020, 0.040);
+  vec3 darkGold = vec3(0.38, 0.24, 0.05);
+  vec3 editorialGold = vec3(0.88, 0.61, 0.12);
+  vec3 colour = mix(navy, darkGold, veil * 0.58);
+  colour = mix(colour, editorialGold, galaxy * 0.72 + stars * 0.76);
 
-  float alpha = veil * 0.5 + galaxy * 0.8 + stars * 0.9;
+  float alpha = veil * 0.3 + galaxy * 0.72 + stars * 0.82;
   alpha *= smoothstep(1.15, 0.25, radius);
   fragColor = vec4(colour, alpha);
 }`;
