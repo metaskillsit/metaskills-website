@@ -68,7 +68,7 @@ void main() {
   vec3 colour = mix(navy, darkGold, veil * 0.72);
   colour = mix(colour, editorialGold, galaxy * 0.62 + stars * 0.7);
 
-  float alpha = veil * 0.34 + galaxy * 0.42 + stars * 0.55;
+  float alpha = veil * 0.5 + galaxy * 0.8 + stars * 0.9;
   alpha *= smoothstep(1.15, 0.25, radius);
   fragColor = vec4(colour, alpha);
 }`;
