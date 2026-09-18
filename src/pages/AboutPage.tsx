@@ -11,6 +11,19 @@ import bokehAsset from "@/assets/about-auralis/light-bokeh.png.asset.json";
 
 const pillarIcons = [Brain, TrendingUp, ShieldCheck, Users];
 
+type AboutPillar = { icon: typeof Brain; title: string; description: string };
+
+const StaticAboutContent = ({ t, pillars }: { t: ReturnType<typeof useTranslation>["t"]; pillars: AboutPillar[] }) => (
+  <div className="about-static" aria-label={t("aboutPage.heroTitle")}>
+    <section><span className="about-kicker">The Institute</span><h1>{t("aboutPage.heroTitle")}</h1><p>{t("aboutPage.heroSubtitle")}</p></section>
+    <section><span className="about-index">01 / 05</span><h2>{t("aboutPage.missionTitle")}</h2><p>{t("aboutPage.missionP1")}</p><p>{t("aboutPage.missionP2")}</p></section>
+    <section><span className="about-index">02 / 05</span><h2>{t("aboutPage.visionTitle")}</h2><p>{t("aboutPage.visionP1")}</p><p>{t("aboutPage.visionP2")}</p></section>
+    <section><span className="about-index">03 / 05</span><h2>{t("aboutPage.coreAreas")}</h2><div className="about-static-grid">{pillars.map((pillar) => <article key={pillar.title}><pillar.icon aria-hidden="true" /><h3>{pillar.title}</h3><p>{pillar.description}</p></article>)}</div></section>
+    <section><span className="about-index">04 / 05</span><h2>{t("practices.heading")}</h2><p><em>{t("practices.headingItalic")}</em></p><div className="about-static-practices">{[1, 2, 3, 4, 5].map((number) => <article key={number}><span>0{number}</span><h3>{t(`practices.p${number}Name`)}</h3><em>{t(`practices.p${number}Tagline`)}</em><p>{t(`practices.p${number}Desc`)}</p></article>)}</div></section>
+    <section><span className="about-index">05 / 05</span><h2>{t("aboutPage.langTitle")}</h2><p>{t("aboutPage.langDesc")}</p></section>
+  </div>
+);
+
 const AboutPage = () => {
   const { t } = useTranslation();
   const journeyRef = useRef<HTMLDivElement>(null);
@@ -34,13 +47,14 @@ const AboutPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        <div ref={journeyRef} className="about-cinematic-journey">
+        {reducedMotion ? <StaticAboutContent t={t} pillars={pillars} /> : <div ref={journeyRef} className="about-cinematic-journey">
           <div className="about-cinematic-stage">
             <div className="about-scene"><AboutImmersiveScene progress={scrollYProgress} reducedMotion={reducedMotion} /></div>
             <div className="about-light about-light-rays" style={{ backgroundImage: `url(${raysAsset.url})` }} />
             <div className="about-light about-light-glint" style={{ backgroundImage: `url(${glintAsset.url})` }} />
             <div className="about-light about-light-bokeh" style={{ backgroundImage: `url(${bokehAsset.url})` }} />
             <div className="about-grain" />
+            <div className={`about-scan-line about-scan-line-${activeAct}`} />
 
             <AnimatePresence mode="wait">
             {activeAct === 0 && <motion.section key="hero" {...actMotion} className="about-act about-act-hero">
@@ -105,7 +119,7 @@ const AboutPage = () => {
             </motion.section>}
             </AnimatePresence>
           </div>
-        </div>
+        </div>}
       </main>
       <FooterSection />
     </div>

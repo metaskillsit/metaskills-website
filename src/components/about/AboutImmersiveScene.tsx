@@ -1,4 +1,5 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { LineSegments, Points, PointsMaterial } from "three";
 import * as THREE from "three";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -6,7 +7,7 @@ import type { MotionValue } from "framer-motion";
 import handAsset from "@/assets/about-auralis/hand-points.bin.asset.json";
 import treeAsset from "@/assets/about-auralis/tree-points.bin.asset.json";
 
-type SceneProps = { progress: MotionValue<number>; reducedMotion: boolean };
+type SceneProps = { progress: MotionValue<number>; reducedMotion: boolean; compact?: boolean };
 
 const GOLD = new THREE.Color("#ffb81c");
 const PEARL = new THREE.Color("#f5f1e8");
@@ -41,13 +42,17 @@ const createMPoints = (count: number) => {
   return positions;
 };
 
-const decodePointCloud = (buffer: ArrayBuffer, count: number, offset: number[], scale: number[], multiplier: number) => {
+const decodePointCloud = (buffer: ArrayBuffer, count: number, offset: number[], scale: number[], multiplier: number, stride = 1) => {
   const values = new Uint16Array(buffer);
-  const positions = new Float32Array(count * 3);
-  for (let i = 0; i < count; i += 1) {
-    positions[i * 3] = (offset[0] + (values[i * 3] / 65535) * scale[0]) * multiplier;
-    positions[i * 3 + 1] = (offset[1] + (values[i * 3 + 1] / 65535) * scale[1]) * multiplier;
-    positions[i * 3 + 2] = (offset[2] + (values[i * 3 + 2] / 65535) * scale[2]) * multiplier;
+  const safeCount = Math.min(count, Math.floor(values.length / 3));
+  const outputCount = Math.ceil(safeCount / stride);
+  const positions = new Float32Array(outputCount * 3);
+  let output = 0;
+  for (let i = 0; i < safeCount; i += stride) {
+    positions[output * 3] = (offset[0] + (values[i * 3] / 65535) * scale[0]) * multiplier;
+    positions[output * 3 + 1] = (offset[1] + (values[i * 3 + 1] / 65535) * scale[1]) * multiplier;
+    positions[output * 3 + 2] = (offset[2] + (values[i * 3 + 2] / 65535) * scale[2]) * multiplier;
+    output += 1;
   }
   return positions;
 };
@@ -97,21 +102,22 @@ const Lattice = ({ progress }: { progress: MotionValue<number> }) => {
   );
 };
 
-const Scene = ({ progress, reducedMotion }: SceneProps) => {
+const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const { camera } = useThree();
   const [hand, setHand] = useState<Float32Array | null>(null);
   const [tree, setTree] = useState<Float32Array | null>(null);
-  const mPoints = useMemo(() => createMPoints(12000), []);
+  const mPoints = useMemo(() => createMPoints(compact ? 6000 : 12000), [compact]);
   const dust = useMemo(() => {
     const random = seeded(77);
-    const values = new Float32Array(1800 * 3);
-    for (let i = 0; i < 1800; i += 1) {
+    const count = compact ? 900 : 1800;
+    const values = new Float32Array(count * 3);
+    for (let i = 0; i < count; i += 1) {
       values[i * 3] = (random() - 0.5) * 56;
       values[i * 3 + 1] = (random() - 0.5) * 32;
       values[i * 3 + 2] = (random() - 0.5) * 42;
     }
     return values;
-  }, []);
+  }, [compact]);
   const mMaterial = useRef<PointsMaterial>(null);
   const handMaterial = useRef<PointsMaterial>(null);
   const treeMaterial = useRef<PointsMaterial>(null);
@@ -120,15 +126,21 @@ const Scene = ({ progress, reducedMotion }: SceneProps) => {
   useEffect(() => {
     let active = true;
     Promise.all([
-      fetch(handAsset.url).then((response) => response.arrayBuffer()),
-      fetch(treeAsset.url).then((response) => response.arrayBuffer()),
+      fetch(handAsset.url).then((response) => {
+        if (!response.ok) throw new Error("Hand point cloud unavailable");
+        return response.arrayBuffer();
+      }),
+      fetch(treeAsset.url).then((response) => {
+        if (!response.ok) throw new Error("Tree point cloud unavailable");
+        return response.arrayBuffer();
+      }),
     ]).then(([handBuffer, treeBuffer]) => {
       if (!active) return;
-      setHand(decodePointCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7));
-      setTree(decodePointCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 7.2));
+      setHand(decodePointCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1));
+      setTree(decodePointCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 7.2, compact ? 3 : 1));
     }).catch(() => undefined);
     return () => { active = false; };
-  }, []);
+  }, [compact]);
 
   useFrame(({ clock, pointer }) => {
     const p = reducedMotion ? 0.04 : progress.get();
@@ -194,19 +206,56 @@ const Scene = ({ progress, reducedMotion }: SceneProps) => {
         </points>
       )}
       <ParticleForm positions={dust} opacity={0.24} scale={1.2} rotation={0.2} />
+      {!compact && !reducedMotion && (
+        <EffectComposer multisampling={0}>
+          <Bloom intensity={0.42} luminanceThreshold={0.72} luminanceSmoothing={0.32} mipmapBlur />
+        </EffectComposer>
+      )}
     </>
   );
 };
 
-const AboutImmersiveScene = ({ progress, reducedMotion }: SceneProps) => (
-  <Canvas
-    dpr={[0.75, 1.35]}
-    camera={{ fov: 36, position: [0, 2, 33], near: 0.1, far: 120 }}
-    gl={{ antialias: false, powerPreference: "high-performance" }}
-    aria-hidden="true"
-  >
-    <Scene progress={progress} reducedMotion={reducedMotion} />
-  </Canvas>
-);
+const supportsWebGL = () => {
+  try {
+    const canvas = document.createElement("canvas");
+    return Boolean(canvas.getContext("webgl2") || canvas.getContext("webgl"));
+  } catch {
+    return false;
+  }
+};
+
+const AboutImmersiveScene = ({ progress, reducedMotion }: SceneProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [compact, setCompact] = useState(false);
+  const [webGLAvailable, setWebGLAvailable] = useState(true);
+
+  useEffect(() => {
+    setCompact(window.matchMedia("(max-width: 767px), (pointer: coarse)").matches);
+    setWebGLAvailable(supportsWebGL());
+    const node = containerRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(([entry]) => setIsVisible(entry?.isIntersecting ?? true));
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="about-canvas-shell" aria-hidden="true">
+      {!webGLAvailable ? (
+        <div className="about-scene-fallback"><span>M</span></div>
+      ) : (
+        <Canvas
+          dpr={compact ? 0.8 : [0.8, 1.35]}
+          frameloop={isVisible && !reducedMotion ? "always" : "demand"}
+          camera={{ fov: compact ? 44 : 36, position: [0, 2, 33], near: 0.1, far: 120 }}
+          gl={{ antialias: false, powerPreference: compact ? "low-power" : "high-performance" }}
+        >
+          <Scene progress={progress} reducedMotion={reducedMotion} compact={compact} />
+        </Canvas>
+      )}
+    </div>
+  );
+};
 
 export default AboutImmersiveScene;
