@@ -510,7 +510,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <ambientLight intensity={0.18} /><directionalLight position={[-10, 16, 18]} color={GOLD} intensity={0.9} />
     <Dust count={compact ? 220 : 520} spread={44} height={30} position={[0, 2, 0]} />
     <Dust count={compact ? 200 : 420} spread={36} height={26} position={[0, 2, -34]} />
-    <group ref={mGroup} position={[3.2, 2, -8]} scale={0.46}>
+    <group ref={mGroup} position={[9.5, 2.6, -8]} scale={0.42}>
       <ParticleCloud data={glyph} materialRef={mMaterial} size={compact ? 1.5 : 1.25} sway={0.05} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={20} /></group>
     </group>
