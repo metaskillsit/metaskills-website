@@ -388,6 +388,107 @@ const makeWave = (columns: number, rows: number) => {
   return geometry;
 };
 
+/* ---------- tapered violet ribbon burst ---------- */
+
+const makeRibbons = (ribbons: number, segments: number) => {
+  const geometry = new THREE.BufferGeometry();
+  const positions: number[] = [];
+  const progress: number[] = [];
+  const ribbon: number[] = [];
+  for (let r = 0; r < ribbons; r += 1) {
+    for (let s = 0; s < segments; s += 1) {
+      const t0 = s / segments;
+      const t1 = (s + 1) / segments;
+      positions.push(0, 0, 0, 0, 0, 0);
+      progress.push(t0, t1);
+      ribbon.push(r, r);
+    }
+  }
+  geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+  geometry.setAttribute("aProgress", new THREE.Float32BufferAttribute(progress, 1));
+  geometry.setAttribute("aRibbon", new THREE.Float32BufferAttribute(ribbon, 1));
+  return geometry;
+};
+
+const ribbonVertex = `
+  attribute float aProgress;
+  attribute float aRibbon;
+  uniform float uTime;
+  uniform float uBurst;
+  varying float vProgress;
+  varying float vEdge;
+  void main() {
+    float angle = aRibbon * 1.256637 + .34;
+    float t = aProgress;
+    float travel = smoothstep(0., 1., uBurst);
+    float head = travel * 1.3;
+    float visible = smoothstep(head - .42, head - .26, t) * (1. - smoothstep(head, head + .08, t));
+    float radius = 1.2 + t * 12.;
+    vec3 p = vec3(cos(angle) * radius, sin(angle) * radius * .58, -t * 20.);
+    p.x += sin(t * 12. + uTime * 1.15 + aRibbon) * (1. + t * 2.2);
+    p.y += cos(t * 9. - uTime * .86 + aRibbon * 2.) * (0.6 + t * 1.4);
+    p.z += sin(t * 7. + aRibbon) * 1.8;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.);
+    vProgress = t;
+    vEdge = visible;
+  }
+`;
+
+const ribbonFragment = `
+  uniform vec3 uColor;
+  uniform vec3 uEdge;
+  uniform float uOpacity;
+  varying float vProgress;
+  varying float vEdge;
+  void main() {
+    float tail = pow(1. - vProgress, .55);
+    vec3 color = mix(uColor, uEdge, pow(vProgress, 5.));
+    float alpha = uOpacity * vEdge * (.2 + tail * .8);
+    if (alpha < .008) discard;
+    gl_FragColor = vec4(color, alpha);
+  }
+`;
+
+const Ribbons = ({ materialRef, compact }: { materialRef: React.RefObject<THREE.ShaderMaterial>; compact: boolean }) => {
+  const geometry = useMemo(() => makeRibbons(5, compact ? 54 : 110), [compact]);
+  const uniforms = useMemo(() => ({ uTime: { value: 0 }, uBurst: { value: 0 }, uOpacity: { value: 0 }, uColor: { value: VIOLET }, uEdge: { value: GOLD } }), []);
+  return <lineSegments geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={ribbonVertex} fragmentShader={ribbonFragment} transparent depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>;
+};
+
+/* ---------- low rolling finale fog ---------- */
+
+const fogVertex = `
+  uniform float uTime;
+  varying vec2 vUv;
+  void main() {
+    vUv = uv;
+    vec3 p = position;
+    p.z += sin(p.x * .12 + uTime * .14) * 1.2;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.);
+  }
+`;
+
+const fogFragment = `
+  uniform float uTime;
+  uniform float uOpacity;
+  uniform vec3 uColor;
+  varying vec2 vUv;
+  float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453); }
+  float noise(vec2 p) { vec2 i=floor(p), f=fract(p); f=f*f*(3.-2.*f); return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y); }
+  void main() {
+    float n = noise(vUv * vec2(7.,3.) + vec2(uTime * .025, 0.));
+    n += noise(vUv * vec2(14.,5.) - vec2(uTime * .018, 0.)) * .45;
+    float edge = smoothstep(0., .3, vUv.y) * (1. - smoothstep(.72, 1., vUv.y));
+    float alpha = edge * smoothstep(.3, 1.1, n) * uOpacity;
+    gl_FragColor = vec4(uColor, alpha);
+  }
+`;
+
+const FinaleFog = ({ materialRef }: { materialRef: React.RefObject<THREE.ShaderMaterial> }) => {
+  const uniforms = useMemo(() => ({ uTime: { value: 0 }, uOpacity: { value: 0 }, uColor: { value: PEARL } }), []);
+  return <mesh position={[7.5, -6.4, -66]} rotation={[-Math.PI / 2.65, 0, 0]}><planeGeometry args={[42, 18, 48, 16]} /><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={fogVertex} fragmentShader={fogFragment} transparent depthWrite={false} /></mesh>;
+};
+
 const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const { camera } = useThree();
   const [hand, setHand] = useState<CloudData | null>(null);
@@ -408,6 +509,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const waveRef = useRef<THREE.LineSegments>(null);
   const trailRef = useRef<THREE.LineSegments>(null);
   const pathwayRef = useRef<THREE.LineSegments>(null);
+  const ribbonMaterial = useRef<THREE.ShaderMaterial>(null);
+  const finaleFogMaterial = useRef<THREE.ShaderMaterial>(null);
   const pointerSmooth = useRef(new THREE.Vector2());
   const glyphLatticeGeometry = useMemo(() => makeLattice(8.7, 20), []);
   const handLatticeGeometry = useMemo(() => makeLattice(11, 22, 20260729), []);
@@ -454,9 +557,16 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     const glyphOpacity = 1 - range(p, 0.16, 0.26);
     if (mMaterial.current) {
       mMaterial.current.uniforms.uMorph.value = reducedMotion ? 1 : range(p, 0, 0.055);
+      mMaterial.current.uniforms.uBurst.value = reducedMotion ? 0 : smoother(range(p, 0.16, 0.245));
       mMaterial.current.uniforms.uReveal.value = 1;
       mMaterial.current.uniforms.uOpacity.value = glyphOpacity;
       mMaterial.current.uniforms.uTime.value = time;
+    }
+    if (ribbonMaterial.current) {
+      const burst = range(p, 0.145, 0.305);
+      ribbonMaterial.current.uniforms.uTime.value = time;
+      ribbonMaterial.current.uniforms.uBurst.value = burst;
+      ribbonMaterial.current.uniforms.uOpacity.value = reducedMotion ? 0 : Math.sin(Math.PI * burst) * 0.72;
     }
     if (mGroup.current) {
       const hold = 1 - smoother(range(p, 0.2, 0.32));
@@ -476,6 +586,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     const handOpacity = fadeWindow(p, 0.17, 0.26, 0.44, 0.52);
     if (handMaterial.current) {
       handMaterial.current.uniforms.uMorph.value = 1;
+      handMaterial.current.uniforms.uCrumble.value = reducedMotion ? 0 : smoother(range(p, 0.43, 0.56));
       handMaterial.current.uniforms.uReveal.value = range(p, 0.2, 0.34);
       handMaterial.current.uniforms.uOpacity.value = handOpacity;
       handMaterial.current.uniforms.uTime.value = time;
@@ -493,7 +604,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       handLatticeMaterial.current.uniforms.uOpacity.value = 0.12 * Math.min(1, weave * 3);
     }
 
-    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.18, 0.27, 0.52, 0.62) * 0.24;
+    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.42, 0.49, 0.57, 0.64) * 0.15;
     if (pathwayRef.current) (pathwayRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.51, 0.62, 0.78, 0.88) * 0.6;
     if (waveRef.current) {
       const opacity = fadeWindow(p, 0.46, 0.54, 0.68, 0.77);
@@ -513,6 +624,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     const treeOpacity = range(p, 0.79, 0.9);
     if (treeMaterial.current) {
       treeMaterial.current.uniforms.uMorph.value = 1;
+      treeMaterial.current.uniforms.uGrowth.value = reducedMotion ? 1 : smoother(range(p, 0.79, 0.965));
       // tilted bottom-up wipe reveal
       treeMaterial.current.uniforms.uTilt.value = 0.4;
       treeMaterial.current.uniforms.uReveal.value = range(p, 0.78, 0.95);
@@ -533,6 +645,10 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       treeMotesMaterial.current.uniforms.uTime.value = time;
       treeMotesMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.5;
     }
+    if (finaleFogMaterial.current) {
+      finaleFogMaterial.current.uniforms.uTime.value = time;
+      finaleFogMaterial.current.uniforms.uOpacity.value = fadeWindow(p, 0.735, 0.79, 0.96, 1.08) * (0.5 - range(p, 0.82, 0.98) * 0.2);
+    }
   });
 
   return <>
@@ -544,19 +660,21 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       <ParticleCloud data={glyph} materialRef={mMaterial} size={compact ? 1.5 : 1.25} sway={0.05} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={20} /></group>
     </group>
+    <group position={[13, 2.6, -8]} scale={0.4}><Ribbons materialRef={ribbonMaterial} compact={compact} /></group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {hand && <group ref={handGroup} position={[-3.6, 4.4, -40]} scale={0.6}>
-      <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 1.9 : 1.5} sway={0.04} light={[-18, 42, 16]} />
+    {hand && <group ref={handGroup} position={[-2.8, 3.8, -37]} scale={0.72}>
+      <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 2.15 : 1.82} sway={0.025} light={[-22, 48, 24]} />
       <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={22} />
     </group>}
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     {tree && <group ref={treeGroup} position={[7.5, -2.5, -74]} scale={0.9}>
-      <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 1.9 : 1.6} sway={0.12} />
+      <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 2.05 : 1.72} sway={0.075} light={[-20, 38, 30]} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} position={[0, -6, 0]} />
     </group>}
+    <FinaleFog materialRef={finaleFogMaterial} />
     {!compact && !reducedMotion && <EffectComposer multisampling={0}>
       <Bloom intensity={0.34} luminanceThreshold={0.86} luminanceSmoothing={0.28} mipmapBlur />
       <Vignette offset={0.28} darkness={0.72} />
