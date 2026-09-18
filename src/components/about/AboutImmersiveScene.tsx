@@ -555,6 +555,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     const cameraPoint = cameraCurve.getPointAt(clamp01(p * 0.96));
     camera.position.lerp(cameraPoint, reducedMotion ? 1 : 1 - Math.pow(0.0006, Math.min(delta, 0.2)));
     const target = cameraCurve.getPointAt(clamp01(p * 0.96 + 0.035));
+    const finaleFocus = smoother(range(p, 0.76, 0.9));
+    target.lerp(new THREE.Vector3(4, 3.4, -61), finaleFocus);
     target.x += px * 0.45;
     target.y += py * 0.24;
     camera.lookAt(target);
@@ -676,7 +678,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {tree && <group ref={treeGroup} position={[4, 2.5, -61]} scale={1.08}>
+    {tree && <group ref={treeGroup} position={[4, 1.4, -61]} scale={0.82}>
       <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 2.05 : 1.78} sway={0.075} light={[-20, 38, 30]} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} position={[0, -6, 0]} />
