@@ -547,7 +547,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       .then(([handBuffer, treeBuffer]) => {
         if (!active) return;
         setHand(decodeCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1, compact ? 5 : 10, 0.16));
-        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 7.2, compact ? 3 : 1, compact ? 1 : 2, 0.12));
+        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 8, compact ? 3 : 1, compact ? 1 : 3, 0.07));
       }).catch(() => undefined);
     return () => { active = false; };
   }, [compact]);
