@@ -491,7 +491,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     }
     if (treeGroup.current) {
       treeGroup.current.rotation.y = Math.sin(time * 0.24 + 3) * 0.055 + px * 0.05 + (p - 0.82) * 0.18;
-      treeGroup.current.position.y = -1 + Math.sin(time * 0.17 + 1) * 0.18;
+      treeGroup.current.position.y = 3 + Math.sin(time * 0.17 + 1) * 0.18;
     }
     if (treeLatticeMaterial.current) {
       const weave = range(p, 0.87, 0.97);
@@ -522,7 +522,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {tree && <group ref={treeGroup} position={[2.4, -2, -68]} scale={1.05}>
+    {tree && <group ref={treeGroup} position={[-1.5, 3, -58]} scale={1.15}>
       <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 1.9 : 1.6} sway={0.12} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} position={[0, -6, 0]} />
