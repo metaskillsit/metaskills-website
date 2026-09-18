@@ -413,12 +413,11 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     const py = pointerSmooth.current.y;
 
     const cameraPoint = cameraCurve.getPointAt(clamp01(p * 0.96));
-    camera.position.lerp(cameraPoint, reducedMotion ? 1 : 0.14);
+    camera.position.lerp(cameraPoint, reducedMotion ? 1 : 1 - Math.pow(0.0006, Math.min(delta, 0.2)));
     const target = cameraCurve.getPointAt(clamp01(p * 0.96 + 0.035));
     target.x += px * 0.45;
     target.y += py * 0.24;
     camera.lookAt(target);
-    (window as any).__f=((window as any).__f||0)+1; if((window as any).__f%30===0) console.log('DBG f',(window as any).__f,'p',p.toFixed(3),'camz',camera.position.z.toFixed(1));
     // single out-and-back bank (~13 deg) through the flight, level afterwards
     camera.rotation.z = -0.23 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
 
