@@ -6,4 +6,4 @@
 - [x] Implement and verify the approved five-act continuous camera sequence.
 - [x] Rebuild the About scene with an M-to-violet-ribbon burst, hand-to-curtain crumble, and fog-grown tree finale.
 - [x] Apply the Auralis demo's original colours and animation parameters to the M, hand, and tree.
-- [ ] Verify full-scroll Auralis parity and correct hand/tree framing without clipping.
+- [x] Verify full-scroll Auralis parity and correct hand/tree framing without clipping.
