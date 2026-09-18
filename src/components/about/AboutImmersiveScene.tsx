@@ -446,8 +446,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     const handOpacity = fadeWindow(p, 0.17, 0.26, 0.44, 0.52);
     if (handMaterial.current) {
       handMaterial.current.uniforms.uMorph.value = 1;
-      handMaterial.current.uniforms.uReveal.value = range(p, 0.2, 0.34);
-      handMaterial.current.uniforms.uOpacity.value = handOpacity;
+      handMaterial.current.uniforms.uReveal.value = 1;
+      handMaterial.current.uniforms.uOpacity.value = 1;
       handMaterial.current.uniforms.uTime.value = time;
     }
     if (handGroup.current) {
@@ -460,10 +460,10 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       const weave = Math.min(range(p, 0.23, 0.33), 1 - range(p, 0.43, 0.51));
       handLatticeMaterial.current.uniforms.uBuild.value = weave;
       handLatticeMaterial.current.uniforms.uTime.value = time;
-      handLatticeMaterial.current.uniforms.uOpacity.value = 0.12 * Math.min(1, weave * 3);
+      handLatticeMaterial.current.uniforms.uOpacity.value = 0;
     }
 
-    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.18, 0.27, 0.52, 0.62) * 0.24;
+    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.18, 0.27, 0.52, 0.62) * 0.0;
     if (pathwayRef.current) (pathwayRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.51, 0.62, 0.78, 0.88) * 0.6;
     if (waveRef.current) {
       const opacity = fadeWindow(p, 0.46, 0.54, 0.68, 0.77);
