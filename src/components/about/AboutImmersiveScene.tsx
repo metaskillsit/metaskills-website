@@ -432,8 +432,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       const hold = 1 - smoother(range(p, 0.2, 0.32));
       mGroup.current.rotation.y = (Math.sin(time * 0.45) * 0.12 + px * 0.07) * hold;
       mGroup.current.rotation.x = -py * 0.04 * hold;
-      mGroup.current.position.y = 1 + Math.sin(time * 0.3) * 0.3 * hold;
-      mGroup.current.scale.setScalar(1 + range(p, 0.22, 0.34) * 0.4);
+      mGroup.current.position.y = 2 + Math.sin(time * 0.3) * 0.3 * hold;
+      mGroup.current.scale.setScalar(0.46 * (1 + range(p, 0.22, 0.34) * 0.4));
     }
     if (glyphLatticeMaterial.current) {
       const weave = Math.min(range(p, 0.035, 0.14), 1 - range(p, 0.22, 0.31));
@@ -510,8 +510,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <ambientLight intensity={0.18} /><directionalLight position={[-10, 16, 18]} color={GOLD} intensity={0.9} />
     <Dust count={compact ? 220 : 520} spread={44} height={30} position={[0, 2, 0]} />
     <Dust count={compact ? 200 : 420} spread={36} height={26} position={[0, 2, -34]} />
-    <group ref={mGroup} position={[0, 1, 0]}>
-      <ParticleCloud data={glyph} materialRef={mMaterial} size={compact ? 2.1 : 1.8} sway={0.05} />
+    <group ref={mGroup} position={[3.2, 2, -8]} scale={0.46}>
+      <ParticleCloud data={glyph} materialRef={mMaterial} size={compact ? 1.5 : 1.25} sway={0.05} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={20} /></group>
     </group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
