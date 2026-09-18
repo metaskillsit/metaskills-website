@@ -17,7 +17,6 @@ const CoursePastRuns = ({ pastRuns, courseTitle }: CoursePastRunsProps) => {
 
   if (!pastRuns.length) return null;
 
-  const totalParticipants = pastRuns.reduce((sum, run) => sum + run.participants, 0);
 
   const getPhotoIndex = (runIndex: number) => activePhotoIndex[runIndex] || 0;
 
@@ -82,19 +81,9 @@ const CoursePastRuns = ({ pastRuns, courseTitle }: CoursePastRunsProps) => {
             {t("coursePage.pastCourseRunsDesc")}
           </p>
 
-          <div className="flex justify-center gap-8 mt-8">
+          <div className="flex justify-center mt-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">{pastRuns.length}</div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide mt-1">{t("coursePage.runsCompleted")}</div>
-            </div>
-            <div className="w-px bg-border" />
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">{totalParticipants}+</div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide mt-1">{t("coursePage.participantsTrained")}</div>
-            </div>
-            <div className="w-px bg-border" />
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">4.9</div>
+              <div className="text-3xl font-bold text-primary">4.8</div>
               <div className="text-xs text-muted-foreground uppercase tracking-wide mt-1">{t("coursePage.avgRating")}</div>
             </div>
           </div>
