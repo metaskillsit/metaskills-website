@@ -154,6 +154,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const mGroup = useRef<THREE.Group>(null);
   const handGroup = useRef<THREE.Group>(null);
   const treeGroup = useRef<THREE.Group>(null);
+  const treeLattice = useRef<THREE.LineSegments>(null);
+  const firefliesRef = useRef<THREE.Points>(null);
   const glyphLattice = useRef<THREE.LineSegments>(null);
   const handLattice = useRef<THREE.LineSegments>(null);
   const waveRef = useRef<THREE.LineSegments>(null);
@@ -161,12 +163,27 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const pathwayRef = useRef<THREE.LineSegments>(null);
   const glyphLatticeGeometry = useMemo(() => makeLattice(), []);
   const handLatticeGeometry = useMemo(() => makeLattice(7.4, 18), []);
+  const treeLatticeGeometry = useMemo(() => makeLattice(8.2, 18), []);
   const trailGeometry = useMemo(() => makeTrails(compact ? 260 : 720, 5, 44), [compact]);
   const pathwayGeometry = useMemo(() => makeTrails(compact ? 260 : 620, 5, 40), [compact]);
   const waveGeometry = useMemo(() => makeWave(compact ? 18 : 30, compact ? 22 : 38), [compact]);
+  const fireflyGeometry = useMemo(() => {
+    const random = seeded(984);
+    const count = compact ? 90 : 220;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count; i += 1) {
+      const t = i / count;
+      const angle = t * Math.PI * 12 + random();
+      const radius = 3.2 + random() * 4.4;
+      positions.set([Math.cos(angle) * radius, -7 + t * 15, Math.sin(angle) * radius], i * 3);
+    }
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    return geometry;
+  }, [compact]);
   const cameraCurve = useMemo(() => new THREE.CatmullRomCurve3([
     new THREE.Vector3(0, 1.5, 31), new THREE.Vector3(1.5, 2, 22), new THREE.Vector3(-2.4, 3.2, 6),
-    new THREE.Vector3(2.2, 4.2, -11), new THREE.Vector3(-3.5, 7.5, -29), new THREE.Vector3(1.4, 4.5, -49),
+    new THREE.Vector3(2.2, 4.2, -11), new THREE.Vector3(-3.5, 7.5, -27), new THREE.Vector3(1.4, 4.5, -38),
   ], false, "catmullrom", 0.5), []);
 
   useEffect(() => {
@@ -246,6 +263,16 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       treeMaterial.current.uniforms.uTime.value = time;
     }
     if (treeGroup.current) treeGroup.current.rotation.y = Math.sin(time * 0.12) * 0.12 + (p - 0.82) * 0.22;
+    if (treeLattice.current) {
+      const weave = range(p, 0.86, 0.97);
+      treeLattice.current.geometry.setDrawRange(0, Math.floor(treeLatticeGeometry.index ? treeLatticeGeometry.index.count * weave : Infinity));
+      (treeLattice.current.material as THREE.LineBasicMaterial).opacity = weave * 0.22;
+    }
+    if (firefliesRef.current) {
+      firefliesRef.current.rotation.y = time * 0.08;
+      firefliesRef.current.position.y = (time * 0.18) % 1.6;
+      (firefliesRef.current.material as THREE.PointsMaterial).opacity = treeOpacity * (0.38 + Math.sin(time * 1.4) * 0.08);
+    }
   });
 
   return <>
@@ -256,7 +283,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     {hand && <group ref={handGroup} position={[0, 0, -18]} scale={1.3}><ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 2.8 : 2.35} /><lineSegments ref={handLattice} geometry={handLatticeGeometry}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments></group>}
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {tree && <group ref={treeGroup} position={[0, -1, -52]} scale={1.55}><ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 2.4 : 1.9} /></group>}
+    {tree && <group ref={treeGroup} position={[0, -1, -52]} scale={1.55}><ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 2.4 : 1.9} /><lineSegments ref={treeLattice} geometry={treeLatticeGeometry}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments><points ref={firefliesRef} geometry={fireflyGeometry}><pointsMaterial color={GOLD} size={0.1} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></points></group>}
     {!compact && !reducedMotion && <EffectComposer multisampling={0}><Bloom intensity={0.5} luminanceThreshold={0.7} luminanceSmoothing={0.34} mipmapBlur /></EffectComposer>}
   </>;
 };
