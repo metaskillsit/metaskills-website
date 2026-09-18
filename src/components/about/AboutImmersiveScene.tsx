@@ -7,10 +7,12 @@ import * as THREE from "three";
 type SceneProps = { progress: MotionValue<number>; reducedMotion: boolean; compact?: boolean };
 type CloudData = { positions: Float32Array; origins?: Float32Array; count: number };
 
-const GOLD = new THREE.Color("hsl(43, 93%, 54%)");
-const PEARL = new THREE.Color("hsl(42, 32%, 94%)");
-const VIOLET = new THREE.Color("hsl(277, 48%, 58%)");
-const NAVY = new THREE.Color("hsl(220, 62%, 7%)");
+const GOLD = new THREE.Color("#e6ecf2");
+const PEARL = new THREE.Color("#e6ecf2");
+const VIOLET = new THREE.Color("#b552ff");
+const POINTER_VIOLET = new THREE.Color("#b579ff");
+const BACKDROP = new THREE.Color("#05060a");
+const DEMO_FOG = new THREE.Color("#868e96");
 
 const clamp01 = (value: number) => THREE.MathUtils.clamp(value, 0, 1);
 const range = (value: number, start: number, end: number) => clamp01((value - start) / (end - start));
@@ -155,8 +157,8 @@ const pointFragment = `
     if (body < .02) discard;
     vec3 col = uColor * (.42 + .58 * vShade);
     col = mix(col, uAccent, clamp(vTrail * .35, 0., 1.));
-    col += uLife * uFlow * vLife * .5;
-    col += uColor * (vHero * .6 + core * .18);
+    col += uLife * uFlow * vLife * .62;
+    col += uColor * (vHero * 5. + core * .18);
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .85);
     float a = body * vAlpha * uOpacity * (.42 + vHero * .3 + vTrail * .12 + core * .16) * (1. - fog * .58);
@@ -208,7 +210,7 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
   const uniforms = useMemo(() => ({
     uMorph: { value: 1 }, uBurst: { value: 0 }, uCrumble: { value: 0 }, uGrowth: { value: 1 }, uReveal: { value: 1 }, uTilt: { value: 0 }, uTime: { value: 0 },
     uSize: { value: size }, uSway: { value: sway }, uColor: { value: color }, uAccent: { value: accent },
-    uOpacity: { value: 0 }, uFogColor: { value: NAVY }, uFogNear: { value: 22 }, uFogFar: { value: 105 },
+    uOpacity: { value: 0 }, uFogColor: { value: DEMO_FOG }, uFogNear: { value: 25 }, uFogFar: { value: 130 },
     uLife: { value: VIOLET }, uFlow: { value: flow },
   }), [color, accent, size, sway, flow]);
   return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.NormalBlending} /></points>;
@@ -216,8 +218,8 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
 
 /* ---------- self-weaving containment lattice ---------- */
 
-const makeLattice = (radius = 8.7, height = 20, seed = 20260728) => {
-  const geometry = new THREE.WireframeGeometry(new THREE.CylinderGeometry(radius, radius, height, 28, 9, true));
+const makeLattice = (radius = 7.6, height = 18, seed = 20260728) => {
+  const geometry = new THREE.WireframeGeometry(new THREE.CylinderGeometry(radius, radius, height, 56, 20, true));
   const position = geometry.getAttribute("position");
   const count = position.count;
   const random = seeded(seed);
@@ -465,7 +467,7 @@ const ribbonFragment = `
 `;
 
 const Ribbons = ({ materialRef, compact }: { materialRef: React.RefObject<THREE.ShaderMaterial>; compact: boolean }) => {
-  const geometry = useMemo(() => makeRibbons(5, compact ? 54 : 110), [compact]);
+  const geometry = useMemo(() => makeRibbons(3, compact ? 54 : 110), [compact]);
   const uniforms = useMemo(() => ({ uTime: { value: 0 }, uBurst: { value: 0 }, uOpacity: { value: 0 }, uColor: { value: VIOLET }, uEdge: { value: GOLD } }), []);
   return <mesh geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={ribbonVertex} fragmentShader={ribbonFragment} transparent depthWrite={false} side={THREE.DoubleSide} blending={THREE.AdditiveBlending} /></mesh>;
 };
@@ -528,9 +530,9 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const ribbonMaterial = useRef<THREE.ShaderMaterial>(null);
   const finaleFogMaterial = useRef<THREE.ShaderMaterial>(null);
   const pointerSmooth = useRef(new THREE.Vector2());
-  const glyphLatticeGeometry = useMemo(() => makeLattice(8.7, 20), []);
-  const handLatticeGeometry = useMemo(() => makeLattice(11, 22, 20260729), []);
-  const treeLatticeGeometry = useMemo(() => makeLattice(8.2, 18, 20260730), []);
+  const glyphLatticeGeometry = useMemo(() => makeLattice(7.6, 18), []);
+  const handLatticeGeometry = useMemo(() => makeLattice(7.6, 18, 20260729), []);
+  const treeLatticeGeometry = useMemo(() => makeLattice(7.6, 18, 20260730), []);
   const trailGeometry = useMemo(() => makeTrails(compact ? 260 : 720, 5, 44), [compact]);
   const pathwayGeometry = useMemo(() => makeTrails(compact ? 260 : 620, 5, 40), [compact]);
   const waveGeometry = useMemo(() => makeWave(compact ? 18 : 30, compact ? 22 : 38), [compact]);
@@ -546,8 +548,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     Promise.all([fetch("/about/hand-points.bin").then((r) => r.ok ? r.arrayBuffer() : Promise.reject()), fetch("/about/tree-points.bin").then((r) => r.ok ? r.arrayBuffer() : Promise.reject())])
       .then(([handBuffer, treeBuffer]) => {
         if (!active) return;
-        setHand(decodeCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1, compact ? 5 : 10, 0.16));
-        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 8, compact ? 3 : 1, compact ? 1 : 3, 0.07));
+        setHand(decodeCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1, 1, 0));
+        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 8, compact ? 3 : 1, 1, 0));
       }).catch(() => undefined);
     return () => { active = false; };
   }, [compact]);
@@ -570,7 +572,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     target.y += py * 0.24;
     camera.lookAt(target);
     // single out-and-back bank (~13 deg) through the flight, level afterwards
-    camera.rotation.z = -0.23 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
+    camera.rotation.z = -0.26 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
 
     const glyphOpacity = 1 - range(p, 0.16, 0.26);
     if (mMaterial.current) {
@@ -651,6 +653,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     }
     if (treeGroup.current) {
       treeGroup.current.rotation.y = Math.sin(time * 0.24 + 3) * 0.055 + px * 0.05 + (p - 0.82) * 0.18;
+      treeGroup.current.rotation.x = py * 0.025;
       treeGroup.current.position.y = 2.5 + Math.sin(time * 0.17 + 1) * 0.18;
     }
     if (treeLatticeMaterial.current) {
@@ -670,31 +673,32 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   });
 
   return <>
-    <fog attach="fog" args={[NAVY, 22, 88]} /><color attach="background" args={[NAVY]} />
-    <ambientLight intensity={0.18} /><directionalLight position={[-10, 16, 18]} color={GOLD} intensity={0.9} />
-    <Dust count={compact ? 220 : 520} spread={44} height={30} position={[0, 2, 0]} />
-    <Dust count={compact ? 200 : 420} spread={36} height={26} position={[0, 2, -34]} />
+    <fog attach="fog" args={[DEMO_FOG, 25, 130]} /><color attach="background" args={[BACKDROP]} />
+    <hemisphereLight color="#e6ecf2" groundColor="#8a929a" intensity={0.3} />
+    <ambientLight intensity={0.12} /><directionalLight position={[-14, 26, 34]} color="#ffffff" intensity={2.6} />
+    <Dust count={compact ? 280 : 700} spread={44} height={30} position={[0, 2, 0]} />
+    <Dust count={compact ? 220 : 700} spread={36} height={26} position={[0, 2, -34]} />
     <group ref={mGroup} position={[13, 2.6, -8]} scale={0.4}>
-      <ParticleCloud data={glyph} materialRef={mMaterial} size={compact ? 1.5 : 1.25} sway={0.05} />
-      <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={20} /></group>
+      <ParticleCloud data={glyph} materialRef={mMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.15 : 0.82} sway={0.05} flow={0.7} />
+      <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
     </group>
     <group position={[13, 2.6, -8]} scale={0.4}><Ribbons materialRef={ribbonMaterial} compact={compact} /></group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     {hand && <group ref={handGroup} position={[-2.8, 3.8, -37]} scale={0.72}>
-      <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 2.15 : 1.82} sway={0.025} light={[-22, 48, 24]} />
-      <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={22} />
+      <ParticleCloud data={hand} materialRef={handMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.4 : 0.92} sway={0.025} flow={0.72} light={[-14, 26, 34]} />
+      <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={18} color={PEARL} accent={VIOLET} />
     </group>}
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     {tree && <group ref={treeGroup} position={[9.8, 2.2, -64]} scale={0.56}>
-      <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 1.35 : 1.05} sway={0.14} flow={0.8} light={[-14, 26, 34]} />
-      <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} />
-      <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} position={[0, -6, 0]} />
+      <ParticleCloud data={tree} materialRef={treeMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.05 : 0.68} sway={0.14} flow={0.86} light={[-14, 26, 34]} />
+      <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} color={PEARL} accent={VIOLET} />
+      <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} color={POINTER_VIOLET} position={[0, -6, 0]} />
     </group>}
     <FinaleFog materialRef={finaleFogMaterial} />
     {!compact && !reducedMotion && <EffectComposer multisampling={0}>
-      <Bloom intensity={0.34} luminanceThreshold={0.86} luminanceSmoothing={0.28} mipmapBlur />
+      <Bloom intensity={1.5} luminanceThreshold={3.5} luminanceSmoothing={0.1} radius={1.9} mipmapBlur />
       <Vignette offset={0.28} darkness={0.72} />
     </EffectComposer>}
   </>;
