@@ -179,7 +179,7 @@ const SMUPCMLPage = () => {
               </ul>
               <InfoCard title="Certification">
                 Upon completion of all 6 modules within a maximum duration of 3 years, participants will be
-                awarded a digital <strong>Professional Certificate in Applied AI</strong> by Metaskills Institute.
+                awarded a <strong>Professional Certificate in Applied AI</strong> by Metaskills Institute.
               </InfoCard>
             </Section>
 
@@ -205,7 +205,7 @@ const SMUPCMLPage = () => {
                 <div className="mt-5 space-y-2 text-sm text-muted-foreground">
                   <p><strong className="text-foreground">Format:</strong> On-campus, Metaskills Institute</p>
                   <p><strong className="text-foreground">Modules:</strong> 6 sequential modules</p>
-                  <p><strong className="text-foreground">Certification:</strong> Metaskills Institute digital certificate</p>
+                  <p><strong className="text-foreground">Certification:</strong> Metaskills Institute certificate</p>
                 </div>
                 <a href={APPLY_URL} target="_blank" rel="noopener noreferrer"
                   className="mt-6 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition">
