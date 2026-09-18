@@ -514,7 +514,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       <ParticleCloud data={glyph} materialRef={mMaterial} size={compact ? 1.5 : 1.25} sway={0.05} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={20} /></group>
     </group>
-    <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
+    <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     {hand && <group ref={handGroup} position={[-3.6, 4.4, -40]} scale={0.6}>
       <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 1.9 : 1.5} sway={0.04} light={[-18, 42, 16]} />
       <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={22} />
