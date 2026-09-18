@@ -2,91 +2,65 @@
 
 ## Recommendation
 
-Use **Auralis** as the primary template and motion system. It offers the strongest immersive impact because the page behaves as one continuous 3D story rather than separate animated sections.
+Use **Auralis** as the foundation because its continuous 3D scroll narrative offers the strongest immersive impact. Recreate its spatial language and choreography, not its fictional branding or exact visual identity.
 
-Preview: https://www.getlayers.ai/?layer=auralis
+## Changes Required from the Reference Prompt
 
-Auralis is a better fit than the nearest alternatives:
-- **AI Creator** is visually powerful but centred on a personal portrait and creator portfolio.
-- **House** has excellent cinematic scrolling but relies on architectural imagery and frame sequences.
-- **Vexon** fits the AI theme, but is primarily a hero rather than a complete About-page narrative.
-- **Helion** is the strongest backup, though its cosmic progression is less relevant to education, governance, and institutional credibility.
-
-## What Must Change from Auralis
-
-The supplied Auralis prompt is an excellent technical reference, but these elements should be adapted rather than reproduced unchanged:
-
-- Replace Auralis violet and pink with MetaSkills **dark navy, editorial gold, and pearl-white**.
-- Retain **Playfair Display** for editorial headings and **Inter** for body copy instead of Google Sans Flex.
-- Replace the Auralis brand, navigation, calls to action, and fictional studio content with the existing MetaSkills navigation and footer.
-- Replace the opening particle “X” with a distinctive **MetaSkills “M” or connected intelligence glyph**.
-- Reinterpret the hand, wave, lattice, and tree around capability building, AI systems, cybersecurity, markets, and ASEAN growth.
+- Replace violet, pink, and silver with MetaSkills **dark navy, editorial gold, and pearl-white**.
+- Keep **Playfair Display** headings and **Inter** body text.
+- Replace the opening particle “X” with a MetaSkills **M / connected-intelligence glyph**.
 - Keep every existing About-page word unchanged in English, Chinese, and Vietnamese.
-- Avoid copying Auralis’s 1180vh duration mechanically; tune the journey to the actual MetaSkills content so reading never feels delayed.
-- Use the supplied Auralis binary point clouds and flare assets only after downloading them into the project asset system; do not hotlink them.
+- Retain the existing MetaSkills navigation and footer.
+- Shorten Auralis’s 1180vh sequence to match the actual reading length; avoid long empty scroll intervals.
+- Reinterpret the hand, network, lattice, and tree as human capability, applied AI, governance, markets, and ASEAN growth.
+- Use restrained gold bloom and pearl particles rather than a neon sci-fi treatment.
+- Keep text as selectable page content above the canvas, never embedded in WebGL.
 
-## Page Experience
+## Experience
 
-### 1. Opening — About MetaSkills Institute
-- A short MetaSkills wordmark loader prepares the 3D assets.
-- A pearl-and-gold particle “M” assembles inside a slowly weaving cylindrical lattice.
-- The existing title and subtitle appear with restrained letter and word reveals.
-- The camera begins in deep navy haze with gold light grazing the particles.
+### 1. About MetaSkills Institute
+- Assemble a pearl-and-gold particle “M” inside a slowly weaving gold lattice.
+- Reveal the unchanged title and subtitle over a deep navy field.
+- Add subtle desktop pointer response and calm camera drift.
 
-### 2. Mission and Vision — Human Capability
-- The camera moves through the opening glyph into the particle hand.
-- **Our Mission** and its two existing paragraphs occupy one side of the frame.
-- The hand scans into view in pearl particles with a narrow gold band, representing practical capability and human direction.
-- The camera continues into **Our Vision**, preserving both existing paragraphs and allowing comfortable reading time.
+### 2. Mission and Vision
+- Move through the glyph into a pearl particle hand with a narrow gold scan.
+- Present the existing Mission and Vision wording in separate, readable chapters.
+- Keep one active chapter visible at a time to prevent visual overlap.
 
-### 3. Our Core Areas — Connected Systems
-- The hand dissolves into a controlled flowing network rather than Auralis’s pink vortex.
-- The four existing core areas appear as four anchored editorial panels around the scene.
-- Each panel activates a corresponding region of the gold network without replacing or shortening its wording.
-- The scene visually connects Agentic AI, algorithmic trading, cybersecurity governance, and ASEAN trust.
+### 3. Our Core Areas
+- Dissolve the hand into a controlled connected network.
+- Present the four existing core areas as restrained editorial panels linked to the scene.
+- Preserve every title and description.
 
-### 4. Our Five Practices — Applied Impact
-- The network settles into five luminous paths or orbiting nodes.
-- The existing five numbered practices remain complete and readable.
-- Desktop uses a pinned 3D scene with the practice text advancing beside it; mobile uses a simpler vertical sequence with a lightweight scene.
-- The existing Chinese practice marks remain part of the presentation.
+### 4. Our Five Practices
+- Transform the network into five luminous paths or nodes.
+- Advance through all five practices while preserving names, Chinese marks, taglines, and descriptions.
+- Use a simpler vertical presentation on mobile.
 
-### 5. Languages & Reach — ASEAN Growth
-- The final transition reveals a pearl particle tree or branching ASEAN network enclosed by a completed gold lattice.
-- The existing **Languages & Reach** heading and paragraph remain unchanged.
-- The 3D motion settles into a calm final tableau before the existing footer returns in normal page flow.
+### 5. Languages & Reach
+- Resolve the scene into a pearl particle tree or branching ASEAN network within the completed lattice.
+- Present the unchanged Languages & Reach copy.
+- Let motion settle before returning to the normal footer.
 
-## Visual Direction
+## Technical Direction
 
-- Background: deep corporate navy with restrained tonal depth, never pure sci-fi black.
-- Particles: pearl-white bodies with selective editorial-gold highlights.
-- Bloom: limited to important scan lines, lattice impulses, and transition trails.
-- Glass surfaces: low-opacity navy glass with fine gold hairlines.
-- Typography: Playfair Display for major statements; Inter for paragraphs, labels, and navigation.
-- Motion: cinematic camera movement and particle transformations, but slower and more assured than the original Auralis studio treatment.
-- No violet, pink, generic neon, artificial avatars, or decorative effects unrelated to the Institute’s work.
+- Build within the existing React/Vite About page, not as a separate HTML site.
+- Use one fixed Three.js canvas and one shared scroll timeline.
+- Adapt Auralis techniques: particle assembly, scan reveals, camera flight, lattice sequencing, selective bloom, light flares, and grain.
+- Store the hand, tree, and flare assets through the project asset system.
+- Add a lightweight mobile tier, reduced-motion static scenes, and a non-WebGL fallback.
+- Pause rendering when the page is not visible and cap rendering resolution for performance.
 
-## Interaction and Accessibility
+## Verification
 
-- Scroll remains the source of truth, with smooth motion layered over it.
-- Pointer parallax and particle response apply only on capable desktop devices.
-- Reduced-motion mode presents the same content as elegant static scenes with simple fades.
-- Mobile uses reduced particle counts, no pointer simulation, lower rendering resolution, and simplified transitions.
-- All text remains real selectable page content, with proper reading order and no dependence on the 3D canvas.
-- If WebGL fails, the page falls back to the same navy-gold editorial layout with static visual frames.
+- Verify desktop, tablet, and mobile layouts.
+- Verify every chapter appears without overlapping copy.
+- Verify English, Chinese, and Vietnamese content remains complete.
+- Verify reduced-motion and non-WebGL fallbacks.
+- Verify navigation, footer, text readability, asset loading, and performance.
 
-## Technical Approach
+## Scope
 
-- Adapt Auralis into the existing React/Vite page rather than introducing a separate single-file site.
-- Use one fixed Three.js canvas and one shared scroll timeline to avoid multiple competing renderers.
-- Reuse Auralis techniques: particle assembly, self-weaving lattices, scan reveals, scroll camera flight, selective bloom, wipe transition, and performance tiers.
-- Preserve the existing translation keys and content as the only source of displayed copy.
-- Keep the current site navigation and footer outside the cinematic canvas.
-- Store downloaded point-cloud, flare, and generated visual assets through the project’s asset delivery flow.
-- Verify desktop, tablet, mobile, reduced-motion, fallback rendering, text readability, frame rate, and navigation behavior.
-
-## Scope Guardrails
-
-- Rebuild only the **About MetaSkills Institute** page.
-- Do not alter the wording, course information, faculty pages, homepage, or other routes.
-- Do not implement anything until this plan is approved.
+- Change only the **About MetaSkills Institute** page.
+- Do not alter copy, courses, faculty, homepage, or other pages.
