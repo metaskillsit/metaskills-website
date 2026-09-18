@@ -104,6 +104,8 @@ const ProgrammesPage = () => {
         { isSubItem: true, name: ct("aiBizAnalyticsModule4"), slug: "data-storytelling-dashboards-power-bi-ai-copilots" },
         { isSubItem: true, name: ct("aiBizAnalyticsModule5"), slug: "business-dashboard-decision-support-power-bi-ai-copilots" },
         { isSubItem: true, name: ct("aiBizAnalyticsModule6"), slug: "task-automation-macros-vba-ai-copilots" },
+        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
+        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
     },
@@ -162,8 +164,6 @@ const ProgrammesPage = () => {
       image: datasciImg,
       courses: [
         { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
-        { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
-        { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
       ],
     },
     {
