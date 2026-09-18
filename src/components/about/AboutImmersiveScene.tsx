@@ -51,17 +51,25 @@ const makeM = (count: number): CloudData => {
   return { positions, origins, count };
 };
 
-const decodeCloud = (buffer: ArrayBuffer, count: number, offset: number[], scale: number[], multiplier: number, stride: number): CloudData => {
+const decodeCloud = (buffer: ArrayBuffer, count: number, offset: number[], scale: number[], multiplier: number, stride: number, density = 1, jitter = 0): CloudData => {
   const values = new Uint16Array(buffer);
   const safeCount = Math.min(count, Math.floor(values.length / 3));
-  const outputCount = Math.ceil(safeCount / stride);
+  const baseCount = Math.ceil(safeCount / stride);
+  const outputCount = baseCount * density;
   const positions = new Float32Array(outputCount * 3);
+  const random = seeded(90210);
   let output = 0;
   for (let i = 0; i < safeCount; i += stride) {
-    positions[output * 3] = (offset[0] + (values[i * 3] / 65535) * scale[0]) * multiplier;
-    positions[output * 3 + 1] = (offset[1] + (values[i * 3 + 1] / 65535) * scale[1]) * multiplier;
-    positions[output * 3 + 2] = (offset[2] + (values[i * 3 + 2] / 65535) * scale[2]) * multiplier;
-    output += 1;
+    const x = (offset[0] + (values[i * 3] / 65535) * scale[0]) * multiplier;
+    const y = (offset[1] + (values[i * 3 + 1] / 65535) * scale[1]) * multiplier;
+    const z = (offset[2] + (values[i * 3 + 2] / 65535) * scale[2]) * multiplier;
+    for (let d = 0; d < density; d += 1) {
+      const j = d === 0 ? 0 : jitter;
+      positions[output * 3] = x + (random() - 0.5) * j;
+      positions[output * 3 + 1] = y + (random() - 0.5) * j;
+      positions[output * 3 + 2] = z + (random() - 0.5) * j;
+      output += 1;
+    }
   }
   return { positions, count: outputCount };
 };
@@ -128,7 +136,7 @@ const pointFragment = `
     col += uColor * vHero * .55;
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .85);
-    float a = body * vAlpha * uOpacity * (.95 + vHero * .5 + vTrail * .2) * (1. - fog * .5);
+    float a = body * vAlpha * uOpacity * (.5 + vHero * .45 + vTrail * .2) * (1. - fog * .5);
     gl_FragColor = vec4(col, a);
   }
 `;
@@ -391,8 +399,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     Promise.all([fetch(handAsset.url).then((r) => r.ok ? r.arrayBuffer() : Promise.reject()), fetch(treeAsset.url).then((r) => r.ok ? r.arrayBuffer() : Promise.reject())])
       .then(([handBuffer, treeBuffer]) => {
         if (!active) return;
-        setHand(decodeCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1));
-        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 7.2, compact ? 3 : 1));
+        setHand(decodeCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1, compact ? 5 : 10, 0.16));
+        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 7.2, compact ? 3 : 1, compact ? 1 : 2, 0.12));
       }).catch(() => undefined);
     return () => { active = false; };
   }, [compact]);
@@ -509,8 +517,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={20} /></group>
     </group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {hand && <group ref={handGroup} position={[0, 0, -18]} scale={1.3}>
-      <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 2.4 : 2.1} sway={0.04} light={[-18, 42, 16]} />
+    {hand && <group ref={handGroup} position={[0, 1.5, -18]} scale={1.35}>
+      <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 2.2 : 1.9} sway={0.04} light={[-18, 42, 16]} />
       <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={18} />
     </group>}
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
