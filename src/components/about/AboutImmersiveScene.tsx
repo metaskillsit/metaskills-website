@@ -418,7 +418,6 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     target.x += px * 0.45;
     target.y += py * 0.24;
     camera.lookAt(target);
-    (window as any).__f = ((window as any).__f||0)+1; if ((window as any).__f % 60 === 0) console.log('DBG f', (window as any).__f, 'p', p.toFixed(3), 'camz', camera.position.z.toFixed(1), 'tgt', cameraPoint.z.toFixed(1));
     // single out-and-back bank (~13 deg) through the flight, level afterwards
     camera.rotation.z = -0.23 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
 
@@ -549,9 +548,11 @@ const AboutImmersiveScene = ({ progress, reducedMotion }: SceneProps) => {
     setWebGLAvailable(supportsWebGL());
     const node = containerRef.current;
     if (!node) return;
-    const observer = new IntersectionObserver(([entry]) => setIsVisible(entry?.isIntersecting ?? true), { rootMargin: "60%" });
-    observer.observe(node);
-    return () => observer.disconnect();
+    const onVisibility = () => setIsVisible(!document.hidden);
+    const observer = new IntersectionObserver(([entry]) => setIsVisible(!document.hidden && (entry?.isIntersecting ?? true)), { rootMargin: "100%" });
+    if (node.offsetHeight > 0) observer.observe(node);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => { observer.disconnect(); document.removeEventListener("visibilitychange", onVisibility); };
   }, []);
   return <div ref={containerRef} className="about-canvas-shell" aria-hidden="true">
     {!webGLAvailable ? <div className="about-scene-fallback"><span>M</span></div> : <Canvas dpr={compact ? 0.72 : [0.8, 1.3]} frameloop={isVisible && !reducedMotion ? "always" : "demand"} camera={{ fov: compact ? 46 : 38, position: [0, 2, 31], near: 0.1, far: 130 }} gl={{ antialias: false, powerPreference: compact ? "low-power" : "high-performance" }}><Scene progress={progress} reducedMotion={reducedMotion} compact={compact} /></Canvas>}
