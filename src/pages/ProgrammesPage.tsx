@@ -98,12 +98,6 @@ const ProgrammesPage = () => {
       courses: [
         { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
         { name: "Advanced Certificate in AI-Powered Business Analytics", slug: "/advanced-certificate-ai-powered-business-analytics", isExternal: true },
-        { isSubItem: true, name: ct("aiBizAnalyticsModule1"), slug: "foundations-business-analytics-ai-concepts-frameworks" },
-        { isSubItem: true, name: ct("aiBizAnalyticsModule2"), slug: "data-preparation-cleaning-power-query-ai-copilots" },
-        { isSubItem: true, name: ct("aiBizAnalyticsModule3"), slug: "business-analytics-models-dax-chatgpt" },
-        { isSubItem: true, name: ct("aiBizAnalyticsModule4"), slug: "data-storytelling-dashboards-power-bi-ai-copilots" },
-        { isSubItem: true, name: ct("aiBizAnalyticsModule5"), slug: "business-dashboard-decision-support-power-bi-ai-copilots" },
-        { isSubItem: true, name: ct("aiBizAnalyticsModule6"), slug: "task-automation-macros-vba-ai-copilots" },
         { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
         { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
@@ -164,6 +158,12 @@ const ProgrammesPage = () => {
       image: datasciImg,
       courses: [
         { name: ct("pythonDataAnalytics"), slug: "python-programming-for-data-analytics" },
+        { name: ct("aiBizAnalyticsModule1"), slug: "foundations-business-analytics-ai-concepts-frameworks" },
+        { name: ct("aiBizAnalyticsModule2"), slug: "data-preparation-cleaning-power-query-ai-copilots" },
+        { name: ct("aiBizAnalyticsModule3"), slug: "business-analytics-models-dax-chatgpt" },
+        { name: ct("aiBizAnalyticsModule4"), slug: "data-storytelling-dashboards-power-bi-ai-copilots" },
+        { name: ct("aiBizAnalyticsModule5"), slug: "business-dashboard-decision-support-power-bi-ai-copilots" },
+        { name: ct("aiBizAnalyticsModule6"), slug: "task-automation-macros-vba-ai-copilots" },
       ],
     },
     {

@@ -3,7 +3,7 @@ import type { Course } from "./courses";
 // ── Advanced Certificate in AI-Powered Business Analytics ──
 // Six stackable 2-day modules. Each module can be taken individually or as
 // part of the full Advanced Certificate.
-export const AI_POWERED_BA_CATEGORY = "Certifications";
+export const AI_POWERED_BA_CATEGORY = "Data Science & Analytics";
 
 const sharedFees = {
   selfSponsored: "S$750 per pax",
