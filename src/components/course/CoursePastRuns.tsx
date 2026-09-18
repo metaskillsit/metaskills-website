@@ -17,7 +17,6 @@ const CoursePastRuns = ({ pastRuns, courseTitle }: CoursePastRunsProps) => {
 
   if (!pastRuns.length) return null;
 
-  const totalParticipants = pastRuns.reduce((sum, run) => sum + run.participants, 0);
 
   const getPhotoIndex = (runIndex: number) => activePhotoIndex[runIndex] || 0;
 
