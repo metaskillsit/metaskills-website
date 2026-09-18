@@ -688,7 +688,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     {tree && <group ref={treeGroup} position={[8.5, 1.4, -64]} scale={0.64}>
-      <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 1.9 : 1.62} sway={0.075} light={[-20, 38, 30]} />
+      <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 1.35 : 1.05} sway={0.14} flow={0.8} light={[-14, 26, 34]} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} position={[0, -6, 0]} />
     </group>}
