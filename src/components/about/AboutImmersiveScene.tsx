@@ -646,7 +646,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       // tilted bottom-up wipe reveal
       treeMaterial.current.uniforms.uTilt.value = 0.4;
       treeMaterial.current.uniforms.uReveal.value = range(p, 0.78, 0.95);
-      treeMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.86;
+      treeMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.74;
       treeMaterial.current.uniforms.uTime.value = time;
     }
     if (treeGroup.current) {
@@ -687,7 +687,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {tree && <group ref={treeGroup} position={[8.5, 1.4, -64]} scale={0.58}>
+    {tree && <group ref={treeGroup} position={[12.5, 2.6, -64]} scale={0.54}>
       <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 1.35 : 1.05} sway={0.14} flow={0.8} light={[-14, 26, 34]} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} position={[0, -6, 0]} />
