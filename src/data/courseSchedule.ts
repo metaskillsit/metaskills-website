@@ -17,15 +17,6 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
     { intake: "Upcoming Run", dates: "Contact admissions@metaskills.sg", status: "upcoming" },
   ],
   "certified-data-analyst": [
-    // 2025 MINDEF corporate runs only
-    { intake: "Jan 2025 Module I (MINDEF)", dates: "13–14 Jan 2025", status: "full", client: "MINDEF" },
-    { intake: "Jan 2025 Module II (MINDEF)", dates: "20–21 Jan 2025", status: "full", client: "MINDEF" },
-    { intake: "Feb 2025 Module III (MINDEF)", dates: "3–4 Feb 2025", status: "full", client: "MINDEF" },
-    { intake: "Feb 2025 Module IV (MINDEF)", dates: "17–18 Feb 2025", status: "full", client: "MINDEF" },
-    { intake: "Jun 2025 Module I (MINDEF)", dates: "2–3 Jun 2025", status: "full", client: "MINDEF" },
-    { intake: "Jun 2025 Module II (MINDEF)", dates: "9–10 Jun 2025", status: "full", client: "MINDEF" },
-    { intake: "Jun 2025 Module III (MINDEF)", dates: "23–24 Jun 2025", status: "full", client: "MINDEF" },
-    { intake: "Jul 2025 Module IV (MINDEF)", dates: "7–8 Jul 2025", status: "full", client: "MINDEF" },
     // Other corporate runs
     { intake: "Mar 2025 Run (Corporate)", dates: "17–18 Mar 2025", status: "full", client: "Corporate" },
     { intake: "Apr 2025 Run (Corporate)", dates: "7–8 Apr 2025", status: "full", client: "Corporate" },
