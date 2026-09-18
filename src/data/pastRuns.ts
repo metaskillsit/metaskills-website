@@ -23,6 +23,12 @@ import pastClass43 from "@/assets/past-class-43.jpg";
 import pastClass44 from "@/assets/past-class-44.jpg";
 import pastClass45 from "@/assets/past-class-45.jpg";
 import pastClass46 from "@/assets/past-class-46.jpg";
+import cdaClassroom1Asset from "@/assets/courses/cda-runs/Linkedin-pic-0-6.jpg.asset.json";
+import cdaClassroom2Asset from "@/assets/courses/cda-runs/linkin-pic-0-5.jpg.asset.json";
+import cdaClassroom3Asset from "@/assets/courses/cda-runs/New-Class.jpg.asset.json";
+import cdaClassroom4Asset from "@/assets/courses/cda-runs/pic-0-19.jpg.asset.json";
+import cdaClassroom5Asset from "@/assets/courses/cda-runs/pic-0-20.jpg.asset.json";
+import cdaClassroom6Asset from "@/assets/courses/cda-runs/IMG_0054-scaled.jpg.asset.json";
 
 export interface PastRun {
   date: string;
@@ -80,7 +86,7 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "Singapore",
       participants: 20,
       organization: "Corporate",
-      photos: [pastClass6, pastClass24],
+      photos: [cdaClassroom1Asset.url, cdaClassroom2Asset.url, cdaClassroom3Asset.url, pastClass6, pastClass24],
       highlight: "Industry-recognised certification with high practical completion rate.",
       testimonial: {
         quote:
@@ -95,7 +101,7 @@ export const pastRunsData: Record<string, PastRun[]> = {
       venue: "Singapore",
       participants: 18,
       organization: "Corporate",
-      photos: [pastClass25, pastClass27],
+      photos: [cdaClassroom4Asset.url, cdaClassroom5Asset.url, cdaClassroom6Asset.url, pastClass25, pastClass27],
       highlight: "Graduates transitioned into analytics and governance roles across sectors.",
       testimonial: {
         quote:
