@@ -158,9 +158,9 @@ const pointFragment = `
     vec3 col = uColor * (.42 + .58 * vShade);
     col = mix(col, uAccent, clamp(vTrail * .35, 0., 1.));
     col += uLife * uFlow * vLife * .62;
-    col += uColor * (vHero * 5. + core * .18);
+    col += uColor * (vHero * 1.35 + core * .18);
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
-    col = mix(col, uFogColor, fog * .85);
+    col = mix(col, uFogColor, fog * .28);
     float a = body * vAlpha * uOpacity * (.42 + vHero * .3 + vTrail * .12 + core * .16) * (1. - fog * .58);
     gl_FragColor = vec4(col, a);
   }
@@ -213,7 +213,7 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
     uOpacity: { value: 0 }, uFogColor: { value: DEMO_FOG }, uFogNear: { value: 25 }, uFogFar: { value: 130 },
     uLife: { value: VIOLET }, uFlow: { value: flow },
   }), [color, accent, size, sway, flow]);
-  return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.AdditiveBlending} /></points>;
+  return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.NormalBlending} /></points>;
 };
 
 /* ---------- self-weaving containment lattice ---------- */
@@ -579,7 +579,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       mMaterial.current.uniforms.uMorph.value = reducedMotion ? 1 : range(p, 0, 0.055);
       mMaterial.current.uniforms.uBurst.value = reducedMotion ? 0 : smoother(range(p, 0.16, 0.245));
       mMaterial.current.uniforms.uReveal.value = 1;
-      mMaterial.current.uniforms.uOpacity.value = glyphOpacity * 0.58;
+      mMaterial.current.uniforms.uOpacity.value = glyphOpacity * 0.74;
       mMaterial.current.uniforms.uTime.value = time;
     }
     if (ribbonMaterial.current) {
@@ -608,7 +608,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       handMaterial.current.uniforms.uMorph.value = 1;
       handMaterial.current.uniforms.uCrumble.value = reducedMotion ? 0 : smoother(range(p, 0.43, 0.56));
       handMaterial.current.uniforms.uReveal.value = range(p, 0.2, 0.34);
-      handMaterial.current.uniforms.uOpacity.value = handOpacity * 0.62;
+      handMaterial.current.uniforms.uOpacity.value = handOpacity * 0.76;
       handMaterial.current.uniforms.uTime.value = time;
     }
     if (handGroup.current) {
@@ -648,7 +648,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       // tilted bottom-up wipe reveal
       treeMaterial.current.uniforms.uTilt.value = 0.4;
       treeMaterial.current.uniforms.uReveal.value = range(p, 0.78, 0.95);
-      treeMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.52;
+      treeMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.68;
       treeMaterial.current.uniforms.uTime.value = time;
     }
     if (treeGroup.current) {
@@ -673,7 +673,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   });
 
   return <>
-    <fog attach="fog" args={[DEMO_FOG, 25, 130]} /><color attach="background" args={[BACKDROP]} />
+    <fog attach="fog" args={[BACKDROP, 25, 130]} /><color attach="background" args={[BACKDROP]} />
     <hemisphereLight color="#e6ecf2" groundColor="#8a929a" intensity={0.3} />
     <ambientLight intensity={0.12} /><directionalLight position={[-14, 26, 34]} color="#ffffff" intensity={2.6} />
     <Dust count={compact ? 280 : 700} spread={44} height={30} position={[0, 2, 0]} />
@@ -698,7 +698,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     </group>}
     <FinaleFog materialRef={finaleFogMaterial} />
     {!compact && !reducedMotion && <EffectComposer multisampling={0}>
-      <Bloom intensity={1.5} luminanceThreshold={3.5} luminanceSmoothing={0.1} radius={1.9} mipmapBlur />
+      <Bloom intensity={1.5} luminanceThreshold={3.5} luminanceSmoothing={0.1} mipmapBlur />
       <Vignette offset={0.28} darkness={0.72} />
     </EffectComposer>}
   </>;
