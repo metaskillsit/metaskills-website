@@ -418,6 +418,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     target.x += px * 0.45;
     target.y += py * 0.24;
     camera.lookAt(target);
+    (window as any).__f=((window as any).__f||0)+1; if((window as any).__f%30===0) console.log('DBG f',(window as any).__f,'p',p.toFixed(3),'camz',camera.position.z.toFixed(1));
     // single out-and-back bank (~13 deg) through the flight, level afterwards
     camera.rotation.z = -0.23 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
 
