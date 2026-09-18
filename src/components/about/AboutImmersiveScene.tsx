@@ -213,7 +213,7 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
     uOpacity: { value: 0 }, uFogColor: { value: DEMO_FOG }, uFogNear: { value: 25 }, uFogFar: { value: 130 },
     uLife: { value: VIOLET }, uFlow: { value: flow },
   }), [color, accent, size, sway, flow]);
-  return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.NormalBlending} /></points>;
+  return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.AdditiveBlending} /></points>;
 };
 
 /* ---------- self-weaving containment lattice ---------- */
@@ -579,7 +579,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       mMaterial.current.uniforms.uMorph.value = reducedMotion ? 1 : range(p, 0, 0.055);
       mMaterial.current.uniforms.uBurst.value = reducedMotion ? 0 : smoother(range(p, 0.16, 0.245));
       mMaterial.current.uniforms.uReveal.value = 1;
-      mMaterial.current.uniforms.uOpacity.value = glyphOpacity;
+      mMaterial.current.uniforms.uOpacity.value = glyphOpacity * 0.58;
       mMaterial.current.uniforms.uTime.value = time;
     }
     if (ribbonMaterial.current) {
@@ -608,7 +608,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       handMaterial.current.uniforms.uMorph.value = 1;
       handMaterial.current.uniforms.uCrumble.value = reducedMotion ? 0 : smoother(range(p, 0.43, 0.56));
       handMaterial.current.uniforms.uReveal.value = range(p, 0.2, 0.34);
-      handMaterial.current.uniforms.uOpacity.value = handOpacity;
+      handMaterial.current.uniforms.uOpacity.value = handOpacity * 0.62;
       handMaterial.current.uniforms.uTime.value = time;
     }
     if (handGroup.current) {
@@ -648,7 +648,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       // tilted bottom-up wipe reveal
       treeMaterial.current.uniforms.uTilt.value = 0.4;
       treeMaterial.current.uniforms.uReveal.value = range(p, 0.78, 0.95);
-      treeMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.74;
+      treeMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.52;
       treeMaterial.current.uniforms.uTime.value = time;
     }
     if (treeGroup.current) {
