@@ -96,6 +96,7 @@ const pointVertex = `
   varying float vHero;
   varying float vTrail;
   varying float vDepth;
+  varying float vLife;
   void main() {
     float delay = aSeed * .28;
     float morph = smoothstep(delay, delay + .66, uMorph);
