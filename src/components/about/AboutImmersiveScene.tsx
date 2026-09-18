@@ -3,8 +3,6 @@ import { Bloom, EffectComposer, Vignette } from "@react-three/postprocessing";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { MotionValue } from "framer-motion";
 import * as THREE from "three";
-import handAsset from "@/assets/about-auralis/hand-points.bin.asset.json";
-import treeAsset from "@/assets/about-auralis/tree-points.bin.asset.json";
 
 type SceneProps = { progress: MotionValue<number>; reducedMotion: boolean; compact?: boolean };
 type CloudData = { positions: Float32Array; origins?: Float32Array; count: number };
@@ -396,13 +394,12 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
 
   useEffect(() => {
     let active = true;
-    Promise.all([fetch(handAsset.url).then((r) => r.ok ? r.arrayBuffer() : Promise.reject()), fetch(treeAsset.url).then((r) => r.ok ? r.arrayBuffer() : Promise.reject())])
+    Promise.all([fetch("/about/hand-points.bin").then((r) => r.ok ? r.arrayBuffer() : Promise.reject()), fetch("/about/tree-points.bin").then((r) => r.ok ? r.arrayBuffer() : Promise.reject())])
       .then(([handBuffer, treeBuffer]) => {
         if (!active) return;
         setHand(decodeCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1, compact ? 5 : 10, 0.16));
         setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 7.2, compact ? 3 : 1, compact ? 1 : 2, 0.12));
-        console.log('DBG clouds', 'hand', 4173, 'ok');
-      }).catch((e) => console.log('DBG fail', String(e)));
+      }).catch(() => undefined);
     return () => { active = false; };
   }, [compact]);
 
@@ -454,7 +451,6 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       handMaterial.current.uniforms.uTime.value = time;
     }
     if (handGroup.current) {
-      if (Math.random() < 0.01) console.log('DBG p', p.toFixed(3), 'handOpacity', handOpacity.toFixed(2), 'reveal', handMaterial.current?.uniforms.uReveal.value, 'cam', camera.position.toArray().map(v=>v.toFixed(1)).join(','));
       // full eased pirouette during the scan-in, plus idle sway
       const hold = fadeWindow(p, 0.24, 0.3, 0.44, 0.5);
       handGroup.current.rotation.y = -0.35 + smoother(range(p, 0.25, 0.4)) * Math.PI * 2 + (Math.sin(time * 0.27 + 1) * 0.045 + px * 0.06) * hold;
@@ -467,7 +463,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       handLatticeMaterial.current.uniforms.uOpacity.value = 0.24 * Math.min(1, weave * 3);
     }
 
-    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.18, 0.27, 0.52, 0.62) * 0.0;
+    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.18, 0.27, 0.52, 0.62) * 0.24;
     if (pathwayRef.current) (pathwayRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.51, 0.62, 0.78, 0.88) * 0.6;
     if (waveRef.current) {
       const opacity = fadeWindow(p, 0.46, 0.54, 0.68, 0.77);
