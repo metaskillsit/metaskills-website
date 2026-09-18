@@ -128,7 +128,7 @@ const pointFragment = `
     col += uColor * vHero * .55;
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .85);
-    float a = body * vAlpha * uOpacity * (.6 + vHero * .45 + vTrail * .2) * (1. - fog * .55);
+    float a = body * vAlpha * uOpacity * (.95 + vHero * .5 + vTrail * .2) * (1. - fog * .5);
     gl_FragColor = vec4(col, a);
   }
 `;
@@ -164,7 +164,7 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
   const uniforms = useMemo(() => ({
     uMorph: { value: 1 }, uReveal: { value: 1 }, uTilt: { value: 0 }, uTime: { value: 0 },
     uSize: { value: size }, uSway: { value: sway }, uColor: { value: color }, uAccent: { value: accent },
-    uOpacity: { value: 0 }, uFogColor: { value: NAVY }, uFogNear: { value: 26 }, uFogFar: { value: 96 },
+    uOpacity: { value: 0 }, uFogColor: { value: NAVY }, uFogNear: { value: 40 }, uFogFar: { value: 130 },
   }), [color, accent, size, sway]);
   return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.NormalBlending} /></points>;
 };
