@@ -129,12 +129,12 @@ const pointFragment = `
     float d = length(c);
     float body = smoothstep(.5, .12, d);
     if (body < .02) discard;
-    vec3 col = uColor * vShade;
+    vec3 col = uColor * vShade * .8;
     col = mix(col, uAccent, clamp(vTrail * .35, 0., 1.));
     col += uColor * vHero * .55;
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .85);
-    float a = body * vAlpha * uOpacity * (.72 + vHero * .45 + vTrail * .2) * (1. - fog * .5);
+    float a = body * vAlpha * uOpacity * (.34 + vHero * .3 + vTrail * .18) * (1. - fog * .55);
     gl_FragColor = vec4(col, a);
   }
 `;
@@ -170,7 +170,7 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
   const uniforms = useMemo(() => ({
     uMorph: { value: 1 }, uReveal: { value: 1 }, uTilt: { value: 0 }, uTime: { value: 0 },
     uSize: { value: size }, uSway: { value: sway }, uColor: { value: color }, uAccent: { value: accent },
-    uOpacity: { value: 0 }, uFogColor: { value: NAVY }, uFogNear: { value: 40 }, uFogFar: { value: 130 },
+    uOpacity: { value: 0 }, uFogColor: { value: NAVY }, uFogNear: { value: 22 }, uFogFar: { value: 105 },
   }), [color, accent, size, sway]);
   return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.NormalBlending} /></points>;
 };
@@ -515,8 +515,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={20} /></group>
     </group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {hand && <group ref={handGroup} position={[0, 2, -26]} scale={1.15}>
-      <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 3.2 : 2.9} sway={0.04} light={[-18, 42, 16]} />
+    {hand && <group ref={handGroup} position={[1.2, 3, -34]} scale={0.78}>
+      <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 1.9 : 1.5} sway={0.04} light={[-18, 42, 16]} />
       <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={22} />
     </group>}
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
