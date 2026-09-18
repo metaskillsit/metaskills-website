@@ -164,9 +164,9 @@ const pointFragment = `
   }
 `;
 
-type CloudUniforms = { color?: THREE.Color; accent?: THREE.Color; size?: number; sway?: number; light?: [number, number, number] };
+type CloudUniforms = { color?: THREE.Color; accent?: THREE.Color; size?: number; sway?: number; flow?: number; light?: [number, number, number] };
 
-const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size = 2.2, sway = 0.05, light = [-14, 26, 34] }: CloudUniforms & { data: CloudData; materialRef: React.RefObject<THREE.ShaderMaterial> }) => {
+const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size = 2.2, sway = 0.05, flow = 0.35, light = [-14, 26, 34] }: CloudUniforms & { data: CloudData; materialRef: React.RefObject<THREE.ShaderMaterial> }) => {
   const geometry = useMemo(() => {
     const result = new THREE.BufferGeometry();
     const count = data.count;
