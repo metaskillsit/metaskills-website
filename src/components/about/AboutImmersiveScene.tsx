@@ -76,10 +76,16 @@ const decodeCloud = (buffer: ArrayBuffer, count: number, offset: number[], scale
 
 const pointVertex = `
   attribute vec3 origin;
+  attribute vec3 aBurst;
+  attribute vec3 aCurtain;
   attribute float aShade;
   attribute float aHero;
   attribute float aSeed;
+  attribute float aHeight;
   uniform float uMorph;
+  uniform float uBurst;
+  uniform float uCrumble;
+  uniform float uGrowth;
   uniform float uReveal;
   uniform float uTilt;
   uniform float uTime;
@@ -95,6 +101,17 @@ const pointVertex = `
     float morph = smoothstep(delay, delay + .66, uMorph);
     float eased = morph * morph * morph * (morph * (morph * 6. - 15.) + 10.);
     vec3 p = mix(origin, position, eased);
+    float burstEase = uBurst * uBurst * (3. - 2. * uBurst);
+    float curlPhase = aSeed * 18.8496 + uTime * .45;
+    p += aBurst * burstEase * (5. + aSeed * 12.);
+    p += vec3(sin(curlPhase), cos(curlPhase * .73), sin(curlPhase * .51)) * burstEase * 1.8;
+    float crumbleDelay = smoothstep(aHeight * .58, aHeight * .58 + .34, uCrumble);
+    p = mix(p, aCurtain, crumbleDelay);
+    p.x += sin(aCurtain.y * .72 + uTime * 1.1 + aSeed * 6.28) * crumbleDelay * (1.15 + uCrumble * .8);
+    p.z += cos(aCurtain.x * .38 + uTime * .82) * crumbleDelay * 1.35;
+    float grow = smoothstep(aHeight * .82, aHeight * .82 + .22, uGrowth);
+    p.y = mix(-8.5, p.y, grow);
+    p.xz *= .28 + .72 * grow;
     float h = (position.y + 9. + position.x * uTilt) / 18.;
     float scan = 1. - smoothstep(uReveal, uReveal + .14, h);
     float band = max(0., 1. - abs(uReveal - h) / .12) * step(.001, uReveal) * (1. - step(.999, uReveal));
@@ -106,7 +123,7 @@ const pointVertex = `
     float flight = sin(3.14159265 * eased);
     vTrail = flight * .9 + band * .8;
     gl_PointSize = uSize * (1. + aHero) * (.62 + .38 * eased) * (300.0 / -mv.z);
-    vAlpha = morph * scan;
+    vAlpha = morph * scan * grow * (1. - burstEase * .92);
     vShade = aShade;
     vHero = aHero;
   }
@@ -129,12 +146,12 @@ const pointFragment = `
     float d = length(c);
     float body = smoothstep(.5, .12, d);
     if (body < .02) discard;
-    vec3 col = uColor * vShade * .72;
+    vec3 col = uColor * vShade * .68;
     col = mix(col, uAccent, clamp(vTrail * .35, 0., 1.));
     col += uColor * vHero * .55;
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .85);
-    float a = body * vAlpha * uOpacity * (.28 + vHero * .28 + vTrail * .16) * (1. - fog * .55);
+    float a = body * vAlpha * uOpacity * (.38 + vHero * .24 + vTrail * .12) * (1. - fog * .58);
     gl_FragColor = vec4(col, a);
   }
 `;
@@ -148,27 +165,40 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
     const shade = new Float32Array(count);
     const hero = new Float32Array(count);
     const seed = new Float32Array(count);
+    const burst = new Float32Array(count * 3);
+    const curtain = new Float32Array(count * 3);
+    const height = new Float32Array(count);
     const random = seeded(count + 7);
     const centroid = new THREE.Vector3();
     for (let i = 0; i < count; i += 1) centroid.x += data.positions[i * 3] / count, centroid.y += data.positions[i * 3 + 1] / count, centroid.z += data.positions[i * 3 + 2] / count;
     const key = new THREE.Vector3(light[0], light[1], light[2]).normalize();
     const normal = new THREE.Vector3();
+    const bounds = new THREE.Box3().setFromBufferAttribute(new THREE.BufferAttribute(data.positions, 3));
+    const spanY = Math.max(0.001, bounds.max.y - bounds.min.y);
     for (let i = 0; i < count; i += 1) {
       normal.set(data.positions[i * 3] - centroid.x, data.positions[i * 3 + 1] - centroid.y, data.positions[i * 3 + 2] - centroid.z).normalize();
       const wrap = Math.pow(0.5 + 0.5 * normal.dot(key), 1.7);
       shade[i] = 0.6 + 0.4 * wrap + (random() - 0.5) * 0.06;
       hero[i] = random() < 0.04 ? 1 : 0;
       seed[i] = random();
+      const angle = random() * Math.PI * 2;
+      burst.set([Math.cos(angle) * (0.7 + random() * 0.5), (random() - 0.35) * 1.1, Math.sin(angle) * (0.7 + random() * 0.5)], i * 3);
+      const column = (i % 48) / 47;
+      curtain.set([(column - 0.5) * 25, bounds.min.y + ((Math.floor(i / 48) % 80) / 79) * spanY * 1.7, -2 + (random() - 0.5) * 1.2], i * 3);
+      height[i] = (data.positions[i * 3 + 1] - bounds.min.y) / spanY;
     }
     result.setAttribute("position", new THREE.BufferAttribute(data.positions, 3));
     result.setAttribute("origin", new THREE.BufferAttribute(data.origins ?? data.positions, 3));
     result.setAttribute("aShade", new THREE.BufferAttribute(shade, 1));
     result.setAttribute("aHero", new THREE.BufferAttribute(hero, 1));
     result.setAttribute("aSeed", new THREE.BufferAttribute(seed, 1));
+    result.setAttribute("aBurst", new THREE.BufferAttribute(burst, 3));
+    result.setAttribute("aCurtain", new THREE.BufferAttribute(curtain, 3));
+    result.setAttribute("aHeight", new THREE.BufferAttribute(height, 1));
     return result;
   }, [data, light]);
   const uniforms = useMemo(() => ({
-    uMorph: { value: 1 }, uReveal: { value: 1 }, uTilt: { value: 0 }, uTime: { value: 0 },
+    uMorph: { value: 1 }, uBurst: { value: 0 }, uCrumble: { value: 0 }, uGrowth: { value: 1 }, uReveal: { value: 1 }, uTilt: { value: 0 }, uTime: { value: 0 },
     uSize: { value: size }, uSway: { value: sway }, uColor: { value: color }, uAccent: { value: accent },
     uOpacity: { value: 0 }, uFogColor: { value: NAVY }, uFogNear: { value: 22 }, uFogFar: { value: 105 },
   }), [color, accent, size, sway]);
