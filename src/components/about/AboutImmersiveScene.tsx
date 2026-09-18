@@ -41,9 +41,9 @@ const makeM = (count: number): CloudData => {
     const t = random();
     const angle = random() * Math.PI * 2;
     const radius = 18 + random() * 24;
-    positions[i * 3] = segment[0] + (segment[2] - segment[0]) * t + (random() - 0.5) * 1.25;
-    positions[i * 3 + 1] = segment[1] + (segment[3] - segment[1]) * t + (random() - 0.5) * 1.25;
-    positions[i * 3 + 2] = (random() - 0.5) * 3.5;
+    positions[i * 3] = segment[0] + (segment[2] - segment[0]) * t + (random() - 0.5) * 0.58;
+    positions[i * 3 + 1] = segment[1] + (segment[3] - segment[1]) * t + (random() - 0.5) * 0.58;
+    positions[i * 3 + 2] = (random() - 0.5) * 1.8;
     origins[i * 3] = Math.cos(angle) * radius;
     origins[i * 3 + 1] = Math.sin(angle) * radius;
     origins[i * 3 + 2] = 15 + (random() - 0.5) * 34;
@@ -543,7 +543,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const { camera } = useThree();
   const [hand, setHand] = useState<CloudData | null>(null);
   const [tree, setTree] = useState<CloudData | null>(null);
-  const glyph = useMemo(() => makeM(compact ? 9000 : 32000), [compact]);
+  const glyph = useMemo(() => makeM(compact ? 6000 : 14000), [compact]);
   const mMaterial = useRef<THREE.ShaderMaterial>(null);
   const handMaterial = useRef<THREE.ShaderMaterial>(null);
   const treeMaterial = useRef<THREE.MeshStandardMaterial>(null);
@@ -648,7 +648,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       // full eased pirouette during the scan-in, plus idle sway
       const hold = fadeWindow(p, 0.24, 0.3, 0.44, 0.5);
       handGroup.current.rotation.y = -0.35 + smoother(range(p, 0.25, 0.4)) * Math.PI * 2 + (Math.sin(time * 0.27 + 1) * 0.045 + px * 0.06) * hold;
-      handGroup.current.position.y = 1.65 + Math.sin(time * 0.19 + 2) * 0.12 * hold;
+      handGroup.current.position.x = -2.15 + px * 0.08 * hold;
+      handGroup.current.position.y = 0.9 + Math.sin(time * 0.19 + 2) * 0.1 * hold;
     }
     if (handLatticeMaterial.current) {
       const weave = Math.min(range(p, 0.23, 0.33), 1 - range(p, 0.43, 0.51));
@@ -710,13 +711,13 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <Dust count={compact ? 280 : 700} spread={44} height={30} position={[0, 2, 0]} />
     <Dust count={compact ? 220 : 700} spread={36} height={26} position={[0, 2, -34]} />
     <group ref={mGroup} position={[13, 2.6, -8]} scale={0.4}>
-      <ParticleCloud data={glyph} materialRef={mMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.15 : 0.82} sway={0.05} flow={0.7} />
+      <ParticleCloud data={glyph} materialRef={mMaterial} color={PEARL} accent={VIOLET} size={compact ? 0.82 : 0.56} sway={0.05} flow={0.7} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
     </group>
     <group position={[13, 2.6, -8]} scale={0.4}><Ribbons materialRef={ribbonMaterial} compact={compact} /></group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {hand && <group ref={handGroup} position={[-2.8, 1.65, -37]} scale={0.64}>
-      <ParticleCloud data={hand} materialRef={handMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.4 : 0.92} sway={0.025} flow={0.72} light={[-14, 26, 34]} />
+    {hand && <group ref={handGroup} position={[-2.15, 0.9, -37]} scale={0.58}>
+      <ParticleCloud data={hand} materialRef={handMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.28 : 0.84} sway={0.025} flow={0.72} light={[-14, 26, 34]} />
       <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={18} color={PEARL} accent={VIOLET} />
     </group>}
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
