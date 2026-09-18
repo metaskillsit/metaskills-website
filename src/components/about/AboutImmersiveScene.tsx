@@ -465,7 +465,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       handLatticeMaterial.current.uniforms.uOpacity.value = 0.24 * Math.min(1, weave * 3);
     }
 
-    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.18, 0.27, 0.52, 0.62) * 0.26;
+    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.18, 0.27, 0.52, 0.62) * 0.0;
     if (pathwayRef.current) (pathwayRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.51, 0.62, 0.78, 0.88) * 0.6;
     if (waveRef.current) {
       const opacity = fadeWindow(p, 0.46, 0.54, 0.68, 0.77);
