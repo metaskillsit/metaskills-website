@@ -96,6 +96,7 @@ const pointVertex = `
   varying float vHero;
   varying float vTrail;
   varying float vDepth;
+  varying float vLife;
   void main() {
     float delay = aSeed * .28;
     float morph = smoothstep(delay, delay + .66, uMorph);
@@ -117,6 +118,8 @@ const pointVertex = `
     float band = max(0., 1. - abs(uReveal - h) / .12) * step(.001, uReveal) * (1. - step(.999, uReveal));
     float lifePhase = position.x * .23 + position.y * .31 + position.z * .17;
     p += uSway * vec3(sin(uTime * .6 + lifePhase), sin(uTime * .5 + lifePhase * 1.7), cos(uTime * .7 + lifePhase * 1.3));
+    float lifeBand = .5 + .5 * sin(position.y * .24 + position.x * .1 - uTime * .5);
+    vLife = lifeBand * lifeBand * lifeBand;
     vec4 mv = modelViewMatrix * vec4(p, 1.0);
     vDepth = -mv.z;
     gl_Position = projectionMatrix * mv;
@@ -136,29 +139,34 @@ const pointFragment = `
   uniform vec3 uFogColor;
   uniform float uFogNear;
   uniform float uFogFar;
+  uniform vec3 uLife;
+  uniform float uFlow;
   varying float vAlpha;
   varying float vShade;
   varying float vHero;
   varying float vTrail;
   varying float vDepth;
+  varying float vLife;
   void main() {
     vec2 c = gl_PointCoord - .5;
     float d = length(c);
-    float body = smoothstep(.5, .12, d);
+    float body = smoothstep(.5, .1, d);
+    float core = smoothstep(.32, .0, d);
     if (body < .02) discard;
-    vec3 col = uColor * vShade * .68;
+    vec3 col = uColor * (.42 + .58 * vShade);
     col = mix(col, uAccent, clamp(vTrail * .35, 0., 1.));
-    col += uColor * vHero * .55;
+    col += uLife * uFlow * vLife * .5;
+    col += uColor * (vHero * .6 + core * .18);
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .85);
-    float a = body * vAlpha * uOpacity * (.38 + vHero * .24 + vTrail * .12) * (1. - fog * .58);
+    float a = body * vAlpha * uOpacity * (.42 + vHero * .3 + vTrail * .12 + core * .16) * (1. - fog * .58);
     gl_FragColor = vec4(col, a);
   }
 `;
 
-type CloudUniforms = { color?: THREE.Color; accent?: THREE.Color; size?: number; sway?: number; light?: [number, number, number] };
+type CloudUniforms = { color?: THREE.Color; accent?: THREE.Color; size?: number; sway?: number; flow?: number; light?: [number, number, number] };
 
-const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size = 2.2, sway = 0.05, light = [-14, 26, 34] }: CloudUniforms & { data: CloudData; materialRef: React.RefObject<THREE.ShaderMaterial> }) => {
+const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size = 2.2, sway = 0.05, flow = 0.35, light = [-14, 26, 34] }: CloudUniforms & { data: CloudData; materialRef: React.RefObject<THREE.ShaderMaterial> }) => {
   const geometry = useMemo(() => {
     const result = new THREE.BufferGeometry();
     const count = data.count;
@@ -201,7 +209,8 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
     uMorph: { value: 1 }, uBurst: { value: 0 }, uCrumble: { value: 0 }, uGrowth: { value: 1 }, uReveal: { value: 1 }, uTilt: { value: 0 }, uTime: { value: 0 },
     uSize: { value: size }, uSway: { value: sway }, uColor: { value: color }, uAccent: { value: accent },
     uOpacity: { value: 0 }, uFogColor: { value: NAVY }, uFogNear: { value: 22 }, uFogFar: { value: 105 },
-  }), [color, accent, size, sway]);
+    uLife: { value: VIOLET }, uFlow: { value: flow },
+  }), [color, accent, size, sway, flow]);
   return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.NormalBlending} /></points>;
 };
 
@@ -538,7 +547,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       .then(([handBuffer, treeBuffer]) => {
         if (!active) return;
         setHand(decodeCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1, compact ? 5 : 10, 0.16));
-        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 7.2, compact ? 3 : 1, compact ? 1 : 2, 0.12));
+        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 8, compact ? 3 : 1, compact ? 1 : 3, 0.07));
       }).catch(() => undefined);
     return () => { active = false; };
   }, [compact]);
@@ -637,7 +646,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       // tilted bottom-up wipe reveal
       treeMaterial.current.uniforms.uTilt.value = 0.4;
       treeMaterial.current.uniforms.uReveal.value = range(p, 0.78, 0.95);
-      treeMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.72;
+      treeMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.74;
       treeMaterial.current.uniforms.uTime.value = time;
     }
     if (treeGroup.current) {
@@ -678,8 +687,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {tree && <group ref={treeGroup} position={[8.5, 1.4, -64]} scale={0.64}>
-      <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 1.9 : 1.62} sway={0.075} light={[-20, 38, 30]} />
+    {tree && <group ref={treeGroup} position={[9.8, 2.2, -64]} scale={0.56}>
+      <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 1.35 : 1.05} sway={0.14} flow={0.8} light={[-14, 26, 34]} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} position={[0, -6, 0]} />
     </group>}
