@@ -31,7 +31,7 @@ const AboutPage = () => {
   const reducedMotion = useReducedMotion() ?? false;
   const { scrollYProgress } = useScroll({ target: journeyRef, offset: ["start start", "end end"] });
   useMotionValueEvent(scrollYProgress, "change", (value) => {
-    const next = value < 0.16 ? 0 : value < 0.34 ? 1 : value < 0.5 ? 2 : value < 0.68 ? 3 : value < 0.88 ? 4 : 5;
+    const next = value < 0.1 ? 0 : value < 0.28 ? 1 : value < 0.46 ? 2 : value < 0.65 ? 3 : value < 0.84 ? 4 : 5;
     setActiveAct((current) => current === next ? current : next);
   });
   const actMotion = { initial: { opacity: 0, y: 18 }, animate: { opacity: 1, y: 0 }, transition: { duration: reducedMotion ? 0.01 : 0.38, ease: "easeOut" as const } };
