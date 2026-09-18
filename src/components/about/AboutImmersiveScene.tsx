@@ -452,7 +452,10 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       handMaterial.current.uniforms.uTime.value = time;
     }
     if (handGroup.current) {
-      if (Math.random()<0.2) { handGroup.current.children.forEach((ch)=>{ const g=(ch as THREE.Points).geometry; if (g) { g.computeBoundingSphere(); console.log('DBG p',p.toFixed(3),ch.type,g.getAttribute('position')?.count, JSON.stringify(g.boundingSphere)); } }); }
+      if (Math.random()<0.05) {
+        const v = new THREE.Vector3().setFromMatrixPosition(handGroup.current.matrixWorld).project(camera);
+        console.log('DBG p', p.toFixed(3), 'cam', camera.position.toArray().map(n=>n.toFixed(1)).join(','), 'handNDC', v.toArray().map(n=>n.toFixed(2)).join(','), 'op', handOpacity.toFixed(2));
+      }
       // full eased pirouette during the scan-in, plus idle sway
       const hold = fadeWindow(p, 0.24, 0.3, 0.44, 0.5);
       handGroup.current.rotation.y = -0.35 + smoother(range(p, 0.25, 0.4)) * Math.PI * 2 + (Math.sin(time * 0.27 + 1) * 0.045 + px * 0.06) * hold;
