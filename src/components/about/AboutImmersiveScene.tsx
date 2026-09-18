@@ -134,7 +134,7 @@ const pointFragment = `
     col += uColor * vHero * .55;
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .85);
-    float a = body * vAlpha * uOpacity * (.5 + vHero * .45 + vTrail * .2) * (1. - fog * .5);
+    float a = body * vAlpha * uOpacity * (.72 + vHero * .45 + vTrail * .2) * (1. - fog * .5);
     gl_FragColor = vec4(col, a);
   }
 `;
@@ -380,7 +380,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const pathwayRef = useRef<THREE.LineSegments>(null);
   const pointerSmooth = useRef(new THREE.Vector2());
   const glyphLatticeGeometry = useMemo(() => makeLattice(8.7, 20), []);
-  const handLatticeGeometry = useMemo(() => makeLattice(7.4, 18, 20260729), []);
+  const handLatticeGeometry = useMemo(() => makeLattice(11, 22, 20260729), []);
   const treeLatticeGeometry = useMemo(() => makeLattice(8.2, 18, 20260730), []);
   const trailGeometry = useMemo(() => makeTrails(compact ? 260 : 720, 5, 44), [compact]);
   const pathwayGeometry = useMemo(() => makeTrails(compact ? 260 : 620, 5, 40), [compact]);
@@ -421,7 +421,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     // single out-and-back bank (~13 deg) through the flight, level afterwards
     camera.rotation.z = -0.23 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
 
-    const glyphOpacity = 1 - range(p, 0.23, 0.34);
+    const glyphOpacity = 1 - range(p, 0.16, 0.26);
     if (mMaterial.current) {
       mMaterial.current.uniforms.uMorph.value = reducedMotion ? 1 : range(p, 0, 0.055);
       mMaterial.current.uniforms.uReveal.value = 1;
@@ -443,10 +443,10 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     }
     if (glyphLatticeGroup.current) glyphLatticeGroup.current.rotation.y = time * 0.08;
 
-    const handOpacity = fadeWindow(p, 0.22, 0.31, 0.43, 0.52);
+    const handOpacity = fadeWindow(p, 0.17, 0.26, 0.44, 0.52);
     if (handMaterial.current) {
       handMaterial.current.uniforms.uMorph.value = 1;
-      handMaterial.current.uniforms.uReveal.value = range(p, 0.25, 0.37);
+      handMaterial.current.uniforms.uReveal.value = range(p, 0.2, 0.34);
       handMaterial.current.uniforms.uOpacity.value = handOpacity;
       handMaterial.current.uniforms.uTime.value = time;
     }
@@ -460,7 +460,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       const weave = Math.min(range(p, 0.23, 0.33), 1 - range(p, 0.43, 0.51));
       handLatticeMaterial.current.uniforms.uBuild.value = weave;
       handLatticeMaterial.current.uniforms.uTime.value = time;
-      handLatticeMaterial.current.uniforms.uOpacity.value = 0.24 * Math.min(1, weave * 3);
+      handLatticeMaterial.current.uniforms.uOpacity.value = 0.12 * Math.min(1, weave * 3);
     }
 
     if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.18, 0.27, 0.52, 0.62) * 0.24;
@@ -515,9 +515,9 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={20} /></group>
     </group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {hand && <group ref={handGroup} position={[0, 1.5, -18]} scale={1.35}>
-      <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 2.2 : 1.9} sway={0.04} light={[-18, 42, 16]} />
-      <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={18} />
+    {hand && <group ref={handGroup} position={[0, 2, -26]} scale={1.15}>
+      <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 3.2 : 2.9} sway={0.04} light={[-18, 42, 16]} />
+      <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={22} />
     </group>}
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
