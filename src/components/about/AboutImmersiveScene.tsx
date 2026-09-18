@@ -640,7 +640,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     }
     if (treeGroup.current) {
       treeGroup.current.rotation.y = Math.sin(time * 0.24 + 3) * 0.055 + px * 0.05 + (p - 0.82) * 0.18;
-      treeGroup.current.position.y = -2.5 + Math.sin(time * 0.17 + 1) * 0.18;
+      treeGroup.current.position.y = 2.5 + Math.sin(time * 0.17 + 1) * 0.18;
     }
     if (treeLatticeMaterial.current) {
       const weave = range(p, 0.87, 0.97);
