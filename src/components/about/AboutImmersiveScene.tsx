@@ -567,7 +567,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     camera.position.lerp(cameraPoint, reducedMotion ? 1 : 1 - Math.pow(0.0006, Math.min(delta, 0.2)));
     const target = cameraCurve.getPointAt(clamp01(p * 0.96 + 0.035));
     const finaleFocus = smoother(range(p, 0.76, 0.9));
-    target.lerp(new THREE.Vector3(5.5, 2.7, -62), finaleFocus);
+    target.lerp(new THREE.Vector3(7.4, 1.9, -62), finaleFocus);
     target.x += px * 0.45;
     target.y += py * 0.24;
     camera.lookAt(target);
@@ -654,7 +654,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     if (treeGroup.current) {
       treeGroup.current.rotation.y = Math.sin(time * 0.24 + 3) * 0.055 + px * 0.05 + (p - 0.82) * 0.18;
       treeGroup.current.rotation.x = py * 0.025;
-      treeGroup.current.position.y = 1.15 + Math.sin(time * 0.17 + 1) * 0.18;
+      treeGroup.current.position.y = 0.35 + Math.sin(time * 0.17 + 1) * 0.18;
     }
     if (treeLatticeMaterial.current) {
       const weave = range(p, 0.87, 0.97);
@@ -691,7 +691,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {tree && <group ref={treeGroup} position={[8.2, 1.15, -64]} scale={0.5}>
+    {tree && <group ref={treeGroup} position={[11.8, 0.35, -64]} scale={0.47}>
       <ParticleCloud data={tree} materialRef={treeMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.05 : 0.68} sway={0.14} flow={0.86} light={[-14, 26, 34]} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} color={PEARL} accent={VIOLET} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} color={POINTER_VIOLET} position={[0, -6, 0]} />
