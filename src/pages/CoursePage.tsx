@@ -140,7 +140,9 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
           <div className="grid lg:grid-cols-3 gap-14">
             <div className="lg:col-span-2 space-y-14">
               <CourseContent course={course} />
-              <CourseGallery images={categoryImages} title={ct.title} />
+              {course.slug !== "certified-data-analyst" && (
+                <CourseGallery images={categoryImages} title={ct.title} />
+              )}
             </div>
             <CourseSidebar course={course} />
           </div>
