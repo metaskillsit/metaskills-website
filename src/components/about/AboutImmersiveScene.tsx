@@ -615,7 +615,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       // full eased pirouette during the scan-in, plus idle sway
       const hold = fadeWindow(p, 0.24, 0.3, 0.44, 0.5);
       handGroup.current.rotation.y = -0.35 + smoother(range(p, 0.25, 0.4)) * Math.PI * 2 + (Math.sin(time * 0.27 + 1) * 0.045 + px * 0.06) * hold;
-      handGroup.current.position.y = Math.sin(time * 0.19 + 2) * 0.12 * hold;
+      handGroup.current.position.y = 1.65 + Math.sin(time * 0.19 + 2) * 0.12 * hold;
     }
     if (handLatticeMaterial.current) {
       const weave = Math.min(range(p, 0.23, 0.33), 1 - range(p, 0.43, 0.51));
@@ -654,7 +654,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     if (treeGroup.current) {
       treeGroup.current.rotation.y = Math.sin(time * 0.24 + 3) * 0.055 + px * 0.05 + (p - 0.82) * 0.18;
       treeGroup.current.rotation.x = py * 0.025;
-      treeGroup.current.position.y = 2.5 + Math.sin(time * 0.17 + 1) * 0.18;
+      treeGroup.current.position.y = 1.15 + Math.sin(time * 0.17 + 1) * 0.18;
     }
     if (treeLatticeMaterial.current) {
       const weave = range(p, 0.87, 0.97);
@@ -684,14 +684,14 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     </group>
     <group position={[13, 2.6, -8]} scale={0.4}><Ribbons materialRef={ribbonMaterial} compact={compact} /></group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {hand && <group ref={handGroup} position={[-2.8, 3.8, -37]} scale={0.72}>
+    {hand && <group ref={handGroup} position={[-2.8, 1.65, -37]} scale={0.64}>
       <ParticleCloud data={hand} materialRef={handMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.4 : 0.92} sway={0.025} flow={0.72} light={[-14, 26, 34]} />
       <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={18} color={PEARL} accent={VIOLET} />
     </group>}
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {tree && <group ref={treeGroup} position={[9.8, 2.2, -64]} scale={0.56}>
+    {tree && <group ref={treeGroup} position={[8.2, 1.15, -64]} scale={0.5}>
       <ParticleCloud data={tree} materialRef={treeMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.05 : 0.68} sway={0.14} flow={0.86} light={[-14, 26, 34]} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} color={PEARL} accent={VIOLET} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} color={POINTER_VIOLET} position={[0, -6, 0]} />
