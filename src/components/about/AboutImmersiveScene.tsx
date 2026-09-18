@@ -129,12 +129,12 @@ const pointFragment = `
     float d = length(c);
     float body = smoothstep(.5, .12, d);
     if (body < .02) discard;
-    vec3 col = uColor * vShade * .8;
+    vec3 col = uColor * vShade * .72;
     col = mix(col, uAccent, clamp(vTrail * .35, 0., 1.));
     col += uColor * vHero * .55;
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .85);
-    float a = body * vAlpha * uOpacity * (.34 + vHero * .3 + vTrail * .18) * (1. - fog * .55);
+    float a = body * vAlpha * uOpacity * (.28 + vHero * .28 + vTrail * .16) * (1. - fog * .55);
     gl_FragColor = vec4(col, a);
   }
 `;
@@ -515,7 +515,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={20} /></group>
     </group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {hand && <group ref={handGroup} position={[1.2, 3, -34]} scale={0.78}>
+    {hand && <group ref={handGroup} position={[-3.6, 4.4, -40]} scale={0.6}>
       <ParticleCloud data={hand} materialRef={handMaterial} size={compact ? 1.9 : 1.5} sway={0.04} light={[-18, 42, 16]} />
       <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={22} />
     </group>}
