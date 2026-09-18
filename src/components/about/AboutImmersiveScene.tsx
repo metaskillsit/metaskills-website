@@ -209,7 +209,8 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
     uMorph: { value: 1 }, uBurst: { value: 0 }, uCrumble: { value: 0 }, uGrowth: { value: 1 }, uReveal: { value: 1 }, uTilt: { value: 0 }, uTime: { value: 0 },
     uSize: { value: size }, uSway: { value: sway }, uColor: { value: color }, uAccent: { value: accent },
     uOpacity: { value: 0 }, uFogColor: { value: NAVY }, uFogNear: { value: 22 }, uFogFar: { value: 105 },
-  }), [color, accent, size, sway]);
+    uLife: { value: VIOLET }, uFlow: { value: flow },
+  }), [color, accent, size, sway, flow]);
   return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.NormalBlending} /></points>;
 };
 
