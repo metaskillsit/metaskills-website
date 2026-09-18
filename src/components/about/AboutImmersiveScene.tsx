@@ -395,24 +395,28 @@ const makeRibbons = (ribbons: number, segments: number) => {
   const positions: number[] = [];
   const progress: number[] = [];
   const ribbon: number[] = [];
+  const side: number[] = [];
   for (let r = 0; r < ribbons; r += 1) {
     for (let s = 0; s < segments; s += 1) {
       const t0 = s / segments;
       const t1 = (s + 1) / segments;
-      positions.push(0, 0, 0, 0, 0, 0);
-      progress.push(t0, t1);
-      ribbon.push(r, r);
+      positions.push(0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0);
+      progress.push(t0,t1,t0, t0,t1,t1);
+      ribbon.push(r,r,r,r,r,r);
+      side.push(-1,-1,1, 1,-1,1);
     }
   }
   geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
   geometry.setAttribute("aProgress", new THREE.Float32BufferAttribute(progress, 1));
   geometry.setAttribute("aRibbon", new THREE.Float32BufferAttribute(ribbon, 1));
+  geometry.setAttribute("aSide", new THREE.Float32BufferAttribute(side, 1));
   return geometry;
 };
 
 const ribbonVertex = `
   attribute float aProgress;
   attribute float aRibbon;
+  attribute float aSide;
   uniform float uTime;
   uniform float uBurst;
   varying float vProgress;
@@ -428,6 +432,8 @@ const ribbonVertex = `
     p.x += sin(t * 12. + uTime * 1.15 + aRibbon) * (1. + t * 2.2);
     p.y += cos(t * 9. - uTime * .86 + aRibbon * 2.) * (0.6 + t * 1.4);
     p.z += sin(t * 7. + aRibbon) * 1.8;
+    float width = (.34 + sin(t * 3.14159265) * .72) * (1. - t * .55);
+    p.xy += vec2(-sin(angle), cos(angle)) * aSide * width;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.);
     vProgress = t;
     vEdge = visible;
@@ -443,7 +449,7 @@ const ribbonFragment = `
   void main() {
     float tail = pow(1. - vProgress, .55);
     vec3 color = mix(uColor, uEdge, pow(vProgress, 5.));
-    float alpha = uOpacity * vEdge * (.2 + tail * .8);
+    float alpha = uOpacity * vEdge * (.28 + tail * .72);
     if (alpha < .008) discard;
     gl_FragColor = vec4(color, alpha);
   }
@@ -452,7 +458,7 @@ const ribbonFragment = `
 const Ribbons = ({ materialRef, compact }: { materialRef: React.RefObject<THREE.ShaderMaterial>; compact: boolean }) => {
   const geometry = useMemo(() => makeRibbons(5, compact ? 54 : 110), [compact]);
   const uniforms = useMemo(() => ({ uTime: { value: 0 }, uBurst: { value: 0 }, uOpacity: { value: 0 }, uColor: { value: VIOLET }, uEdge: { value: GOLD } }), []);
-  return <lineSegments geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={ribbonVertex} fragmentShader={ribbonFragment} transparent depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>;
+  return <mesh geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={ribbonVertex} fragmentShader={ribbonFragment} transparent depthWrite={false} side={THREE.DoubleSide} blending={THREE.AdditiveBlending} /></mesh>;
 };
 
 /* ---------- low rolling finale fog ---------- */
@@ -478,8 +484,9 @@ const fogFragment = `
   void main() {
     float n = noise(vUv * vec2(7.,3.) + vec2(uTime * .025, 0.));
     n += noise(vUv * vec2(14.,5.) - vec2(uTime * .018, 0.)) * .45;
-    float edge = smoothstep(0., .3, vUv.y) * (1. - smoothstep(.72, 1., vUv.y));
-    float alpha = edge * smoothstep(.3, 1.1, n) * uOpacity;
+    float edgeY = smoothstep(0., .3, vUv.y) * (1. - smoothstep(.72, 1., vUv.y));
+    float edgeX = smoothstep(0., .16, vUv.x) * (1. - smoothstep(.84, 1., vUv.x));
+    float alpha = edgeX * edgeY * smoothstep(.3, 1.1, n) * uOpacity;
     gl_FragColor = vec4(uColor, alpha);
   }
 `;
@@ -566,7 +573,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       const burst = range(p, 0.145, 0.305);
       ribbonMaterial.current.uniforms.uTime.value = time;
       ribbonMaterial.current.uniforms.uBurst.value = burst;
-      ribbonMaterial.current.uniforms.uOpacity.value = reducedMotion ? 0 : Math.sin(Math.PI * burst) * 0.72;
+      ribbonMaterial.current.uniforms.uOpacity.value = reducedMotion ? 0 : Math.sin(Math.PI * burst) * 0.9;
     }
     if (mGroup.current) {
       const hold = 1 - smoother(range(p, 0.2, 0.32));
@@ -647,7 +654,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     }
     if (finaleFogMaterial.current) {
       finaleFogMaterial.current.uniforms.uTime.value = time;
-      finaleFogMaterial.current.uniforms.uOpacity.value = fadeWindow(p, 0.735, 0.79, 0.96, 1.08) * (0.22 - range(p, 0.82, 0.98) * 0.08);
+      finaleFogMaterial.current.uniforms.uOpacity.value = fadeWindow(p, 0.735, 0.79, 0.96, 1.08) * (0.14 - range(p, 0.82, 0.98) * 0.05);
     }
   });
 
@@ -669,8 +676,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {tree && <group ref={treeGroup} position={[1.5, -2.5, -66]} scale={0.82}>
-      <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 2.05 : 1.72} sway={0.075} light={[-20, 38, 30]} />
+    {tree && <group ref={treeGroup} position={[4, 2.5, -61]} scale={1.08}>
+      <ParticleCloud data={tree} materialRef={treeMaterial} size={compact ? 2.05 : 1.78} sway={0.075} light={[-20, 38, 30]} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} position={[0, -6, 0]} />
     </group>}
