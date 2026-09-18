@@ -6,6 +6,13 @@
       "mode": "photographic-overlay",
       "palette": "corporate-navy-gold",
       "notes": "Low-opacity soft-light treatment preserving the existing rotating hero photography."
+    },
+    "aboutPage": {
+      "template": "auralis",
+      "style": "ai-studio-style",
+      "mode": "continuous-3d-scroll-narrative",
+      "palette": "corporate-navy-gold-pearl",
+      "notes": "Auralis motion and composition adapted to MetaSkills content, typography and institutional symbolism."
     }
   }
 }
