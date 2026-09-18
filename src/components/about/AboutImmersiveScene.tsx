@@ -158,10 +158,10 @@ const pointFragment = `
     vec3 col = uColor * (.42 + .58 * vShade);
     col = mix(col, uAccent, clamp(vTrail * .35, 0., 1.));
     col += uLife * uFlow * vLife * .62;
-    col += uColor * (vHero * 1.35 + core * .18);
+    col += uColor * (vHero * 5.0 + core * .12);
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .28);
-    float a = body * vAlpha * uOpacity * (.42 + vHero * .3 + vTrail * .12 + core * .16) * (1. - fog * .58);
+    float a = body * vAlpha * uOpacity * (.38 + vHero * .16 + vTrail * .12 + core * .12) * (1. - fog * .58);
     gl_FragColor = vec4(col, a);
   }
 `;
@@ -214,6 +214,38 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
     uLife: { value: VIOLET }, uFlow: { value: flow },
   }), [color, accent, size, sway, flow]);
   return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.NormalBlending} /></points>;
+};
+
+/* ---------- Auralis tree: true lit pearl-violet bead instances ---------- */
+
+const TreeBeads = ({ data, materialRef, growthRef }: { data: CloudData; materialRef: React.RefObject<THREE.MeshStandardMaterial>; growthRef: React.RefObject<THREE.Group> }) => {
+  const meshRef = useRef<THREE.InstancedMesh>(null);
+  useEffect(() => {
+    const mesh = meshRef.current;
+    if (!mesh) return;
+    const matrix = new THREE.Matrix4();
+    const position = new THREE.Vector3();
+    const quaternion = new THREE.Quaternion();
+    const scale = new THREE.Vector3();
+    const random = seeded(6060);
+    const pearl = new THREE.Color("#e6ecf2");
+    const violet = new THREE.Color("#b552ff");
+    for (let i = 0; i < data.count; i += 1) {
+      position.set(data.positions[i * 3], data.positions[i * 3 + 1] + 8, data.positions[i * 3 + 2]);
+      const hero = random() < 0.04;
+      const beadScale = hero ? 0.28 : 0.14 + random() * 0.08;
+      scale.setScalar(beadScale);
+      matrix.compose(position, quaternion, scale);
+      mesh.setMatrixAt(i, matrix);
+    }
+    mesh.instanceMatrix.needsUpdate = true;
+  }, [data]);
+  return <group ref={growthRef} position={[0, -8, 0]}>
+    <instancedMesh ref={meshRef} args={[undefined, undefined, data.count]} frustumCulled={false}>
+      <sphereGeometry args={[0.5, 8, 6]} />
+      <meshStandardMaterial ref={materialRef} color="#cbd6e2" emissive="#b552ff" emissiveIntensity={0.018} roughness={0.98} metalness={0} transparent opacity={0} depthWrite fog />
+    </instancedMesh>
+  </group>;
 };
 
 /* ---------- self-weaving containment lattice ---------- */
@@ -514,10 +546,11 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const glyph = useMemo(() => makeM(compact ? 9000 : 32000), [compact]);
   const mMaterial = useRef<THREE.ShaderMaterial>(null);
   const handMaterial = useRef<THREE.ShaderMaterial>(null);
-  const treeMaterial = useRef<THREE.ShaderMaterial>(null);
+  const treeMaterial = useRef<THREE.MeshStandardMaterial>(null);
   const mGroup = useRef<THREE.Group>(null);
   const handGroup = useRef<THREE.Group>(null);
   const treeGroup = useRef<THREE.Group>(null);
+  const treeGrowthGroup = useRef<THREE.Group>(null);
   const glyphLatticeMaterial = useRef<THREE.ShaderMaterial>(null);
   const handLatticeMaterial = useRef<THREE.ShaderMaterial>(null);
   const treeLatticeMaterial = useRef<THREE.ShaderMaterial>(null);
@@ -567,7 +600,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     camera.position.lerp(cameraPoint, reducedMotion ? 1 : 1 - Math.pow(0.0006, Math.min(delta, 0.2)));
     const target = cameraCurve.getPointAt(clamp01(p * 0.96 + 0.035));
     const finaleFocus = smoother(range(p, 0.76, 0.9));
-    target.lerp(new THREE.Vector3(7.4, 1.9, -62), finaleFocus);
+    target.lerp(new THREE.Vector3(7.8, 0.7, -62), finaleFocus);
     target.x += px * 0.45;
     target.y += py * 0.24;
     camera.lookAt(target);
@@ -643,18 +676,16 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
 
     const treeOpacity = range(p, 0.79, 0.9);
     if (treeMaterial.current) {
-      treeMaterial.current.uniforms.uMorph.value = 1;
-      treeMaterial.current.uniforms.uGrowth.value = reducedMotion ? 1 : smoother(range(p, 0.79, 0.965));
-      // tilted bottom-up wipe reveal
-      treeMaterial.current.uniforms.uTilt.value = 0.4;
-      treeMaterial.current.uniforms.uReveal.value = range(p, 0.78, 0.95);
-      treeMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.68;
-      treeMaterial.current.uniforms.uTime.value = time;
+      treeMaterial.current.opacity = treeOpacity * 0.78;
+    }
+    if (treeGrowthGroup.current) {
+      const growth = reducedMotion ? 1 : smoother(range(p, 0.79, 0.965));
+      treeGrowthGroup.current.scale.set(0.72 + growth * 0.28, Math.max(0.025, growth), 0.72 + growth * 0.28);
     }
     if (treeGroup.current) {
       treeGroup.current.rotation.y = Math.sin(time * 0.24 + 3) * 0.055 + px * 0.05 + (p - 0.82) * 0.18;
       treeGroup.current.rotation.x = py * 0.025;
-      treeGroup.current.position.y = 0.35 + Math.sin(time * 0.17 + 1) * 0.18;
+      treeGroup.current.position.y = -1.6 + Math.sin(time * 0.17 + 1) * 0.18;
     }
     if (treeLatticeMaterial.current) {
       const weave = range(p, 0.87, 0.97);
@@ -673,7 +704,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   });
 
   return <>
-    <fog attach="fog" args={[BACKDROP, 25, 130]} /><color attach="background" args={[BACKDROP]} />
+    <fog attach="fog" args={[DEMO_FOG, 25, 130]} /><color attach="background" args={[BACKDROP]} />
     <hemisphereLight color="#e6ecf2" groundColor="#8a929a" intensity={0.3} />
     <ambientLight intensity={0.12} /><directionalLight position={[-14, 26, 34]} color="#ffffff" intensity={2.6} />
     <Dust count={compact ? 280 : 700} spread={44} height={30} position={[0, 2, 0]} />
@@ -691,8 +722,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {tree && <group ref={treeGroup} position={[11.8, 0.35, -64]} scale={0.47}>
-      <ParticleCloud data={tree} materialRef={treeMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.05 : 0.68} sway={0.14} flow={0.86} light={[-14, 26, 34]} />
+    {tree && <group ref={treeGroup} position={[11.2, -1.6, -64]} scale={compact ? 0.54 : 0.68}>
+      <TreeBeads data={tree} materialRef={treeMaterial} growthRef={treeGrowthGroup} />
       <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} color={PEARL} accent={VIOLET} />
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} color={POINTER_VIOLET} position={[0, -6, 0]} />
     </group>}
@@ -725,7 +756,7 @@ const AboutImmersiveScene = ({ progress, reducedMotion }: SceneProps) => {
     return () => { observer.disconnect(); document.removeEventListener("visibilitychange", onVisibility); };
   }, []);
   return <div ref={containerRef} className="about-canvas-shell" aria-hidden="true">
-    {!webGLAvailable ? <div className="about-scene-fallback"><span>M</span></div> : <Canvas dpr={compact ? 0.72 : [0.8, 1.3]} frameloop={isVisible && !reducedMotion ? "always" : "demand"} camera={{ fov: compact ? 46 : 38, position: [0, 2, 31], near: 0.1, far: 130 }} gl={{ antialias: false, powerPreference: compact ? "low-power" : "high-performance" }}><Scene progress={progress} reducedMotion={reducedMotion} compact={compact} /></Canvas>}
+    {!webGLAvailable ? <div className="about-scene-fallback"><span>M</span></div> : <Canvas dpr={compact ? 0.72 : [0.8, 1.3]} frameloop={isVisible && !reducedMotion ? "always" : "demand"} camera={{ fov: compact ? 46 : 38, position: [0, 2, 31], near: 0.1, far: 130 }} gl={{ antialias: false, powerPreference: compact ? "low-power" : "high-performance", toneMapping: THREE.ACESFilmicToneMapping }}><Scene progress={progress} reducedMotion={reducedMotion} compact={compact} /></Canvas>}
   </div>;
 };
 
