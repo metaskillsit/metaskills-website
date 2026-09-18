@@ -139,22 +139,27 @@ const pointFragment = `
   uniform vec3 uFogColor;
   uniform float uFogNear;
   uniform float uFogFar;
+  uniform vec3 uLife;
+  uniform float uFlow;
   varying float vAlpha;
   varying float vShade;
   varying float vHero;
   varying float vTrail;
   varying float vDepth;
+  varying float vLife;
   void main() {
     vec2 c = gl_PointCoord - .5;
     float d = length(c);
-    float body = smoothstep(.5, .12, d);
+    float body = smoothstep(.5, .1, d);
+    float core = smoothstep(.32, .0, d);
     if (body < .02) discard;
-    vec3 col = uColor * vShade * .68;
+    vec3 col = uColor * (.42 + .58 * vShade);
     col = mix(col, uAccent, clamp(vTrail * .35, 0., 1.));
-    col += uColor * vHero * .55;
+    col += uLife * uFlow * vLife * .5;
+    col += uColor * (vHero * .6 + core * .18);
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
     col = mix(col, uFogColor, fog * .85);
-    float a = body * vAlpha * uOpacity * (.38 + vHero * .24 + vTrail * .12) * (1. - fog * .58);
+    float a = body * vAlpha * uOpacity * (.42 + vHero * .3 + vTrail * .12 + core * .16) * (1. - fog * .58);
     gl_FragColor = vec4(col, a);
   }
 `;
