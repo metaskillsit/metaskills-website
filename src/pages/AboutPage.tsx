@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
 import { Brain, ShieldCheck, TrendingUp, Users } from "lucide-react";
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -34,7 +34,7 @@ const AboutPage = () => {
     const next = value < 0.16 ? 0 : value < 0.34 ? 1 : value < 0.5 ? 2 : value < 0.68 ? 3 : value < 0.88 ? 4 : 5;
     setActiveAct((current) => current === next ? current : next);
   });
-  const actMotion = { initial: { opacity: 0, y: 22 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0, y: -18 }, transition: { duration: reducedMotion ? 0.01 : 0.55, ease: "easeOut" as const } };
+  const actMotion = { initial: { opacity: 0, y: 18 }, animate: { opacity: 1, y: 0 }, transition: { duration: reducedMotion ? 0.01 : 0.38, ease: "easeOut" as const } };
 
   const pillars = [
     { icon: pillarIcons[0], title: t("aboutPage.pillar1Title"), description: t("aboutPage.pillar1Desc") },
@@ -56,7 +56,6 @@ const AboutPage = () => {
             <div className="about-grain" />
             <div className={`about-scan-line about-scan-line-${activeAct}`} />
 
-            <AnimatePresence mode="wait">
             {activeAct === 0 && <motion.section key="hero" {...actMotion} className="about-act about-act-hero">
               <span className="about-kicker">The Institute</span>
               <h1>{t("aboutPage.heroTitle")}</h1>
@@ -117,7 +116,6 @@ const AboutPage = () => {
               <h2>{t("aboutPage.langTitle")}</h2>
               <p>{t("aboutPage.langDesc")}</p>
             </motion.section>}
-            </AnimatePresence>
           </div>
         </div>}
       </main>
