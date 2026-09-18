@@ -399,7 +399,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
         if (!active) return;
         setHand(decodeCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1, compact ? 5 : 10, 0.16));
         setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 7.2, compact ? 3 : 1, compact ? 1 : 2, 0.12));
-      }).catch(() => undefined);
+        console.log('DBG loaded');
+      }).catch((e) => console.log('DBG fail', String(e)));
     return () => { active = false; };
   }, [compact]);
 
@@ -451,7 +452,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       handMaterial.current.uniforms.uTime.value = time;
     }
     if (handGroup.current) {
-      if (Math.random()<0.01) { handGroup.current.children.forEach((ch)=>{ const g=(ch as THREE.Points).geometry; if (g) { g.computeBoundingSphere(); console.log('DBG p',p.toFixed(3),ch.type,g.getAttribute('position')?.count, JSON.stringify(g.boundingSphere)); } }); }
+      if (Math.random()<0.2) { handGroup.current.children.forEach((ch)=>{ const g=(ch as THREE.Points).geometry; if (g) { g.computeBoundingSphere(); console.log('DBG p',p.toFixed(3),ch.type,g.getAttribute('position')?.count, JSON.stringify(g.boundingSphere)); } }); }
       // full eased pirouette during the scan-in, plus idle sway
       const hold = fadeWindow(p, 0.24, 0.3, 0.44, 0.5);
       handGroup.current.rotation.y = -0.35 + smoother(range(p, 0.25, 0.4)) * Math.PI * 2 + (Math.sin(time * 0.27 + 1) * 0.045 + px * 0.06) * hold;
