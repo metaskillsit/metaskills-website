@@ -694,14 +694,16 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     // single out-and-back bank (~13 deg) through the flight, level afterwards
     camera.rotation.z = -0.26 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
 
-    const glyphOpacity = 1 - range(p, 0.16, 0.26);
-    const glyphCylinderBuild = smoother(range(p, 0.015, 0.065));
+    // Mission (act 01): build the lattice after the hero clears, then let the M
+    // complete on its own while the Mission copy remains on screen.
+    const glyphOpacity = fadeWindow(p, 0.095, 0.12, 0.285, 0.34);
+    const glyphCylinderBuild = smoother(range(p, 0.105, 0.145));
     if (reducedMotion) {
       mAutoGrowth.current = 1;
-    } else if (p >= 0.065) {
+    } else if (p >= 0.145) {
       mAutoStarted.current = true;
       mAutoGrowth.current = Math.min(1, mAutoGrowth.current + delta / 1.65);
-    } else if (p < 0.01) {
+    } else if (p < 0.095) {
       mAutoStarted.current = false;
       mAutoGrowth.current = 0;
     }
@@ -715,7 +717,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       }
     }
     if (mTransitionMaterial.current) {
-      const burst = smoother(range(p, 0.16, 0.245));
+      const burst = smoother(range(p, 0.285, 0.35));
       mTransitionMaterial.current.uniforms.uMorph.value = 1;
       mTransitionMaterial.current.uniforms.uBurst.value = reducedMotion ? 0 : burst;
       mTransitionMaterial.current.uniforms.uReveal.value = 1;
@@ -723,34 +725,36 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       mTransitionMaterial.current.uniforms.uTime.value = time;
     }
     if (ribbonMaterial.current) {
-      const burst = range(p, 0.145, 0.305);
+      const burst = range(p, 0.275, 0.37);
       ribbonMaterial.current.uniforms.uTime.value = time;
       ribbonMaterial.current.uniforms.uBurst.value = burst;
       ribbonMaterial.current.uniforms.uOpacity.value = reducedMotion ? 0 : Math.sin(Math.PI * burst) * 0.9;
     }
     if (mGroup.current) {
-      const hold = 1 - smoother(range(p, 0.2, 0.32));
+      const hold = 1 - smoother(range(p, 0.285, 0.35));
       mGroup.current.rotation.y = (Math.sin(time * 0.45) * 0.12 + px * 0.07) * hold;
       mGroup.current.rotation.x = -py * 0.04 * hold;
       mGroup.current.position.y = (compact ? -2 : 2) + Math.sin(time * 0.3) * 0.3 * hold;
-      mGroup.current.scale.setScalar((compact ? 0.34 : 0.46) * (1 + range(p, 0.22, 0.34) * 0.4));
+      mGroup.current.scale.setScalar((compact ? 0.34 : 0.46) * (1 + range(p, 0.285, 0.35) * 0.4));
     }
     if (glyphLatticeMaterial.current) {
-      const weave = Math.min(glyphCylinderBuild, 1 - range(p, 0.22, 0.31));
+      const weave = Math.min(glyphCylinderBuild, 1 - range(p, 0.285, 0.34));
       glyphLatticeMaterial.current.uniforms.uBuild.value = weave;
       glyphLatticeMaterial.current.uniforms.uTime.value = time;
       glyphLatticeMaterial.current.uniforms.uOpacity.value = 0.32 * Math.min(1, weave * 3);
     }
     if (glyphLatticeGroup.current) glyphLatticeGroup.current.rotation.y = time * 0.08;
 
-    const handOpacity = fadeWindow(p, 0.17, 0.26, 0.44, 0.52);
-    const handCylinderBuild = smoother(range(p, 0.19, 0.255));
+    // Vision (act 02): the hand receives the same cylinder-first, automatic
+    // formation sequence only after the Vision section becomes active.
+    const handOpacity = fadeWindow(p, 0.275, 0.3, 0.455, 0.52);
+    const handCylinderBuild = smoother(range(p, 0.29, 0.325));
     if (reducedMotion) {
       handAutoGrowth.current = 1;
-    } else if (p >= 0.255) {
+    } else if (p >= 0.325) {
       handAutoStarted.current = true;
       handAutoGrowth.current = Math.min(1, handAutoGrowth.current + delta / 2.15);
-    } else if (p < 0.18) {
+    } else if (p < 0.275) {
       handAutoStarted.current = false;
       handAutoGrowth.current = 0;
     }
@@ -773,13 +777,13 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     }
     if (handGroup.current) {
       // full eased pirouette during the scan-in, plus idle sway
-      const hold = fadeWindow(p, 0.24, 0.3, 0.44, 0.5);
-      handGroup.current.rotation.y = -0.35 + smoother(range(p, 0.25, 0.4)) * Math.PI * 2 + (Math.sin(time * 0.27 + 1) * 0.045 + px * 0.06) * hold;
+      const hold = fadeWindow(p, 0.3, 0.34, 0.44, 0.5);
+      handGroup.current.rotation.y = -0.35 + smoother(range(p, 0.325, 0.43)) * Math.PI * 2 + (Math.sin(time * 0.27 + 1) * 0.045 + px * 0.06) * hold;
       handGroup.current.position.x = -2.15 + px * 0.08 * hold;
       handGroup.current.position.y = 0.9 + Math.sin(time * 0.19 + 2) * 0.1 * hold;
     }
     if (handLatticeMaterial.current) {
-      const weave = Math.min(handCylinderBuild, 1 - range(p, 0.43, 0.51));
+      const weave = Math.min(handCylinderBuild, 1 - range(p, 0.455, 0.51));
       handLatticeMaterial.current.uniforms.uBuild.value = weave;
       handLatticeMaterial.current.uniforms.uTime.value = time;
       handLatticeMaterial.current.uniforms.uOpacity.value = 0.32 * Math.min(1, weave * 3);
@@ -854,7 +858,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <ambientLight intensity={0.12} /><directionalLight position={[-14, 26, 34]} color="#ffffff" intensity={2.6} />
     <Dust count={compact ? 280 : 700} spread={44} height={30} position={[0, 2, 0]} />
     <Dust count={compact ? 220 : 700} spread={36} height={26} position={[0, 2, -34]} />
-    <group ref={mGroup} position={[compact ? 8 : 13, compact ? -2 : 2.6, -8]} scale={compact ? 0.34 : 0.4}>
+    <group ref={mGroup} position={[compact ? 1 : 1.5, compact ? -2 : 2.6, 8]} scale={compact ? 0.28 : 0.3}>
       <AuralisBeads data={glyph} materialRef={mMaterial} growthRef={mGrowthGroup} compact={compact} density={compact ? 1 : 2} beadSize={0.1} seed={20260720} />
       <ParticleCloud data={glyph} materialRef={mTransitionMaterial} color={PEARL} accent={VIOLET} size={compact ? 0.82 : 0.56} sway={0.05} flow={0.7} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
