@@ -640,7 +640,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const { camera } = useThree();
   const [hand, setHand] = useState<CloudData | null>(null);
   const [tree, setTree] = useState<CloudData | null>(null);
-  const glyph = useMemo(() => makeM(compact ? 6000 : 14000), [compact]);
+  const glyph = useMemo(() => makeAI(compact ? 6000 : 14000), [compact]);
   const mMaterial = useRef<THREE.MeshStandardMaterial>(null);
   const handMaterial = useRef<THREE.MeshStandardMaterial>(null);
   const treeMaterial = useRef<THREE.MeshStandardMaterial>(null);
