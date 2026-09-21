@@ -735,7 +735,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       mGroup.current.rotation.y = (Math.sin(time * 0.45) * 0.12 + px * 0.07) * hold;
       mGroup.current.rotation.x = -py * 0.04 * hold;
       mGroup.current.position.y = (compact ? -2 : 2) + Math.sin(time * 0.3) * 0.3 * hold;
-      mGroup.current.scale.setScalar((compact ? 0.34 : 0.46) * (1 + range(p, 0.285, 0.35) * 0.4));
+      mGroup.current.scale.setScalar((compact ? 0.24 : 0.26) * (1 + range(p, 0.285, 0.35) * 0.4));
     }
     if (glyphLatticeMaterial.current) {
       const weave = Math.min(glyphCylinderBuild, 1 - range(p, 0.285, 0.34));
@@ -858,7 +858,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <ambientLight intensity={0.12} /><directionalLight position={[-14, 26, 34]} color="#ffffff" intensity={2.6} />
     <Dust count={compact ? 280 : 700} spread={44} height={30} position={[0, 2, 0]} />
     <Dust count={compact ? 220 : 700} spread={36} height={26} position={[0, 2, -34]} />
-    <group ref={mGroup} position={[compact ? 1 : 1.5, compact ? -2 : 2.6, 8]} scale={compact ? 0.28 : 0.3}>
+    <group ref={mGroup} position={[compact ? 1 : 1.5, compact ? -2 : 2.6, 8]} scale={compact ? 0.2 : 0.22}>
       <AuralisBeads data={glyph} materialRef={mMaterial} growthRef={mGrowthGroup} compact={compact} density={compact ? 1 : 2} beadSize={0.1} seed={20260720} />
       <ParticleCloud data={glyph} materialRef={mTransitionMaterial} color={PEARL} accent={VIOLET} size={compact ? 0.82 : 0.56} sway={0.05} flow={0.7} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
