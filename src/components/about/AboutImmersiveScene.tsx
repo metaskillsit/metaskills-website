@@ -6,6 +6,7 @@ import * as THREE from "three";
 
 type SceneProps = { progress: MotionValue<number>; reducedMotion: boolean; compact?: boolean };
 type CloudData = { positions: Float32Array; origins?: Float32Array; count: number };
+type TreeShaderState = { uniforms: Record<string, { value: unknown }> };
 
 const GOLD = new THREE.Color("#e6ecf2");
 const PEARL = new THREE.Color("#e6ecf2");
@@ -300,7 +301,8 @@ const TreeBeads = ({ data, materialRef, growthRef, compact }: { data: CloudData;
           shader.fragmentShader = shader.fragmentShader
             .replace("#include <common>", "#include <common>\nvarying vec3 vTreeGlow;")
             .replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\n\ttotalEmissiveRadiance += vTreeGlow;");
-          materialRef.current?.userData && (materialRef.current.userData.treeShader = shader);
+          const material = materialRef.current;
+          if (material) material.userData.treeShader = shader;
         }}
       />
     </instancedMesh>
@@ -667,10 +669,11 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     target.x += px * 0.45;
     target.y += py * 0.24;
     camera.lookAt(target);
+    const perspectiveCamera = camera as THREE.PerspectiveCamera;
     const targetFov = THREE.MathUtils.lerp(compact ? 46 : 38, 32, finaleFocus);
-    if (Math.abs(camera.fov - targetFov) > 0.001) {
-      camera.fov = targetFov;
-      camera.updateProjectionMatrix();
+    if (Math.abs(perspectiveCamera.fov - targetFov) > 0.001) {
+      perspectiveCamera.fov = targetFov;
+      perspectiveCamera.updateProjectionMatrix();
     }
     // single out-and-back bank (~13 deg) through the flight, level afterwards
     camera.rotation.z = -0.26 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
@@ -757,7 +760,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     }
     const treeGrowth = smoother(treeAutoStarted.current ? treeAutoGrowth.current : 0);
     if (treeMaterial.current) {
-      const shader = treeMaterial.current.userData.treeShader as THREE.Shader | undefined;
+      const shader = treeMaterial.current.userData.treeShader as TreeShaderState | undefined;
       if (shader) {
         shader.uniforms.uTreeScan.value = treeGrowth;
         shader.uniforms.uTreeTime.value = time;
