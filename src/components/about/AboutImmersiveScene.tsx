@@ -780,7 +780,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       const hold = fadeWindow(p, 0.3, 0.34, 0.44, 0.5);
       handGroup.current.rotation.y = -0.35 + smoother(range(p, 0.325, 0.43)) * Math.PI * 2 + (Math.sin(time * 0.27 + 1) * 0.045 + px * 0.06) * hold;
       handGroup.current.position.x = -2.15 + px * 0.08 * hold;
-      handGroup.current.position.y = 0.9 + Math.sin(time * 0.19 + 2) * 0.1 * hold;
+      handGroup.current.position.y = 2.4 + Math.sin(time * 0.19 + 2) * 0.1 * hold;
     }
     if (handLatticeMaterial.current) {
       const weave = Math.min(handCylinderBuild, 1 - range(p, 0.455, 0.51));
@@ -865,7 +865,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     </group>
     <group position={[compact ? 8 : 13, compact ? -2 : 2.6, -8]} scale={compact ? 0.34 : 0.4}><Ribbons materialRef={ribbonMaterial} compact={compact} /></group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    {hand && <group ref={handGroup} position={[-2.15, 0.9, -37]} scale={0.58}>
+    {hand && <group ref={handGroup} position={[-2.15, 2.4, -37]} scale={0.58}>
       <AuralisBeads data={hand} materialRef={handMaterial} growthRef={handGrowthGroup} compact={compact} density={compact ? 1 : 3} beadSize={0.1} seed={90210} />
       <ParticleCloud data={hand} materialRef={handTransitionMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.28 : 0.84} sway={0.025} flow={0.72} light={[-14, 26, 34]} />
       <group ref={handLatticeGroup}><Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
