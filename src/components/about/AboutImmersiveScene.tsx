@@ -732,8 +732,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       const hold = 1 - smoother(range(p, 0.2, 0.32));
       mGroup.current.rotation.y = (Math.sin(time * 0.45) * 0.12 + px * 0.07) * hold;
       mGroup.current.rotation.x = -py * 0.04 * hold;
-      mGroup.current.position.y = 2 + Math.sin(time * 0.3) * 0.3 * hold;
-      mGroup.current.scale.setScalar(0.46 * (1 + range(p, 0.22, 0.34) * 0.4));
+      mGroup.current.position.y = (compact ? -2 : 2) + Math.sin(time * 0.3) * 0.3 * hold;
+      mGroup.current.scale.setScalar((compact ? 0.34 : 0.46) * (1 + range(p, 0.22, 0.34) * 0.4));
     }
     if (glyphLatticeMaterial.current) {
       const weave = Math.min(glyphCylinderBuild, 1 - range(p, 0.22, 0.31));
@@ -854,12 +854,12 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <ambientLight intensity={0.12} /><directionalLight position={[-14, 26, 34]} color="#ffffff" intensity={2.6} />
     <Dust count={compact ? 280 : 700} spread={44} height={30} position={[0, 2, 0]} />
     <Dust count={compact ? 220 : 700} spread={36} height={26} position={[0, 2, -34]} />
-    <group ref={mGroup} position={[compact ? 5.2 : 13, 2.6, -8]} scale={0.4}>
+    <group ref={mGroup} position={[compact ? 8 : 13, compact ? -2 : 2.6, -8]} scale={compact ? 0.34 : 0.4}>
       <AuralisBeads data={glyph} materialRef={mMaterial} growthRef={mGrowthGroup} compact={compact} density={compact ? 1 : 2} beadSize={0.1} seed={20260720} />
       <ParticleCloud data={glyph} materialRef={mTransitionMaterial} color={PEARL} accent={VIOLET} size={compact ? 0.82 : 0.56} sway={0.05} flow={0.7} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
     </group>
-    <group position={[compact ? 5.2 : 13, 2.6, -8]} scale={0.4}><Ribbons materialRef={ribbonMaterial} compact={compact} /></group>
+    <group position={[compact ? 8 : 13, compact ? -2 : 2.6, -8]} scale={compact ? 0.34 : 0.4}><Ribbons materialRef={ribbonMaterial} compact={compact} /></group>
     <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     {hand && <group ref={handGroup} position={[-2.15, 0.9, -37]} scale={0.58}>
       <AuralisBeads data={hand} materialRef={handMaterial} growthRef={handGrowthGroup} compact={compact} density={compact ? 1 : 3} beadSize={0.1} seed={90210} />
