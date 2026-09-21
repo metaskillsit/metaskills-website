@@ -9,3 +9,4 @@
 - [x] Verify full-scroll Auralis parity and correct hand/tree framing without clipping.
 - [x] Refine the M bead definition and keep every hand fingertip inside the frame.
 - [x] Align the mobile and tablet programme menu with the desktop programme catalogue.
+- [x] Sequence the About finale so the Auralis cylinder fully builds before the tree grows.
