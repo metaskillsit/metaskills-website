@@ -858,7 +858,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <ambientLight intensity={0.12} /><directionalLight position={[-14, 26, 34]} color="#ffffff" intensity={2.6} />
     <Dust count={compact ? 280 : 700} spread={44} height={30} position={[0, 2, 0]} />
     <Dust count={compact ? 220 : 700} spread={36} height={26} position={[0, 2, -34]} />
-    <group ref={mGroup} position={[compact ? 3.8 : 6, compact ? -2 : 2.6, -8]} scale={compact ? 0.34 : 0.4}>
+    <group ref={mGroup} position={[compact ? 2.8 : 4, compact ? -2 : 2.6, 2]} scale={compact ? 0.34 : 0.4}>
       <AuralisBeads data={glyph} materialRef={mMaterial} growthRef={mGrowthGroup} compact={compact} density={compact ? 1 : 2} beadSize={0.1} seed={20260720} />
       <ParticleCloud data={glyph} materialRef={mTransitionMaterial} color={PEARL} accent={VIOLET} size={compact ? 0.82 : 0.56} sway={0.05} flow={0.7} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
