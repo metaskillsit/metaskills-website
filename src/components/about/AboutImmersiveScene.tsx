@@ -735,7 +735,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       mGroup.current.rotation.y = (Math.sin(time * 0.45) * 0.12 + px * 0.07) * hold;
       mGroup.current.rotation.x = -py * 0.04 * hold;
       mGroup.current.position.y = (compact ? -2 : 2) + Math.sin(time * 0.3) * 0.3 * hold;
-      mGroup.current.scale.setScalar((compact ? 0.24 : 0.26) * (1 + range(p, 0.285, 0.35) * 0.4));
+      mGroup.current.scale.setScalar((compact ? 0.18 : 0.2) * (1 + range(p, 0.285, 0.35) * 0.4));
     }
     if (glyphLatticeMaterial.current) {
       const weave = Math.min(glyphCylinderBuild, 1 - range(p, 0.285, 0.34));
