@@ -675,13 +675,16 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       }
     }
 
-    const treeOpacity = range(p, 0.79, 0.9);
+    // Auralis finale: complete the self-weaving cylinder, hold it briefly,
+    // then reveal and grow the tree inside the finished structure.
+    const cylinderBuild = smoother(range(p, 0.76, 0.84));
+    const treeGrowth = reducedMotion ? 1 : smoother(range(p, 0.86, 0.965));
+    const treeOpacity = reducedMotion ? 1 : smoother(range(p, 0.86, 0.91));
     if (treeMaterial.current) {
       treeMaterial.current.opacity = treeOpacity * 0.78;
     }
     if (treeGrowthGroup.current) {
-      const growth = reducedMotion ? 1 : smoother(range(p, 0.79, 0.965));
-      treeGrowthGroup.current.scale.set(0.72 + growth * 0.28, Math.max(0.025, growth), 0.72 + growth * 0.28);
+      treeGrowthGroup.current.scale.set(0.72 + treeGrowth * 0.28, Math.max(0.025, treeGrowth), 0.72 + treeGrowth * 0.28);
     }
     if (treeGroup.current) {
       treeGroup.current.rotation.y = Math.sin(time * 0.24 + 3) * 0.055 + px * 0.05 + (p - 0.82) * 0.18;
@@ -689,18 +692,17 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       treeGroup.current.position.y = -1.6 + Math.sin(time * 0.17 + 1) * 0.18;
     }
     if (treeLatticeMaterial.current) {
-      const weave = range(p, 0.87, 0.97);
-      treeLatticeMaterial.current.uniforms.uBuild.value = weave;
+      treeLatticeMaterial.current.uniforms.uBuild.value = cylinderBuild;
       treeLatticeMaterial.current.uniforms.uTime.value = time;
-      treeLatticeMaterial.current.uniforms.uOpacity.value = 0.12 * Math.min(1, weave * 3);
+      treeLatticeMaterial.current.uniforms.uOpacity.value = 0.12 * Math.min(1, cylinderBuild * 3);
     }
     if (treeMotesMaterial.current) {
       treeMotesMaterial.current.uniforms.uTime.value = time;
-      treeMotesMaterial.current.uniforms.uOpacity.value = treeOpacity * 0.5;
+      treeMotesMaterial.current.uniforms.uOpacity.value = treeGrowth * 0.5;
     }
     if (finaleFogMaterial.current) {
       finaleFogMaterial.current.uniforms.uTime.value = time;
-      finaleFogMaterial.current.uniforms.uOpacity.value = fadeWindow(p, 0.735, 0.79, 0.96, 1.08) * (0.14 - range(p, 0.82, 0.98) * 0.05);
+      finaleFogMaterial.current.uniforms.uOpacity.value = fadeWindow(p, 0.735, 0.79, 0.96, 1.08) * (0.14 - treeGrowth * 0.05);
     }
   });
 
