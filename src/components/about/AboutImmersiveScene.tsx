@@ -612,18 +612,23 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const [hand, setHand] = useState<CloudData | null>(null);
   const [tree, setTree] = useState<CloudData | null>(null);
   const glyph = useMemo(() => makeM(compact ? 6000 : 14000), [compact]);
-  const mMaterial = useRef<THREE.ShaderMaterial>(null);
-  const handMaterial = useRef<THREE.ShaderMaterial>(null);
+  const mMaterial = useRef<THREE.MeshStandardMaterial>(null);
+  const handMaterial = useRef<THREE.MeshStandardMaterial>(null);
   const treeMaterial = useRef<THREE.MeshStandardMaterial>(null);
+  const mTransitionMaterial = useRef<THREE.ShaderMaterial>(null);
+  const handTransitionMaterial = useRef<THREE.ShaderMaterial>(null);
   const mGroup = useRef<THREE.Group>(null);
   const handGroup = useRef<THREE.Group>(null);
   const treeGroup = useRef<THREE.Group>(null);
+  const mGrowthGroup = useRef<THREE.Group>(null);
+  const handGrowthGroup = useRef<THREE.Group>(null);
   const treeGrowthGroup = useRef<THREE.Group>(null);
   const glyphLatticeMaterial = useRef<THREE.ShaderMaterial>(null);
   const handLatticeMaterial = useRef<THREE.ShaderMaterial>(null);
   const treeLatticeMaterial = useRef<THREE.ShaderMaterial>(null);
   const treeLatticeGroup = useRef<THREE.Group>(null);
   const glyphLatticeGroup = useRef<THREE.Group>(null);
+  const handLatticeGroup = useRef<THREE.Group>(null);
   const waveMotesMaterial = useRef<THREE.ShaderMaterial>(null);
   const treeMotesMaterial = useRef<THREE.ShaderMaterial>(null);
   const waveRef = useRef<THREE.LineSegments>(null);
@@ -631,6 +636,10 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const pathwayRef = useRef<THREE.LineSegments>(null);
   const ribbonMaterial = useRef<THREE.ShaderMaterial>(null);
   const finaleFogMaterial = useRef<THREE.ShaderMaterial>(null);
+  const mAutoGrowth = useRef(0);
+  const mAutoStarted = useRef(false);
+  const handAutoGrowth = useRef(0);
+  const handAutoStarted = useRef(false);
   const treeAutoGrowth = useRef(0);
   const treeAutoStarted = useRef(false);
   const pointerSmooth = useRef(new THREE.Vector2());
@@ -686,12 +695,32 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     camera.rotation.z = -0.26 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
 
     const glyphOpacity = 1 - range(p, 0.16, 0.26);
+    const glyphCylinderBuild = smoother(range(p, 0.015, 0.065));
+    if (reducedMotion) {
+      mAutoGrowth.current = 1;
+    } else if (p >= 0.065) {
+      mAutoStarted.current = true;
+      mAutoGrowth.current = Math.min(1, mAutoGrowth.current + delta / 1.65);
+    } else if (p < 0.01) {
+      mAutoStarted.current = false;
+      mAutoGrowth.current = 0;
+    }
+    const glyphGrowth = smoother(mAutoStarted.current ? mAutoGrowth.current : 0);
     if (mMaterial.current) {
-      mMaterial.current.uniforms.uMorph.value = reducedMotion ? 1 : range(p, 0, 0.055);
-      mMaterial.current.uniforms.uBurst.value = reducedMotion ? 0 : smoother(range(p, 0.16, 0.245));
-      mMaterial.current.uniforms.uReveal.value = 1;
-      mMaterial.current.uniforms.uOpacity.value = glyphOpacity * 0.74;
-      mMaterial.current.uniforms.uTime.value = time;
+      const shader = mMaterial.current.userData.beadShader as BeadShaderState | undefined;
+      if (shader) {
+        shader.uniforms.uTreeScan.value = glyphGrowth;
+        shader.uniforms.uTreeTime.value = time;
+        shader.uniforms.uObjectOpacity.value = glyphOpacity;
+      }
+    }
+    if (mTransitionMaterial.current) {
+      const burst = smoother(range(p, 0.16, 0.245));
+      mTransitionMaterial.current.uniforms.uMorph.value = 1;
+      mTransitionMaterial.current.uniforms.uBurst.value = reducedMotion ? 0 : burst;
+      mTransitionMaterial.current.uniforms.uReveal.value = 1;
+      mTransitionMaterial.current.uniforms.uOpacity.value = Math.sin(Math.PI * burst) * 0.72;
+      mTransitionMaterial.current.uniforms.uTime.value = time;
     }
     if (ribbonMaterial.current) {
       const burst = range(p, 0.145, 0.305);
@@ -707,20 +736,40 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       mGroup.current.scale.setScalar(0.46 * (1 + range(p, 0.22, 0.34) * 0.4));
     }
     if (glyphLatticeMaterial.current) {
-      const weave = Math.min(range(p, 0.035, 0.14), 1 - range(p, 0.22, 0.31));
+      const weave = Math.min(glyphCylinderBuild, 1 - range(p, 0.22, 0.31));
       glyphLatticeMaterial.current.uniforms.uBuild.value = weave;
       glyphLatticeMaterial.current.uniforms.uTime.value = time;
-      glyphLatticeMaterial.current.uniforms.uOpacity.value = 0.3 * Math.min(1, weave * 3);
+      glyphLatticeMaterial.current.uniforms.uOpacity.value = 0.32 * Math.min(1, weave * 3);
     }
     if (glyphLatticeGroup.current) glyphLatticeGroup.current.rotation.y = time * 0.08;
 
     const handOpacity = fadeWindow(p, 0.17, 0.26, 0.44, 0.52);
+    const handCylinderBuild = smoother(range(p, 0.19, 0.255));
+    if (reducedMotion) {
+      handAutoGrowth.current = 1;
+    } else if (p >= 0.255) {
+      handAutoStarted.current = true;
+      handAutoGrowth.current = Math.min(1, handAutoGrowth.current + delta / 2.15);
+    } else if (p < 0.18) {
+      handAutoStarted.current = false;
+      handAutoGrowth.current = 0;
+    }
+    const handGrowth = smoother(handAutoStarted.current ? handAutoGrowth.current : 0);
     if (handMaterial.current) {
-      handMaterial.current.uniforms.uMorph.value = 1;
-      handMaterial.current.uniforms.uCrumble.value = reducedMotion ? 0 : smoother(range(p, 0.43, 0.56));
-      handMaterial.current.uniforms.uReveal.value = range(p, 0.2, 0.34);
-      handMaterial.current.uniforms.uOpacity.value = handOpacity * 0.76;
-      handMaterial.current.uniforms.uTime.value = time;
+      const shader = handMaterial.current.userData.beadShader as BeadShaderState | undefined;
+      if (shader) {
+        shader.uniforms.uTreeScan.value = handGrowth;
+        shader.uniforms.uTreeTime.value = time;
+        shader.uniforms.uObjectOpacity.value = handOpacity * (1 - range(p, 0.43, 0.49));
+      }
+    }
+    if (handTransitionMaterial.current) {
+      const crumble = reducedMotion ? 0 : smoother(range(p, 0.43, 0.56));
+      handTransitionMaterial.current.uniforms.uMorph.value = 1;
+      handTransitionMaterial.current.uniforms.uCrumble.value = crumble;
+      handTransitionMaterial.current.uniforms.uReveal.value = 1;
+      handTransitionMaterial.current.uniforms.uOpacity.value = handOpacity * Math.sin(Math.PI * range(p, 0.405, 0.56)) * 0.76;
+      handTransitionMaterial.current.uniforms.uTime.value = time;
     }
     if (handGroup.current) {
       // full eased pirouette during the scan-in, plus idle sway
@@ -730,14 +779,15 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       handGroup.current.position.y = 0.9 + Math.sin(time * 0.19 + 2) * 0.1 * hold;
     }
     if (handLatticeMaterial.current) {
-      const weave = Math.min(range(p, 0.23, 0.33), 1 - range(p, 0.43, 0.51));
+      const weave = Math.min(handCylinderBuild, 1 - range(p, 0.43, 0.51));
       handLatticeMaterial.current.uniforms.uBuild.value = weave;
       handLatticeMaterial.current.uniforms.uTime.value = time;
-      handLatticeMaterial.current.uniforms.uOpacity.value = 0.12 * Math.min(1, weave * 3);
+      handLatticeMaterial.current.uniforms.uOpacity.value = 0.32 * Math.min(1, weave * 3);
     }
+    if (handLatticeGroup.current) handLatticeGroup.current.rotation.y = time * 0.08;
 
-    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.42, 0.49, 0.57, 0.64) * 0.15;
-    if (pathwayRef.current) (pathwayRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.51, 0.62, 0.78, 0.88) * 0.6;
+    if (trailRef.current) (trailRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.42, 0.49, 0.57, 0.64) * 0.24;
+    if (pathwayRef.current) (pathwayRef.current.material as THREE.LineBasicMaterial).opacity = fadeWindow(p, 0.51, 0.62, 0.78, 0.88) * 0.42;
     if (waveRef.current) {
       const opacity = fadeWindow(p, 0.46, 0.54, 0.68, 0.77);
       const attribute = waveRef.current.geometry.getAttribute("position") as THREE.BufferAttribute;
@@ -746,7 +796,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
         attribute.setY(i, Math.sin(x * 0.42 + z * 0.3 + time * 0.7) * 0.46);
       }
       attribute.needsUpdate = true;
-      (waveRef.current.material as THREE.LineBasicMaterial).opacity = opacity * 0.32;
+      (waveRef.current.material as THREE.LineBasicMaterial).opacity = opacity * 0.38;
       if (waveMotesMaterial.current) {
         waveMotesMaterial.current.uniforms.uTime.value = time;
         waveMotesMaterial.current.uniforms.uOpacity.value = opacity * 0.45;
@@ -767,10 +817,11 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     }
     const treeGrowth = smoother(treeAutoStarted.current ? treeAutoGrowth.current : 0);
     if (treeMaterial.current) {
-      const shader = treeMaterial.current.userData.treeShader as TreeShaderState | undefined;
+      const shader = treeMaterial.current.userData.beadShader as BeadShaderState | undefined;
       if (shader) {
         shader.uniforms.uTreeScan.value = treeGrowth;
         shader.uniforms.uTreeTime.value = time;
+        shader.uniforms.uObjectOpacity.value = 1;
       }
     }
     if (treeGrowthGroup.current) {
@@ -804,20 +855,22 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <Dust count={compact ? 280 : 700} spread={44} height={30} position={[0, 2, 0]} />
     <Dust count={compact ? 220 : 700} spread={36} height={26} position={[0, 2, -34]} />
     <group ref={mGroup} position={[13, 2.6, -8]} scale={0.4}>
-      <ParticleCloud data={glyph} materialRef={mMaterial} color={PEARL} accent={VIOLET} size={compact ? 0.82 : 0.56} sway={0.05} flow={0.7} />
+      <AuralisBeads data={glyph} materialRef={mMaterial} growthRef={mGrowthGroup} compact={compact} density={compact ? 1 : 2} beadSize={0.1} seed={20260720} />
+      <ParticleCloud data={glyph} materialRef={mTransitionMaterial} color={PEARL} accent={VIOLET} size={compact ? 0.82 : 0.56} sway={0.05} flow={0.7} />
       <group ref={glyphLatticeGroup}><Lattice geometry={glyphLatticeGeometry} materialRef={glyphLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
     </group>
     <group position={[13, 2.6, -8]} scale={0.4}><Ribbons materialRef={ribbonMaterial} compact={compact} /></group>
-    <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
+    <lineSegments ref={trailRef} geometry={trailGeometry} position={[0, 1, -3]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     {hand && <group ref={handGroup} position={[-2.15, 0.9, -37]} scale={0.58}>
-      <ParticleCloud data={hand} materialRef={handMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.28 : 0.84} sway={0.025} flow={0.72} light={[-14, 26, 34]} />
-      <Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={18} color={PEARL} accent={VIOLET} />
+      <AuralisBeads data={hand} materialRef={handMaterial} growthRef={handGrowthGroup} compact={compact} density={compact ? 1 : 3} beadSize={0.1} seed={90210} />
+      <ParticleCloud data={hand} materialRef={handTransitionMaterial} color={PEARL} accent={VIOLET} size={compact ? 1.28 : 0.84} sway={0.025} flow={0.72} light={[-14, 26, 34]} />
+      <group ref={handLatticeGroup}><Lattice geometry={handLatticeGeometry} materialRef={handLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
     </group>}
-    <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={GOLD} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
-    <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
+    <lineSegments ref={waveRef} geometry={waveGeometry} position={[-1, -5, -26]} rotation={[0.18, 0, -0.12]}><lineBasicMaterial color={VIOLET} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
+    <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} color={POINTER_VIOLET} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     {tree && <group ref={treeGroup} position={[11.2, -1.6, -64]} scale={compact ? 0.54 : 0.68}>
-      <TreeBeads data={tree} materialRef={treeMaterial} growthRef={treeGrowthGroup} compact={compact} />
+      <AuralisBeads data={tree} materialRef={treeMaterial} growthRef={treeGrowthGroup} compact={compact} density={3} beadSize={0.08} centerY={8} seed={71717} />
       <group ref={treeLatticeGroup}><Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} color={POINTER_VIOLET} position={[0, -6, 0]} />
     </group>}
