@@ -84,6 +84,7 @@ const Navbar = () => {
             { label: t("courses.rmExperienceRetention.title"), href: "/course/rm-client-experience-retention" },
             { label: t("courses.algoTradingL1.title"), href: "/course/algorithmic-trading-level-1" },
             { label: t("courses.algoTradingL2.title"), href: "/course/algorithmic-trading-level-2" },
+            { label: "The AI-Powered Investor Series", href: "/programmes", unclickable: true },
           ],
         },
         {
@@ -101,6 +102,8 @@ const Navbar = () => {
           subItems: [
             { label: "Professional Certificate in Applied AI", href: "/professional-certificate-in-Applied-AI" },
             { label: "Advanced Certificate in AI-Powered Business Analytics", href: "/advanced-certificate-ai-powered-business-analytics" },
+            { label: t("courses.certifiedDataAnalyst.title"), href: "/course/certified-data-analyst" },
+            { label: t("courses.certifiedDataScientist.title"), href: "/course/certified-data-scientist" },
             { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
           ],
         },
@@ -149,8 +152,6 @@ const Navbar = () => {
           href: "/programmes",
           subItems: [
             { label: t("courses.pythonDataAnalytics.title"), href: "/course/python-programming-for-data-analytics" },
-            { label: t("courses.certifiedDataAnalyst.title"), href: "/course/certified-data-analyst" },
-            { label: t("courses.certifiedDataScientist.title"), href: "/course/certified-data-scientist" },
             { label: t("courses.aiBizAnalyticsModule1.title"), href: "/course/foundations-business-analytics-ai-concepts-frameworks" },
             { label: t("courses.aiBizAnalyticsModule2.title"), href: "/course/data-preparation-cleaning-power-query-ai-copilots" },
             { label: t("courses.aiBizAnalyticsModule3.title"), href: "/course/business-analytics-models-dax-chatgpt" },

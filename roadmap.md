@@ -8,3 +8,4 @@
 - [x] Apply the Auralis demo's original colours and animation parameters to the M, hand, and tree.
 - [x] Verify full-scroll Auralis parity and correct hand/tree framing without clipping.
 - [x] Refine the M bead definition and keep every hand fingertip inside the frame.
+- [x] Align the mobile and tablet programme menu with the desktop programme catalogue.
