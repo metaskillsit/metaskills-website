@@ -230,15 +230,24 @@ const TreeBeads = ({ data, materialRef, growthRef }: { data: CloudData; material
     const random = seeded(6060);
     const pearl = new THREE.Color("#e6ecf2");
     const violet = new THREE.Color("#b552ff");
+    const lavender = new THREE.Color("#b579ff");
+    const beadColor = new THREE.Color();
     for (let i = 0; i < data.count; i += 1) {
-      position.set(data.positions[i * 3], data.positions[i * 3 + 1] + 8, data.positions[i * 3 + 2]);
+      const sourceY = data.positions[i * 3 + 1];
+      position.set(data.positions[i * 3], sourceY + 8, data.positions[i * 3 + 2]);
       const hero = random() < 0.04;
       const beadScale = hero ? 0.28 : 0.14 + random() * 0.08;
       scale.setScalar(beadScale);
       matrix.compose(position, quaternion, scale);
       mesh.setMatrixAt(i, matrix);
+      // The demo tree keeps its trunk pearl and layers violet through the canopy.
+      const canopy = smoother(range(sourceY, 0.4, 7.8));
+      const violetAmount = clamp01(canopy * (0.38 + random() * 0.62) + (hero ? 0.18 : 0));
+      beadColor.copy(pearl).lerp(random() < 0.44 ? violet : lavender, violetAmount);
+      mesh.setColorAt(i, beadColor);
     }
     mesh.instanceMatrix.needsUpdate = true;
+    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
   }, [data]);
   return <group ref={growthRef} position={[0, -8, 0]}>
     <instancedMesh ref={meshRef} args={[undefined, undefined, data.count]} frustumCulled={false}>
@@ -562,6 +571,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const pathwayRef = useRef<THREE.LineSegments>(null);
   const ribbonMaterial = useRef<THREE.ShaderMaterial>(null);
   const finaleFogMaterial = useRef<THREE.ShaderMaterial>(null);
+  const treeAutoGrowth = useRef(0);
+  const treeAutoStarted = useRef(false);
   const pointerSmooth = useRef(new THREE.Vector2());
   const glyphLatticeGeometry = useMemo(() => makeLattice(7.6, 18), []);
   const handLatticeGeometry = useMemo(() => makeLattice(7.6, 18, 20260729), []);
@@ -582,7 +593,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       .then(([handBuffer, treeBuffer]) => {
         if (!active) return;
         setHand(decodeCloud(handBuffer, 4173, [-0.5973206758, -0.9999998808, -0.6382458806], [1.1946413517, 1.9999998808, 1.2764917612], 7, compact ? 2 : 1, 1, 0));
-        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 8, compact ? 3 : 1, 1, 0));
+        setTree(decodeCloud(treeBuffer, 50000, [-0.8996697664, -1.0000001192, -0.5329897404], [1.7993395329, 2, 1.0659794807], 8, 1, 1, 0));
       }).catch(() => undefined);
     return () => { active = false; };
   }, [compact]);
@@ -675,11 +686,20 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       }
     }
 
-    // Auralis finale: complete the self-weaving cylinder, hold it briefly,
-    // then reveal and grow the tree inside the finished structure.
+    // Scrolling builds the cylinder. Once complete, the demo tree forms on its
+    // own timeline, so the viewer can stop scrolling and watch the full growth.
     const cylinderBuild = smoother(range(p, 0.76, 0.84));
-    const treeGrowth = reducedMotion ? 1 : smoother(range(p, 0.86, 0.965));
-    const treeOpacity = reducedMotion ? 1 : smoother(range(p, 0.86, 0.91));
+    if (reducedMotion) {
+      treeAutoGrowth.current = 1;
+    } else if (p >= 0.84) {
+      treeAutoStarted.current = true;
+      treeAutoGrowth.current = Math.min(1, treeAutoGrowth.current + delta / 4.8);
+    } else if (p < 0.74) {
+      treeAutoStarted.current = false;
+      treeAutoGrowth.current = 0;
+    }
+    const treeGrowth = smoother(treeAutoStarted.current ? treeAutoGrowth.current : 0);
+    const treeOpacity = smoother(range(treeGrowth, 0, 0.34));
     if (treeMaterial.current) {
       treeMaterial.current.opacity = treeOpacity * 0.78;
     }
