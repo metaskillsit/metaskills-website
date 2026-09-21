@@ -32,18 +32,47 @@ const seeded = (seed: number) => {
   };
 };
 
-const makeM = (count: number): CloudData => {
+const makeAI = (count: number): CloudData => {
   const random = seeded(20260918);
   const positions = new Float32Array(count * 3);
   const origins = new Float32Array(count * 3);
-  const segments = [[-7, -7, -7, 7], [-7, 7, 0, -1], [0, -1, 7, 7], [7, 7, 7, -7]];
+  // "A . I" built from straight strokes, spanning roughly x -7..7, y -7..7
+  const segments = [
+    [-7, -7, -4, 7], // A left diagonal
+    [-4, 7, -1, -7], // A right diagonal
+    [-5.7, -1, -2.3, -1], // A crossbar
+    [5, -7, 5, 7], // I stem
+    [3.3, 7, 6.7, 7], // I top serif
+    [3.3, -7, 6.7, -7], // I bottom serif
+  ];
+  const lengths = segments.map((s) => Math.hypot(s[2] - s[0], s[3] - s[1]));
+  const total = lengths.reduce((a, b) => a + b, 0);
+  const dotShare = 0.03;
   for (let i = 0; i < count; i += 1) {
-    const segment = segments[Math.floor(random() * segments.length)];
-    const t = random();
     const angle = random() * Math.PI * 2;
     const radius = 18 + random() * 24;
-    positions[i * 3] = segment[0] + (segment[2] - segment[0]) * t + (random() - 0.5) * 0.58;
-    positions[i * 3 + 1] = segment[1] + (segment[3] - segment[1]) * t + (random() - 0.5) * 0.58;
+    let x: number;
+    let y: number;
+    if (random() < dotShare) {
+      // the "." between A and I
+      const a = random() * Math.PI * 2;
+      const r = Math.sqrt(random()) * 0.85;
+      x = 1.4 + Math.cos(a) * r;
+      y = -6.2 + Math.sin(a) * r;
+    } else {
+      let pick = random() * total;
+      let index = 0;
+      while (index < lengths.length - 1 && pick > lengths[index]) {
+        pick -= lengths[index];
+        index += 1;
+      }
+      const segment = segments[index];
+      const t = random();
+      x = segment[0] + (segment[2] - segment[0]) * t + (random() - 0.5) * 0.58;
+      y = segment[1] + (segment[3] - segment[1]) * t + (random() - 0.5) * 0.58;
+    }
+    positions[i * 3] = x;
+    positions[i * 3 + 1] = y;
     positions[i * 3 + 2] = (random() - 0.5) * 1.8;
     origins[i * 3] = Math.cos(angle) * radius;
     origins[i * 3 + 1] = Math.sin(angle) * radius;
