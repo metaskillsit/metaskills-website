@@ -6,7 +6,7 @@ import * as THREE from "three";
 
 type SceneProps = { progress: MotionValue<number>; reducedMotion: boolean; compact?: boolean };
 type CloudData = { positions: Float32Array; origins?: Float32Array; count: number };
-type TreeShaderState = { uniforms: Record<string, { value: unknown }> };
+type BeadShaderState = { uniforms: Record<string, { value: unknown }> };
 
 const GOLD = new THREE.Color("#e6ecf2");
 const PEARL = new THREE.Color("#e6ecf2");
@@ -217,39 +217,41 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
   return <points geometry={geometry} frustumCulled={false}><shaderMaterial ref={materialRef} uniforms={uniforms} vertexShader={pointVertex} fragmentShader={pointFragment} transparent depthWrite={false} blending={THREE.NormalBlending} /></points>;
 };
 
-/* ---------- Auralis tree: true lit pearl-violet bead instances ---------- */
+/* ---------- shared Auralis form: true lit pearl-violet bead instances ---------- */
 
-const TreeBeads = ({ data, materialRef, growthRef, compact }: { data: CloudData; materialRef: React.RefObject<THREE.MeshStandardMaterial>; growthRef: React.RefObject<THREE.Group>; compact: boolean }) => {
+const AuralisBeads = ({ data, materialRef, growthRef, compact, density = 1, beadSize = 0.08, centerY = 0, seed = 71717 }: { data: CloudData; materialRef: React.RefObject<THREE.MeshStandardMaterial>; growthRef: React.RefObject<THREE.Group>; compact: boolean; density?: number; beadSize?: number; centerY?: number; seed?: number }) => {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   useEffect(() => {
     const mesh = meshRef.current;
     if (!mesh) return;
-    const density = compact ? 1 : 3;
-    const total = data.count * density;
+    const resolvedDensity = compact ? 1 : density;
+    const total = data.count * resolvedDensity;
     const matrix = new THREE.Matrix4();
     const position = new THREE.Vector3();
     const quaternion = new THREE.Quaternion();
     const scale = new THREE.Vector3();
-    const jitterRandom = seeded(71722);
-    const random = seeded(71718);
+    const jitterRandom = seeded(seed + 5);
+    const random = seeded(seed + 1);
     const pearl = new THREE.Color("#ffffff");
     const beadColor = new THREE.Color();
     const light = new THREE.Vector3(-14, 26, 34).normalize();
     const glow = new Float32Array(total * 3);
     const heights = new Float32Array(total);
-    const jitter = 0.08 * (1.5 + density * 0.3);
+    const bounds = new THREE.Box3().setFromBufferAttribute(new THREE.BufferAttribute(data.positions, 3));
+    const spanY = Math.max(0.001, bounds.max.y - bounds.min.y);
+    const jitter = beadSize * (1.5 + resolvedDensity * 0.3);
     let output = 0;
     for (let i = 0; i < data.count; i += 1) {
       const baseX = data.positions[i * 3];
       const baseY = data.positions[i * 3 + 1];
       const baseZ = data.positions[i * 3 + 2];
-      for (let d = 0; d < density; d += 1) {
+      for (let d = 0; d < resolvedDensity; d += 1) {
         const x = baseX + (d === 0 ? 0 : (jitterRandom() - 0.5) * jitter);
         const y = baseY + (d === 0 ? 0 : (jitterRandom() - 0.5) * jitter);
         const z = baseZ + (d === 0 ? 0 : (jitterRandom() - 0.5) * jitter);
-        position.set(x, y + 8, z);
+        position.set(x, y + centerY, z);
         const hero = random() < 0.04;
-        const beadScale = hero ? 0.16 : 0.08 * (1 + (random() - 0.5) * 0.4);
+        const beadScale = hero ? beadSize * 2 : beadSize * (1 + (random() - 0.5) * 0.4);
         scale.setScalar(beadScale);
         matrix.compose(position, quaternion, scale);
         mesh.setMatrixAt(output, matrix);
@@ -258,7 +260,7 @@ const TreeBeads = ({ data, materialRef, growthRef, compact }: { data: CloudData;
         beadColor.copy(pearl).multiplyScalar(0.82 + 0.18 * wrap + (random() - 0.5) * 0.04);
         mesh.setColorAt(output, beadColor);
         if (hero) glow.set([5, 5, 5], output * 3);
-        heights[output] = clamp01((y + 8) / 16);
+        heights[output] = clamp01((y - bounds.min.y) / spanY);
         random();
         random();
         output += 1;
@@ -270,9 +272,9 @@ const TreeBeads = ({ data, materialRef, growthRef, compact }: { data: CloudData;
     if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
     const material = materialRef.current;
     if (material) material.needsUpdate = true;
-  }, [compact, data, materialRef]);
-  return <group ref={growthRef} position={[0, -8, 0]}>
-    <instancedMesh ref={meshRef} args={[undefined, undefined, data.count * (compact ? 1 : 3)]} frustumCulled={false}>
+  }, [beadSize, centerY, compact, data, density, materialRef, seed]);
+  return <group ref={growthRef}>
+    <instancedMesh ref={meshRef} args={[undefined, undefined, data.count * (compact ? 1 : density)]} frustumCulled={false}>
       <sphereGeometry args={[0.5, 8, 6]} />
       <meshStandardMaterial
         ref={materialRef}
@@ -283,27 +285,32 @@ const TreeBeads = ({ data, materialRef, growthRef, compact }: { data: CloudData;
         onBeforeCompile={(shader) => {
           shader.uniforms.uTreeScan = { value: 0 };
           shader.uniforms.uTreeTime = { value: 0 };
+           shader.uniforms.uObjectOpacity = { value: 0 };
           shader.uniforms.uTreeScanTint = { value: new THREE.Color(VIOLET).multiplyScalar(4.2) };
           shader.uniforms.uTreeFlowTint = { value: new THREE.Color(VIOLET).multiplyScalar(0.8) };
           shader.vertexShader = shader.vertexShader
-            .replace("#include <common>", "#include <common>\nattribute vec3 aGlow;\nattribute float aTreeHeight;\nvarying vec3 vTreeGlow;\nuniform float uTreeScan;\nuniform float uTreeTime;\nuniform vec3 uTreeScanTint;\nuniform vec3 uTreeFlowTint;")
+             .replace("#include <common>", "#include <common>\nattribute vec3 aGlow;\nattribute float aTreeHeight;\nvarying vec3 vTreeGlow;\nvarying float vObjectReveal;\nuniform float uTreeScan;\nuniform float uTreeTime;\nuniform vec3 uTreeScanTint;\nuniform vec3 uTreeFlowTint;")
             .replace("#include <begin_vertex>", [
               "#include <begin_vertex>",
               "float treeLine = uTreeScan * 1.05;",
               "float treeDelta = treeLine - aTreeHeight;",
               "float treeReveal = clamp(treeDelta / 0.05, 0.0, 1.0);",
               "transformed *= treeReveal;",
+               "vObjectReveal = treeReveal;",
               "float treeActive = 1.0 - step(0.9999, uTreeScan);",
               "float treeBand = treeActive * max(0.0, 1.0 - treeDelta / 0.14) * step(0.0, treeDelta);",
               "float treeLife = 0.5 + 0.5 * sin(aTreeHeight * 12.0 - uTreeTime * 0.5);",
               "vTreeGlow = aGlow + uTreeScanTint * treeBand + uTreeFlowTint * treeLife * treeLife * treeLife;",
             ].join("\n"));
           shader.fragmentShader = shader.fragmentShader
-            .replace("#include <common>", "#include <common>\nvarying vec3 vTreeGlow;")
-            .replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\n\ttotalEmissiveRadiance += vTreeGlow;");
+             .replace("#include <common>", "#include <common>\nvarying vec3 vTreeGlow;\nvarying float vObjectReveal;\nuniform float uObjectOpacity;")
+             .replace("#include <color_fragment>", "#include <color_fragment>\n\tdiffuseColor.a *= vObjectReveal * uObjectOpacity;")
+             .replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\n\ttotalEmissiveRadiance += vTreeGlow;");
           const material = materialRef.current;
-          if (material) material.userData.treeShader = shader;
+           if (material) material.userData.beadShader = shader;
         }}
+         transparent
+         depthWrite={false}
       />
     </instancedMesh>
   </group>;
