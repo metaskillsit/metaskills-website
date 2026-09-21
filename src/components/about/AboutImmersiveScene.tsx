@@ -218,41 +218,91 @@ const ParticleCloud = ({ data, materialRef, color = PEARL, accent = GOLD, size =
 
 /* ---------- Auralis tree: true lit pearl-violet bead instances ---------- */
 
-const TreeBeads = ({ data, materialRef, growthRef }: { data: CloudData; materialRef: React.RefObject<THREE.MeshStandardMaterial>; growthRef: React.RefObject<THREE.Group> }) => {
+const TreeBeads = ({ data, materialRef, growthRef, compact }: { data: CloudData; materialRef: React.RefObject<THREE.MeshStandardMaterial>; growthRef: React.RefObject<THREE.Group>; compact: boolean }) => {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   useEffect(() => {
     const mesh = meshRef.current;
     if (!mesh) return;
+    const density = compact ? 1 : 3;
+    const total = data.count * density;
     const matrix = new THREE.Matrix4();
     const position = new THREE.Vector3();
     const quaternion = new THREE.Quaternion();
     const scale = new THREE.Vector3();
-    const random = seeded(6060);
-    const pearl = new THREE.Color("#e6ecf2");
-    const violet = new THREE.Color("#b552ff");
-    const lavender = new THREE.Color("#b579ff");
+    const jitterRandom = seeded(71722);
+    const random = seeded(71718);
+    const pearl = new THREE.Color("#ffffff");
     const beadColor = new THREE.Color();
+    const light = new THREE.Vector3(-14, 26, 34).normalize();
+    const glow = new Float32Array(total * 3);
+    const heights = new Float32Array(total);
+    const jitter = 0.08 * (1.5 + density * 0.3);
+    let output = 0;
     for (let i = 0; i < data.count; i += 1) {
-      const sourceY = data.positions[i * 3 + 1];
-      position.set(data.positions[i * 3], sourceY + 8, data.positions[i * 3 + 2]);
-      const hero = random() < 0.04;
-      const beadScale = hero ? 0.28 : 0.14 + random() * 0.08;
-      scale.setScalar(beadScale);
-      matrix.compose(position, quaternion, scale);
-      mesh.setMatrixAt(i, matrix);
-      // The demo tree keeps its trunk pearl and layers violet through the canopy.
-      const canopy = smoother(range(sourceY, 0.4, 7.8));
-      const violetAmount = clamp01(canopy * (0.38 + random() * 0.62) + (hero ? 0.18 : 0));
-      beadColor.copy(pearl).lerp(random() < 0.44 ? violet : lavender, violetAmount);
-      mesh.setColorAt(i, beadColor);
+      const baseX = data.positions[i * 3];
+      const baseY = data.positions[i * 3 + 1];
+      const baseZ = data.positions[i * 3 + 2];
+      for (let d = 0; d < density; d += 1) {
+        const x = baseX + (d === 0 ? 0 : (jitterRandom() - 0.5) * jitter);
+        const y = baseY + (d === 0 ? 0 : (jitterRandom() - 0.5) * jitter);
+        const z = baseZ + (d === 0 ? 0 : (jitterRandom() - 0.5) * jitter);
+        position.set(x, y + 8, z);
+        const hero = random() < 0.04;
+        const beadScale = hero ? 0.16 : 0.08 * (1 + (random() - 0.5) * 0.4);
+        scale.setScalar(beadScale);
+        matrix.compose(position, quaternion, scale);
+        mesh.setMatrixAt(output, matrix);
+        const normal = new THREE.Vector3(x, y, z).normalize();
+        const wrap = Math.pow(0.5 + 0.5 * normal.dot(light), 1.7);
+        beadColor.copy(pearl).multiplyScalar(0.82 + 0.18 * wrap + (random() - 0.5) * 0.04);
+        mesh.setColorAt(output, beadColor);
+        if (hero) glow.set([5, 5, 5], output * 3);
+        heights[output] = clamp01((y + 8) / 16);
+        random();
+        random();
+        output += 1;
+      }
     }
+    mesh.geometry.setAttribute("aGlow", new THREE.InstancedBufferAttribute(glow, 3));
+    mesh.geometry.setAttribute("aTreeHeight", new THREE.InstancedBufferAttribute(heights, 1));
     mesh.instanceMatrix.needsUpdate = true;
     if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
-  }, [data]);
+    const material = materialRef.current;
+    if (material) material.needsUpdate = true;
+  }, [compact, data, materialRef]);
   return <group ref={growthRef} position={[0, -8, 0]}>
-    <instancedMesh ref={meshRef} args={[undefined, undefined, data.count]} frustumCulled={false}>
+    <instancedMesh ref={meshRef} args={[undefined, undefined, data.count * (compact ? 1 : 3)]} frustumCulled={false}>
       <sphereGeometry args={[0.5, 8, 6]} />
-      <meshStandardMaterial ref={materialRef} color="#cbd6e2" emissive="#b552ff" emissiveIntensity={0.018} roughness={0.98} metalness={0} transparent opacity={0} depthWrite fog />
+      <meshStandardMaterial
+        ref={materialRef}
+        color="#ffffff"
+        roughness={0.98}
+        metalness={0}
+        envMapIntensity={0.08}
+        onBeforeCompile={(shader) => {
+          shader.uniforms.uTreeScan = { value: 0 };
+          shader.uniforms.uTreeTime = { value: 0 };
+          shader.uniforms.uTreeScanTint = { value: new THREE.Color(VIOLET).multiplyScalar(4.2) };
+          shader.uniforms.uTreeFlowTint = { value: new THREE.Color(VIOLET).multiplyScalar(0.8) };
+          shader.vertexShader = shader.vertexShader
+            .replace("#include <common>", "#include <common>\nattribute vec3 aGlow;\nattribute float aTreeHeight;\nvarying vec3 vTreeGlow;\nuniform float uTreeScan;\nuniform float uTreeTime;\nuniform vec3 uTreeScanTint;\nuniform vec3 uTreeFlowTint;")
+            .replace("#include <begin_vertex>", [
+              "#include <begin_vertex>",
+              "float treeLine = uTreeScan * 1.05;",
+              "float treeDelta = treeLine - aTreeHeight;",
+              "float treeReveal = clamp(treeDelta / 0.05, 0.0, 1.0);",
+              "transformed *= treeReveal;",
+              "float treeActive = 1.0 - step(0.9999, uTreeScan);",
+              "float treeBand = treeActive * max(0.0, 1.0 - treeDelta / 0.14) * step(0.0, treeDelta);",
+              "float treeLife = 0.5 + 0.5 * sin(aTreeHeight * 12.0 - uTreeTime * 0.5);",
+              "vTreeGlow = aGlow + uTreeScanTint * treeBand + uTreeFlowTint * treeLife * treeLife * treeLife;",
+            ].join("\n"));
+          shader.fragmentShader = shader.fragmentShader
+            .replace("#include <common>", "#include <common>\nvarying vec3 vTreeGlow;")
+            .replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\n\ttotalEmissiveRadiance += vTreeGlow;");
+          materialRef.current?.userData && (materialRef.current.userData.treeShader = shader);
+        }}
+      />
     </instancedMesh>
   </group>;
 };
@@ -563,6 +613,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const glyphLatticeMaterial = useRef<THREE.ShaderMaterial>(null);
   const handLatticeMaterial = useRef<THREE.ShaderMaterial>(null);
   const treeLatticeMaterial = useRef<THREE.ShaderMaterial>(null);
+  const treeLatticeGroup = useRef<THREE.Group>(null);
   const glyphLatticeGroup = useRef<THREE.Group>(null);
   const waveMotesMaterial = useRef<THREE.ShaderMaterial>(null);
   const treeMotesMaterial = useRef<THREE.ShaderMaterial>(null);
@@ -581,7 +632,7 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
   const pathwayGeometry = useMemo(() => makeTrails(compact ? 260 : 620, 5, 40), [compact]);
   const waveGeometry = useMemo(() => makeWave(compact ? 18 : 30, compact ? 22 : 38), [compact]);
   const waveMoteConfig = useMemo<MoteConfig>(() => ({ count: compact ? 50 : 130, spreadX: 26, spreadZ: 10, rise: 14, sway: 0.9, speed: [0.02, 0.05], size: 0.42, seed: 5150 }), [compact]);
-  const treeMoteConfig = useMemo<MoteConfig>(() => ({ count: compact ? 40 : 110, spreadX: 11, spreadZ: 9, rise: 15, sway: 1.2, speed: [0.025, 0.06], size: 0.5, seed: 6060 }), [compact]);
+  const treeMoteConfig = useMemo<MoteConfig>(() => ({ count: compact ? 40 : 110, spreadX: 11, spreadZ: 9, rise: 20, sway: 1.2, speed: [0.025, 0.06], size: 0.5, seed: 6060 }), [compact]);
   const cameraCurve = useMemo(() => new THREE.CatmullRomCurve3([
     new THREE.Vector3(0, 1.5, 31), new THREE.Vector3(1.5, 2, 22), new THREE.Vector3(-2.4, 3.2, 6),
     new THREE.Vector3(2.2, 4.2, -11), new THREE.Vector3(-3.5, 7.5, -27), new THREE.Vector3(1.4, 4.5, -38),
@@ -611,10 +662,16 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     camera.position.lerp(cameraPoint, reducedMotion ? 1 : 1 - Math.pow(0.0006, Math.min(delta, 0.2)));
     const target = cameraCurve.getPointAt(clamp01(p * 0.96 + 0.035));
     const finaleFocus = smoother(range(p, 0.76, 0.9));
-    target.lerp(new THREE.Vector3(7.8, 0.7, -62), finaleFocus);
+    camera.position.lerp(new THREE.Vector3(11.2, 1.4, -14), finaleFocus);
+    target.lerp(new THREE.Vector3(11.2, -1.6, -64), finaleFocus);
     target.x += px * 0.45;
     target.y += py * 0.24;
     camera.lookAt(target);
+    const targetFov = THREE.MathUtils.lerp(compact ? 46 : 38, 32, finaleFocus);
+    if (Math.abs(camera.fov - targetFov) > 0.001) {
+      camera.fov = targetFov;
+      camera.updateProjectionMatrix();
+    }
     // single out-and-back bank (~13 deg) through the flight, level afterwards
     camera.rotation.z = -0.26 * Math.sin(Math.PI * smoother(range(p, 0.04, 0.44)));
 
@@ -699,12 +756,15 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
       treeAutoGrowth.current = 0;
     }
     const treeGrowth = smoother(treeAutoStarted.current ? treeAutoGrowth.current : 0);
-    const treeOpacity = smoother(range(treeGrowth, 0, 0.34));
     if (treeMaterial.current) {
-      treeMaterial.current.opacity = treeOpacity * 0.78;
+      const shader = treeMaterial.current.userData.treeShader as THREE.Shader | undefined;
+      if (shader) {
+        shader.uniforms.uTreeScan.value = treeGrowth;
+        shader.uniforms.uTreeTime.value = time;
+      }
     }
     if (treeGrowthGroup.current) {
-      treeGrowthGroup.current.scale.set(0.72 + treeGrowth * 0.28, Math.max(0.025, treeGrowth), 0.72 + treeGrowth * 0.28);
+      treeGrowthGroup.current.scale.setScalar(1);
     }
     if (treeGroup.current) {
       treeGroup.current.rotation.y = Math.sin(time * 0.24 + 3) * 0.055 + px * 0.05 + (p - 0.82) * 0.18;
@@ -714,11 +774,12 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     if (treeLatticeMaterial.current) {
       treeLatticeMaterial.current.uniforms.uBuild.value = cylinderBuild;
       treeLatticeMaterial.current.uniforms.uTime.value = time;
-      treeLatticeMaterial.current.uniforms.uOpacity.value = 0.12 * Math.min(1, cylinderBuild * 3);
+      treeLatticeMaterial.current.uniforms.uOpacity.value = 0.32 * Math.min(1, cylinderBuild * 3);
     }
+    if (treeLatticeGroup.current) treeLatticeGroup.current.rotation.y = time * 0.08;
     if (treeMotesMaterial.current) {
       treeMotesMaterial.current.uniforms.uTime.value = time;
-      treeMotesMaterial.current.uniforms.uOpacity.value = treeGrowth * 0.5;
+      treeMotesMaterial.current.uniforms.uOpacity.value = treeGrowth * 0.65;
     }
     if (finaleFogMaterial.current) {
       finaleFogMaterial.current.uniforms.uTime.value = time;
@@ -746,8 +807,8 @@ const Scene = ({ progress, reducedMotion, compact = false }: SceneProps) => {
     <Motes config={waveMoteConfig} materialRef={waveMotesMaterial} position={[-1, -6, -26]} />
     <lineSegments ref={pathwayRef} geometry={pathwayGeometry} position={[0, 0, -30]} rotation={[Math.PI / 2.8, 0, 0]}><lineBasicMaterial color={PEARL} transparent opacity={0} depthWrite={false} blending={THREE.AdditiveBlending} /></lineSegments>
     {tree && <group ref={treeGroup} position={[11.2, -1.6, -64]} scale={compact ? 0.54 : 0.68}>
-      <TreeBeads data={tree} materialRef={treeMaterial} growthRef={treeGrowthGroup} />
-      <Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} color={PEARL} accent={VIOLET} />
+      <TreeBeads data={tree} materialRef={treeMaterial} growthRef={treeGrowthGroup} compact={compact} />
+      <group ref={treeLatticeGroup}><Lattice geometry={treeLatticeGeometry} materialRef={treeLatticeMaterial} height={18} color={PEARL} accent={VIOLET} /></group>
       <Motes config={treeMoteConfig} materialRef={treeMotesMaterial} color={POINTER_VIOLET} position={[0, -6, 0]} />
     </group>}
     <FinaleFog materialRef={finaleFogMaterial} />

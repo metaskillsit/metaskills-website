@@ -11,3 +11,4 @@
 - [x] Align the mobile and tablet programme menu with the desktop programme catalogue.
 - [x] Sequence the About finale so the Auralis cylinder fully builds before the tree grows.
 - [x] Match the Auralis tree's full molecule count and violet canopy, then auto-form it after the scroll-built cylinder completes.
+- [x] Replace the About finale tree approximation with GetLayers Auralis' exact 150k bead, scan-band, lattice, camera, and motes configuration.
