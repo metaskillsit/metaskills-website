@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 import { Button } from "@/components/ui/button";
 import lenzYuPortrait from "@/assets/faculty/lenz-yu-professional.jpg.asset.json";
-import benjaminLienPortrait from "@/assets/faculty/benjamin-lien.png.asset.json";
 
 
 const allFaculty = [
@@ -73,7 +72,7 @@ const allFaculty = [
     name: "Benjamin Lien",
     role: "Head of Project Management, Integrum Global",
     expertise: "AI Project Delivery | Commercial Structuring | ISO/IEC 42001 AI Governance | Contract & Change Control",
-    image: benjaminLienPortrait.url,
+    image: "/images/faculty/faculty-benjamin.jpg",
   },
   {
     name: "Brendan Graetz",

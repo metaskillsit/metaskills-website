@@ -7,7 +7,6 @@ import { ChevronDown, ChevronUp, Link2, Check } from "lucide-react";
 import { toast } from "sonner";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 import lenzYuPortrait from "@/assets/faculty/lenz-yu-professional.jpg.asset.json";
-import benjaminLienPortrait from "@/assets/faculty/benjamin-lien.png.asset.json";
 
 
 interface FacultyMember {
@@ -168,7 +167,7 @@ YJ Soon is a full-stack software engineer and educator specializing in machine l
     i18nKey: "benjaminLien",
     role: "Head of Project Management, Integrum Global",
     expertise: "AI Project Delivery | Commercial Structuring | ISO/IEC 42001 AI Governance | Contract & Change Control",
-    image: benjaminLienPortrait.url,
+    image: "/images/faculty/faculty-benjamin.jpg",
     bio: `Benjamin Lien is Head of Project Management at Integrum Global, where he owns the delivery lifecycle for enterprise AI engagements from scoping and commercial structuring through build, user acceptance testing, and client handover. His training practice concentrates on the part of AI adoption most organisations underestimate: turning a working prototype into a governed, contracted, production system a client will sign off on.
 Across concurrent engagements in finance, healthcare, and logistics, Benjamin has served as lead architect on an automated financial reporting system covering more than 40 entities, and as project manager for an LLM-powered clinical chatbot with OCR referral processing and booking, a treasury platform tracking cash position and loan covenants, and an AI coaching product built on structured wellbeing frameworks. In each case he was accountable not only for technical delivery but for the scope definition, change control, and acceptance criteria that determine whether an AI project closes cleanly or drifts.
 That accountability extends into the commercial structure of the engagement itself. Benjamin drafts the master agreements, statements of work, delivery orders, and change requests that AI projects run on, and his engagements are built around the clauses that decide whether a project closes or bleeds: a named owner and grace period against every client dependency, an explicit "not included" boundary against every deliverable, sample output sign-off before user acceptance testing opens, and change control that recognises written instruction only. He teaches delivery teams to treat scope as a commercial instrument rather than a technical description, on the view that most AI engagements fail at acceptance and payment rather than at the model.
