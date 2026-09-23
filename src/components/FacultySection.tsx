@@ -70,7 +70,7 @@ const allFaculty = [
   },
   {
     name: "Benjamin Lien",
-    role: "Head of Project Management, Integrum Global",
+    role: "AI Consultant and Trainer",
     expertise: "AI Project Delivery | Commercial Structuring | ISO/IEC 42001 AI Governance | Contract & Change Control",
     image: "/images/faculty/faculty-benjamin.jpg",
   },

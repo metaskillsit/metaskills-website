@@ -165,7 +165,7 @@ YJ Soon is a full-stack software engineer and educator specializing in machine l
   {
     name: "Benjamin Lien",
     i18nKey: "benjaminLien",
-    role: "Head of Project Management, Integrum Global",
+    role: "AI Consultant and Trainer",
     expertise: "AI Project Delivery | Commercial Structuring | ISO/IEC 42001 AI Governance | Contract & Change Control",
     image: "/images/faculty/faculty-benjamin.jpg",
     bio: `Benjamin Lien is Head of Project Management at Integrum Global, where he owns the delivery lifecycle for enterprise AI engagements from scoping and commercial structuring through build, user acceptance testing, and client handover. His training practice concentrates on the part of AI adoption most organisations underestimate: turning a working prototype into a governed, contracted, production system a client will sign off on.
