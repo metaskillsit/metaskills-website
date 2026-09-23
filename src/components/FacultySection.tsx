@@ -69,6 +69,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-yinjie.jpg",
   },
   {
+    name: "Benjamin Lien",
+    role: "Head of Project Management, Integrum Global",
+    expertise: "AI Project Delivery | Commercial Structuring | ISO/IEC 42001 AI Governance | Contract & Change Control",
+    image: "/images/faculty/faculty-benjamin.jpg",
+  },
+  {
     name: "Brendan Graetz",
     role: "AI Senior Consultant and Trainer",
     expertise: "Generative AI | AI Engineering | Developer Education | DevRel Strategy",
