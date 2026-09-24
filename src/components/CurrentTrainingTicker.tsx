@@ -16,14 +16,14 @@ const CurrentTrainingTicker = () => {
   const [paused, setPaused] = useState(false);
 
   const engagements = [
-    "IMDA Vibe Coding (~30 runs)",
+    "IMDA Vibe Coding (~22 runs)",
     "NTUC LHub - OCBC (16 runs)",
     "MINDEF DIS - Strategic AI Compute and Optimisation",
     "NTUC LHub - MayBank (19 runs)",
     "NTUC LHub - UOB (6 runs)",
     "NTUC LHub - Sumitomo Mitsui Trust Bank (12 runs)",
     "Leveraging Generative AI for Executive Decision-Making - BOC, NUS AIDF - Zhejiang University",
-    "TinkerTanker - DSTA Intermediate Agentic Engineering",
+    "TinkerTanker - DSTA Intermediate Agentic Engineering (6 runs)",
     "NTUC LHub - AIA (8 runs)",
     "AMD Regional Sales - Agentic Setups on Ryzen AI Laptops",
     "NTUC LHub - ICICI (6 runs)",
