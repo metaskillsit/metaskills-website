@@ -208,6 +208,17 @@ As Director and Sales Coach at Westrategos, she led coaching programmes for fina
   },
 
   {
+    name: "Cliff",
+    i18nKey: "cliff",
+    role: "Data Analytics Engineering Consultant and Trainer",
+    expertise: "Analytics Engineering | Strategic Analytics Architecture | Product & Marketing Analytics | Fraud Detection | Analytics Capability Development",
+    image: "/images/faculty/faculty-cliff.jpg",
+    bio: `Cliff is an Analytics Engineering Consultant who specializes in helping organizations maximize the value of their data through strategic analytics architectural design, targeted use cases discovery and implementations, and internal capability development. He plays a pivotal role in transforming complex datasets into clear, decision-focused insights, establishing robust measurement frameworks, and enabling teams to transition from fragmented manual reporting to automated, high-impact analytics infrastructure.
+Across his analytics career, Cliff has led and executed multi-domain data initiatives spanning product analytics and user journey mapping, digital marketing and social media performance, and fraud detection. With a foundational background in Economics from the National University of Singapore (NUS) and self-taught mastery of Python, he excels at connecting technical analytical execution directly to overarching commercial strategy and operational integrity.
+As an analytics team lead and mentor, Cliff has also helped organisations with their internal data capabilities building to ensure that organizations can consistently extract value over the long term. This encompasses elevating AI and data literacy across functional teams, establishing and codifying organizational analytics best practices, and guiding team expansion through talent acquisition and strategic hiring that is suited for the organisation's analytics needs.`,
+  },
+
+  {
     name: "Alena Lavrinenko",
     i18nKey: "alenaLavrinenko",
     role: "AI Consultant and Trainer",
