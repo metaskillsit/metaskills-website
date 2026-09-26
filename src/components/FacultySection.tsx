@@ -93,6 +93,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-christan.jpg",
   },
   {
+    name: "Cliff",
+    role: "Data Analytics Engineering Consultant and Trainer",
+    expertise: "Analytics Engineering | Strategic Analytics Architecture | Product & Marketing Analytics | Fraud Detection | Analytics Capability Development",
+    image: "/images/faculty/faculty-cliff.jpg",
+  },
+  {
     name: "Gary Ye",
     role: "Country Head, China, Metaskills Institute",
     expertise: "Business Development | China Market Expansion | Strategic Partnerships",
