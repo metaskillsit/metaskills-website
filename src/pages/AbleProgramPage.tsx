@@ -132,7 +132,7 @@ const AbleProgramPage = ({ slug }: { slug: string }) => {
             fetchPriority="high"
             className="absolute inset-0 h-full w-full object-cover object-[65%_center] md:object-center"
           />
-          <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]/55 md:bg-[hsl(var(--hero-overlay))]/20" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]/75 md:bg-gradient-to-r md:from-[hsl(var(--hero-overlay))]/95 md:via-[hsl(var(--hero-overlay))]/65 md:to-transparent" aria-hidden="true" />
           <div className="relative max-w-[1140px] mx-auto px-6 py-16 md:py-20">
             <div className="flex flex-wrap gap-2 mb-6">
               {p.tags.map((t) => (
