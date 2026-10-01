@@ -206,7 +206,7 @@ export const courses: Course[] = [
     objectives: ["Master data wrangling, cleaning, and transformation techniques.", "Build proficiency in statistical analysis and hypothesis testing.", "Create compelling data visualizations and dashboards.", "Apply machine learning fundamentals to real-world business problems.", "Earn an industry-recognised certification from JCube Institute."],
     courseDesign: "A comprehensive programme combining theoretical foundations with hands-on projects using real-world datasets.",
     schedule: [{ day: "Programme Structure", items: ["Modular learning with flexible scheduling", "Hands-on lab sessions", "Capstone project and peer review", "Certification examination"] }],
-    nextRunDate: "Contact admissions@metaskills.sg for next run dates",
+    nextRunDate: "7 Dec 2026 – Registration Open",
     fees: { selfSponsored: "S$9,000 per pax", corporateSmall: "S$9,000 per pax", corporateLarge: "S$9,000 per pax" },
   },
   {
