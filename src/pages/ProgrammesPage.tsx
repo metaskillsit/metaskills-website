@@ -98,9 +98,6 @@ const ProgrammesPage = () => {
       courses: [
         { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
         { name: "Advanced Certificate in AI-Powered Business Analytics", slug: "/advanced-certificate-ai-powered-business-analytics", isExternal: true },
-        { name: "Professional Certificate in Python Automation and Data Operations — Full Course S$9,000 · ABLE S$3,000", slug: "professional-certificate-python-automation-and-data-operations" },
-        { name: "Professional Certificate in Modern Web Application Development — Full Course S$9,000 · ABLE S$3,000", slug: "professional-certificate-modern-web-application-development" },
-        { name: "Certificate in Foundational Digital Technology — Full Course S$9,000 · ABLE S$3,000", slug: "certificate-foundational-digital-technology" },
         { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
         { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
