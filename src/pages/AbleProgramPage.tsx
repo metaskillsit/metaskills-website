@@ -9,6 +9,15 @@ import FooterSection from "@/components/FooterSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import NotFound from "./NotFound";
 import { getAbleProgram } from "@/data/ablePrograms";
+import pythonHero from "@/assets/able-python-automation-hero.jpg";
+import webHero from "@/assets/able-web-development-hero.jpg";
+import digitalHero from "@/assets/able-digital-foundations-hero.jpg";
+
+const heroPhotos: Record<string, string> = {
+  "professional-certificate-python-automation-data-operations": pythonHero,
+  "professional-certificate-modern-web-application-development": webHero,
+  "certificate-foundational-digital-technology": digitalHero,
+};
 
 const SITE = "https://metaskills.sg";
 const EMAIL = "admissions@metaskills.sg";
@@ -115,7 +124,16 @@ const AbleProgramPage = ({ slug }: { slug: string }) => {
       <main className="pt-20 md:pt-[90px]">
         {/* HERO */}
         <section className="section-dark relative overflow-hidden">
-          <div className="max-w-[1140px] mx-auto px-6 py-16 md:py-20">
+          <img
+            src={heroPhotos[p.slug]}
+            alt=""
+            width={1600}
+            height={900}
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover object-[65%_center] md:object-center"
+          />
+          <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]/75 md:bg-gradient-to-r md:from-[hsl(var(--hero-overlay))]/95 md:via-[hsl(var(--hero-overlay))]/65 md:to-transparent" aria-hidden="true" />
+          <div className="relative max-w-[1140px] mx-auto px-6 py-16 md:py-20">
             <div className="flex flex-wrap gap-2 mb-6">
               {p.tags.map((t) => (
                 <span key={t} className="text-[11px] uppercase tracking-widest px-3 py-1 rounded-full border border-primary-foreground/20 text-primary-foreground/80">
