@@ -428,6 +428,7 @@ const AbleProgramPage = ({ slug }: { slug: string }) => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground mt-6 max-w-3xl">Corporate and customised cohort arrangements are available. Contact Metaskills Institute to discuss delivery format, class size and organisational requirements.</p>
+            <p className="text-sm text-muted-foreground mt-2 max-w-3xl">All fees are exempt from GST.</p>
           </section>
 
           {/* CERTIFICATION + CORPORATE */}
