@@ -64,7 +64,7 @@ const SMUPCMLPage = () => {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
-            <Stat icon={<Calendar className="w-5 h-5" />} label="Next Intake" value="28 Jul 2026" />
+            <Stat icon={<Calendar className="w-5 h-5" />} label="Next Intake" value="4 Jan 2027" />
             <Stat icon={<GraduationCap className="w-5 h-5" />} label="Level" value="Intermediate" />
             <Stat icon={<MapPin className="w-5 h-5" />} label="Venue" value="CT Hub 2, Singapore" />
           </div>
@@ -216,7 +216,7 @@ const SMUPCMLPage = () => {
               </div>
               <div className="p-6 rounded-lg border border-border bg-card">
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">Next Intake</p>
-                <p className="font-serif text-2xl text-foreground mt-1">28 Jul 2026</p>
+                <p className="font-serif text-2xl text-foreground mt-1">4 Jan 2027</p>
                 <div className="mt-5 space-y-2 text-sm text-muted-foreground">
                   <p><strong className="text-foreground">Format:</strong> On-campus, Metaskills Institute</p>
                   <p><strong className="text-foreground">Modules:</strong> 6 sequential modules</p>
