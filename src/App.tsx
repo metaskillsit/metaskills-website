@@ -30,8 +30,6 @@ import AIComputeEconomicsPage from "./pages/AIComputeEconomicsPage.tsx";
 import RedHatSubscriptionPage from "./pages/RedHatSubscriptionPage.tsx";
 import AIPoweredBusinessAnalyticsPage from "./pages/AIPoweredBusinessAnalyticsPage.tsx";
 import AdminEnquiriesPage from "./pages/AdminEnquiriesPage.tsx";
-import AbleCoursePage from "./pages/AbleCoursePage.tsx";
-import AbleExplainerPage from "./pages/AbleExplainerPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
@@ -70,8 +68,6 @@ const AppContent = () => {
         <Route path="/ai-native-prototyping-compute-constraints" element={<AIComputeEconomicsPage />} />
         <Route path="/programmes/cloud-devops-ai/red-hat-learning-subscription" element={<RedHatSubscriptionPage />} />
         <Route path="/advanced-certificate-ai-powered-business-analytics" element={<AIPoweredBusinessAnalyticsPage />} />
-        <Route path="/programmes/able-courses" element={<AbleExplainerPage />} />
-        <Route path="/programmes/certifications/:slug" element={<AbleCoursePage />} />
         <Route path="/admin" element={<AdminEnquiriesPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

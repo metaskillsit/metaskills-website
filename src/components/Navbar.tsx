@@ -105,10 +105,6 @@ const Navbar = () => {
             { label: t("courses.certifiedDataAnalyst.title"), href: "/course/certified-data-analyst" },
             { label: t("courses.certifiedDataScientist.title"), href: "/course/certified-data-scientist" },
             { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
-            { label: "Python Automation and Data Operations (Full / ABLE)", href: "/programmes/certifications/professional-certificate-python-automation-data-operations" },
-            { label: "Modern Web Application Development (Full / ABLE)", href: "/programmes/certifications/professional-certificate-modern-web-application-development" },
-            { label: "Foundational Digital Technology (Full / ABLE)", href: "/programmes/certifications/certificate-foundational-digital-technology" },
-            { label: "What is ABLE?", href: "/programmes/able-courses" },
           ],
         },
         {

@@ -101,9 +101,6 @@ const ProgrammesPage = () => {
         { name: ct("certifiedDataAnalyst"), slug: "certified-data-analyst" },
         { name: ct("certifiedDataScientist"), slug: "certified-data-scientist" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
-        { name: "Professional Certificate in Python Automation and Data Operations", slug: "/programmes/certifications/professional-certificate-python-automation-data-operations", isExternal: true },
-        { name: "Professional Certificate in Modern Web Application Development", slug: "/programmes/certifications/professional-certificate-modern-web-application-development", isExternal: true },
-        { name: "Certificate in Foundational Digital Technology", slug: "/programmes/certifications/certificate-foundational-digital-technology", isExternal: true },
       ],
     },
     {
