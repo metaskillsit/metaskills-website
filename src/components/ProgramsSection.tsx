@@ -88,6 +88,9 @@ const ProgramsSection = () => {
         { name: "Professional Certificate in Applied AI", slug: "/professional-certificate-in-Applied-AI", isExternal: true },
         { name: "Advanced Certificate in AI-Powered Business Analytics", slug: "/advanced-certificate-ai-powered-business-analytics", isExternal: true },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
+        { name: "Professional Certificate in Python Automation and Data Operations", slug: "/course/professional-certificate-python-automation-data-operations", isExternal: true },
+        { name: "Professional Certificate in Modern Web Application Development", slug: "/course/professional-certificate-modern-web-application-development", isExternal: true },
+        { name: "Certificate in Foundational Digital Technology", slug: "/course/certificate-foundational-digital-technology", isExternal: true },
       ],
     },
     {
