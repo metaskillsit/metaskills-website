@@ -30,6 +30,7 @@ import AIComputeEconomicsPage from "./pages/AIComputeEconomicsPage.tsx";
 import RedHatSubscriptionPage from "./pages/RedHatSubscriptionPage.tsx";
 import AIPoweredBusinessAnalyticsPage from "./pages/AIPoweredBusinessAnalyticsPage.tsx";
 import AdminEnquiriesPage from "./pages/AdminEnquiriesPage.tsx";
+import AbleProgrammePage from "./pages/AbleProgrammePage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 
@@ -52,6 +53,9 @@ const AppContent = () => {
         <Route path="/locations" element={<LocationsPage />} />
         <Route path="/admissions" element={<AdmissionsPage />} />
         <Route path="/clients" element={<ClientsPage />} />
+        <Route path="/course/professional-certificate-python-automation-and-data-operations" element={<AbleProgrammePage />} />
+        <Route path="/course/professional-certificate-modern-web-application-development" element={<AbleProgrammePage />} />
+        <Route path="/course/certificate-foundational-digital-technology" element={<AbleProgrammePage />} />
         <Route path="/course/:slug" element={<CoursePage />} />
         <Route path="/course-category/:slug" element={<CourseCategoryPage />} />
         <Route path="/programmes/finops" element={<CourseCategoryPage />} />
