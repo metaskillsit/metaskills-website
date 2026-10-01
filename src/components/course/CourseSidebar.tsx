@@ -13,6 +13,11 @@ const coursePricingOverrides: Record<string, { corporate: string; corporateLabel
     corporate: "S$9,000 per pax",
     customNotes: true,
   },
+  "certified-data-analyst": {
+    corporateLabel: "Public/Corporate Rates",
+    corporate: "S$9,000 per pax",
+    customNotes: true,
+  },
   "ai-literacy-for-finance-professionals": {
     corporateLabel: "Course Fee",
     corporate: "S$700 per pax",

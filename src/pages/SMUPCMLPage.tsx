@@ -1,4 +1,5 @@
-import { ExternalLink, Calendar, MapPin, Award, CheckCircle2, MessageCircle, GraduationCap } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Award, CheckCircle2, MessageCircle, GraduationCap, DollarSign } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 
@@ -38,6 +39,7 @@ const trainers = [
 ];
 
 const SMUPCMLPage = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
@@ -199,6 +201,19 @@ const SMUPCMLPage = () => {
           {/* Sidebar */}
           <aside className="lg:col-span-1">
             <div className="lg:sticky lg:top-24 space-y-4">
+              <div className="bg-muted rounded-sm p-6 border border-border">
+                <div className="flex items-center gap-2 mb-4">
+                  <DollarSign className="w-4 h-4 text-primary" />
+                  <h3 className="font-heading text-sm font-bold text-foreground uppercase tracking-wider">{t("coursePage.courseFees")}</h3>
+                </div>
+                <p className="text-xs text-muted-foreground mb-0.5">Public/Corporate Rates</p>
+                <p className="font-bold text-foreground">S$9,000 per pax</p>
+                <div className="border-t border-border pt-3 mt-3 text-xs text-muted-foreground italic space-y-1">
+                  <p className="font-semibold not-italic text-foreground/80">{t("coursePage.feeNote")}</p>
+                  <p>Customised training arrangements, including class size, course scope, and delivery format, can be discussed and tailored to organisational requirements.</p>
+                  <p className="pt-2">All fees are exempt from GST.</p>
+                </div>
+              </div>
               <div className="p-6 rounded-lg border border-border bg-card">
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">Next Intake</p>
                 <p className="font-serif text-2xl text-foreground mt-1">28 Jul 2026</p>

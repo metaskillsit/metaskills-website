@@ -207,7 +207,7 @@ export const courses: Course[] = [
     courseDesign: "A comprehensive programme combining theoretical foundations with hands-on projects using real-world datasets.",
     schedule: [{ day: "Programme Structure", items: ["Modular learning with flexible scheduling", "Hands-on lab sessions", "Capstone project and peer review", "Certification examination"] }],
     nextRunDate: "Contact admissions@metaskills.sg for next run dates",
-    fees: { selfSponsored: "Contact for pricing", corporateSmall: "Contact for corporate rates", corporateLarge: "Contact for group rates" },
+    fees: { selfSponsored: "S$9,000 per pax", corporateSmall: "S$9,000 per pax", corporateLarge: "S$9,000 per pax" },
   },
   {
     slug: "certified-data-scientist",

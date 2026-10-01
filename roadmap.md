@@ -13,3 +13,4 @@
 - [x] Match the Auralis tree's full molecule count and violet canopy, then auto-form it after the scroll-built cylinder completes.
 - [x] Replace the About finale tree approximation with GetLayers Auralis' exact 150k bead, scan-band, lattice, camera, and motes configuration.
 - [x] Unify the About page's M, hand, transition fields, lighting, bloom, and lattices with the exact Auralis tree treatment.
+- [x] Match Applied AI and Certified Data Analyst pricing to the AWS certificate's S$9,000 public/corporate standard.
