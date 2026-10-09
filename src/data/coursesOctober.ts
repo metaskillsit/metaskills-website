@@ -292,6 +292,8 @@ export const octoberCourses: Course[] = [
         "Security architecture, visibility and monitoring workflows",
         "Endpoint, network and application logs and telemetry",
         "SIEM concepts, alert triage and investigation",
+      "Cloud and identity telemetry; security-operations process improvement, automation and orchestration",
+      "AI in security operations: use cases, risks and governance considerations",
         "Threat intelligence, indicators of compromise and attacker behaviour",
         "Baselines, anomalies and false positives",
         "Lab: triage alerts and establish an investigation timeline"
@@ -304,6 +306,7 @@ export const octoberCourses: Course[] = [
         "Vulnerability scanning and assessment methods",
         "Interpretation and validation of findings",
         "Severity, exploitability, exposure and business impact",
+      "Risk scoring, control types, policies and compliance in vulnerability management",
         "Prioritisation, remediation and compensating controls",
         "Verification and remediation reporting",
         "Lab: prepare a prioritised remediation plan"
@@ -316,6 +319,7 @@ export const octoberCourses: Course[] = [
         "Suspicious authentication, phishing and malware indicators",
         "Correlation across evidence sources",
         "Detection logic and threat-hunting hypotheses",
+      "Attack methodology frameworks, including MITRE ATT&CK and the Cyber Kill Chain",
         "Investigation notes, evidence quality and escalation",
         "Lab: investigate a suspected compromise using supplied logs and artefacts"
       ]
@@ -336,6 +340,7 @@ export const octoberCourses: Course[] = [
       "items": [
         "Technical findings and executive summaries",
         "Risk, remediation recommendations and operational metrics",
+      "Detection time, response time and remediation effectiveness metrics",
         "Integrated security-operations case study",
         "Original scenario-based and performance-based practice activities",
         "Examination-domain revision and study-gap review",
