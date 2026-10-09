@@ -70,6 +70,23 @@ He also brings experience in regional sales leadership, strategic alliances, clo
 ];
 
 /* =========================
+   STRATEGIC ADVISORY
+========================= */
+const advisoryTeam: FacultyMember[] = [
+  {
+    name: "Roy Ling, CFA",
+    i18nKey: "royLing",
+    role: "Senior Advisor, Corporate Governance & Sustainable Finance",
+    expertise: "Board Governance | ESG & Sustainable Finance | Capital Markets | Executive Leadership",
+    image: "/images/faculty/faculty-roy.webp",
+    bio: `Roy Ling is an experienced board director, senior investment banker, and executive educator with over 25 years of experience in capital markets, corporate governance, and sustainable finance. He has served on more than 25 listed-company and non-profit boards, holding senior appointments including Independent Board Chair, Lead Independent Director, and Audit Committee Chair.
+A former senior investment banker at JPMorgan, Goldman Sachs, Lehman Brothers, and Salomon Smith Barney, Roy brings extensive experience in corporate finance, investment strategy, and boardroom leadership.
+He is also an executive educator associated with NUS, SMU, SUSS, SBF, and SKEMA Business School, specialising in sustainability governance, ESG finance, and executive leadership.
+At Metaskills Institute, his proposed focus is on strengthening board-level governance, sustainable finance, and executive education to support responsible business transformation.`,
+  },
+];
+
+/* =========================
    AI TEAM
 ========================= */
 const aiTeam: FacultyMember[] = [
@@ -456,7 +473,9 @@ const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
     >
       <div>
         <div className="aspect-square overflow-hidden rounded-lg shadow-md">
-          <img src={withFacultyImageVersion(f.image)} alt={f.name} className="w-full h-full object-cover object-top" />
+          <img src={withFacultyImageVersion(f.image)} alt={f.i18nKey === "royLing" ? "Roy Ling, CFA - Senior Advisor, Corporate Governance and Sustainable Finance at Metaskills Institute" : f.name}
+            onError={(e) => { const img = e.currentTarget; if (img.src.includes(".webp")) img.src = img.src.replace(".webp", ".jpg"); }}
+            className="w-full h-full object-cover object-top" />
         </div>
       </div>
       <div className="flex flex-col gap-2">
@@ -538,6 +557,11 @@ const FacultyPage = () => {
               title={t("facultyPage.executiveTeam")}
               description={t("facultyPage.execDesc")}
               members={executiveTeam}
+            />
+            <TeamSection
+              title={t("facultyPage.advisoryTeam")}
+              description={t("facultyPage.advisoryDesc")}
+              members={advisoryTeam}
             />
             <TeamSection
               title={t("facultyPage.aiTeam")}
