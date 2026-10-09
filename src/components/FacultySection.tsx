@@ -224,6 +224,20 @@ const FacultySection = () => {
 
   const handlePointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (pointerId.current !== event.pointerId) return;
+    if (Math.abs(event.clientX - pointerStartX.current) < 6) {
+      const target = document
+        .elementsFromPoint(event.clientX, event.clientY)
+        .map((el) => el.closest("[data-faculty-slug]") as HTMLElement | null)
+        .find(Boolean);
+      pointerId.current = null;
+      setDragX(0);
+      setIsDragging(false);
+      if (target) {
+        if (target.dataset.facultyOffset === "0") navigate(`/faculty#${target.dataset.facultySlug}`);
+        else setCurrentIdx(Number(target.dataset.facultyIndex));
+      }
+      return;
+    }
     const flick = Math.abs(velocity.current) > 0.35;
     if (dragX <= -SWIPE_THRESHOLD || (flick && velocity.current < 0)) next();
     else if (dragX >= SWIPE_THRESHOLD || (flick && velocity.current > 0)) prev();
@@ -304,10 +318,9 @@ const FacultySection = () => {
                 }}
                 aria-hidden={offset !== 0}
                 aria-label={`${faculty.name}, ${faculty.role}`}
-                onClick={() => {
-                  if (offset === 0 && Math.abs(dragX) < 5) navigate(`/faculty#${facultySlug(faculty.name)}`);
-                  else if (offset !== 0) setCurrentIdx(index);
-                }}
+                data-faculty-slug={facultySlug(faculty.name)}
+                data-faculty-index={index}
+                data-faculty-offset={offset}
               >
                 <div className="group relative aspect-[3/4] overflow-hidden rounded-sm border border-border/80 bg-card shadow-[0_24px_60px_hsl(var(--foreground)/0.12)]">
                   <img
