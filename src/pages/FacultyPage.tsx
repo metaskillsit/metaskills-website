@@ -84,27 +84,6 @@ A former senior investment banker at JPMorgan, Goldman Sachs, Lehman Brothers, a
 He is also an executive educator associated with NUS, SMU, SUSS, SBF, and SKEMA Business School, specialising in sustainability governance, ESG finance, and executive leadership.
 At Metaskills Institute, his proposed focus is on strengthening board-level governance, sustainable finance, and executive education to support responsible business transformation.`,
   },
-];
-
-/* =========================
-   AI TEAM
-========================= */
-const aiTeam: FacultyMember[] = [
-  {
-    name: "Dr. Jack Hong",
-    i18nKey: "drJackHong",
-    role: "Lead Senior Consultant",
-    expertise: "AI Transformation | Data Science | Digital Strategy | ACLP",
-    image: "/images/faculty/faculty-jackhong.jpg",
-    bio: `Dr. Jack Hong stands at the forefront of the Business Transformation landscape, harnessing the power of digital tools, data analytics, and cutting-edge Artificial Intelligence (AI) applications. As a visionary in the realm of Transformation-as-a-Service (XaaS), Dr. Hong is renowned for revolutionizing enterprises by reimagining their business models. His innovative approach involves a unique blend of proprietary frameworks, strategic team restructuring for optimal value delivery, mastery of data utilization, and the development of tailored AI solutions. 
-Throughout his illustrious career, Dr. Hong has played a pivotal role in steering numerous enterprises, government entities, and systems integrators toward outcome-based transformations. His expertise spans diverse sectors, including real estate, healthcare, transportation, finance, education, and security, making him a highly sought-after figure in digital transformation.
-He is the Founder and CEO of Integrum Global, a firm specialising in composable and agentic AI systems that operationalise machine learning, predictive analytics, and workflow automation across sectors such as healthcare, transport, real estate, education, and sustainability. Under his leadership, Integrum Global has implemented large-scale AI solutioning and competency-building programmes for both corporate and government clients across ASEAN. On Behalf of Integrum Global, Dr. Hong signed a MOU with Department of Planning and Investment of Ho Chi Minh City, as part of the Green Alliance of Transportation.
-Beyond academia and business, Dr Hong contributes actively to Singapore's professional and enterprise ecosystem. He serves on committees with the Singapore Business Federation (SBF), the Singapore Computer Society (SCS), and the Association of Small and Medium Enterprises (ASME), where he advises on digital transformation, AI adoption, and workforce development. His cross-sector involvement positions him as a key connector between policy, innovation, and practice—supporting Singapore's move toward an AI-enabled economy.
-He is also Co-founder of Research Room Pte Ltd, a data consultancy delivering advanced analytics and decision-support systems for financial, governmental, and industrial clients. Over the years, he has worked with organisations such as the Monetary Authority of Singapore (MAS), Vertex Holdings, MINDEF, Certis, and the Ministry of Education (MOE) on data-driven decision frameworks and AI deployment strategies.
-Dr Hong's professional expertise spans composable AI architectures, knowledge automation, quantitative finance, and digital transformation strategy. A frequent keynote speaker at technology and leadership conferences—including KAINOS, Knight Frank Asia Pacific, and NTUC LearningHub—he advocates for responsible, measurable, and human-centric AI.
-Before embarking on his current trailblazing path, Dr. Hong garnered extensive experience in the commercial sector and civil service. His notable roles include serving as the Corporate Planner for CapitaLand China and Ascott North Asia, with extensive exposure to Real Estate Private Equity; performing various significant roles within the Ministry of Defence, including International Military Relations; and a key member of the Organizing Secretariat of Singapore 2006 under the Monetary Authority of Singapore (MAS).
-An ardent educator, Dr. Hong has been imparting his vast knowledge in digital transformation, artificial intelligence, and financial economics to undergraduates, postgraduates (MBA, EMBA, DBA), and professionals in academy programs since 2014. His academic contributions are further highlighted by his authorship of two applied works: "Financial Management, Theory and Practice" and "A Practitioner's Guide to Digital Platform Business," essential readings in Singapore Management University's MBA program.`,
-  },
   {
     name: "Sriven Naidu | Sound Mind, Sound Body",
     i18nKey: "srivenNaidu",
@@ -126,6 +105,27 @@ Sriven's earlier roles include Director of Strategy at Singapore Management Univ
 He also serves as consultant and advisor to Benber Yu, Head Coach of Team Cicada Trackers, linking elite sport, reflective learning, and sustained performance development in ways that inform his broader leadership and AI advisory practice.
 
 Sriven is adept in psychometric assessment, strengths-based development, and leadership facilitation, and brings a rare combination of strategic range, human insight, and cross-disciplinary depth to clients navigating technological disruption and transformation.`,
+  },
+];
+
+/* =========================
+   AI TEAM
+========================= */
+const aiTeam: FacultyMember[] = [
+  {
+    name: "Dr. Jack Hong",
+    i18nKey: "drJackHong",
+    role: "Lead Senior Consultant",
+    expertise: "AI Transformation | Data Science | Digital Strategy | ACLP",
+    image: "/images/faculty/faculty-jackhong.jpg",
+    bio: `Dr. Jack Hong stands at the forefront of the Business Transformation landscape, harnessing the power of digital tools, data analytics, and cutting-edge Artificial Intelligence (AI) applications. As a visionary in the realm of Transformation-as-a-Service (XaaS), Dr. Hong is renowned for revolutionizing enterprises by reimagining their business models. His innovative approach involves a unique blend of proprietary frameworks, strategic team restructuring for optimal value delivery, mastery of data utilization, and the development of tailored AI solutions. 
+Throughout his illustrious career, Dr. Hong has played a pivotal role in steering numerous enterprises, government entities, and systems integrators toward outcome-based transformations. His expertise spans diverse sectors, including real estate, healthcare, transportation, finance, education, and security, making him a highly sought-after figure in digital transformation.
+He is the Founder and CEO of Integrum Global, a firm specialising in composable and agentic AI systems that operationalise machine learning, predictive analytics, and workflow automation across sectors such as healthcare, transport, real estate, education, and sustainability. Under his leadership, Integrum Global has implemented large-scale AI solutioning and competency-building programmes for both corporate and government clients across ASEAN. On Behalf of Integrum Global, Dr. Hong signed a MOU with Department of Planning and Investment of Ho Chi Minh City, as part of the Green Alliance of Transportation.
+Beyond academia and business, Dr Hong contributes actively to Singapore's professional and enterprise ecosystem. He serves on committees with the Singapore Business Federation (SBF), the Singapore Computer Society (SCS), and the Association of Small and Medium Enterprises (ASME), where he advises on digital transformation, AI adoption, and workforce development. His cross-sector involvement positions him as a key connector between policy, innovation, and practice—supporting Singapore's move toward an AI-enabled economy.
+He is also Co-founder of Research Room Pte Ltd, a data consultancy delivering advanced analytics and decision-support systems for financial, governmental, and industrial clients. Over the years, he has worked with organisations such as the Monetary Authority of Singapore (MAS), Vertex Holdings, MINDEF, Certis, and the Ministry of Education (MOE) on data-driven decision frameworks and AI deployment strategies.
+Dr Hong's professional expertise spans composable AI architectures, knowledge automation, quantitative finance, and digital transformation strategy. A frequent keynote speaker at technology and leadership conferences—including KAINOS, Knight Frank Asia Pacific, and NTUC LearningHub—he advocates for responsible, measurable, and human-centric AI.
+Before embarking on his current trailblazing path, Dr. Hong garnered extensive experience in the commercial sector and civil service. His notable roles include serving as the Corporate Planner for CapitaLand China and Ascott North Asia, with extensive exposure to Real Estate Private Equity; performing various significant roles within the Ministry of Defence, including International Military Relations; and a key member of the Organizing Secretariat of Singapore 2006 under the Monetary Authority of Singapore (MAS).
+An ardent educator, Dr. Hong has been imparting his vast knowledge in digital transformation, artificial intelligence, and financial economics to undergraduates, postgraduates (MBA, EMBA, DBA), and professionals in academy programs since 2014. His academic contributions are further highlighted by his authorship of two applied works: "Financial Management, Theory and Practice" and "A Practitioner's Guide to Digital Platform Business," essential readings in Singapore Management University's MBA program.`,
   },
   {
     name: "Adrian Toh",

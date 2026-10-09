@@ -14,3 +14,4 @@
 - [x] Replace the About finale tree approximation with GetLayers Auralis' exact 150k bead, scan-band, lattice, camera, and motes configuration.
 - [x] Unify the About page's M, hand, transition fields, lighting, bloom, and lattices with the exact Auralis tree treatment.
 - [x] Match Applied AI and Certified Data Analyst pricing to the AWS certificate's S$9,000 public/corporate standard.
+- [x] Move Sriven Naidu into Strategic Advisory & Executive Education on the faculty page and homepage team carousel.

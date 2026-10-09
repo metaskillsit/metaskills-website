@@ -37,16 +37,16 @@ const allFaculty = [
     image: "/images/faculty/faculty-roy.webp",
   },
   {
-    name: "Dr. Jack Hong",
-    role: "Lead Senior Consultant",
-    expertise: "AI Transformation | Data Science | Digital Strategy | ACLP",
-    image: "/images/faculty/faculty-jackhong.jpg",
-  },
-  {
     name: "Sriven Naidu",
     role: "Lead Senior Consultant, AI Leadership",
     expertise: "AI Governance | Leadership | Human-Centric AI",
     image: "/images/faculty/faculty-sriven.png",
+  },
+  {
+    name: "Dr. Jack Hong",
+    role: "Lead Senior Consultant",
+    expertise: "AI Transformation | Data Science | Digital Strategy | ACLP",
+    image: "/images/faculty/faculty-jackhong.jpg",
   },
   {
     name: "Adrian Toh",
