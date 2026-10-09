@@ -236,10 +236,10 @@ export const octoberCourses: Course[] = [
   "learningEnvironment": "Instructor demonstrations, guided labs, support scenarios and revision exercises.",
   "practicalActivities": [
     "Component identification",
-    "device configuration",
-    "network diagnostics",
-    "operating-system administration",
-    "endpoint-security exercises and support-ticket simulations."
+    "Device configuration",
+    "Network diagnostics",
+    "Operating-system administration",
+    "Endpoint-security exercises and support-ticket simulations"
   ],
   "practicalNote": null,
   "certificationStatus": "Certification examination vouchers are not included and cost extra",
@@ -369,9 +369,9 @@ export const octoberCourses: Course[] = [
   "learningEnvironment": "Guided defensive-security exercises, demonstrations, case studies and examination-preparation activities.",
   "practicalActivities": [
     "Alert triage",
-    "log analysis",
-    "vulnerability prioritisation",
-    "incident-response exercises and reporting using instructor-provided lab data."
+    "Log analysis",
+    "Vulnerability prioritisation",
+    "Incident-response exercises and reporting using instructor-provided lab data"
   ],
   "practicalNote": null,
   "certificationStatus": "Certification examination vouchers are not included and cost extra",
@@ -386,7 +386,3 @@ export const octoberCourses: Course[] = [
 ];
 
 export const getOctoberCourse = (slug: string) => octoberCourses.find(course => course.slug === slug);
-export const getOctoberCourseSummary = (slug: string) => {
- const course = getOctoberCourse(slug);
- return course ? `${course.nextRunDate} · ${course.duration} · ${course.fees.selfSponsored}${course.slug.startsWith("comptia-") ? " · Exam vouchers excluded; cost extra" : ""}` : undefined;
-};
