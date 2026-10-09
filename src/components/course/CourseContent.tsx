@@ -222,6 +222,14 @@ const CourseContent = ({ course }: CourseContentProps) => {
         </motion.div>
       )}
 
+      {course.practicalNote && <p className="text-muted-foreground leading-relaxed">{course.practicalNote}</p>}
+      {course.learningEnvironment && (
+        <div>
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Learning Environment</h2>
+          <p className="text-muted-foreground leading-relaxed">{course.learningEnvironment}</p>
+        </div>
+      )}
+
       {course.registrationAdmin && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -8,7 +8,7 @@ import { Course } from "@/data/courses";
  */
 export const useCourseTranslation = (course: Course) => {
   const { t } = useTranslation();
-  const key = course.i18nKey;
+   const key = course.reviewPreview ? undefined : course.i18nKey;
 
   const ct = (field: string, fallback: string): string => {
     if (!key) return fallback;
@@ -17,7 +17,7 @@ export const useCourseTranslation = (course: Course) => {
   };
 
   const title = ct("title", course.title);
-  const category = ct("category", course.category);
+   const category = ct("category", course.categoryLabel || course.category);
   const tagline = ct("tagline", course.tagline);
   const whyAttend = ct("whyAttend", course.whyAttend);
   const courseDesign = ct("courseDesign", course.courseDesign);

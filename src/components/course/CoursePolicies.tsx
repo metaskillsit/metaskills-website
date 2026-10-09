@@ -1,12 +1,13 @@
 import { useTranslation } from "react-i18next";
+import { applyCancellationProcessingFee } from "@/lib/coursePolicies";
 
-const CoursePolicies = () => {
+const CoursePolicies = ({ cancellationProcessingFee }: { cancellationProcessingFee?: number }) => {
   const { t } = useTranslation();
 
   const policies = [
     {
       title: t("coursePage.policyCancellationTitle"),
-      text: t("coursePage.policyCancellationText"),
+      text: applyCancellationProcessingFee(t("coursePage.policyCancellationText"), cancellationProcessingFee),
     },
     {
       title: t("coursePage.policyReschedulingTitle"),

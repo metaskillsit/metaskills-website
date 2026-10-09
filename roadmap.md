@@ -15,3 +15,5 @@
 - [x] Unify the About page's M, hand, transition fields, lighting, bloom, and lattices with the exact Auralis tree treatment.
 - [x] Match Applied AI and Certified Data Analyst pricing to the AWS certificate's S$9,000 public/corporate standard.
 - [x] Move Sriven Naidu into Strategic Advisory & Executive Education on the faculty page and homepage team carousel.
+- [x] Update AI Coding Agents and add both CompTIA preparation pages with supplied content, fees, dates and generated heroes.
+- [x] Synchronise all three courses across homepage, programmes and desktop/mobile menus; verify preview and document examination alignment.

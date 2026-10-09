@@ -2,18 +2,33 @@ import { motion } from "framer-motion";
 import { Calendar, CheckCircle, Clock, Mail, TrendingUp, Users, Flame, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { CourseRunDate } from "@/data/courseSchedule";
+import { Button } from "@/components/ui/button";
 
 interface CourseScheduleProps {
   schedule: CourseRunDate[];
   courseTitle: string;
+  showUpcoming?: boolean;
+  enquiryMessage?: string;
 }
 
-const CourseSchedule = ({ schedule, courseTitle }: CourseScheduleProps) => {
+const CourseSchedule = ({ schedule, courseTitle, showUpcoming = false, enquiryMessage }: CourseScheduleProps) => {
   const { t } = useTranslation();
   if (!schedule.length) return null;
 
   const pastRuns = schedule.filter((r) => r.status === "full");
   const upcomingRuns = schedule.filter((r) => r.status === "upcoming" || r.status === "filling");
+
+  if (showUpcoming && upcomingRuns.length) return (
+    <section className="border-b border-border bg-muted">
+      <div className="max-w-[1140px] mx-auto px-6 py-8">
+        <h2 className="font-heading text-xl font-bold text-foreground mb-4 flex items-center gap-2"><Calendar className="w-5 h-5 text-primary" />Course Schedule</h2>
+        <div className="flex flex-wrap items-center justify-between gap-5">
+          <div className="space-y-2">{upcomingRuns.map(run => <div key={run.dates}><p className="text-xs text-muted-foreground">Upcoming Run</p><p className="font-semibold text-foreground">{run.dates}</p></div>)}</div>
+          <Button asChild><a href={`https://wa.me/6589866146?text=${encodeURIComponent(enquiryMessage || `Hi, I would like to enquire about ${courseTitle}.`)}`} target="_blank" rel="noopener noreferrer">Enquire About This Run</a></Button>
+        </div>
+      </div>
+    </section>
+  );
 
   // Upcoming runs are no longer rendered; hide section if no past runs
   if (pastRuns.length === 0) return null;

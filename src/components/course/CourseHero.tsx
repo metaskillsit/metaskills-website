@@ -21,7 +21,7 @@ const CourseHero = ({ course, categoryImages, isNew }: CourseHeroProps) => {
       <div className="relative w-full h-[380px] md:h-[480px] lg:h-[540px]">
         <ImageSlideshow
           images={categoryImages}
-          alt={ct.title}
+          alt={course.heroAlt || ct.title}
           className="absolute inset-0 h-full w-full"
           imgClassName="absolute inset-0 h-full w-full object-cover object-[center_20%]"
           width={1280}

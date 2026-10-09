@@ -56,7 +56,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
   return (
     <div className="lg:col-span-1">
       <div className="sticky top-24 space-y-6">
-        {course.courseDateStatus && (
+         {course.courseDateStatus && !course.reviewPreview && (
           <div className="bg-muted rounded-sm p-6 border border-border">
             <div className="flex items-center gap-2 mb-3">
               <CalendarDays className="w-4 h-4 text-primary" />
