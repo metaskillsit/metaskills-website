@@ -81,6 +81,15 @@ export interface Course {
   importantInfo?: string[];
   externalReference?: { label: string; href: string };
   structureHeading?: string;
+  categoryLabel?: string;
+  categoryAnchor?: string;
+  heroAlt?: string;
+  generatedHero?: boolean;
+  reviewPreview?: boolean;
+  trainingDates?: string[];
+  learningEnvironment?: string;
+  practicalNote?: string | null;
+  cancellationProcessingFee?: number;
 }
 
 export const courses: Course[] = [
@@ -947,6 +956,13 @@ courses.push(...finOpsCourses);
 
 import { aiPoweredBusinessAnalyticsCourses } from "./coursesAIPoweredBusinessAnalytics";
 courses.push(...aiPoweredBusinessAnalyticsCourses);
+
+import { octoberCourses } from "./coursesOctober";
+for (const updatedCourse of octoberCourses) {
+  const existing = courses.find(course => course.slug === updatedCourse.slug);
+  if (existing) Object.assign(existing, updatedCourse);
+  else courses.push(updatedCourse);
+}
 
 export const getCourseBySlug = (slug: string) =>
   courses.find((c) => c.slug === slug);

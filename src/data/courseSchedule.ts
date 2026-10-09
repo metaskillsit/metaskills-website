@@ -1,3 +1,5 @@
+import { getOctoberCourse } from "./coursesOctober";
+
 export interface CourseRunDate {
   intake: string;
   dates: string;
@@ -200,4 +202,4 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
 };
 
 export const getCourseSchedule = (slug: string): CourseRunDate[] =>
-  courseScheduleData[slug] || [];
+  getOctoberCourse(slug) ? [{ intake: "Upcoming Run", dates: `${getOctoberCourse(slug)?.nextRunDate} — ${getOctoberCourse(slug)?.duration}`, status: "upcoming" }] : courseScheduleData[slug] || [];

@@ -1,6 +1,7 @@
 // Per-course image imports — each course gets its own unique photo set
 // Agentic AI Workshop Series
 import awsSaa1 from "@/assets/courses/aws-saa-1.jpg";
+import { getOctoberCourse } from "./coursesOctober";
 import cka1 from "@/assets/courses/cka-1.jpg";
 import rhcsa1 from "@/assets/courses/rhcsa-1.jpg";
 import cloudDevOpsGeneric from "@/assets/course-clouddevops-1.jpg";
@@ -127,7 +128,7 @@ const courseImageMap: Record<string, string[]> = {
 
 
 export const getCourseImages = (slug: string): string[] =>
-  courseImageMap[slug] || [agenticFoundations1, agenticFoundations2, agenticFoundations3];
+  getOctoberCourse(slug) ? [getOctoberCourse(slug)?.heroImage || agenticFoundations1] : courseImageMap[slug] || [agenticFoundations1, agenticFoundations2, agenticFoundations3];
 
 export interface Course {
   slug: string;

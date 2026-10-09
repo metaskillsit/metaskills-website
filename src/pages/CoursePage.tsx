@@ -76,6 +76,31 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
     };
   }, [course.seoTitle, course.seoDescription]);
 
+  useEffect(() => {
+    if (!course.reviewPreview) return;
+    const canonicalUrl = `https://metaskills.sg/course/${course.slug}`;
+    const modified: { element: Element; attribute: string; previous: string | null; created: boolean }[] = [];
+    const setTag = (selector: string, tag: string, identifying: Record<string, string>, attribute: string, value: string) => {
+      const existing = document.querySelector(selector);
+      const element = existing || document.createElement(tag);
+      const previous = element.getAttribute(attribute);
+      Object.entries(identifying).forEach(([key, val]) => element.setAttribute(key, val));
+      element.setAttribute(attribute, value);
+      if (!existing) document.head.appendChild(element);
+      modified.push({ element, attribute, previous, created: !existing });
+    };
+    setTag('link[rel="canonical"]', 'link', { rel: 'canonical' }, 'href', canonicalUrl);
+    for (const [property, value] of Object.entries({ 'og:title': course.seoTitle, 'og:description': course.seoDescription, 'og:type': 'website', 'og:url': canonicalUrl })) {
+      setTag(`meta[property="${property}"]`, 'meta', { property }, 'content', String(value));
+    }
+    setTag('meta[name="twitter:card"]', 'meta', { name: 'twitter:card' }, 'content', 'summary_large_image');
+    return () => modified.forEach(({ element, attribute, previous, created }) => {
+      if (created) element.remove();
+      else if (previous === null) element.removeAttribute(attribute);
+      else element.setAttribute(attribute, previous);
+    });
+  }, [course]);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -90,6 +115,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
             <li><Link to="/" className="hover:text-accent transition-colors">Home</Link></li>
             <li aria-hidden="true">/</li>
             <li><Link to="/programmes" className="hover:text-accent transition-colors">Programmes</Link></li>
+             {course.categoryAnchor && <><li aria-hidden="true">/</li><li><Link to={`/programmes#${course.categoryAnchor}`} className="hover:text-accent transition-colors">{ct.category}</Link></li></>}
             {categorySlug && (
               <>
                 <li aria-hidden="true">/</li>
@@ -111,10 +137,10 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
               <Clock className="w-4 h-4 text-primary" />
               <span>{ct.duration || t("coursePage.defaultDuration")}</span>
             </div>
-            <div className="flex items-center gap-2">
+            {!course.reviewPreview && <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-primary" />
               <span>{t("coursePage.keyInfoFaculty")}</span>
-            </div>
+            </div>}
             <div className="flex items-center gap-2">
               <Award className="w-4 h-4 text-primary" />
               <span>{course.certificationStatus || t("coursePage.keyInfoCertification")}</span>
@@ -125,6 +151,8 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
                 <span>{course.deliveryMode}</span>
               </div>
             )}
+            {course.level && <span>{course.level}</span>}
+            {course.reviewPreview && <span>{course.fees.selfSponsored}</span>}
             {course.fundingStatus && (
               <div className="flex items-center gap-2">
                 <Wallet className="w-4 h-4 text-primary" />
@@ -134,13 +162,13 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
           </div>
         </section>
 
-        <CourseSchedule schedule={courseSchedule} courseTitle={ct.title} />
+        <CourseSchedule schedule={courseSchedule} courseTitle={ct.title} showUpcoming={course.reviewPreview} enquiryMessage={course.whatsappMessage} />
 
         <div className="max-w-[1140px] mx-auto px-6 py-14">
           <div className="grid lg:grid-cols-3 gap-14">
             <div className="lg:col-span-2 space-y-14">
               <CourseContent course={course} />
-              {course.slug !== "certified-data-analyst" && (
+              {course.slug !== "certified-data-analyst" && !course.generatedHero && (
                 <CourseGallery images={categoryImages} title={ct.title} />
               )}
             </div>
@@ -149,7 +177,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
         </div>
 
         {!isNew && <CoursePastRuns pastRuns={pastRuns} courseTitle={ct.title} />}
-        <CoursePolicies />
+        <CoursePolicies cancellationProcessingFee={course.cancellationProcessingFee} />
         <CourseRelated relatedCourses={relatedCourses} />
       </main>
       <FooterSection />
