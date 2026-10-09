@@ -31,7 +31,7 @@ const allFaculty = [
     image: "/images/faculty/faculty-andrew.png",
   },
   {
-    name: "Roy Ling, CFA",
+    name: "Roy Ling",
     role: "Senior Advisor, Corporate Governance & Sustainable Finance",
     expertise: "Board Governance | ESG & Sustainable Finance | Capital Markets | Executive Leadership",
     image: "/images/faculty/faculty-roy.webp",
@@ -325,7 +325,7 @@ const FacultySection = () => {
                 <div className="group relative aspect-[3/4] overflow-hidden rounded-sm border border-border/80 bg-card shadow-[0_24px_60px_hsl(var(--foreground)/0.12)]">
                   <img
                     src={withFacultyImageVersion(faculty.image)}
-                    alt={offset === 0 ? (faculty.name.startsWith("Roy Ling") ? "Roy Ling, CFA - Senior Advisor, Corporate Governance and Sustainable Finance at Metaskills Institute" : faculty.name) : ""}
+                    alt={offset === 0 ? (faculty.name.startsWith("Roy Ling") ? "Roy Ling - Senior Advisor, Corporate Governance and Sustainable Finance at Metaskills Institute" : faculty.name) : ""}
                     onError={(e) => { const img = e.currentTarget; if (img.src.includes(".webp")) img.src = img.src.replace(".webp", ".jpg"); }}
                     draggable={false}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"

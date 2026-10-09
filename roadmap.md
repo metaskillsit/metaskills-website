@@ -21,3 +21,5 @@
 - [x] Simplify the three menu entries, remove CompTIA dates from day headings, remove AI examination section and move AI course to Vibe Coding.
 
 - [x] Remove remaining three-course summaries from homepage and Programmes lists; match CompTIA activity capitalisation to existing courses and verify all entry points.
+
+- [x] Remove CFA from Roy Ling and move Strategic Advisory & Executive Education below the AI & Data Science Team.
