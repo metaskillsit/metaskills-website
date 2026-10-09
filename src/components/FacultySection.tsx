@@ -4,6 +4,10 @@ import { useEffect, useState, useCallback, useRef, PointerEvent as ReactPointerE
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+
+const facultySlug = (name: string) =>
+  name.toLowerCase().replace(/[.'"]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 import lenzYuPortrait from "@/assets/faculty/lenz-yu-professional.jpg.asset.json";
 
 
@@ -25,6 +29,12 @@ const allFaculty = [
     role: "Head, Operations, Metaskills Institute",
     expertise: "AI Operations | Training Systems | Business Transformation",
     image: "/images/faculty/faculty-andrew.png",
+  },
+  {
+    name: "Roy Ling, CFA",
+    role: "Senior Advisor, Corporate Governance & Sustainable Finance",
+    expertise: "Board Governance | ESG & Sustainable Finance | Capital Markets | Executive Leadership",
+    image: "/images/faculty/faculty-roy.webp",
   },
   {
     name: "Dr. Jack Hong",
@@ -149,6 +159,7 @@ const wrapIndex = (index: number) => (index + allFaculty.length) % allFaculty.le
 
 const FacultySection = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [currentIdx, setCurrentIdx] = useState(0);
   const [dragX, setDragX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -293,11 +304,16 @@ const FacultySection = () => {
                 }}
                 aria-hidden={offset !== 0}
                 aria-label={`${faculty.name}, ${faculty.role}`}
+                onClick={() => {
+                  if (offset === 0 && Math.abs(dragX) < 5) navigate(`/faculty#${facultySlug(faculty.name)}`);
+                  else if (offset !== 0) setCurrentIdx(index);
+                }}
               >
                 <div className="group relative aspect-[3/4] overflow-hidden rounded-sm border border-border/80 bg-card shadow-[0_24px_60px_hsl(var(--foreground)/0.12)]">
                   <img
                     src={withFacultyImageVersion(faculty.image)}
-                    alt={offset === 0 ? faculty.name : ""}
+                    alt={offset === 0 ? (faculty.name.startsWith("Roy Ling") ? "Roy Ling, CFA - Senior Advisor, Corporate Governance and Sustainable Finance at Metaskills Institute" : faculty.name) : ""}
+                    onError={(e) => { const img = e.currentTarget; if (img.src.includes(".webp")) img.src = img.src.replace(".webp", ".jpg"); }}
                     draggable={false}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                     style={
