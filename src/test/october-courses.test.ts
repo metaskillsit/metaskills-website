@@ -8,9 +8,9 @@ describe("October programme requirements", () => {
  it("preserves the existing AI course slug with no duplicate", () => {
    expect(courses.filter(c => c.slug === "build-operational-tools-ai-coding-agents")).toHaveLength(1);
  });
- it("moves AI to the existing agentic track", () => {
-   expect(getCourseBySlug("build-operational-tools-ai-coding-agents")?.category).toBe("Agentic AI Workshop Series");
-   expect(getCourseBySlug("build-operational-tools-ai-coding-agents")?.categoryAnchor).toBe("agentic-engineering");
+ it("moves AI to the existing Vibe Coding track", () => {
+   expect(getCourseBySlug("build-operational-tools-ai-coding-agents")?.category).toBe("Vibe Coding");
+   expect(getCourseBySlug("build-operational-tools-ai-coding-agents")?.categoryAnchor).toBe("vibe-coding");
  });
  it("sets AI fee to S$600 per participant", () => expect(octoberCourses[0].fees.selfSponsored).toBe("S$600 per participant"));
  it("sets AI run to 6 November 2026", () => expect(octoberCourses[0].trainingDates).toEqual(["2026-11-06"]));

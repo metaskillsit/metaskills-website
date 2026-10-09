@@ -287,7 +287,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
         </motion.div>
       )}
 
-      {course.certificationNote && (
+      {course.certificationNote && course.certificationNote.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -115,7 +115,6 @@ const ProgramsSection = () => {
         { name: ct("agenticUseCase"), slug: "agentic-ai-use-case" },
         { name: ct("agenticDeploy"), slug: "agentic-ai-deploy-secure-systems" },
         { name: ct("secureAgenticInfra"), slug: "secure-agentic-ai-infrastructure" },
-        { name: ct("buildOpTools"), slug: "build-operational-tools-ai-coding-agents" },
       ],
     },
     {
@@ -134,6 +133,7 @@ const ProgramsSection = () => {
       description: t("programmes.vibeDevDesc"),
       images: [vibeCodingImg, vibeCodingImg2, vibeCodingImg3],
       courses: [
+        { name: ct("buildOpTools"), slug: "build-operational-tools-ai-coding-agents" },
         { name: ct("vibeCodingDigitalBuilders"), slug: "vibe-coding-for-digital-builders" },
         { name: ct("gptKnowledgeBase"), slug: "gpt-your-organisation-knowledge-base" },
       ],
