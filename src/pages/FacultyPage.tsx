@@ -74,7 +74,7 @@ He also brings experience in regional sales leadership, strategic alliances, clo
 ========================= */
 const advisoryTeam: FacultyMember[] = [
   {
-    name: "Roy Ling, CFA",
+    name: "Roy Ling",
     i18nKey: "royLing",
     role: "Senior Advisor, Corporate Governance & Sustainable Finance",
     expertise: "Board Governance | ESG & Sustainable Finance | Capital Markets | Executive Leadership",
@@ -473,7 +473,7 @@ const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
     >
       <div>
         <div className="aspect-square overflow-hidden rounded-lg shadow-md">
-          <img src={withFacultyImageVersion(f.image)} alt={f.i18nKey === "royLing" ? "Roy Ling, CFA - Senior Advisor, Corporate Governance and Sustainable Finance at Metaskills Institute" : f.name}
+          <img src={withFacultyImageVersion(f.image)} alt={f.i18nKey === "royLing" ? "Roy Ling - Senior Advisor, Corporate Governance and Sustainable Finance at Metaskills Institute" : f.name}
             onError={(e) => { const img = e.currentTarget; if (img.src.includes(".webp")) img.src = img.src.replace(".webp", ".jpg"); }}
             className="w-full h-full object-cover object-top" />
         </div>
@@ -559,14 +559,14 @@ const FacultyPage = () => {
               members={executiveTeam}
             />
             <TeamSection
-              title={t("facultyPage.advisoryTeam")}
-              description={t("facultyPage.advisoryDesc")}
-              members={advisoryTeam}
-            />
-            <TeamSection
               title={t("facultyPage.aiTeam")}
               description={t("facultyPage.aiDesc")}
               members={aiTeam}
+            />
+            <TeamSection
+              title={t("facultyPage.advisoryTeam")}
+              description={t("facultyPage.advisoryDesc")}
+              members={advisoryTeam}
             />
             <TeamSection
               title={t("facultyPage.cyberTeam")}
