@@ -1,3 +1,4 @@
+import { getOctoberCourse, getOctoberCourseSummary } from "@/data/coursesOctober";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronRight, ChevronDown, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -129,6 +130,7 @@ const Navbar = () => {
             { label: t("courses.agenticUseCase.title"), href: "/course/agentic-ai-use-case" },
             { label: t("courses.agenticDeploy.title"), href: "/course/agentic-ai-deploy-secure-systems" },
             { label: t("courses.secureAgenticInfra.title"), href: "/course/secure-agentic-ai-infrastructure" },
+            { label: getOctoberCourse("build-operational-tools-ai-coding-agents")?.title || "Build Operational Tools with AI Coding Agents", href: "/course/build-operational-tools-ai-coding-agents" },
           ],
         },
         {
@@ -146,7 +148,6 @@ const Navbar = () => {
           href: "/programmes",
           subItems: [
             { label: t("courses.vibeCodingDigitalBuilders.title"), href: "/course/vibe-coding-for-digital-builders" },
-            { label: t("courses.buildOpTools.title"), href: "/course/build-operational-tools-ai-coding-agents" },
             { label: t("courses.gptKnowledgeBase.title"), href: "/course/gpt-your-organisation-knowledge-base" },
           ],
         },
@@ -171,6 +172,8 @@ const Navbar = () => {
             { label: t("courses.mccFoundation.title"), href: "/course/mcc-plus-cyber-defence-foundation" },
             { label: t("courses.mccSecurityOps.title"), href: "/course/mcc-plus-security-operations" },
             { label: t("courses.mccThreatHunting.title"), href: "/course/mcc-plus-threat-hunting-blue-team" },
+            { label: getOctoberCourse("comptia-a-plus-certification-preparation")?.title || "CompTIA A+ Certification Preparation", href: "/course/comptia-a-plus-certification-preparation" },
+            { label: getOctoberCourse("comptia-cysa-plus-certification-preparation")?.title || "CompTIA CySA+ Certification Preparation", href: "/course/comptia-cysa-plus-certification-preparation" },
           ],
         },
         {
@@ -653,7 +656,7 @@ const Navbar = () => {
                                         {sub.unclickable ? (
                                           <span className={`flex items-start gap-2 py-2 pr-3 text-[13px] text-muted-foreground ${sub.isSubItem ? "pl-12" : "pl-7"}`}>
                                             <span className="font-mono text-[10px] tracking-widest shrink-0 pt-[3px] opacity-70">{numLabel}</span>
-                                            <span>{sub.label}</span>
+                                            <span>{sub.label}{getOctoberCourseSummary(sub.href.replace("/course/", "")) && <span className="block text-xs text-muted-foreground mt-1 leading-relaxed">{getOctoberCourseSummary(sub.href.replace("/course/", ""))}</span>}</span>
                                           </span>
                                         ) : (
                                           <Link
@@ -668,7 +671,7 @@ const Navbar = () => {
                                             }`}
                                           >
                                             <span className="font-mono text-[10px] tracking-widest shrink-0 pt-[3px] opacity-70">{numLabel}</span>
-                                            <span>{sub.label}</span>
+                                            <span>{sub.label}{getOctoberCourseSummary(sub.href.replace("/course/", "")) && <span className="block text-xs text-muted-foreground mt-1 leading-relaxed">{getOctoberCourseSummary(sub.href.replace("/course/", ""))}</span>}</span>
                                           </Link>
                                         )}
                                       </li>

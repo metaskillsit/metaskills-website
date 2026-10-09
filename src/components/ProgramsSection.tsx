@@ -1,3 +1,4 @@
+import { getOctoberCourse, getOctoberCourseSummary } from "@/data/coursesOctober";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -37,7 +38,7 @@ import aiEducationImg3 from "@/assets/programmes-aieducation-3.jpg";
 
 const ProgramsSection = () => {
   const { t } = useTranslation();
-  const ct = (key: string) => t(`courses.${key}.title`);
+  const ct = (key: string) => key === "buildOpTools" ? getOctoberCourse("build-operational-tools-ai-coding-agents")?.title || t(`courses.${key}.title`) : t(`courses.${key}.title`);
 
   const programCategories = [
     {
@@ -114,6 +115,7 @@ const ProgramsSection = () => {
         { name: ct("agenticUseCase"), slug: "agentic-ai-use-case" },
         { name: ct("agenticDeploy"), slug: "agentic-ai-deploy-secure-systems" },
         { name: ct("secureAgenticInfra"), slug: "secure-agentic-ai-infrastructure" },
+        { name: ct("buildOpTools"), slug: "build-operational-tools-ai-coding-agents" },
       ],
     },
     {
@@ -133,7 +135,6 @@ const ProgramsSection = () => {
       images: [vibeCodingImg, vibeCodingImg2, vibeCodingImg3],
       courses: [
         { name: ct("vibeCodingDigitalBuilders"), slug: "vibe-coding-for-digital-builders" },
-        { name: ct("buildOpTools"), slug: "build-operational-tools-ai-coding-agents" },
         { name: ct("gptKnowledgeBase"), slug: "gpt-your-organisation-knowledge-base" },
       ],
     },
@@ -162,6 +163,8 @@ const ProgramsSection = () => {
         { name: ct("mccFoundation"), slug: "mcc-plus-cyber-defence-foundation" },
         { name: ct("mccSecurityOps"), slug: "mcc-plus-security-operations" },
         { name: ct("mccThreatHunting"), slug: "mcc-plus-threat-hunting-blue-team" },
+        { name: getOctoberCourse("comptia-a-plus-certification-preparation")?.title || "CompTIA A+ Certification Preparation", slug: "comptia-a-plus-certification-preparation" },
+        { name: getOctoberCourse("comptia-cysa-plus-certification-preparation")?.title || "CompTIA CySA+ Certification Preparation", slug: "comptia-cysa-plus-certification-preparation" },
       ],
     },
     {
