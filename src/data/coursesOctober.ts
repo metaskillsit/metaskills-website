@@ -7,9 +7,9 @@ export const octoberCourses: Course[] = [
 {
   "slug": "build-operational-tools-ai-coding-agents",
   "title": "Build Operational Tools with AI Coding Agents",
-  "category": "Agentic AI Workshop Series",
-  "categoryLabel": "Agentic AI Engineering",
-  "categoryAnchor": "agentic-engineering",
+  "category": "Vibe Coding",
+  "categoryLabel": "Vibe Coding & AI-Assisted Development",
+  "categoryAnchor": "vibe-coding",
   "tagline": "From Idea to Impact — Build Real Tools for Real Operational Needs.",
   "heroImage": image0,
   "heroAlt": "Participants building an operational dashboard with AI coding assistance during a hands-on workshop.",
@@ -116,7 +116,6 @@ export const octoberCourses: Course[] = [
   ],
   "practicalNote": "Participants build one guided prototype and leave with a reusable build brief, test checklist and next-step plan. The prototype is not a production-ready application.",
   "certificationStatus": "Hands-on workshop",
-  "certificationNote": [],
   "whatsappMessage": "Hi, I would like to enquire about Build Operational Tools with AI Coding Agents, upcoming run 6 November 2026.",
   "seoTitle": "Build Operational Tools with AI Coding Agents | Metaskills",
   "seoDescription": "Build practical operational tools in a beginner-friendly, hands-on AI coding workshop. 6 November 2026. One day. S$600 per participant.",
@@ -158,7 +157,7 @@ export const octoberCourses: Course[] = [
   "courseDesign": "Five training days of instructor-led learning and practical exercises.",
   "schedule": [
     {
-      "day": "Day 1 — 22 January 2027: Hardware, Mobile Devices and Peripherals",
+      "day": "Day 1: Hardware, Mobile Devices and Peripherals",
       "items": [
         "Motherboards, processors, memory, storage and power supplies",
         "Component compatibility, installation and safe handling",
@@ -169,7 +168,7 @@ export const octoberCourses: Course[] = [
       ]
     },
     {
-      "day": "Day 2 — 26 January 2027: Networking, Virtualisation and Cloud",
+      "day": "Day 2: Networking, Virtualisation and Cloud",
       "items": [
         "TCP/IP fundamentals, addressing and common ports",
         "Network devices, cabling and connectivity",
@@ -180,7 +179,7 @@ export const octoberCourses: Course[] = [
       ]
     },
     {
-      "day": "Day 3 — 27 January 2027: Operating Systems and Maintenance",
+      "day": "Day 3: Operating Systems and Maintenance",
       "items": [
         "Operating-system editions, installation and upgrade planning",
         "Windows settings, administration tools and command-line utilities",
@@ -191,7 +190,7 @@ export const octoberCourses: Course[] = [
       ]
     },
     {
-      "day": "Day 4 — 28 January 2027: Security and Operational Procedures",
+      "day": "Day 4: Security and Operational Procedures",
       "items": [
         "Authentication, access controls and endpoint protection",
         "Malware symptoms and remediation",
@@ -203,7 +202,7 @@ export const octoberCourses: Course[] = [
       ]
     },
     {
-      "day": "Day 5 — 29 January 2027: Troubleshooting and Exam Preparation",
+      "day": "Day 5: Troubleshooting and Exam Preparation",
       "items": [
         "Hardware, network, software and security troubleshooting scenarios",
         "Prioritisation, escalation and user communication",
@@ -287,7 +286,7 @@ export const octoberCourses: Course[] = [
   "courseDesign": "Five training days of instructor-led learning and practical exercises.",
   "schedule": [
     {
-      "day": "Day 1 — 8 February 2027: Security Operations and Threat Intelligence",
+      "day": "Day 1: Security Operations and Threat Intelligence",
       "items": [
         "Security architecture, visibility and monitoring workflows",
         "Endpoint, network and application logs and telemetry",
@@ -300,7 +299,7 @@ export const octoberCourses: Course[] = [
       ]
     },
     {
-      "day": "Day 2 — 9 February 2027: Vulnerability Management",
+      "day": "Day 2: Vulnerability Management",
       "items": [
         "Asset identification and assessment scope",
         "Vulnerability scanning and assessment methods",
@@ -313,7 +312,7 @@ export const octoberCourses: Course[] = [
       ]
     },
     {
-      "day": "Day 3 — 10 February 2027: Threat Detection and Investigation",
+      "day": "Day 3: Threat Detection and Investigation",
       "items": [
         "Network traffic and endpoint-event analysis",
         "Suspicious authentication, phishing and malware indicators",
@@ -325,7 +324,7 @@ export const octoberCourses: Course[] = [
       ]
     },
     {
-      "day": "Day 4 — 11 February 2027: Incident Response and Recovery",
+      "day": "Day 4: Incident Response and Recovery",
       "items": [
         "Incident preparation, detection and classification",
         "Containment, eradication and recovery",
@@ -336,7 +335,7 @@ export const octoberCourses: Course[] = [
       ]
     },
     {
-      "day": "Day 5 — 12 February 2027: Reporting and Exam Preparation",
+      "day": "Day 5: Reporting and Exam Preparation",
       "items": [
         "Technical findings and executive summaries",
         "Risk, remediation recommendations and operational metrics",

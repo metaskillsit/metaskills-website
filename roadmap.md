@@ -17,3 +17,5 @@
 - [x] Move Sriven Naidu into Strategic Advisory & Executive Education on the faculty page and homepage team carousel.
 - [x] Update AI Coding Agents and add both CompTIA preparation pages with supplied content, fees, dates and generated heroes.
 - [x] Synchronise all three courses across homepage, programmes and desktop/mobile menus; verify preview and document examination alignment.
+
+- [x] Simplify the three menu entries, remove CompTIA dates from day headings, remove AI examination section and move AI course to Vibe Coding.
