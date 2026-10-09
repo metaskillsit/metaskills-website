@@ -19,3 +19,5 @@
 - [x] Synchronise all three courses across homepage, programmes and desktop/mobile menus; verify preview and document examination alignment.
 
 - [x] Simplify the three menu entries, remove CompTIA dates from day headings, remove AI examination section and move AI course to Vibe Coding.
+
+- [x] Remove remaining three-course summaries from homepage and Programmes lists; match CompTIA activity capitalisation to existing courses and verify all entry points.

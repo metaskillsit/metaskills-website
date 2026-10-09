@@ -1,4 +1,4 @@
-import { getOctoberCourse, getOctoberCourseSummary } from "@/data/coursesOctober";
+import { getOctoberCourse } from "@/data/coursesOctober";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -272,7 +272,7 @@ const ProgramsSection = () => {
                       ) : isAbs ? (
                         <a href={course.slug} target="_blank" rel="noopener noreferrer" className={cls}>
                           <span className="font-mono text-[10px] tracking-widest text-accent">{numLabel}</span>
-                          <span>{course.name}{getOctoberCourseSummary(course.slug) && <span className="block text-xs text-muted-foreground leading-relaxed mt-1">{getOctoberCourseSummary(course.slug)}</span>}</span>
+                          <span>{course.name}</span>
                           <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
                         </a>
                       ) : (
@@ -281,7 +281,7 @@ const ProgramsSection = () => {
                           className={cls}
                         >
                           <span className="font-mono text-[10px] tracking-widest text-accent">{numLabel}</span>
-                          <span>{course.name}{getOctoberCourseSummary(course.slug) && <span className="block text-xs text-muted-foreground leading-relaxed mt-1">{getOctoberCourseSummary(course.slug)}</span>}</span>
+                          <span>{course.name}</span>
                           <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
                         </Link>
                       )}

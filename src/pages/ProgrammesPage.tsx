@@ -1,4 +1,4 @@
-import { getOctoberCourse, getOctoberCourseSummary } from "@/data/coursesOctober";
+import { getOctoberCourse } from "@/data/coursesOctober";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
@@ -296,7 +296,6 @@ const ProgrammesPage = () => {
               </span>
             )}
           </span>
-          {getOctoberCourseSummary(course.slug) && <span className="block text-xs mt-1 text-muted-foreground leading-relaxed">{getOctoberCourseSummary(course.slug)}</span>}
           {course.partnerNote && (
             <span className="block text-xs mt-0.5 text-muted-foreground">
               {course.partnerNote}
