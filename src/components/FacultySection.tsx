@@ -55,12 +55,6 @@ const allFaculty = [
     image: "/images/faculty/faculty-adriantoh.jpg",
   },
   {
-    name: "Matthew Wu",
-    role: "Senior Strategist, Cross-Border Capital | Real Estate & Agricultural Investment | AI Digital Strategy",
-    expertise: "Cross-Border Capital Raising & Deal Structuring | Asia-Pacific Investor Relations | AI for Market Research & Investment Intelligence | ACLP",
-    image: "/images/faculty/faculty-matthewwu.jpg",
-  },
-  {
     name: "Dr Jonathan Khoo",
     role: "AI Senior Consultant and Trainer",
     expertise: "Machine Learning | Deep Learning | App Development",
