@@ -49,6 +49,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-matthewwu.jpg",
   },
   {
+    name: "Gary Ye",
+    role: "Country Head, China, Metaskills Institute",
+    expertise: "Business Development | China Market Expansion | Strategic Partnerships",
+    image: "/images/faculty/faculty-gary.jpg",
+  },
+  {
     name: "Dr. Jack Hong",
     role: "Lead Senior Consultant",
     expertise: "AI Transformation | Data Science | Digital Strategy | ACLP",
@@ -107,12 +113,6 @@ const allFaculty = [
     role: "Data Analytics Engineering Consultant and Trainer",
     expertise: "Analytics Engineering | Strategic Analytics Architecture | Product & Marketing Analytics | Fraud Detection | Analytics Capability Development",
     image: "/images/faculty/faculty-cliff.jpg",
-  },
-  {
-    name: "Gary Ye",
-    role: "Country Head, China, Metaskills Institute",
-    expertise: "Business Development | China Market Expansion | Strategic Partnerships",
-    image: "/images/faculty/faculty-gary.jpg",
   },
   {
     name: "Alena Lavrinenko",
