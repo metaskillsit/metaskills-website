@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import MirrorHall from "@/components/MirrorHall";
 
 const facultySlug = (name: string) =>
   name.toLowerCase().replace(/[.'"]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -157,9 +158,25 @@ const VISIBLE_OFFSETS = [-3, -2, -1, 0, 1, 2, 3];
 
 const wrapIndex = (index: number) => (index + allFaculty.length) % allFaculty.length;
 
+const mirrorCards = allFaculty.map((f) => ({
+  name: f.name,
+  image: withFacultyImageVersion(f.image),
+  objectTop: f.image.includes("brendan") || f.image.includes("adriantoh"),
+}));
+
+const hasWebGL = () => {
+  try {
+    const c = document.createElement("canvas");
+    return !!(c.getContext("webgl2") || c.getContext("webgl"));
+  } catch {
+    return false;
+  }
+};
+
 const FacultySection = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [webgl] = useState(() => typeof document !== "undefined" && hasWebGL());
   const [currentIdx, setCurrentIdx] = useState(0);
   const [dragX, setDragX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -283,6 +300,23 @@ const FacultySection = () => {
           </div>
         </motion.div>
 
+        {webgl ? (
+          <div
+            className="relative h-[380px] sm:h-[460px] md:h-[540px] select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Core faculty"
+            tabIndex={0}
+            onKeyDown={handleKeyDown}
+          >
+            <MirrorHall
+              cards={mirrorCards}
+              index={currentIdx}
+              onIndexChange={setCurrentIdx}
+              onOpen={(i) => navigate(`/faculty#${facultySlug(allFaculty[i].name)}`)}
+            />
+          </div>
+        ) : (
         <div
           className="relative h-[330px] sm:h-[400px] md:h-[440px] cursor-grab touch-pan-y select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 active:cursor-grabbing"
           role="region"
@@ -344,6 +378,7 @@ const FacultySection = () => {
             );
           })}
         </div>
+        )}
 
         <div className="mx-auto mt-2 max-w-2xl text-center" aria-live="polite" aria-atomic="true">
           <p className="text-[10px] font-medium uppercase text-accent">{activeFaculty.role}</p>
