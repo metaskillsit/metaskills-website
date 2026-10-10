@@ -1091,6 +1091,11 @@
     }
   },
   "facultyProfiles": {
+    "royLing": {
+      "role": "高级顾问，企业治理与可持续金融",
+      "expertise": "董事会与审计领导力 | ESG与可持续金融 | 资本市场、REITs与并购 | 高管教育",
+      "bio": "Roy Ling是一位董事会领导者、资深投资银行家及高管教育者，其职业经历涵盖亚洲上市公司治理、资本市场与可持续金融。他拥有超过18年的治理经验，曾在超过25家上市公司及非营利机构的董事会任职，担任独立董事长、首席独立董事、审计委员会主席，以及提名与薪酬委员会主席。他的专长将董事会战略与财务诚信、高管问责及长期价值创造相结合。\n\n他目前的董事会职务包括：在VinFast Auto Ltd.担任独立董事，并主持审计及薪酬委员会；在Memiontec Holdings Ltd.担任独立董事及提名与薪酬委员会主席；在United Food Holdings Ltd.担任非独立董事；以及在CASE Endowment Fund参与非营利治理与投资监督，支持消费者权益倡导及保护。\n\n他此前曾在Advanced Systems Automation Ltd.担任独立董事长及提名委员会主席；在Ley Choon Group Holdings Ltd.担任首席独立董事及审计委员会主席；在Debao Property Development Ltd.担任首席独立董事及提名委员会主席；并在Combine Will International Holdings Ltd.、Vingroup JSC及Amplefield Ltd.担任独立董事。他也曾担任CFA Society of Japan董事及公众认知委员会主席。这些职务涉及领导层交接、首席执行官继任、财务报告监督、董事会更新、资本纪律及跨境治理。\n\nRoy的投资银行经历包括在JPMorgan、Lehman Brothers、Goldman Sachs及Salomon Smith Barney担任高级职务，为亚洲的房地产投资信托基金（REITs）、首次公开募股、并购及资本市场交易提供咨询。他也是FollowTrade的首席执行官及创始人，该平台专注于为董事会及高级管理层提供ESG治理方面的高管教育与咨询。\n\n作为高管教育者，Roy将董事会及交易实务经验融入面向董事及高级领导者的课程。在SUSS Business School，他担任行业顾问，并在EMBA课程中教授Finance for Leaders，以及在Executive Management Program授课。他也在Singapore Business Federation教授面向高级管理层及董事会成员的可持续发展课程，在NUS Business School教授EMBA Sustainability，在SMU教授MBA Sustainability及Professional Certificate in Real Estate Investing，并在SKEMA Business School教授EMBA Corporate Finance。他还担任Singapore Institute of Directors–SMU Executive Diploma in Directorship的课程引导师。\n\nRoy拥有INSEAD全球高级工商管理硕士学位，成绩为Distinction，并获颁Scholarship for National Diversity；同时拥有National University of Singapore工商管理荣誉学士学位。他进一步完成了University of Cambridge的Sustainability in Board Leadership Certificate，以及United Nations Institute for Training and Research的International Digital Economy Governance & Leadership课程。\n\n他的专业认可包括担任PropertyGuru Asia Property Awards新加坡评审主席，以及INSEAD International Director Network的董事导师。他于2016年获Singapore Business Review评为Real Estate Executive of the Year，并于2008年入选Institutional Investor Magazine的20 Rising Stars of Real Estate。"
+    },
     "drKeJinghao": {
       "role": "首席执行官，Metaskills Institute | 首席企业官，Integrum Global",
       "expertise": "商业咨询 | 数据分析 | 数据科学 | 智能体AI | 人工智能 | 机器学习 | ACLP",
