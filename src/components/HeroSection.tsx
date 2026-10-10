@@ -4,7 +4,6 @@ import { useState } from "react";
 import heroAsean from "@/assets/hero-bg-asean.webp";
 import heroSecondary from "@/assets/hero-bg.webp";
 import { useTranslation } from "react-i18next";
-import HeroGalaxyShimmer from "@/components/HeroGalaxyShimmer";
 
 const PHOTO1_DURATION = 6000;
 const PHOTO2_DURATION = 6000;
@@ -107,7 +106,6 @@ const HeroSection = () => {
           )}
         </AnimatePresence>
 
-        <HeroGalaxyShimmer />
 
         {/* Invisible swipe/drag layer — manual navigation without visible controls */}
         <div
