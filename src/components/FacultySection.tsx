@@ -31,16 +31,16 @@ const allFaculty = [
     image: "/images/faculty/faculty-andrew.png",
   },
   {
-    name: "Roy Ling",
-    role: "Senior Advisor, Corporate Governance & Sustainable Finance",
-    expertise: "Board Governance | ESG & Sustainable Finance | Capital Markets | Executive Leadership",
-    image: "/images/faculty/faculty-roy.webp",
-  },
-  {
     name: "Sriven Naidu",
     role: "Lead Senior Consultant, AI Leadership",
     expertise: "AI Governance | Leadership | Human-Centric AI",
     image: "/images/faculty/faculty-sriven.png",
+  },
+  {
+    name: "Roy Ling",
+    role: "Senior Advisor, Corporate Governance & Sustainable Finance",
+    expertise: "Board Governance | ESG & Sustainable Finance | Capital Markets | Executive Leadership",
+    image: "/images/faculty/faculty-roy.webp",
   },
   {
     name: "Matthew Wu",
