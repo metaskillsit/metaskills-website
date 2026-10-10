@@ -216,6 +216,13 @@ const MirrorHall = ({ cards, index, onIndexChange, onOpen }: Props) => {
     const ndc = new THREE.Vector2();
     const waterPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0.36);
     const clock = new THREE.Clock();
+    const hitTmp = new THREE.Vector3();
+    const pointer = new THREE.Vector2();
+    const smooth = new THREE.Vector2();
+    const lastEmit = new THREE.Vector2(1e6, 1e6);
+    let hasPointer = false;
+    let lastEmitT = -1;
+    let slot = 0;
 
     const setNdc = (e: PointerEvent) => {
       const r = renderer.domElement.getBoundingClientRect();
@@ -304,6 +311,18 @@ const MirrorHall = ({ cards, index, onIndexChange, onOpen }: Props) => {
       if (!dragging) theta += (target - theta) * (1 - Math.exp(-(reduced ? 20 : 5) * dt));
       ring.rotation.y = theta;
       wu.uTime.value = reduced ? 0 : clock.elapsedTime;
+      if (hasPointer && !reduced) {
+        smooth.lerp(pointer, 1 - Math.exp(-14 * dt));
+        const t = clock.elapsedTime;
+        const moved = smooth.distanceTo(lastEmit);
+        if (moved > 0.18 && t - lastEmitT > 0.09) {
+          const amp = Math.min(1, 0.35 + moved * 0.8);
+          (wu.uRipples.value as THREE.Vector4[])[slot].set(smooth.x, smooth.y, t, amp);
+          slot = (slot + 1) % 8;
+          lastEmit.copy(smooth);
+          lastEmitT = t;
+        }
+      }
       const front = ((Math.round(theta / step) % N) + N) % N;
       meshes.forEach((m, i) => {
         let d = Math.abs(i - front);
