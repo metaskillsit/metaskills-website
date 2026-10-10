@@ -43,6 +43,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-sriven.png",
   },
   {
+    name: "Matthew Wu",
+    role: "Senior Strategist, Cross-Border Capital | Real Estate & Agricultural Investment | AI Digital Strategy",
+    expertise: "Cross-Border Capital Raising & Deal Structuring | Asia-Pacific Investor Relations | AI for Market Research & Investment Intelligence | ACLP",
+    image: "/images/faculty/faculty-matthewwu.jpg",
+  },
+  {
     name: "Dr. Jack Hong",
     role: "Lead Senior Consultant",
     expertise: "AI Transformation | Data Science | Digital Strategy | ACLP",
