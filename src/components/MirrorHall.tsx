@@ -18,9 +18,9 @@ type Props = {
 };
 
 // Scene palette (WebGL can't read Tailwind tokens; mirrors --primary gold & navy)
-const NAVY = 0x050a16;
+const NAVY = 0xfaf8f5;
 const GOLD = new THREE.Color("#ffb81c");
-const WATER_TINT = new THREE.Color("#1a2a4a");
+const WATER_TINT = new THREE.Color("#efe8dc");
 
 const CARD_W = 1.2;
 const CARD_H = 1.6;
@@ -117,9 +117,10 @@ const waterShader = {
       vec3 refl = texture2DProj(tDiffuse, uv).rgb;
       float dist = length(p);
       float fres = clamp(0.35 + 0.65 * (1.0 - exp(-dist * 0.12)), 0.0, 1.0);
-      vec3 col = refl * uTint * 1.7 * fres;
-      col += uGold * max(ring, 0.0) * 0.08;
-      col += vec3(0.008, 0.014, 0.03);
+      float fade = smoothstep(0.0, 1.0, clamp(dist * 0.18, 0.0, 1.0));
+      vec3 col = mix(refl * 0.55 + uTint * 0.45, uTint, 0.35 + fade * 0.4);
+      col += uGold * max(ring, 0.0) * 0.18;
+      col -= vec3(0.05, 0.045, 0.03) * abs(w) * 0.4;
       gl_FragColor = vec4(col, 1.0);
       #include <tonemapping_fragment>
       #include <colorspace_fragment>
