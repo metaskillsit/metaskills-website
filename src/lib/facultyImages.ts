@@ -1,4 +1,4 @@
-const FACULTY_IMAGE_VERSION = "2026-09-26-cliff";
+const FACULTY_IMAGE_VERSION = "2026-10-10-jinghao-hd";
 
 export const withFacultyImageVersion = (src: string) => {
   const separator = src.includes("?") ? "&" : "?";

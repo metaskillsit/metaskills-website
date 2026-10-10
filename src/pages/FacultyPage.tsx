@@ -27,7 +27,7 @@ const executiveTeam: FacultyMember[] = [
     i18nKey: "drKeJinghao",
     role: "CEO, Metaskills Institute | Chief Corporate Officer, Integrum Global",
     expertise: "Business Consulting | Data Analytics | Data Science | Agentic AI | AI | Machine Learning | ACLP",
-    image: "/images/faculty/faculty-jinghao.png",
+    image: "/images/faculty/faculty-jinghao.webp",
     bio: `Dr. Jinghao Ke is C.E.O of Metaskills Institute and Chief Corporate Officer at Integrum Global. He oversees corporate AI and analytics training, focusing on AI in finance, machine learning, data strategy, and digital transformation programs for enterprise and government clients.
 Dr. Ke holds a PhD in Finance and has designed and delivered training for functions including corporate finance, marketing analytics, and operations optimization. He is recognized for creating curricula that integrate business relevance with technical rigor, bridging strategic priorities with hands-on application.
 Dr. Jinghao Ke is a Singapore-based AI and finance leader whose career bridges rigorous academic scholarship with high-impact commercial implementation. Holding a PhD in Corporate Finance from Singapore Management University, where his dissertation explored the intricate dynamics of CEO incentives, corporate governance, and firm value, Jinghao has built a distinctive reputation for translating complex analytical frameworks into pragmatic business solutions that deliver measurable results.
