@@ -85,7 +85,7 @@ const waterShader = {
     tDiffuse: { value: null },
     textureMatrix: { value: null },
     uTime: { value: 0 },
-    uRipple: { value: new THREE.Vector3(0, 0, -10) },
+    uRipples: { value: Array.from({ length: 8 }, () => new THREE.Vector4(0, 0, -100, 0)) },
     uTint: { value: WATER_TINT },
     uGold: { value: GOLD },
   },
@@ -101,19 +101,27 @@ const waterShader = {
   fragmentShader: /* glsl */ `
     uniform sampler2D tDiffuse;
     uniform float uTime;
-    uniform vec3 uRipple;
+    uniform vec4 uRipples[8];
     uniform vec3 uTint;
     uniform vec3 uGold;
     varying vec4 vUv;
     varying vec3 vWorld;
     void main() {
       vec2 p = vWorld.xz;
-      float w = sin(p.x * 3.1 + uTime * 0.9) * 0.5 + sin(p.y * 4.3 - uTime * 0.7) * 0.5;
-      float age = uTime - uRipple.z;
-      float d = distance(p, uRipple.xy);
-      float ring = sin(d * 18.0 - age * 7.0) * exp(-d * 1.4) * exp(-age * 1.3) * step(0.0, age);
+      float w = sin(p.x * 2.3 + uTime * 0.6) * 0.3 + sin(p.y * 3.1 - uTime * 0.45) * 0.3
+              + sin((p.x + p.y) * 4.7 + uTime * 0.8) * 0.15;
+      float ring = 0.0;
+      for (int i = 0; i < 8; i++) {
+        vec4 r = uRipples[i];
+        float age = uTime - r.z;
+        if (age < 0.0 || age > 4.0) continue;
+        float d = distance(p, r.xy);
+        float front = age * 1.1;
+        float env = exp(-pow((d - front) * 2.2, 2.0));
+        ring += sin((d - front) * 14.0) * env * exp(-age * 0.9) * r.w;
+      }
       vec4 uv = vUv;
-      uv.xy += (w * 0.012 + ring * 0.05) * uv.w;
+      uv.xy += (w * 0.01 + ring * 0.025) * uv.w;
       vec3 refl = texture2DProj(tDiffuse, uv).rgb;
       float dist = length(p);
       float fres = clamp(0.35 + 0.65 * (1.0 - exp(-dist * 0.12)), 0.0, 1.0);
@@ -208,6 +216,13 @@ const MirrorHall = ({ cards, index, onIndexChange, onOpen }: Props) => {
     const ndc = new THREE.Vector2();
     const waterPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0.36);
     const clock = new THREE.Clock();
+    const hitTmp = new THREE.Vector3();
+    const pointer = new THREE.Vector2();
+    const smooth = new THREE.Vector2();
+    const lastEmit = new THREE.Vector2(1e6, 1e6);
+    let hasPointer = false;
+    let lastEmitT = -1;
+    let slot = 0;
 
     const setNdc = (e: PointerEvent) => {
       const r = renderer.domElement.getBoundingClientRect();
@@ -225,10 +240,9 @@ const MirrorHall = ({ cards, index, onIndexChange, onOpen }: Props) => {
     };
     const move = (e: PointerEvent) => {
       setNdc(e);
-      const hit = new THREE.Vector3();
-      if (ray.ray.intersectPlane(waterPlane, hit) && !reduced) {
-        const t = clock.getElapsedTime();
-        if (t - wu.uRipple.value.z > 0.6) wu.uRipple.value.set(hit.x, hit.z, t);
+      if (!reduced && ray.ray.intersectPlane(waterPlane, hitTmp)) {
+        pointer.set(hitTmp.x, hitTmp.z);
+        hasPointer = true;
       }
       if (!dragging) return;
       const now = performance.now();
@@ -297,6 +311,18 @@ const MirrorHall = ({ cards, index, onIndexChange, onOpen }: Props) => {
       if (!dragging) theta += (target - theta) * (1 - Math.exp(-(reduced ? 20 : 5) * dt));
       ring.rotation.y = theta;
       wu.uTime.value = reduced ? 0 : clock.elapsedTime;
+      if (hasPointer && !reduced) {
+        smooth.lerp(pointer, 1 - Math.exp(-14 * dt));
+        const t = clock.elapsedTime;
+        const moved = smooth.distanceTo(lastEmit);
+        if (moved > 0.18 && t - lastEmitT > 0.09) {
+          const amp = Math.min(1, 0.35 + moved * 0.8);
+          (wu.uRipples.value as THREE.Vector4[])[slot].set(smooth.x, smooth.y, t, amp);
+          slot = (slot + 1) % 8;
+          lastEmit.copy(smooth);
+          lastEmitT = t;
+        }
+      }
       const front = ((Math.round(theta / step) % N) + N) % N;
       meshes.forEach((m, i) => {
         let d = Math.abs(i - front);
