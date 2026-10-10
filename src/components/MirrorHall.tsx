@@ -142,7 +142,7 @@ const MirrorHall = ({ cards, index, onIndexChange, onOpen }: Props) => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setClearColor(NAVY, 1);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     mount.appendChild(renderer.domElement);
@@ -187,8 +187,8 @@ const MirrorHall = ({ cards, index, onIndexChange, onOpen }: Props) => {
 
     const water = new Reflector(new THREE.PlaneGeometry(R * 4, R * 4), {
       shader: waterShader,
-      textureWidth: 1024,
-      textureHeight: 1024,
+      textureWidth: 512,
+      textureHeight: 512,
       clipBias: 0.003,
     });
     water.rotation.x = -Math.PI / 2;
