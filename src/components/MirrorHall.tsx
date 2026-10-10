@@ -117,7 +117,7 @@ const waterShader = {
       vec3 refl = texture2DProj(tDiffuse, uv).rgb;
       float dist = length(p);
       float fres = clamp(0.35 + 0.65 * (1.0 - exp(-dist * 0.12)), 0.0, 1.0);
-      vec3 col = refl * uTint * 2.6 * fres;
+      vec3 col = refl * uTint * 1.7 * fres;
       col += uGold * max(ring, 0.0) * 0.08;
       col += vec3(0.008, 0.014, 0.03);
       gl_FragColor = vec4(col, 1.0);
@@ -148,10 +148,10 @@ const MirrorHall = ({ cards, index, onIndexChange, onOpen }: Props) => {
     renderer.domElement.style.touchAction = "pan-y";
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(NAVY, R * 0.9, R * 2.2);
+    scene.fog = new THREE.Fog(NAVY, R * 1.0, R * 2.4);
     const camera = new THREE.PerspectiveCamera(55, 1, 0.05, 100);
-    camera.position.set(0, 0.35, 0.6);
-    camera.lookAt(0, 0.45, -R);
+    camera.position.set(0, 0.45, -R * 0.42);
+    camera.lookAt(0, 0.25, -R);
 
     const ring = new THREE.Group();
     scene.add(ring);
