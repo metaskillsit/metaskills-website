@@ -77,12 +77,21 @@ const advisoryTeam: FacultyMember[] = [
     name: "Roy Ling",
     i18nKey: "royLing",
     role: "Senior Advisor, Corporate Governance & Sustainable Finance",
-    expertise: "Board Governance | ESG & Sustainable Finance | Capital Markets | Executive Leadership",
+    expertise: "Board & Audit Leadership | ESG & Sustainable Finance | Capital Markets, REITs & M&A | Executive Education",
     image: "/images/faculty/faculty-roy.webp",
-    bio: `Roy Ling is an experienced board director, senior investment banker, and executive educator with over 25 years of experience in capital markets, corporate governance, and sustainable finance. He has served on more than 25 listed-company and non-profit boards, holding senior appointments including Independent Board Chair, Lead Independent Director, and Audit Committee Chair.
-A former senior investment banker at JPMorgan, Goldman Sachs, Lehman Brothers, and Salomon Smith Barney, Roy brings extensive experience in corporate finance, investment strategy, and boardroom leadership.
-He is also an executive educator associated with NUS, SMU, SUSS, SBF, and SKEMA Business School, specialising in sustainability governance, ESG finance, and executive leadership.
-At Metaskills Institute, his proposed focus is on strengthening board-level governance, sustainable finance, and executive education to support responsible business transformation.`,
+    bio: `Roy Ling is a board leader, senior investment banker and executive educator whose career spans listed-company governance, capital markets and sustainable finance across Asia. With more than 18 years of governance experience across over 25 listed-company and non-profit boards, he has held appointments as Independent Board Chair, Lead Independent Director, Audit Committee Chair, and Nomination and Remuneration Committee Chair. His expertise connects boardroom strategy with financial integrity, executive accountability and long-term value creation.
+
+His current board appointments include VinFast Auto Ltd., where he serves as Independent Board Director and chairs the Audit and Compensation Committees; Memiontec Holdings Ltd., where he is an Independent Board Director and chairs the Nomination and Remuneration Committee; United Food Holdings Ltd., where he serves as a Non-Independent Board Director; and the CASE Endowment Fund, where he contributes to non-profit governance and investment oversight supporting consumer advocacy and protection.
+
+His previous board appointments include Advanced Systems Automation Ltd., as Independent Board Chair and Nomination Committee Chair; Ley Choon Group Holdings Ltd., as Lead Independent Board Director and Audit Committee Chair; Debao Property Development Ltd., as Lead Independent Board Director and Nomination Committee Chair; and independent directorships at Combine Will International Holdings Ltd., Vingroup JSC and Amplefield Ltd. He also served as Board Director and Public Awareness Committee Chair at the CFA Society of Japan. These roles encompass leadership transition, CEO succession, financial reporting oversight, board renewal, capital discipline and cross-border governance.
+
+Roy’s investment banking career includes senior roles at JPMorgan, Lehman Brothers, Goldman Sachs and Salomon Smith Barney, advising on REITs, initial public offerings, mergers and acquisitions, and capital-market transactions across Asia. He is also CEO and Founder of FollowTrade, an executive education and advisory platform focused on ESG governance for boards and senior management.
+
+As an executive educator, Roy brings practical board and transaction experience into programmes for directors and senior leaders. At SUSS Business School, he serves as Industry Advisor and teaches Finance for Leaders in the EMBA and the Executive Management Program. His teaching appointments also include sustainability for senior management and board directors at the Singapore Business Federation, EMBA Sustainability at NUS Business School, MBA Sustainability and the Professional Certificate in Real Estate Investing at SMU, and EMBA Corporate Finance at SKEMA Business School. He also facilitates the Singapore Institute of Directors–SMU Executive Diploma in Directorship.
+
+Roy holds a Global Executive MBA with Distinction from INSEAD, where he received the Scholarship for National Diversity, and a BBA with Honours from the National University of Singapore. His further executive education includes the Sustainability in Board Leadership Certificate from the University of Cambridge and International Digital Economy Governance & Leadership at the United Nations Institute for Training and Research.
+
+His professional recognition includes serving as Singapore Chair of the PropertyGuru Asia Property Awards and as a Director Mentor with the INSEAD International Director Network. He was named Real Estate Executive of the Year by Singapore Business Review in 2016 and among the 20 Rising Stars of Real Estate by Institutional Investor Magazine in 2008.`,
   },
   {
     name: "Sriven Naidu | Sound Mind, Sound Body",
