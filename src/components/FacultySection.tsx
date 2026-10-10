@@ -17,7 +17,7 @@ const allFaculty = [
     name: "Dr. Jinghao Ke",
     role: "CEO, Metaskills Institute | Chief Corporate Officer, Integrum Global",
     expertise: "Business Consulting | Data Analytics | Data Science | Agentic AI | Machine Learning | ACLP",
-    image: "/images/faculty/faculty-jinghao.png",
+    image: "/images/faculty/faculty-jinghao.webp",
   },
   {
     name: "Phan Phi Long",
