@@ -57,6 +57,7 @@ const AppContent = () => {
         <Route path="/course/professional-certificate-modern-web-application-development" element={<AbleProgramPage slug="professional-certificate-modern-web-application-development" />} />
         <Route path="/course/certificate-foundational-digital-technology" element={<AbleProgramPage slug="certificate-foundational-digital-technology" />} />
         <Route path="/course/:slug" element={<CoursePage />} />
+        <Route path="/courses/:slug" element={<CoursePage />} />
         <Route path="/course-category/:slug" element={<CourseCategoryPage />} />
         <Route path="/programmes/finops" element={<CourseCategoryPage />} />
         <Route path="/agentic-ai-governance" element={<AgenticAIPage />} />

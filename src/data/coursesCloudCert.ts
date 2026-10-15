@@ -1,4 +1,5 @@
 import type { Course } from "./courses";
+import { kubernetesCoachingCourses } from "./coursesKubernetes";
 
 // ── Cloud and DevOps — certification-preparation programmes ──
 // All three programmes follow one house standard: same fee model, same section
@@ -99,116 +100,7 @@ export const cloudCertCourses: Course[] = [
     nextRunDate: "",
     fees: { selfSponsored: "S$2,950 per participant", corporateSmall: "S$2,950 per participant", corporateLarge: "S$2,950 per participant" },
   },
-  {
-    slug: "certified-kubernetes-administrator-preparation",
-    title: "Certified Kubernetes Administrator Preparation",
-    category: "Cloud and DevOps",
-    tagline:
-      "Develop the practical command-line, cluster-management and troubleshooting skills required to administer Kubernetes environments.",
-    heroImage: "/src/assets/courses/cka-1.jpg",
-    duration: "4 Days",
-    deliveryMode: CLOUD_CERT_SHARED.deliveryMode,
-    fundingStatus: CLOUD_CERT_SHARED.fundingStatus,
-    certificationStatus: CLOUD_CERT_SHARED.certificationStatus,
-    level: CLOUD_CERT_SHARED.level,
-    courseDateStatus: CLOUD_CERT_SHARED.courseDateStatus,
-    whatsappMessage:
-      "Hello Metaskills Institute, I would like to check the next available date for the Certified Kubernetes Administrator Preparation programme.",
-    seoTitle: "Certified Kubernetes Administrator Training Singapore | Metaskills",
-    seoDescription:
-      "Build practical Kubernetes cluster-administration and troubleshooting capabilities through a four-day instructor-led CKA preparation programme in Singapore.",
-    whyAttend:
-      "Kubernetes administrators are judged on what they can do in a live cluster, not on what they can describe.\n\nThis four-day intensive programme builds the hands-on skills required to configure, manage, maintain and troubleshoot Kubernetes environments, working primarily through the command line and aligned with the performance-based CKA examination.",
-    objectives: [
-      "Explain Kubernetes architecture and component responsibilities.",
-      "Install, configure and access a Kubernetes cluster.",
-      "Deploy, scale and maintain Kubernetes workloads.",
-      "Configure networking, services and persistent storage.",
-      "Apply access controls and perform cluster maintenance.",
-      "Troubleshoot cluster issues under time constraints.",
-    ],
-    whoShouldAttend: [
-      "Kubernetes and systems administrators",
-      "DevOps and platform engineers",
-      "Cloud and infrastructure engineers",
-      "Site reliability engineers",
-      "Application engineers supporting containerised environments",
-      "Professionals preparing for the CKA examination",
-    ],
-    prerequisites: [
-      "Linux command-line experience",
-      "Basic container and networking knowledge",
-      "Familiarity with YAML",
-      "Exposure to Docker, containerd or Kubernetes",
-    ],
-    prerequisitesNote:
-      "Participants with limited Linux command-line experience are encouraged to complete Linux administration training before attending.",
-    courseDesign:
-      "A four-day instructor-led programme combining technical instruction, command-line laboratories, troubleshooting exercises and timed practical tasks aligned with the performance-based Certified Kubernetes Administrator examination.",
-    schedule: [
-      {
-        day: "Day 1 — Architecture and Cluster Configuration",
-        items: [
-          "Container orchestration and Kubernetes architecture",
-          "Control-plane and worker-node components",
-          "Cluster installation and node joining",
-          "Cluster access and node administration",
-          "Cluster setup laboratory",
-        ],
-      },
-      {
-        day: "Day 2 — Workloads, Configuration and Scheduling",
-        items: [
-          "Pods, deployments and workload controllers",
-          "Rolling updates and rollbacks",
-          "Application configuration and secrets",
-          "Scheduling, resource limits and placement controls",
-          "Workload administration laboratory",
-        ],
-      },
-      {
-        day: "Day 3 — Networking, Storage and Security",
-        items: [
-          "Kubernetes networking model and services",
-          "Service discovery, ingress and network policies",
-          "Volumes and persistent storage",
-          "Authentication, RBAC and security contexts",
-          "Networking, storage and security laboratory",
-        ],
-      },
-      {
-        day: "Day 4 — Maintenance, Troubleshooting and Simulation",
-        items: [
-          "Cluster upgrades and node maintenance",
-          "Backup and restoration concepts",
-          "Troubleshooting workloads, services and nodes",
-          "Command-line efficiency and documentation navigation",
-          "Mock practical assessment and trainer feedback",
-        ],
-      },
-    ],
-    practicalActivities: [
-      "Building and accessing a Kubernetes cluster",
-      "Deploying, scaling and configuring applications",
-      "Exposing services and applying network policies",
-      "Configuring persistent storage and access controls",
-      "Diagnosing and repairing broken cluster resources",
-    ],
-    feeNotes: sharedFeeNotes(
-      "CKA",
-      "Any external cloud, laboratory or software cost will be communicated before the programme."
-    ),
-    certificationNote: certificationNote("Certified Kubernetes Administrator", "the certifying body"),
-    optionalAddOns: [
-      { label: "Certified Kubernetes Administrator Exam Voucher", price: "S$720 per participant" },
-    ],
-    nextRunDate: "WhatsApp Us to Check",
-    fees: {
-      selfSponsored: CLOUD_CERT_SHARED.fee,
-      corporateSmall: CLOUD_CERT_SHARED.corporateFee,
-      corporateLarge: CLOUD_CERT_SHARED.corporateFee,
-    },
-  },
+  ...kubernetesCoachingCourses,
   {
     slug: "red-hat-enterprise-linux-rhcsa-preparation",
     title: "Red Hat Enterprise Linux Administration – RHCSA Preparation",
