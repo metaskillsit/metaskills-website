@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Align newly added Cloud and DevOps course presentation with the standard course design and verify desktop/mobile examination sections, activities, fees and enquiry links.
+- [x] Align newly added Cloud and DevOps course presentation with the standard course design and verify desktop/mobile examination sections, activities, fees and enquiry links.
 
 - [x] Update CKA and add CKAD, Kubestronaut and OpenShift courses from the supplied brief, with matching generated heroes and catalogue/menu links.
 - [x] Verify all four course fees, scopes, prerequisites, enquiry links and layouts in preview.
