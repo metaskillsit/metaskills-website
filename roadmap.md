@@ -33,3 +33,4 @@
 - [x] Remove remaining three-course summaries from homepage and Programmes lists; match CompTIA activity capitalisation to existing courses and verify all entry points.
 
 - [x] Remove CFA from Roy Ling and move Strategic Advisory & Executive Education below the AI & Data Science Team.
+- [x] Group Cloud and DevOps courses into AWS architecture, Kubernetes/container platforms and Linux/Red Hat learning subgroups on the programmes page, with translated headings and verified desktop/mobile rendering.
