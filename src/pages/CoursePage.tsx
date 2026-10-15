@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Clock, Users, Award, ArrowLeft, Presentation, Wallet } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { getPastRuns } from "@/data/pastRuns";
@@ -18,11 +19,13 @@ import CourseGallery from "@/components/course/CourseGallery";
 import CoursePastRuns from "@/components/course/CoursePastRuns";
 import CourseSchedule from "@/components/course/CourseSchedule";
 import CoursePastClients from "@/components/course/CoursePastClients";
+import CoachingCourseContent from "@/components/course/CoachingCourseContent";
 
 
 const CoursePageContent = ({ slug }: { slug: string }) => {
   const { t } = useTranslation();
   const course = getCourseBySlug(slug);
+  if (course && course.slug !== slug) return <Navigate to={`/course/${course.slug}`} replace />;
 
   const relatedCourses = courses
     .filter((c) => c.category === course?.category && c.slug !== slug)
@@ -77,7 +80,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
   }, [course.seoTitle, course.seoDescription]);
 
   useEffect(() => {
-    if (!course.reviewPreview) return;
+    if (!course.reviewPreview || course.feeBreakdown) return;
     const canonicalUrl = `https://metaskills.sg/course/${course.slug}`;
     const modified: { element: Element; attribute: string; previous: string | null; created: boolean }[] = [];
     const setTag = (selector: string, tag: string, identifying: Record<string, string>, attribute: string, value: string) => {
@@ -103,6 +106,16 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
 
   return (
     <div className="min-h-screen bg-background">
+      {course.feeBreakdown && <Helmet>
+        <title>{course.seoTitle}</title>
+        <meta name="description" content={course.seoDescription} />
+        <link rel="canonical" href={`https://metaskills.sg/course/${course.slug}`} />
+        <meta property="og:title" content={course.seoTitle} />
+        <meta property="og:description" content={course.seoDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://metaskills.sg/course/${course.slug}`} />
+        <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "Course", name: course.title, description: course.whyAttend, provider: { "@type": "Organization", name: "Metaskills Institute" }, offers: { "@type": "Offer", price: course.feeBreakdown.total, priceCurrency: "SGD", url: `https://metaskills.sg/course/${course.slug}` } })}</script>
+      </Helmet>}
       <Navbar />
       <main className="pt-20 md:pt-[90px]">
         <CourseHero course={course} categoryImages={categoryImages} isNew={isNew} />
@@ -137,14 +150,14 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
               <Clock className="w-4 h-4 text-primary" />
               <span>{ct.duration || t("coursePage.defaultDuration")}</span>
             </div>
-            {!course.reviewPreview && <div className="flex items-center gap-2">
+            {!course.reviewPreview && !course.feeBreakdown && <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-primary" />
               <span>{t("coursePage.keyInfoFaculty")}</span>
             </div>}
-            <div className="flex items-center gap-2">
+            {!course.feeBreakdown && <div className="flex items-center gap-2">
               <Award className="w-4 h-4 text-primary" />
               <span>{course.certificationStatus || t("coursePage.keyInfoCertification")}</span>
-            </div>
+            </div>}
             {course.deliveryMode && (
               <div className="flex items-center gap-2">
                 <Presentation className="w-4 h-4 text-primary" />
@@ -153,6 +166,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
             )}
             {course.level && <span>{course.level}</span>}
             {course.reviewPreview && <span>{course.fees.selfSponsored}</span>}
+            {course.feeBreakdown && <span>{course.fees.selfSponsored} (before GST)</span>}
             {course.fundingStatus && (
               <div className="flex items-center gap-2">
                 <Wallet className="w-4 h-4 text-primary" />
@@ -162,12 +176,14 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
           </div>
         </section>
 
+        {course.feeBreakdown && <section className="border-b border-border"><div className="max-w-[1140px] mx-auto px-6 py-8 space-y-3 text-muted-foreground leading-relaxed"><h2 className="font-heading text-xl font-bold text-foreground">Delivery Mode</h2><p>{course.learningFormat?.mode}</p>{course.learningFormat?.body.map((paragraph: string) => <p key={paragraph}>{paragraph}</p>)}<p>Daily schedule: {course.dailySchedule}</p></div></section>}
+
         <CourseSchedule schedule={courseSchedule} courseTitle={ct.title} showUpcoming={course.reviewPreview} enquiryMessage={course.whatsappMessage} />
 
         <div className="max-w-[1140px] mx-auto px-6 py-14">
           <div className="grid lg:grid-cols-3 gap-14">
             <div className="lg:col-span-2 space-y-14">
-              <CourseContent course={course} />
+              {course.feeBreakdown ? <CoachingCourseContent course={course} /> : <CourseContent course={course} />}
               {course.slug !== "certified-data-analyst" && !course.generatedHero && (
                 <CourseGallery images={categoryImages} title={ct.title} />
               )}

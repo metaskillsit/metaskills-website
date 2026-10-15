@@ -90,6 +90,9 @@ export interface Course {
   learningEnvironment?: string;
   practicalNote?: string | null;
   cancellationProcessingFee?: number;
+  dailySchedule?: string;
+  gstNote?: string;
+  feeBreakdown?: { training: number; exam: number; total: number; examLabel: string };
 }
 
 export const courses: Course[] = [
@@ -965,6 +968,6 @@ for (const updatedCourse of octoberCourses) {
 }
 
 export const getCourseBySlug = (slug: string) =>
-  courses.find((c) => c.slug === slug);
+  courses.find((c) => c.slug === (slug === "aws-solutions-architect-associate-preparation" ? "aws-certified-solutions-architect-associate" : slug));
 
 
