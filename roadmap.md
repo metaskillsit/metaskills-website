@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Update CKA and add CKAD, Kubestronaut and OpenShift courses from the supplied brief, with matching generated heroes and catalogue/menu links.
-- [ ] Verify all four course fees, scopes, prerequisites, enquiry links and layouts in preview.
+- [x] Update CKA and add CKAD, Kubestronaut and OpenShift courses from the supplied brief, with matching generated heroes and catalogue/menu links.
+- [x] Verify all four course fees, scopes, prerequisites, enquiry links and layouts in preview.
 
 - [x] Update AWS Associate course, listings and SEO with supplied coaching syllabus and fee breakdown; preserve old inbound link.
 - [x] Update existing RHCSA training/exam fees and verify both pages and enquiry links.
