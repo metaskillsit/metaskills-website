@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import CoursePriceBreakdown from "./CoursePriceBreakdown";
 
 export const CourseEnquiryButton = ({ course }: { course: Course }) => (
-  <Button asChild size="lg" className="whitespace-normal h-auto min-h-11 py-3">
+  <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 whitespace-normal h-auto min-h-11 py-3">
     <a href={`https://wa.me/6589866146?text=${encodeURIComponent(course.whatsappMessage || course.title)}`} target="_blank" rel="noopener noreferrer">Enquire / Register</a>
   </Button>
 );

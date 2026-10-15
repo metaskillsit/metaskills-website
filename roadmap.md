@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Update AWS Associate course, listings and SEO with supplied coaching syllabus and fee breakdown; preserve old inbound link.
-- [ ] Update existing RHCSA training/exam fees and verify both pages and enquiry links.
+- [x] Update AWS Associate course, listings and SEO with supplied coaching syllabus and fee breakdown; preserve old inbound link.
+- [x] Update existing RHCSA training/exam fees and verify both pages and enquiry links.
 
 - [x] Plan an Auralis-inspired rebuild of the About MetaSkills Institute page, preserving all existing wording.
 - [x] Implement and verify the approved Auralis-inspired About page across desktop and mobile.
