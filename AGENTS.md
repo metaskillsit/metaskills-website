@@ -8,3 +8,4 @@
 - Course examination information shares one presentation component that formats supplied labels without rewriting disclaimer or examination bodies; this keeps coaching and standard courses visually consistent.
 - Kubernetes coaching listings and hero imagery resolve from shared typed course records; routePath preserves owner-requested URLs and legacy aliases prevent duplicate courses.
 - Use HelmetProvider for route-owned metadata; static HTML retains sitewide fallback tags without a canonical to avoid duplicate canonicals.
+- Programme track subgroup membership and order resolve from one typed grouping module consumed by the programmes page, with labels read from locale keys; this keeps subgroup contents identical across languages and prevents a course appearing in two groups.
