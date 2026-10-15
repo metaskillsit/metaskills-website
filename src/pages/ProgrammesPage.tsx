@@ -1,4 +1,5 @@
 import { getOctoberCourse } from "@/data/coursesOctober";
+import { kubernetesCoachingCourses } from "@/data/coursesKubernetes";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
@@ -204,7 +205,7 @@ const ProgrammesPage = () => {
         { name: "Red Hat Enterprise Linux Administration – RHCSA Preparation", slug: "red-hat-enterprise-linux-rhcsa-preparation" },
         { name: "Red Hat Learning Subscription – Standard & Premium", slug: "/programmes/cloud-devops-ai/red-hat-learning-subscription", isExternal: true },
         { name: "AWS Certified Solutions Architect – Associate", slug: "aws-certified-solutions-architect-associate" },
-        { name: "Certified Kubernetes Administrator Preparation", slug: "certified-kubernetes-administrator-preparation" },
+        ...kubernetesCoachingCourses.map(course => ({ name: course.title, slug: course.routePath || `/courses/${course.slug}`, isExternal: true })),
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],
       categoryHref: "/course-category/cloud-devops-ai-stack",

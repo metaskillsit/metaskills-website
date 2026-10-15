@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Clock, Users, Award, ArrowLeft, Presentation, Wallet } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -25,7 +25,8 @@ import CoachingCourseContent from "@/components/course/CoachingCourseContent";
 const CoursePageContent = ({ slug }: { slug: string }) => {
   const { t } = useTranslation();
   const course = getCourseBySlug(slug);
-  if (course && course.slug !== slug) return <Navigate to={`/course/${course.slug}`} replace />;
+  const location = useLocation();
+  if (course && (course.slug !== slug || (course.routePath && location.pathname !== course.routePath))) return <Navigate to={course.routePath || `/course/${course.slug}`} replace />;
 
   const relatedCourses = courses
     .filter((c) => c.category === course?.category && c.slug !== slug)
@@ -65,6 +66,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
   const ct = useCourseTranslation(course);
   const isNew = pastRuns.length === 0;
   const categorySlug = categorySlugs[course.category];
+  const canonicalUrl = `https://metaskills.sg${course.routePath || `/course/${course.slug}`}`;
 
   useEffect(() => {
     if (!course.seoTitle && !course.seoDescription) return;
@@ -109,12 +111,12 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
       {course.feeBreakdown && <Helmet>
         <title>{course.seoTitle}</title>
         <meta name="description" content={course.seoDescription} />
-        <link rel="canonical" href={`https://metaskills.sg/course/${course.slug}`} />
+        <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content={course.seoTitle} />
         <meta property="og:description" content={course.seoDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://metaskills.sg/course/${course.slug}`} />
-        <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "Course", name: course.title, description: course.whyAttend, provider: { "@type": "Organization", name: "Metaskills Institute" }, offers: { "@type": "Offer", price: course.feeBreakdown.total, priceCurrency: "SGD", url: `https://metaskills.sg/course/${course.slug}` } })}</script>
+        <meta property="og:url" content={canonicalUrl} />
+        <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "Course", name: course.title, description: course.whyAttend, provider: { "@type": "Organization", name: "Metaskills Institute" }, offers: { "@type": "Offer", price: course.feeBreakdown.total, priceCurrency: "SGD", url: canonicalUrl } })}</script>
       </Helmet>}
       <Navbar />
       <main className="pt-20 md:pt-[90px]">

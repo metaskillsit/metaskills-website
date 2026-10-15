@@ -35,6 +35,7 @@ export const getCategoryImages = (category: string): string[] =>
 
 export interface Course {
   slug: string;
+  routePath?: string;
   title: string;
   category: string;
   tagline: string;
@@ -967,7 +968,12 @@ for (const updatedCourse of octoberCourses) {
   else courses.push(updatedCourse);
 }
 
+const courseAliases: Record<string, string> = {
+  "aws-solutions-architect-associate-preparation": "aws-certified-solutions-architect-associate",
+  "certified-kubernetes-administrator-preparation": "cka-certified-kubernetes-administrator",
+};
+
 export const getCourseBySlug = (slug: string) =>
-  courses.find((c) => c.slug === (slug === "aws-solutions-architect-associate-preparation" ? "aws-certified-solutions-architect-associate" : slug));
+  courses.find((c) => c.slug === (courseAliases[slug] || slug));
 
 

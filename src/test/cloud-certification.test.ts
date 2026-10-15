@@ -30,9 +30,9 @@ describe("Cloud certification course requirements", () => {
   });
   it("sets RHCSA training to SGD 3000", () => expect(redHat?.fees.selfSponsored).toBe("S$3,000 per participant"));
   it("sets RHCSA exam to SGD 820", () => expect(redHat?.optionalAddOns?.[0].price).toBe("S$820 per participant"));
-  it("does not change the CKA training or exam rates", () => {
+  it("updates CKA training and exam rates from the new brief", () => {
     const cka = getCourseBySlug("certified-kubernetes-administrator-preparation");
-    expect(cka?.fees.selfSponsored).toBe("S$3,000 per participant");
-    expect(cka?.optionalAddOns?.[0].price).toBe("S$720 per participant");
+    expect(cka?.feeBreakdown?.training).toBe(3600);
+    expect(cka?.feeBreakdown?.exam).toBe(730);
   });
 });

@@ -5,4 +5,5 @@
 - Upcoming schedules are opt-in per course and cancellation processing fees are course-specific overrides; unrelated courses retain their approved schedule visibility and policies.
 - Generated course hero images are illustrative assets, never evidence of actual classes or completed runs.
 - Cloud coaching courses use typed fee breakdowns and an opt-in content layout; totals drive the price card and Course Offer schema while unrelated tax and cancellation defaults remain unchanged.
+- Kubernetes coaching listings and hero imagery resolve from shared typed course records; routePath preserves owner-requested URLs and legacy aliases prevent duplicate courses.
 - Use HelmetProvider for route-owned metadata; static HTML retains sitewide fallback tags without a canonical to avoid duplicate canonicals.

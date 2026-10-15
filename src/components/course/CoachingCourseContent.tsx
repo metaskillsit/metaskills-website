@@ -14,16 +14,16 @@ const Heading = ({ children }: { children: React.ReactNode }) => <h2 className="
 
 const CoachingCourseContent = ({ course }: { course: Course }) => (
   <>
-    <section><Heading>Course Synopsis</Heading><p className="text-muted-foreground leading-relaxed whitespace-pre-line">{course.whyAttend}</p></section>
+    <section><Heading>Course Synopsis</Heading><p className="text-muted-foreground leading-relaxed whitespace-pre-line">{course.whyAttend}</p>{course.importantInfo?.map(note => <p key={note} className="mt-5 border-l-4 border-accent bg-muted p-4 font-semibold text-foreground leading-relaxed">{note}</p>)}</section>
     <section><Heading>Who Should Attend</Heading><List items={course.whoShouldAttend || []} /></section>
-    <section><Heading>Prerequisites</Heading><List items={course.prerequisites || []} /></section>
+    <section><Heading>Prerequisites</Heading><List items={course.prerequisites || []} />{course.prerequisitesNote && <p className="mt-5 border-l-4 border-accent bg-muted p-4 font-semibold text-foreground leading-relaxed">{course.prerequisitesNote}</p>}</section>
     <section><Heading>Learning Outcomes</Heading><p className="text-muted-foreground mb-4">By the end of the course, participants will be able to:</p><List items={course.objectives} /></section>
     <section id="structure"><Heading>Course Structure</Heading><p className="text-muted-foreground leading-relaxed mb-5">{course.courseDesign}</p>
       <Accordion type="multiple" defaultValue={["day-0"]}>{course.schedule.map((day, index) => <AccordionItem key={day.day} value={`day-${index}`}><AccordionTrigger className="text-left text-foreground leading-relaxed">{day.day}</AccordionTrigger><AccordionContent><List items={day.items} /></AccordionContent></AccordionItem>)}</Accordion>
     </section>
     <section><Heading>Activities</Heading><List items={course.practicalActivities || []} /></section>
     <CoursePriceBreakdown course={course} />
-    <section><Heading>Certification &amp; Examination Information</Heading><div className="space-y-4 text-muted-foreground leading-relaxed">{course.certificationNote?.map(item => <p key={item}>{item}</p>)}</div></section>
+    <section><Heading>Certification &amp; Examination Information</Heading><div className="space-y-4 text-muted-foreground leading-relaxed">{course.certificationNote?.map(item => <p className="whitespace-pre-line" key={item}>{item}</p>)}</div></section>
     <section><CourseEnquiryButton course={course} /></section>
   </>
 );
