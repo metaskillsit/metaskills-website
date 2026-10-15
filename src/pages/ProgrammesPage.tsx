@@ -203,7 +203,7 @@ const ProgrammesPage = () => {
       courses: [
         { name: "Red Hat Enterprise Linux Administration – RHCSA Preparation", slug: "red-hat-enterprise-linux-rhcsa-preparation" },
         { name: "Red Hat Learning Subscription – Standard & Premium", slug: "/programmes/cloud-devops-ai/red-hat-learning-subscription", isExternal: true },
-        { name: "AWS Solutions Architect – Associate Preparation", slug: "aws-solutions-architect-associate-preparation" },
+        { name: "AWS Certified Solutions Architect – Associate", slug: "aws-certified-solutions-architect-associate" },
         { name: "Certified Kubernetes Administrator Preparation", slug: "certified-kubernetes-administrator-preparation" },
         { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
       ],

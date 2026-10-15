@@ -191,7 +191,7 @@ const Navbar = () => {
           subItems: [
             { label: "Red Hat Enterprise Linux Administration – RHCSA Preparation", href: "/course/red-hat-enterprise-linux-rhcsa-preparation" },
             { label: "Red Hat Learning Subscription – Standard & Premium", href: "/programmes/cloud-devops-ai/red-hat-learning-subscription" },
-            { label: "AWS Solutions Architect – Associate Preparation", href: "/course/aws-solutions-architect-associate-preparation" },
+            { label: "AWS Certified Solutions Architect – Associate", href: "/course/aws-certified-solutions-architect-associate" },
             { label: "Certified Kubernetes Administrator Preparation", href: "/course/certified-kubernetes-administrator-preparation" },
             { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
           ],
