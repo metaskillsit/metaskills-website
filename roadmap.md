@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Rename Kubestronaut Programme, make exams optional with individual pricing, update totals and verify the page and listings.
+- [x] Rename Kubestronaut Programme, make exams optional with individual pricing, update totals and verify the page and listings.
 
 - [x] Align newly added Cloud and DevOps course presentation with the standard course design and verify desktop/mobile examination sections, activities, fees and enquiry links.
 
