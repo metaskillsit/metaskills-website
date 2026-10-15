@@ -5,6 +5,7 @@ import { Course } from "@/data/courses";
 import { useCourseTranslation } from "@/hooks/useCourseTranslation";
 import imdaLogo from "@/assets/logo-imda.png";
 import tinkercademyLogo from "@/assets/logo-tinkercademy.png";
+import CourseExaminationInfo from "./CourseExaminationInfo";
 
 interface CourseContentProps {
   course: Course;
@@ -293,14 +294,7 @@ const CourseContent = ({ course }: CourseContentProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
-            Certification and Examination Information
-          </h2>
-          <div className="space-y-3 p-5 bg-muted rounded-sm border border-border">
-            {course.certificationNote.map((item, i) => (
-              <p key={i} className="text-sm text-foreground/80 leading-relaxed">{item}</p>
-            ))}
-          </div>
+          <CourseExaminationInfo notes={course.certificationNote} />
         </motion.div>
       )}
     </>
