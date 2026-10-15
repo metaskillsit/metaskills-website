@@ -116,7 +116,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
         <meta property="og:description" content={course.seoDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
-        <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "Course", name: course.title, description: course.whyAttend, provider: { "@type": "Organization", name: "Metaskills Institute" }, offers: { "@type": "Offer", price: course.feeBreakdown.total, priceCurrency: "SGD", url: canonicalUrl } })}</script>
+        <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "Course", name: course.title, description: course.whyAttend, provider: { "@type": "Organization", name: "Metaskills Institute" }, offers: course.feeBreakdown.optionalExams ? [{ "@type": "Offer", name: "Course only", price: course.feeBreakdown.training, priceCurrency: "SGD", url: canonicalUrl }, { "@type": "Offer", name: "Course with all five optional exams", price: course.feeBreakdown.total, priceCurrency: "SGD", url: canonicalUrl }] : { "@type": "Offer", price: course.feeBreakdown.total, priceCurrency: "SGD", url: canonicalUrl } })}</script>
       </Helmet>}
       <Navbar />
       <main className="pt-20 md:pt-[90px]">

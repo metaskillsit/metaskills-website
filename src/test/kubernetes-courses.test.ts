@@ -5,7 +5,7 @@ import { kubernetesCoachingCourses } from "@/data/coursesKubernetes";
 const expected = [
   ["cka-certified-kubernetes-administrator", 3600, 730, 4330, 4],
   ["ckad-certified-kubernetes-application-developer", 2200, 730, 2930, 3],
-  ["kubestronaut-programme", 4400, 2680, 7080, 4],
+  ["kubestronaut-programme", 4400, 3010, 7410, 4],
   ["red-hat-certified-openshift-administrator", 5500, 820, 6320, 4],
 ] as const;
 
@@ -37,8 +37,20 @@ describe("Kubernetes coaching requirements", () => {
   });
   it("limits Kubestronaut training to CKS and highlights CKA before CKS", () => {
     const course = getCourseBySlug("kubestronaut-programme");
-    expect(course?.importantInfo?.[0]).toContain("KCNA, KCSA, CKA and CKAD are exam vouchers only, with no classroom training included");
-    expect(course?.prerequisitesNote).toContain("You must pass the CKA exam (using the CKA voucher included in your bundle) before you sit the CKS exam");
+    expect(course?.importantInfo?.[0]).toContain("KCNA, KCSA, CKA and CKAD have no classroom training included");
+    expect(course?.prerequisitesNote).toContain("You must pass the CKA exam before you sit the CKS exam");
+  });
+  for (const [label, price] of [["KCNA", 410], ["KCSA", 410], ["CKA", 730], ["CKAD", 730], ["CKS", 730]] as const) {
+    it(`offers optional ${label} individually at SGD ${price}`, () => {
+      expect(getCourseBySlug("kubestronaut-programme")?.feeBreakdown?.optionalExams?.find(exam => exam.label === label)?.price).toBe(price);
+    });
+  }
+  it("prices course-only separately from all five optional exams", () => {
+    const course = getCourseBySlug("kubestronaut-programme");
+    expect(course?.feeBreakdown?.training).toBe(4400);
+    expect(course?.feeBreakdown?.optionalExams?.reduce((sum, exam) => sum + exam.price, 0)).toBe(3010);
+    expect(course?.fees.selfSponsored).toBe("S$4,400 per participant (course only)");
+    expect(course?.feeBreakdown?.total).toBe(7410);
   });
   it("provides Singapore personalised coaching and the supplied daily hours", () => {
     for (const course of kubernetesCoachingCourses) {

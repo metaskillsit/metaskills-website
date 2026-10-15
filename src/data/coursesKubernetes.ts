@@ -202,11 +202,11 @@ export const kubernetesCoachingCourses: Course[] = [
 {
   "slug": "kubestronaut-programme",
   "routePath": "/courses/kubestronaut-programme",
-  "title": "Kubestronaut Programme – CKS Training + 5-Exam Bundle",
+  "title": "Kubestronaut Programme",
   "category": "Cloud and DevOps",
-  "tagline": "Four intensive days of CKS security training, plus all five official exam vouchers for your Kubestronaut journey.",
+  "tagline": "Four intensive days of CKS security training, with optional, individually purchased exams for your Kubestronaut journey.",
   "heroImage": hero2,
-  "heroAlt": "Illustrative Kubestronaut Programme – CKS Training + 5-Exam Bundle engineering scene",
+  "heroAlt": "Illustrative Kubestronaut Programme engineering scene",
   "generatedHero": true,
   "duration": "4 days (32 hours) of CKS-focused classroom training",
   "dailySchedule": "9:00am – 5:00pm (8 hours per day, including breaks)",
@@ -219,7 +219,7 @@ export const kubernetesCoachingCourses: Course[] = [
       "Both formats cover the same syllabus, labs and exam preparation."
     ]
   },
-  "whyAttend": "The Kubestronaut Programme combines Metaskills Institute's 4-day, instructor-led Certified Kubernetes Security Specialist (CKS) course in Singapore with the official Linux Foundation Kubestronaut Bundle: exam vouchers for all five Cloud Native Computing Foundation (CNCF) Kubernetes certifications – Kubernetes and Cloud Native Associate (KCNA), Kubernetes and Cloud Native Security Associate (KCSA), Certified Kubernetes Administrator (CKA), Certified Kubernetes Application Developer (CKAD) and Certified Kubernetes Security Specialist (CKS). Candidates who hold all five certifications at the same time are recognised by CNCF as Kubestronauts. Training is delivered as personalised 1-to-1 coaching or small-group coaching, with small class sizes so each participant gets individual attention.\n\nThe classroom training focuses entirely on CKS, the most advanced exam in the pathway. Every day is mapped to the official CKS exam domains and weightings published by The Linux Foundation, with extensive hands-on labs on live clusters covering cluster setup and hardening, system hardening, microservice vulnerabilities, supply-chain security and runtime security, followed by a timed mock exam and a guided Killer.sh simulator debrief. The KCNA, KCSA, CKA and CKAD exams are included as vouchers for you to prepare for and sit independently. Because CKS requires a passed CKA, you must pass the CKA exam before attempting CKS.",
+  "whyAttend": "The Kubestronaut Programme offers Metaskills Institute's 4-day, instructor-led Certified Kubernetes Security Specialist (CKS) course in Singapore, with optional exam vouchers available individually for the five Cloud Native Computing Foundation (CNCF) Kubernetes certifications – Kubernetes and Cloud Native Associate (KCNA), Kubernetes and Cloud Native Security Associate (KCSA), Certified Kubernetes Administrator (CKA), Certified Kubernetes Application Developer (CKAD) and Certified Kubernetes Security Specialist (CKS). Candidates who hold all five certifications at the same time are recognised by CNCF as Kubestronauts. Training is delivered as personalised 1-to-1 coaching or small-group coaching, with small class sizes so each participant gets individual attention.\n\nThe classroom training focuses entirely on CKS, the most advanced exam in the pathway. Every day is mapped to the official CKS exam domains and weightings published by The Linux Foundation, with extensive hands-on labs on live clusters covering cluster setup and hardening, system hardening, microservice vulnerabilities, supply-chain security and runtime security, followed by a timed mock exam and a guided Killer.sh simulator debrief. All five exams are optional and may be purchased individually. The course-only fee is S$4,400; KCNA and KCSA are S$410 each, and CKA, CKAD and CKS are S$730 each. The total with all five optional exams is S$7,410 before GST. Candidates prepare for and sit KCNA, KCSA, CKA and CKAD independently. Because CKS requires a passed CKA, you must pass the CKA exam before attempting CKS.",
   "whoShouldAttend": [
     "Platform, DevOps, SRE and cloud engineers who already administer Kubernetes and need to secure it in production",
     "Security engineers responsible for cluster, workload and supply-chain security",
@@ -228,7 +228,7 @@ export const kubernetesCoachingCourses: Course[] = [
   ],
   "prerequisites": [
     "Official: The Linux Foundation requires CKS candidates to have taken and passed the Certified Kubernetes Administrator (CKA) exam before attempting the CKS exam. KCNA, KCSA, CKA and CKAD have no formal prerequisites.",
-    "What this means for you: this course does not teach CKA. You must pass the CKA exam (using the CKA voucher included in your bundle) before you sit the CKS exam. We recommend sitting CKA before or soon after the course.",
+    "What this means for you: this course does not teach CKA. You must pass the CKA exam before you sit the CKS exam. We recommend sitting CKA before or soon after the course.",
     "Recommended by Metaskills: solid hands-on Kubernetes administration experience at CKA level – kubectl, kubeadm, RBAC, networking and troubleshooting – plus confidence with the Linux command line and a text editor such as vi/vim."
   ],
   "objectives": [
@@ -282,34 +282,41 @@ export const kubernetesCoachingCourses: Course[] = [
   ],
   "certificationNote": [
     "Participants who meet the attendance and course-completion requirements will receive a Metaskills Institute Certificate of Completion. The KCNA, KCSA, CKA, CKAD and CKS certifications are separately awarded by The Linux Foundation / Cloud Native Computing Foundation (CNCF) after a candidate registers for and passes the applicable official examination. Metaskills Institute provides certification-aligned preparation and does not guarantee an examination pass. The Kubestronaut title is conferred by CNCF to individuals who hold all five certifications at the same time.",
-    "TRAINING SCOPE\nClassroom training covers CKS only. The KCNA, KCSA, CKA and CKAD exam vouchers are included for candidates to prepare for and sit independently.",
+    "TRAINING SCOPE\nClassroom training covers CKS only. All exam vouchers are optional and may be purchased individually. Candidates prepare for and sit KCNA, KCSA, CKA and CKAD independently; no classroom training for these four certifications is included.",
     "EXAM FORMAT & DURATION\n• KCNA: online, remotely proctored, multiple-choice; 90 minutes\n• KCSA: online, remotely proctored, multiple-choice; 90 minutes\n• CKA: online, remotely proctored, performance-based (hands-on command-line tasks on live Kubernetes); 2 hours\n• CKAD: online, remotely proctored, performance-based; 2 hours\n• CKS: online, remotely proctored, performance-based; 2 hours\nTotal exam time across all five: 9 hours",
     "PASS MARK\nKCNA 75% • KCSA 75% • CKA 66% • CKAD 66% • CKS 67%",
     "VALIDITY\nEach certification is valid for 2 years. The Kubestronaut title lasts until the end of the year in which the first of the five certifications expires; renewing the expired certification by year end retains the title. CNCF notifies new Kubestronauts by email within a business week of all five being passed.",
     "PREREQUISITE RULE\nCKS candidates must have taken and passed the CKA exam before attempting CKS.",
     "RETAKE POLICY\nEach of the five exam vouchers includes one free retake (two attempts in total), to be used within the 12-month eligibility period.",
-    "WHAT THE EXAM FEE INCLUDES (S$2,680)\nThe official Linux Foundation Kubestronaut Bundle: five exam vouchers (KCNA, KCSA, CKA, CKAD, CKS), each with 12 months to schedule and sit the exam and one free retake. The CKA, CKAD and CKS vouchers each include two Killer.sh exam-simulator sessions.",
+    "OPTIONAL EXAM VOUCHERS\nExam vouchers may be purchased individually: KCNA S$410; KCSA S$410; CKA S$730; CKAD S$730; CKS S$730. All five optional exam vouchers total S$3,010 before GST. Each voucher includes 12 months to schedule and sit the exam and one free retake. The CKA, CKAD and CKS vouchers each include two Killer.sh exam-simulator sessions.",
     "KUBESTRONAUT BENEFITS (from CNCF)\nKubestronaut jacket, Credly badge, private Kubestronaut Slack channel and mailing list, five 50%-off certification coupons a year, and 20% off three CNCF events a year."
   ],
   "feeBreakdown": {
     "training": 4400,
-    "exam": 2680,
-    "total": 7080,
-    "examLabel": "Exam fee (Kubestronaut Bundle – all 5 official exam vouchers: KCNA, KCSA, CKA, CKAD, CKS)"
+    "exam": 3010,
+    "total": 7410,
+    "examLabel": "All five optional exam vouchers",
+    "optionalExams": [
+      { "label": "KCNA", "price": 410 },
+      { "label": "KCSA", "price": 410 },
+      { "label": "CKA", "price": 730 },
+      { "label": "CKAD", "price": 730 },
+      { "label": "CKS", "price": 730 }
+    ]
   },
   "gstNote": "Prices are in Singapore dollars (SGD) per participant and exclude GST, which is charged in addition at the prevailing rate (currently 9%).",
   "fees": {
-    "selfSponsored": "S$7,080 per participant",
-    "corporateSmall": "S$7,080 per participant",
-    "corporateLarge": "S$7,080 per participant"
+    "selfSponsored": "S$4,400 per participant (course only)",
+    "corporateSmall": "S$4,400 per participant (course only)",
+    "corporateLarge": "S$4,400 per participant (course only)"
   },
   "nextRunDate": "",
-  "seoTitle": "Kubestronaut Programme – CKS Training + 5-Exam Bundle | Metaskills Institute Singapore",
-  "seoDescription": "Four days of CKS security coaching in Singapore plus five official exam vouchers for the Kubestronaut pathway. CKA must be passed before CKS.",
-  "whatsappMessage": "Hello Metaskills Institute, I would like to enquire / register for Kubestronaut Programme – CKS Training + 5-Exam Bundle (1-to-1 or small-group coaching).",
-  "prerequisitesNote": "What this means for you: this course does not teach CKA. You must pass the CKA exam (using the CKA voucher included in your bundle) before you sit the CKS exam. We recommend sitting CKA before or soon after the course.",
+  "seoTitle": "Kubestronaut Programme | Metaskills Institute Singapore",
+  "seoDescription": "Four days of CKS security coaching in Singapore with optional, individually purchased exam vouchers. CKA must be passed before CKS.",
+  "whatsappMessage": "Hello Metaskills Institute, I would like to enquire / register for Kubestronaut Programme (1-to-1 or small-group coaching).",
+  "prerequisitesNote": "What this means for you: this course does not teach CKA. You must pass the CKA exam before you sit the CKS exam. We recommend sitting CKA before or soon after the course.",
   "importantInfo": [
-    "Training covers the Certified Kubernetes Security Specialist (CKS) only. KCNA, KCSA, CKA and CKAD are exam vouchers only, with no classroom training included."
+    "Training covers the Certified Kubernetes Security Specialist (CKS) only. KCNA, KCSA, CKA and CKAD have no classroom training included. All five exam vouchers are optional and may be purchased individually."
   ]
 },
 {

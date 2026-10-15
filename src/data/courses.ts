@@ -93,7 +93,7 @@ export interface Course {
   cancellationProcessingFee?: number;
   dailySchedule?: string;
   gstNote?: string;
-  feeBreakdown?: { training: number; exam: number; total: number; examLabel: string };
+  feeBreakdown?: { training: number; exam: number; total: number; examLabel: string; optionalExams?: { label: string; price: number }[] };
 }
 
 export const courses: Course[] = [
