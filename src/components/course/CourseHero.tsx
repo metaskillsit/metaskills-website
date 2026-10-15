@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
 import { useCourseTranslation } from "@/hooks/useCourseTranslation";
 import ImageSlideshow from "@/components/ImageSlideshow";
+import { CourseEnquiryButton } from "./CoachingCourseContent";
 
 interface CourseHeroProps {
   course: Course;
@@ -65,6 +66,7 @@ const CourseHero = ({ course, categoryImages, isNew }: CourseHeroProps) => {
           <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-3xl">
             {ct.tagline}
           </p>
+          {course.feeBreakdown && <div className="mt-4"><CourseEnquiryButton course={course} /></div>}
           {ct.jointlyOfferedBy && (
             <motion.p
               initial={{ opacity: 0 }}

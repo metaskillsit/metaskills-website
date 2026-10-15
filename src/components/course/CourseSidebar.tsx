@@ -1,6 +1,7 @@
 import { DollarSign, MessageCircle, Mail, CalendarDays, PlusCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Course } from "@/data/courses";
+import CoursePriceBreakdown from "./CoursePriceBreakdown";
 
 interface CourseSidebarProps {
   course: Course;
@@ -77,7 +78,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
           </div>
         )}
 
-        <div className="bg-muted rounded-sm p-6 border border-border">
+        {course.feeBreakdown ? <CoursePriceBreakdown course={course} /> : <div className="bg-muted rounded-sm p-6 border border-border">
           <div className="flex items-center gap-2 mb-4">
             <DollarSign className="w-4 h-4 text-primary" />
             <h3 className="font-heading text-sm font-bold text-foreground uppercase tracking-wider">
@@ -100,7 +101,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
                   {course.feeNotes?.map((note, i) => (
                     <p key={i}>{i + 1}) {note}</p>
                   ))}
-                  <p className="pt-2">{t("coursePage.gstNote")}</p>
+                  <p className="pt-2">{course.gstNote || t("coursePage.gstNote")}</p>
                 </div>
                 {course.optionalAddOns && course.optionalAddOns.length > 0 && (
                   <div className="border-t border-border pt-3">
@@ -160,7 +161,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
               </>
             )}
           </div>
-        </div>
+        </div>}
 
         <a
           href={whatsappHref}
