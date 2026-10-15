@@ -1,5 +1,5 @@
 import { getOctoberCourse } from "@/data/coursesOctober";
-import { kubernetesCoachingCourses } from "@/data/coursesKubernetes";
+import { cloudGroupedCourses, cloudGroupLabelKey } from "@/data/programmesCloudGroups";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
@@ -30,6 +30,8 @@ type Course = {
   comingSoon?: boolean;
   isSubItem?: boolean;
   unclickable?: boolean;
+  /** Optional subgroup heading rendered above this entry. */
+  group?: string;
 };
 
 
@@ -45,6 +47,17 @@ type Category = {
 const ProgrammesPage = () => {
   const { t } = useTranslation();
   const ct = (key: string) => key === "buildOpTools" ? getOctoberCourse("build-operational-tools-ai-coding-agents")?.title || t(`courses.${key}.title`) : t(`courses.${key}.title`);
+
+  // Cloud and DevOps entries carry a heading on the first course of each subgroup.
+  const cloudCourses: Course[] = cloudGroupedCourses.map((entry, index) => ({
+    name: entry.titleKey ? ct(entry.titleKey) : entry.name,
+    slug: entry.slug,
+    isExternal: entry.isExternal,
+    group:
+      index === 0 || cloudGroupedCourses[index - 1].group !== entry.group
+        ? t(cloudGroupLabelKey(entry.group))
+        : undefined,
+  }));
 
   const programCategories: Category[] = [
     {
@@ -201,13 +214,7 @@ const ProgrammesPage = () => {
       title: t("programmes.cloudAiStackTitle"),
       description: t("programmes.cloudAiStackDesc"),
       image: cloudDevOpsImg,
-      courses: [
-        { name: "Red Hat Enterprise Linux Administration – RHCSA Preparation", slug: "red-hat-enterprise-linux-rhcsa-preparation" },
-        { name: "Red Hat Learning Subscription – Standard & Premium", slug: "/programmes/cloud-devops-ai/red-hat-learning-subscription", isExternal: true },
-        { name: "AWS Certified Solutions Architect – Associate", slug: "aws-certified-solutions-architect-associate" },
-        ...kubernetesCoachingCourses.map(course => ({ name: course.title, slug: course.routePath || `/courses/${course.slug}`, isExternal: true })),
-        { name: ct("awsCloudDevOps"), slug: "aws-cloud-solutions-architecture-devops" },
-      ],
+      courses: cloudCourses,
       categoryHref: "/course-category/cloud-devops-ai-stack",
     },
     {
@@ -445,7 +452,17 @@ const ProgrammesPage = () => {
 
                     <ul className="border-t border-border">
                       {numberCourses(cat.courses).map(({ course, label }) => (
-                        <li key={course.slug}>{renderCourseLink(course, label)}</li>
+                        <li key={course.slug}>
+                          {course.group && (
+                            <div className="flex items-center gap-3 pt-5 pb-1">
+                              <span className="font-body text-[11px] tracking-[0.24em] uppercase font-semibold text-accent">
+                                {course.group}
+                              </span>
+                              <span className="h-px flex-1 bg-border" />
+                            </div>
+                          )}
+                          {renderCourseLink(course, label)}
+                        </li>
                       ))}
 
                     </ul>
