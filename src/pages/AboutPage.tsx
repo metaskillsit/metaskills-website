@@ -1,123 +1,108 @@
-import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { Brain, ShieldCheck, TrendingUp, Users } from "lucide-react";
-import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
-import AboutImmersiveScene from "@/components/about/AboutImmersiveScene";
-import raysAsset from "@/assets/about-auralis/light-rays.png.asset.json";
-import glintAsset from "@/assets/about-auralis/light-glint.png.asset.json";
-import bokehAsset from "@/assets/about-auralis/light-bokeh.png.asset.json";
 
 const pillarIcons = [Brain, TrendingUp, ShieldCheck, Users];
 
-type AboutPillar = { icon: typeof Brain; title: string; description: string };
+const reveal = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-80px" },
+  transition: { duration: 0.6, ease: "easeOut" as const },
+};
 
-const StaticAboutContent = ({ t, pillars }: { t: ReturnType<typeof useTranslation>["t"]; pillars: AboutPillar[] }) => (
-  <div className="about-static" aria-label={t("aboutPage.heroTitle")}>
-    <section><span className="about-kicker">The Institute</span><h1>{t("aboutPage.heroTitle")}</h1><p>{t("aboutPage.heroSubtitle")}</p></section>
-    <section><span className="about-index">01 / 05</span><h2>{t("aboutPage.missionTitle")}</h2><p>{t("aboutPage.missionP1")}</p><p>{t("aboutPage.missionP2")}</p></section>
-    <section><span className="about-index">02 / 05</span><h2>{t("aboutPage.visionTitle")}</h2><p>{t("aboutPage.visionP1")}</p><p>{t("aboutPage.visionP2")}</p></section>
-    <section><span className="about-index">03 / 05</span><h2>{t("aboutPage.coreAreas")}</h2><div className="about-static-grid">{pillars.map((pillar) => <article key={pillar.title}><pillar.icon aria-hidden="true" /><h3>{pillar.title}</h3><p>{pillar.description}</p></article>)}</div></section>
-    <section><span className="about-index">04 / 05</span><h2>{t("practices.heading")}</h2><p><em>{t("practices.headingItalic")}</em></p><div className="about-static-practices">{[1, 2, 3, 4, 5].map((number) => <article key={number}><span>0{number}</span><h3>{t(`practices.p${number}Name`)}</h3><em>{t(`practices.p${number}Tagline`)}</em><p>{t(`practices.p${number}Desc`)}</p></article>)}</div></section>
-    <section><span className="about-index">05 / 05</span><h2>{t("aboutPage.langTitle")}</h2><p>{t("aboutPage.langDesc")}</p></section>
+const Index = ({ n }: { n: string }) => (
+  <div className="flex items-center gap-4 mb-6">
+    <span className="text-xs font-semibold tracking-[0.25em] text-primary">{n} / 05</span>
+    <span className="h-px w-16 bg-primary/40" />
   </div>
 );
 
 const AboutPage = () => {
   const { t } = useTranslation();
-  const journeyRef = useRef<HTMLDivElement>(null);
-  const [activeAct, setActiveAct] = useState(0);
-  const reducedMotion = useReducedMotion() ?? false;
-  const { scrollYProgress } = useScroll({ target: journeyRef, offset: ["start start", "end end"] });
-  useMotionValueEvent(scrollYProgress, "change", (value) => {
-    const next = value < 0.1 ? 0 : value < 0.28 ? 1 : value < 0.46 ? 2 : value < 0.65 ? 3 : value < 0.84 ? 4 : 5;
-    setActiveAct((current) => current === next ? current : next);
-  });
-  const actMotion = { initial: { opacity: 0, y: 18 }, animate: { opacity: 1, y: 0 }, transition: { duration: reducedMotion ? 0.01 : 0.38, ease: "easeOut" as const } };
-
-  const pillars = [
-    { icon: pillarIcons[0], title: t("aboutPage.pillar1Title"), description: t("aboutPage.pillar1Desc") },
-    { icon: pillarIcons[1], title: t("aboutPage.pillar2Title"), description: t("aboutPage.pillar2Desc") },
-    { icon: pillarIcons[2], title: t("aboutPage.pillar3Title"), description: t("aboutPage.pillar3Desc") },
-    { icon: pillarIcons[3], title: t("aboutPage.pillar4Title"), description: t("aboutPage.pillar4Desc") },
-  ];
+  const pillars = [1, 2, 3, 4].map((i) => ({
+    icon: pillarIcons[i - 1],
+    title: t(`aboutPage.pillar${i}Title`),
+    description: t(`aboutPage.pillar${i}Desc`),
+  }));
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <main>
-        {reducedMotion ? <StaticAboutContent t={t} pillars={pillars} /> : <div ref={journeyRef} className="about-cinematic-journey">
-          <div className="about-cinematic-stage">
-            <div className="about-scene"><AboutImmersiveScene progress={scrollYProgress} reducedMotion={reducedMotion} /></div>
-            <div className="about-light about-light-rays" style={{ backgroundImage: `url(${raysAsset.url})` }} />
-            <div className="about-light about-light-glint" style={{ backgroundImage: `url(${glintAsset.url})` }} />
-            <div className="about-light about-light-bokeh" style={{ backgroundImage: `url(${bokehAsset.url})` }} />
-            <div className="about-grain" />
-            <div className={`about-scan-line about-scan-line-${activeAct}`} />
-
-            {activeAct === 0 && <motion.section key="hero" {...actMotion} className="about-act about-act-hero">
-              <span className="about-kicker">The Institute</span>
-              <h1>{t("aboutPage.heroTitle")}</h1>
-              <p>{t("aboutPage.heroSubtitle")}</p>
-              <span className="about-scroll-cue">Scroll to explore</span>
-            </motion.section>}
-
-            {activeAct === 1 && <motion.section key="mission" {...actMotion} className="about-act about-act-copy about-act-left">
-              <span className="about-index">01 / 05</span>
-              <h2>{t("aboutPage.missionTitle")}</h2>
-              <div className="about-glass-copy">
-                <p>{t("aboutPage.missionP1")}</p>
-                <p>{t("aboutPage.missionP2")}</p>
-              </div>
-            </motion.section>}
-
-            {activeAct === 2 && <motion.section key="vision" {...actMotion} className="about-act about-act-copy about-act-right">
-              <span className="about-index">02 / 05</span>
-              <h2>{t("aboutPage.visionTitle")}</h2>
-              <div className="about-glass-copy">
-                <p>{t("aboutPage.visionP1")}</p>
-                <p>{t("aboutPage.visionP2")}</p>
-              </div>
-            </motion.section>}
-
-            {activeAct === 3 && <motion.section key="areas" {...actMotion} className="about-act about-act-areas">
-              <header><span className="about-index">03 / 05</span><h2>{t("aboutPage.coreAreas")}</h2></header>
-              <div className="about-area-grid">
-                {pillars.map((pillar, i) => (
-                  <article key={pillar.title}>
-                    <span>0{i + 1}</span>
-                    <pillar.icon aria-hidden="true" />
-                    <h3>{pillar.title}</h3>
-                    <p>{pillar.description}</p>
-                  </article>
-                ))}
-              </div>
-            </motion.section>}
-
-            {activeAct === 4 && <motion.section key="practices" {...actMotion} className="about-act about-act-practices">
-              <div className="about-practice-heading">
-                <span className="about-index">04 / 05</span>
-                <h2>{t("practices.heading")}</h2>
-                <p>{t("practices.headingItalic")}</p>
-              </div>
-              <ol>
-                {[1, 2, 3, 4, 5].map((number) => (
-                  <li key={number}>
-                    <span>0{number}</span>
-                    <div><h3>{t(`practices.p${number}Name`)}</h3><em>{t(`practices.p${number}Tagline`)}</em><p>{t(`practices.p${number}Desc`)}</p></div>
-                  </li>
-                ))}
-              </ol>
-            </motion.section>}
-
-            {activeAct === 5 && <motion.section key="reach" {...actMotion} className="about-act about-act-reach">
-              <span className="about-index">05 / 05</span>
-              <h2>{t("aboutPage.langTitle")}</h2>
-              <p>{t("aboutPage.langDesc")}</p>
-            </motion.section>}
+        {/* Hero */}
+        <section className="border-b border-border">
+          <div className="container mx-auto px-6 py-24 md:py-32 max-w-5xl">
+            <motion.div {...reveal}>
+              <span className="text-xs font-semibold tracking-[0.3em] uppercase text-primary">The Institute</span>
+              <h1 className="mt-6 font-heading text-4xl md:text-6xl leading-tight text-foreground">{t("aboutPage.heroTitle")}</h1>
+              <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">{t("aboutPage.heroSubtitle")}</p>
+            </motion.div>
           </div>
-        </div>}
+        </section>
+
+        {/* Mission & Vision */}
+        <section className="container mx-auto px-6 py-20 md:py-28 max-w-6xl grid md:grid-cols-2 gap-16">
+          {[
+            { n: "01", title: t("aboutPage.missionTitle"), p: [t("aboutPage.missionP1"), t("aboutPage.missionP2")] },
+            { n: "02", title: t("aboutPage.visionTitle"), p: [t("aboutPage.visionP1"), t("aboutPage.visionP2")] },
+          ].map((b) => (
+            <motion.div key={b.n} {...reveal}>
+              <Index n={b.n} />
+              <h2 className="font-heading text-3xl md:text-4xl mb-6">{b.title}</h2>
+              {b.p.map((x, i) => <p key={i} className="text-muted-foreground leading-relaxed mb-4 text-justify">{x}</p>)}
+            </motion.div>
+          ))}
+        </section>
+
+        {/* Core areas */}
+        <section className="bg-secondary/40 border-y border-border">
+          <div className="container mx-auto px-6 py-20 md:py-28 max-w-6xl">
+            <motion.div {...reveal}><Index n="03" /><h2 className="font-heading text-3xl md:text-4xl mb-12">{t("aboutPage.coreAreas")}</h2></motion.div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {pillars.map((p, i) => (
+                <motion.article key={p.title} {...reveal} transition={{ ...reveal.transition, delay: i * 0.08 }}
+                  className="bg-card border border-border p-8 hover:border-primary transition-colors">
+                  <p.icon className="h-7 w-7 text-primary mb-6" aria-hidden="true" />
+                  <h3 className="font-heading text-xl mb-3">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.description}</p>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Practices */}
+        <section className="container mx-auto px-6 py-20 md:py-28 max-w-5xl">
+          <motion.div {...reveal}>
+            <Index n="04" />
+            <h2 className="font-heading text-3xl md:text-4xl">{t("practices.heading")}</h2>
+            <p className="mt-3 font-heading italic text-xl text-primary">{t("practices.headingItalic")}</p>
+          </motion.div>
+          <ol className="mt-12 divide-y divide-border border-y border-border">
+            {[1, 2, 3, 4, 5].map((n) => (
+              <motion.li key={n} {...reveal} className="grid md:grid-cols-[80px_1fr] gap-4 py-8">
+                <span className="font-heading text-3xl text-primary">0{n}</span>
+                <div>
+                  <h3 className="font-heading text-2xl">{t(`practices.p${n}Name`)}</h3>
+                  <em className="block mt-1 text-sm text-primary">{t(`practices.p${n}Tagline`)}</em>
+                  <p className="mt-3 text-muted-foreground leading-relaxed">{t(`practices.p${n}Desc`)}</p>
+                </div>
+              </motion.li>
+            ))}
+          </ol>
+        </section>
+
+        {/* Reach */}
+        <section className="bg-secondary/40 border-t border-border">
+          <motion.div {...reveal} className="container mx-auto px-6 py-20 md:py-24 max-w-4xl text-center">
+            <div className="flex justify-center"><Index n="05" /></div>
+            <h2 className="font-heading text-3xl md:text-4xl mb-6">{t("aboutPage.langTitle")}</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">{t("aboutPage.langDesc")}</p>
+          </motion.div>
+        </section>
       </main>
       <FooterSection />
     </div>
