@@ -9,3 +9,4 @@
 - Kubernetes coaching listings and hero imagery resolve from shared typed course records; routePath preserves owner-requested URLs and legacy aliases prevent duplicate courses.
 - Use HelmetProvider for route-owned metadata; static HTML retains sitewide fallback tags without a canonical to avoid duplicate canonicals.
 - Programme track subgroup membership and order resolve from one typed grouping module consumed by the programmes page, with labels read from locale keys; this keeps subgroup contents identical across languages and prevents a course appearing in two groups.
+- OffSec coaching content, fees, illustrative hero and listing titles resolve from one typed course record merged by slug; this prevents duplicate pages and inconsistent catalogue facts.

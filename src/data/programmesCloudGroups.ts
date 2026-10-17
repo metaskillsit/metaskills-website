@@ -1,6 +1,7 @@
 import { kubernetesCoachingCourses } from "@/data/coursesKubernetes";
+import { oscpCourse } from "@/data/coursesOffSec";
 
-export type CloudCourseGroup = "aws" | "kubernetes" | "linux";
+export type CloudCourseGroup = "aws" | "kubernetes" | "linux" | "security";
 
 export type CloudGroupedCourse = {
   group: CloudCourseGroup;
@@ -16,6 +17,7 @@ export const cloudCourseGroups: { id: CloudCourseGroup; labelKey: string }[] = [
   { id: "aws", labelKey: "programmes.cloudGroupAws" },
   { id: "kubernetes", labelKey: "programmes.cloudGroupKubernetes" },
   { id: "linux", labelKey: "programmes.cloudGroupLinux" },
+  { id: "security", labelKey: "programmes.cloudGroupSecurity" },
 ];
 
 /** Cloud and DevOps courses, grouped so related offerings sit together. */
@@ -50,6 +52,7 @@ export const cloudGroupedCourses: CloudGroupedCourse[] = [
     slug: "/programmes/cloud-devops-ai/red-hat-learning-subscription",
     isExternal: true,
   },
+  { group: "security", name: oscpCourse.title, slug: oscpCourse.routePath || `/courses/${oscpCourse.slug}`, isExternal: true },
 ];
 
 export const cloudGroupLabelKey = (group: CloudCourseGroup) =>

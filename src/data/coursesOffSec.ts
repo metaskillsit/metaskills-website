@@ -1,0 +1,78 @@
+import type { Course } from "./courses";
+import oscpHero from "@/assets/courses/oscp-preparation-hero.jpg";
+
+export const oscpCourse: Course = {
+  slug: "oscp-offsec-certified-professional",
+  routePath: "/courses/oscp-offsec-certified-professional",
+  title: "OSCP – OffSec Certified Professional (OSCP+) Exam Preparation",
+  category: "Cloud and DevOps",
+  tagline: "Think like an attacker, break in like a professional – and get ready for the 24-hour OSCP+ exam.",
+  heroImage: oscpHero,
+  heroAlt: "Illustrative penetration-testing practice with security engineers at a workstation",
+  generatedHero: true,
+  duration: "5 days (40 hours)",
+  dailySchedule: "9:00am – 5:00pm (8 hours per day, including breaks)",
+  deliveryMode: "1-to-1 or small-group coaching",
+  learningFormat: {
+    mode: "In-person, instructor-led training in Singapore, offered in two personalised coaching formats:",
+    body: [
+      "1-to-1 coaching – a dedicated trainer works with you alone, pacing the 5-day course around your experience, goals and questions",
+      "Small-group coaching – a small class so every participant gets individual attention, hands-on help in labs and direct feedback from the trainer",
+      "Both formats cover the same syllabus, labs and exam preparation.",
+    ],
+  },
+  whyAttend: "The OffSec Certified Professional (OSCP+) is one of the best-known hands-on penetration-testing certifications. It proves you can find, exploit and report on vulnerabilities in a live network under exam pressure. This 5-day, instructor-led classroom course in Singapore prepares you for the exam with guided practice across the PEN-200 syllabus. Training is delivered as personalised 1-to-1 coaching or small-group coaching, with small class sizes so each participant gets individual attention.\n\nYou will practise enumeration, web and client-side attacks, password attacks, Windows and Linux privilege escalation, pivoting and tunnelling, and Active Directory attacks, then bring it together in a timed mock exam and report-writing session. The S$3,250 exam fee covers OffSec's Course & Cert Exam Bundle: the official PEN-200 course materials, 90 days of lab access and one OSCP+ exam attempt.",
+  whoShouldAttend: [
+    "Security analysts, SOC engineers and IT security professionals moving into offensive security",
+    "System and network administrators who want to understand how attackers compromise systems",
+    "Aspiring penetration testers and red-team members",
+    "IT professionals preparing for the OffSec OSCP+ exam",
+  ],
+  prerequisites: [
+    "Official: none – OffSec sets no formal prerequisites for PEN-200 or the OSCP+ exam.",
+    "Recommended by Metaskills: a solid understanding of TCP/IP networking, reasonable Windows and Linux administration skills, and basic Bash or Python scripting.",
+  ],
+  objectives: [
+    "Plan and run a structured penetration test, from information gathering to reporting",
+    "Enumerate hosts and services and identify exploitable vulnerabilities",
+    "Exploit common web application flaws such as SQL injection, directory traversal, file upload and command injection",
+    "Find, adapt and run public exploits safely",
+    "Escalate privileges on Windows and Linux systems",
+    "Pivot through networks using port forwarding and tunnelling",
+    "Enumerate and attack Active Directory environments",
+    "Write a clear, professional penetration-test report as required by the exam",
+  ],
+  courseDesign: "Day-by-day, aligned to the PEN-200 syllabus. OffSec does not publish percentage weightings for the PEN-200 topics.",
+  schedule: [
+    { day: "Day 1 – Penetration-testing methodology and reporting", items: ["Information gathering, enumeration and vulnerability scanning"] },
+    { day: "Day 2 – Web application attacks", items: ["XSS, directory traversal, file inclusion, file upload, command injection and SQL injection", "Client-side attacks and working with public exploits"] },
+    { day: "Day 3 – Password attacks", items: ["Antivirus evasion basics", "Windows and Linux privilege escalation"] },
+    { day: "Day 4 – Port redirection, pivoting and tunnelling", items: ["Metasploit Framework", "Active Directory enumeration, authentication attacks and lateral movement"] },
+    { day: "Day 5 – Assembling the pieces: end-to-end attack chain", items: ["Timed OSCP-style mock exam, report writing and exam-day strategy"] },
+  ],
+  practicalActivities: [
+    "Hands-on attack labs throughout every day",
+    "Enumeration and exploitation of vulnerable Linux and Windows machines",
+    "Web application attack exercises",
+    "Windows and Linux privilege escalation challenges",
+    "Pivoting and tunnelling labs",
+    "Active Directory attack chain exercise",
+    "Timed OSCP-style mock exam with report-writing practice and instructor review",
+  ],
+  feeBreakdown: {
+    training: 7800,
+    exam: 3250,
+    total: 11050,
+    examLabel: "Exam fee (OffSec Course & Cert Exam Bundle: PEN-200 course materials, 90 days of lab access and one OSCP+ exam attempt)",
+  },
+  gstNote: "Prices are in Singapore dollars (SGD) per participant and exclude GST, which is charged in addition at the prevailing rate (currently 9%).",
+  fees: { selfSponsored: "S$11,050 per participant", corporateSmall: "S$11,050 per participant", corporateLarge: "S$11,050 per participant" },
+  certificationNote: [
+    "Participants who meet the attendance and course-completion requirements will receive a Metaskills Institute Certificate of Completion. The OSCP and OSCP+ certifications are separately awarded by OffSec after a candidate registers for and passes the applicable official examination. Metaskills Institute provides certification-aligned preparation and does not guarantee an examination pass. This course is independently developed by Metaskills Institute and is not official OffSec training.",
+    "EXAM FORMAT: Hands-on, online proctored penetration-testing exam – three standalone machines and one Active Directory set of three machines, followed by a written penetration-test report.\nDURATION: 23 hours 45 minutes for the exam, plus 24 hours to submit the report\nPASS MARK: 70 out of 100 points\nVALIDITY: OSCP+ is valid for 3 years; the OSCP credential awarded alongside it does not expire\nRETAKE POLICY: Retakes are purchased separately from OffSec (currently USD 249), with a waiting period after an unsuccessful attempt.\nWHAT THE EXAM FEE INCLUDES (S$3,250): OffSec's Course & Cert Exam Bundle – PEN-200 course materials, 90 days of lab access and one OSCP+ exam attempt.",
+  ],
+  nextRunDate: "",
+  seoTitle: "OSCP (OffSec Certified Professional) Exam Prep | Metaskills Institute Singapore",
+  seoDescription: "Prepare for the OSCP+ exam with 5-day penetration-testing coaching in Singapore, hands-on PEN-200 labs, a timed mock exam and report-writing practice.",
+  whatsappMessage: "Hello Metaskills Institute, I would like to enquire / register for OSCP – OffSec Certified Professional (OSCP+) Exam Preparation (1-to-1 or small-group coaching).",
+};

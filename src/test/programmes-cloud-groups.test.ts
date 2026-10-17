@@ -13,8 +13,8 @@ const slugsInGroup = (group: CloudCourseGroup) =>
   cloudGroupedCourses.filter((course) => course.group === group).map((course) => course.slug);
 
 describe("Cloud and DevOps programme grouping", () => {
-  it("lists the subgroups in AWS, Kubernetes then Linux order", () => {
-    expect(cloudCourseGroups.map((group) => group.id)).toEqual(["aws", "kubernetes", "linux"]);
+  it("keeps established subgroups in order with offensive security last", () => {
+    expect(cloudCourseGroups.map((group) => group.id)).toEqual(["aws", "kubernetes", "linux", "security"]);
   });
 
   it("keeps both AWS architecture courses together", () => {
@@ -43,7 +43,7 @@ describe("Cloud and DevOps programme grouping", () => {
   it("shows each subgroup once and never repeats a course", () => {
     const order = cloudGroupedCourses.map((course) => course.group);
     const blocks = order.filter((group, index) => group !== order[index - 1]);
-    expect(blocks).toEqual(["aws", "kubernetes", "linux"]);
+    expect(blocks).toEqual(["aws", "kubernetes", "linux", "security"]);
     expect(new Set(cloudGroupedCourses.map((course) => course.slug)).size).toBe(
       cloudGroupedCourses.length
     );

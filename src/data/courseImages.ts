@@ -2,6 +2,7 @@
 // Agentic AI Workshop Series
 import awsSaa1 from "@/assets/courses/aws-saa-1.jpg";
 import { kubernetesCoachingCourses } from "./coursesKubernetes";
+import { oscpCourse } from "./coursesOffSec";
 import { getOctoberCourse } from "./coursesOctober";
 import cka1 from "@/assets/courses/cka-1.jpg";
 import rhcsa1 from "@/assets/courses/rhcsa-1.jpg";
@@ -83,6 +84,7 @@ import courseLeadership3 from "@/assets/course-leadership-3.jpg";
 
 // Per-course image map: slug → [img1, img2, img3]
 const courseImageMap: Record<string, string[]> = {
+  [oscpCourse.slug]: [oscpCourse.heroImage],
   "agentic-ai-foundations": [agenticFoundations1, agenticFoundations2, agenticFoundations3],
   "agentic-ai-use-case": [agenticLlm1, agenticLlm2, agenticLlm3],
   "agentic-ai-deploy-secure-systems": [agenticDeploy1, agenticDeploy2, agenticDeploy3],
