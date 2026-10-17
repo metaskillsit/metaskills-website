@@ -108,7 +108,6 @@ const Navbar = () => {
             { label: t("courses.certifiedDataAnalyst.title"), href: "/course/certified-data-analyst" },
             { label: t("courses.certifiedDataScientist.title"), href: "/course/certified-data-scientist" },
             { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
-            { label: oscpCourse.title, href: oscpCourse.routePath || `/courses/${oscpCourse.slug}` },
             { label: "Professional Certificate in Python Automation and Data Operations", href: "/course/professional-certificate-python-automation-data-operations" },
             { label: "Professional Certificate in Modern Web Application Development", href: "/course/professional-certificate-modern-web-application-development" },
             { label: "Certificate in Foundational Digital Technology", href: "/course/certificate-foundational-digital-technology" },
@@ -197,6 +196,7 @@ const Navbar = () => {
             { label: "AWS Certified Solutions Architect – Associate", href: "/course/aws-certified-solutions-architect-associate" },
             ...kubernetesCoachingCourses.map(course => ({ label: course.title, href: course.routePath || `/courses/${course.slug}` })),
             { label: t("courses.awsCloudDevOps.title"), href: "/course/aws-cloud-solutions-architecture-devops" },
+            { label: oscpCourse.title, href: oscpCourse.routePath || `/courses/${oscpCourse.slug}` },
           ],
         },
         {
