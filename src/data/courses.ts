@@ -955,6 +955,11 @@ courses.push({
 import { cloudCertCourses } from "./coursesCloudCert";
 courses.push(...cloudCertCourses);
 
+import { oscpCourse } from "./coursesOffSec";
+const existingOscp = courses.find(course => course.slug === oscpCourse.slug);
+if (existingOscp) Object.assign(existingOscp, oscpCourse);
+else courses.push(oscpCourse);
+
 import { finOpsCourses } from "./coursesFinOps";
 courses.push(...finOpsCourses);
 

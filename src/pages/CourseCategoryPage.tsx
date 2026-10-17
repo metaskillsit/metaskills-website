@@ -261,10 +261,10 @@ const CourseCategoryPage = () => {
                     <li className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-primary" />{course.duration}</li>
                     <li className="flex items-center gap-2"><DollarSign className="w-3.5 h-3.5 text-primary" />{course.fees.selfSponsored}</li>
                     <li className="flex items-center gap-2"><Award className="w-3.5 h-3.5 text-primary" />{course.certificationStatus || "Certification Preparation"}</li>
-                    <li className="flex items-center gap-2"><Wallet className="w-3.5 h-3.5 text-primary" />{course.fundingStatus || "Non-SSG-Funded"}</li>
+                    {(!course.feeBreakdown || course.fundingStatus) && <li className="flex items-center gap-2"><Wallet className="w-3.5 h-3.5 text-primary" />{course.fundingStatus || "Non-SSG-Funded"}</li>}
                   </ul>
                   <Link
-                    to={`/course/${course.slug}`}
+                    to={course.routePath || `/course/${course.slug}`}
                     className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-primary text-primary-foreground font-semibold rounded-sm text-sm hover:brightness-110 transition-all"
                   >
                     View Programme <ArrowUpRight className="w-4 h-4" />
