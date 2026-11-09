@@ -521,7 +521,7 @@ export const courses: Course[] = [
     slug: "ai-wargaming-test-decisions",
     i18nKey: "aiWargaming",
     title: "AI Wargaming: Test Decisions Before They Count",
-    category: "AI Leadership and Governance",
+    category: "MCC+ Cyber Defence Certification",
     tagline: "Hands-on wargaming exercise where AI tools serve as analytical advisors.",
     heroImage: "/src/assets/course-agentic1.png",
     duration: "1 Day",

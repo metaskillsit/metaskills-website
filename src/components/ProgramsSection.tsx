@@ -105,7 +105,6 @@ const ProgramsSection = () => {
         { name: ct("aiStrategyLeaders"), slug: "ai-strategy-roadmap-leaders" },
         { name: ct("aiAccountability"), slug: "ai-accountability-when-ai-decides" },
         { name: ct("governingAiAgents"), slug: "governing-ai-agents-trust-boundaries" },
-        { name: ct("aiWargaming"), slug: "ai-wargaming-test-decisions" },
         { name: "Strategic AI Compute and Optimisation", slug: "/ai-native-prototyping-compute-constraints", isExternal: true },
       ],
     },
@@ -178,6 +177,7 @@ const ProgramsSection = () => {
         { name: ct("mccOffensiveCyber"), slug: "mcc-plus-offensive-cyber-fundamentals" },
         { name: ct("mccDigitalForensics"), slug: "mcc-plus-digital-forensics" },
         { name: ct("mccAiSecurity"), slug: "mcc-plus-ai-security-autonomous-defence" },
+        { name: ct("aiWargaming"), slug: "ai-wargaming-test-decisions" },
       ],
     },
     {

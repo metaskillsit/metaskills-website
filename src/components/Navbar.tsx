@@ -120,7 +120,6 @@ const Navbar = () => {
             { label: t("courses.aiStrategyLeaders.title"), href: "/course/ai-strategy-roadmap-leaders" },
             { label: t("courses.aiAccountability.title"), href: "/course/ai-accountability-when-ai-decides" },
             { label: t("courses.governingAiAgents.title"), href: "/course/governing-ai-agents-trust-boundaries" },
-            { label: t("courses.aiWargaming.title"), href: "/course/ai-wargaming-test-decisions" },
             { label: "Strategic AI Compute and Optimisation", href: "/ai-native-prototyping-compute-constraints" },
           ],
         },
@@ -185,6 +184,7 @@ const Navbar = () => {
             { label: t("courses.mccOffensiveCyber.title"), href: "/course/mcc-plus-offensive-cyber-fundamentals" },
             { label: t("courses.mccDigitalForensics.title"), href: "/course/mcc-plus-digital-forensics" },
             { label: t("courses.mccAiSecurity.title"), href: "/course/mcc-plus-ai-security-autonomous-defence" },
+            { label: t("courses.aiWargaming.title"), href: "/course/ai-wargaming-test-decisions" },
           ],
         },
         {
