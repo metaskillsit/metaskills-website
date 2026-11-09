@@ -154,6 +154,16 @@ Before embarking on his current trailblazing path, Dr. Hong garnered extensive e
 An ardent educator, Dr. Hong has been imparting his vast knowledge in digital transformation, artificial intelligence, and financial economics to undergraduates, postgraduates (MBA, EMBA, DBA), and professionals in academy programs since 2014. His academic contributions are further highlighted by his authorship of two applied works: "Financial Management, Theory and Practice" and "A Practitioner's Guide to Digital Platform Business," essential readings in Singapore Management University's MBA program.`,
   },
   {
+    name: "Soon Yinjie",
+    i18nKey: "soonYinjie",
+    role: "AI Senior Consultant and Trainer",
+    expertise: "Programming | EdTech | AI Systems | ACLP",
+    image: "/images/faculty/faculty-yinjie.jpg",
+    bio: `Yinjie (YJ) is co-founder at Tinkertanker, a technology and education company in Singapore, building software, electronics, curriculum — and the next generation of coders, makers, and creators. YJ handles partnerships, strategy, and business development, while always making time to teach a few of his favourite programming classes. 
+YJ received his Bachelor's and Master's degrees in Electrical Engineering from Stanford University in the USA, and a Post-Graduate Diploma in Secondary Education from the National Institute of Education in Singapore. Before Tinkertanker, YJ taught computing at Raffles Institution as Curriculum Head for Infocomm Technology, and served as a Senior Head for Policy & Planning at the Higher Education Division in MOE. For fun, he draws, collects programming memes, and tries to stop spending money on AI subscriptions.
+YJ Soon is a full-stack software engineer and educator specializing in machine learning, Python development, and cloud-native workflows. He has extensive experience in web and mobile application development, as well as immersive technologies such as VR. YJ conducts technical training that merges hands-on coding with best practices in AI/ML deployment, making complex implementations approachable for learners from both technical and non-technical backgrounds.`,
+  },
+  {
     name: "Adrian Toh",
     i18nKey: "adrianToh",
     role: "AI Senior Consultant",
@@ -178,16 +188,6 @@ Earlier in his career, Adrian served as a Director at AG Investment Management L
     expertise: "AI Engineering | NLP | Computer Vision | ACLP",
     image: "/images/faculty/faculty-jacktee.png",
     bio: `As the business-minded AI Engineering Head at Integrum Global, Jack Tee leverages his MBA from SMU and Mechanical Engineering background to craft high impact AI solutions across diverse fields. He has spearheaded projects such as identifying competitors for startups through financial news analysis using Natural Language Processing, enhancing train safety with speed estimation and search-and-rescue drones using Computer Vision, and developing a mobile app and web portal for real-time fleet management through route optimization. Jack is also advanced in large language model commercialization research and development, combining technical expertise with a strong focus on achieving business objectives.`,
-  },
-  {
-    name: "Soon Yinjie",
-    i18nKey: "soonYinjie",
-    role: "AI Senior Consultant and Trainer",
-    expertise: "Programming | EdTech | AI Systems | ACLP",
-    image: "/images/faculty/faculty-yinjie.jpg",
-    bio: `Yinjie (YJ) is co-founder at Tinkertanker, a technology and education company in Singapore, building software, electronics, curriculum — and the next generation of coders, makers, and creators. YJ handles partnerships, strategy, and business development, while always making time to teach a few of his favourite programming classes. 
-YJ received his Bachelor's and Master's degrees in Electrical Engineering from Stanford University in the USA, and a Post-Graduate Diploma in Secondary Education from the National Institute of Education in Singapore. Before Tinkertanker, YJ taught computing at Raffles Institution as Curriculum Head for Infocomm Technology, and served as a Senior Head for Policy & Planning at the Higher Education Division in MOE. For fun, he draws, collects programming memes, and tries to stop spending money on AI subscriptions.
-YJ Soon is a full-stack software engineer and educator specializing in machine learning, Python development, and cloud-native workflows. He has extensive experience in web and mobile application development, as well as immersive technologies such as VR. YJ conducts technical training that merges hands-on coding with best practices in AI/ML deployment, making complex implementations approachable for learners from both technical and non-technical backgrounds.`,
   },
   {
     name: "Benjamin Lien",
