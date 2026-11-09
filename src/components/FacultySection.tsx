@@ -62,6 +62,12 @@ const allFaculty = [
     image: "/images/faculty/faculty-jackhong.jpg",
   },
   {
+    name: "Soon Yinjie",
+    role: "AI Senior Consultant and Trainer",
+    expertise: "Programming | EdTech | AI Systems | ACLP",
+    image: "/images/faculty/faculty-yinjie.jpg",
+  },
+  {
     name: "Adrian Toh",
     role: "AI Senior Consultant",
     expertise: "AI in Finance | Investment Advisory | FX & Structured Products | Algorithmic Trading | ACLP",
@@ -78,12 +84,6 @@ const allFaculty = [
     role: "AI Senior Consultant and Trainer",
     expertise: "AI Engineering | NLP | Computer Vision | ACLP",
     image: "/images/faculty/faculty-jacktee.png",
-  },
-  {
-    name: "Soon Yinjie",
-    role: "AI Senior Consultant and Trainer",
-    expertise: "Programming | EdTech | AI Systems | ACLP",
-    image: "/images/faculty/faculty-yinjie.jpg",
   },
   {
     name: "Benjamin Lien",
