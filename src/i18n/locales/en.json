@@ -820,9 +820,9 @@
       "scheduleDay1Item4": "Roadmap development and presentation",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$1,500 per pax per day",
+      "feesCorporateSmall": "S$15,000/run",
+      "feesCorporateLarge": "S$15,000/run"
     },
     "aiAccountability": {
       "title": "Who Is Accountable When AI Decides?",
@@ -842,9 +842,9 @@
       "scheduleDay1Item4": "Peer review and presentation",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$1,500 per pax per day",
+      "feesCorporateSmall": "S$15,000/run",
+      "feesCorporateLarge": "S$15,000/run"
     },
     "governingAiAgents": {
       "title": "Governing AI Agents: Trust, Boundaries, and Audit Trails",
@@ -864,9 +864,9 @@
       "scheduleDay1Item4": "Boundary scenario exercises",
       "nextRunDate": "Contact admissions@metaskills.sg for next run dates",
       "duration": "1 Day",
-      "feesSelfSponsored": "S$1,000 per pax per day",
-      "feesCorporateSmall": "S$10,000/run",
-      "feesCorporateLarge": "S$10,000/run"
+      "feesSelfSponsored": "S$1,500 per pax per day",
+      "feesCorporateSmall": "S$15,000/run",
+      "feesCorporateLarge": "S$15,000/run"
     },
     "aiWargaming": {
       "title": "AI Wargaming: Test Decisions Before They Count",

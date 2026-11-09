@@ -485,7 +485,7 @@ export const courses: Course[] = [
     courseDesign: "A one-day strategy workshop combining AI fundamentals with hands-on roadmap development. No technical background required.",
     schedule: [{ day: "Day 1", items: ["AI fundamentals for leaders", "Real-world use cases and ethics", "Strategy exercise: challenge identification", "Roadmap development and presentation"] }],
     nextRunDate: "Contact admissions@metaskills.sg for next run dates",
-    fees: { selfSponsored: "S$1,000 per pax per day", corporateSmall: "S$10,000/run", corporateLarge: "S$10,000/run" },
+    fees: { selfSponsored: "S$1,500 per pax per day", corporateSmall: "S$15,000/run", corporateLarge: "S$15,000/run" },
   },
   {
     slug: "ai-accountability-when-ai-decides",
@@ -500,7 +500,7 @@ export const courses: Course[] = [
     courseDesign: "A one-day workshop with realistic scenarios and group exercises designing accountability models. No technical background required.",
     schedule: [{ day: "Day 1", items: ["Accountability frameworks for AI", "Realistic scenario analysis", "Group exercise: accountability model design", "Peer review and presentation"] }],
     nextRunDate: "Contact admissions@metaskills.sg for next run dates",
-    fees: { selfSponsored: "S$1,000 per pax per day", corporateSmall: "S$10,000/run", corporateLarge: "S$10,000/run" },
+    fees: { selfSponsored: "S$1,500 per pax per day", corporateSmall: "S$15,000/run", corporateLarge: "S$15,000/run" },
   },
   {
     slug: "governing-ai-agents-trust-boundaries",
@@ -515,7 +515,7 @@ export const courses: Course[] = [
     courseDesign: "A one-day workshop on AI agent governance with boundary design exercises. No technical background required.",
     schedule: [{ day: "Day 1", items: ["AI agent boundary setting", "Autonomy levels and risk assessment", "Audit trail design", "Boundary scenario exercises"] }],
     nextRunDate: "Contact admissions@metaskills.sg for next run dates",
-    fees: { selfSponsored: "S$1,000 per pax per day", corporateSmall: "S$10,000/run", corporateLarge: "S$10,000/run" },
+    fees: { selfSponsored: "S$1,500 per pax per day", corporateSmall: "S$15,000/run", corporateLarge: "S$15,000/run" },
   },
   {
     slug: "ai-wargaming-test-decisions",
