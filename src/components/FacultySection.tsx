@@ -151,6 +151,12 @@ const allFaculty = [
     expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs | ACLP",
     image: "/images/faculty/faculty-steven.jpg",
   },
+  {
+    name: "Christopher Say",
+    role: "Principal Solutions Architect & AI Cybersecurity Lead",
+    expertise: "AI Security & Zero Trust • MSc AI & ML (Distinction) • CISSP • CISA • Triple CCIE",
+    image: "/images/faculty/faculty-christopher-say.jpg",
+  },
 ];
 
 const SWIPE_THRESHOLD = 34;
