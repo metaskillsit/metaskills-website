@@ -201,5 +201,15 @@ export const courseScheduleData: Record<string, CourseRunDate[]> = {
   ],
 };
 
-export const getCourseSchedule = (slug: string): CourseRunDate[] =>
-  getOctoberCourse(slug) ? [{ intake: "Upcoming Run", dates: `${getOctoberCourse(slug)?.nextRunDate} — ${getOctoberCourse(slug)?.duration}`, status: "upcoming" }] : courseScheduleData[slug] || [];
+export const getCourseSchedule = (slug: string): CourseRunDate[] => {
+  const octoberCourse = getOctoberCourse(slug);
+  if (!octoberCourse) return courseScheduleData[slug] || [];
+  if (octoberCourse.upcomingRuns?.length) {
+    return octoberCourse.upcomingRuns.map(dates => ({
+      intake: "Upcoming Run",
+      dates: `${dates} — ${octoberCourse.duration}`,
+      status: "upcoming" as const,
+    }));
+  }
+  return [{ intake: "Upcoming Run", dates: `${octoberCourse.nextRunDate} — ${octoberCourse.duration}`, status: "upcoming" }];
+};

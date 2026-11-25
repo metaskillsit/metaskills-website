@@ -90,9 +90,14 @@ export const octoberCourses: Course[] = [
       ]
     }
   ],
-  "nextRunDate": "6 November 2026",
+  "nextRunDate": "4 December 2026 and 3 February 2027",
+  "upcomingRuns": [
+    "4 December 2026",
+    "3 February 2027"
+  ],
   "trainingDates": [
-    "2026-11-06"
+    "2026-12-04",
+    "2027-02-03"
   ],
   "fees": {
     "selfSponsored": "S$600 per participant",
@@ -116,9 +121,9 @@ export const octoberCourses: Course[] = [
   ],
   "practicalNote": "Participants build one guided prototype and leave with a reusable build brief, test checklist and next-step plan. The prototype is not a production-ready application.",
   "certificationStatus": "Hands-on workshop",
-  "whatsappMessage": "Hi, I would like to enquire about Build Operational Tools with AI Coding Agents, upcoming run 6 November 2026.",
+  "whatsappMessage": "Hi, I would like to enquire about Build Operational Tools with AI Coding Agents, upcoming runs 4 December 2026 and 3 February 2027.",
   "seoTitle": "Build Operational Tools with AI Coding Agents | Metaskills",
-  "seoDescription": "Build practical operational tools in a beginner-friendly, hands-on AI coding workshop. 6 November 2026. One day. S$600 per participant.",
+  "seoDescription": "Build practical operational tools in a beginner-friendly, hands-on AI coding workshop. 4 Dec 2026 and 3 Feb 2027. One day. S$600 per participant.",
   "i18nKey": "buildOpTools",
   "cancellationProcessingFee": 200
 },

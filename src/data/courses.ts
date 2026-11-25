@@ -88,6 +88,7 @@ export interface Course {
   generatedHero?: boolean;
   reviewPreview?: boolean;
   trainingDates?: string[];
+  upcomingRuns?: string[];
   learningEnvironment?: string;
   practicalNote?: string | null;
   cancellationProcessingFee?: number;
