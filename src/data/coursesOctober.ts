@@ -100,7 +100,7 @@ export const octoberCourses: Course[] = [
     "2027-02-03"
   ],
   "fees": {
-    "selfSponsored": "S$600 per participant",
+    "selfSponsored": "S$600 per participant (without subscription) · S$700 per participant (with 1-month Grok subscription)",
     "corporateSmall": "Contact us for corporate training rates.",
     "corporateLarge": "Contact us for corporate training rates."
   },
@@ -123,7 +123,7 @@ export const octoberCourses: Course[] = [
   "certificationStatus": "Hands-on workshop",
   "whatsappMessage": "Hi, I would like to enquire about Build Operational Tools with AI Coding Agents, upcoming runs 4 December 2026 and 3 February 2027.",
   "seoTitle": "Build Operational Tools with AI Coding Agents | Metaskills",
-  "seoDescription": "Build practical operational tools in a beginner-friendly, hands-on AI coding workshop. 4 Dec 2026 and 3 Feb 2027. One day. S$600 per participant.",
+  "seoDescription": "Build practical operational tools in a beginner-friendly, hands-on AI coding workshop. 4 Dec 2026 and 3 Feb 2027. One day. From S$600 per participant.",
   "i18nKey": "buildOpTools",
   "cancellationProcessingFee": 200
 },

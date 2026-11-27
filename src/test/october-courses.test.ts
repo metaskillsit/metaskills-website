@@ -12,7 +12,7 @@ describe("October programme requirements", () => {
    expect(getCourseBySlug("build-operational-tools-ai-coding-agents")?.category).toBe("Vibe Coding");
    expect(getCourseBySlug("build-operational-tools-ai-coding-agents")?.categoryAnchor).toBe("vibe-coding");
  });
- it("sets AI fee to S$600 per participant", () => expect(octoberCourses[0].fees.selfSponsored).toBe("S$600 per participant"));
+ it("sets AI fee to S$600 per participant", () => expect(octoberCourses[0].fees.selfSponsored).toBe("S$600 per participant (without subscription) · S$700 per participant (with 1-month Grok subscription)"));
  it("sets AI runs to 4 December 2026 and 3 February 2027", () => expect(octoberCourses[0].trainingDates).toEqual(["2026-12-04", "2027-02-03"]));
  it("lists AI runs as two separate upcoming rows", () => expect(getCourseSchedule("build-operational-tools-ai-coding-agents").map(run => run.dates)).toEqual(["4 December 2026 — 1 day", "3 February 2027 — 1 day"]));
  it("sets AI duration to one day", () => expect(octoberCourses[0].duration).toBe("1 day"));
