@@ -167,7 +167,7 @@ const CoursePageInner = ({ course, categoryImages, pastRuns, courseSchedule, rel
               </div>
             )}
             {course.level && <span>{course.level}</span>}
-            {course.reviewPreview && <span>{course.fees.selfSponsored}</span>}
+            {course.reviewPreview && <span>{course.fees.selfSponsored.includes(" · ") ? `From ${course.fees.selfSponsored.split(" ")[0]} per participant` : course.fees.selfSponsored}</span>}
             {course.feeBreakdown && <span>{course.fees.selfSponsored} (before GST)</span>}
             {course.fundingStatus && (
               <div className="flex items-center gap-2">

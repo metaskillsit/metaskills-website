@@ -90,7 +90,22 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
               <>
                 <div>
                   <p className="text-xs text-muted-foreground mb-0.5">{t("coursePage.selfSponsored")}</p>
-                  <p className="font-bold text-foreground">{course.fees.selfSponsored}</p>
+                  {course.fees.selfSponsored.includes(" · ") ? (
+                    <div className="space-y-2 mt-1">
+                      {course.fees.selfSponsored.split(" · ").map((opt, i) => {
+                        const m = opt.match(/^(S\$[\d,]+)\s*(.*)$/);
+                        return (
+                          <div key={i} className="flex items-baseline justify-between gap-3">
+                            <span className="text-sm text-foreground/80 leading-snug">{m ? m[2].replace(/^per participant\s*/, "").replace(/^\((.*)\)$/, "$1").replace(/^./, c => c.toUpperCase()) : opt}</span>
+                            {m && <span className="font-bold text-foreground whitespace-nowrap">{m[1]}</span>}
+                          </div>
+                        );
+                      })}
+                      <p className="text-xs text-muted-foreground">Per participant</p>
+                    </div>
+                  ) : (
+                    <p className="font-bold text-foreground">{course.fees.selfSponsored}</p>
+                  )}
                 </div>
                 <div className="border-t border-border pt-3">
                   <p className="text-xs text-muted-foreground mb-0.5">Corporate Training</p>
