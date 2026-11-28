@@ -272,6 +272,10 @@ Built on emerging agentic AI architectures, including technologies such as OpenC
 ========================= */
 const cyberTeam: FacultyMember[] = [
   {
+    ...phanPhiLong,
+    anchorKey: "Phan Phi Long Cybersecurity and DevOps",
+  },
+  {
     name: "Christopher Say",
     i18nKey: "christopherSay",
     role: "Principal Solutions Architect & AI Cybersecurity Lead",
@@ -327,10 +331,6 @@ DevSecOps, MLOps & Cloud: DevOps/DataOps/MLOps (Duke University); AI for Cyberse
 Lenz is also an experienced cybersecurity educator with more than six years of experience in Singapore's adult learning ecosystem. He has delivered hands-on red-team and blue-team training as an adjunct lecturer at Kaplan Singapore, in partnership with the University of Portsmouth and Murdoch University, as well as Temasek Polytechnic, Singapore Polytechnic, and Republic Polytechnic. His teaching covers Ethical Hacking, Digital Forensics and Incident Response, Malware Reverse Engineering, and Microsoft Windows Security. His training incorporates practical exercises covering the five phases of ethical hacking, the cyber kill chain, MITRE ATT&CK techniques and tactics, and hands-on security analysis using tools such as Metasploit, Nmap, Nessus, Mimikatz, Wireshark, Splunk, IDA, and Volatility.
 His technical foundation was established through enterprise infrastructure and security engineering roles, where he administered and hardened server environments across Sun Solaris, Windows Server, Red Hat Enterprise Linux, and IBM AIX. This was followed by extensive experience in enterprise networking and cybersecurity engineering across Singapore and Shanghai, supporting customers in designing, deploying, troubleshooting, and securing complex network and application environments.
 He holds a broad portfolio of industry-recognised security certifications, including CISSP, CCSP, CISA, GIAC GCIH, GMOB, GREM and GCSA, EC-Council CEH, and Certified Kubernetes Security Specialist (CKS), alongside a WSQ Advanced Certificate in Learning and Performance (ACLP).`,
-  },
-  {
-    ...phanPhiLong,
-    anchorKey: "Phan Phi Long Cybersecurity and DevOps",
   },
 ];
 
