@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 import lenzYuPortrait from "@/assets/faculty/lenz-yu-professional.jpg.asset.json";
 import { tanTeikGuan } from "@/data/facultyTanTeikGuan";
+import { phanPhiLong } from "@/data/facultyPhanPhiLong";
 
 
 interface FacultyMember {
@@ -17,6 +18,7 @@ interface FacultyMember {
   expertise: string;
   image: string;
   bio: string;
+  anchorKey?: string;
 }
 
 /* =========================
@@ -39,16 +41,7 @@ Technically, Jinghao works where traditional finance theory meets cutting-edge A
 What distinguishes Jinghao is his ability to operate simultaneously as scholar, practitioner, and institution-builder. Whether designing multi-tier AI training pathways aligned with SkillsFuture priorities, advising C-suite executives on data strategy and model governance, mentoring student consulting teams on live corporate projects, or structuring cross-border business platforms, he brings intellectual depth, operational pragmatism, and a collaborative leadership style that values evidence, clear communication, and disciplined execution. Based in Singapore with strong professional networks across Vietnam and the broader ASEAN region, Jinghao continues to architect scalable AI capabilities for organizations while advancing the field through research, teaching, and thought leadership that bridges academic rigor with commercial impact.`,
   },
   {
-    name: "Phan Phi Long",
-    i18nKey: "phanPhiLong",
-    role: "CTO, Metaskills Institute",
-    expertise: "Bilateral Enterprise Strategy | IT Transformation | Generative & Agentic AI | SME Digitalisation | ACLP",
-    image: "/images/faculty/faculty-philong.jpg",
-    bio: `As Chief Technology Officer of Metaskills Institute, Mr. Long Phan leads the Institute's technology strategy, AI engineering backbone and digital learning infrastructure. A WSQ ACLP 2.0-certified Adult Educator with more than 20 years of regional operations experience, he specialises in translating frontier foundation models such as Claude, ChatGPT, Gemini and DeepSeek into governed, production-ready enterprise workflows.
-Mr. Phan is President of the Vietnamese Association in Singapore (VAS) and Co-Founder and Deputy President of the Singapore-Vietnam Chamber of Commerce (VietCham Singapore), the bilateral business platform that connects Singapore and Vietnamese enterprises through trade missions, investment facilitation and corporate partnerships. Through these roles, and as Director of Regulus Investment and Capital Holdings, he has advised more than 100 Vietnamese SMEs and startups expanding into Singapore and using it as a gateway to global markets.
-As Managing Director of Way4SME Pte Ltd and VASSS Pte Ltd, he serves as a trusted IT partner to more than 1,000 SMEs across Singapore, redesigning IT infrastructure, streamlining operations and enabling scalable growth. His enterprise delivery experience spans Tetra Pak Singapore, Saigon Co.op and municipal tourism bodies.
-In AI education, he has delivered LLM engineering masterclasses to AMD engineering teams across Southeast Asia and Korea, as well as executive workshops for visiting government delegations and ASEAN leaders. His practice also covers RHCSA lab design and multi-model enterprise data governance.
-Mr. Phan holds a Bachelor of Computer Engineering (Honours) from Nanyang Technological University, awarded under the Asian Undergraduate Scholarship, and studied stock exchange and financial markets at the Ho Chi Minh City Banking Institute. He holds WSQ ACLP 2.0, PMP, ITIL Advanced and CEH credentials, and brings more than 15 years of multi-asset trading experience across equities, futures, options and cryptocurrencies in Vietnam, Singapore and the United States.`,
+    ...phanPhiLong,
   },
   {
     name: "Andrew Toh",
@@ -335,6 +328,10 @@ Lenz is also an experienced cybersecurity educator with more than six years of e
 His technical foundation was established through enterprise infrastructure and security engineering roles, where he administered and hardened server environments across Sun Solaris, Windows Server, Red Hat Enterprise Linux, and IBM AIX. This was followed by extensive experience in enterprise networking and cybersecurity engineering across Singapore and Shanghai, supporting customers in designing, deploying, troubleshooting, and securing complex network and application environments.
 He holds a broad portfolio of industry-recognised security certifications, including CISSP, CCSP, CISA, GIAC GCIH, GMOB, GREM and GCSA, EC-Council CEH, and Certified Kubernetes Security Specialist (CKS), alongside a WSQ Advanced Certificate in Learning and Performance (ACLP).`,
   },
+  {
+    ...phanPhiLong,
+    anchorKey: "Phan Phi Long Cybersecurity and DevOps",
+  },
 ];
 
 /* =========================
@@ -437,7 +434,7 @@ const BioText = ({ bio, forceExpanded = false }: { bio: string; forceExpanded?: 
 const FacultyCard = ({ f, i }: { f: FacultyMember; i: number }) => {
   const ft = useFacultyTranslation(f);
   const { t } = useTranslation();
-  const slug = facultySlug(f.name);
+  const slug = facultySlug(f.anchorKey ?? f.name);
   const [highlighted, setHighlighted] = useState(false);
   const [copied, setCopied] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);

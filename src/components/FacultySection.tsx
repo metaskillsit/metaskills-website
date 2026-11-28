@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import MirrorHall from "@/components/MirrorHall";
 import { tanTeikGuan } from "@/data/facultyTanTeikGuan";
+import { phanPhiLong } from "@/data/facultyPhanPhiLong";
 
 const facultySlug = (name: string) =>
   name.toLowerCase().replace(/[.'"]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -21,10 +22,10 @@ const allFaculty = [
     image: "/images/faculty/faculty-jinghao.webp",
   },
   {
-    name: "Phan Phi Long",
-    role: "CTO, Metaskills Institute",
-    expertise: "Bilateral Enterprise Strategy | IT Transformation | Generative & Agentic AI | SME Digitalisation | ACLP",
-    image: "/images/faculty/faculty-philong.jpg",
+    name: phanPhiLong.name,
+    role: phanPhiLong.role,
+    expertise: phanPhiLong.expertise,
+    image: phanPhiLong.image,
   },
   {
     name: "Andrew Toh",
