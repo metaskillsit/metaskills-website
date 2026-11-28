@@ -135,6 +135,12 @@ const allFaculty = [
     image: lenzYuPortrait.url,
   },
   {
+    name: "Steven Ong",
+    role: "Lead Cyber Security Consultant",
+    expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs | ACLP",
+    image: "/images/faculty/faculty-steven.jpg",
+  },
+  {
     name: "Johnson Ang",
     role: "Lead Instructor, Cyber Security & Applied AI",
     expertise: "Adult Learning | Offensive Security | AI Infrastructure | AFHEA, ACTA/ACLP",
@@ -145,12 +151,6 @@ const allFaculty = [
     role: "Senior Cyber Security Advisor",
     expertise: "Adult Learning | Cyber, DevOps & AI Training | ACLP",
     image: "/images/faculty/faculty-jimmy.png",
-  },
-  {
-    name: "Steven Ong",
-    role: "Lead Cyber Security Consultant",
-    expertise: "ISO 27001 • NIST • IM8 | CISO-Grade Security Governance for Defence & MNCs | ACLP",
-    image: "/images/faculty/faculty-steven.jpg",
   },
   {
     name: "Christopher Say",
