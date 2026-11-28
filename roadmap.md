@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Add Dr Tan Teik Guan after Christopher Say in Cybersecurity and DevOps and the homepage roster, using his supplied CV and portrait; verify all three languages and profile display.
+
 - [x] Add OSCP preparation under Cloud and DevOps using supplied content, matching course presentation and enquiry links; verify fees, listing links and layouts.
 
 - [x] Rename Kubestronaut Programme, make exams optional with individual pricing, update totals and verify the page and listings.

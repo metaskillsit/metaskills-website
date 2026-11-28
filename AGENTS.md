@@ -10,3 +10,4 @@
 - Use HelmetProvider for route-owned metadata; static HTML retains sitewide fallback tags without a canonical to avoid duplicate canonicals.
 - Programme track subgroup membership and order resolve from one typed grouping module consumed by the programmes page, with labels read from locale keys; this keeps subgroup contents identical across languages and prevents a course appearing in two groups.
 - OffSec coaching content, fees, illustrative hero and listing titles resolve from one typed course record merged by slug; this prevents duplicate pages and inconsistent catalogue facts.
+- New faculty profiles shared by the homepage and team page use a single data record with locale-keyed translations; this avoids duplicated portrait and biography details.

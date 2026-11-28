@@ -7,6 +7,7 @@ import { ChevronDown, ChevronUp, Link2, Check } from "lucide-react";
 import { toast } from "sonner";
 import { withFacultyImageVersion } from "@/lib/facultyImages";
 import lenzYuPortrait from "@/assets/faculty/lenz-yu-professional.jpg.asset.json";
+import { tanTeikGuan } from "@/data/facultyTanTeikGuan";
 
 
 interface FacultyMember {
@@ -297,6 +298,9 @@ As a Senior Lecturer, he designed industry-aligned cybersecurity curricula, supe
     bio: `Christopher Say brings a rare fusion of postgraduate artificial intelligence scholarship and elite cybersecurity credentials, backed by over 25 years of experience architecting and securing mission-critical infrastructure across Singapore and the Asia-Pacific. He holds an MSc in Artificial Intelligence and Machine Learning (awarded with Distinction) and a Bachelor of Information Technology in AI, paired with top-tier cybersecurity certifications including CISSP, CISA, CEH Master, ISO 27001 Lead Auditor, and three Cisco Certified Internetwork Expert (CCIE) qualifications in Routing & Switching, Service Provider, and Data Center.
 At the forefront of AI-era defence and cloud architecture, Christopher has served in senior regional leadership roles including Principal Solutions Architect at Cloudflare, Staff Solution Engineer at VMware (SEA & Korea), and Technical Solutions Architect at Cisco Systems. His hands-on architecture practice spans securing emerging AI workloads—including Cloudflare Workers AI and AI Gateway implementations—alongside enterprise Zero Trust frameworks, WAF and API Shield protection, automated DevSecOps pipelines (Terraform, Ansible), and container security across Kubernetes, Tanzu, and Docker.
 Throughout his career, Christopher has acted as a trusted advisor to C-suite leadership and public-sector institutions, delivering high-assurance security architectures for Singapore national agencies—including GovTech, the Ministry of Home Affairs (MHA), Singapore Police Force (SPF), and DSTA—as well as tier-1 telecommunications operators, global financial institutions, and Fortune 500 enterprises.`,
+  },
+  {
+    ...tanTeikGuan,
   },
   {
     name: "Johnson Ang",

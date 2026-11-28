@@ -6,6 +6,7 @@ import { withFacultyImageVersion } from "@/lib/facultyImages";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import MirrorHall from "@/components/MirrorHall";
+import { tanTeikGuan } from "@/data/facultyTanTeikGuan";
 
 const facultySlug = (name: string) =>
   name.toLowerCase().replace(/[.'"]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -157,6 +158,7 @@ const allFaculty = [
     expertise: "AI Security & Zero Trust • MSc AI & ML (Distinction) • CISSP • CISA • Triple CCIE",
     image: "/images/faculty/faculty-christopher-say.jpg",
   },
+  tanTeikGuan,
 ];
 
 const SWIPE_THRESHOLD = 34;
